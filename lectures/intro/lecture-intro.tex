@@ -21,7 +21,7 @@
 \begin{document}
 
 
-% \setlength{\fboxsep}{0pt}
+\setlength{\fboxsep}{0pt}
 
 
 \begin{frame}[plain]
@@ -49,8 +49,10 @@
   %%       \end{center}
   %%     \end{column}
   %%   \end{columns}
+  {\setlength{\fboxsep}{0pt}
   \fbox{\includegraphics[height=3.9cm,keepaspectratio]{figs/puma1}} \hfill
   \fbox{\includegraphics[height=3.9cm,keepaspectratio]{figs/deer_marked_helicopter}}
+  }
   \note{Break down the title. Application and theory}
 \end{frame}
 
@@ -406,20 +408,21 @@ want more calculus, take Population ecology in Odum School}
 \begin{frame}
   \frametitle{Syllabus}
   \begin{columns}%[T]
-    \begin{column}{0.5\textwidth}
-      \Large %{\bf Syllabus}
-      \begin{itemize}
-      \item Contact info
-      \item Overview
-      \item Book
-      \item Grading
-      \item Academic Honesty
-      \item Outline
-      \end{itemize}
-    \end{column}
+    % \begin{column}{0.5\textwidth}
+    %   \Large %{\bf Syllabus}
+    %   \begin{itemize}
+    %   \item Contact info
+    %   \item Overview
+    %   \item Book
+    %   \item Grading
+    %   \item Academic Honesty
+    %   \item Outline
+    %   \end{itemize}
+    % \end{column}
     \begin{column}{0.5\textwidth}
 %      \includepdf[pages={1},width=\textwidth]{../../syllabus/APD-syllabus.pdf}
-      \fbox{\includegraphics[width=\textwidth]{figs/syllabusP1}}
+%      \fbox{\includegraphics[width=\textwidth]{figs/syllabusP1}}
+      \fbox{\includegraphics[width=\textwidth]{../../APD-syllabus.pdf}}
     \end{column}
   \end{columns}
 \end{frame}
