@@ -3,14 +3,9 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
-%\usepackage{bm}
-%\usepackage{soul}
-%\usepackage{color}
 \usepackage{pdfpages}
 \usepackage{animate}
-\usepackage{verbatim}
-
+\usepackage{pgfpages}
 
 %\setbeameroption{notes on second screen}
 %\renewcommand*\sfdefault{lmss} % cmss, lmss (latin modern), phv (Helvetica) qhv, qag
@@ -110,7 +105,7 @@ want more calculus, take Population ecology in Odum School}
 
 \begin{frame}
 \frametitle{Central Questions}
-  \Large \centering
+  \large \centering
   \begin{enumerate}[\bf (1)]
     %   Why do populations vary across space and over time? \par
     \item What causes spatial and temporal variation in population size
@@ -160,7 +155,7 @@ want more calculus, take Population ecology in Odum School}
 
 \begin{frame}
   \frametitle{Themes}
-  \Large
+  \large
   \begin{itemize}
     \item[] {\hspace{-0.9cm} \bf Theory}
     \item Population models
@@ -202,38 +197,9 @@ want more calculus, take Population ecology in Odum School}
 
 
 
-\begin{frame}[fragile]
-  \frametitle{Example I -- Black-throated blue warbler}
-  {\centering \large
-    What do these data tell us?
-    What don't these data tell us? \par}
-\begin{center}
-  \includegraphics[width=0.9\textwidth]{figs/btbw}\let\thefootnote\relax\footnote{\tiny Rodenhouse et
-    al. (2003, Proceedings of the Royle Society)} \\
-\end{center}
-\hfill \includegraphics[width=0.2\textwidth]{figs/btbw1}
-\end{frame}
-
-
-
-
-\begin{frame}[fragile]
-  \frametitle{Example I -- Black-throated blue warbler}
-  {\centering \small %\large
-    Why are dynamics so different in the southern part of
-    the range? \\}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{figs/blue_density3plots}\let\thefootnote\relax\footnote{\tiny
-    Data courtesy of Dr. RJ Cooper} 
-\end{center}
-%\hfill \includegraphics[width=0.2\textwidth]{figs/btbw1}
-\end{frame}
-
-
-
 
 \begin{frame}
-  \frametitle{Example II -- Louisiana black bear}
+  \frametitle{Example I -- Louisiana black bear}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \fbox{\includegraphics[width=\textwidth]{figs/laBear2}}
@@ -251,6 +217,38 @@ want more calculus, take Population ecology in Odum School}
     \includegraphics[width=0.7\textwidth]{figs/LA-bear-demographics}
   \end{center}
 \end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Example II -- Black-throated blue warbler}
+  {\centering \large
+    What do these data tell us?
+    What don't these data tell us? \par}
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{figs/btbw}\let\thefootnote\relax\footnote{\tiny Rodenhouse et
+    al. (2003, Proceedings of the Royle Society)} \\
+\end{center}
+\hfill \includegraphics[width=0.2\textwidth]{figs/btbw1}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Example II -- Black-throated blue warbler}
+  {\centering \small %\large
+    Why are dynamics so different in the southern part of
+    the range? \\}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figs/blue_density3plots}\let\thefootnote\relax\footnote{\tiny
+    Data courtesy of Dr. RJ Cooper} 
+\end{center}
+%\hfill \includegraphics[width=0.2\textwidth]{figs/btbw1}
+\end{frame}
+
 
 
 
@@ -284,7 +282,7 @@ want more calculus, take Population ecology in Odum School}
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \begin{itemize}%[<+->]
-      \item<1-> We estimated extinction probability to be $>$2\% by 2100
+      \item<1-> We estimated extinction probability to be 2\% by 2100
       \item[]
       \item<2-> What can be done about it?
         \begin{itemize}
@@ -318,7 +316,7 @@ want more calculus, take Population ecology in Odum School}
 \begin{frame}
   \frametitle{Colonization Probability Maps}%{Results -- Colonization and connectivity}
   \begin{center}
-    \animategraphics[loop,controls,width=0.7\textwidth]{1}{figs/colMap}{2004}{2012} 
+    \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012}
     \vfill
   \end{center}
 \end{frame}
