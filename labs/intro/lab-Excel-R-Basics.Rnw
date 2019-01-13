@@ -9,7 +9,7 @@
 
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
-rnw2pdf("lab-Excel-Basics")
+rnw2pdf("lab-Excel-R-Basics")
 @
 
 
