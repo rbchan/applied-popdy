@@ -7,16 +7,33 @@
 
 \usepackage{color}
 
-<<eval=FALSE,include=FALSE>>=
+<<build,eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
-rnw2pdf("lab-Excel-R-Basics")
+rnw2pdf("lab-Excel-R-Basics", clean=FALSE)
+@
+
+
+<<knitr-theme,include=FALSE>>=
+##knit_theme$set("navajo-night")
+##knit_theme$set("edit-kwrite")
+##knit_theme$set("tabula")
+knit_theme$set("acid")
 @
 
 
 
+
+
+%% New command for inline code that isn't to be evaluated
+%\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}
+\definecolor{inlinecolor}{rgb}{0.97, 0.97, 0.97}
+\newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+%\fboxsep=0mm
+
+
 \begin{document}
 
-\fboxsep=0mm
 
 \begin{frame}[plain]
   \huge
@@ -27,7 +44,6 @@ rnw2pdf("lab-Excel-R-Basics")
     \vspace{.5cm}
     \fbox{\includegraphics[width=\textwidth]{figs/excel}}
   \end{center}
-%  \note{Describe structure... quick access toolbar, ribbon, sheets, workbooks, etc...}
 \end{frame}
 
 
@@ -56,7 +72,10 @@ rnw2pdf("lab-Excel-R-Basics")
 
 \begin{frame}
   \frametitle{Create Sequence Using Auto-fill}
-  \fbox{\includegraphics[width=\textwidth]{figs/sequence}}
+  \fbox{\includegraphics[width=\textwidth]{figs/sequence}} %\\
+  \centering
+  To use auto-fill: begin a sequence, highlight the cells, and then
+  drag the box at the bottom-right of the last cell. %\\
 \end{frame}
 
 
@@ -65,7 +84,7 @@ rnw2pdf("lab-Excel-R-Basics")
   \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/relative-ref}}}
   \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/relative-ref2}}}
   \begin{center}
-    Cell C2 will take on the value of A2 \\
+    Cell C2 will take on the value of A2
   \end{center}
 \end{frame}
 
@@ -101,10 +120,8 @@ rnw2pdf("lab-Excel-R-Basics")
 
 \begin{frame}
   \frametitle{Equations}
-%  \begin{ce}
     \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/equation}}}
     \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/equation2}}}
-%  \end{overprint}
 \end{frame}
 
 
@@ -129,10 +146,7 @@ rnw2pdf("lab-Excel-R-Basics")
 
 \begin{frame}
   \frametitle{Graphics}
-%  \begin{overprint}
     \fbox{\includegraphics[width=\textwidth]{figs/scatterlines}}
-%    \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/scatterlines2}}}
-%  \end{overprint}
 \end{frame}
 
 
@@ -146,20 +160,12 @@ rnw2pdf("lab-Excel-R-Basics")
 \end{frame}
 
 
-% \begin{frame}
-%   \frametitle{Add Headings}
-%   \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/headings}}}
-%   \only<2>{\fbox{\includegraphics[width=\textwidth]{figs/headings2}}}
-% \end{frame}
 
 
 
 \begin{frame}
   \frametitle{Customize}
-%  \begin{overprint}
     \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/customize}}}
-%    \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/customize2}}}
-%  \end{overprint}
     \begin{center}
       Add legend
     \end{center}
@@ -187,57 +193,32 @@ rnw2pdf("lab-Excel-R-Basics")
 
 
 
-% \section{In-class exercise}
-
-
-
-% \begin{frame}
-%   \frametitle{In-class exercise}
-%   \fbox{\includegraphics[width=\textwidth]{figs/inclass1}}
-% \end{frame}
-
-
-
-
-% \section{Assignment}
-
-
-% \begin{frame}
-%   \frametitle{Assignment}
-%   \small
-%   \begin{enumerate}[(1)]
-%     \item Create an Excel file and name it
-%       ``Yourlastname-yourfirstname''
-%     \item Create the sheet shown below using techniques covered in
-%       this lab (don't just type the numbers in)
-%     \item Upload to ELC Dropbox (\url{elcnew.uga.edu})
-%   \end{enumerate}
-%   \begin{center}
-%     \fbox{\includegraphics[width=0.7\textwidth]{figs/assignment}}
-%   \end{center}
-% \end{frame}
-
-
 \section{R}
 
 
-\begin{frame}
-  \frametitle{R}
-  Downloading and installing
+\begin{frame}[fragile]
+  \frametitle{R -- Software for statistical computing}
+  {\bf R} can be downloaded here: \url{https://www.r-project.org/} \\
+  \pause
+  \vfill
+  You can use the graphical user interface that comes with {\bf R}, or you
+  can run {\bf R} through a system like {\bf R Studio} (\url{https://www.rstudio.com/}).
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{Reproducing the Excel exercise}
-  Create an object to hold the sequence of years
-<<year>>=
-year <- 1950:1961 # A vector containing the sequence of years
-year              # Type the name of an object to see it's values
+  Create an object called \inr{year} to hold the sequence of years.
+<<year,size='footnotesize'>>=
+year <- 1950:1961 # A vector of integers
+year              # Type the name of an object to see its values
 @
 \pause
 \vfill
+Use the \inr{length} function to determine the number of values in a
+vector.
 <<nYears>>=
-nYears <- length(year) # Returns the number of values in a vector
+nYears <- length(year)
 nYears
 @
 \end{frame}
@@ -245,29 +226,90 @@ nYears
 
 \begin{frame}[fragile]
   \frametitle{A simple population model}
-  Create an empty vector to store the data on females
+  Create an empty vector to store the data on females. Set female
+  abundance to 100 in the first year.
 <<females>>=
 females <- rep(NA, nYears)
 females[1] <- 100
 @
 \pause
 \vfill
+Use a ``for loop'' to compute female abundance in subsequent years.
 <<femaleLoop>>=
 for(t in 2:nYears) {
     females[t] <- females[t-1] + females[t-1]*0.01
 }
 @
+\pause
+\fill
+\centering
+\alert{\bf We will use ``for loops'' for almost every population model
+  that we implement in R} %\\
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{A simple population model}
-<<males>>=
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      Generate the data on males using a single line of code.
+<<males,size='footnotesize'>>=
 males <- females*0.8
-males
+@
+    \end{column}
+\pause
+    \begin{column}{0.59\textwidth}
+      Put the objects in a \inr{data.frame}
+<<data, size='footnotesize'>>=
+model1 <- data.frame(year, females, males)
+model1
+@
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Graphics}
+<<plot,size='tiny',fig.width=7,fig.height=4.6>>=
+plot(females ~ year, data=model1, type="o", xlab="Year", ylab="Abundance",
+     lwd=2, pch=16, ylim=c(0, 120))
+lines(males ~ year, data=model1, type="o", col="blue", lwd=2, pch=16)
+legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1, pch=16)
 @
 \end{frame}
 
+
+
+
+\begin{frame}
+  \frametitle{Assignment}
+  \footnotesize
+  \begin{enumerate}
+    \item[1.] Create an Excel file and name it ``Yourlastname\_Yourfirstname''.
+    \item[2.] Create the sheet shown on the next page using the techniques covered in this lab.
+      \begin{itemize}
+        \scriptsize
+        \item Use auto-fill to create the first two columns.
+        \item For the ``Adults'' column, use the equation shown below
+          for cells C3 through C22. Note: For cell C2, you can directly
+          enter the value ``10''.
+      \end{itemize}
+    \item[3.] Copy ``Sheet1'' to a new sheet and change the color and
+      thickness of the lines. You can pick any colors and thicknesses you want.
+    \item[4.] Grad students only: Do steps 1-3 using Excel, and also
+      replicate the process using a ``for loop'' in a self-contained
+      {\bf R} script.
+    \item[5.] Upload the Excel workbook (with both sheets) to ELC. Grad students: upload the
+      R script too.
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Assignment}
+  \fbox{\includegraphics[width=\textwidth]{figs/assignment-new}}
+\end{frame}
 
 
 \end{document}
