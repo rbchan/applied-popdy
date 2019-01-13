@@ -1,7 +1,7 @@
 *.pdf
 *.docx
 *.xlsx
-figs/
+# figs/
 *.aux
 *.out
 *.snm
@@ -9,3 +9,6 @@ figs/
 *.log
 *.vrb
 *.toc
+*.Rdata
+cache/
+auto/

@@ -1,0 +1,295 @@
+\documentclass[color=usenames,dvipsnames]{beamer}
+%\documentclass[color=usenames,dvipsnames,handout]{beamer}
+
+%%\usepackage[roman]{../pres1}
+\usepackage[sans]{../pres1}
+\usepackage{graphicx}
+\usepackage{bm}
+
+%\usepackage{Sweave}
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-BIDE")
+@
+
+
+\begin{document}
+
+
+
+
+\begin{frame}[plain,fragile]
+  \centering
+    \huge
+    The BIDE model \\
+    \large
+    January 14, 2019 \\
+    \vfill
+<<bide0,echo=FALSE,include=FALSE,fig.width=8,fig.height=6,cache=TRUE>>=
+T <- 20
+N <- integer(T)
+B <- D <- I <- E <- integer(T-1)
+N[1] <- 100
+set.seed(340)
+for(t in 1:(T-1)) {
+    B[t] <- rpois(1, N[t]*0.2)
+    D[t] <- rbinom(1, N[t], 0.1)
+    I[t] <- rpois(1, 0.2)
+    E[t] <- rpois(1, N[t]*0.05)
+    N[t+1] <- N[t] + B[t] + I[t] - D[t] - E[t]
+}
+par(mai=c(0.9, 0.5, 0.2, 0.2))
+plot(1:T, N, ylim=c(0, max(N)), type="o",
+     xlab="Year", ylab="", pch=16, cex.lab=1.7)
+lines(1:(T-1), B, col="blue", pch=17, type="o")
+lines(1:(T-1), I, col="green", pch=18, type="o")
+lines(1:(T-1), D, col="red", pch=19, type="o")
+lines(1:(T-1), E, col="orange", pch=20, type="o")
+legend(1, 230, c("Population size (N)",
+                 "Births (B)",
+                 "Immigrants (I)",
+                 "Deaths (D)",
+                 "Emigrants (E)"),
+       lty=1, pch=c(16:20), cex=1.2,
+       col=c("black", "blue", "green", "red", "orange"))
+@
+\begin{columns}
+  \column{\dimexpr\paperwidth-10pt}
+  \centering
+  \includegraphics[width=0.75\textwidth]{figure/bide0-1} \\
+\end{columns}
+\end{frame}
+
+
+
+\section{Definitions}
+
+
+\begin{frame}
+  \frametitle{Today's topics}
+  \LARGE
+  \only<1>{\tableofcontents}%[hideallsubsections]}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Definitions}
+%  \begin{block}{Population dynamics}
+  {\bf Population dynamics \\}
+    The study of spatial and temporal variation in population size and structure
+%  \end{block}
+  \pause
+  \vfill
+%  \begin{block}{Population}
+  {\bf Population \\}
+    Individuals of the same species occuring in the same geographic region
+%  \end{block}
+  \pause
+  \vfill
+%  \begin{block}{Population size and structure}
+  {\bf Population size and structure \\}
+    {\color{Red}
+%      \bf
+      \it Size:} Abundance \\
+    {\color{Red}
+%      \bf
+      \it Structure:} Distribution of individuals among age groups, sexes,
+    habitat patches, etc\dots
+%  \end{block}
+\end{frame}
+
+
+
+\section{Modeling 101}
+
+
+
+
+
+
+% \begin{frame}
+%   \frametitle{What is a model?}
+%   \Large
+%   \pause
+%   A model is an abstraction of reality. \par
+%   \pause
+%   \vfill
+% %  By definition all models are wrong. \par
+% %  \pause
+% %  \vfill
+% %  \includegraphics[width=0.8\textwidth]{figs/Box-quote}
+%   \includegraphics[width=0.2\textwidth]{figs/Box}
+%   ``All models are wrong, but some are useful.'' G.E.P. Box (1987)
+% \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Models and science}
+%  Applied Ecology and the need for objectivity in obtaining reliable
+%  knowledge
+  \Large
+%  \pause
+  A model is an abstraction of reality. \par
+  \pause
+  \vfill
+  \Large
+  {\bf Models help us\dots}
+  \begin{itemize}[<+->]
+    \item Describe complex natural systems in a manageable way
+    \item Predict future outcomes
+    \item Cope with uncertainty %, specifically random
+%      variation and imperfect knowledge
+    \item Formalize hypotheses
+    \item Evaluate hypotheses by comparing predictions with observations
+  \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{But don't models require assumptions?}
+  \large
+  \pause
+  Yes. %\pause So what?
+  \pause
+  \vfill
+  We have to simplify, so we have to make assumptions.
+  \pause
+  \vfill
+  We do this all the time.
+  \pause
+  \vfill
+  \includegraphics[width=0.2\textwidth]{figs/Box}
+  ``All models are wrong, but some are useful.'' G.E.P. Box (1987)
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Model validation}
+  \Large
+  {\bf Putting the model to the test}
+  \begin{itemize}[<+->]
+    \item How well does it predict?
+    \item Will your results hold up in court?
+    \item Can your results be replicated/reproduced?
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+%\section{Modeling 101}
+
+
+
+
+\begin{frame}
+  \frametitle{Types of models}
+  \LARGE
+  \begin{itemize}
+    \item {\color<2>{Red} Conceptual}
+    \item Physical
+    \item Graphical
+%    \item {\color<2>[rgb]{0,0,1} Mathematical}
+    \item {\color<2>{Red} Mathematical}
+    \item {\color<2>{Red} Statistical}
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+\section{BIDE}
+
+
+\begin{frame}
+  \frametitle{The BIDE model}
+  \huge
+  \[
+  N_{t+1} = N_t + B_t + I_t - D_t - E_t
+  \]
+  \large
+  \vfill
+%  \centering where \flushleft \par
+  \centering \rule{4cm}{1pt} \flushleft \par
+  \vfill
+  \Large
+  $N_t$: population size (state variable) at time $t$ \\
+  $B_t$: births \\
+  $I_t$: immigrants \\
+  $D_t$: deaths \\
+  $E_t$: emigrants
+  \note{Notation... differs from }
+  \note{These are not rates}
+  \note{Implies several things. Area must be well-defined. Time must
+    be discrete, as opposed to continuous}
+  \note{Ask students to write a factor that could influence each parameter}
+  \note{Classify each variable: attributes of the animal, other biotic
+    factors e.g. competitors/prey, attributes of the habitat, and population}
+  \note{Represent BIDE models as a conceptual model}
+  \note{Could you get data on each of these variables?}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The BIDE model}
+  \huge
+  \[
+  N_{t+1} = N_t + B_t + I_t - D_t - E_t
+  \]
+  \large
+  \vfill
+  {\bf As written, this model implies the following:}
+  \begin{itemize}%[<+->]
+    \item<1-> $B$, $I$, $D$, and $E$ are not rates, they
+      are the number of events at time $t$.
+    \item The model is {\bf deterministic}, not {\bf stochastic}
+    \item Time is discrete, not continuous
+%    \item Space is well-defined
+  \end{itemize}
+  \vspace{0.5cm}
+  \pause
+  \bf In reality, things are more complicated, and interest lies in
+  understanding the factors influencing each process.\par
+%    \pause
+%    \vspace{0.5cm}
+%    \centering
+%    {\color{blue}
+%    QUESTION:} What influences these processes? \\
+  \note{Spend the rest of lecture doing a group exercise to create
+    list of factors influencing each process?}
+\end{frame}
+
+
+
+\section{Assignment}
+
+
+\begin{frame}
+  \frametitle{Assignment}
+  \Large
+  \bf
+  Read the first 3 pages of Chapter 3 in Conroy and Carroll \\
+%
+%  \vfill
+%  Expect a quiz on Monday
+\end{frame}
+
+
+
+
+
+
+
+\end{document}
