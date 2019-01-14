@@ -3,33 +3,31 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
 
-\usepackage{color}
 
 <<build,eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lab-Excel-R-Basics", clean=FALSE)
 @
 
-
 <<knitr-theme,include=FALSE>>=
 ##knit_theme$set("navajo-night")
-##knit_theme$set("edit-kwrite")
+knit_theme$set("edit-kwrite")
 ##knit_theme$set("tabula")
-knit_theme$set("acid")
+##knit_theme$set("acid")
+##knit_theme$set("breeze")
+##knit_theme$set("peaksea")
 @
 
-
-
-
-
 %% New command for inline code that isn't to be evaluated
-%\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}
-\definecolor{inlinecolor}{rgb}{0.97, 0.97, 0.97}
+\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}       % edit-kwrite
+%\definecolor{inlinecolor}{rgb}{0.97, 0.97, 0.97}           % acid
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 
 %\fboxsep=0mm
+
+
+
 
 
 \begin{document}
@@ -72,10 +70,10 @@ knit_theme$set("acid")
 
 \begin{frame}
   \frametitle{Create Sequence Using Auto-fill}
-  \fbox{\includegraphics[width=\textwidth]{figs/sequence}} %\\
+  \fbox{\includegraphics[width=\textwidth]{figs/sequence}} \\
   \centering
   To use auto-fill: begin a sequence, highlight the cells, and then
-  drag the box at the bottom-right of the last cell. %\\
+  drag the box at the bottom-right of the last cell. \\
 \end{frame}
 
 
@@ -103,7 +101,7 @@ knit_theme$set("acid")
   \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/absolute-ref}}}
   \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/absolute-ref2}}}
   \begin{center}
-    Dollar sign ``locks'' value so that auto-fill won't change it
+    Dollar sign ``locks'' a reference so that auto-fill won't change it
   \end{center}
 \end{frame}
 
@@ -202,14 +200,19 @@ knit_theme$set("acid")
   \pause
   \vfill
   You can use the graphical user interface that comes with {\bf R}, or you
-  can run {\bf R} through a system like {\bf R Studio} (\url{https://www.rstudio.com/}).
+  can run {\bf R} through a system like {\bf ESS+emacs}
+  (\url{https://vgoulet.act.ulaval.ca/en/home/}) or {\bf R Studio}
+  (\url{https://www.rstudio.com/}). \\
+  \pause
+  \vfill
+  Most people use {\bf R Studio} these days.
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{Reproducing the Excel exercise}
   Create an object called \inr{year} to hold the sequence of years.
-<<year,size='footnotesize'>>=
+<<year,size='scriptsize'>>=
 year <- 1950:1961 # A vector of integers
 year              # Type the name of an object to see its values
 @
@@ -217,7 +220,7 @@ year              # Type the name of an object to see its values
 \vfill
 Use the \inr{length} function to determine the number of values in a
 vector.
-<<nYears>>=
+<<nYears,size='footnotesize'>>=
 nYears <- length(year)
 nYears
 @
@@ -241,26 +244,26 @@ for(t in 2:nYears) {
 }
 @
 \pause
-\fill
+\vfill
 \centering
 \alert{\bf We will use ``for loops'' for almost every population model
-  that we implement in R} %\\
+  that we implement in R} \\
 \end{frame}
 
 
 \begin{frame}[fragile]
   \frametitle{A simple population model}
   \begin{columns}
-    \begin{column}{0.4\textwidth}
+    \begin{column}{0.41\textwidth}
       Generate the data on males using a single line of code.
 <<males,size='footnotesize'>>=
 males <- females*0.8
 @
     \end{column}
 \pause
-    \begin{column}{0.59\textwidth}
+    \begin{column}{0.58\textwidth}
       Put the objects in a \inr{data.frame}
-<<data, size='footnotesize'>>=
+<<data, size='scriptsize'>>=
 model1 <- data.frame(year, females, males)
 model1
 @
@@ -284,14 +287,14 @@ legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1
 
 \begin{frame}
   \frametitle{Assignment}
-  \footnotesize
+  \small %\footnotesize
   \begin{enumerate}
     \item[1.] Create an Excel file and name it ``Yourlastname\_Yourfirstname''.
     \item[2.] Create the sheet shown on the next page using the techniques covered in this lab.
       \begin{itemize}
-        \scriptsize
+        \footnotesize
         \item Use auto-fill to create the first two columns.
-        \item For the ``Adults'' column, use the equation shown below
+        \item For the ``Adults'' column, use the equation shown
           for cells C3 through C22. Note: For cell C2, you can directly
           enter the value ``10''.
       \end{itemize}
