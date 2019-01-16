@@ -86,69 +86,62 @@
 
 
 \begin{frame}%[t]
-%  \frametitle{Review of Previous Lecture}
   \frametitle{Fundamental Question}
   \begin{center}
    { \Large How does abundance go from $N_t$ to $N_{t+1}$?} \par
    \vspace{1.5cm}
    \large
-   \visible<2->{    Answer: The {\color{red} BIDE} Model  \\
+   \pause
+   Answer: The {\color{red} BIDE} Model  \\
      $N_{t+1} = N_t + {\color{red}B}_t + {\color{red}I}_t - {\color{red}D}_t - {\color{red}E}_t$
-   }
-  \vspace{1cm}
+  \vspace{2mm}
   \end{center}
-%  \vfill
-%  \footnotesize
-  \visible<2->{
-%    \rule[0pt]{9cm}{0.01cm} \\ % raise, width, thickness
-    {B=Births, I=Immigrations, D=Deaths, E=Emigrations \\}
-  }
+  B=Births, I=Immigrations, D=Deaths, E=Emigrations \\
+  \pause
   \vfill
-  \visible<3->{
-    Geometric growth is a simplification of BIDE. \\
-    \vspace{5mm}
-    Exponential growth is a continuous time version of geometric growth.
-  }
+  Geometric growth is a simplification of BIDE. \\
+  \vspace{2mm}
+  Exponential growth is a continuous time version of geometric growth.
 \end{frame}
 
 
 
 
-\begin{comment}
-  \begin{frame}
-    \frametitle{Why Do We Need Models?}
-    \large
-    % \uncover<1>{
-    {\bf \color{beamer@blendedblue} (1)} \textbf{Description}
-    \begin{itemize}
-      \item Is the population increasing?
-      \item What factors influence variation in changes in abundance?
-    \end{itemize}
-    % }
-    \visible<2>{ \vspace{0.3cm} {\bf \color{beamer@blendedblue} (2)}
-      \textbf{Prediciton}
-      \begin{itemize}
-        \item How will population size change if we implement management
-          action X, Y, or Z?
-        \item What will happen if we do nothing?
-      \end{itemize}
-    }
-  \end{frame}
-\end{comment}
+% \begin{comment}
+%   \begin{frame}
+%     \frametitle{Why Do We Need Models?}
+%     \large
+%     % \uncover<1>{
+%     {\bf \color{beamer@blendedblue} (1)} \textbf{Description}
+%     \begin{itemize}
+%       \item Is the population increasing?
+%       \item What factors influence variation in changes in abundance?
+%     \end{itemize}
+%     % }
+%     \visible<2>{ \vspace{0.3cm} {\bf \color{beamer@blendedblue} (2)}
+%       \textbf{Prediciton}
+%       \begin{itemize}
+%         \item How will population size change if we implement management
+%           action X, Y, or Z?
+%         \item What will happen if we do nothing?
+%       \end{itemize}
+%     }
+%   \end{frame}
+% \end{comment}
 
 
 
-\begin{comment}
-\begin{frame}
-  \frametitle{Sounds Easy, Right?}
-  \begin{center}
-%    \only<2>{\fbox{\includegraphics[width=5cm]{figs/Yogi_Berra}}}
-    \only<2>{\fbox{\includegraphics[width=5cm]{figs/spow}}}
-%    \only<2>{{\it ``It's tough to make predictions, especially about
-%      the future.''} (Yogi Berra) }
-  \end{center}
-\end{frame}
-\end{comment}
+% \begin{comment}
+% \begin{frame}
+%   \frametitle{Sounds Easy, Right?}
+%   \begin{center}
+% %    \only<2>{\fbox{\includegraphics[width=5cm]{figs/Yogi_Berra}}}
+%     \only<2>{\fbox{\includegraphics[width=5cm]{figs/spow}}}
+% %    \only<2>{{\it ``It's tough to make predictions, especially about
+% %      the future.''} (Yogi Berra) }
+%   \end{center}
+% \end{frame}
+% \end{comment}
 
 
 
@@ -211,12 +204,12 @@
     increases at so high a rate, that if not destroyed, the earth
     would soon be covered by the progeny of a single pair.''
   \end{quote}
-%  \visible<2>{
-%  \begin{quote}
-%    ``Hence, as more individuals are produced than can possibly survive,
-%    there must in every case be a struggle for existence$\dots$''
-%  \end{quote}
-%  }
+  \pause
+  \vfill
+  \begin{quote}
+    ``Hence, as more individuals are produced than can possibly survive,
+    there must in every case be a struggle for existence$\dots$''
+  \end{quote}
 \end{frame}
 
 
@@ -300,7 +293,6 @@
 
 
 \begin{frame}
-%  \frametitle{Example, $N_{t} = N_0 (1+r)^t$}
   \frametitle{Example, $N_{t+1} = N_t + N_tr$}
   \begin{columns}[c]
     \begin{column}{0.5\textwidth}
@@ -328,15 +320,15 @@
       \end{center}
     \end{column}
     \begin{column}{0.5\textwidth}
-      \includegraphics<1 | handout:0>[width=\textwidth]{figs/growth0}
-      \includegraphics<2 | handout:0>[width=\textwidth]{figs/growth1}
-      \includegraphics<3 | handout:0>[width=\textwidth]{figs/growth2}
-      \includegraphics<4 | handout:0>[width=\textwidth]{figs/growth3}
-      \includegraphics<5 | handout:0>[width=\textwidth]{figs/growth4}
-      \includegraphics<6 | handout:0>[width=\textwidth]{figs/growth5}
-      \includegraphics<7 | handout:0>[width=\textwidth]{figs/growth6}
-      \includegraphics<8 | handout:0>[width=\textwidth]{figs/growth7}
-      \includegraphics<9 | handout:0>[width=\textwidth]{figs/growth8}
+      \includegraphics<1 | handout:0>[width=\textwidth]{figs/growth0} %\\
+      \includegraphics<2 | handout:0>[width=\textwidth]{figs/growth1} %\\
+      \includegraphics<3 | handout:0>[width=\textwidth]{figs/growth2} %\\
+      \includegraphics<4 | handout:0>[width=\textwidth]{figs/growth3} %\\
+      \includegraphics<5 | handout:0>[width=\textwidth]{figs/growth4} %\\
+      \includegraphics<6 | handout:0>[width=\textwidth]{figs/growth5} %\\
+      \includegraphics<7 | handout:0>[width=\textwidth]{figs/growth6} %\\
+      \includegraphics<8 | handout:0>[width=\textwidth]{figs/growth7} %\\
+      \includegraphics<9 | handout:0>[width=\textwidth]{figs/growth8} %\\
       \includegraphics<10 | handout:0>[width=\textwidth]{figs/growth9}
       \includegraphics<11>[width=\textwidth]{figs/growth10}
     \end{column}
@@ -349,18 +341,13 @@
 
 
 
-
-
-
-
 \begin{frame}
-%  \frametitle{Three Possible Outcomes, $N_{t} = N_0(1+r)^t$}
   \frametitle{Three Possible Outcomes, $N_{t+1} = N_t + N_tr$}
   \begin{columns}
     \begin{column}{0.33\textwidth}
       \small
       \centering
-      \If $-1 \geq r < 0$ \\ population goes extinct \\
+      If $-1 \geq r < 0$ \\ population goes extinct \\
       \includegraphics[width=\textwidth]{figs/rl0}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -381,6 +368,9 @@
 
 
 
+
+
+
 \begin{frame}
   \frametitle{$r$ and $\lambda$, $N_{t+1} = N_t + N_tr$}
   \Large
@@ -391,10 +381,12 @@
   \[
   \lambda = \frac{N_{t+1}}{N_t}
   \]
-  \pause
+%  \pause
   \vspace{0.5cm}
   $\lambda = 1 + r$
 \end{frame}
+
+
 
 
 
@@ -438,52 +430,43 @@
 
 \begin{frame}
   \frametitle{From {\color{red} BIDE} To Geometric Growth}
-%  \large
-    \visible<1->{
     \textbf{Step 1:} Divide both sides by $N_{t}$
       \[
         \frac{N_{t+1}}{N_{t}} \quad = \quad 1 + \frac{B_t}{N_{t}} - \frac{D_t}{N_{t}}
       \]
-      }
-    \visible<2->{
+   \pause
     \textbf{Step 2:} Write in terms of \textit{per capita} birth and death \textit{rates}
       \[
         \frac{N_{t+1}}{N_{t}} \quad  = \quad 1 + b - d \quad = \quad 1 + r \quad = \quad \lambda
       \]
-      }
-    \visible<3->{
+    \pause
     \textbf{Step 3:} Geometric growth \par
     \begin{center}
       $N_{t+1} = N_t + N_tr$
     \end{center}
-    }
 \end{frame}
 
 
 
 
 
-
-\begin{comment}
-  \begin{frame}
-    \frametitle{What Factors Influence $r$?}
-    \textbf{Minimum age of reproduction}
-
-    \vspace{.3cm} \textbf{Young produced per year}
-    \begin{itemize}
-    \item Fertility (e.g. eggs/female)
-    \item Broods per year
-    \item Mating system (monogamous, polygynous, etc...)
-    \item etc\dots
-    \end{itemize}
-
-    \vspace{.3cm} \textbf{Age structure}
-
-    \vspace{.3cm} \textbf{Sex ratio}
-
-    \vspace{.3cm} \textbf{Longevity}
-  \end{frame}
-\end{comment}
+% \begin{comment}
+%   \begin{frame}
+%     \frametitle{What Factors Influence $r$?}
+%     \textbf{Minimum age of reproduction}
+%     \vspace{.3cm} 
+%     \textbf{Young produced per year}
+%     \begin{itemize}
+%       \item Fertility (e.g. eggs/female)
+%       \item Broods per year
+%       \item Mating system (monogamous, polygynous, etc...)
+%       \item etc\dots
+%     \end{itemize}
+%     \vspace{.3cm} \textbf{Age structure}
+%     \vspace{.3cm} \textbf{Sex ratio}
+%     \vspace{.3cm} \textbf{Longevity}
+%   \end{frame}
+% \end{comment}
 
 
 
@@ -498,8 +481,6 @@
 %\begin{comment}
 \begin{frame}
   \frametitle{So What Is Exponential Growth?}
-%  \visible<1->{
-%  {\bf \centering \large Continuous time version of geometric growth\par}
   \begin{block}{Continuous time version of geometric growth}
     \begin{center}
       \Large
@@ -517,13 +498,10 @@
     $t$ = time (any positive number)
   \end{block}
   \visible<3>{
-%  \begin{itemize}[<+- | visible@+->]
-%    \item 
     \small
     Appropriate if reproduction occurs throughout the year
       (birth flow populations), instead of during short seasons (birth
       pulse populations)
-%  \end{itemize}
   }
 \end{frame}
 %\end{comment}
@@ -531,31 +509,24 @@
 
 
 
-% \begin{frame}
-%   \frametitle{Exponential growth}
-%   {\bf \large Exponential growth is often written in terms of the instantaneous
-%   rate of change:}
-%   \Large
-%   \[
-%       \frac{\mathrm{d}N}{\mathrm{d}t} = rN
-%   \]
-% \end{frame}
-
-
-
-
-
 \begin{frame}
   \frametitle{Density Independent Growth}
   \large
-  \textbf{Geometric and exponential growth are examples of density independent
-    growth} \\
+  \textbf{Geometric and exponential growth are examples of \alert{\bf
+      density independent} growth} \\
   \vspace{0.5cm}
-  \visible<2->{\textbf{Definition:} Population growth rate ($r$) is \textit{not} affected by
-    population size ($N$).} \\
+  \pause
+  \textbf{Definition:} Population growth rate ($r$) is \textit{not} affected by
+    population size ($N$). \\
+  \pause
   \vspace{0.5cm}
-  \visible<3->{\textbf{Implications}:  Resources are unlimited and there is no carrying capacity!}
+  \textbf{Implications}:  Resources are unlimited and there is no carrying capacity!
 \end{frame}
+
+
+
+
+
 
 
 
@@ -711,9 +682,10 @@
 
 \begin{frame}
   \frametitle{Assignment}
-  {\bf Read pages 17--19 of chapter 3 \par}
+  \Large
+  Read pages 15--19 in Conroy and Carroll \\
   \vspace{1cm}
-  {\bf Be prepared for a quiz \par}
+  Be prepared for a quiz \\
 \end{frame}
 
 
