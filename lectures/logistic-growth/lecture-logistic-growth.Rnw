@@ -559,17 +559,10 @@ text(53, 55, "amplitude (k1)", pos=2, cex=1)
     \item Growth rate ($\lambda_t=N_{t+1}/N_t$) declines as $N$ approaches $K$
     \item Growth ($\Delta_t=N_{t+1}-N_t$) peaks at $K/2$ (the
       inflection point)
-    \item The model isn't mechanistic. We don't know what causes
-      growth rate to decline as $N$ increases.
+    \item The model isn't mechanistic in the sense that it doesn't
+      include birth, mortality, and movement processes. 
     \item But it does allow for complex dynamics that resemble
       patterns seen in nature.
-%    \item Soon we will see how the model can be extended to model
-%      population cycles, and how it has been used to manage harvest
-%      \begin{itemize}
-%        \large
-%        \item Overcompensation
-%        \item Population cycles
-%      \end{itemize}
   \end{itemize}
   \vfill
   \uncover<6->{
@@ -578,17 +571,6 @@ text(53, 55, "amplitude (k1)", pos=2, cex=1)
   }
 \end{frame}
 
-
-
-%% \begin{frame}
-%%   \frametitle{Assignment}
-%%   \centering
-%%   \LARGE
-%%   Read pages 32--36 in Conroy and Carroll \par
-%% \end{frame}
-
-
-%\section{Exercise}
 
 
 

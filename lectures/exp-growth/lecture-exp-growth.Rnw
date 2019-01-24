@@ -106,68 +106,6 @@
 
 
 
-
-% \begin{comment}
-%   \begin{frame}
-%     \frametitle{Why Do We Need Models?}
-%     \large
-%     % \uncover<1>{
-%     {\bf \color{beamer@blendedblue} (1)} \textbf{Description}
-%     \begin{itemize}
-%       \item Is the population increasing?
-%       \item What factors influence variation in changes in abundance?
-%     \end{itemize}
-%     % }
-%     \visible<2>{ \vspace{0.3cm} {\bf \color{beamer@blendedblue} (2)}
-%       \textbf{Prediciton}
-%       \begin{itemize}
-%         \item How will population size change if we implement management
-%           action X, Y, or Z?
-%         \item What will happen if we do nothing?
-%       \end{itemize}
-%     }
-%   \end{frame}
-% \end{comment}
-
-
-
-% \begin{comment}
-% \begin{frame}
-%   \frametitle{Sounds Easy, Right?}
-%   \begin{center}
-% %    \only<2>{\fbox{\includegraphics[width=5cm]{figs/Yogi_Berra}}}
-%     \only<2>{\fbox{\includegraphics[width=5cm]{figs/spow}}}
-% %    \only<2>{{\it ``It's tough to make predictions, especially about
-% %      the future.''} (Yogi Berra) }
-%   \end{center}
-% \end{frame}
-% \end{comment}
-
-
-
-
-%\textit{The Variations Of Animals and Plants under Domestication}
-%``...I saw, on reading Malthus on Population, that natural selection
-%was the inevitable result of the rapid increase of all organic
-%beings...''
-
-
-% Origin of Species:
-% ``Hence, as more individuals are produced than can possibly survive,
-% there must in every case be a struggle for existence, either one
-% individual with another of the same species, or with the individuals
-% of distinct species, or with the physical conditions of life. It is
-% the doctrine of Malthus applied with manifold force to the whole
-% animal and vegetable kingdoms; for in this case there can be no
-% artificial increase of food, and no prudential restraint from
-% marriage. Although some species may be now increasing, more or less
-% rapidly, in numbers, all cannot do so, for the world would not hold
-% them.''
-
-
-
-
-
 %\section{Classical Growth Models}
 %\section{From BIDE To Exponential Growth}
 \section{Geometric Growth}
@@ -347,7 +285,7 @@
     \begin{column}{0.33\textwidth}
       \small
       \centering
-      If $-1 \geq r < 0$ \\ population goes extinct \\
+      If $-1 \leq r < 0$ \\ population goes extinct \\
       \includegraphics[width=\textwidth]{figs/rl0}
     \end{column}
     \begin{column}{0.33\textwidth}
@@ -499,9 +437,12 @@
   \end{block}
   \visible<3>{
     \small
-    Appropriate if reproduction occurs throughout the year
-      (birth flow populations), instead of during short seasons (birth
-      pulse populations)
+    The exponential growth model is often considered more appropriate
+    than the geometric growth model for \alert{birth flow populations}
+    in which reproduction occurs throughout the year. \\
+    \vfill
+    However, geometric growth models can provide a good approximation
+    of birth flow or \alert{birth pulse populations}. 
   }
 \end{frame}
 %\end{comment}
@@ -621,40 +562,6 @@
 
 
 
-
-
-% \begin{frame}
-%   \frametitle{\large Can We Apply The Model To Real Data?}%Is This A Good Model?}
-%   \begin{center}
-%     \only<1 | handout:0>{\includegraphics[width=.8\textheight]{figs/MalthusVdata1}}
-%     \only<2>{\includegraphics[width=.8\textheight]{figs/MalthusVdata2}}
-% %    \only<3>{\includegraphics[width=.8\textheight]{figs/MalthusVdata3}}
-%   \end{center}
-% \end{frame}
-
-
-
-
-
-
-
-
-
-% \begin{frame}
-%   \frametitle{Recap}
-%   {\bf For one time step, geometric growth is:\par}
-%   {\large \centering $N_{t+1} = N_t + N_tr$ \par}
-%   \vspace{0.5cm}
-%   {\bf For arbitrary time steps, geometric growth is:\par}
-%   {\large \centering $N_{t} = N_{0}(1+r)^t$ \par}
-%   \vspace{0.5cm}
-%   {\bf Definitions: \par}
-%     \begin{itemize}
-%       \item $r = b-d$ is discrete growth rate
-%       \item $b = B/N$ is per capita birth rate (births/individual)
-%       \item $d = D/N$ is per capita death rate (probability of dying)
-%     \end{itemize}
-% \end{frame}
 
 
 
