@@ -54,14 +54,14 @@
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
 
-\usepackage{changepage}
+%\usepackage{changepage}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \begin{frame}[plain]
   \begin{center}
     {\huge Harvest Models} \\
-    {\large Jan 28 \& 30, 2019} \\
+    {\large January 28 \& 30, 2019} \\
     \vfill
     \includegraphics[height=5.5cm,keepaspectratio]{figs/book} \hspace{0.3cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/tuna}
@@ -79,8 +79,8 @@
     \item Sustainable harvest and logistic growth
     \item Definition of maximum sustainable yield (MSY)
     \item Limitations of MSY
-    \item Definition of additive mortality
-    \item Definition of compensatory mortality
+    \item Additive vs compensatory mortality
+%    \item Definition of compensatory mortality
   \end{itemize}
 \end{frame}
 
@@ -106,12 +106,14 @@
 \begin{frame}
   \frametitle{Sustainable harvest}
   \Large
-  {\bf A sustainable (and large) harvest is a common
+  {%\bf
+    A sustainable (and large) harvest is a common
     objective in game management}
   \vfill
   \pause
 %  \begin{block}{Definition}
-  {\bf Sustainable harvest:}
+  {%\bf
+    Sustainable harvest:}
     A harvest that is balanced by population growth such that $N_{t+1}
     = N_t$
 %  \end{block}
@@ -131,16 +133,16 @@
   \Large
   \[
    N_{t+1} = N_t + N_tr \pause - \color{red}{H_t}
-  \]
+  \] \\
   \pause
-  \vspace{1cm}
+%  \vspace{1cm}
   \large
-  where $H_t$ is the number of animals harvested in year $t$ \par
+  where $H_t$ is the number of animals harvested at the end of year $t$ \\
   \pause
-  \vspace{2cm}
+  \vfill %\vspace{2cm}
 %  \Large
 %  \vfill
-  What value of $H_t$ achieves equilibrium (i.e., $N_{t+1} = N_t$)?  \par
+  What value of $H_t$ achieves equilibrium (i.e., $N_{t+1} = N_t$)?  \\
 %  \pause
 %  \vfill
 %  Equilibrium is condition in which $N_{t+1} = N_t$?
@@ -241,7 +243,8 @@
 %  \vspace{2cm}
   \vfill
   \Large
-  \centering \bf What value of $H_t$ achieves equilibrium? \par %, i.e. $N_{t+1} = N_t$?
+  \centering %\bf
+  What value of $H_t$ achieves equilibrium? \\
 \end{frame}
 
 
@@ -432,31 +435,49 @@
   \large
   {\bf Additive vs. compensatory mortality}
   \begin{itemize}[<+->]
-    \item One mechanism behind logistic growth is density-dependence in
-      survival
-    \item If population size decreases, survival increases
-    \item Thus, harvest is compensated for by improved survival
-    \item If harvest is not compensated for by improved survival, mortality is
-      said to be additive
-%    \item The probability that an individual survives is often denoted
-%      $\phi$ (pronounced ``fee'' or ``fie'')
+    \item One possible mechanism giving rise to logistic growth is
+      density-dependence in survival
+    \item For example, if population size is reduced, survival of the
+      remaining individuals might increase
+    \item If harvest is compensated for by improved survival, harvest
+      is a form of \alert{\bf compensatory mortality}
+    \item However, if harvest is not compensated for by improved
+      survival, harvest is a form of \alert{\bf additive mortality}
   \end{itemize}
+  \vfill
+  \uncover<5->{
+%  When setting harvest regulations, managers need to know if harvest
+%  mortality is compensatory or additive.
+    If harvest mortality is additive, extra caution is needed
+    to ensure that harvest doesn't cause long-term population
+    declines. \\
+  }
 \end{frame}
 
 
 
 \begin{frame}
-  \frametitle{Example}
+  \frametitle{Compensatory mortality example}
   \large
-  \begin{itemize}[<+->]
-    \item Suppose a population of 90 animals is subjected to harvest
-    \item Harvest takes place prior to any natural mortality
-    \item Natural mortality occurs in a density dependent fashion,
-      such that survival probability ($S$) declines as $N$ increases.
-    \item A simple model is $S = \beta_0 - \beta1 \times N$
-    \item Let's assume $\beta_0 = 0.8333$ and $\beta_1 = 0.005556$, so
-      $S = 0.8333 - 0.005556 \times N$
-  \end{itemize}
+%  \begin{itemize}[<+->]
+%    \item
+  Suppose a population of 100 white-tailed deer is subjected to
+  harvest \\
+%    \item
+  \pause \vfill
+  Harvest takes place prior to any natural mortality \\
+%    \item
+  \pause \vfill
+  Natural mortality occurs in a density dependent fashion,
+  such that survival probability ($S$) declines as $N$ increases. \\
+%    \item
+  \pause \vfill
+  A simple model is $S = \beta_0 - \beta1 \times N$ \\
+  \pause \vfill
+%    \item
+  Let's assume $\beta_0 = 0.8$ and $\beta_1 = 0.005$, so
+  $S = 0.8 - 0.005 \times N$
+%  \end{itemize}
 \end{frame}
 
 
@@ -464,12 +485,10 @@
 \begin{frame}[fragile]
   \frametitle{Individual survival vs. population size}
 %  $\phi = 0.8333 - 0.005556\times N$
-  \vspace{-0.5cm}
+%  \vspace{-0.5cm}
 
-\par
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{figure/phi1-1}
-  \end{center}
+\centering
+\includegraphics[width=\textwidth]{figure/phi1-1} \\
 \end{frame}
 
 
@@ -479,16 +498,18 @@
 
 
 \begin{frame}
-  \frametitle{$S = 0.8333 - 0.005556 \times N$}
+  \frametitle{$S = 0.8 - 0.005 \times N$}
 %  \large
   \begin{itemize}[<+->]
-    \item If 30 individuals are harvested, what is $S$ for
+    \small
+    \item If 20 individuals are harvested, what is $S$ for
       remaining individuals?
-    \item How many individuals will remain at end of year?
-    \item How many would remain at end of year if no hunting occurred?
+    \item How many individuals will remain at the end of the year?
+    \item How many would remain at the end of the year if no hunting
+      occurred?
   \end{itemize}
   \begin{center}
-    \includegraphics[width=0.5\textwidth]{figure/phi1-1}
+    \includegraphics[width=0.7\textwidth]{figure/phi1-1}
   \end{center}
 \end{frame}
 
@@ -498,10 +519,11 @@
 \begin{frame}
   \frametitle{Overall survival vs. harvest rate}
   The overall survival rate ($\bar{S}$) is product of survival
-  throughout the season ($1-h$) and survial after the season
+  throughout the hunting season ($1-h$) and survial after the hunting
+  season
   \Large
   \[
-    \bar{S} = (1-h)(\beta_0 - \beta_1 (N - hN))
+    \bar{S} = (1-h)(\beta_0 - \beta_1 (N - Nh))
   \]
 \end{frame}
 
@@ -513,6 +535,12 @@
 \begin{center}
   \includegraphics[width=0.8\textwidth]{figure/phibar-1}
 \end{center}
+\pause
+%\vfill
+\small
+{\bf Conclusion}: Because harvest mortality is compensatory, the
+harvest rate ($h$) can be as high as 0.2 without negatively impacting
+overall survival.
 \end{frame}
 
 
@@ -524,14 +552,19 @@
 
 \begin{frame}
   \frametitle{Summary}
-  \large
+%  \large
   {\bf Key points}
   \begin{itemize}
     \item If growth is geometric, sustainable harvest occurs when $h=r$
-    \item If growth is logisitc, maximum sustainable yield occurs at $N=K/2$
-    \item If survival is density-dependent, harvest can be
-      compensated by increased survival of remaining individuals, but
-      it depends on the harvest rate.
+    \item If growth is logisitic, maximum sustainable yield occurs at $N=K/2$
+    \item If survival is density-dependent, harvest mortality can be
+      compensated for by increased survival of remaining individuals
+      (up to a point)
+    \item If mortality is additive, extra caution is needed
+      because harvest is adding to natural mortality without any
+      compensation
+    \item Managers need to understand population dynamics when setting
+      harvest regulations
   \end{itemize}
 \end{frame}
 
