@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+%\usepackage[roman]{../pres1}
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\hypersetup{pdfstartview=FitV}
+
+
+
+\begin{document}
+
+{
+  \Large
+  \centering
+  Lab 3 Assignment --- Harvest Models \\
+  Due before your next lab \par
+}
+
+Answer each of the following questions and upload your completed Excel
+file to ELC. Be sure to show your calculations. \par
+
+\vspace{12pt}
+
+{\bf Exercise I \\}
+The Excel sheet shows (fake) data on Burmese python abundance in south Florida.
+\begin{enumerate}
+  \item What growth model best describes these data, geometric or
+    logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$ to assess if
+    growth rates change over time.
+  \item What is the growth rate ($r$)?
+  \item If you determine that the per-capita birth rate ($b$) is 2.0,
+    what must be the per-capita mortality rate ($d$)?
+  \item What harvest rate ($h$) would result in a sustainable yield?
+  \item Use the harvest rate ($h$) from part d to project the population
+    forward from 2012 to 2024. You will need to compute the number of
+    individuals removed ($H_t$) each year, based on abundance in the
+    previous year ($N_{t-1}$). Use the equation $H_t=N_{t-1}h$.
+    Create a graph of python abundance from 2005--2024.
+  \item How is it possible that $H_t$ can be greater than $N_{t-1}$?
+\end{enumerate}
+
+\vspace{12pt}
+
+
+{\bf Exercise II \\}
+Imagine a population of northern bobwhite ({\it Colinus virginianus})
+that is experiencing logistic growth with $r_\mathrm{max} = 0.32$, $K = 2000$,
+and an initial population size of 100 individuals.
+\begin{enumerate}
+  \item Project the population for 40 years, and plot abundance over
+    time. Add axis labels as always.
+  \item Compute the number of individuals that could be sustainably
+    harvested each year. Plot abundance on the x-axis and sustainable
+    harvest on the y-axis.
+  \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
+  \item What is the value of MSY in this case? What is the harvest rate (h) at MSY?
+  \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
+    forward again, but include harvest ($H_t$). Choose values of Ht that
+    allow for the greatest number of years at MSY. Hint: You can let
+    harvest be zero in some years.
+\end{enumerate}
+
+%\vspace{12pt}
+
+\newpage
+
+
+{\bf Exercise III \\}
+Suppose that annual survival of sitka deer ({\it Odocoileus hemionus
+  sitkensis}) decreases as abundance increases according to the
+equation: $S = \beta_0 - \beta_1 \times N$.
+
+\begin{enumerate}
+  \item Compute survival probability for each value of $N$ provided in
+    the spreadsheet with $\beta_0=0.95$ and $beta_1=0.003$. Create a
+    graph with survival probability on the y-axis and abundance on the
+    x-axis.
+  \item A manager is trying to decide how many deer to harvest, and is
+    considering removing anywhere from 10 to 150 individuals from a
+    population of 200. Use the equation above to determine how many
+    deer will remain one year after harvest for each of the harvest
+    options. To accomplish this:
+  \begin{itemize}
+    \item Compute how many individuals will be alive immediately after
+      harvest
+    \item Compute survival probability for these remaining individuals
+      using the survival equation
+    \item Compute how many will be alive at the end of the year.
+  \end{itemize}
+  \item Create a graph with final abundance ($N$) on the y-axis and
+    harvest ($H$) of the x-axis. Why does this graph peak at
+    intermediate levels of harvest?
+  \item Determine how many deer will be alive if no harvest
+    occurs. Are there any levels of harvest that can result in a
+    larger population than the no harvest scenario? If so, how can
+    this be?
+  \item If the manager's objective is to maximize harvest, while
+    maintaining a herd size greater than it would be without harvest,
+    how many deer should be taken?
+\end{enumerate}
+
+
+
+
+\end{document}

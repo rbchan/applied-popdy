@@ -12,3 +12,4 @@
 *.Rdata
 cache/
 auto/
+KEY-*
