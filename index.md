@@ -6,9 +6,9 @@ title: Home
 
 ## Overview
 
-This site holds lecture and lab materials for Applied Population Dynamics (WILD 5700/7700, a course on population ecology and wildlife conservation. Topics include:
+This site holds lecture and lab materials for Applied Population Dynamics (WILD 5700/7700, a course on population ecology and wildlife conservation. 
 
-* [Geometric and exponential growth]()
+I just started building the website. Hope to have it finished by the end of the spring (2019)
 
 
 More details can be found in the [syllabus](syllabus.md).
