@@ -6,7 +6,7 @@
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{hyperref}
-\hypersetup{pdfstartview=FitV}
+\hypersetup{pdfstartview=FitV,hidelinks}
 
 
 
@@ -34,12 +34,14 @@ The Excel sheet shows (fake) data on Burmese python abundance in south Florida.
   \item If you determine that the per-capita birth rate ($b$) is 2.0,
     what must be the per-capita mortality rate ($d$)?
   \item What harvest rate ($h$) would result in a sustainable yield?
-  \item Use the harvest rate ($h$) from part d to project the population
+  \item Use the harvest rate ($h$) from part (4) to project the population
     forward from 2012 to 2024. You will need to compute the number of
-    individuals removed ($H_t$) each year, based on abundance in the
-    previous year ($N_{t-1}$). Use the equation $H_t=N_{t-1}h$.
-    Create a graph of python abundance from 2005--2024.
-  \item How is it possible that $H_t$ can be greater than $N_{t-1}$?
+    individuals removed ($H_t$) each year using the equation
+    $H_t=N_{t}h$\footnote{$H_t$ can be greater than $N_t$ because
+      harvest is assumed to occur at the end of the year, after the
+      population has grown}. Create a graph of python abundance from
+    2005--2024.  
+%  \item How is it possible that $H_t$ can be greater than $N_{t}$?
 \end{enumerate}
 
 \vspace{12pt}
@@ -75,7 +77,7 @@ equation: $S = \beta_0 - \beta_1 \times N$.
 
 \begin{enumerate}
   \item Compute survival probability for each value of $N$ provided in
-    the spreadsheet with $\beta_0=0.95$ and $beta_1=0.003$. Create a
+    the spreadsheet with $\beta_0=0.95$ and $\beta_1=0.003$. Create a
     graph with survival probability on the y-axis and abundance on the
     x-axis.
   \item A manager is trying to decide how many deer to harvest, and is
@@ -106,3 +108,4 @@ equation: $S = \beta_0 - \beta_1 \times N$.
 
 
 \end{document}
+
