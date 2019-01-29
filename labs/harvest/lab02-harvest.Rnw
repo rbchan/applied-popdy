@@ -93,8 +93,8 @@ equation: $S = \beta_0 - \beta_1 \times N$.
     \item Compute how many will be alive at the end of the year.
   \end{itemize}
   \item Create a graph with final abundance ($N$) on the y-axis and
-    harvest ($H$) of the x-axis. Why does this graph peak at
-    intermediate levels of harvest?
+    harvest ($H$) of the x-axis. %Why does this graph peak at
+    %intermediate levels of harvest?
   \item Determine how many deer will be alive if no harvest
     occurs. Are there any levels of harvest that can result in a
     larger population than the no harvest scenario? If so, how can
