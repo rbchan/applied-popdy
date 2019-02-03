@@ -55,9 +55,10 @@
 \usepackage[sans]{../pres1}
 \usepackage{graphicx}
 \usepackage{bm}
-\usepackage{changepage}
+%\usepackage{changepage}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
+
 
 \begin{frame}[plain]
   \begin{center}
@@ -70,7 +71,6 @@
   \end{center}
 \end{frame}
 
-% QUIZ: Write down and label (1) exponential growth and (2) logistic growth
 
 
 
@@ -79,12 +79,8 @@
 
 \begin{frame}[plain]
   \frametitle{Today's topics}
-%  {\huge Today's topics}
   \tableofcontents%[currentsection]
 \end{frame}
-
-
-
 
 
 
@@ -92,63 +88,25 @@
 \begin{frame}
   \frametitle{Random Variables}
   \large
-%  \begin{itemize}[<+->]
-%    \item A random variable is a variable whose value can change every time
-%      you observe it
-%    \item In other words, its value can't be predicted with certainty
-%    \item Examples?
-%      \begin{itemize}
-%        \item Weather
-%        \item Our own behavior
-%        \item Population size
-%      \end{itemize}
-%    \item We use probability distributions to describe random variables.
-%    \item Examples include the normal distribution, the binomial distribution,
-%      and the Poisson distribution
-%    \item In the context of the exponential growth, the growth
-%      parameter $r$ might be a normally-distributed random variable
-%      with mean $\bar{r}$ and standard deviation (SD) $\sigma$.
-%  \end{itemize}
-    A random variable is a variable whose value can change every time
-      you observe it \\
-%    \pause
-    \vfill
-    In other words, its value can't be predicted with certainty \\
-    \pause
-    \vfill
-    Examples?
-    \begin{itemize}
-      \item Weather
-      \item Our own behavior
-      \item Population size
-    \end{itemize}
+  A random variable is a variable whose value can't be predicted
+  with certainty. \\
+  \pause
+  \vfill
+  Examples?
+  \begin{itemize}
+    \item Weather
+    \item Our own behavior
+    \item Population size
+  \end{itemize}
 \end{frame}
 
-
-
-
-%% \begin{frame}
-%%   \frametitle{Stochasticity}
-%%   \large
-%%   {\bf If a future event cannot be predicted with certainty, it is said to
-%%   be random. \par}
-%%   \pause
-%%   \vspace{1cm}
-%%   {\bf Do we live in a stochastic world?}
-%% \end{frame}
-
-
-%\begin{frame}
-%  \frametitle{Stochasticity}
-%  Examples
-%\end{frame}
 
 
 
 \begin{frame}
   \frametitle{Probability distributions}
   \large
-  {A random variable (often denoted $X$) can be described by a probability distribution. \par}
+  {A random variable ($X$) can be described by a probability distribution. \\}
   \pause
   \vspace{1cm}
   {There are many types of probability distributions}
@@ -235,13 +193,6 @@
     \item Random variation in the number of births and deaths among years
     \item[]
   \end{itemize}
-%  \pause
-%  {\bf Sampling error}
-%  \begin{itemize}
-%    \item Random variation in the data due to FALSE positive or FALSE
-%      negative detections
-%    \item[]
-%  \end{itemize}
 \end{frame}
 
 
@@ -256,46 +207,33 @@
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Geometric growth with environmental stochasticity}
-  \LARGE
+  \Large
 \[
   N_{t+1} = N_t + N_tr + X_t
 \]
-
-\vspace{0.3cm} \pause
-{\large \centering where \par}
+%\vspace{0.3cm} \pause
+{\large \centering where \\}
 \[
   X_t \sim \mbox{Normal}(0, \sigma_e^2)
 \]
+\pause
+\vfill
+{\bf In \R}
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{r} \hlkwb{<-} \hlnum{0.1}
+\hlstd{sigma.e} \hlkwb{<-} \hlnum{10}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma.e)}
+    \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \end{frame}
-
-
-
-%% \begin{frame}[fragile]
-%%   \frametitle{Geometic growth}
-%% %  \vspace{-0.4cm}
-%% <<geom1,fig=TRUE,include=FALSE,echo=FALSE>>=
-%% T <- 50
-%% N <- integer(T+1)
-%% N[1] <- 50
-%% for(t in 1:T) {
-%%     N[t+1] <- N[t] + N[t]*-0.1
-%% }
-%% plot(0:T, N, type="b", col="orange", pch=16,
-%%      xlab="Time", ylab="Population size")
-%% abline(h=2, col=gray(0.7), lwd=2)
-%% text(5, 2, "N=2", pos=3)
-%% Te <- (0:T)[which.max(N<2)]
-%% text(Te-1, 20, paste("Time to quasi-extinction Te =", Te-1))
-%% arrows(Te-1, 19, Te-1, 3, length=0.1)
-%% @
-%% \begin{center}
-%%   \includegraphics[width=0.7\textwidth]{stochasticity-geom1}
-%% \end{center}
-%% \end{frame}
-
-
 
 
 
@@ -303,7 +241,7 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\mu=0$, $\sigma_e^2=100$}
+  \frametitle{Example $N_0=100$, $r=0.1$, $\mu=0$, $\sigma_e^2=100$}
 
 \vspace{-0.1cm}
 \begin{center}
@@ -325,7 +263,7 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\mu=0$, $\sigma_e^2=10000$}
+  \frametitle{Example $N_0=100$, $r=0.1$, $\mu=0$, $\sigma_e^2=10000$}
 
 \vspace{-0.1cm}
 \begin{center}
