@@ -20,31 +20,21 @@
   Due before your next lab \par
 }
 
-Answer each of the following questions and upload your completed Excel
-file to ELC. Be sure to show your calculations. \par
-
-\vspace{12pt}
-
 {\bf Random Numbers in Excel \\}
-% To generate random numbers in Excel, you must load the ``Analysis
-% Toolpak'' add-in. To do so, click:
-% \verb+File > Options > Add-Ins > Analysis Toolpak+.
-% Then hit ``Go'' (not ``OK'') and select ``Analysis Tookpak'' again. \\
+
 
 \begin{figure}[h]
   \centering
   \fbox{\includegraphics[width=\textwidth]{figs/Excel-RNG}}
   \caption{To generate random numbers in Excel, you must load the
-    ``Analysis Toolpak'' add-in. To do so, click
+    ``Analysis Toolpak'' add-in by clicking
     {\tt File $>$ Options $>$ Add-Ins $>$ Analysis Toolpak}. Then hit
     ``Go'' (not ``OK'') and select ``Analysis Tookpak'' again.}
   \label{fig:rng}
 \end{figure}
 
-\newpage
-
-%Once the Analysis ToolPak is installed, you can generate random
-%numbers by clicking the ``Data Analysis'' button in the ``Data'' tab.
+%\newpage
+\clearpage
 
 \begin{figure}[h]
   \centering
@@ -55,6 +45,7 @@ file to ELC. Be sure to show your calculations. \par
   \label{fig:rng-2}
 \end{figure}
 
+\vspace{1cm}
 
 \begin{figure}[h]
   \centering
@@ -68,14 +59,19 @@ file to ELC. Be sure to show your calculations. \par
 \end{figure}
 
 
-\newpage
+%\newpage
+\clearpage
 
+Answer each of the following questions and upload your completed Excel
+file to ELC. Be sure to show your calculations. \\
+
+\vspace{12pt}
 
 {\bf Exercise I \\}
 \begin{enumerate}
   \item If a population is growing geometrically and there is no
     random variation, what is the time to quasi-extinction ($T_e$) when
-    $r=-0.15$ and $N_0=500$. Assume quasi-extinction occurs when $N$ falls
+    $r=-0.2$ and $N_0=500$. Assume quasi-extinction occurs when $N$ falls
     below 20 individuals.
   \item Suppose that there is no demographic stochasticity,
     but environmental stochasticity occurs with $X_t \sim
@@ -93,22 +89,23 @@ file to ELC. Be sure to show your calculations. \par
 
 {\bf Exercise II \\}
 \begin{enumerate}
-  \item Simulate 10 projections under a logistic growth model with
-    $N_0$=20, $K$=40, and a normally-distributed growth rate $rmax$,t with
-    mean=0.1 and SD=1. Assume that the quasi-extinction threshold is
+  \item Simulate 10 populations under a logistic growth model with
+    $N_0$=20, $K$=40, and a normally-distributed growth rate $rmax_t
+    \sim \mathrm{Norm}(\mu=0.1, \sigma=1)$. Assume that the
+    quasi-extinction threshold is
     equal to 10, and force the population size to zero if it falls
     below the threshold using a test statement as before. Plot the
     projections.
   \item What are the quasi-extinction risks at years 5, 10, and 15?
-  \item Suppose you are using this model to determine how many
-    individuals should be released as part of a reintroduction program
-    to recover a species that was locally extirpated. What is the
-    minimum number of individuals that you would need to release to
-    ensure that the quasi-extinction risk is less than 10\% over a 30
-    year time horizon? Answer this using 10 projections, as before,
-    but {\bf create a duplicate sheet} so that you can report all your
-    work. Duplicate sheets can be created by right-clicking on the
-    sheet name, and then choose \verb+Move or Copy...+.
+  % \item Suppose you are using this model to determine how many
+  %   individuals should be released as part of a reintroduction program
+  %   to recover a species that was locally extirpated. What is the
+  %   minimum number of individuals that you would need to release to
+  %   ensure that the quasi-extinction risk is less than 10\% over a 30
+  %   year time horizon? Answer this using 10 projections, as before,
+  %   but {\bf create a duplicate sheet} so that you can report all your
+  %   work. Duplicate sheets can be created by right-clicking on the
+  %   sheet name, and then choose \verb+Move or Copy...+.
 \end{enumerate}
 
 
@@ -119,7 +116,7 @@ file to ELC. Be sure to show your calculations. \par
 In this exercise, you will be exposed to two new probably
 distributions: the Poisson and the binomial. The Poisson distribution
 is a useful model for data that are non-negative integers. It only has
-a single parameter (often called ``lambda'' but not be confused with the
+a single parameter (often called ``lambda'' but not to be confused with the
 finite rate of increase) and it has no upper bound. In stochastic
 population models, the Poisson distribution can be used to model the
 number of births ($B_t$) that occur in a time interval.
