@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+
+%\usepackage[roman]{../pres1}
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+
+\begin{document}
+
+{
+  \Large
+  \centering
+  Lab 4 Assignment --- Stochasticity and Extinction \\
+  Due before your next lab \par
+}
+
+Answer each of the following questions and upload your completed Excel
+file to ELC. Be sure to show your calculations. \par
+
+\vspace{12pt}
+
+{\bf Random Numbers in Excel \\}
+% To generate random numbers in Excel, you must load the ``Analysis
+% Toolpak'' add-in. To do so, click:
+% \verb+File > Options > Add-Ins > Analysis Toolpak+.
+% Then hit ``Go'' (not ``OK'') and select ``Analysis Tookpak'' again. \\
+
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=\textwidth]{figs/Excel-RNG}}
+  \caption{To generate random numbers in Excel, you must load the
+    ``Analysis Toolpak'' add-in. To do so, click
+    {\tt File $>$ Options $>$ Add-Ins $>$ Analysis Toolpak}. Then hit
+    ``Go'' (not ``OK'') and select ``Analysis Tookpak'' again.}
+  \label{fig:rng}
+\end{figure}
+
+\newpage
+
+%Once the Analysis ToolPak is installed, you can generate random
+%numbers by clicking the ``Data Analysis'' button in the ``Data'' tab.
+
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.6\textwidth]{figs/Excel-RNG-2}}
+  \caption{\footnotesize Once the Analysis ToolPak is installed, you can generate
+    random numbers by clicking the ``Data Analysis'' button in the
+    ``Data'' tab.}
+  \label{fig:rng-2}
+\end{figure}
+
+
+\begin{figure}[h]
+  \centering
+  \fbox{\includegraphics[width=0.6\textwidth]{figs/Excel-RNG-3}}
+  \caption{\footnotesize We will use three distributions: Normal,
+    Binomial, and Poisson. The latter two are only used in Exercise
+    III. Note: You can think of the ``number of variables'' as the
+    number of columns of random variables, and the ``number of random
+    numbers'' as the number of cells in each column.}
+  \label{fig:rng-3}
+\end{figure}
+
+
+\newpage
+
+
+{\bf Exercise I \\}
+\begin{enumerate}
+  \item If a population is growing geometrically and there is no
+    random variation, what is the time to quasi-extinction ($T_e$) when
+    $r=-0.15$ and $N_0=500$. Assume quasi-extinction occurs when $N$ falls
+    below 20 individuals.
+  \item Suppose that there is no demographic stochasticity,
+    but environmental stochasticity occurs with $X_t \sim
+    \mathrm{Normal}(\mu=0, \sigma=10)$. Conduct 10 simulations over a
+    30 year time period, and force the population size to zero if it
+    falls below the threshold. This can be done by multiplying the
+    growth equation by a ``test statement'' such as
+    \verb+CELL>$O$2+. Plot the projections. (Hint: Generate the random
+    variables before trying to calculate $N_t$).
+  \item What is the average $T_e$ based on these 10 simulations?
+\end{enumerate}
+
+\vspace{12pt}
+
+
+{\bf Exercise II \\}
+\begin{enumerate}
+  \item Simulate 10 projections under a logistic growth model with
+    $N_0$=20, $K$=40, and a normally-distributed growth rate $rmax$,t with
+    mean=0.1 and SD=1. Assume that the quasi-extinction threshold is
+    equal to 10, and force the population size to zero if it falls
+    below the threshold using a test statement as before. Plot the
+    projections.
+  \item What are the quasi-extinction risks at years 5, 10, and 15?
+  \item Suppose you are using this model to determine how many
+    individuals should be released as part of a reintroduction program
+    to recover a species that was locally extirpated. What is the
+    minimum number of individuals that you would need to release to
+    ensure that the quasi-extinction risk is less than 10\% over a 30
+    year time horizon? Answer this using 10 projections, as before,
+    but {\bf create a duplicate sheet} so that you can report all your
+    work. Duplicate sheets can be created by right-clicking on the
+    sheet name, and then choose \verb+Move or Copy...+.
+\end{enumerate}
+
+
+\newpage
+
+
+{\bf Exercise III \\}
+In this exercise, you will be exposed to two new probably
+distributions: the Poisson and the binomial. The Poisson distribution
+is a useful model for data that are non-negative integers. It only has
+a single parameter (often called ``lambda'' but not be confused with the
+finite rate of increase) and it has no upper bound. In stochastic
+population models, the Poisson distribution can be used to model the
+number of births ($B_t$) that occur in a time interval.
+
+The binomial distribution is also useful for data that are
+non-negative integers, but it has an upper bound. In population
+models, the upper bound is often population size, and we use the model
+to describe how many individuals die during some time period.
+
+Assume that a population is geographically closed such that there is
+no immigration or emigration. The number of individuals born is a
+Poisson random variable:
+\[
+  B_t \sim \mathrm{Poisson}(b \times N_t)
+\]
+and the number that die each year is a binomial random variable:
+\[
+  D_t \sim \mathrm{Binomial}(N_t, d)
+\]
+Abundance is just the number that were alive plus the number that were
+born, minus the number that died:
+\[
+  N_{t+1} = N_t + B_t - D_t
+\]
+\begin{enumerate}
+  \item Beginning with $N_0=300$, conduct one simulation over 5
+    years, in which $b=0.3$ and $d=0.2$. Plot the results. Hint: You have
+    to randomly generate $B_t$ and $D_t$ each year before you can compute
+    $N_t$.
+  \item Do you think this population will reach a stochastic
+    equilibrium? Why or why not? (A stochastic equilibrium occurs when
+    a population fluctuates around a long-term average).
+  \item Can population size ever be less than zero under this model?
+    Why or why not?
+  \item Do another simulation, but this time make the mortality rate
+    ($d$) density-dependent according to the model $d_t = 0.2 +
+    0.001\times Nt$. Will this population reach a stochastic equilibrium? If
+    so, at what value of abundance does the equilibrium point occur?
+\end{enumerate}
+
+
+
+
+\end{document}
+
