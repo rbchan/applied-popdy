@@ -166,13 +166,76 @@ First, create the projection matrix.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}  \hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.1}\hlstd{,}
-              \hlnum{0.4}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,}
-              \hlnum{0}  \hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{0}\hlstd{),}
+\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}  \hlstd{,} \hlnum{1.3}\hlstd{,} \hlnum{0.5}\hlstd{,}  \hlcom{## The fecundities}
+              \hlnum{0.5}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,}    \hlcom{## The first value is s1}
+              \hlnum{0}  \hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{0}\hlstd{),} \hlcom{## The second value is s2}
             \hlkwc{nrow}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{ncol}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hlstd{A}
+\end{alltt}
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]  0.0  1.3  0.5
+## [2,]  0.5  0.0  0.0
+## [3,]  0.0  0.8  0.0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+Set values of initial abundance and prepare to project over 50 years.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{years} \hlkwb{<-} \hlnum{0}\hlopt{:}\hlnum{50}
+\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
+\hlstd{n} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{,} \hlnum{3}\hlstd{, nYears)}
+\hlstd{n[,}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{50}\hlstd{,} \hlnum{25}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
+
+
+Do the projection
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+  \hlstd{n[,t]} \hlkwb{<-} \hlstd{A} \hlopt{%*%} \hlstd{n[,t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Visualize it
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{matplot}\hlstd{(}\hlkwd{t}\hlstd{(n),} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
+\hlkwd{legend}\hlstd{(}\hlnum{35}\hlstd{,} \hlnum{100}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Age class 1"}\hlstd{,} \hlstr{"Age class 2"}\hlstd{,} \hlstr{"Age class 3"}\hlstd{),}
+       \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/ex1-plot-1} 
+
+\end{knitrout}
+
+
+Eigen analysis. First compute $\lambda$.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{eA} \hlkwb{<-} \hlkwd{eigen}\hlstd{(A)}
+\hlstd{lambda} \hlkwb{<-} \hlstd{eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{]}
+\hlstd{lambda}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.9300735
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+
 
 
 
