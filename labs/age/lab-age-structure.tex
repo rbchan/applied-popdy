@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+%\usepackage[roman]{../pres1}
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\hypersetup{pdfstartview=FitV,hidelinks}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+{
+  \Large
+  \centering
+  Lab 6 Assignment --- Age-structured Models \\
+  Due before your next lab \par
+}
+
+Answer each of the following questions and upload your answers to ELC
+as a single Excel file. Be sure to show your calculations. Name the
+file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
+
+
+
+\vspace{12pt}
+
+{\bf Exercise I \\}
+Imagine a population with 4 age classes. The fecundities are $f_1=0$,
+$f_2=1.0$, $f_3=1.5$, and $f_4=1.2$. The survival probabilities are
+$s_1=0.8$, $s_2=0.5$, $s_3=0.25$, and $s_4=0.0$. The initial
+population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
+\begin{itemize}
+  \item[(a)] Create a Leslie matrix with the vital rates provided above.
+  \item[(b)] Project the population forward 25 years and plot abundance for
+    each age class and for the total population size. (Graduate students
+    only: Do the projection using matrix multiplication in {\tt R} with
+    the \texttt{\%*\%} operator. We will help with this, but look for
+    guidance online.)
+  \item[(c)] Create another plot of abundance for each age class, but use the
+    logarithmic scale for the y-axis. This can be done by right-clicking
+    on the y-axis and selecting ``Format axis''. Choose the logarithmic
+    axis option with base=10.
+  \item[(d)] Calculate and plot the age-specific
+    growth rates: $\lambda_{i,t}$. What is the asymptotic growth rate
+    ($\lambda$), rounded to 4 decimals points?
+  \item[(e)] What is the stable age distribution? (Graduate students only:
+    Compute asymptotic $\lambda$ and the stable age distribution using
+    the eigen function in {\tt R}.)
+  \item[(f)] What happens to the estimates of $\lambda$ if you change the
+    initial population sizes to: $n_{1,0}=75$, $n_{2,0}=1$, $n_{3,0}=1$,
+    $n_{4,0}=1$. Explain.
+\end{itemize}
+
+
+
+\vspace{12pt}
+
+\clearpage
+
+{\bf Exercise II \\}
+
+Reproductive value (RV) can be used to determine which age class
+contributes the most to population growth. The inoculate method is a
+way of computing RV by doing one projection for each of the age
+classes.
+
+For each projection, use a population size of 200 individuals, and put
+all individuals in one of the four age classes. For example, one
+projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The next
+projection will have all 200 individuals in the next age class. For
+each projection, record the total population size after 50 time
+steps. Reproductive value is calculated by dividing each projection's
+total population sizes at t=50 by the total population size from the
+first projection. (As a result, RV will always be 1 for the first age
+class when using this method).
+
+\begin{itemize}
+  \item[(a)] Given the following Leslie matrix, calculate the RV of each
+    age class using the inoculate method.
+  \item[(b)] If you were charged with reintroducing this species back
+    into the wild, and you could only reintroduce one age class, which
+    one would you release to maximize population growth? Why is
+    reproductive value so high for this age class?
+  \item[(c)] Graduate students only: Compute reproductive value using
+    the \texttt{eigen} function.
+\end{itemize}
+
+%Leslie Matrix
+\begin{table}[h]
+  \centering
+  \caption{Leslie Matrix}
+  \begin{tabular}{cccc}
+    \hline
+    Age class 1 & Age class 2 & Age class 3 & Age class 4 \\
+    1.6 & 1.5 & 0.25 & 0 \\
+    0.8 & 0   & 0    & 0 \\
+    0   & 0.5 & 0    & 0 \\
+    0   & 0   & 0.25 & 0 \\
+    \hline
+  \end{tabular}
+  \label{tab:A}
+\end{table}
+
+
+
+\clearpage
+
+Tips on analyzing age-structured models in {\tt R} \\
+
+This is an example of an age-structured model with 3 age classes. The
+parameter values are different than the ones in the assignment above.
+
+First, create the projection matrix.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}  \hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.1}\hlstd{,}
+              \hlnum{0.4}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,}
+              \hlnum{0}  \hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{0}\hlstd{),}
+            \hlkwc{nrow}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{ncol}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+
+\end{document}

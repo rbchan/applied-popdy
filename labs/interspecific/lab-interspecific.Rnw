@@ -77,9 +77,9 @@ $\alpha^{B}=0.1$.
     $N_0^A = 200$ and $N_0^B=50$. Do these conditions describe stable
     coexistence, competitive exclusion, or unstable equilibrium? 
   \item[(b)] What are the 2 equilibrium values for these species?
-  \item[(c)] What is the minimum value of alphaB that would result in
+  \item[(c)] What is the minimum value of $\alpha^B$ that would result in
     competitive exclusion of species A? (Hint: Use the equilibrium
-    equations to solve for alphaB). Plot 25 years of dynamics under
+    equations to solve for $\alpha^B$). Plot 25 years of dynamics under
     this scenario. Use the same initial abundance values as before. 
 \end{enumerate}
 
