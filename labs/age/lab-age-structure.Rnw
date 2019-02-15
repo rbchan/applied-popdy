@@ -24,10 +24,9 @@ Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
 file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
 
-
 \section*{Exercises}
 
-\vspace{12pt}
+%\vspace{12pt}
 
 {\bf Exercise I \\}
 Imagine a population with 4 age classes. The fecundities are $f_1=0$,
@@ -39,8 +38,8 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
   \item[(b)] Project the population forward 25 years and plot abundance for
     each age class and for the total population size. (Graduate students
     only: Do the projection using matrix multiplication in {\tt R} with
-    the \texttt{\%*\%} operator. We will help with this, but look for
-    guidance online.)
+    the \texttt{\%*\%} operator. See the end of this document for
+    guidance.)
   \item[(c)] Create another plot of abundance for each age class, but use the
     logarithmic scale for the y-axis. This can be done by right-clicking
     on the y-axis and selecting ``Format axis''. Choose the logarithmic
@@ -110,10 +109,11 @@ class when using this method).
 
 \clearpage
 
-\section*{Tips on analyzing age-structured models in {\tt R}} \\
+\section*{Tips on analyzing age-structured models in {\tt R}}
 
-This is an example of an age-structured model with 3 age classes. The
-parameter values are different than the ones in the assignment above.
+This is an example of an age-structured model with 3 age classes. It
+is just an example -- the parameter values are different than the ones
+in the assignment above.
 
 First, create the projection matrix.
 <<ex1-A>>=
@@ -152,11 +152,18 @@ legend(35, 100, c("Age class 1", "Age class 2", "Age class 3"),
 Eigen analysis. First compute $\lambda$.
 <<ex1-lam>>=
 eA <- eigen(A)
-lambda <- eA$values[1]
+lambda <- Re(eA$values[1])
 lambda
 @
 
 
+Now compute the reproductive value (RV) of each age class.
+<<ex1-rv>>=
+eAT <- eigen(t(A))
+RVu <- Re(eAT$vectors[,1])
+RV <- RVu/RVu[1]
+RV
+@
 
 
 
