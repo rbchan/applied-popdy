@@ -20,6 +20,8 @@
   Due before your next lab \par
 }
 
+\vspace{12pt}
+
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
 file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
@@ -46,7 +48,7 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
     axis option with base=10.
   \item[(d)] Calculate and plot the age-specific
     growth rates: $\lambda_{i,t}$. What is the asymptotic growth rate
-    ($\lambda$), rounded to 4 decimals points?
+    ($\lambda$), rounded to 4 decimals places?
   \item[(e)] What is the stable age distribution? (Graduate students only:
     Compute asymptotic $\lambda$ and the stable age distribution using
     the eigen function in {\tt R}.)
@@ -71,12 +73,12 @@ classes.
 For each projection, use a population size of 200 individuals, and put
 all individuals in one of the four age classes. For example, one
 projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The next
-projection will have all 200 individuals in the next age class. For
-each projection, record the total population size after 50 time
-steps. Reproductive value is calculated by dividing each projection's
-total population sizes at t=50 by the total population size from the
-first projection. (As a result, RV will always be 1 for the first age
-class when using this method).
+projection will have all 200 individuals in the next age class, and so
+on. For each projection, record the total population size after 50
+time steps. Reproductive value is calculated by dividing each
+projection's total population sizes at t=50 by the total population
+size from the first projection. (As a result, RV will always be 1 for
+the first age class when using this method).
 
 \begin{itemize}
   \item[(a)] Given the following Leslie matrix, calculate the RV of each
@@ -109,7 +111,7 @@ class when using this method).
 
 \clearpage
 
-\section*{Tips on analyzing age-structured models in {\tt R}}
+\section*{Age-structured models in {\tt R}}
 
 This is an example of an age-structured model with 3 age classes. It
 is just an example -- the parameter values are different than the ones
@@ -117,9 +119,9 @@ in the assignment above.
 
 First, create the projection matrix.
 <<ex1-A>>=
-A <- matrix(c(0  , 1.3, 0.5,  ## The fecundities
-              0.5, 0, 0,    ## The first value is s1
-              0  , 0.8, 0), ## The second value is s2
+A <- matrix(c(  0, 1.5, 0.5,  ## The fecundities
+              0.5,   0,   0,  ## The first value is s1
+                0, 0.9,   0), ## The second value is s2
             nrow=3, ncol=3, byrow=TRUE)
 A
 @
@@ -129,32 +131,99 @@ Set values of initial abundance and prepare to project over 50 years.
 <<ex1-n0>>=
 years <- 0:50
 nYears <- length(years)
-n <- matrix(NA, 3, nYears)
-n[,1] <- c(100, 50, 25)
+n <- matrix(NA, nYears, 3)
+n[1,] <- c(100, 50, 25)    ## Initial abundance
 @
 
 
-Do the projection
+Do the projection.
 <<ex1-proj>>=
 for(t in 2:nYears) {
-  n[,t] <- A %*% n[,t-1]
+  n[t,] <- A %*% n[t-1,]   ## Matrix multiplication
 }
 @
 
-Visualize it
-<<ex1-plot>>=
-matplot(t(n), type="o", pch=16, xlab="Time", ylab="Abundance")
+\clearpage
+
+
+Visualize it.
+<<ex1-plot,out.width='0.85\\textwidth',fig.align='center'>>=
+matplot(years, n, type="o", pch=16, xlab="Time", ylab="Abundance")
 legend(35, 100, c("Age class 1", "Age class 2", "Age class 3"),
        col=1:3, pch=16, lty=1)
 @
 
+\clearpage
 
-Eigen analysis. First compute $\lambda$.
+Compute the age distribution and take a look.
+<<ex1-AD,out.width='0.85\\textwidth',fig.align='center'>>=
+N <- rowSums(n) ## Total abundance each year
+c <- n/N        ## This works because of R's recycling rules
+matplot(years, c, type="o", pch=16, ylim=c(0, 1), xlab="Time",
+        ylab="Proportion in each age class")
+legend(35, 1, c("Age class 1", "Age class 2", "Age class 3"),
+       col=1:3, pch=16, lty=1)
+@
+
+Grab the stable age distribution from the final year.
+<<ex-AD-proj>>=
+SAD.proj <- c[nYears,]
+SAD.proj
+@
+
+
+\clearpage
+
+Now compute the annual growth rates for each age class and plot them.
+<<ex1-lam_it,out.width='0.85\\textwidth',fig.align='center'>>=
+lambda.it <- n[-1,]/n[-nYears,] ## Divide each row by the row before it
+matplot(years[-1], ## There are nYears-1 *intervals* between years
+        lambda.it, type="o", pch=16, xlab="Time", ylab="Growth rates")
+abline(h=1, lty=2, col="grey") ## Horizontal line
+legend(35, 1.8, c("Age class 1", "Age class 2", "Age class 3"),
+       col=1:3, pch=16, lty=1)
+@
+
+Find asymptotic $\lambda$ from the last time interval.
+<<ex-lam-proj>>=
+lambda.it[nYears-1,] ## These should all be the same
+lambda.proj <- lambda.it[nYears-1,1]
+lambda.proj ## Asymptotic growth rate
+@
+
+\clearpage
+
+Now we will use eigenanalysis to compute the growth rate, stable age
+distribution, and reproductive value.
+
+First compute $\lambda$.
 <<ex1-lam>>=
 eA <- eigen(A)
 lambda <- Re(eA$values[1])
+lambda  ## Asymptotic growth rate
+@
+
+Make sure it's the same growth rate that we found earlier.
+<<ex1-lam-check>>=
+lambda.proj
 lambda
 @
+
+
+Now find the stable age distribution.
+<<ex1-sad>>=
+SADu <- Re(eA$vectors[,1])
+SAD <- SADu/sum(SADu)
+SAD
+@
+
+Check to make sure that the stable age distribution computed using
+eigenanalysis is equal to that calculated from the projection.
+<<ex1-sad-check>>=
+SAD
+SAD.proj
+@
+
 
 
 Now compute the reproductive value (RV) of each age class.
