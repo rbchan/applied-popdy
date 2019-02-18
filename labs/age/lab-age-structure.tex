@@ -64,7 +64,7 @@
 {
   \Large
   \centering
-  Lab 6 Assignment --- Age-structured Models \\
+  Lab 5 Assignment --- Age-structured Models \\
   Due before your next lab \par
 }
 
@@ -72,7 +72,7 @@
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
+file something like: \texttt{Chandler\_Richard-lab5.xlsx}. \\
 
 \section*{Exercises}
 
@@ -113,7 +113,7 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
 
 {\bf Exercise II \\}
 
-Reproductive value (RV) can be used to determine which age class
+Reproductive value (RV) can be used to identify the age class that
 contributes the most to population growth. The inoculate method is a
 way of computing RV by doing one projection for each of the age
 classes.
@@ -121,12 +121,12 @@ classes.
 For each projection, use a population size of 200 individuals, and put
 all individuals in one of the four age classes. For example, one
 projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The next
-projection will have all 200 individuals in the next age class. For
-each projection, record the total population size after 50 time
-steps. Reproductive value is calculated by dividing each projection's
-total population sizes at t=50 by the total population size from the
-first projection. (As a result, RV will always be 1 for the first age
-class when using this method).
+projection will have all 200 individuals in the next age class, and so
+on. For each projection, record the total population size after 50
+time steps. Reproductive value is calculated by dividing each
+projection's total population sizes at t=50 by the total population
+size from the first projection. (As a result, RV will always be 1 for
+the first age class when using this method).
 
 \begin{itemize}
   \item[(a)] Given the following Leslie matrix, calculate the RV of each
@@ -144,8 +144,9 @@ class when using this method).
   \centering
   \caption{Leslie Matrix}
   \begin{tabular}{cccc}
+%    \hline
+%    Age class 1 & Age class 2 & Age class 3 & Age class 4 \\
     \hline
-    Age class 1 & Age class 2 & Age class 3 & Age class 4 \\
     1.6 & 1.5 & 0.25 & 0 \\
     0.8 & 0   & 0    & 0 \\
     0   & 0.5 & 0    & 0 \\

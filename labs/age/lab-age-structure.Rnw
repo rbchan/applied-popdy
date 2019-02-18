@@ -16,7 +16,7 @@
 {
   \Large
   \centering
-  Lab 6 Assignment --- Age-structured Models \\
+  Lab 5 Assignment --- Age-structured Models \\
   Due before your next lab \par
 }
 
@@ -24,7 +24,7 @@
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
+file something like: \texttt{Chandler\_Richard-lab5.xlsx}. \\
 
 \section*{Exercises}
 
@@ -65,7 +65,7 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
 
 {\bf Exercise II \\}
 
-Reproductive value (RV) can be used to determine which age class
+Reproductive value (RV) can be used to identify the age class that
 contributes the most to population growth. The inoculate method is a
 way of computing RV by doing one projection for each of the age
 classes.
@@ -96,8 +96,9 @@ the first age class when using this method).
   \centering
   \caption{Leslie Matrix}
   \begin{tabular}{cccc}
+%    \hline
+%    Age class 1 & Age class 2 & Age class 3 & Age class 4 \\
     \hline
-    Age class 1 & Age class 2 & Age class 3 & Age class 4 \\
     1.6 & 1.5 & 0.25 & 0 \\
     0.8 & 0   & 0    & 0 \\
     0   & 0.5 & 0    & 0 \\

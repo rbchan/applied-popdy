@@ -12,5 +12,5 @@
 *.Rdata
 cache/
 auto/
-exam/
+exams/
 KEY-*
