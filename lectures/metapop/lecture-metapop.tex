@@ -57,7 +57,7 @@
 \usepackage{bm}
 \usepackage{changepage}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows,snakes,backgrounds}
+\usetikzlibrary{shapes,arrows,decorations,backgrounds}
 %\usepackage[usenames,dvipsnames]{color}
 \usepackage{animate}
 
@@ -90,13 +90,12 @@
   \begin{center} \Large
     A {\color{TealBlue}
       \bf metapopulation} is a population of
-    subpopulations
+    subpopulations linked by dispersal
   \end{center}
   \pause
   {\bf Properties}
   \begin{itemize}
     \item Subpopulations occur in discrete habitat patches
-    \item Subpopulations are linked by dispersal
     \item The landscape ``matrix'' is not suitable for reproduction
   \end{itemize}
 \end{frame}
@@ -109,7 +108,7 @@
     \begin{column}{0.6\textwidth}
       \begin{itemize}[<+->]
         \item Many populations are fragmented
-        \item Metapopulation models can be used to predict dynamics of
+        \item Metapopulation models can be used to forecast dynamics of
           fragmented populations
         \item Models can be used to identify critical habitat patches or
           locations for establishing new subpopulations
@@ -225,11 +224,77 @@
 
 
 
+\begin{frame}
+  \frametitle{What influences movement?}
+  The movement probabilities ($\pi_{i,j}$) represent the outcomes of
+  both immigration and emigration.
+  \vfill
+  What influences these probabilities?
+  \pause
+  \vfill
+  Examples
+  \begin{itemize}
+    \item Habitat quality in the patch of origin
+    \item Habitat quality in the landscape between origin and
+      destination patches
+    \item Habitat quality in the destination patch
+    \item Distance between patches
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Sources, sinks, and traps}
+  {\bf Source \\}
+  A patch with $\lambda>1$. Sources tend to be net exporters of individuals.  
+  \pause
+  \vfill
+  {\bf Sink \\}
+  A patch with $\lambda<1$. Sinks would go extinct in the absence of immigration.
+  \pause
+  \vfill
+  {\bf Ecological trap \\}
+  A sink that animals incorrectly perceive as a high quality source.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Density and habitat quality}
+  Can we identify sources, sinks, and traps by estimating
+  patch-specific density (at one point in time)? \\
+  \pause
+  \vfill
+  \begin{columns}
+    \wide
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{figs/vanhorne_1983}} \\
+  \end{columns}
+  \pause
+  \vfill
+  \centering
+  \large
+  \alert{\bf Assignment}: Read this paper and be prepared to discuss it \\
+\end{frame}
+
+
 
 
 %\section{Non-spatial model}
 %\section{Deterministic}
 \section{Occupancy models}
+
+
+\begin{frame}[plain]
+  \Huge
+  \centering
+  \vfill
+  \bf 
+  \color{MidnightBlue}
+  Occupancy models \\
+  \vfill
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -587,7 +652,19 @@
 
 \begin{frame}
   \frametitle{Results}
-  \includegraphics[width=\textwidth]{figs/col-ext}
+  \includegraphics[width=0.95\textwidth]{figs/col-ext} \\
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Results}
+  \begin{columns}
+    \begin{column}{\textwidth}
+      \centering
+      \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012} \\
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
@@ -595,16 +672,7 @@
 \begin{frame}
   \frametitle{Results}
   \begin{center}
-    \animategraphics[loop,controls,width=0.7\textwidth]{1}{figs/colMap}{2004}{2012}
-  \end{center}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Results}
-  \begin{center}
-    \includegraphics[width=0.38\textwidth]{figs/proj-ext2}
+    \includegraphics[width=0.38\textwidth]{figs/proj-ext2} \\
   \end{center}
 \end{frame}
 
