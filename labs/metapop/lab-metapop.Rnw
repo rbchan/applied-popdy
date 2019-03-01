@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+
+%\usepackage[roman]{../pres1}
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+
+\begin{document}
+
+{
+  \Large
+  \centering
+  Lab 8 Assignment --- Metapopulation Models \\
+  Due before your next lab \par
+}
+
+Answer each of the following questions and upload your answers to ELC
+as a single Excel file. Be sure to show your calculations. Name the
+file something like: \texttt{Chandler\_Richard-lab8.xlsx}. \\
+
+
+
+\vspace{12pt}
+
+\section*{Exercise I: Occupancy-based metapopulation models}
+
+
+Imagine a metapopulation consisting of 16 sites. In the first year
+($t=0$), the first 2 sites are occupied and the other 14 are not.
+\begin{enumerate}
+  \item[(a)] Project the metapopulation forward 40 years using a
+    stochastic non-spatial model with colonization ($\gamma$) equal to
+    0.3 and local extinction ($\epsilon$) equal to 0.2.
+
+    Hint: to simulate whether a site is occupied or not in a given year,
+    you must first compute occupancy probability ($\psi$) and then generate
+    the binary presence/absence value using a Bernoulli distribution. The
+    best way to generate a Bernoulli random variable in Excel is to use
+    the \texttt{IF} and \texttt{RAND} functions, not the Bernoulli
+    random number generator. Your formula should look something like
+    \texttt{=IF(RAND()<CELL, 1, 0)} with \texttt{CELL} replaced by an
+    actual cell containing the expected occurrence probability
+    ($\psi$). It will be much faster to drag these equations across
+    cells for all years and sites, than it would be using the
+    Bernoulli random number generator.
+
+    Additional information: In short, the \texttt{RAND} function draws a
+    random number between 0 and 1. The \texttt{IF} function returns a 1 if
+    this value is less than occupancy probability ($\psi$), or it returns
+    a 0 if the random number is greater than $\psi$. This is doing the
+    same thing as using the Bernoulli distribution to draw a random
+    number.
+  \item[(b)] Make a graph of the proportion of sites occupied (PrO)
+    on the y-axis, and time on the x-axis.
+  \item[(c)] According to this model, is it possible for this
+    metapopulation to go permanently extinct? Why or why not?
+  \item[(d)] Repeat the simulation several times by double-clicking in
+    an empty cell or hitting F9. Why does the metapopulation appear to
+    converge to a stochastic equilibrium?
+\end{enumerate}
+
+
+
+
+\clearpage
+
+
+\section*{Exercise II: Abundance-based metapopulation models }
+You have been hired by the Charles Darwin Research Center on the
+Galapagos Islands. Your job is to assess a metapopulation of a species
+of special concern -- the Magnificent Frigatebird.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{figs/frigatebird}
+  \label{fig:frig}
+\end{figure}
+
+
+\subsection*{Part A}
+
+Historical (fake) data showed that 2 populations of frigatebirds were
+isolated for 40 years.
+
+\begin{enumerate}
+  \item[(a)] Project each population forward 40 years using the basic
+    geometric growth model with $\lambda_1=1.05$ and
+    $\lambda_2=0.95$. Calculate the final growth rate ($N_{t+1}/N_t$)
+    for each population.
+  \item[(b)] Next, imagine the 2 populations were actually connected
+    in a small metapopulation. Use the abundance-based metapopulation
+    model (including immigration and emigration) to project these
+    connected subpopulations forward 40 years. Calculate the final
+    growth rates for each population.
+  \item[(c)] Make a graph of abundance vs. time for the isolated and
+    connected populations.
+  \item[(d)] Is site 2 to be a source or a sink? With this in mind,
+    briefly describe the patterns you see in the graph and discuss the
+    effects (positive and negative) of linking the two populations via
+    dispersal if your goal was to sustain frigatebirds on the Galapagos.
+\end{enumerate}
+
+\subsection*{Part B}
+
+After further research, you have discovered that the frigatebirds
+currently occupy a metapopulation consisting of 4 subpopulations
+(islands). Movement probabilities and starting population sizes of
+subpopulations are given for you in Excel.
+
+\begin{enumerate}
+  \item[(a)] Using the abundance-based metapopulation model, project
+    the metapopulation forward 50 years. (Be especially careful about
+    locking cells and using the movement rates in the appropriate
+    places in the model).
+  \item[(b)] Create two graphs depicting population sizes ($n_{i,t}$)
+    and growth rates ($\lambda_{i,t}$) over time.
+  \item[(c)] Is this metapopulation viable or is it likely to go
+    extinct? Explain.
+\end{enumerate}
+
+\end{document}
+
