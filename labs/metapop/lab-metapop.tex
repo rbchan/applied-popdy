@@ -87,7 +87,7 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     0.3 and local extinction ($\epsilon$) equal to 0.2.
 
     Hint: to simulate whether a site is occupied or not in a given year,
-    you must first compute occupancy probability ($\psi$) and the generate
+    you must first compute occupancy probability ($\psi$) and then generate
     the binary presence/absence value using a Bernoulli distribution. The
     best way to generate a Bernoulli random variable in Excel is to use
     the \texttt{IF} and \texttt{RAND} functions, not the Bernoulli
@@ -130,9 +130,10 @@ of special concern -- the Magnificent Frigatebird.
   \label{fig:frig}
 \end{figure}
 
+\vspace{-24pt}
 
 \subsection*{Part A}
-
+\vspace{-12pt}
 Historical (fake) data showed that 2 populations of frigatebirds were
 isolated for 40 years.
 
@@ -155,7 +156,7 @@ isolated for 40 years.
 \end{enumerate}
 
 \subsection*{Part B}
-
+\vspace{-12pt}
 After further research, you have discovered that the frigatebirds
 currently occupy a metapopulation consisting of 4 subpopulations
 (islands). Movement probabilities and starting population sizes of
@@ -172,5 +173,127 @@ subpopulations are given for you in Excel.
     extinct? Explain.
 \end{enumerate}
 
+
+
+
+\clearpage
+
+
+\section*{Occupancy based metapopulation models in {\tt R} }
+
+
+Here is an example of how to simulate occupancy data. First, define
+the parameters and create an empty matrix to store the binary
+presence/absence data.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{nSites} \hlkwb{<-} \hlnum{10}
+\hlstd{nYears} \hlkwb{<-} \hlnum{12}
+\hlstd{gamma} \hlkwb{<-} \hlnum{0.2}    \hlcom{## Colonization probability}
+\hlstd{epsilon} \hlkwb{<-} \hlnum{0.25} \hlcom{## Local extinction probability}
+\hlstd{O} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nSites, nYears)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Let's assume that we know that the first 8 sites were occupied in year
+1. In practice, we would have to estimate initial occupancy.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{O[,}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlkwd{rep}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{8}\hlstd{),} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+In subsequent years, occupancy is determined by colonization and
+extinction. We can simulate data using the {\tt rbinom}
+function. When you set the {\tt size} argument to 1, {\tt rbinom}
+generates random numbers from a Bernoulli distribution.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{psi.t} \hlkwb{<-} \hlstd{O[,t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{epsilon)} \hlopt{+} \hlstd{(}\hlnum{1}\hlopt{-}\hlstd{O[,t}\hlopt{-}\hlnum{1}\hlstd{])}\hlopt{*}\hlstd{gamma}
+    \hlstd{O[,t]} \hlkwb{<-} \hlkwd{rbinom}\hlstd{(nSites,} \hlkwc{size}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{prob}\hlstd{=psi.t)}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Take a look at the binary occupancy data.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{O}
+\end{alltt}
+\begin{verbatim}
+##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
+##  [1,]    1    1    0    1    0    0    1    1    0     0     0     1
+##  [2,]    1    1    1    1    0    0    0    0    0     1     1     0
+##  [3,]    1    1    1    1    1    1    0    0    0     0     1     1
+##  [4,]    1    1    1    1    1    0    0    0    0     0     1     1
+##  [5,]    1    1    0    0    0    0    1    1    0     0     0     1
+##  [6,]    1    1    0    0    0    0    0    0    0     1     1     1
+##  [7,]    1    0    0    1    1    1    1    1    1     1     1     1
+##  [8,]    1    1    1    1    1    1    1    1    1     1     0     0
+##  [9,]    0    0    0    0    0    0    1    1    1     1     0     0
+## [10,]    0    1    0    0    0    1    1    1    1     1     1     1
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Compute the number of sites occupied each year.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{nOccupied} \hlkwb{<-} \hlkwd{colSums}\hlstd{(O)}
+\hlstd{nOccupied}
+\end{alltt}
+\begin{verbatim}
+##  [1] 8 8 4 6 4 4 6 6 4 6 6 7
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\clearpage
+
+Compute the proportion of sites occupied (PrO) each year.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{PrO} \hlkwb{<-} \hlstd{nOccupied} \hlopt{/} \hlstd{nSites}
+\hlstd{PrO}
+\end{alltt}
+\begin{verbatim}
+##  [1] 0.8 0.8 0.4 0.6 0.4 0.4 0.6 0.6 0.4 0.6 0.6 0.7
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Graph it.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, PrO,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Proportion of sites occupied"}\hlstd{,}
+     \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{1}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/PrO-graph-1} 
+
+\end{knitrout}
+
+
+\clearpage
+
+\section*{Abundance-based metapopulation models in \texttt{R}}
+
+
 \end{document}
+
+
+
 
