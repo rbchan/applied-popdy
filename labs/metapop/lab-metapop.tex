@@ -149,10 +149,10 @@ isolated for 40 years.
     growth rates for each population.
   \item[(c)] Make a graph of abundance vs. time for the isolated and
     connected populations.
-  \item[(d)] Is site 2 to be a source or a sink? With this in mind,
+  \item[(d)] Is site 2 a source or a sink? With this in mind,
     briefly describe the patterns you see in the graph and discuss the
     effects (positive and negative) of linking the two populations via
-    dispersal if your goal was to sustain frigatebirds on the Galapagos.
+    dispersal if your goal was to sustain frigatebirds.
 \end{enumerate}
 
 \subsection*{Part B}
@@ -232,16 +232,16 @@ Take a look at the binary occupancy data.
 \end{alltt}
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
-##  [1,]    1    1    0    1    0    0    1    1    0     0     0     1
-##  [2,]    1    1    1    1    0    0    0    0    0     1     1     0
-##  [3,]    1    1    1    1    1    1    0    0    0     0     1     1
-##  [4,]    1    1    1    1    1    0    0    0    0     0     1     1
-##  [5,]    1    1    0    0    0    0    1    1    0     0     0     1
-##  [6,]    1    1    0    0    0    0    0    0    0     1     1     1
-##  [7,]    1    0    0    1    1    1    1    1    1     1     1     1
-##  [8,]    1    1    1    1    1    1    1    1    1     1     0     0
-##  [9,]    0    0    0    0    0    0    1    1    1     1     0     0
-## [10,]    0    1    0    0    0    1    1    1    1     1     1     1
+##  [1,]    1    1    1    1    0    0    0    0    0     0     0     1
+##  [2,]    1    1    1    1    0    0    1    0    0     0     1     1
+##  [3,]    1    1    0    0    0    0    1    1    1     1     1     0
+##  [4,]    1    1    1    1    0    0    0    1    1     1     1     0
+##  [5,]    1    1    1    1    1    1    1    0    0     0     0     0
+##  [6,]    1    0    0    1    1    1    1    1    1     0     0     1
+##  [7,]    1    1    1    0    0    0    0    0    0     0     0     1
+##  [8,]    1    0    0    0    0    1    1    1    1     1     1     0
+##  [9,]    0    1    1    1    1    1    1    1    1     1     1     0
+## [10,]    0    0    1    1    1    1    0    0    0     0     0     1
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -254,7 +254,7 @@ Compute the number of sites occupied each year.
 \hlstd{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 8 4 6 4 4 6 6 4 6 6 7
+##  [1] 8 7 7 7 4 5 6 5 5 4 5 5
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -269,7 +269,7 @@ Compute the proportion of sites occupied (PrO) each year.
 \hlstd{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.8 0.4 0.6 0.4 0.4 0.6 0.6 0.4 0.6 0.6 0.7
+##  [1] 0.8 0.7 0.7 0.7 0.4 0.5 0.6 0.5 0.5 0.4 0.5 0.5
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -290,6 +290,125 @@ Graph it.
 \clearpage
 
 \section*{Abundance-based metapopulation models in \texttt{R}}
+
+Suppose we have a metapopulation with 3 subpopulations characterized
+by growth rates of $\lambda_1=0.98$, $\lambda_2=1$, and
+$\lambda_3=1.02$. The transition probability matrix is:
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ccc}
+    \hline
+    0.9 & 0.0 & 0.1 \\
+    0.2 & 0.7 & 0.1 \\
+    0.1 & 0.0 & 0.9 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Define parameters in \texttt{R}.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{lambda} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{0.98}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.02}\hlstd{)}
+\hlstd{pi} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}
+    \hlnum{0.9}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.1}\hlstd{,}
+    \hlnum{0.2}\hlstd{,} \hlnum{0.7}\hlstd{,} \hlnum{0.1}\hlstd{,}
+    \hlnum{0.1}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.9}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{ncol}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hlstd{nPatches} \hlkwb{<-} \hlnum{3}
+\hlstd{nYears} \hlkwb{<-} \hlnum{50}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Set the initial population sizes to 100, 110, and 120.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{n} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nYears, nPatches)}
+\hlstd{n[}\hlnum{1}\hlstd{,]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{110}\hlstd{,} \hlnum{120}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Project the metapopulation forward.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{n[t,}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{])} \hlopt{+}
+        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{]}
+    \hlstd{n[t,}\hlnum{2}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{])} \hlopt{+}
+        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{2}\hlstd{]}
+    \hlstd{n[t,}\hlnum{3}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{2}\hlstd{])} \hlopt{+}
+        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{]}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Do the same projection, but use matrix multiplication.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{n[t,]} \hlkwb{<-} \hlstd{pi} \hlopt{%*%} \hlstd{(n[t}\hlopt{-}\hlnum{1}\hlstd{,]}\hlopt{*}\hlstd{lambda)}
+    \hlcom{## Same as:}
+    \hlcom{## N[t,] <- pi %*% diag(lambda) %*% n[t-1,]}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+% pi %*% diag(lambda) %*% n[t-1,] works too
+
+Calculate the growth rates.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{lambda.it} \hlkwb{<-} \hlstd{n[}\hlopt{-}\hlnum{1}\hlstd{,]} \hlopt{/} \hlstd{n[}\hlopt{-}\hlstd{nYears,]}
+\hlcom{## Same as:}
+\hlcom{## lambda.it <- n[2:nYears,] / n[1:(nYears-1),]}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\clearpage
+
+Visualize changes in abundance over time.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{matplot}\hlstd{(n,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
+        \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{140}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{legend}\hlstd{(}\hlkwc{x}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{y}\hlstd{=}\hlnum{140}\hlstd{,}
+       \hlkwd{c}\hlstd{(}\hlstr{"Subpopulation 1"}\hlstd{,} \hlstr{"Subpopulation 2"}\hlstd{,} \hlstr{"Subpopulation 3"}\hlstd{),}
+       \hlkwc{lty}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/Nmeta-plot-n-1} 
+
+\end{knitrout}
+
+\clearpage
+
+Visualize changes in growth rates over time.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{matplot}\hlstd{(lambda.it,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Growth rate"}\hlstd{,}
+        \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.98}\hlstd{,} \hlnum{1.04}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{legend}\hlstd{(}\hlkwc{x}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{y}\hlstd{=}\hlnum{1.04}\hlstd{,}
+       \hlkwd{c}\hlstd{(}\hlstr{"Subpopulation 1"}\hlstd{,} \hlstr{"Subpopulation 2"}\hlstd{,} \hlstr{"Subpopulation 3"}\hlstd{),}
+       \hlkwc{lty}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{)}
+\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"grey"}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/Nmeta-plot-lam-1} 
+
+\end{knitrout}
+
 
 
 \end{document}
