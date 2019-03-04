@@ -16,13 +16,13 @@
 {
   \Large
   \centering
-  Lab 8 Assignment --- Metapopulation Models \\
+  Lab 7 Assignment --- Metapopulation Models \\
   Due before your next lab \par
 }
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab8.xlsx}. \\
+file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
 
 
 
@@ -143,14 +143,14 @@ nSites <- 10
 nYears <- 12
 gamma <- 0.2    ## Colonization probability
 epsilon <- 0.25 ## Local extinction probability
-O <- matrix(NA, nSites, nYears)
 @
 
 
 Let's assume that we know that the first 8 sites were occupied in year
 1. In practice, we would have to estimate initial occupancy.
 <<sim-occ-init>>=
-O[,1] <- c(rep(1, 8), 0, 0)
+O <- psi <- matrix(NA, nYears, nSites)
+O[1,] <- c(rep(1, 8), 0, 0)
 @
 
 In subsequent years, occupancy is determined by colonization and
@@ -159,8 +159,8 @@ function. When you set the {\tt size} argument to 1, {\tt rbinom}
 generates random numbers from a Bernoulli distribution.
 <<sim-occ-colext>>=
 for(t in 2:nYears) {
-    psi.t <- O[,t-1]*(1-epsilon) + (1-O[,t-1])*gamma
-    O[,t] <- rbinom(nSites, size=1, prob=psi.t)
+    psi.t <- O[t-1,]*(1-epsilon) + (1-O[t-1,])*gamma
+    O[t,] <- rbinom(nSites, size=1, prob=psi.t)
 }
 @
 
@@ -171,7 +171,7 @@ O
 
 Compute the number of sites occupied each year.
 <<Nocc>>=
-nOccupied <- colSums(O)
+nOccupied <- rowSums(O)
 nOccupied
 @
 
@@ -242,12 +242,12 @@ for(t in 2:nYears) {
 Do the same projection, but use matrix multiplication.
 <<Nmeta-matproj>>=
 for(t in 2:nYears) {
-    n[t,] <- pi %*% (n[t-1,]*lambda)
+    n[t,] <- t(pi) %*% (n[t-1,]*lambda)
     ## Same as:
-    ## N[t,] <- pi %*% diag(lambda) %*% n[t-1,]
+    ## N[t,] <- t(pi) %*% diag(lambda) %*% n[t-1,]
 }
 @
-% pi %*% diag(lambda) %*% n[t-1,] works too
+
 
 Calculate the growth rates.
 <<Nmeta-lambda>>=
@@ -262,8 +262,8 @@ lambda.it <- n[-1,] / n[-nYears,]
 Visualize changes in abundance over time.
 <<Nmeta-plot-n>>=
 matplot(n, type="l", xlab="Time", ylab="Abundance",
-        ylim=c(100, 140), lwd=2)
-legend(x=1, y=140,
+        ylim=c(0, 220), lwd=2)
+legend(x=1, y=220,
        c("Subpopulation 1", "Subpopulation 2", "Subpopulation 3"),
        lty=1:3, col=1:3)
 @
@@ -273,8 +273,8 @@ legend(x=1, y=140,
 Visualize changes in growth rates over time.
 <<Nmeta-plot-lam>>=
 matplot(lambda.it, type="l", xlab="Time", ylab="Growth rate",
-        ylim=c(0.98, 1.04), lwd=2)
-legend(x=1, y=1.04,
+        ylim=c(0.7, 1.23), lwd=2)
+legend(x=5, y=1.23,
        c("Subpopulation 1", "Subpopulation 2", "Subpopulation 3"),
        lty=1:3, col=1:3)
 abline(h=1, col="grey", lty=1)
