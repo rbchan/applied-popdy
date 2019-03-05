@@ -4,3 +4,4 @@
 
 - Add R tips and guidance to the lab assignments
 
+- Provide more guidance for finding equilibrium solutions

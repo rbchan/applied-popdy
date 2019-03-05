@@ -244,7 +244,7 @@ Do the same projection, but use matrix multiplication.
 for(t in 2:nYears) {
     n[t,] <- t(pi) %*% (n[t-1,]*lambda)
     ## Same as:
-    ## N[t,] <- t(pi) %*% diag(lambda) %*% n[t-1,]
+    ## n[t,] <- t(pi) %*% diag(lambda) %*% n[t-1,]
 }
 @
 
