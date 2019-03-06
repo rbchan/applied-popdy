@@ -1,0 +1,411 @@
+\documentclass[color=usenames,dvipsnames]{beamer}
+%\documentclass[color=usenames,dvipsnames,handout]{beamer}
+
+%\usepackage[roman]{../pres1}
+\usepackage[sans]{../pres1}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{array}
+
+
+
+%\renewcommand\mathfamilydefault{\rmdefault}
+
+
+\begin{document}
+
+%\fontfamily{lmodern}
+
+\begin{frame}[plain]
+  \begin{center}
+    {\huge \bf Population Viability Analysis \par}
+    \vspace{0.5cm}
+    { \Large March 6, 2019} \\
+    {\color{blue} \rule{\textwidth}{1pt}}
+    \vfill
+    \includegraphics[height=4cm,keepaspectratio]{figs/Fenders_blue} %\hfill
+    \hspace{0.5cm}
+    \includegraphics[height=4cm,keepaspectratio]{figs/Urocyon_littoralis}
+  \end{center}
+\end{frame}
+
+
+
+% NOTE: Should spend 2 days on this lecture
+
+\section{Introduction}
+
+
+
+
+
+\begin{frame}
+  \frametitle{What is PVA?}
+  \Large
+  {\bf Population Viability Analysis \\}
+  \begin{quote}
+    The use of quantitative methods to predict the likely future
+    status of a population or collection of populations of
+    conservation concern.
+  \end{quote}
+  \small
+  \flushright (Morris and Doak 2002) \par
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{History}
+  First used by Shaffer (1983) to estimate the {\bf minimum viable
+    population} size in Yellowstone National Park
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figs/Grizzly_Denali}
+  \end{center}
+  \pause
+  \centering
+  Now routine part of species assessments and recovery plans \\
+\end{frame}
+
+
+
+% \begin{frame}
+%   \frametitle{PVA vs MVP}
+%   \large
+%   {\bf Population viability analysis\\}
+%   Estimating probability of going extinct \par
+%   \vspace{1cm}
+%   {\bf Minimum viable population \\}
+%   Estimating minimum population size \par
+% \end{frame}
+
+
+
+\section{Uses}
+
+
+
+
+\begin{frame}
+  \frametitle{Uses of PVA (from Morris and Doak (2002))}
+  \large
+%  \setbeamercovered{transparent}
+%  \begin{enumerate}[<+-| visible@+->][\bf \color{PineGreen} (1)]
+  \begin{enumerate}[\bf (1)]
+    \item<1-| alert@1> Assessing the extinction risk of a single population
+    \item<2-| alert@2> Comparing relative risks of two or more populations
+    \item<3-| alert@3> Analyzing and synthesizing monitoring data
+    \item<4-| alert@4> Identifying key life stages or demographic processes as
+      management targets
+    \item<5-| alert@5> Determining how large a reserve needs to be to achieve a
+      desired level of protection from extinction
+    \item<6-| alert@6> Determining how many individuals to release to establish a
+      new population
+    \item<7-| alert@7> Setting limits on the harvest or ``take'' from a population
+      that are compatible with its continued existence
+    \item<8-| alert@8> Determining how many (and which) populations are needed to
+      achieve a desired overall likelihood of species persistence
+  \end{enumerate}
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Steps of PVA}
+  % \begin{center}
+  %   \includegraphics[width=0.9\textwidth]{figs/components}
+  % \end{center}
+  \large
+%  \begin{enumerate}[<+->][\bf (1)]
+  \begin{enumerate}[\bf (1)]
+    \item Develop objectives
+    \item Develop a set of competing models
+    \item Design a study to collect necessary data
+    \item Fit models to data and select the best model(s)
+    \item Use model(s) to identify best management options
+    \item Implement management option, monitor the consequences, and refine models
+    \item Return to step \color{beamer@blendedblue}{\bf (4)}
+  \end{enumerate}
+  \vfill
+  \centering
+%  \uncover<8->{{\bf Very similar to adaptive management} \par}
+  \pause
+  {\bf Very similar to adaptive management \\}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Types of PVA}
+  \large
+%  \begin{enumerate}[<+- | visible@+->][\bf \color{PineGreen} (1)]
+  \begin{enumerate}[\bf (1)]
+    \item<1-> Count-based PVA
+      \begin{itemize}
+        \large
+        \item All you have is estimates of abundance in each year
+        \item This is the cheapest, but least-informative method
+      \end{itemize}
+    \item<1-> Demographic PVA
+      \begin{itemize}
+        \large
+        \item Requires estimates of vital rates
+        \item Useful for identifying key demographic parameters
+      \end{itemize}
+    \item<1-> Metapopulation viability analysis
+      \begin{itemize}
+        \large
+        \item Useful in reserve design
+      \end{itemize}
+    \item<1-> Spatially-explicit, individual-based PVA
+      \begin{itemize}
+        \large
+        \item Most realistic, but hardest to parameterize
+      \end{itemize}
+  \end{enumerate}
+  \vfill
+  \uncover<2->{\centering \bf All methods require clear definition of time horizon
+    and acceptable level of extinction risk \par}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Products of PVA}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figs/costben2}
+  \end{center}
+\end{frame}
+
+
+
+
+
+
+\section{Sensitivity Analysis}
+
+
+\begin{frame}
+  \frametitle{Sensitivity analysis}
+  A sensitivity analysis seeks to understand the degree to which
+  $\lambda$ is sensitive to changes in vital rates
+  \pause
+  \vfill
+  Usually applied to age- or stage-based population models \par
+  \pause
+  \vfill
+  The sensitivity of $\lambda$ to a change in a population parameter
+  $\theta$ (e.g., survival or fecundity), is:
+  \[
+%    \text{Sensitivity of}\; \lambda \; \text{to parameter}\; x \;= \frac{\Delta \lambda}{\Delta x}
+    \text{sensitivity} = \frac{\Delta \lambda}{\Delta \theta}
+  \]
+  \pause
+  \vfill
+  {\bf Sensitivities allow us to make statements such as:} \\
+  ``Increasing juvenile survival by 0.2 increases $\lambda$ by
+  0.01, whereas increasing adult survival by 0.2 increases $\lambda$ by
+  0.02. Therefore, population growth is more sensitive to changes in
+  adult survival.''
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Sensitivity example}
+  \centering
+  \small
+  \begin{tabular}{lccc}
+    \hline
+    Parameter & $\Delta \theta$ & $\Delta \lambda$ & Sensitivity \\
+    \hline
+    Fecundity of first age class ($f_1$)  & 0.05 & 0.010 & 0.20 \\ %\pause
+    Fecundity of second age class ($f_2$) & 0.05 & 0.003 & 0.06 \\ %\pause
+    Survival of first age class ($s_1$)   & 0.05 & 0.040 & 0.80 \\ %\pause
+    Survival of second age class ($s_2$)   & 0.05 & 0.030 & 0.60 \\
+    \hline
+  \end{tabular}
+%  \pause
+  \vfill
+  \normalsize
+  \centering Sensitivies don't have to sum to 1 \par
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Elasticity}
+  A problem with sensitivities is that it is hard to compare values
+  for parameters on different scales, such as survival and fecundity \\
+  \pause
+  \vfill
+  For this reason, it is usually better to report ``elasticities''
+  instead \\
+  \pause
+  \vfill
+  {\bf Elasticity}: the proportional change in $\lambda$ caused by
+  proportional changes in vital rates \\
+  \pause
+  \vfill
+   Easier interpretation because: %\\
+   \begin{itemize}
+     \item Standardized units
+     \item Values sum to 1
+   \end{itemize}
+   \pause
+   \vfill
+   {\bf Examples}
+  \begin{itemize}
+    \item[] ``A 1\% increase in $f_1$ increases $\lambda$ by 0.01\%.''
+    \item[] ``A 1\% increase in $s_1$ increases $\lambda$ by 0.05\%.''
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{R code for sensitivity analysis}
+Suppose we have the following stage-structured projection matrix:
+<<A,size='scriptsize'>>=
+A <- matrix(c(
+    0.2, 0.8, 1.0, 0.9,
+    0.4, 0.0, 0.0, 0.0,
+    0.0, 0.6, 0.0, 0.0,
+    0.0, 0.0, 0.8, 0.5), nrow=4, byrow=TRUE)
+@
+
+We can use eigenanalysis to compute $\lambda$, stable age
+distribution, and reproductive value.
+
+<<eigen,size='scriptsize'>>=
+eA <- eigen(A)
+lam <- Re(eA$values[1])
+lam                              ## Asymtotic growth rate
+
+w <- Re(eA$vectors[,1])
+w <- w/sum(w)                    ## Stable age distribution
+
+v <- Re(eigen(t(A))$vectors[,1]) ## Reproductive value
+@
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{R code for sensitivity analysis}
+  The sensitivities are given by $z_{ij}=\frac{v_i w_j}{{\bf v}{\bf w}}$
+<<sen,size='scriptsize'>>=
+z <- outer(v,w)/c(v%*%w)
+z ## Sensitivites
+@
+\pause
+\vfill
+The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
+<<el,size='scriptsize'>>=
+e <- A*z/lam
+e  ## Elasticities
+@
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Sensitivity and elasticity}
+ {\bf Take-home points} \\
+ \vfill
+  Sensitivity measures the change in $\lambda$ given an absolute
+  change in a parameter \\
+  \vfill
+  Elasticity measures the proportional change in $\lambda$ given a
+  proportional change in a parameter
+\end{frame}
+
+
+
+
+\section{Summary}
+
+
+
+\begin{frame}
+  \frametitle{Problems with PVA}
+  \large
+  Most PVA's are {\it ``essentially games played with
+    guesses''} (Caughley, G. 1994. Conservation Biology) \par
+  \pause
+  \vspace{0.5cm}
+  Many PVA's don't include multiple models corresponding to different
+  hypotheses \par
+  \pause
+  \vspace{0.5cm}
+  {Some software encourages this \\}
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Summary}
+  \large
+  {\bf Final thoughts}
+  \begin{itemize}[<+->]
+    \item People often say that PVA's require too much data
+    \item[]
+    \item But what is the alternative?
+    \item[]
+    \item When data are limited (and they always are), you must
+      decrease the time horizon and acknowledge uncertainty in decision process
+  \end{itemize}
+\end{frame}
+
+
+\begin{comment}
+<<>>=
+A <- matrix(c(
+    0.2, 0.8, 1.0, 0.9,
+    0.4, 0.0, 0.0, 0.0,
+    0.0, 0.6, 0.0, 0.0,
+    0.0, 0.0, 0.8, 0.5), nrow=4, byrow=TRUE)
+eA <- eigen(A)
+eA
+
+lam <- Re(eA$values[1])
+lam
+
+w <- Re(eA$vectors[,1])
+w
+
+v <- Re(eigen(t(A))$vectors[,1])
+v
+
+sen <- outer(v,w)/c(v%*%w)
+sen
+
+el <- A*sen/lam
+el
+
+
+A2 <- A
+A2[1,1] <- A[1,1]+0.1
+lam2 <- Re(eigen(A2)$val[1])
+
+A3 <- A
+A3[1,2] <- A[1,2]+0.1
+lam3 <- Re(eigen(A3)$val[1])
+
+(lam2-lam)/0.1
+(lam3-lam)/0.1
+
+
+@
+
+\end{comment}
+
+
+
+\end{document}
+
+
