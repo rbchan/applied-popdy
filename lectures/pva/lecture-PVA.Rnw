@@ -9,8 +9,6 @@
 
 
 
-%\renewcommand\mathfamilydefault{\rmdefault}
-
 
 \begin{document}
 
@@ -206,10 +204,10 @@
   \pause
   \vfill
   {\bf Sensitivities allow us to make statements such as:} \\
-  ``Increasing juvenile survival by 0.2 increases $\lambda$ by
-  0.01, whereas increasing adult survival by 0.2 increases $\lambda$ by
+  ``Increasing subadult fecundity by 1 unit increases $\lambda$ by
+  0.01, whereas increasing adult fecundity by 1 unit increases $\lambda$ by
   0.02. Therefore, population growth is more sensitive to changes in
-  adult survival.''
+  adult fecundity.''
 \end{frame}
 
 
@@ -238,11 +236,9 @@
 \begin{frame}
   \frametitle{Elasticity}
   A problem with sensitivities is that it is hard to compare values
-  for parameters on different scales, such as survival and fecundity \\
-  \pause
-  \vfill
-  For this reason, it is usually better to report ``elasticities''
-  instead \\
+  for parameters on different scales, such as survival and
+  fecundity. For this reason, it is usually better to report
+  ``elasticities'' instead \\
   \pause
   \vfill
   {\bf Elasticity}: the proportional change in $\lambda$ caused by
