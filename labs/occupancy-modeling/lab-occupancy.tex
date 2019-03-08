@@ -69,7 +69,7 @@
   Due before your next lab \par
 }
 
-\vspace{12pt}
+\vspace{10pt}
 
 %% Answer each of the following questions and upload your answers to ELC
 %% as a single Excel file. Be sure to show your calculations. Name the
@@ -84,9 +84,10 @@ the file something like \texttt{Chandler-lab8.docx}.
 
 %\vspace{12pt}
 
-\section*{Preliminaries: Getting Data into Program PRESENCE}
-
+\section*{\normalsize Preliminaries: Getting Data into Program PRESENCE}
+\vspace{-10pt}
 \begin{enumerate}
+  \itemsep-6pt
   \item[(1)]  Open PRESENCE
   \item[(2)]  Go to \texttt{File > New Project}
   \item[(3)]  Select \texttt{Input Data Form}
@@ -110,6 +111,14 @@ the file something like \texttt{Chandler-lab8.docx}.
 \end{enumerate}
 
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/pres-setup}
+  \caption{\small This is where you tell PRESENCE about your data}
+  \label{fig:pres-setup}
+\end{figure}
+
+\clearpage
 
 \section*{Exercise I: Single-season models}
 
@@ -140,6 +149,15 @@ instructions above).
     and clicking on \texttt{View model output}.  There is LOTS of
     output. You want to focus on the \texttt{Individual Site
       Estimates}, which should look something like this: 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/pres-est}
+  \caption{\small Estimates, standard errors, and confidence intervals
+  for psi ($\psi$) and $p$.}
+  \label{fig:pres-est}
+\end{figure}
+    
   \item[(b)] Now run another model using \texttt{veght} as a
     predictor variable (covariate). This is tricky. First, choose 
     \texttt{Run > Analysis:single-season}. Then, click on
@@ -153,8 +171,22 @@ instructions above).
     1's not 0's (see screenshots below). Close the design matrix
     window and then name the model something like 
     \texttt{psi(veght)p(veght)} and hit \texttt{OK to Run}. 
-  \item[(c)] Is this model better than the first, based on AIC (the
-    lower the AIC the better)? 
+
+\begin{figure}[h!]
+  \centering
+  \fbox{\includegraphics[height=5cm]{figs/pres-des-psi}} \hfill
+  \fbox{\includegraphics[height=5cm]{figs/pres-des-p}}   \\
+  \caption{\small This is where you tell PRESENCE about the covariates
+    in the model.}
+  \label{fig:pres-design}
+\end{figure}
+%\clearpage
+
+  \item[(c)] Is this model better than the first, based on AIC? The
+    lower the AIC the better the model.\footnote{$\mathrm{AIC} =
+      -2*\mathrm{log(likelihood)} + 2*\mathrm{nParameters}$. AIC
+      favors models that explain a lot of variation in the data using
+      a small number of parameters.}  
   \item[(d)] Right-click on the model and choose 
     \texttt{View model output} to find the parameter estimates under
     \texttt{Untransformed Estimates of coefficients for covariates
