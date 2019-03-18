@@ -35,7 +35,7 @@
 
 \begin{frame}
   \frametitle{Motivation}
-  {\centering \Large Occupancy models were developed to estimate metapopulation
+  {\centering \large Occupancy models were developed to estimate metapopulation
     parameters when \alert{detection probability} ($p$) is $<1$. \par}
   \pause
 %  \Large
@@ -50,7 +50,7 @@
   Parameters of interest:
   \begin{itemize}[<+->]
     \item $\psi$ -- Probability that a site is occupied
-    \item $\gamma$ -- Probability that an unoccupied site is colonized
+    \item $\gamma$ -- Probability that an unoccupied site becomes colonized
     \item $\varepsilon$ -- Probability that an occupied site goes extinct
     \item $p$ -- Probability of detecting at least one individual at a
       site that is occupied (on a single sampling occasion)
@@ -133,24 +133,8 @@
 
 
 \begin{frame}
-  \frametitle{Design}
-  \large
-  To estimate $\psi$ and $p$, we should use a good study design:
-  \begin{itemize}[<+->]
-    \item We need multiple sites
-    \item Sites should be randomly selected
-    \item We must have multiple sampling occasions at (a subset of) the sites
-%    \item Determining how many sites and occasions depends on $\psi$ and $p$
-  \end{itemize}
-\end{frame}
-
-
-
-
-
-\begin{frame}
   \frametitle{Single-season model}
-  \Large
+  \large
   {\centering Model for the occurrence state}
   \[
     O_{i} \sim \mbox{Bernoulli}(\psi)
@@ -165,6 +149,25 @@
   \vspace{0.5cm}
   We need to estimate $\psi$ (occurrence probability) and $p$ (detection probability)
 \end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Design}
+  \large
+  To estimate $\psi$ and $p$, we should use a good study design:
+  \begin{itemize}[<+->]
+    \item We need multiple sites
+    \item Sites should be randomly selected
+    \item We must have multiple sampling occasions at (a subset of) the sites
+%    \item Determining how many sites and occasions depends on $\psi$ and $p$
+  \end{itemize}
+\end{frame}
+
+
+
 
 
 
@@ -294,7 +297,7 @@
 
 \begin{frame}
   \frametitle{Overall detection probability}
-  \Large
+  \large
   {\centering If you sample a site $K$ times, the overall detection
     probability ($\bar{p}$) is:}
   \[
@@ -332,7 +335,7 @@
 
 \begin{frame}
   \frametitle{Covariates}
-  \Large
+  \large
   The value of $\psi$ or $p$ may depend on other variables,
   e.g. habitat, weather, observer abilities \\
 %  \begin{itemize}
@@ -392,7 +395,7 @@ dev.off()
 
 \begin{frame}
   \frametitle{Multi-season models}
-  \Large
+  \large
   With more than 1 season, we can estimate all the parameters of our
   metapopulation model, plus detection probability $p$
   \pause

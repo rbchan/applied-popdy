@@ -157,21 +157,25 @@ instructions above).
 
 \section*{Exercise II: Multi-season model}
 
-Use the Eastern newt ({\it Notophthalmus viridescens}) data from the
-past few years to answer the following. Note: I pooled the data from
+Use the southern two-lined salamander ({\it Eurycea cirrigera})
+%Eastern newt ({\it Notophthalmus viridescens}) 
+data from the
+past few years to do the following. Note: I pooled the data from
 the 5 swipes of each team.   
 
 \begin{enumerate}
-  \item[(a)] Create a new PRESENCE project by importing the newt
-    data. You will need to indicate that there are 15 sites, 40
-    columns, and \textcolor{red}{10 occasions per season}. The last piece of
-    information tells PRESENCE that there were 4 seasons (with 10 team
+  \item[(a)] Close your old project, restart PRESENCE, and create a
+    new project by importing the salamander
+    data. You will need to indicate that there are 15 sites, 35
+    columns, and \textcolor{red}{7 occasions per season}. The last piece of
+    information tells PRESENCE that there were 5 seasons (with 7 team
     surveys per season).  
-  \item[(b)] Use Program PRESENCE to estimate psi, gamma, epsilon,
-    and p (\texttt{Run > Analysis:multi-season} and accept default
-    settings). The estimates can be found by right clicking on the
+  \item[(b)] Use Program PRESENCE to estimate psi ($\psi$), gamma
+    ($\gamma$), epsilon ($\epsilon$),
+    and p (\texttt{Run > Analysis:multi-season > simple multi-season}
+    and accept default settings). The estimates can be found by right clicking on the
     model name and choosing \texttt{View model output}. Look for the 
-    \texttt{Individual site estimates} for each parameter. Report the
+    \texttt{Real parameter estimates}. Report the 4 unique
     estimates and standard errors by creating a table in your Word
     document.  
   \item[(c)] Provide clear interpretations of your estimates. 
@@ -186,12 +190,12 @@ the 5 swipes of each team.
 
 
 
-\clearpage
+%% \clearpage
 
-\section*{Occupancy modeling in \texttt{R}}
+%% \section*{Occupancy modeling in \texttt{R}}
 
 
-Occupancy models can be fit using the 'unmarked' package in {\tt R}. 
+%% Occupancy models can be fit using the 'unmarked' package in {\tt R}. 
 
 
 
