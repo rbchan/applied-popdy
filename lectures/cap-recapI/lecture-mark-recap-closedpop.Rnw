@@ -71,7 +71,7 @@
       \item You will detect most of the population on the first
         occasion
       \item Most of the captures on subsequent occasions will be
-        recaptures 
+        recaptures
     \end{itemize}
     \item And vice versa
   \end{itemize}
@@ -104,7 +104,7 @@
   \vfill
   \centering
   \large These data tell us about $p$ and hence $N$. Estimation is
-  usually acheived using maximum likelihood methods. 
+  usually acheived using maximum likelihood methods.
 \end{frame}
 
 
@@ -119,12 +119,15 @@
 
 \begin{frame}
   \frametitle{Lincoln-Peterson Method}
-  The original method, first used by Pierre-Simon LaPlace \\
+  The original method was first used by Pierre-Simon LaPlace to
+  estimate the human population in France.   \\
 %  \vspace{0.5cm}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{figs/Laplace} \hspace{0.5cm} \pause
     \includegraphics[width=0.4\textwidth]{figs/Frederick_Charles_Lincoln}
   \end{center}
+  Later it was used by Lincoln (shown above) and
+  Peterson to estimate fish and wildlife populations
 \end{frame}
 
 
@@ -193,7 +196,7 @@
 
 \begin{frame}
   \frametitle{Lincoln-Peterson Assumptions}
-  \Large
+  \large
 %  \begin{enumerate}[<+- | visible@+->][\bf \color{PineGreen} (1)]
   \begin{enumerate}[\bf (1)]
     \item<1-> Population closure
@@ -203,7 +206,9 @@
         \item No deaths
         \item No immigration or emigration
       \end{itemize}
+    \item[]
     \item<2-> All individuals are assumed to have the same capture probability
+    \item[]
     \item<3-> No tag loss or mis-identification
   \end{enumerate}
 %  \vfill
@@ -221,10 +226,11 @@
 
 \begin{frame}
   \frametitle{$K$-sample CMR}
-  \Large
+  \large
   Using more than 2 sampling occasions has many advantages, including
   the ability to account for:
   \begin{itemize}[<+->]
+    \large
     \item Temporal variation
     \item Behavioral effects
       \begin{itemize}
@@ -281,6 +287,8 @@
 \begin{frame}[fragile]
   \frametitle{Example}
   \begin{center}
+    The rate at which the population is depleted tells us about $p$. \\
+    \vfill
 <<rem,include=FALSE,echo=FALSE,fig.width=12,fig.height=6>>=
 N <- 100
 p1 <- 0.8
