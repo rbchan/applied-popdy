@@ -28,8 +28,7 @@
 The purpose of this lab is to learn how to %use program MARK to
 estimate abundance using mark-recapture data. You will also learn how
 to use program MARK. Put your answers in a Word file and upload it to
-ELC. Name the file something like ``Chandler-lab10.docx''. Due before
-your next lab.
+ELC. Name the file something like ``Chandler-lab10.docx''. 
 
 
 
@@ -63,7 +62,8 @@ for each of the 17 turtles captured in 2007 (May 31 - June 5). There
 were 6 capture occasions, so for every turtle, there are 6 ones and
 zeros indicating if the turtle was captured on that occasion or
 not. After each capture history is a space followed by a 1 and a
-semi-colon to indicate that there was just 1 turtle with this history.
+semi-colon to indicate that there was just 1 turtle with this history
+(Fig.~\ref{fig:stink07-data}.
 
 \begin{figure}[h!]
   \centering
@@ -80,7 +80,7 @@ semi-colon to indicate that there was just 1 turtle with this history.
   \item[(i)] Open MARK and create a new project by selecting:
     \verb+"File > New"+.
   \item[(ii)] Name the project ``Exercise I'' and select the capture
-    history file \verb+``CH-SO-Andy07.inp''+ (see
+    history file \verb+"CH-SO-Andy07.inp"+ (see
     Fig.~\ref{fig:stink07-data})
   \item[(iii)] Choose \verb+"Closed Captures"+ from the list and select
     \verb+"Full likelihood p and c"+.
@@ -98,33 +98,53 @@ semi-colon to indicate that there was just 1 turtle with this history.
 \begin{enumerate}
   \item[(v)] Run a model in which capture probability ($p$) and
     recapture probability ($c$) are constant by selecting
-    \verb+"Run > Pre-defined Model(s)"+.
-  \item[(vi)] Click the \verb+"Select Models"+ button and then choose the
-    \verb+"(.)"+ option for $p$, $c$, and $N$. Click \verb+"OK"+, then
-    hit \verb+"OK to Run"+.
-  \item[(vii)] Right-click on the model name in the Results Browser
+    \verb+"Run > Pre-defined Model(s)"+. Click the
+    \verb+"Select Models"+ button and then choose the \verb+"(.)"+ option for $p$,
+    $c$, and $N$. Click \verb+"OK"+, then hit \verb+"OK to Run"+.
+  \item[(vi)] Right-click on the model name in the Results Browser
     and look at the \verb+"Real Estimates"+ to see the results.
-  \item[(viii)]	Now, run two more pre-defined models: one with
+  \item[(vii)]	Now, run two more pre-defined models: one with
     time-specific capture probabilities \verb+"p(t)"+ and one with
     time-specific recapture probabilities \verb+"c(t)"+. These two models can
     be run using the same steps above but by choosing \verb+"(t)"+ instead
     of \verb+"(.)"+.
+  \item[(viii)] Run a custom model in which capture probability ($p$)
+    is equal to recapture probability ($c$). You can do this by
+    selecting \verb+"PIM > Parameter Index Chart"+. Then drag the blue
+    box for $c$ to the left, so that it is on top of the blue box for $p$
+    (see Fig.~\ref{fig:pim}). Then select \verb+"Run > Current Model"+.
 \end{enumerate}
 
 \clearpage
+
+\begin{figure}[h!]
+  \centering
+  \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
+  \caption{\small The parameter index chart in MARK can be
+    used to specify models. In this case, capture probability ($p$) is
+    set to be equal to recapture probability ($c$).}
+  \label{fig:pim}
+\end{figure}
+
+\vspace{1cm}
 
 {\bf Assignment}
 
 \begin{enumerate}
   \item[(a)] Summarize your results by creating a table in which each row
     is a model, and include the following columns: the estimates of $N$
-    (abundance), the standard errors of $N$ (SE), and the AICc values.
+    (abundance), the standard errors of $N$ (SE), and the AICc
+    values. 
   \item[(b)] The model with the lowest AICc is considered the best in
     the set of models. Which model has the lowest AICc? Do your
     results suggest that it is important to account for variation in
     capture (and recapture) probability over time? Explain.
-  \item[(c)] What other sources of variation in capture probability do
-    you think we might want to account for to obtain more reliable
+  \item[(c)] Why do you think the model with $p=c$ is the worst model
+    in the set? Look at the capture histories when answering this
+    question. 
+  \item[(d)] Given what you know about turtles and turtle trapping,
+    what sources of variation in capture probability (other than time)
+    do you think we might want to account for to obtain more reliable
     abundance estimates?
 \end{enumerate}
 

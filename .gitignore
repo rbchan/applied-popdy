@@ -10,6 +10,9 @@
 *.vrb
 *.toc
 *.Rdata
+*.dbf
+*.cdx
+*.fpt
 cache/
 auto/
 exams/
