@@ -13,7 +13,9 @@
 *.dbf
 *.cdx
 *.fpt
+*.tmp
 cache/
 auto/
 exams/
+assignments/
 KEY-*

@@ -36,10 +36,11 @@ ELC. Name the file something like ``Chandler-lab10.docx''.
 %\clearpage
 
 \section*{\large Part I: Lincoln-Peterson estimation}
-Suppose you capture, mark, and release 100 largmouth bass at Lake
-Herrick. The next day, you return and capture 50 individuals, 25 of
-which were marked on the first occasion. What is the Lincoln-Peterson
-estimate of abundance ($N$)? Show your work.
+Suppose you capture, mark, and release 100 largmouth bass ({\it
+  Micropterus salmoides}) at Lake Herrick. The next day, you return
+and capture 50 individuals, 25 of which were marked on the first
+occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
+Show your work. 
 
 % \begin{figure}[h!]
 %   \centering
@@ -58,12 +59,12 @@ estimate of abundance ($N$)? Show your work.
 \section*{\large  Part II: Closed-population models in MARK}
 The data file (\verb+CH-SO-Andy07.inp+) is a simple text file, formatted
 as required by program MARK. Each row of the file is a capture history
-for each of the 17 turtles captured in 2007 (May 31 - June 5). There
-were 6 capture occasions, so for every turtle, there are 6 ones and
-zeros indicating if the turtle was captured on that occasion or
-not. After each capture history is a space followed by a 1 and a
-semi-colon to indicate that there was just 1 turtle with this history
-(Fig.~\ref{fig:stink07-data}.
+for each of the 17 stinkpots ({\it Sternotherus odoratus}) captured in
+2007 (May 31 - June 5). There were 6 capture occasions, so for every
+turtle, there are 6 ones and zeros indicating if the turtle was
+captured on that occasion or not. After each capture history is a
+space followed by a 1 and a semi-colon to indicate that there was just
+1 turtle with this history (Fig.~\ref{fig:stink07-data}.
 
 \begin{figure}[h!]
   \centering
@@ -90,41 +91,80 @@ semi-colon to indicate that there was just 1 turtle with this history
 
 \begin{figure}[h!]
   \centering
-  \fbox{\includegraphics[width=0.9\textwidth]{figs/stinkpot07-MARK}}
+  \fbox{\includegraphics[width=0.8\textwidth]{figs/stinkpot07-MARK}}
   \caption{\small Setting up the MARK analysis of the stinkpot data.}
   \label{fig:stink07-mark}
 \end{figure}
 
 \begin{enumerate}
-  \item[(v)] Run a model in which capture probability ($p$) and
-    recapture probability ($c$) are constant by selecting
-    \verb+"Run > Pre-defined Model(s)"+. Click the
-    \verb+"Select Models"+ button and then choose the \verb+"(.)"+ option for $p$,
-    $c$, and $N$. Click \verb+"OK"+, then hit \verb+"OK to Run"+.
-  \item[(vi)] Right-click on the model name in the Results Browser
-    and look at the \verb+"Real Estimates"+ to see the results.
-  \item[(vii)]	Now, run two more pre-defined models: one with
-    time-specific capture probabilities \verb+"p(t)"+ and one with
-    time-specific recapture probabilities \verb+"c(t)"+. These two models can
-    be run using the same steps above but by choosing \verb+"(t)"+ instead
-    of \verb+"(.)"+.
-  \item[(viii)] Run a custom model in which capture probability ($p$)
-    is equal to recapture probability ($c$). You can do this by
-    selecting \verb+"PIM > Parameter Index Chart"+. Then drag the blue
-    box for $c$ to the left, so that it is on top of the blue box for $p$
-    (see Fig.~\ref{fig:pim}). Then select \verb+"Run > Current Model"+.
+  \item[(v)] Run four models differing in their specifications of
+    capture probability ($p$) and recapture probability ($c$) by
+    clicking on  \verb+"Run > Pre-defined Model(s)"+. Next, click on the
+    \verb+"Select Models"+ button and choose models \verb+"M0"+,
+    \verb+Mt+, \verb+Mb+, and \verb+Mtb+. An explanation of these
+    models is shown below in Table 1. Next, click \verb+"OK"+, then
+    hit \verb+"OK to Run"+. 
+  \item[(vi)] Inspect the model results, by right-clicking on one of
+    the models in the Results Browser and look at
+    \verb+"Real Estimates"+ and \verb+"Derived estimates"+. 
+  % \item[(vii)]	Now, run two more pre-defined models: one with
+  %   time-specific capture probabilities \verb+"p(t)"+ and one with
+  %   time-specific recapture probabilities \verb+"c(t)"+. These two models can
+  %   be run using the same steps above but by choosing \verb+"(t)"+ instead
+  %   of \verb+"(.)"+.
+  % \item[(viii)] Run a custom model in which capture probability ($p$)
+  %   is equal to recapture probability ($c$). You can do this by
+  %   selecting \verb+"PIM > Parameter Index Chart"+. Then drag the blue
+  %   box for $c$ to the left, so that it is on top of the blue box for $p$
+  %   (see Fig.~\ref{fig:pim}). Then select \verb+"Run > Current Model"+.
 \end{enumerate}
+
+\begin{table}[h!]
+  \centering
+  \caption{A description of the four models to be fitted to the
+    stinkpot data.}
+  \footnotesize
+  \begin{tabular}[h!]{ll}
+    \hline
+    Model name & Model description \\
+    \hline
+    $M_0$ & The most basic model in which $p$ and $c$ are constant \\
+    $M_t$ & A model in which $p$ differs among sampling occasions and
+            $p_t=c_t$. \\
+    $M_b$ & A behavioral response model in which $p$ and $c$
+            differ. Can describe trap happiness or trap shiness. \\
+    $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
+    \hline
+  \end{tabular}
+  \label{tab:Otis}
+\end{table}
+
 
 \clearpage
 
-\begin{figure}[h!]
-  \centering
-  \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
-  \caption{\small The parameter index chart in MARK can be
-    used to specify models. In this case, capture probability ($p$) is
-    set to be equal to recapture probability ($c$).}
-  \label{fig:pim}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
+%   \caption{\small The parameter index chart in MARK can be
+%     used to specify models. In this case, capture probability ($p$) is
+%     set to be equal to recapture probability ($c$).}
+%   \label{fig:pim}
+% \end{figure}
+
+% \vspace{1cm}
+
+{\bf Parameter definitions}
+\begin{itemize}
+  \item $p$ -- capture probability. The probability of capturing an
+    individual on a single occasion
+  \item $p_t$ -- capture probability on occasion $t$
+  \item $c$ -- recapture probability. The probability of capturing an
+    individual that has been captured previously.
+  \item $n$ -- the number of individuals captured
+  \item $f_0$ -- the number of individual not captured
+  \item $N$ -- abundance. The number of individuals in the
+    population. $N=n+f_0$. 
+\end{itemize}
 
 \vspace{1cm}
 
@@ -139,7 +179,7 @@ semi-colon to indicate that there was just 1 turtle with this history
     the set of models. Which model has the lowest AICc? Do your
     results suggest that it is important to account for variation in
     capture (and recapture) probability over time? Explain.
-  \item[(c)] Why do you think the model with $p=c$ is the worst model
+  \item[(c)] Why do you think model $M_0$ is the worst model
     in the set? Look at the capture histories when answering this
     question. 
   \item[(d)] Given what you know about turtles and turtle trapping,
