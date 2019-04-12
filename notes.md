@@ -2,6 +2,14 @@
 
 ## For 2020
 
+- Lake Herrick mark-recap:
+  * Record lengths of fish species too small to tag
+  * Record time of capture
+  
+
+- Consider moving extinction lab back further in the semester so they
+  don't forget how to use stochastic models for the final project
+
 - Add R tips and guidance to the lab assignments
 
 - Provide more guidance for finding equilibrium solutions

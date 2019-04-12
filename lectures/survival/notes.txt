@@ -1,0 +1,29 @@
+INTRO
+
+  o Annoucements: 
+    - Marshmallow prize
+    - Mention exam
+    - Writing assignment
+    - Bonus points class
+
+  o Age distribution data are no good
+
+  o Moving from closed to open populations
+    - We could estimate N each year using distance sampling or
+      capture-recapture, but we wouldn't learn anything about the
+      factors contributing to population growth
+    - Vital rates can be estimated using telemetry or
+      capture-recapture
+
+
+TELEMETRY
+
+  o Work through Kaplan-Meier example
+
+  o Consequences of violating Kaplan-Meier assumption:
+    - Survival will be overestimated
+
+
+AGE DISTRIBUTIOn
+
+  o Don't do this
