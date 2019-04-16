@@ -267,7 +267,7 @@
   In CJS studies, we ignore the leading zeros in the capture histories
   because we aren't interested in how animals enter the sample \\
   \vfill
-  \uncover<2->{All we care about is survival, so ``condition'' on first encounter \\}
+  \uncover<2->{All we care about is survival, so we ``condition'' on first encounter \\}
 %  {\bf \centering \large $n=5$ individuals captured over 3 sampling occasions \par}
 %  \vspace{0.3cm}
   \vfill

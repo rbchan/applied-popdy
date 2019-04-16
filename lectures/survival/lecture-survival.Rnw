@@ -61,7 +61,7 @@
     \item[]
     \item<3-> Capture-mark-recapture
       \begin{itemize}
-        \item Next lecture
+        \item Covered in previous lecture %Next lecture
       \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -152,6 +152,9 @@
   \bf
   \uncover<2>{\centering When \alert{censoring} occurs, assumptions
     (2) and (3) are violated \par}
+  \vspace{0.5cm}
+  \uncover<3>{Censoring occurs when the time of mortality is not
+    directly observed}
 \end{frame}
 
 
@@ -162,7 +165,8 @@
   \centering
   \includegraphics[width=0.9\textwidth]{figs/censoring} \\
   Diamonds indicate mortality. Circles indicate censoring. \\
-  Black is observed data. Gray is unobserved. 
+  Black lines show the observation period. Gray lines are unobserved
+  time periods. 
 \end{frame}
 
 
@@ -171,7 +175,7 @@
   \frametitle{Censoring}
   {\bf Right censoring} 
   \begin{itemize}
-    \item Occurs when animals leave study before it's over.
+    \item Occurs when animals leave the sample before they die.
     \item Examples
     \begin{itemize}
       \item Battery failure
@@ -183,8 +187,8 @@
   \pause
   {\bf Left censoring}
   \begin{itemize}
-    \item Occurs when mortality can only be observed after a certain
-      amount of time
+    \item Occurs when mortality is known to have occurred before some
+      point in time
     \item Rarely an issue in telemetry studies
 %    \item Also known as ``staggered entry''
 %    \item If left-censored animals are incorrectly thought to enter
@@ -193,7 +197,7 @@
   \pause
   \vfill
   {\centering If either type of censoring occurs, use the
-    Kaplan-Meier model instead of binomial model \par}
+    Kaplan-Meier model instead of the binomial model \par}
 \end{frame}
 
 
@@ -370,13 +374,15 @@
 
 
 
-\begin{frame}
-  \frametitle{Assignment}
-  \LARGE
-  {\centering \bf Read Chapter 12 from Conroy and Carroll \par}
-\end{frame}
-
-
-
-
 \end{document}
+
+% \begin{frame}
+%   \frametitle{Assignment}
+%   \LARGE
+%   {\centering \bf Read Chapter 12 from Conroy and Carroll \par}
+% \end{frame}
+
+
+
+
+% \end{document}
