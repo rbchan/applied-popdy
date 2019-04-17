@@ -2,6 +2,10 @@
 
 ## For 2020
 
+- Make sure reading assignments are in correct order
+
+- Mix source-sink and ideal free into metapop lecture
+
 - Lake Herrick mark-recap:
   * Record lengths of fish species too small to tag
   * Record time of capture

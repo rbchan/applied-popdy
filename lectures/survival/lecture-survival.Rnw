@@ -21,7 +21,7 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge Estimating survival using telemetry \\ 
-      \st{or age distribution data} \par}
+      \st{or age distribution} data \par}
     \vspace{0.5cm}
     { \Large April 17, 2019} \\
     {\color{blue} \rule{\textwidth}{1pt}}
@@ -150,7 +150,7 @@
 %  \pause
   \vspace{0.5cm}
   \bf
-  \uncover<2>{\centering When \alert{censoring} occurs, assumptions
+  \uncover<2->{\centering When \alert{censoring} occurs, assumptions
     (2) and (3) are violated \par}
   \vspace{0.5cm}
   \uncover<3>{Censoring occurs when the time of mortality is not
@@ -158,16 +158,6 @@
 \end{frame}
 
 
-
-\begin{frame}
-  \frametitle{Censoring}
-%  \includegraphics[width=0.9\textwidth]{figs/censor}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figs/censoring} \\
-  Diamonds indicate mortality. Circles indicate censoring. \\
-  Black lines show the observation period. Gray lines are unobserved
-  time periods. 
-\end{frame}
 
 
 
@@ -201,11 +191,23 @@
 \end{frame}
 
 
+
+\begin{frame}
+  \frametitle{Censoring}
+%  \includegraphics[width=0.9\textwidth]{figs/censor}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/censoring} \\
+  Diamonds indicate mortality. Circles indicate censoring. \\
+  Black lines show the observation period. Gray lines are unobserved
+  time periods. 
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Kaplan-Meier}
   \LARGE
   \[
-    \hat{S}_t = \prod_{j < t}\left(\frac{r_j - d_j}{r_j}\right)
+    \hat{S}_t = \prod_{j: t_i \le t}\left(\frac{r_j - d_j}{r_j}\right)
   \]
   \large
   $S_t$ -- probability of surviving to time $t$ \\
@@ -244,9 +246,9 @@
 %  \end{itemize}
 %  
 %  \large
-  {\bf Example of the consequences of violating this assumption}: \\
-  If an animal dies, but you right censor it because you think its 
-  battery died, survival will be over-estimated  
+  {\bf Consequence of violating this assumption}: \\
+  If an animal dies, but you mistakenly right censor it because you
+  think its battery died, survival will be over-estimated  
 \end{frame}
 
 
@@ -286,6 +288,7 @@
 \[
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
 \]
+\large
 \pause
 \vfill
 {\centering \bf All is well. This is a valid approach based on the
@@ -316,8 +319,8 @@
 
 \begin{frame}
   \frametitle{Pitfall I}
-  \Large
-  {\bf Standing age distribution data can't be used to estimate
+  \large
+  {Standing age distribution data can't be used to estimate
     survival, unless\dots}
   \begin{itemize}
     \item Population is at the stable age distribution
@@ -368,6 +371,7 @@
   {\bf When estimating survival, it is always good to\dots}
   \begin{itemize}
     \item Collect more than 1 year of data
+    \item Follow multiple cohorts of individuals over long periods of time
     \item Estimate survival using telemetry or mark-recapture methods
   \end{itemize}
 \end{frame}
