@@ -10,7 +10,7 @@ layout: page
 
 ## Handout
 
-[Compressed version of the slides](lecture-intro.pdf) with 4 slides per page
+[Compressed version of the slides](lecture-intro-handout.pdf) with 4 slides per page
 
 
 ## R script and data

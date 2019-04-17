@@ -11,7 +11,7 @@ This site holds lecture and lab materials for Applied Population Dynamics (WILD 
 I just started building the website. Hope to have it finished by the end of the spring (2019)
 
 
-More details can be found in the [syllabus]().
+More details can be found in the [syllabus](syllabus.md).
 
 A GitHub repository with the source code is [here](https://github.com/rbchan/applied-popdy).
 

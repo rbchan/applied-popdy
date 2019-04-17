@@ -1,0 +1,9 @@
+---
+title: "Applied Population Dynamics"
+output:
+  xaringan::moon_reader:
+    self_contained: false
+    chakra: "../../libs/remark-latest.min.js"
+---
+
+

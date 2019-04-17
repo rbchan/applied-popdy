@@ -7,6 +7,6 @@ title: Lectures
 
 ## Schedule
 
-### [Week 1](intro/intro.md)
+### [Week 1 -- Course Overview](intro/intro.md)
 
-Course Overview
+
