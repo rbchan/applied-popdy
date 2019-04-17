@@ -6,7 +6,7 @@ layout: page
 
 ## Slides
 
-[HTML slides](lecture-intro.html}
+[HTML slides](lecture-intro.html)
 
 I normally make my slides using [Beamer](https://github.com/josephwright/beamer), but this is me experimenting with [xaringan](https://yihui.name/) 
 
