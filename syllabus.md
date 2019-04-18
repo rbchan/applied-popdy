@@ -12,7 +12,9 @@ Office Hours: Thurs 2:00 -- 3:00, Fri 2:00 -- 3:00
 
 
 ## Course Description and Objectives
-This course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students should know how to develop models to forecast the impacts of environmental change and management actions on wildlife populations. Students will learn how to design studies, collect data, and estimate parameters such as abundance, survival, and recruitment.
+This course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students should know how to develop models to forecast the impacts of environmental change and management actions on wildlife populations. Students will learn how to design studies, collect data, and estimate parameters such as abundance, survival, and recruitment. 
+
+The course is introductory in nature, and emphasis is put on discrete-time models rather than continuous-time models because I find that students have an easier time grasping difference models than ODEs. 
 
 ## Textbook
 Conroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. You _do not_ need to buy a hard
@@ -44,13 +46,45 @@ All academic work must meet the standards contained in the University's [academi
 ## Tentative course outline
 
 
-| Week | Lecture | Lab | 
-| ---- | -----   | --- |
-| 1    | Course introduction |  | 
-|      |              |                     | 
-|      |              |                     | 
+| Week | Lecture              | Lab | 
+| ---- | -----                | --- |
+|      | PART I - Models      | --- |
+| ---- | -----                | --- |
+| 1    | Course introduction  | Excel and R basics | 
+|      | BIDE model           |                    | 
+| 2    | Exponential growth   | Geometric growth   | 
+|      | Logistic growth      |                    |
+| 3    | Harvest models       | Logistic growth and harvest |
+|      | Stochasticity        |                             |
+| 4    | Extinction           | Extinction                  |
+|      | Competition          |                             |
+| 5    | Predation            | Competition and predation   |
+|      | Age structure        |                             |
+| 6    | Stage structure      | Age/stage structure         |
+|      | Source-sink dynamics |                             | 
+| 7    | Exam I               | Data collection             |
+|      | Metapopulations      |                             |
+| 8    | PVA                  | Metapopulations             |
+| ---- | -----                | --- |
+|      | PART II - Estimation | --- |
+| ---- | -----                | --- |
+|      | Study design and basic statistics                  | 
+| 9    | Occupancy models  | Occupancy models |
+|      | Occupancy models  |                  | 
+| 10   | Distance sampling | Data collection  | 
+|      | Distance sampling |                  |
+| 11   | Exam II           |                  | 
+|      | Mark-recapture: closed populations | |
+| 12   | Mark-recapture: closed populations | |
+|      | Mark-recapture: open populations | |
+| 13   | Mark-recapture: open populations | |
+|      | Estimating survival with telemetry data | |
+| 14   | Problems with the use of age distribution data | |
+|      | Decision analysis                     | |
+| 15   | Case studies                          | |
+|      | Case studies                          | |
 | ---- | -----   | --- |
 
-
+The course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary. 
 
 
