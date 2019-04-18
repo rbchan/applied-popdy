@@ -48,7 +48,7 @@ All academic work must meet the standards contained in the University's [academi
 
 | Week | Lecture              | Lab | 
 | ---- | -----                | --- |
-|      | PART I - Models      | --- |
+|      | **PART I - Models**  | --- |
 | ---- | -----                | --- |
 | 1    | Course introduction  | Excel and R basics | 
 |      | BIDE model           |                    | 
@@ -66,7 +66,7 @@ All academic work must meet the standards contained in the University's [academi
 |      | Metapopulations      |                             |
 | 8    | PVA                  | Metapopulations             |
 | ---- | -----                | --- |
-|      | PART II - Estimation | --- |
+|      | **PART II - Estimation** | --- |
 | ---- | -----                | --- |
 |      | Study design and basic statistics                  | 
 | 9    | Occupancy models  | Occupancy models |

@@ -27,7 +27,70 @@ class: center, middle, inverse, title-slide
 ---
 
 # Another slide
-a
+
+Uncovering a list
+- First
+
+--
+- Second
+
+--
+- Third
+
+
+---
+
+# A slide with Latex and R code
+
+### `\(x \sim \mathrm{Bin}(N, p)\)`
+
+```r
+dbinom(x=3, size=10, p=0.3)
+```
+
+```
+## [1] 0.2668279
+```
+    
+
+---
+
+# Fooling with alignment
+
+.left[Left]
+
+.right[Right]
+
+.center[Got it]
+
+.pull-left[Col 1]
+
+.pull-right[Col 2]
+
+---
+
+class: small
+
+
+# Font size
+
+
+.font-size: small
+
+class: large
+
+This should be smaller than
+
+.font-size[large]
+
+.small {try again}
+
+.large {and again}
+
+This isn't working. I guess [you have to define things in
+CSS](https://github.com/yihui/xaringan/wiki/Font-Size).
+
+[Another example](https://stackoverflow.com/questions/53481699/customize-font-size-for-all-the-slides-in-xaringan)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="../../libs/remark-latest.min.js"></script>
