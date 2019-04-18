@@ -7,3 +7,16 @@ output:
 ---
 
 
+
+# Central Questions
+	1. What causes spatial and temporal variation in 
+	   population size and structure? 
+    2. How do environmental change and human activities 
+	   (including management actions) affect population 
+	   dynamics?
+
+---
+
+# Another slide
+a
+
