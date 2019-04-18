@@ -3,26 +3,29 @@
   <head>
     <title>Applied Population Dynamics</title>
     <meta charset="utf-8" />
-    <link href="lecture-intro_files/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="lecture-intro_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <meta name="author" content="Richard Chandler" />
+    <link rel="stylesheet" href="..\..\apd.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+class: center, middle, title-slide, title-slide
 
 # Applied Population Dynamics
+## Course Overview
+### Richard Chandler
 
 ---
 
 
 
+class: larger
 
 # Central Questions
-	1. What causes spatial and temporal variation in 
-	   population size and structure? 
-    2. How do environmental change and human activities 
-	   (including management actions) affect population 
-	   dynamics?
+
+1. What causes spatial and temporal variation in  population size and
+   structure? 
+   
+2. How do environmental change and human activities (including management actions) affect population dynamics?
 
 ---
 
@@ -69,32 +72,43 @@ dbinom(x=3, size=10, p=0.3)
 
 ---
 
-class: small
 
+# Variable font size
 
-# Font size
+These classes are defined in my CSS
 
+.smallest[smallest]
 
-.font-size: small
+.smaller[smaller]
 
-class: large
+.small[small]
 
-This should be smaller than
+normal
 
-.font-size[large]
+.large[large]
 
-.small {try again}
+.larger[larger]
 
-.large {and again}
-
-This isn't working. I guess [you have to define things in
-CSS](https://github.com/yihui/xaringan/wiki/Font-Size).
+Here's some info on [customizing fonts in CSS](https://github.com/yihui/xaringan/wiki/Font-Size).
 
 [Another example](https://stackoverflow.com/questions/53481699/customize-font-size-for-all-the-slides-in-xaringan)
+
+
+---
+
+class: largest
+
+# Slide-level font size
+
+Everything is 
+
+larger here
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="../../libs/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"countIncrementalSlides": false
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });

@@ -1,19 +1,26 @@
 ---
 title: "Applied Population Dynamics"
+subtitle: Course Overview
+author: Richard Chandler
 output:
   xaringan::moon_reader:
     self_contained: false
+    css: "../../apd.css"
     chakra: "../../libs/remark-latest.min.js"
+    nature:
+      titleSlideClass: ["center", "middle", "title-slide"]
+      countIncrementalSlides: false
 ---
 
 
+class: larger
 
 # Central Questions
-	1. What causes spatial and temporal variation in 
-	   population size and structure? 
-    2. How do environmental change and human activities 
-	   (including management actions) affect population 
-	   dynamics?
+
+1. What causes spatial and temporal variation in  population size and
+   structure? 
+   
+2. How do environmental change and human activities (including management actions) affect population dynamics?
 
 ---
 
@@ -55,25 +62,35 @@ dbinom(x=3, size=10, p=0.3)
 
 ---
 
-class: small
 
+# Variable font size
 
-# Font size
+These classes are defined in my CSS
 
+.smallest[smallest]
 
-.font-size: small
+.smaller[smaller]
 
-class: large
+.small[small]
 
-This should be smaller than
+normal
 
-.font-size[large]
+.large[large]
 
-.small {try again}
+.larger[larger]
 
-.large {and again}
-
-This isn't working. I guess [you have to define things in
-CSS](https://github.com/yihui/xaringan/wiki/Font-Size).
+Here's some info on [customizing fonts in CSS](https://github.com/yihui/xaringan/wiki/Font-Size).
 
 [Another example](https://stackoverflow.com/questions/53481699/customize-font-size-for-all-the-slides-in-xaringan)
+
+
+---
+
+class: largest
+
+# Slide-level font size
+
+Everything is 
+
+larger here
+
