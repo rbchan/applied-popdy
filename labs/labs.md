@@ -3,8 +3,6 @@ layout: page
 title: Labs
 ---
 
-## Overview
-
 ## Schedule
 
-### [Week 1]
+### [Lab 1 -- Excel and R basics]
