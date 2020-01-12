@@ -9,5 +9,5 @@ title: Lectures
 
 ### [Lecture 1 -- Course Overview](intro/intro.md)
 
-### [Lecture 2 -- BIDE Model](bide/intro.md)
+### [Lecture 2 -- BIDE Model](BIDE/bide.md)
 
