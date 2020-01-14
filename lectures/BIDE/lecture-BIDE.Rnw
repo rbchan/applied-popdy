@@ -12,6 +12,7 @@
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lecture-BIDE")
+rnw2pdf("lecture-BIDE",tangle=TRUE)
 @
 
 
