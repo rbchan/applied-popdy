@@ -55,7 +55,12 @@
 \usepackage[sans]{../pres1}
 
 
-\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+%\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -77,10 +82,10 @@
     {\huge Geometric and Exponential Growth } \\
     {\large January 16, 2019 \\}
   \end{center}
-  \begin{columns}
-    \wide
-    \rule[11pt]{\paperwidth}{0.1pt}
-  \end{columns}
+  % \begin{columns}
+  %   \wide
+  %   \rule[11pt]{\paperwidth}{0.1pt}
+  % \end{columns}
 \end{frame}
 }
 
@@ -148,7 +153,8 @@
   \pause
   \vfill
   Geometric growth is a simplification of BIDE. \\
-  \vspace{2mm}
+  \pause
+  \vfill
   Exponential growth is a continuous time version of geometric growth.
 \end{frame}
 
@@ -483,12 +489,14 @@
     $r$ = intrinsic rate of increase \\
     $t$ = time (any positive number)
   \end{block}
-  \visible<3>{
+  \uncover<3->{
     \small
     The exponential growth model is often considered more appropriate
     than the geometric growth model for \alert{birth flow populations}
     in which reproduction occurs throughout the year. \\
-    \vfill
+  }
+  \vfill
+  \uncover<4->{
     However, geometric growth models can provide a good approximation
     of birth flow or \alert{birth pulse populations}. 
   }
