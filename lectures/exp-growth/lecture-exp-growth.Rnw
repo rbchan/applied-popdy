@@ -35,7 +35,7 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
   \vspace{-4.2cm}
   \begin{center}
     {\huge Geometric and Exponential Growth } \\
-    {\large January 16, 2019 \\}
+%    {\large January 16, 2019 \\}
   \end{center}
   % \begin{columns}
   %   \wide
