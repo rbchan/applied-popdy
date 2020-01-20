@@ -9,3 +9,5 @@ title: Lectures
 
 ### [Lecture 2 -- BIDE Model](BIDE/bide.md)
 
+### [Lecture 3 -- Exponential Growth](exp-growth/exp-growth.md)
+
