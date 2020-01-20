@@ -1,6 +1,6 @@
 ## ----build,eval=FALSE,include=FALSE--------------------------------------
 ## source("../../rnw2pdf.R")
-## rnw2pdf("lab-Excel-R-Basics", clean=FALSE)
+## rnw2pdf("lab-Excel-R-Basics")
 ## rnw2pdf("lab-Excel-R-Basics", tangle=TRUE)
 
 

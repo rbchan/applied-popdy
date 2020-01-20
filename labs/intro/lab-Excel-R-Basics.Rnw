@@ -7,7 +7,7 @@
 
 <<build,eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
-rnw2pdf("lab-Excel-R-Basics", clean=FALSE)
+rnw2pdf("lab-Excel-R-Basics")
 rnw2pdf("lab-Excel-R-Basics", tangle=TRUE)
 @
 
@@ -38,7 +38,7 @@ knit_theme$set("edit-kwrite")
   \huge
   \begin{center}
     \huge Applied Population Dynamics \\
-    \LARGE Lab 01 -- Excel and R Basics \\
+    \LARGE Lab 1 -- Excel and R Basics \\
 %    \large January 14 \& 18, 2019 \par
     \vspace{.5cm}
     \fbox{\includegraphics[width=\textwidth]{figs/excel}}
