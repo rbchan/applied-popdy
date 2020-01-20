@@ -1,10 +1,11 @@
 # applied-popdy
-Course materials for [Applied Population
-Dynamics](http://bulletin.uga.edu/Link.aspx?cid=WILD5700/7700)
+Course materials for [Applied Population Dynamics](https://rbchan.github.io/applied-popdy/)
 
 
-## Website
-Coming soon
+## [Website](https://rbchan.github.io/applied-popdy/)
+
+This repository holds the [R](https://www.r-project.org/) scripts and the [LaTeX](https://en.wikibooks.org/wiki/LaTeX) files that I use to create my lecture and lab slides. You can access course materials here or through the accompanying [**website**](https://rbchan.github.io/applied-popdy/) built using [GitHub Pages](https://pages.github.com/) and [Jekyll](https://jekyllrb.com/).
+
 
 ## Overview
 Students (primarily undergraduates) are exposed to basic theory in population ecology and to techniques for putting theory into practice. Topics include:
@@ -22,5 +23,5 @@ Students (primarily undergraduates) are exposed to basic theory in population ec
 
 ## History
 
-I've taught this course every spring since 2014. 
+Originally developed by Mike Conroy and John Carrol, I took over in the spring of 2014. 
 
