@@ -16,7 +16,5 @@ layout: page
 
 
 
-## R script
 
-[R code used in slides](lecture-intro.R) 
 
