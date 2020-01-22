@@ -11,3 +11,5 @@ title: Lectures
 
 ### [Lecture 3 -- Exponential Growth](exp-growth/exp-growth.md)
 
+### [Lecture 4 -- Logistic Growth](logistic-growth/logistic-growth.md)
+
