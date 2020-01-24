@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+%\usepackage[roman]{../pres1}
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+{
+  \Large
+  \centering
+  Lab 2 Assignment --- Harvest Models \\
+  Due before your next lab \par
+}
+
+Answer each of the following questions and upload your completed Excel
+file to ELC. Be sure to show your calculations. \par
+
+\vspace{12pt}
+
+{\bf Exercise I \\}
+The Excel sheet shows (fake) data on Burmese python abundance in south Florida.
+\begin{enumerate}
+  \item What growth model best describes these data, geometric or
+    logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$ to assess if
+    growth rates change over time.
+  \item What is the growth rate ($r$)?
+  \item If you determine that the per-capita birth rate ($b$) is 2.0,
+    what must be the per-capita mortality rate ($d$)?
+  \item What harvest rate ($h$) would result in a sustainable yield?
+  \item Use the harvest rate ($h$) from part (4) to project the population
+    forward from 2012 to 2024. You will need to compute the number of
+    individuals removed ($H_t$) each year using the equation
+    $H_t=N_{t}h$\footnote{$H_t$ can be greater than $N_t$ because
+      harvest is assumed to occur at the end of the year, after the
+      population has grown}. Create a graph of python abundance from
+    2005--2024.  
+%  \item How is it possible that $H_t$ can be greater than $N_{t}$?
+\end{enumerate}
+
+\vspace{12pt}
+
+
+{\bf Exercise II \\}
+Imagine a population of northern bobwhite ({\it Colinus virginianus})
+that is experiencing logistic growth with $r_\mathrm{max} = 0.32$, $K = 2000$,
+and an initial population size of 100 individuals.
+\begin{enumerate}
+  \item Project the population for 40 years, and plot abundance over
+    time. Add axis labels as always.
+  \item Compute the number of individuals that could be sustainably
+    harvested each year. Plot abundance on the x-axis and sustainable
+    harvest on the y-axis.
+  \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
+  \item What is the value of MSY in this case? What is the harvest rate ($h$) at MSY?
+  \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
+    forward again, but include harvest ($H_t$). Choose values of $H_t$ that
+    allow for the greatest number of years at MSY. Hint: You can let
+    harvest be zero in some years.
+\end{enumerate}
+
+%\vspace{12pt}
+
+\newpage
+
+
+{\bf Exercise III \\}
+Suppose that annual survival of sitka deer ({\it Odocoileus hemionus
+  sitkensis}) decreases as abundance increases according to the
+equation: $S = \beta_0 - \beta_1 \times N$.
+
+\begin{enumerate}
+  \item Compute survival probability for each value of $N$ provided in
+    the spreadsheet with $\beta_0=0.95$ and $\beta_1=0.003$. Create a
+    graph with survival probability on the y-axis and abundance on the
+    x-axis.
+  \item A manager is trying to decide how many deer to harvest, and is
+    considering removing anywhere from 10 to 150 individuals from a
+    population of 200. Use the equation above to determine how many
+    deer will remain one year after harvest for each of the harvest
+    options. To accomplish this:
+  \begin{itemize}
+    \item Compute how many individuals will be alive immediately after
+      harvest
+    \item Compute survival probability for these remaining individuals
+      using the survival equation
+    \item Compute how many will be alive at the end of the year.
+  \end{itemize}
+  \item Create a graph with final abundance ($N$) on the y-axis and
+    harvest ($H$) of the x-axis. %Why does this graph peak at
+    %intermediate levels of harvest?
+  \item Determine how many deer will be alive if no harvest
+    occurs. Are there any levels of harvest that can result in a
+    larger population than the no harvest scenario? If so, how can
+    this be?
+  \item If the manager's objective is to maximize harvest, while
+    maintaining a herd size greater than it would be without harvest,
+    how many deer should be taken?
+\end{enumerate}
+
+
+\newpage
+
+{\bf R tips \\}
+
+
+Here's an example of a logistic growth model.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
+\hlstd{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
+\hlstd{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
+\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
+\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
+\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
+\hlcom{## for loop}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{rmax}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{K)}
+\hlstd{\}}
+\hlkwd{plot}\hlstd{(years, N1,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
+     \hlkwc{main}\hlstd{=}\hlstr{"Logistic growth"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.8\textwidth]{figure/logistic-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+
+\newpage
+
+
+Here's an example of a logistic growth model with harvest
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
+\hlstd{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
+\hlstd{h} \hlkwb{<-} \hlnum{0.02}                \hlcom{## harvest rate}
+\hlstd{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
+\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
+\hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
+\hlstd{N2[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
+\hlstd{H} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears}\hlopt{-}\hlnum{1}\hlstd{)}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{H[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{h}
+    \hlstd{N2[t]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{rmax}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{K)} \hlopt{-} \hlstd{H[t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\hlkwd{plot}\hlstd{(years, N1,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
+\hlkwd{lines}\hlstd{(years, N2,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{legend}\hlstd{(}\hlnum{2000}\hlstd{,} \hlnum{200}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Logistic growth"}\hlstd{,} \hlstr{"Logistic growth with harvest"}\hlstd{),}
+       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"black"}\hlstd{,} \hlstr{"blue"}\hlstd{),} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{))}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.8\textwidth]{figure/logistic-harvest-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+\end{document}
+

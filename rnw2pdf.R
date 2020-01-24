@@ -24,7 +24,7 @@ rnw2pdf <- function(filestub, env=globalenv(), tangle=FALSE,
     ## This will only work if Rcmd open is installed
     if(open) {
         open.pdf <- paste("open ", filestub, ".pdf", sep="")
-        sysval <- system(open.pdf)
+        sysval <- system(open.pdf, wait=FALSE)
         if(sysval != 0) {
             warning("\n\nThe PDF should be in your working directory")
         }

@@ -7,6 +7,15 @@
 %\usepackage{changepage}
 
 
+%\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-harvest")
+rnw2pdf("lecture-harvest",tangle=TRUE)
+@
+
 
 
 \begin{document}
@@ -14,7 +23,7 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge Harvest Models} \\
-    {\large January 28 \& 30, 2019} \\
+%    {\large January 28 \& 30, 2019} \\
     \vfill
     \includegraphics[height=5.5cm,keepaspectratio]{figs/book} \hspace{0.3cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/tuna}
@@ -26,15 +35,24 @@
 
 \begin{frame}
   \frametitle{Today's topics}
-  \Large
-  \begin{itemize}
-    \item Sustainable harvest and geometric growth
-    \item Sustainable harvest and logistic growth
-    \item Definition of maximum sustainable yield (MSY)
-    \item Limitations of MSY
-    \item Additive vs compensatory mortality
+  \large
+%  \begin{itemize}
+%  \item
+  Sustainable harvest and geometric growth \\
+  \vfill
+  % \item
+  Sustainable harvest and logistic growth \\
+  \vfill
+  % \item
+  Definition of maximum sustainable yield (MSY) \\
+  \vfill
+  % \item
+  Limitations of MSY \\
+  \vfill
+  % \item
+  Additive vs compensatory mortality
 %    \item Definition of compensatory mortality
-  \end{itemize}
+%  \end{itemize}
 \end{frame}
 
 
@@ -58,7 +76,7 @@
 
 \begin{frame}
   \frametitle{Sustainable harvest}
-  \Large
+  \large
   {%\bf
     A sustainable (and large) harvest is a common
     objective in game management}
