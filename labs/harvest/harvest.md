@@ -6,7 +6,7 @@ layout: page
 
 ## Assignment
 
-[Lab assignment](lab-harvest.pdf) with 4 slides per page
+[Lab assignment](lab-harvest.pdf)
 
 
 
