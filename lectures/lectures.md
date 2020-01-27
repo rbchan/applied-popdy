@@ -13,3 +13,5 @@ title: Lectures
 
 ### [Lecture 4 -- Logistic Growth](logistic-growth/logistic-growth.md)
 
+### [Lecture 5 -- Harvest Models](harvest/harvest.md)
+
