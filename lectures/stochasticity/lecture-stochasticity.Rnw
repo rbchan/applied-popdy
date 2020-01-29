@@ -7,6 +7,16 @@
 \usepackage{bm}
 %\usepackage{changepage}
 
+%\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-stochasticity")
+rnw2pdf("lecture-stochasticity",tangle=TRUE)
+@
+
+
 
 
 \begin{document}
@@ -14,8 +24,8 @@
 
 \begin{frame}[plain]
   \begin{center}
-    {\Huge Stochasticity} \\
-    { February 4, 2019} \\
+    {\huge Stochasticity} \\
+%    { February 4, 2019} \\
     \vfill
     \includegraphics[height=3.8cm,keepaspectratio]{figs/pelagic-cormorants} \hspace{0.1cm}
     \includegraphics[height=3.8cm,keepaspectratio]{figs/kittiwakes} %\hspace{0.5cm}
@@ -100,19 +110,21 @@ for(i in 1:10) {
 }
 @
 \vspace{-1cm}
+%\centering
 \begin{center}
-  \includegraphics<1 | handout:0>[width=0.9\textwidth]{figs/norm/norm0}
-  \includegraphics<2 | handout:0>[width=0.9\textwidth]{figs/norm/norm1}
-  \includegraphics<3 | handout:0>[width=0.9\textwidth]{figs/norm/norm2}
-  \includegraphics<4 | handout:0>[width=0.9\textwidth]{figs/norm/norm3}
-  \includegraphics<5 | handout:0>[width=0.9\textwidth]{figs/norm/norm4}
-  \includegraphics<6 | handout:0>[width=0.9\textwidth]{figs/norm/norm5}
-  \includegraphics<7 | handout:0>[width=0.9\textwidth]{figs/norm/norm6}
-  \includegraphics<8 | handout:0>[width=0.9\textwidth]{figs/norm/norm7}
-  \includegraphics<9 | handout:0>[width=0.9\textwidth]{figs/norm/norm8}
-  \includegraphics<10 | handout:0>[width=0.9\textwidth]{figs/norm/norm9}
-  \includegraphics<11>[width=0.9\textwidth]{figs/norm/norm10}
+  \includegraphics<1 | handout:0>[width=\textwidth]{figs/norm/norm0} %\\
+  \includegraphics<2 | handout:0>[width=\textwidth]{figs/norm/norm1} %\\
+  \includegraphics<3 | handout:0>[width=\textwidth]{figs/norm/norm2} %\\
+  \includegraphics<4 | handout:0>[width=\textwidth]{figs/norm/norm3} %\\
+  \includegraphics<5 | handout:0>[width=\textwidth]{figs/norm/norm4} %\\
+  \includegraphics<6 | handout:0>[width=\textwidth]{figs/norm/norm5} %\\
+  \includegraphics<7 | handout:0>[width=\textwidth]{figs/norm/norm6} %\\
+  \includegraphics<8 | handout:0>[width=\textwidth]{figs/norm/norm7} %\\
+  \includegraphics<9 | handout:0>[width=\textwidth]{figs/norm/norm8} %\\
+  \includegraphics<10 | handout:0>[width=\textwidth]{figs/norm/norm9} %\\
+  \includegraphics<11->[width=\textwidth]{figs/norm/norm10} %\\
 \end{center}
+
 \end{frame}
 
 
@@ -202,7 +214,7 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 \]
 \pause
 \vfill
-{\bf In \R}
+{\tt \R} code:
 <<geo-env,eval=FALSE,size='small'>>=
 r <- 0.1
 sigma.e <- 10
@@ -402,7 +414,7 @@ for(i in 1:10) {
     dev.off()
 }
 @
-\vspace{-0.4cm}
+\vspace{-0.3cm}
 \begin{center}
   \includegraphics<1 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d1}
   \includegraphics<2 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d2}
@@ -493,14 +505,19 @@ for(i in 1:10) {
 \begin{frame}
   \frametitle{Summary}
   \Large
-  \begin{itemize}[<+->]
+%  \begin{itemize}[<+->]
 %    \item Stochasticity is everywhere and we have to recognize it our models
 %    \item Stochastic models produce outcomes that look like real data
-    \item Purely deterministic models are too rigid
-    \item Purely stochastic models don't tell us much
-    \item The goal is to develop a mechanistic model that represents
-      our biological understanding while allowing for stochasticity
-  \end{itemize}
+%    \item
+  Purely deterministic models are too rigid \\
+  \vfill
+  % \item
+  Purely stochastic models don't tell us much \\
+  \vfill
+  % \item
+  The goal is to develop a mechanistic model that represents 
+  our biological understanding while allowing for stochasticity \\
+%  \end{itemize}
 \end{frame}
 
 
