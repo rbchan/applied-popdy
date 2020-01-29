@@ -12,7 +12,7 @@ layout: page
 
 ## Handout
 
-[Compressed version of the slides](lecture-stochasticity.pdf) with 4 slides per page
+[Compressed version of the slides](lecture-stochasticity-handout.pdf) with 4 slides per page
 
 
 
