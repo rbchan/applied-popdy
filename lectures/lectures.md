@@ -15,3 +15,5 @@ title: Lectures
 
 ### [Lecture 5 -- Harvest Models](harvest/harvest.md)
 
+### [Lecture 6 -- Stochastic Models](stochasticity/stochasticity.md)
+
