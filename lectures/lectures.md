@@ -17,3 +17,5 @@ title: Lectures
 
 ### [Lecture 6 -- Stochastic Models](stochasticity/stochasticity.md)
 
+### [Lecture 7 -- Extinction](extinction/extinction.md)
+
