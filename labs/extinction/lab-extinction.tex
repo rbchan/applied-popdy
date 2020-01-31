@@ -1,4 +1,54 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 
 %\usepackage[roman]{../pres1}
 %\usepackage[sans]{../pres1}
@@ -10,13 +60,9 @@
 \hypersetup{pdfstartview=FitV,hidelinks}
 
 
-<<eval=FALSE,include=FALSE>>=
-source("../../rnw2pdf.R")
-rnw2pdf("lab-extinction")
-rnw2pdf("lab-extinction",tangle=TRUE)
-@
 
 
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 {
@@ -173,44 +219,64 @@ born, minus the number that died:
 
 Geometric growth with environmental stochasticity
 
-<<seed,include=FALSE>>=
-set.seed(430)
-@ 
 
-<<geom-stoch,out.width="0.9\\textwidth",fig.align='center'>>=
-r <- 0.01
-sigma <- 5
-nYears <- 50
-N1 <- rep(NA, nYears)  ## Empty vector for population size 
-X <- rep(NA, nYears)   ## Random variable for environmental stochasticity
-N1[1] <- 100           ## Initial population size
-for(t in 2:nYears) {
-    X[t] <- rnorm(n=1, mean=0, sd=sigma)
-    N1[t] <- N1[t-1] + N1[t-1]*r + X[t]
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{r} \hlkwb{<-} \hlnum{0.01}
+\hlstd{sigma} \hlkwb{<-} \hlnum{5}
+\hlstd{nYears} \hlkwb{<-} \hlnum{50}
+\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Empty vector for population size }
+\hlstd{X} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for environmental stochasticity}
+\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{X[t]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma)}
+    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t]}
+\hlstd{\}}
+\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N1,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.9\textwidth]{figure/geom-stoch-1} 
+
 }
-plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="b")
-@ 
+
+
+
+\end{knitrout}
 
 
 \newpage
 
 Poisson-Binomial birth-death model
 
-<<pois-bin,out.width="0.9\\textwidth",fig.align='center'>>=
-b <- 0.1  ## Birth rate
-d <- 0.2  ## Mortality rate
-nYears <- 50
-N2 <- rep(NA, nYears)  ## Empty vector for population size 
-B <- rep(NA, nYears)   ## Random variable for nBirths
-D <- rep(NA, nYears)   ## Random variable for nDeaths
-N2[1] <- 100           ## Initial population size
-for(t in 2:nYears) {
-    B[t-1] <- rpois(n=1, lambda=N2[t-1]*b)
-    D[t-1] <- rbinom(n=1, size=N2[t-1], prob=d)
-    N2[t] <- N2[t-1] + B[t-1] - D[t-1]
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{b} \hlkwb{<-} \hlnum{0.1}  \hlcom{## Birth rate}
+\hlstd{d} \hlkwb{<-} \hlnum{0.2}  \hlcom{## Mortality rate}
+\hlstd{nYears} \hlkwb{<-} \hlnum{50}
+\hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Empty vector for population size }
+\hlstd{B} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for nBirths}
+\hlstd{D} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for nDeaths}
+\hlstd{N2[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{B[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rpois}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lambda}\hlstd{=N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{b)}
+    \hlstd{D[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rbinom}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{size}\hlstd{=N2[t}\hlopt{-}\hlnum{1}\hlstd{],} \hlkwc{prob}\hlstd{=d)}
+    \hlstd{N2[t]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{B[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{-} \hlstd{D[t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N2,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.9\textwidth]{figure/pois-bin-1} 
+
 }
-plot(1:nYears, N2, xlab="Time", ylab="Abundance", type="b")
-@ 
+
+
+
+\end{knitrout}
 
 
 \end{document}
