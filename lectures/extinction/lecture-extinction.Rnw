@@ -9,6 +9,14 @@
 
 
 
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-extinction")
+rnw2pdf("lecture-extinction",tangle=TRUE)
+@
+
+
+
 
 \begin{document}
 
@@ -17,7 +25,7 @@
 \begin{frame}[plain]
   \begin{center}
     {\Huge Extinction} \\
-    {February 6, 2019} \\
+%    {February 6, 2019} \\
     \vfill
 %    \includegraphics[height=3.5cm,keepaspectratio]{figs/Carolina-parakeet} \hspace{0.1cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/passenger-pigeon} \hspace{0.5cm}
@@ -60,7 +68,7 @@
     \\ %\hspace{0.5cm}
 %    \includegraphics[height=2.5cm,keepaspectratio]{figs/honeycreepers} \\
     \vfill \tiny
-\url{http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/} \\
+%\url{http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/} \\
 \url{https://vimeo.com/42592260}
   \end{center}
   }
@@ -75,7 +83,7 @@
 \begin{frame}
   \frametitle{Correlates of extinction risk}
   \Large
-  {\bf Species with high extinction risk often have:}
+  {Species with high extinction risk often have:}
   \begin{itemize}
 %%    \item<2-> Body size?
     \item<2-> Small range
@@ -126,7 +134,7 @@
   \pause \vfill
   But how should we define extinction? \\
   \pause \vfill
-  Time to quasi-extinction ($T_e$) is time it takes for a
+  Time to quasi-extinction ($T_e$) is the time it takes for a
       population to reach an extinction threshold beyond which it is
       doomed \\
   \pause \vfill
@@ -270,6 +278,8 @@ nSim <- 100
 N <- Nlr <- matrix(NA, T+1, nSim)
 N[1,] <- Nlr[1,] <- 25
 Te <- integer(nSim)
+if(!dir.exists("figs/lg-d"))
+    dir.create("figs/lg-d")
 for(i in 1:nSim) {
     fl <- paste("figs/lg-d/lg-d", i, ".pdf", sep="")
     for(t in 1:T) {
@@ -316,11 +326,11 @@ for(i in 1:nSim) {
 
 \begin{frame}
   \frametitle{Extinction risk}
-  {\bf Zero extinctions in 100 simulations, hence extinction risk is
+  {Zero extinctions in 100 simulations, hence extinction risk is
     (approximately) zero over the 20 year time horizon \par}
   \vfill
   \pause
-  {\bf Assumptions}
+  {Assumptions}
   \begin{itemize}
     \item We have the correct model
     \item We know the parameters with certainty
@@ -409,15 +419,15 @@ for(i in 1:nSim) {
 
 \begin{frame}
   \frametitle{Allee effects}
-  {\bf Normally, population growth rates increase as the population
+  {Normally, population growth rates increase as the population
     decreases (negative correlation) \par}
   \pause
   \vfill
-  {\bf The Allee effect is the phenomenon of positive correlation
+  {The Allee effect is the phenomenon of positive correlation
     between population growth rates and population size \par}
   \pause
   \vfill
-  {\bf Mechanisms}
+  {Mechanisms}
   \begin{itemize}
     \item Finding a mate becomes difficult
     \item Social systems collapse
@@ -426,7 +436,7 @@ for(i in 1:nSim) {
   \end{itemize}
   \pause
   \vfill
-  {\bf Allee effects can greatly increase extinction risk for small populations}
+  {Allee effects can greatly increase extinction risk for small populations}
 
 \end{frame}
 
