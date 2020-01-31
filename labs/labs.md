@@ -9,3 +9,5 @@ title: Labs
 
 ### [Lab 2 -- Harvest models](harvest/harvest.md)
 
+### [Lab 3 -- Extinction](extinction/extinction.md)
+
