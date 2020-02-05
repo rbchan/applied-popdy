@@ -19,3 +19,5 @@ title: Lectures
 
 ### [Lecture 7 -- Extinction](extinction/extinction.md)
 
+### [Lecture 8 -- Interspecific interactions](interspecific/interspecific.md)
+
