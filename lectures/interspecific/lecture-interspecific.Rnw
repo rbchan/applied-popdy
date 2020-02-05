@@ -10,6 +10,14 @@
 
 
 
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-interspecific")
+rnw2pdf("lecture-interspecific",tangle=TRUE)
+@
+
+
+
 \begin{document}
 
 \begin{frame}[plain]
@@ -22,8 +30,8 @@
 %    \fbox{
       \includegraphics[height=5cm,keepaspectratio]{figs/isle-royale1} \\
 %    }
-    \vfill
-    { \Large February 11 \& 13, 2019} \\
+%    \vfill
+%    { \Large February 11 \& 13, 2019} \\
   \end{center}
 \end{frame}
 
@@ -87,19 +95,6 @@
 \end{frame}
 
 
-
-
-
-\begin{frame}
-  \frametitle{Isle Royale wolves and moose}
-  \centering
-  \includegraphics[width=1\textwidth]{figs/Fig01_wolfmoosechronology} \par
-%  \url{http://www.youtube.com/watch?v=PdwnfPurXcs}
-%  \url{http://vimeo.com/15411376}
-  \url{https://youtu.be/PdwnfPurXcs}
-%  \pause
-%  Attack video: \url{https://youtu.be/Ju3er3xIl7E}
-\end{frame}
 
 
 
@@ -180,6 +175,21 @@ legend(0, 250, c("Prey", "Predator"), lty=1, pch=16, col=c("cyan4", "red"))
 \begin{center}
   \includegraphics[width=\textwidth]{figure/predprey1-1}
 \end{center}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Isle Royale wolves and moose}
+  \centering
+  \includegraphics[width=1\textwidth]{figs/Fig01_wolfmoosechronology} \par
+%  \url{http://www.youtube.com/watch?v=PdwnfPurXcs}
+%  \url{http://vimeo.com/15411376}
+  \url{https://youtu.be/PdwnfPurXcs}
+%  \pause
+%  Attack video: \url{https://youtu.be/Ju3er3xIl7E}
 \end{frame}
 
 
