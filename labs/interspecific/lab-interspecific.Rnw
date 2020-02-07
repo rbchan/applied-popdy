@@ -9,6 +9,12 @@
 \usepackage{graphicx}
 \hypersetup{pdfstartview=FitV,hidelinks}
 
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-interspecific")
+rnw2pdf("lab-interspecific",tangle=TRUE)
+@
+
 
 
 \begin{document}
@@ -16,17 +22,17 @@
 {
   \Large
   \centering
-  Lab 5 Assignment --- Models of Interspecific Interactions \\
+  Lab 4 Assignment --- Models of Interspecific Interactions \\
   Due before your next lab \par
 }
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab5.xlsx}. \\
+file something like: \texttt{Chandler\_Richard\_lab4.xlsx}. \\
 
 
 
-\vspace{12pt}
+\vspace{6pt}
 
 {\bf Exercise I \\}
 You are studying the dynamics of jaguar (\textit{Panthera onca}) and Baird's
@@ -84,9 +90,6 @@ $\alpha^{B}=0.1$.
 \end{enumerate}
 
 
-
-
-
 \vspace{12pt}
 
 \begin{figure}[h!]
@@ -95,6 +98,31 @@ $\alpha^{B}=0.1$.
   \label{fig:cawa-howa}
 \end{figure}
 
+
+\clearpage
+
+{\bf R example \\}
+
+
+<<pred-prey,out.width="0.75\\textwidth",fig.align="center">>=
+nYears <- 5000
+r.prey <- 0.01
+d.prey <- 0.00001
+b.pred <- 0.00001
+d.pred <- 0.01
+N.prey <- rep(NA, nYears)
+N.pred <- rep(NA, nYears)
+N.prey[1] <- 1000
+N.pred[1] <- 300
+for(t in 2:nYears) {
+    N.prey[t] <- N.prey[t-1] + N.prey[t-1]*(r.prey-d.prey*N.pred[t-1])
+    N.pred[t] <- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)
+}
+plot(1:nYears, N.prey, type="l", col="black", ylim=c(0, 3500),
+     xlab="Year", ylab="Abundance")
+lines(1:nYears, N.pred, type="l", col="blue")
+legend(1, 3500, c("Prey", "Predator"), lty=1, col=c("black", "blue"))
+@ 
 
 
 
