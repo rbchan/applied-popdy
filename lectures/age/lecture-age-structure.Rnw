@@ -60,20 +60,20 @@ rnw2pdf("lecture-age-structure",tangle=TRUE)
   \Large
 %  \begin{itemize}[<+->]
 %  \item
-  Birth and death rates usually depend on age \\
+  Birth and death rates usually depend on age. \\
   \pause
   \vfill
   % \item
   Growth rates will differ between populations with
-  different age structures \\
+  different age structures. \\
   \pause
   \vfill
   % \item
-  Some age classes contribute more to population growth than others \\
+  Some age classes contribute more to population growth than others. \\
   \pause
   \vfill
   % \item
-  This has important management implications \\
+  This has important management implications. \\
 %    \item Harvesting larger numbers of the age group that most
 %      positively influences population growth = bad idea
 %    \item If habitat degradation affects an influential age group, we may be putting the
@@ -399,21 +399,23 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
 %  \begin{itemize}[<+->]
 %  \item
   Age distribution converges to a {\bf stable age
-    distribution} when survival and fecundity rates are constant \\
+    distribution} when survival and fecundity rates are constant. \\
   \pause
   \vfill
   % \item
   Stable age distribution is the proportion of individuals in each age
-  class when the population converges \\
+  class when the population converges. \\
   \pause
   \vfill
   % \item
   Growth rates of each age class differ at first, but converge
-  once the stable age distribution is reached \\
+  once the stable age distribution is reached. \\
   \pause
   \vfill
   % \item
-  Asymptotic growth rate is $\lambda$ (without subscript) \\
+  Asymptotic growth rate is $\lambda$ (without subscript). \\
+  \pause
+  \vfill
   % \item
   Growth rate at the stable age distribution is the same for
   all age classes, and it is geometric! \\
@@ -467,17 +469,6 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
 
 
 
-\note{As with single-age exponential populations, an age-structured
-  population with stable age distribution exhibits exponential growth
-  at a rate that depends on net reproduction and mortality. However,
-  the reproduction and mortality parameters of the single-age model are
-  replaced here with average reproduction and mortality rates in which
-  age-specific values are weighted by cohort proportions in the stable
-  age distribution.}
-
-
-
-
 %% \begin{frame}[fragile]
 %%   \frametitle{Age distribution of humans}
 %% <<human-age>>=
@@ -508,16 +499,16 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
   \Large
 %  \begin{itemize}[<+->]
 %  \item
-  Matrix models aren't actually ``new'' models \\
+  Matrix models aren't actually ``new'' models. \\
   \pause
   \vfill
   % \item
-  They are the same ``old'' models we have been talking about \\
+  They are the same old models we have been talking about. \\
   \pause
   \vfill
   % \item
   But, they make it much easier to compute important
-  quantities like $\lambda$ and {\it reproductive value} \\
+  quantities like $\lambda$ and {\it reproductive value}. \\
 %    \item Everyone will think you are cool if you know what a Leslie
 %      matrix is
 %  \end{itemize}
@@ -918,11 +909,18 @@ box()
   \frametitle{Other properties of the Leslie matrix\footnote{This is
       for graduate students only}}
   \Large
-  \begin{itemize}[<+->]
-    \item The dominant eigenvalue is the growth rate $\lambda$
-    \item The right eigenvector is the {\bf stable age distribution}
-    \item The left eigenvector is {\bf Fisher's reproductive value}
-  \end{itemize}
+%  \begin{itemize}[<+->]
+%  \item
+  The dominant eigenvalue of ${\bf A}$ is the growth rate $\lambda$. \\
+  \pause
+  \vfill
+  % \item
+  The right eigenvector is the {\bf stable age distribution}. \\
+  \pause
+  \vfill
+  % \item
+  The left eigenvector is {\bf Fisher's reproductive value}. \\
+%  \end{itemize}
 \end{frame}
 
 
@@ -1011,26 +1009,26 @@ box()
   \frametitle{Summary}
 %  \begin{itemize}[<+->]
 %  \item
-  Vital rates ($s$ and $f$) are usually age-specific \\
+  Vital rates ($s$ and $f$) are usually age-specific. \\
   \pause
   \vfill
   % \item
-  Population growth will depend on age distribution \\
+  Population growth will depend on age distribution. \\
   \pause
   \vfill
   % \item
   If vital rates are constant, population will reach stable
-  age distribution with constant growth rate $\lambda$ \\
+  age distribution with constant growth rate $\lambda$. \\
   \pause
   \vfill
   % \item
   Reproductive value indicates which age class contributes the
-  most to population growth \\
+  most to population growth. \\
   \pause
   \vfill
   % \item
   Matrix models are a convenient method used to work with
-  age-structured populations \\
+  age-structured populations. \\
 %  \end{itemize}
 \end{frame}
 
