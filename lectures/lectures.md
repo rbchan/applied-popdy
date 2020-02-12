@@ -21,3 +21,5 @@ title: Lectures
 
 ### [Lecture 8 -- Interspecific interactions](interspecific/interspecific.md)
 
+### [Lecture 9 -- Age and stage structured models](age/age.md)
+
