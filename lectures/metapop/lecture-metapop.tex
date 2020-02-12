@@ -1,6 +1,6 @@
 \documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
 \def\maxwidth{ %
   \ifdim\Gin@nat@width>\linewidth
@@ -61,15 +61,18 @@
 %\usepackage[usenames,dvipsnames]{color}
 \usepackage{animate}
 
-%\usepackage{Sweave}
+
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \begin{frame}[plain]
   \begin{center}
-    {\huge Metapopulation models \par}
-    \vspace{0.5cm}
-    { \Large Feb 27 \& March 4, 2019} \\
+    {\huge Metapopulation models \\}
+%    \vspace{0.5cm}
+%    { \Large Feb 27 \& March 4, 2019} \\
     \vfill
 %    \fbox{
       \includegraphics[height=4.2cm,keepaspectratio]{figs/frit} \hspace{0.5cm}
@@ -314,20 +317,20 @@
 
 \begin{frame}
   \frametitle{Definitions}
-  {\bf Occurrence ($O_{i,t}$)} \\
+  {\bf Occurrence} ($O_{i,t}$) \\
   Indicates if patch $i$ occupied at time $t$  \\
   \pause
   \vfill
-  {\bf Occurrence probability (psi=$\psi_{i,t}$)} \\
+  {\bf Occurrence probability} (psi=$\psi_{i,t}$) \\
   Probability that site $i$ is occupied at time $t$
   \pause
   \vfill
-  {\bf Colonization probability (gamma=$\gamma$)} \\
+  {\bf Colonization probability} (gamma=$\gamma$) \\
   The probability that an unoccupied patch at time $t$ becomes occupied
   at time $t+1$ \par
   \pause
   \vfill
-  {\bf Local extinction probability (epsilon=$\varepsilon$)} \\
+  {\bf Local extinction probability} (epsilon=$\varepsilon$) \\
   The probability that an occupied patch at time $t$ becomes
   unoccupied at time $t+1$ \par
   \pause
