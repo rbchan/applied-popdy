@@ -11,5 +11,6 @@ title: Labs
 
 ### [Lab 3 -- Extinction](extinction/extinction.md)
 
-### [Lab 4 -- Interspecific interactions]()
+### [Lab 4 -- Interspecific interactions](interspecific/interspecific.md)
+
 
