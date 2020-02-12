@@ -10,6 +10,14 @@
 \hypersetup{pdfstartview=FitV,hidelinks}
 
 
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-age-structure")
+rnw2pdf("lab-age-structure",tangle=TRUE)
+@
+
+
+
 
 \begin{document}
 
