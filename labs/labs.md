@@ -13,4 +13,6 @@ title: Labs
 
 ### [Lab 4 -- Interspecific interactions](interspecific/interspecific.md)
 
+### [Lab 5 -- Age-structured populations](age/age.md)
+
 
