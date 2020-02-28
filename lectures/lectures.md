@@ -23,3 +23,5 @@ title: Lectures
 
 ### [Lecture 9 -- Age and stage structured models](age/age.md)
 
+### [Lecture 10 -- Metapopulation models](metapop/metapop.md)
+
