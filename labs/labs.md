@@ -15,4 +15,7 @@ title: Labs
 
 ### [Lab 5 -- Age-structured populations](age/age.md)
 
+### [Lab 6 -- Metapopulations](metapop/metapop.md)
+
+
 
