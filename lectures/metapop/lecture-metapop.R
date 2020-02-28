@@ -1,10 +1,10 @@
-## ----eval=FALSE,include=FALSE-------------------------------------------------
+## ----eval=FALSE,include=FALSE--------------------------------------------
 ## source("../../rnw2pdf.R")
 ## rnw2pdf("lecture-metapop")
 ## rnw2pdf("lecture-metapop",tangle=TRUE)
 
 
-## ----metapop1,include=FALSE,echo=FALSE,results='hide'-------------------------
+## ----metapop1,include=FALSE,echo=FALSE,results='hide'--------------------
 set.seed(1)#(388730)
 N <- 10
 T <- 5
