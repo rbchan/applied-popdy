@@ -30,7 +30,8 @@ rnw2pdf("lecture-pva",tangle=TRUE)
     {\huge \bf Population Viability Analysis \par}
 %    \vspace{0.5cm}
 %    { \Large March 6, 2019} \\
-    {\color{blue} \rule{\textwidth}{1pt}}
+    {%\color{blue}
+      \rule{\textwidth}{0.1pt}}
     \vfill
     \includegraphics[height=4cm,keepaspectratio]{figs/Fenders_blue} \hfill
 %    \hspace{0.5cm}
@@ -100,18 +101,19 @@ rnw2pdf("lecture-pva",tangle=TRUE)
 %  \setbeamercovered{transparent}
 %  \begin{enumerate}[<+-| visible@+->][\bf \color{PineGreen} (1)]
   \begin{enumerate}[\bf (1)]
-    \item<1-| alert@1> Assessing the extinction risk of a single population
-    \item<2-| alert@2> Comparing relative risks of two or more populations
-    \item<3-| alert@3> Analyzing and synthesizing monitoring data
-    \item<4-| alert@4> Identifying key life stages or demographic processes as
-      management targets
-    \item<5-| alert@5> Determining how large a reserve needs to be to achieve a
+%    \item<1-| alert@1> Assessing the extinction risk of a single population
+%    \item<2-| alert@2> Comparing relative risks of two or more populations
+    \item<1-> Assessing the extinction risk of a single population
+    \item<2-> Comparing relative risks of two or more populations
+    \item<3-> Analyzing and synthesizing monitoring data
+    \item<4-| alert@4-> Identifying key life stages or demographic processes as management targets (sensitivity analysis)
+    \item<5-> Determining how large a reserve needs to be to achieve a
       desired level of protection from extinction
-    \item<6-| alert@6> Determining how many individuals to release to establish a
+    \item<6-> Determining how many individuals to release to establish a
       new population
-    \item<7-| alert@7> Setting limits on the harvest or ``take'' from a population
+    \item<7-> Setting limits on the harvest or ``take'' from a population
       that are compatible with its continued existence
-    \item<8-| alert@8> Determining how many (and which) populations are needed to
+    \item<8-> Determining how many (and which) populations are needed to
       achieve a desired overall likelihood of species persistence
   \end{enumerate}
 \end{frame}
@@ -199,10 +201,10 @@ rnw2pdf("lecture-pva",tangle=TRUE)
 \begin{frame}
   \frametitle{Sensitivity analysis}
   A sensitivity analysis seeks to understand the degree to which
-  $\lambda$ is sensitive to changes in vital rates
+  $\lambda$ is sensitive to changes in vital rates.
   \pause
   \vfill
-  Usually applied to age- or stage-based population models \par
+  Usually applied to age- or stage-based population models. \par
   \pause
   \vfill
   The sensitivity of $\lambda$ to a change in a population parameter
@@ -214,10 +216,12 @@ rnw2pdf("lecture-pva",tangle=TRUE)
   \pause
   \vfill
   {\bf Sensitivities allow us to make statements such as:} \\
+  \begin{quote}
   ``Increasing subadult fecundity by 1 unit increases $\lambda$ by
   0.01, whereas increasing adult fecundity by 1 unit increases $\lambda$ by
   0.02. Therefore, population growth is more sensitive to changes in
   adult fecundity.''
+  \end{quote}
 \end{frame}
 
 
@@ -248,11 +252,11 @@ rnw2pdf("lecture-pva",tangle=TRUE)
   A problem with sensitivities is that it is hard to compare values
   for parameters on different scales, such as survival and
   fecundity. For this reason, it is usually better to report
-  ``elasticities'' instead \\
+  ``elasticities'' instead. \\
   \pause
   \vfill
   {\bf Elasticity}: the proportional change in $\lambda$ caused by
-  proportional changes in vital rates \\
+  proportional changes in vital rates. \\
   \pause
   \vfill
    Easier interpretation because: %\\
@@ -323,10 +327,10 @@ e  ## Elasticities
  {\bf Take-home points} \\
  \vfill
   Sensitivity measures the change in $\lambda$ given an absolute
-  change in a parameter \\
+  change in a parameter. \\
   \vfill
   Elasticity measures the proportional change in $\lambda$ given a
-  proportional change in a parameter
+  proportional change in a parameter.
 \end{frame}
 
 
@@ -340,14 +344,14 @@ e  ## Elasticities
   \frametitle{Problems with PVA}
   \large
   Most PVA's are {\it ``essentially games played with
-    guesses''} (Caughley, G. 1994. Conservation Biology) \par
+    guesses.''} (Caughley, G. 1994. Conservation Biology) \par
   \pause
   \vspace{0.5cm}
   Many PVA's don't include multiple models corresponding to different
-  hypotheses \par
+  hypotheses. \par
   \pause
   \vspace{0.5cm}
-  {Some software encourages this \\}
+  {Some software encourages this. \\}
 \end{frame}
 
 
@@ -358,12 +362,12 @@ e  ## Elasticities
   \large
   {\bf Final thoughts}
   \begin{itemize}[<+->]
-    \item People often say that PVA's require too much data
+    \item People often say that PVA's require too much data.
     \item[]
     \item But what is the alternative?
     \item[]
     \item When data are limited (and they always are), you must
-      decrease the time horizon and acknowledge uncertainty in decision process
+      decrease the time horizon and acknowledge uncertainty in decision process. 
   \end{itemize}
 \end{frame}
 
