@@ -25,3 +25,5 @@ title: Lectures
 
 ### [Lecture 10 -- Metapopulation models](metapop/metapop.md)
 
+### [Lecture 11 -- Population viability analysis](pva/pva.md)
+
