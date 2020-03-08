@@ -3,8 +3,15 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
-\usepackage{bm}
+
+
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-sampling")
+rnw2pdf("lecture-sampling",tangle=TRUE)
+@
 
 
 
@@ -15,7 +22,7 @@
   \begin{center}
     {\huge \bf Sampling and Estimation \par}
     \vspace{0.5cm}
-    { \Large March 20, 2019} \\
+%    { \Large March 20, 2019} \\
     \vfill
 %    \fbox{
       \includegraphics[height=4.2cm,keepaspectratio]{figs/map} \hfill %\hspace{0.5cm}
@@ -212,7 +219,15 @@
   have enough resources to repeat a survey many times. Each point
   below is an estimate. \\
   \vfill
-<<N,include=FALSE,echo=FALSE,eval=FALSE>>=
+<<mkdir,include=FALSE>>=
+## Should use knitr for this business 
+if(!dir.exists("figs"))
+    dir.create("figs")
+if(!dir.exists("figs/sample-size"))
+    dir.create("figs/sample-size")
+@ 
+
+<<N,include=FALSE,echo=FALSE,eval=TRUE,cache=TRUE>>=
 height <- 5.5
 heightSD <- 0.5
 nSim <- 100
