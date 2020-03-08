@@ -50,21 +50,21 @@ All academic work must meet the standards contained in the University's [academi
 | ---- | -----                | --- |
 |      | **PART I - Models**  | --- |
 | ---- | -----                | --- |
-| 1    | [Course introduction](lectures/intro/intro.md)  | Excel and R basics | 
+| 1    | [Course introduction](lectures/intro/intro.md)  | [Excel and R basics](labs/intro/Excel-R-Basics.md) | 
 |      | [BIDE model](lectures/BIDE/bide.md)           |                    | 
 | 2    | [Exponential growth](lectures/exp-growth/exp-growth.md)   | Geometric growth   | 
 |      | [Logistic growth](lectures/logistic-growth/logistic-growth.md)      |                    |
-| 3    | [Harvest models](lectures/harvest/harvest.md)       | Logistic growth and harvest |
+| 3    | [Harvest models](lectures/harvest/harvest.md)       | [Logistic growth and harvest](labs/harvest/harvest.md) |
 |      | [Stochasticity](lectures/stochasticity/stochasticity.md)        |                             |
-| 4    | [Extinction](lectures/extinction/extinction.md)           | Extinction                  |
-|      | Competition          |                             |
-| 5    | Predation            | Competition and predation   |
-|      | Age structure        |                             |
-| 6    | Stage structure      | Age/stage structure         |
-|      | Source-sink dynamics |                             | 
+| 4    | [Extinction](lectures/extinction/extinction.md)           | [Extinction](labs/extinction/extinction.md)                  |
+|      | [Competition](lectures/interspecific/interspecific.md)          |                             |
+| 5    | [Predation](lectures/interspecific/interspecific.md)            | [Competition and predation](labs/interspecific/interspecific.md)   |
+|      | [Age structure](lectures/age/age.md)        |                             |
+| 6    | [Stage structure](lectures/age/age.md)      | [Age/stage structure](labs/age/age.md)         |
+|      | [Source-sink dynamics](lectures/metapop/metapop.md) |                             | 
 | 7    | Exam I               | Data collection             |
-|      | Metapopulations      |                             |
-| 8    | PVA                  | Metapopulations             |
+|      | [Metapopulations](lectures/metapop/metapop.md)      |                             |
+| 8    | [PVA](lectures/pva/pva.md)                  | [Metapopulations](labs/metapop/metapop.md)             |
 | ---- | -----                | --- |
 |      | **PART II - Estimation** | --- |
 | ---- | -----                | --- |
