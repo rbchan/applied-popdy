@@ -46,17 +46,17 @@ All academic work must meet the standards contained in the University's [academi
 ## Tentative course outline
 
 
-| Week | Lecture              | Lab | 
+| Week | [Lecture](lectures/lectures.md)              | [Lab](labs/labs.md) | 
 | ---- | -----                | --- |
 |      | **PART I - Models**  | --- |
 | ---- | -----                | --- |
-| 1    | Course introduction  | Excel and R basics | 
-|      | BIDE model           |                    | 
-| 2    | Exponential growth   | Geometric growth   | 
-|      | Logistic growth      |                    |
-| 3    | Harvest models       | Logistic growth and harvest |
-|      | Stochasticity        |                             |
-| 4    | Extinction           | Extinction                  |
+| 1    | [Course introduction](lectures/intro/intro.md)  | Excel and R basics | 
+|      | [BIDE model](lectures/BIDE/bide.md)           |                    | 
+| 2    | [Exponential growth](lectures/exp-growth/exp-growth.md)   | Geometric growth   | 
+|      | [Logistic growth](lectures/logistic-growth/logistic-growth.md)      |                    |
+| 3    | [Harvest models](lectures/harvest/harvest.md)       | Logistic growth and harvest |
+|      | [Stochasticity](lectures/stochasticity/stochasticity.md)        |                             |
+| 4    | [Extinction](lectures/extinction/extinction.md)           | Extinction                  |
 |      | Competition          |                             |
 | 5    | Predation            | Competition and predation   |
 |      | Age structure        |                             |
