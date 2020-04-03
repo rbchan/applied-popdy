@@ -8,6 +8,11 @@
 
 
 
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-occupancy")
+rnw2pdf("lecture-occupancy",tangle=TRUE)
+@
 
 
 
@@ -18,8 +23,8 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge Occupancy Estimation and Modeling \par}
-    \vspace{0.5cm}
-    { \Large March 18, 2019} \\
+%    \vspace{0.5cm}
+%    { \Large March 18, 2019} \\
     \vfill
     \includegraphics[height=4.6cm,keepaspectratio]{figs/book} %\hfill
     \hspace{0.5cm}
