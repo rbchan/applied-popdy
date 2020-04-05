@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
 \def\maxwidth{ %
   \ifdim\Gin@nat@width>\linewidth
@@ -59,6 +59,10 @@
 \usepackage{graphicx}
 \usepackage{color}
 \hypersetup{pdfstartview=FitV,hidelinks}
+
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -77,14 +81,16 @@
 
 Answer each of the following questions, and submit your answers by
 uploading a single \textcolor{red}{WORD} file to ELC. Unlike previous labs,
-copy and paste results from Excel and PRESENCE to the WORD file, or
-copy and paste entire screenshots to show the relevant output. Name
+copy and paste results from Excel and PRESENCE to the WORD file. You should also copy and paste entire screenshots to show the relevant output. Name
 the file something like \texttt{Chandler-lab8.docx}.  
 
 
 %\vspace{12pt}
 
-\section*{\normalsize Preliminaries: Getting Data into Program PRESENCE}
+
+\section*{Occupancy models in program PRESENCE}
+
+\subsection*{\normalsize Preliminaries: Getting Data into Program PRESENCE}
 \vspace{-10pt}
 \begin{enumerate}
   \itemsep-6pt
@@ -120,7 +126,7 @@ the file something like \texttt{Chandler-lab8.docx}.
 
 \clearpage
 
-\section*{Exercise I: Single-season models}
+\subsection*{Exercise I: Single-season models}
 
 Suppose we are interested in estimating occupancy of bobwhite quail
 ({\it Colinus virginianus}) in abandoned ag fields. We randomly select
@@ -203,7 +209,7 @@ instructions above).
 
 \clearpage
 
-\section*{Exercise II: Multi-season model}
+\subsection*{Exercise II: Multi-season model}
 
 Use the southern two-lined salamander ({\it Eurycea cirrigera})
 %Eastern newt ({\it Notophthalmus viridescens}) 
@@ -238,14 +244,328 @@ the 5 swipes of each team.
 
 
 
-%% \clearpage
-
-%% \section*{Occupancy modeling in \texttt{R}}
+\clearpage
 
 
-%% Occupancy models can be fit using the 'unmarked' package in {\tt R}. 
+\section*{Occupancy modeling in \texttt{R}}
+
+\subsubsection*{Install the `unmarked' package}
+
+Occupancy models can be fit using the `unmarked' package in {\tt R}. To install `unmarked', issue this command in R or RStudio:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlstr{"unmarked"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Once it's installed, you need to load it:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(unmarked)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\section*{Import the data}
+
+Now we're ready to import the data. The easiest way to do this is to save the data as a \texttt{.csv} file, and put it in your working directory. The working directory is the locatio on your computer where {\bf R} will look for files by default. To find out where the working directory is, do this:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{getwd}\hlstd{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "c:/Users/RichardC/courses/applied-popdy/labs/occupancy-modeling"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+If that is the location where your data are, you're ready to import. Otherwise, you need to change your working directory using the drop-down menu options, or using a command like:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{setwd}\hlstd{(}\hlstr{"C:/Users/Richard/Documents/APD/"}\hlstd{)} \hlcom{## Modify the path in quotes}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Once your working directory is correctly specified, you can import the data using this command:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{exampleData} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"example-data.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Let's look at a summary:
+
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{summary}\hlstd{(exampleData)}
+\end{alltt}
+\begin{verbatim}
+##        X      season1visit1  season1visit2 season1visit3  season1visit4 
+##  site1  : 1   Min.   :0.00   Min.   :0.0   Min.   :0.00   Min.   :0.00  
+##  site10 : 1   1st Qu.:0.00   1st Qu.:0.0   1st Qu.:0.00   1st Qu.:0.00  
+##  site11 : 1   Median :0.00   Median :0.0   Median :0.00   Median :0.00  
+##  site12 : 1   Mean   :0.34   Mean   :0.3   Mean   :0.34   Mean   :0.28  
+##  site13 : 1   3rd Qu.:1.00   3rd Qu.:1.0   3rd Qu.:1.00   3rd Qu.:1.00  
+##  site14 : 1   Max.   :1.00   Max.   :1.0   Max.   :1.00   Max.   :1.00  
+##  (Other):44                                                             
+##   habitatIndex  
+##  Min.   :1.040  
+##  1st Qu.:1.925  
+##  Median :3.135  
+##  Mean   :3.021  
+##  3rd Qu.:3.895  
+##  Max.   :4.760  
+## 
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Columns 2-4 have the occupancy data. The fifth column has a site-specific covariate. Before we can run a single-season occupancy model, we have to format the data:
 
 
+\section*{Format the data}
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## First, extract columns 2-4 with the occupancy data}
+\hlstd{occData} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"season1visit1"}\hlstd{,} \hlstr{"season1visit2"}\hlstd{,}
+                          \hlstr{"season1visit2"}\hlstd{,} \hlstr{"season1visit4"}\hlstd{)]}
+\hlcom{## Next, extract the column with the site covariate.}
+\hlcom{## It must be formatted as a data.frame}
+\hlstd{habIndex} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"habitatIndex"}\hlstd{),}\hlkwc{drop}\hlstd{=}\hlnum{FALSE}\hlstd{]}
+\hlcom{## Finally, put the pieces together}
+\hlstd{umf} \hlkwb{<-} \hlkwd{unmarkedFrameOccu}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{siteCovs}\hlstd{=habIndex)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Now that we have the data formatted, we should summarize it again to make sure everything looks good:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{summary}\hlstd{(umf)}
+\end{alltt}
+\begin{verbatim}
+## unmarkedFrame Object
+## 
+## 50 sites
+## Maximum number of observations per site: 4 
+## Mean number of observations per site: 4 
+## Sites with at least one detection: 27 
+## 
+## Tabulation of y observations:
+##   0   1 
+## 139  61 
+## 
+## Site-level covariates:
+##   habitatIndex  
+##  Min.   :1.040  
+##  1st Qu.:1.925  
+##  Median :3.135  
+##  Mean   :3.021  
+##  3rd Qu.:3.895  
+##  Max.   :4.760
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+All is well. Let's fit some models. 
+
+
+
+\section*{Fit occupancy models}
+
+Model fitting is the process of fitting a model to the data. In other words, it's the process of estimating the parameters of a model using a dataset.
+
+We will fit two models using the {occu} function. In the first model, there are no covariates, meaning that occupancy probability ($\psi$) and detection probability ($p$) are constant. We will call this the null model:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{nullModel} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlnum{1}\hlstd{, umf)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The line of code above fit the model. The first argument is a formula describing the model that you want to fit. If it is {~1 ~1}, then there are no covariates. We will add covariates later. First, let's summarize the results:
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{summary}\hlstd{(nullModel)}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## occu(formula = ~1 ~ 1, data = umf)
+## 
+## Occupancy (logit-scale):
+##  Estimate    SE     z P(>|z|)
+##     0.263 0.305 0.865   0.387
+## 
+## Detection (logit-scale):
+##  Estimate    SE     z P(>|z|)
+##     0.158 0.214 0.739    0.46
+## 
+## AIC: 218.689 
+## Number of sites: 50
+## optim convergence code: 0
+## optim iterations: 22 
+## Bootstrap iterations: 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Notice that the parameters are estimated on the logit-scale. To get estimates on the probability scale, we need to back-transform them. If there are no covariates, we can back-transform like this:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{## Occupancy estimate - Pr(site is occupied)}
+\hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## Backtransformed linear combination(s) of Occupancy estimate(s)
+## 
+##  Estimate     SE LinComb (Intercept)
+##     0.565 0.0748   0.263           1
+## 
+## Transformation: logistic
+\end{verbatim}
+\begin{alltt}
+\hlcom{## Detection estimate - Pr(detection | site is occupied)}
+\hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"det"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## Backtransformed linear combination(s) of Detection estimate(s)
+## 
+##  Estimate     SE LinComb (Intercept)
+##     0.539 0.0531   0.158           1
+## 
+## Transformation: logistic
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+We conclude that the probability that a site is occupied is 0.565. The probability that the species is detected (on a single visit), if the site is occupied, is 0.539.
+
+Let's now assess the possibility that occupancy probability depends on the habitat index. We can fit such a model like this:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{detNullOccHab} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlstd{habitatIndex, umf)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The summary indicates that habitat effect is positive, indicating that occupancy probability increases as the index increases. 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{summary}\hlstd{(detNullOccHab)}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## occu(formula = ~1 ~ habitatIndex, data = umf)
+## 
+## Occupancy (logit-scale):
+##              Estimate    SE     z P(>|z|)
+## (Intercept)     -1.46 0.883 -1.65  0.0982
+## habitatIndex     0.58 0.287  2.02  0.0429
+## 
+## Detection (logit-scale):
+##  Estimate    SE     z P(>|z|)
+##     0.156 0.214 0.731   0.465
+## 
+## AIC: 216.1208 
+## Number of sites: 50
+## optim convergence code: 0
+## optim iterations: 24 
+## Bootstrap iterations: 0
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+To visualize the habitat effect, we need to predict occupancy at several values of the habitat index, which ranged in value from approximately 1-5. We can create a sequence of values and put it into a dataframe for prediction like this:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{predData} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{habitatIndex}\hlstd{=}\hlkwd{seq}\hlstd{(}\hlkwc{from}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{to}\hlstd{=}\hlnum{5}\hlstd{,} \hlkwc{length.out}\hlstd{=}\hlnum{10}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Now, let's do the prediction:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{predOcc} \hlkwb{<-} \hlkwd{predict}\hlstd{(detNullOccHab,} \hlkwc{newdata}\hlstd{=predData,}
+                   \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{,} \hlkwc{append}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hlstd{predOcc}
+\end{alltt}
+\begin{verbatim}
+##    Predicted         SE     lower     upper habitatIndex
+## 1  0.2931627 0.12952825 0.1085915 0.5854200     1.000000
+## 2  0.3492662 0.11824286 0.1622006 0.5980656     1.444444
+## 3  0.4098804 0.10348112 0.2309460 0.6163436     1.888889
+## 4  0.4733619 0.08913042 0.3084423 0.6443065     2.333333
+## 5  0.5377165 0.08057270 0.3812750 0.6870678     2.777778
+## 6  0.6008384 0.08123399 0.4366166 0.7451336     3.222222
+## 7  0.6607787 0.08876466 0.4726798 0.8089068     3.666667
+## 8  0.7159729 0.09781079 0.4954656 0.8661436     4.111111
+## 9  0.7653753 0.10444806 0.5105962 0.9107126     4.555556
+## 10 0.8084834 0.10701643 0.5213756 0.9423951     5.000000
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+The ``Predicted'' values are the estimates of occupancy for each value of ``habitatIndex''. Standard errors and 95\% confidence intervals are also returned.
+
+Here's how to visualize the predictions with the confidence intervals:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plot}\hlstd{(Predicted} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{),}
+     \hlkwc{xlab}\hlstd{=}\hlstr{"Habitat index"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Occupancy"}\hlstd{)}
+\hlkwd{lines}\hlstd{(lower} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{lines}\hlstd{(upper} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.8\linewidth]{figure/plotOcc-1} 
+
+}
+
+
+
+\end{knitrout}
 
 \end{document}
 
