@@ -13,8 +13,8 @@
 
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
-rnw2pdf("lab-occupancy")
-rnw2pdf("lab-occupancy",tangle=TRUE)
+rnw2pdf("lab-occupancy-PRESENCE")
+rnw2pdf("lab-occupancy-PRESENCE",tangle=TRUE)
 @
 
 
@@ -25,7 +25,7 @@ rnw2pdf("lab-occupancy",tangle=TRUE)
 {
   \Large
   \centering
-  Lab 8 Assignment --- Occupancy Models \\
+  Lab 8 Assignment --- Occupancy Models in Program PRESENCE \\
   Due before your next lab \par
 }
 
@@ -37,14 +37,29 @@ rnw2pdf("lab-occupancy",tangle=TRUE)
 
 Answer each of the following questions, and submit your answers by
 uploading a single \textcolor{red}{WORD} file to ELC. Unlike previous labs,
-copy and paste results from Excel and PRESENCE to the WORD file. You should also copy and paste entire screenshots to show the relevant output. Name
-the file something like \texttt{Chandler-lab8.docx}.  
+copy and paste results from Excel and PRESENCE (or R) to the WORD
+file. You should also copy and paste entire screenshots to show the
+relevant output. Name the file something like
+\texttt{Chandler-lab8.docx}.
+
+Graduate students and undergraduates that don't have access to a
+Windows operating system should use the R package `unmarked'.
 
 
 %\vspace{12pt}
 
 
 \section*{Occupancy models in program PRESENCE}
+
+\subsection*{\normalsize Preliminaries: Installing program PRESENCE}
+
+If program PRESENCE isn't already installed on your computer, you can
+download it here:
+\url{https://www.mbr-pwrc.usgs.gov/software/presence.html}. Unfortunately,   
+it only runs on Windows operating systems. If you don't have Windows,
+you will need to do the assignment using the R package
+`unmarked', which is described in the other lab handout
+\texttt{lab-occupancy-R.pdf}. 
 
 \subsection*{\normalsize Preliminaries: Getting Data into Program PRESENCE}
 \vspace{-10pt}
@@ -102,7 +117,7 @@ site covariate: \texttt{veght}. Make sure you use \texttt{Paste with
 instructions above).  
 
 \begin{enumerate}
-  \item[(a)] Run the single-season analysis without changing the
+  \item[(a)] Run the simple single-season analysis without changing the
     defaults (\texttt{Run > Analysis:single-season}). Report the
     estimates and standard errors for psi ($\psi$) and p. Interpret
     these estimates (ie, what are the definitions of psi and p in this
@@ -196,6 +211,20 @@ the 5 swipes of each team.
     of the multi-season occupancy model. 
 
 \end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

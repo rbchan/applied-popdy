@@ -69,7 +69,7 @@
 {
   \Large
   \centering
-  Lab 8 Assignment --- Occupancy Models \\
+  Lab 8 Assignment --- Occupancy Models in Program PRESENCE \\
   Due before your next lab \par
 }
 
@@ -81,14 +81,29 @@
 
 Answer each of the following questions, and submit your answers by
 uploading a single \textcolor{red}{WORD} file to ELC. Unlike previous labs,
-copy and paste results from Excel and PRESENCE to the WORD file. You should also copy and paste entire screenshots to show the relevant output. Name
-the file something like \texttt{Chandler-lab8.docx}.  
+copy and paste results from Excel and PRESENCE (or R) to the WORD
+file. You should also copy and paste entire screenshots to show the
+relevant output. Name the file something like
+\texttt{Chandler-lab8.docx}.
+
+Graduate students and undergraduates that don't have access to a
+Windows operating system should use the R package `unmarked'.
 
 
 %\vspace{12pt}
 
 
 \section*{Occupancy models in program PRESENCE}
+
+\subsection*{\normalsize Preliminaries: Installing program PRESENCE}
+
+If program PRESENCE isn't already installed on your computer, you can
+download it here:
+\url{https://www.mbr-pwrc.usgs.gov/software/presence.html}. Unfortunately,   
+it only runs on Windows operating systems. If you don't have Windows,
+you will need to do the assignment using the R package
+`unmarked', which is described in the other lab handout
+\texttt{lab-occupancy-R.pdf}. 
 
 \subsection*{\normalsize Preliminaries: Getting Data into Program PRESENCE}
 \vspace{-10pt}
@@ -146,7 +161,7 @@ site covariate: \texttt{veght}. Make sure you use \texttt{Paste with
 instructions above).  
 
 \begin{enumerate}
-  \item[(a)] Run the single-season analysis without changing the
+  \item[(a)] Run the simple single-season analysis without changing the
     defaults (\texttt{Run > Analysis:single-season}). Report the
     estimates and standard errors for psi ($\psi$) and p. Interpret
     these estimates (ie, what are the definitions of psi and p in this
@@ -242,6 +257,20 @@ the 5 swipes of each team.
 \end{enumerate}
 
 
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \clearpage
@@ -281,7 +310,7 @@ Now we're ready to import the data. The easiest way to do this is to save the da
 \hlkwd{getwd}\hlstd{()}
 \end{alltt}
 \begin{verbatim}
-## [1] "c:/Users/RichardC/courses/applied-popdy/labs/occupancy-modeling"
+## [1] "c:/Users/rbchan/courses/applied-popdy/labs/occupancy-modeling"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -314,22 +343,20 @@ Let's look at a summary:
 \hlkwd{summary}\hlstd{(exampleData)}
 \end{alltt}
 \begin{verbatim}
-##        X      season1visit1  season1visit2 season1visit3  season1visit4 
-##  site1  : 1   Min.   :0.00   Min.   :0.0   Min.   :0.00   Min.   :0.00  
-##  site10 : 1   1st Qu.:0.00   1st Qu.:0.0   1st Qu.:0.00   1st Qu.:0.00  
-##  site11 : 1   Median :0.00   Median :0.0   Median :0.00   Median :0.00  
-##  site12 : 1   Mean   :0.34   Mean   :0.3   Mean   :0.34   Mean   :0.28  
-##  site13 : 1   3rd Qu.:1.00   3rd Qu.:1.0   3rd Qu.:1.00   3rd Qu.:1.00  
-##  site14 : 1   Max.   :1.00   Max.   :1.0   Max.   :1.00   Max.   :1.00  
-##  (Other):44                                                             
+##       Site       season1visit1 season1visit2   season2visit1 season2visit2 
+##  Min.   : 1.00   Min.   :0.0   Min.   :0.000   Min.   :0.0   Min.   :0.00  
+##  1st Qu.:10.75   1st Qu.:0.0   1st Qu.:0.000   1st Qu.:0.0   1st Qu.:0.00  
+##  Median :20.50   Median :0.0   Median :0.000   Median :0.0   Median :0.00  
+##  Mean   :20.50   Mean   :0.4   Mean   :0.325   Mean   :0.3   Mean   :0.25  
+##  3rd Qu.:30.25   3rd Qu.:1.0   3rd Qu.:1.000   3rd Qu.:1.0   3rd Qu.:0.25  
+##  Max.   :40.00   Max.   :1.0   Max.   :1.000   Max.   :1.0   Max.   :1.00  
 ##   habitatIndex  
 ##  Min.   :1.040  
-##  1st Qu.:1.925  
-##  Median :3.135  
-##  Mean   :3.021  
-##  3rd Qu.:3.895  
-##  Max.   :4.760  
-## 
+##  1st Qu.:1.885  
+##  Median :2.805  
+##  Mean   :2.912  
+##  3rd Qu.:3.835  
+##  Max.   :4.740
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -347,13 +374,19 @@ Columns 2-4 have the occupancy data. The fifth column has a site-specific covari
 \hlcom{## First, extract columns 2-4 with the occupancy data}
 \hlstd{occData} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"season1visit1"}\hlstd{,} \hlstr{"season1visit2"}\hlstd{,}
                           \hlstr{"season1visit2"}\hlstd{,} \hlstr{"season1visit4"}\hlstd{)]}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `[.data.frame`(exampleData, , c("{}season1visit1"{}, "{}season1visit2"{}, : undefined columns selected}}\begin{alltt}
 \hlcom{## Next, extract the column with the site covariate.}
 \hlcom{## It must be formatted as a data.frame}
 \hlstd{habIndex} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"habitatIndex"}\hlstd{),}\hlkwc{drop}\hlstd{=}\hlnum{FALSE}\hlstd{]}
 \hlcom{## Finally, put the pieces together}
 \hlstd{umf} \hlkwb{<-} \hlkwd{unmarkedFrameOccu}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{siteCovs}\hlstd{=habIndex)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in validObject(.Object): invalid class "{}unmarkedFrame"{} object: siteCovData does not have same size number of sites as y.}}\end{kframe}
 \end{knitrout}
 
 
