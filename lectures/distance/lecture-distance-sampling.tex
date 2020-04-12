@@ -1,6 +1,6 @@
 \documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
 \def\maxwidth{ %
   \ifdim\Gin@nat@width>\linewidth
@@ -55,6 +55,10 @@
 \usepackage[sans]{../pres1}
 \usepackage{graphicx}
 \usepackage{bm}
+
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -64,7 +68,7 @@
   \begin{center}
     {\huge Distance sampling \par}
     \vspace{0.5cm}
-    { \Large March 25, 2019} \\
+%    { \Large March 25, 2019} \\
     {\color{RoyalBlue} \rule{\textwidth}{1pt}}
     \vfill
     \includegraphics[height=5.5cm,keepaspectratio]{figs/book1} %\hfill
@@ -113,7 +117,7 @@
   \large
   {\bf Challenges}
   \begin{itemize}
-    \item<1-> Detection probability is usually not just a number
+    \item<1-> Detection probability is rarely constant
     \item<2-> It is a function of: %\dots
     \begin{itemize}
       \large
