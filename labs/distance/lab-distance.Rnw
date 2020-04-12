@@ -5,11 +5,7 @@
 
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{verbatim}
-\hypersetup{pdfstartview=FitV,hidelinks}
+%\hypersetup{pdfstartview=FitV,hidelinks}
 
 
 <<eval=FALSE,include=FALSE>>=
@@ -21,7 +17,6 @@ rnw2pdf("lab-distance",tangle=TRUE)
 %% knitr stuff
 %% New command for inline code that isn't to be evaluated
 \definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
-%\definecolor{inlinecolor}{rgb}{0.97, 0.97, 0.97}           % acid
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 
 
@@ -41,8 +36,7 @@ rnw2pdf("lab-distance",tangle=TRUE)
 % data using program DISTANCE.  
 
 The purpose of this lab is to learn how to use program DISTANCE or the
-R package `Distance' to
-estimate abundance and density using distance sampling data. You will
+R package `Distance' to estimate abundance and density. You will
 do this by analyzing fake data on Mongolian gazelle ({\it Procapra
   gutturosa}). The data are fake, but they are based loosely on the
 study that we discussed in lecture. Note that gazelles were detected
@@ -186,7 +180,7 @@ something like ``Chandler-lab9.docx''. Due before your next lab.
 \clearpage
 
 
-\section*{R program `Distance'}
+\section*{R package `Distance'}
 
 Open R (or RStudio) and install the package using the following
 command: 
@@ -226,14 +220,15 @@ instead of a comma-seperated text file like we used last week:
 gazelleData <- read.table("GazelleFakeData.txt", header=TRUE, sep="\t")
 @
 
-The structure of the data can assessed like this:
+The structure of the data can be assessed like this:
 
 <<str>>=
 str(gazelleData)
 @ 
 
 We have to reformat the data to meet the requirements of the Distance
-package.
+package. The code below creates a new data frame, renames the columns,
+and converts the distance units to kilometers.
 
 <<reformat>>=
 gazelleData2 <- gazelleData[,c("Transect", "GroupSize")]
@@ -245,7 +240,9 @@ gazelleData2$Area <- gazelleData$RegionArea
 @ 
 
 The distance sampling model can be fitted to the data using the
-\inr{ds} function.
+\inr{ds} function. The \inr{key} argument specifies the detection
+function. You could switch from the half-normal to the hazard-rate
+function using: \inr{key="hr"}.
 
 
 <<model-hn>>=
@@ -254,17 +251,21 @@ model.hn <- ds(data=gazelleData2, key="hn",
                adjustment=NULL, quiet=TRUE)
 @ 
 
-Once you have fitted the model, you can summarize the output and view
-the detection function using commands such as:
+Once you have fitted the model, you can obtain the parameter estimates
+using the following command:
 
 <<model-hn-summary,eval=FALSE>>=
 summary(model.hn)
 @ 
 
+To view the estimated detection function, do this:
+
 <<model-hn-plot,out.width="80%",fig.align="center",eval=FALSE>>=
 plot(model.hn)
 @ 
 
+
+Answer all of the questions listed under ``Part II'' above.
 
 
 \end{document}
