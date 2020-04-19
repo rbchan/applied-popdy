@@ -42,7 +42,7 @@ population does not experience recruitment, mortality, immigration or
 emigration. 
 
 Undergrads with access to Windows can use program MARK. Everyone else
-can use the R package 'secr'. Put your answers in a Word file and
+can use the R package 'mra'. Put your answers in a Word file and
 upload it to ELC. Name the file something like ``Chandler-lab10.docx''. 
 
 
@@ -213,14 +213,14 @@ Open R (or RStudio) and install the package using the following
 command: 
 
 <<install,eval=FALSE>>=
-install.packages("secr")
+install.packages("mra")
 @ 
 
 Several other packages will be installed during the process. Now we
 can load the package like so: 
 
 <<load>>=
-library(secr)
+library(mra)
 @ 
 
 We can import the data using \inr{read.table}. The only trick is to
@@ -231,7 +231,6 @@ arguments let's us do that.
 <<import>>=
 capture.histories <- read.table("CH-SO-Andy07.inp", sep=" ",
                                 colClasses=c("character", "numeric"),
-                                comment.char=";",
                                 col.names=c("ch", "freq"))
 @ 
 
@@ -244,17 +243,55 @@ capture.histories
 As you can see, no turtle was caught more than twice out of the 6
 occassions.
 
-Run this command to convert this to format that \inr{secr} recognizes:
+% Run this command to convert this to format that \inr{secr} recognizes:
 
-<<format>>=
-cap.hist <- unRMarkInput(capture.histories, covariates=FALSE)
+% <<format>>=
+% cap.hist <- unRMarkInput(capture.histories, covariates=FALSE)
+% @ 
+
+
+% <<closedN>>=
+% closedN(cap.hist, estimator=c("null", "darroch", "zippin"))
+% @ 
+
+
+% <<Rcapture>>=
+% library(Rcapture)
+% closedp(cap.hist[,,1])
+% @ 
+
+We need to convert the capture histories from a character vector to a
+matrix:
+
+
+<<capmat>>=
+ch.mat <- t(sapply(capture.histories$ch,
+                   function(x) as.integer(strsplit(x, "")[[1]])))
+@ 
+
+Model $M_0$ can be fit like this:
+
+<<M0>>=
+M0 <- F.huggins.estim(capture=~1, recapture=NULL, histories=ch.mat)
+@ 
+
+Model $M_b$ like this:
+
+<<Mb>>=
+Mb <- F.huggins.estim(capture=~1, recapture=~1, histories=ch.mat)
 @ 
 
 
-<<closedN>>=
-closedN(cap.hist, estimator=c("null", "darroch", "zippin"))
+<<Mt>>=
+time <- tvar(factor(1:6), nan=17) ## 6 time periods. 17 animals.
+Mt <- F.huggins.estim(capture=~time, recapture=NULL, histories=ch.mat)
 @ 
 
+
+
+<<Mtb>>=
+Mtb <- F.huggins.estim(capture=~time, recapture=~1, histories=ch.mat)
+@ 
 
 
 \end{document}
