@@ -4,7 +4,14 @@
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
 
-\usepackage{bm}
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-mark-recap-closedpop")
+rnw2pdf("lecture-mark-recap-closedpop",tangle=TRUE)
+@
+
+
 
 
 %\renewcommand\mathfamilydefault{\rmdefault}
@@ -19,7 +26,7 @@
     {\huge Capture-mark-recapture methods for abundance estimation \par}
 %    \LARGE Closed-population models \\
     \vspace{0.5cm}
-    { \Large April 1, 2019} \\
+%    { \Large April 1, 2019} \\
     {\color{RoyalBlue} \rule{\textwidth}{1pt}}
     \vfill
     \includegraphics[height=3.5cm,keepaspectratio]{figs/SBNT} %\hfill
