@@ -2,6 +2,7 @@
 
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
 %\hypersetup{pdfstartview=FitV,hidelinks}
 
 
@@ -39,11 +40,13 @@ knit_theme$set("edit-kwrite")
 The purpose of this lab is to learn how to estimate abundance using
 mark-recapture data from surveys of closed populations. A closed
 population does not experience recruitment, mortality, immigration or
-emigration. 
+emigration. The closure assumption is usually only valid over very
+short time periods. We will learn how to work with data from open
+populations later.
 
-Undergrads with access to Windows can use program MARK. Everyone else
-can use the R package 'mra'. Put your answers in a Word file and
-upload it to ELC. Name the file something like ``Chandler-lab10.docx''. 
+Work through the problems below, put your answers in a Word file,
+and then upload it to ELC. Name the file something like
+``Chandler-lab10.docx''.  
 
 
 
@@ -72,7 +75,71 @@ hand. Be sure to show your work.
 
 %\clearpage
 
-\section*{\large  Part II: Closed-population models in MARK}
+\section*{\large  Part II: Closed-population models in MARK and R}
+
+You will use either program MARK or R to fit the four mark-recapture
+models described in Table~\ref{tab:Otis}. Undergrads with access to
+Windows can use program MARK. Everyone else can use the R package
+`mra'. Software instructions are below. The assignment is at the end.  
+
+\begin{table}[h!]
+  \centering
+  \caption{A description of the four models to be fitted to the
+    stinkpot data.}
+  \footnotesize
+  \begin{tabular}[h!]{ll}
+    \hline
+    Model name & Model description \\
+    \hline
+    $M_0$ & The most basic model in which $p$ and $c$ are constant \\
+    $M_t$ & A model in which $p$ differs among sampling occasions and
+            $p_t=c_t$. \\
+    $M_b$ & A behavioral response model in which $p$ and $c$
+            differ. Can describe trap happiness or trap shiness. \\
+    $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
+    \hline
+  \end{tabular}
+  \label{tab:Otis}
+\end{table}
+
+
+%\clearpage
+
+% \begin{figure}[h!]
+%   \centering
+%   \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
+%   \caption{\small The parameter index chart in MARK can be
+%     used to specify models. In this case, capture probability ($p$) is
+%     set to be equal to recapture probability ($c$).}
+%   \label{fig:pim}
+% \end{figure}
+
+% \vspace{1cm}
+
+{\bf Parameter definitions}
+\begin{itemize}
+  \item $p$ -- capture probability. The probability of capturing an
+    individual on a single occasion
+  \item $p_t$ -- capture probability on occasion $t$
+  \item $c$ -- recapture probability. The probability of capturing an
+    individual that has been captured previously.
+  \item $n$ -- the number of individuals captured
+  \item $f_0$ -- the number of individual not captured
+  \item $N$ -- abundance. The number of individuals in the
+    population. $N=n+f_0$. 
+\end{itemize}
+
+%\vspace{1cm}
+
+
+
+\subsection*{Closed-population models in program MARK}
+
+You can download program MARK here:
+\url{http://www.phidot.org/software/mark/downloads/}. Even though it
+is possible to run MARK on Linux or OS/X, it isn't easy, and I don't
+recommend it. If you don't have Windows, use R as described below.
+
 The data file (\verb+CH-SO-Andy07.inp+) is a simple text file, formatted
 as required by program MARK. Each row of the file is a capture history
 for each of the 17 stinkpots ({\it Sternotherus odoratus}) captured in
@@ -84,7 +151,7 @@ space followed by a 1 and a semi-colon to indicate that there was just
 
 \begin{figure}[h!]
   \centering
-  \fbox{\includegraphics[height=0.7\textheight]{figs/stinkpot07-data}}
+  \fbox{\includegraphics[height=0.6\textheight]{figs/stinkpot07-data}}
   \caption{\small Stinkpot capture histories in a text file ready to
     be imported to MARK.}
   \label{fig:stink07-data}
@@ -135,89 +202,23 @@ space followed by a 1 and a semi-colon to indicate that there was just
   %   (see Fig.~\ref{fig:pim}). Then select \verb+"Run > Current Model"+.
 \end{enumerate}
 
-\begin{table}[h!]
-  \centering
-  \caption{A description of the four models to be fitted to the
-    stinkpot data.}
-  \footnotesize
-  \begin{tabular}[h!]{ll}
-    \hline
-    Model name & Model description \\
-    \hline
-    $M_0$ & The most basic model in which $p$ and $c$ are constant \\
-    $M_t$ & A model in which $p$ differs among sampling occasions and
-            $p_t=c_t$. \\
-    $M_b$ & A behavioral response model in which $p$ and $c$
-            differ. Can describe trap happiness or trap shiness. \\
-    $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
-    \hline
-  \end{tabular}
-  \label{tab:Otis}
-\end{table}
-
-
-\clearpage
-
-% \begin{figure}[h!]
-%   \centering
-%   \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
-%   \caption{\small The parameter index chart in MARK can be
-%     used to specify models. In this case, capture probability ($p$) is
-%     set to be equal to recapture probability ($c$).}
-%   \label{fig:pim}
-% \end{figure}
-
-% \vspace{1cm}
-
-{\bf Parameter definitions}
-\begin{itemize}
-  \item $p$ -- capture probability. The probability of capturing an
-    individual on a single occasion
-  \item $p_t$ -- capture probability on occasion $t$
-  \item $c$ -- recapture probability. The probability of capturing an
-    individual that has been captured previously.
-  \item $n$ -- the number of individuals captured
-  \item $f_0$ -- the number of individual not captured
-  \item $N$ -- abundance. The number of individuals in the
-    population. $N=n+f_0$. 
-\end{itemize}
-
-\vspace{1cm}
-
-{\bf Assignment}
-
-\begin{enumerate}
-  \item[(a)] Summarize your results by creating a table in which each row
-    is a model, and include the following columns: the estimates of $N$
-    (abundance), the standard errors of $N$ (SE), and the AICc
-    values. 
-  \item[(b)] The model with the lowest AICc is considered the best in
-    the set of models. Which model has the lowest AICc? Do your
-    results suggest that it is important to account for variation in
-    capture (and recapture) probability over time? Explain.
-  \item[(c)] Why do you think model $M_0$ is the worst model
-    in the set? Look at the capture histories when answering this
-    question. 
-  \item[(d)] Given what you know about turtles and turtle trapping,
-    what sources of variation in capture probability (other than time)
-    do you think we might want to account for to obtain more reliable
-    abundance estimates?
-\end{enumerate}
 
 
 
-\section*{\large  Part III: Closed-population models in R}
+\section*{Closed-population models in R}
 
 
-Open R (or RStudio) and install the package using the following
-command: 
+Graduate students and undergraduates without access to Windows, should
+follow these instructions for completing the assignment below.
+
+Open R (or RStudio) and install the ``mra'' package using the
+following command: 
 
 <<install,eval=FALSE>>=
 install.packages("mra")
 @ 
 
-Several other packages will be installed during the process. Now we
-can load the package like so: 
+Now load the package like so: 
 
 <<load>>=
 library(mra)
@@ -230,7 +231,7 @@ arguments let's us do that.
 
 <<import>>=
 capture.histories <- read.table("CH-SO-Andy07.inp", sep=" ",
-                                colClasses=c("character", "numeric"),
+                                colClasses=c("character", "character"),
                                 col.names=c("ch", "freq"))
 @ 
 
@@ -261,15 +262,24 @@ occassions.
 % @ 
 
 We need to convert the capture histories from a character vector to a
-matrix:
+matrix. The following code does the trick.
 
 
-<<capmat>>=
+<<capmat-format>>=
 ch.mat <- t(sapply(capture.histories$ch,
                    function(x) as.integer(strsplit(x, "")[[1]])))
+dimnames(ch.mat) <- list(paste0("Turtle", 1:17), paste0("Time", 1:6))
+@
+
+
+Now the capture histories look like this:
+
+<<capmat-view>>=
+ch.mat
 @ 
 
-Model $M_0$ can be fit like this:
+We will use the \inr{F.huggins.estim} function to fit the
+closed population models. Model $M_0$ can be fit like this: 
 
 <<M0>>=
 M0 <- F.huggins.estim(capture=~1, recapture=NULL, histories=ch.mat)
@@ -281,6 +291,7 @@ Model $M_b$ like this:
 Mb <- F.huggins.estim(capture=~1, recapture=~1, histories=ch.mat)
 @ 
 
+To fit model $M_t$, we have to create a time variable.
 
 <<Mt>>=
 time <- tvar(factor(1:6), nan=17) ## 6 time periods. 17 animals.
@@ -288,10 +299,51 @@ Mt <- F.huggins.estim(capture=~time, recapture=NULL, histories=ch.mat)
 @ 
 
 
+You should be able to figure out how to fit model $M_{tb}$ by
+extending the code above.
 
-<<Mtb>>=
-Mtb <- F.huggins.estim(capture=~time, recapture=~1, histories=ch.mat)
+Estimates of abundance along with AICc values can be found by typing
+the name of the fitted model object. For example:
+
+<<M0-view>>=
+M0
 @ 
+
+
+You can extract information about capture probability (which isn't
+needed to do the assignment) using code like this:
+
+<<M0-p>>=
+round(M0$p.hat, 3)
+@ 
+
+For model $M_0$, capture probability is the same for all individuals
+during all time periods. This won't be the case for the other models. 
+
+\clearpage
+
+\section*{Assignment}
+
+\begin{enumerate}
+  \item[(a)] Summarize your results by creating a table in which each row
+    is a model, and include the following columns: the estimates of $N$
+    (abundance), the standard errors of $N$ (SE), and the AICc
+    values. 
+  \item[(b)] The model with the lowest AICc is considered the best in
+    the set of models. Which model has the lowest AICc? Do your
+    results suggest that it is important to account for variation in
+    capture (and recapture) probability over time? Explain.
+  \item[(c)] Why do you think model $M_0$ is the worst model
+    in the set? Look at the capture histories when answering this
+    question. 
+  \item[(d)] Given what you know about turtles and turtle trapping,
+    what sources of variation in capture probability (other than time)
+    do you think we might want to account for to obtain more reliable
+    abundance estimates?
+\end{enumerate}
+
+
+
 
 
 \end{document}
