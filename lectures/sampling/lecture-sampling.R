@@ -1,10 +1,10 @@
-## ----eval=FALSE,include=FALSE--------------------------------------------
+## ----eval=FALSE,include=FALSE-------------------------------------------------
 ## source("../../rnw2pdf.R")
 ## rnw2pdf("lecture-sampling")
 ## rnw2pdf("lecture-sampling",tangle=TRUE)
 
 
-## ----mkdir,include=FALSE-------------------------------------------------
+## ----mkdir,include=FALSE------------------------------------------------------
 ## Should use knitr for this business 
 if(!dir.exists("figs"))
     dir.create("figs")
@@ -12,7 +12,7 @@ if(!dir.exists("figs/sample-size"))
     dir.create("figs/sample-size")
 
 
-## ----N,include=FALSE,echo=FALSE,eval=TRUE,cache=TRUE---------------------
+## ----N,include=FALSE,echo=FALSE,eval=TRUE,cache=TRUE--------------------------
 height <- 5.5
 heightSD <- 0.5
 nSim <- 100

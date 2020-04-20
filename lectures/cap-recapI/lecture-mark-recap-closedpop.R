@@ -1,10 +1,10 @@
-## ----eval=FALSE,include=FALSE--------------------------------------------
+## ----eval=FALSE,include=FALSE-------------------------------------------------
 ## source("../../rnw2pdf.R")
 ## rnw2pdf("lecture-mark-recap-closedpop")
 ## rnw2pdf("lecture-mark-recap-closedpop",tangle=TRUE)
 
 
-## ----rem,include=FALSE,echo=FALSE,fig.width=12,fig.height=6--------------
+## ----rem,include=FALSE,echo=FALSE,fig.width=12,fig.height=6-------------------
 N <- 100
 p1 <- 0.8
 p2 <- 0.3
@@ -21,7 +21,7 @@ barplot(x1[1:3], main="p=0.8, N=100", cex.lab=2, cex.main=2, cex.axis=1.5,
 barplot(x2[1:3], main="p=0.3, N=100", cex.lab=2, cex.main=2, cex.axis=1.5,
         xlab="Occasion", names=1:3, ylab="New captures")
 
-## ----rem2,include=FALSE,echo=FALSE,fig.width=12,fig.height=6-------------
+## ----rem2,include=FALSE,echo=FALSE,fig.width=12,fig.height=6------------------
 N <- 100
 p1 <- 0.2
 p2 <- 0.7
