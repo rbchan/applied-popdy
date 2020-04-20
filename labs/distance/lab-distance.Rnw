@@ -212,7 +212,7 @@ list.files()  ## You should see 'GazelleFakeData.txt' here
 If you need to change your working directory, you can use the dropdown
 menu options, or you can use a command like this:
 
-<<setwd>>=
+<<setwd,eval=FALSE>>=
 setwd("C:/Users/RichardC/courses/") ## Change the path in quotes!
 @
 
