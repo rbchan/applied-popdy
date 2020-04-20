@@ -17,5 +17,13 @@ title: Labs
 
 ### [Lab 6 -- Metapopulations](metapop/metapop.md)
 
+### Lab 7 -- Occupancy data collection
+
+### [Lab 8 -- Occupancy models](occupancy-modeling/occupancy.md)
+
+### [Lab 9 -- Distance sampling](distance/distance.md)
+
+### [Lab 10 -- Mark-recapture for closed populations](cap-recapI/cap-recapI.md)
+
 
 

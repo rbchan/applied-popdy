@@ -27,3 +27,10 @@ title: Lectures
 
 ### [Lecture 11 -- Population viability analysis](pva/pva.md)
 
+### [Lecture 12 -- Sampling and estimation](sampling/sampling.md)
+
+### [Lecture 13 -- Occupancy models](occupancy/occupancy.md)
+
+### [Lecture 15 -- Mark-recapture for closed populations](mark-recap-closed/mark-recap-closed.md)
+
+
