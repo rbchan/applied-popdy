@@ -8,7 +8,7 @@ layout: page
 
 [Lab assignment](lab-distance.pdf)
 
-- [Fake data on Mongolian Gazelle](GazelleFakeData.csv)
+- [Fake data on Mongolian Gazelle](GazelleFakeData.txt)
 
 
 
