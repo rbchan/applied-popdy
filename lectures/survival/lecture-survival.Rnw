@@ -3,13 +3,16 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
-\usepackage{bm}
 \usepackage{changepage}
 \usepackage{array}
-%\usepackage[T1]{fontenc}
-
 \usepackage{soul}
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-survival")
+rnw2pdf("lecture-survival",tangle=TRUE)
+@
 
 
 
@@ -22,8 +25,8 @@
   \begin{center}
     {\huge Estimating survival using telemetry \\ 
       \st{or age distribution} data \par}
-    \vspace{0.5cm}
-    { \Large April 17, 2019} \\
+%    \vspace{0.5cm}
+%    { \Large April 17, 2019} \\
     {\color{blue} \rule{\textwidth}{1pt}}
     \vfill
     \includegraphics[height=4.5cm,keepaspectratio]{figs/radiotelemetry} %\hfill
@@ -61,7 +64,7 @@
     \item[]
     \item<3-> Capture-mark-recapture
       \begin{itemize}
-        \item Covered in previous lecture %Next lecture
+        \item Covered in the next lecture 
       \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -95,7 +98,7 @@
       \uncover<2->{\textbf{Cons}}
       \begin{itemize}[<2->]
         \item Batteries don't last as long as bands
-        \item When fate is unknown, analysis is hard
+        \item When fate is unknown, analysis can be hard
         \item Transmitters may influence vital rates and behavior
       \end{itemize}
     \end{column}
@@ -186,8 +189,8 @@
   \end{itemize}
   \pause
   \vfill
-  {\centering If either type of censoring occurs, use the
-    Kaplan-Meier model instead of the binomial model \par}
+  {\centering If either type of censoring occurs, 
+    Kaplan-Meier model is more appropriate than the binomial model \par}
 \end{frame}
 
 

@@ -3,9 +3,13 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
-\usepackage{bm}
 
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-mark-recap-openpop")
+rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
+@
 
 
 
@@ -16,8 +20,8 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge \bf Mark-recapture methods for estimating survival and recruitment \par}
-    \vspace{0.5cm}
-    { \Large April 8 \& 10, 2019} \\
+%    \vspace{0.5cm}
+%    { \Large April 8 \& 10, 2019} \\
     {\color{blue} \rule{\textwidth}{1pt}}
     \vfill
     \includegraphics[height=3cm,keepaspectratio]{figs/hammerhead} %\hfill
@@ -231,7 +235,7 @@
   \pause
   \vspace{0.5cm}
   {\bf Design} \\
-  A random sample of animals is marked and followed over may periods
+  A random sample of animals is marked and followed over many periods
   (usually years) \\
 %  {\bf Examples}
 %  \begin{itemize}
@@ -242,7 +246,7 @@
   {\bf Notes} \\
   \begin{itemize}[<+->]
     \item When permanent emigration is possible, we can't be sure if
-    animal died or left study area
+    an animal died or left study area
     \item So, we often have to estimate ``apparent survival'' ($\phi$)
       instead of actual survival ($S$)
     \item Apparent survival is the probability that an individual
