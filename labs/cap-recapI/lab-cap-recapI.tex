@@ -276,7 +276,7 @@ Now load the package like so:
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# mra (version 2.16.11)}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(mra): there is no package called 'mra'}}\end{kframe}
 \end{knitrout}
 
 We can import the data using \inr{read.table}. The only trick is to
@@ -397,7 +397,9 @@ closed population models. Model $M_0$ can be fit like this:
 \begin{alltt}
 \hlstd{M0} \hlkwb{<-} \hlkwd{F.huggins.estim}\hlstd{(}\hlkwc{capture}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{,} \hlkwc{recapture}\hlstd{=}\hlkwa{NULL}\hlstd{,} \hlkwc{histories}\hlstd{=ch.mat)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in F.huggins.estim(capture = \textasciitilde{}1, recapture = NULL, histories = ch.mat): could not find function "{}F.huggins.estim"{}}}\end{kframe}
 \end{knitrout}
 
 Model $M_b$ like this:
@@ -407,7 +409,9 @@ Model $M_b$ like this:
 \begin{alltt}
 \hlstd{Mb} \hlkwb{<-} \hlkwd{F.huggins.estim}\hlstd{(}\hlkwc{capture}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{,} \hlkwc{recapture}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{,} \hlkwc{histories}\hlstd{=ch.mat)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in F.huggins.estim(capture = \textasciitilde{}1, recapture = \textasciitilde{}1, histories = ch.mat): could not find function "{}F.huggins.estim"{}}}\end{kframe}
 \end{knitrout}
 
 To fit model $M_t$, we have to create a time variable.
@@ -416,9 +420,15 @@ To fit model $M_t$, we have to create a time variable.
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{time} \hlkwb{<-} \hlkwd{tvar}\hlstd{(}\hlkwd{factor}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{6}\hlstd{),} \hlkwc{nan}\hlstd{=}\hlnum{17}\hlstd{)} \hlcom{## 6 time periods. 17 animals.}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tvar(factor(1:6), nan = 17): could not find function "{}tvar"{}}}\begin{alltt}
 \hlstd{Mt} \hlkwb{<-} \hlkwd{F.huggins.estim}\hlstd{(}\hlkwc{capture}\hlstd{=}\hlopt{~}\hlstd{time,} \hlkwc{recapture}\hlstd{=}\hlkwa{NULL}\hlstd{,} \hlkwc{histories}\hlstd{=ch.mat)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in F.huggins.estim(capture = \textasciitilde{}time, recapture = NULL, histories = ch.mat): could not find function "{}F.huggins.estim"{}}}\end{kframe}
 \end{knitrout}
 
 
@@ -433,27 +443,9 @@ the name of the fitted model object. For example:
 \begin{alltt}
 \hlstd{M0}
 \end{alltt}
-\begin{verbatim}
-## Call:
-## F.huggins.estim(capture = ~1, recapture = NULL, histories = ch.mat)
-## 
-##  Capture and Recapture model:
-##  Variable     Est       SE     
-##  (Intercept)  -2.37255  0.49911 
-## 
-## Population Size Estimate (se): 41.0364 (16.6626)
-## 95% confidence interval for population size: 24.04 to 99.05
-## Individuals observed: 17
-## Effective sample size: 102
-## 
-## Message =  SUCCESS: Convergence criterion met
-## Number of estimable coefficients (estimated) =  1
-## Log likelihood =  -43.9354578026216
-## Deviance =  87.8709156052432
-## AIC =  89.8709156052432
-## AICc =  89.9109156052432
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'M0' not found}}\end{kframe}
 \end{knitrout}
 
 
@@ -465,27 +457,9 @@ needed to do the assignment) using code like this:
 \begin{alltt}
 \hlkwd{round}\hlstd{(M0}\hlopt{$}\hlstd{p.hat,} \hlnum{3}\hlstd{)}
 \end{alltt}
-\begin{verbatim}
-##        [,1]  [,2]  [,3]  [,4]  [,5]  [,6]
-##  [1,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [2,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [3,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [4,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [5,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [6,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [7,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [8,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [9,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [10,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [11,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [12,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [13,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [14,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [15,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [16,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [17,] 0.085 0.085 0.085 0.085 0.085 0.085
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'M0' not found}}\end{kframe}
 \end{knitrout}
 
 For model $M_0$, capture probability is the same for all individuals
