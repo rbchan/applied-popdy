@@ -27,3 +27,10 @@
   material... or switch everything to R and unmarked
 
 
+
+
+## Videos
+
+- Intraspecific competition
+  * Giraffe fight in 'Africa'
+  
