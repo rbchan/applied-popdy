@@ -1,10 +1,10 @@
-## ----eval=FALSE,include=FALSE--------------------------------------------
+## ----eval=FALSE,include=FALSE-------------------------------------------------
 ## source("../../rnw2pdf.R")
 ## rnw2pdf("lecture-BIDE")
 ## rnw2pdf("lecture-BIDE",tangle=TRUE)
 
 
-## ----bide0,echo=FALSE,include=FALSE,fig.width=8,fig.height=6,cache=TRUE----
+## ----bide0,echo=FALSE,include=FALSE,fig.width=8,fig.height=6,cache=TRUE-------
 T <- 20
 N <- integer(T)
 B <- D <- I <- E <- integer(T-1)
