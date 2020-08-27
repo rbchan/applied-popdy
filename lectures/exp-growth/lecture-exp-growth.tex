@@ -500,12 +500,12 @@
     \small
     The exponential growth model is often considered more appropriate
     than the geometric growth model for \alert{birth flow populations}
-    in which reproduction occurs throughout the year. \\
+    in which reproduction occurs throughout the year \\
   }
   \vfill
   \uncover<4->{
     However, geometric growth models can provide a good approximation
-    of birth flow or \alert{birth pulse populations}. 
+    of birth flow or \alert{birth pulse populations} 
   }
 \end{frame}
 %\end{comment}
@@ -604,22 +604,19 @@
   \frametitle{\large Can We Apply The Model To Real Data?}
   {All models are wrong, but some are useful. (George Box)} \\ 
   \vspace{0.5cm}
-  \visible<2->{
-  {Is exponential growth a useful model?}
-  }
+  \visible<2->{Is exponential growth a useful model?}
   \visible<3->{
   \begin{itemize}
-  \item Possibly for describing some populations during short time
-    periods, e.g. invasive species or prey following removal of
-    predators
-  \item Also useful as foundation for more realistic models
+    \item Possibly for describing some populations during short time
+      periods, e.g. invasive species
+    \item Also useful as foundation for more realistic models
   \end{itemize}
-  \begin{center}
-    \fbox{
-      \includegraphics[height=2.5cm,keepaspectratio]{figs/python1} \hspace{0.1cm}
-      \includegraphics[height=2.5cm,keepaspectratio]{figs/racoon_skunk}
-    }
-  \end{center}
+  \vfill
+  \centering
+%    \fbox{
+      \includegraphics[width=0.7\textwidth]{figs/python1} \\  % \hspace{0.1cm}
+      % \includegraphics[height=2.5cm,keepaspectratio]{figs/racoon_skunk}
+%    } \\
   }
 \end{frame}
 
@@ -634,10 +631,15 @@
 
 \begin{frame}
   \frametitle{Looking Ahead}
-  \begin{center}
-    {\large \bf Density dependence and logistic growth}
-    \includegraphics[width=0.6\textwidth]{figs/UN-population}
-  \end{center}
+  \centering
+  % {\large \bf Density dependence and logistic growth \\}
+  Is the human population exhibiting exponential growth? \\
+  \vfill
+  % \includegraphics[width=0.6\textwidth]{figs/UN-population}
+  \fbox{\includegraphics[width=0.9\textwidth]{figs/World-Population-since-10-thousand-BC}} \\
+  \vfill
+  \small
+  \url{https://ourworldindata.org/world-population-growth} \\
 \end{frame}
 
 
@@ -787,166 +789,167 @@
 % \end{frame}
 
 
-\begin{comment}
-\section{Bear Example}
+
+% \begin{comment}
+% \section{Bear Example}
 
 
-\begin{frame}
-  \frametitle{Outline}
-  \large
-  \tableofcontents[currentsection,hideallsubsections]
-\end{frame}
+% \begin{frame}
+%   \frametitle{Outline}
+%   \large
+%   \tableofcontents[currentsection,hideallsubsections]
+% \end{frame}
 
 
-%\subsection{Bear Example}
+% %\subsection{Bear Example}
 
-\begin{frame}
-  \frametitle{Louisiana Black Bear}
-%  \vspace{-0.4cm}
-  \begin{center}
-    \textit{Ursus americanus luteolus} %\\
-    \fbox{
-    \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbear1} \hspace{0.2cm}
-    \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbear2}
-    }
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Louisiana Black Bear}
-%  \vspace{-0.4cm}
-  \begin{center}
-    \setlength\fboxsep{0pt}
-    \fbox{
-    \includegraphics[height=0.6\textheight,keepaspectratio]{figs/Black_bear_map} \hspace{0.2cm}
-    \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbearHabitat1}}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Louisiana Black Bear}
+% %  \vspace{-0.4cm}
+%   \begin{center}
+%     \textit{Ursus americanus luteolus} %\\
+%     \fbox{
+%     \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbear1} \hspace{0.2cm}
+%     \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbear2}
+%     }
+%   \end{center}
+% \end{frame}
 
 
-\begin{frame}
-  \frametitle{Louisiana Black Bear}
-  \large
-%  \begin{itemize}
-    \textbf{1 of 16 recognized subspecies} \\ \vspace{0.5cm}
-    \textbf{Federally listed threatened subspecies}\\ \vspace{0.5cm}
-    \textbf{Threats include:}
-      \begin{itemize}
-        \item genetic isolation from habitat fragmentation
-        \item habitat loss
-        \item poaching
-        \item vehicle collisions
-      \end{itemize}
-%  \end{itemize}
-
-\end{frame}
+% \begin{frame}
+%   \frametitle{Louisiana Black Bear}
+% %  \vspace{-0.4cm}
+%   \begin{center}
+%     \setlength\fboxsep{0pt}
+%     \fbox{
+%     \includegraphics[height=0.6\textheight,keepaspectratio]{figs/Black_bear_map} \hspace{0.2cm}
+%     \includegraphics[height=0.6\textheight,keepaspectratio]{figs/LAbearHabitat1}}
+%   \end{center}
+% \end{frame}
 
 
-\begin{frame}
-  \frametitle{Study Design}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \large
-      \textbf{3 years of data collection (2007-2009)} \\
-      \vspace{0.5cm}
-      \textbf{115 baited hair snares} \\
-      \vspace{0.5cm}
-      \textbf{Capture-recapture methods used to estimate $N_t$ and $r$}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-      \includegraphics[width=\textwidth]{figs/bearMap1}
-    \end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Louisiana Black Bear}
+%   \large
+% %  \begin{itemize}
+%     \textbf{1 of 16 recognized subspecies} \\ \vspace{0.5cm}
+%     \textbf{Federally listed threatened subspecies}\\ \vspace{0.5cm}
+%     \textbf{Threats include:}
+%       \begin{itemize}
+%         \item genetic isolation from habitat fragmentation
+%         \item habitat loss
+%         \item poaching
+%         \item vehicle collisions
+%       \end{itemize}
+% %  \end{itemize}
+
+% \end{frame}
 
 
-
-
-\begin{frame}
-  \frametitle{Exponential Model Results}
-  \begin{center}
-%    \Large
-    \begin{tabular}{llr}
-      \hline
-      Parameter & Description                        & Estimate \\
-      \hline
-      $b$       & Female cubs born per adult female  & 0.687    \\
-      $d$       & Mortality rate                     & 0.178    \\
-      $r$     & Growth rate                        & 0.509    \\
-      \hline
-    \end{tabular}
-  \end{center}
-  \visible<2->{\textbf{Is the population growing or declining?}} \\
-  \vspace{0.5cm}
-  \visible<3>{\textbf{Growing because $r>0$}}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Study Design}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}
+%       \large
+%       \textbf{3 years of data collection (2007-2009)} \\
+%       \vspace{0.5cm}
+%       \textbf{115 baited hair snares} \\
+%       \vspace{0.5cm}
+%       \textbf{Capture-recapture methods used to estimate $N_t$ and $r$}
+%     \end{column}
+%     \begin{column}{0.3\textwidth}
+%       \includegraphics[width=\textwidth]{figs/bearMap1}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
 
 
 
 
-\begin{frame}
-  \frametitle{Exponential Model Results}
-  \begin{center}
-    \only<1>{\includegraphics[width=0.9\textwidth]{figs/bearNF1}}
-    \only<2>{\includegraphics[width=0.9\textwidth]{figs/bearNF2}}
-  \end{center}
-%  \visible<2>{\textbf{Not a good model!}}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Implications}
-  \begin{quote}
-%    \large
-    ``LDWF has made delisting the Louisiana black bear one of its
-    highest priorities. Transforming a perceived nuisance animal to a
-    trophy game animal will be one of the greatest endangered species
-    success stories to occur in Louisiana.'' \\
-    \vspace{0.5cm}
-    \small
-    --Louisiana Department of Wildlife and Fisheries, 2010
-  \end{quote}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{What Would Be Optimal Harvest?}
-  \visible<2->{{\color{red} \bf Don't harvest threatened (sub)species!} \\}
-  \vspace{0.5cm}
-  \visible<3->{\textbf{But, for argument's sake, what would be the optimal harvest
-    size ($H$) to maintain a population of $N=100$ bears?}} \\
-  \vspace{0.5cm}
-  \visible<4->{\textbf{Answer:} $H = Nr = 100\times0.509 = 50.9 \text{bears}$}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Exponential Model Results}
+%   \begin{center}
+% %    \Large
+%     \begin{tabular}{llr}
+%       \hline
+%       Parameter & Description                        & Estimate \\
+%       \hline
+%       $b$       & Female cubs born per adult female  & 0.687    \\
+%       $d$       & Mortality rate                     & 0.178    \\
+%       $r$     & Growth rate                        & 0.509    \\
+%       \hline
+%     \end{tabular}
+%   \end{center}
+%   \visible<2->{\textbf{Is the population growing or declining?}} \\
+%   \vspace{0.5cm}
+%   \visible<3>{\textbf{Growing because $r>0$}}
+% \end{frame}
 
 
 
 
-
-\begin{frame}
-  \frametitle{Real World}
-  \textbf{Populations typically don't grow exponentially} \\
-  \vspace{0.5cm}
-  \visible<2->{
-  \textbf{We don't know $r$ or $N_t$} \\
-  }
-  \vspace{0.5cm}
-  \visible<3->{
-  \textbf{$r$ changes unpredictably} \\
-  }
-  \vspace{0.5cm}
-  \visible<4->{
-  \textbf{Conclusion:} Managing populations is very difficult, and we
-  need a more realistic model.
-  }
-\end{frame}
+% \begin{frame}
+%   \frametitle{Exponential Model Results}
+%   \begin{center}
+%     \only<1>{\includegraphics[width=0.9\textwidth]{figs/bearNF1}}
+%     \only<2>{\includegraphics[width=0.9\textwidth]{figs/bearNF2}}
+%   \end{center}
+% %  \visible<2>{\textbf{Not a good model!}}
+% \end{frame}
 
 
 
+% \begin{frame}
+%   \frametitle{Implications}
+%   \begin{quote}
+% %    \large
+%     ``LDWF has made delisting the Louisiana black bear one of its
+%     highest priorities. Transforming a perceived nuisance animal to a
+%     trophy game animal will be one of the greatest endangered species
+%     success stories to occur in Louisiana.'' \\
+%     \vspace{0.5cm}
+%     \small
+%     --Louisiana Department of Wildlife and Fisheries, 2010
+%   \end{quote}
+% \end{frame}
 
-\end{comment}
+
+
+% \begin{frame}
+%   \frametitle{What Would Be Optimal Harvest?}
+%   \visible<2->{{\color{red} \bf Don't harvest threatened (sub)species!} \\}
+%   \vspace{0.5cm}
+%   \visible<3->{\textbf{But, for argument's sake, what would be the optimal harvest
+%     size ($H$) to maintain a population of $N=100$ bears?}} \\
+%   \vspace{0.5cm}
+%   \visible<4->{\textbf{Answer:} $H = Nr = 100\times0.509 = 50.9 \text{bears}$}
+% \end{frame}
+
+
+
+
+
+% \begin{frame}
+%   \frametitle{Real World}
+%   \textbf{Populations typically don't grow exponentially} \\
+%   \vspace{0.5cm}
+%   \visible<2->{
+%   \textbf{We don't know $r$ or $N_t$} \\
+%   }
+%   \vspace{0.5cm}
+%   \visible<3->{
+%   \textbf{$r$ changes unpredictably} \\
+%   }
+%   \vspace{0.5cm}
+%   \visible<4->{
+%   \textbf{Conclusion:} Managing populations is very difficult, and we
+%   need a more realistic model.
+%   }
+% \end{frame}
+
+
+
+
+% \end{comment}
 
 
