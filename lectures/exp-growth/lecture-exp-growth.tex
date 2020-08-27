@@ -152,10 +152,10 @@
   B=Births, I=Immigrations, D=Deaths, E=Emigrations \\
   \pause
   \vfill
-  Geometric growth is a simplification of BIDE. \\
+  Geometric growth is a simplification of BIDE \\
   \pause
   \vfill
-  Exponential growth is a continuous time version of geometric growth.
+  Exponential growth is a continuous time version of geometric growth
 \end{frame}
 
 
@@ -428,14 +428,21 @@
       \]
    \pause
     \textbf{Step 2:} Write in terms of \textit{per capita} birth and death \textit{rates}
-      \[
-        \frac{N_{t+1}}{N_{t}} \quad  = \quad 1 + b - d \quad = \quad 1 + r \quad = \quad \lambda
-      \]
-    \pause
-    \textbf{Step 3:} Geometric growth \par
-    \begin{center}
-      $N_{t+1} = N_t + N_tr$
-    \end{center}
+      % \[
+      %   \frac{N_{t+1}}{N_{t}} \quad  = \quad 1 + b - d \quad = \quad 1 + r \quad = \quad \lambda
+      % \]
+    \begin{align*}
+      \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
+             \uncover<3->{\quad  &= \quad  1 + r} \\ 
+             \uncover<4->{\quad  &= \quad  \lambda} 
+    \end{align*}
+    % \pause
+    \uncover<5->{
+      \textbf{Step 3:} Geometric growth \par
+      \begin{center}
+        $N_{t+1} = N_t + N_tr$
+      \end{center}
+    }
 \end{frame}
 
 

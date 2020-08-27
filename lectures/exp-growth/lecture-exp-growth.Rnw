@@ -107,10 +107,10 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
   B=Births, I=Immigrations, D=Deaths, E=Emigrations \\
   \pause
   \vfill
-  Geometric growth is a simplification of BIDE. \\
+  Geometric growth is a simplification of BIDE \\
   \pause
   \vfill
-  Exponential growth is a continuous time version of geometric growth.
+  Exponential growth is a continuous time version of geometric growth
 \end{frame}
 
 
@@ -383,14 +383,21 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
       \]
    \pause
     \textbf{Step 2:} Write in terms of \textit{per capita} birth and death \textit{rates}
-      \[
-        \frac{N_{t+1}}{N_{t}} \quad  = \quad 1 + b - d \quad = \quad 1 + r \quad = \quad \lambda
-      \]
-    \pause
-    \textbf{Step 3:} Geometric growth \par
-    \begin{center}
-      $N_{t+1} = N_t + N_tr$
-    \end{center}
+      % \[
+      %   \frac{N_{t+1}}{N_{t}} \quad  = \quad 1 + b - d \quad = \quad 1 + r \quad = \quad \lambda
+      % \]
+    \begin{align*}
+      \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
+             \uncover<3->{\quad  &= \quad  1 + r} \\ 
+             \uncover<4->{\quad  &= \quad  \lambda} 
+    \end{align*}
+    % \pause
+    \uncover<5->{
+      \textbf{Step 3:} Geometric growth \par
+      \begin{center}
+        $N_{t+1} = N_t + N_tr$
+      \end{center}
+    }
 \end{frame}
 
 
@@ -448,12 +455,12 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
     \small
     The exponential growth model is often considered more appropriate
     than the geometric growth model for \alert{birth flow populations}
-    in which reproduction occurs throughout the year. \\
+    in which reproduction occurs throughout the year \\
   }
   \vfill
   \uncover<4->{
     However, geometric growth models can provide a good approximation
-    of birth flow or \alert{birth pulse populations}. 
+    of birth flow or \alert{birth pulse populations} 
   }
 \end{frame}
 %\end{comment}
