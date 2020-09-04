@@ -22,8 +22,8 @@ rnw2pdf("lab-harvest",tangle=TRUE)
 {
   \Large
   \centering
-  Lab 2 Assignment --- Harvest Models \\
-  Due before your next lab \par
+  Lab 3 Assignment --- Harvest Models \\
+  Due before Monday \par
 }
 
 Answer each of the following questions and upload your completed Excel
@@ -118,33 +118,26 @@ equation: $S = \beta_0 - \beta_1 \times N$.
 
 
 Here's an example of a logistic growth model.
-<<logistic,out.width="0.8\\textwidth",fig.align="center">>=
+<<logistic,out.width="0.8\\textwidth",fig.align="center",size='small'>>=
 rmax <- 0.1              ## max growth rate
 K <- 200                 ## carrying capacity
 years <- 2001:2050       ## years
 nYears <- length(years)
 N1 <- rep(NA, nYears)
 N1[1] <- 100             ## abundance in first year
-## for loop
 for(t in 2:nYears) {
     N1[t] <- N1[t-1] + N1[t-1]*rmax*(1 - N1[t-1]/K)
 }
-plot(years, N1, type="l", xlab="Year", ylab="Abundance",
-     main="Logistic growth")
 @ 
 
 
 
-\newpage
+%\newpage
 
 
 Here's an example of a logistic growth model with harvest
-<<logistic-harvest,out.width="0.8\\textwidth",fig.align="center">>=
-rmax <- 0.1              ## max growth rate
-K <- 200                 ## carrying capacity
+<<logistic-harvest,out.width="0.5\\textwidth",fig.align="center",size='small'>>=
 h <- 0.02                ## harvest rate
-years <- 2001:2050       ## years
-nYears <- length(years)
 N2 <- rep(NA, nYears)
 N2[1] <- 100             ## abundance in first year
 H <- rep(NA, nYears-1)

@@ -67,8 +67,8 @@
 {
   \Large
   \centering
-  Lab 2 Assignment --- Harvest Models \\
-  Due before your next lab \par
+  Lab 3 Assignment --- Harvest Models \\
+  Due before Monday \par
 }
 
 Answer each of the following questions and upload your completed Excel
@@ -163,7 +163,7 @@ equation: $S = \beta_0 - \beta_1 \times N$.
 
 
 Here's an example of a logistic growth model.
-\begin{knitrout}
+\begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
@@ -172,37 +172,23 @@ Here's an example of a logistic growth model.
 \hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
 \hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
 \hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
-\hlcom{## for loop}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{rmax}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{K)}
 \hlstd{\}}
-\hlkwd{plot}\hlstd{(years, N1,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
-     \hlkwc{main}\hlstd{=}\hlstr{"Logistic growth"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-
-{\centering \includegraphics[width=0.8\textwidth]{figure/logistic-1} 
-
-}
-
-
-
 \end{knitrout}
 
 
 
-\newpage
+%\newpage
 
 
 Here's an example of a logistic growth model with harvest
-\begin{knitrout}
+\begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
-\hlstd{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
 \hlstd{h} \hlkwb{<-} \hlnum{0.02}                \hlcom{## harvest rate}
-\hlstd{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
-\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
 \hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
 \hlstd{N2[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
 \hlstd{H} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears}\hlopt{-}\hlnum{1}\hlstd{)}
@@ -217,7 +203,7 @@ Here's an example of a logistic growth model with harvest
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=0.8\textwidth]{figure/logistic-harvest-1} 
+{\centering \includegraphics[width=0.5\textwidth]{figure/logistic-harvest-1} 
 
 }
 

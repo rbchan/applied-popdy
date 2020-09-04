@@ -136,11 +136,13 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
   {%\centering
     Consequently, the sustainbale harvest rate ($h$) is: \par}
   \LARGE
-  \[
-    h = \frac{H_t}{N_t} = r
-  \]
-%  \pause
-%  What is the problem here?
+  % \[
+  %   h = \frac{H_t}{N_t} = r
+  % \]
+  \begin{align*}
+    h &= \frac{H_t}{N_t} \\
+    \uncover<3->{h}  &\uncover<3->{= r} \\
+  \end{align*}
 \end{frame}
 
 
@@ -208,7 +210,7 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
   \frametitle{Harvest and logistic growth}
   \LARGE
   \[
-    N_{t+1} = N_t + N_t r_{max}\left[1 - \frac{N_t}{K} \right] - \alert{H_t}
+    N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K} \right) - \alert{H_t}
   \]
   \pause
 %  \vspace{2cm}
@@ -224,7 +226,7 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
   \frametitle{Sustainable harvest and logistic growth}
   \LARGE
   \[
-    H_t = N_t r_{max}\left[1 - \frac{N_t}{K} \right]
+    H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
   \]
   \pause
   \vfill
@@ -233,9 +235,13 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
   In this case, the sustainable harvest rate ($h$) depends on population size
   \vfill
   \pause
-  \[
-    h_t = \frac{H_t}{N_t} = r_{max}\left[1 - \frac{N_t}{K} \right]
-  \]
+  % \[
+  %   h_t = \frac{H_t}{N_t} = r_{max}\left(1 - \frac{N_t}{K} \right)
+  % \]
+  \begin{align*}
+    h_t &= \frac{H_t}{N_t} \\
+    \uncover<4->{h_t &= r_{max}\left(1 - \frac{N_t}{K} \right)} \\
+  \end{align*}
 \end{frame}
 
 
@@ -244,7 +250,7 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
   \frametitle{Example when $K=1000$ and $r_{max}=0.1$}
   \scriptsize
   \[
-    H_t = N_t r_{max}\left[1 - \frac{N_t}{K} \right]
+    H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
   \]
   \vspace{-1cm}
 %<<msy1,fig=TRUE,include=FALSE,fig.width=12,fig.height=6,echo=FALSE>>=
@@ -276,7 +282,7 @@ segments(K/2, 0, K/2, max(H.1), lty=2, lwd=2, col="purple")
   \frametitle{Example when $K=1000$ and $r_{max}=0.5$}
   \scriptsize
   \[
-    H_t = N_t r_{max}\left[1 - \frac{N_t}{K} \right]
+    H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
   \]
   \vspace{-1cm}
 %<<msy1,fig=TRUE,include=FALSE,fig.width=12,fig.height=6,echo=FALSE>>=
