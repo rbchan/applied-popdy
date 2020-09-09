@@ -246,7 +246,7 @@ delta <- Nl[-1] - Nl[-T]
 par(mai=c(0.9,1,0.3,0.3))
 plot(Time[-1], delta, lwd=4, type="l", cex.lab=1.9,
      xlab="Time (t)", col="turquoise4",
-     ylab=expression(paste("Growth: ", "(", Delta, "N =", N[t+1]-N[t], ")")))
+     ylab=expression(paste("Growth: ", "(", Delta, "=", N[t+1]-N[t], ")")))
 @
 \begin{center}
   \includegraphics[width=\textwidth]{figure/lr2-1} \\ \vfill
@@ -261,7 +261,7 @@ plot(Time[-1], delta, lwd=4, type="l", cex.lab=1.9,
 <<delta-N,include=FALSE,echo=FALSE,fig.width=8,fig.height=6>>=
 plot(Nl[-T], delta, lwd=4, type="l", cex.lab=1.2,
      xlab="Population size (N)",
-     ylab=expression(paste("Growth: ", "(", Delta, "N =", N[t+1]-N[t], ")")))
+     ylab=expression(paste("Growth: ", "(", Delta, "=", N[t+1]-N[t], ")")))
 abline(h=0, col="gray")
 abline(v=K/2, lty=3, lwd=2)
 text(K/2, 0.05, "Inflection point (K/2)", pos=4)
