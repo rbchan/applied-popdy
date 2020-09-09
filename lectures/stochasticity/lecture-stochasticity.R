@@ -1,10 +1,10 @@
-## ----eval=FALSE,include=FALSE--------------------------------------------
+## ----eval=FALSE,include=FALSE-------------------------------------------------
 ## source("../../rnw2pdf.R")
 ## rnw2pdf("lecture-stochasticity")
 ## rnw2pdf("lecture-stochasticity",tangle=TRUE)
 
 
-## ----echo=FALSE,results='hide',eval=TRUE---------------------------------
+## ----echo=FALSE,results='hide',eval=TRUE--------------------------------------
 if(!dir.exists("figs/norm"))
     dir.create("figs/norm")
 pdf("figs/norm/norm0.pdf", width=8, height=6)
@@ -24,7 +24,7 @@ for(i in 1:10) {
 }
 
 
-## ----norm1,echo=FALSE,include=FALSE,fig.width=8,fig.height=6-------------
+## ----norm1,echo=FALSE,include=FALSE,fig.width=8,fig.height=6------------------
 curve(dnorm(x, 0, 0.6), -2, 2, xlab="X", cex.lab=1.4,
       ylab="Relative probability", ylim=c(0, 3), lwd=3)
 curve(dnorm(x, 0, 0.4), -2, 2, col="blue", lwd=3, add=TRUE)
@@ -35,12 +35,12 @@ legend(-2.1, 3, c(expression(paste(mu, "=0, ", sigma^2, "=0.6")),
        col=c("black", "blue", "red"), lwd=2, cex=0.9)
 
 
-## ----normpop,include=FALSE,echo=FALSE,fig.width=8,fig.height=6-----------
+## ----normpop,include=FALSE,echo=FALSE,fig.width=8,fig.height=6----------------
 x <- rnorm(100, 50)
 plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 
 
-## ----geo-env,eval=FALSE,size='small'-------------------------------------
+## ----geo-env,eval=FALSE,size='small'------------------------------------------
 ## r <- 0.1
 ## sigma.e <- 10
 ## for(t in 2:nYears) {
@@ -49,7 +49,7 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 ## }
 
 
-## ----geo-e,echo=FALSE,include=FALSE,cache=TRUE---------------------------
+## ----geo-e,echo=FALSE,include=FALSE,cache=TRUE--------------------------------
 r <- 0.1
 sigma.e <- 10
 T <- 20
@@ -74,7 +74,7 @@ for(i in 1:10) {
 }
 
 
-## ----geo-e2,fig.show='hide',echo=FALSE,cache=TRUE------------------------
+## ----geo-e2,fig.show='hide',echo=FALSE,cache=TRUE-----------------------------
 r <- 0.1
 sigma.e <- 100
 T <- 20
@@ -99,7 +99,7 @@ for(i in 1:10) {
 }
 
 
-## ----fig.show='hide',echo=FALSE------------------------------------------
+## ----fig.show='hide',echo=FALSE-----------------------------------------------
 r.bar <- 0.1
 sigma.d <- 0.1
 T <- 20
@@ -123,7 +123,7 @@ for(i in 1:10) {
 }
 
 
-## ----fig.show='hide',echo=FALSE------------------------------------------
+## ----fig.show='hide',echo=FALSE-----------------------------------------------
 r.bar <- 0.1
 sigma.d <- 0.5
 T <- 20
@@ -147,7 +147,7 @@ for(i in 1:10) {
 }
 
 
-## ----fig.show='hide',echo=FALSE------------------------------------------
+## ----fig.show='hide',echo=FALSE-----------------------------------------------
 r.max <- 0.3
 K.bar <- 100
 sigma.d <- 20
