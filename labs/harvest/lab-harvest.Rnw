@@ -32,7 +32,7 @@ file to ELC. Be sure to show your calculations. \par
 \vspace{12pt}
 
 {\bf Exercise I \\}
-The Excel sheet shows (fake) data on Burmese python abundance in south Florida.
+The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
 \begin{enumerate}
   \item What growth model best describes these data, geometric or
     logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$ to assess if
