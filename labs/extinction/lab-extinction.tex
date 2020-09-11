@@ -127,12 +127,15 @@ file to ELC. Be sure to show your calculations. \\
     below 20 individuals.
   \item Suppose that there is no demographic stochasticity,
     but environmental stochasticity occurs with $X_t \sim
-    \mathrm{Normal}(\mu=0, \sigma=10)$. Conduct 10 simulations over a
+    \mathrm{Normal}(\mu=0, \sigma=10)$, where $\mu$ is the mean
+    and $\sigma$ is the standard deviation. Conduct 10 simulations over a
     30 year time period, and force the population size to zero if it
     falls below the threshold. This can be done by multiplying the
-    growth equation by a ``test statement'' such as
-    \verb+CELL>$O$2+. Plot the projections. (Hint: Generate the random
-    variables before trying to calculate $N_t$).
+    growth equation by a ``test statement'', like this:
+    \verb+=(equation)*(CELL>$O$2)+, where \verb+CELL+ should be
+    replaced by the actual cell reference for abundance in the
+    previous year . Plot the projections. (Hint: Generate the 
+    random variables before trying to calculate $N_t$).
   \item What is the average $T_e$ based on these 10 simulations?
 \end{enumerate}
 
@@ -143,7 +146,8 @@ file to ELC. Be sure to show your calculations. \\
 \begin{enumerate}
   \item Simulate 10 populations under a logistic growth model with
     $N_0$=20, $K$=40, and a normally-distributed growth rate $r_{\mathrm{max}_t}
-    \sim \mathrm{Norm}(\mu=0.1, \sigma=1)$. Assume that the
+    \sim \mathrm{Norm}(\mu=0.1, \sigma=0.5)$, where $\mu$ is the mean
+    and $\sigma$ is the standard deviation. Assume that the
     quasi-extinction threshold is
     equal to 10, and force the population size to zero if it falls
     below the threshold using a test statement as before. Plot the
@@ -206,7 +210,7 @@ born, minus the number that died:
     Why or why not?
   \item Do another simulation, but this time make the mortality rate
     ($d$) density-dependent according to the model $d_t = 0.2 +
-    0.001\times Nt$. Will this population reach a stochastic equilibrium? If
+    0.001\times N_t$. Will this population reach a stochastic equilibrium? If
     so, at what value of abundance does the equilibrium point occur?
 \end{enumerate}
 
@@ -254,8 +258,8 @@ Poisson-Binomial birth-death model
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{b} \hlkwb{<-} \hlnum{0.1}  \hlcom{## Birth rate}
-\hlstd{d} \hlkwb{<-} \hlnum{0.2}  \hlcom{## Mortality rate}
+\hlstd{b} \hlkwb{<-} \hlnum{0.15}  \hlcom{## Birth rate}
+\hlstd{d} \hlkwb{<-} \hlnum{0.2}   \hlcom{## Mortality rate}
 \hlstd{nYears} \hlkwb{<-} \hlnum{50}
 \hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Empty vector for population size }
 \hlstd{B} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for nBirths}
