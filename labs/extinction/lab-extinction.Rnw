@@ -154,7 +154,8 @@ born, minus the number that died:
 \]
 \begin{enumerate}
   \item Beginning with $N_0=300$, conduct one simulation over 5
-    years, in which $b=0.3$ and $d=0.2$. Plot the results. Hint: You have
+    years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
+    abundance over time. Hint: You have  
     to randomly generate $B_t$ and $D_t$ each year before you can compute
     $N_t$.
   \item Do you think this population will reach a stochastic
