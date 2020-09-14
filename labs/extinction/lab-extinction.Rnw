@@ -23,7 +23,7 @@ rnw2pdf("lab-extinction",tangle=TRUE)
   \Large
   \centering
   Lab 3 Assignment --- Stochasticity and Extinction \\
-  Due before your next lab \par
+  Due before Monday \par
 }
 
 {\bf Random Numbers in Excel \\}
