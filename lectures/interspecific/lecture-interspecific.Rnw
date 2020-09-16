@@ -5,7 +5,7 @@
 \usepackage[sans]{../pres1}
 \usepackage{graphicx}
 \usepackage{bm}
-%\usepackage{changepage}
+
 
 
 
@@ -19,6 +19,9 @@ rnw2pdf("lecture-interspecific",tangle=TRUE)
 
 
 \begin{document}
+
+
+
 
 \begin{frame}[plain]
   \begin{center}
@@ -355,6 +358,14 @@ legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red")
 \end{columns}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Don't forget about intraspecific competition}
+  \centering 
+  \includegraphics[width=0.8\textwidth]{figs/giraffe} \\
+  \url{https://youtu.be/KQLPL1qRhn8}
+  \url{https://youtu.be/Ss5S3yiGxg8}
+\end{frame}
 
 
 \begin{frame}
