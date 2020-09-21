@@ -56,12 +56,12 @@ rnw2pdf("lecture-interspecific",tangle=TRUE)
   \large
   \begin{itemize}%[<+->]
     \item<1-> Lotka and Volterra developed models for both predator-prey
-      dynamics and competitive interactions
+      dynamics and competitive interactions.
     \item[]
     \item<2-> As usual, these models were developed as
-      continuous-time models
+      continuous-time models.
     \item[]
-    \item<3-> We will focus on discrete-time versions ($t = 1, 2, \ldots$)
+    \item<3-> We will focus on discrete-time versions ($t = 1, 2, \ldots$).
     \item[]
     \item<4-> We will ignore potential extensions with stochasticity, age
       structure, spatial structure, etc\dots
@@ -364,7 +364,6 @@ legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red")
   \centering 
   \includegraphics[width=0.8\textwidth]{figs/giraffe} \\
   \url{https://youtu.be/KQLPL1qRhn8}
-  \url{https://youtu.be/Ss5S3yiGxg8}
 \end{frame}
 
 

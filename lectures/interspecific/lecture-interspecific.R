@@ -8,12 +8,12 @@
 T <- 75
 Nprey <- integer(T+1)
 Npred <- integer(T+1)
-Nprey[1] <- 101
-Npred[1] <- 22
-rprey <- 0.2
-dprey <- 0.01
-bpred <- 0.005
-dpred <- 0.5
+Nprey[1] <- 200
+Npred[1] <- 150
+rprey <- 0.02
+dprey <- 0.0001
+bpred <- 0.0005
+dpred <- 0.03
 for(t in 1:T) {
     Nprey[t+1] <- Nprey[t] + Nprey[t]*(rprey - dprey*Npred[t])
     Npred[t+1] <- Npred[t] + Npred[t]*(bpred*Nprey[t] - dpred)
