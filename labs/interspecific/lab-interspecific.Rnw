@@ -23,7 +23,7 @@ rnw2pdf("lab-interspecific",tangle=TRUE)
   \Large
   \centering
   Lab 5 Assignment --- Models of Interspecific Interactions \\
-  Due by Monday \par
+  Due before Monday \par
 }
 
 Answer each of the following questions and upload your Excel file (and
