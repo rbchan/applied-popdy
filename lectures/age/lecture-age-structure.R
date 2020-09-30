@@ -53,7 +53,7 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
 V <- eigen(t(A))$vectors[,1]
 rv <- as.numeric(V/V[1])
 barplot(rv, names=c("Age class 1", "Age class 2", "Age class 3"),
-        ylab="Fisher's reproductive value", ylim=c(0, 2), cex.names=1.5,
+        ylab="Reproductive value", ylim=c(0, 2), cex.names=1.5,
         cex.lab=1.5)
 box()
 
