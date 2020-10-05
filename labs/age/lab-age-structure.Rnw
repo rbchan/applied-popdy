@@ -24,15 +24,15 @@ rnw2pdf("lab-age-structure",tangle=TRUE)
 {
   \Large
   \centering
-  Lab 5 Assignment --- Age-structured Models \\
-  Due before your next lab \par
+  Lab 6 Assignment --- Age-structured Models \\
+  Due before Monday \par
 }
 
 \vspace{12pt}
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab5.xlsx}. \\
+file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
 
 \section*{Exercises}
 
@@ -128,9 +128,9 @@ in the assignment above.
 
 First, create the projection matrix.
 <<ex1-A>>=
-A <- matrix(c(  0, 1.5, 0.5,  ## The fecundities
-              0.5,   0,   0,  ## The first value is s1
-                0, 0.9,   0), ## The second value is s2
+A <- matrix(c(0.0, 1.5, 0.5,  ## The fecundities
+              0.5, 0.0, 0.0,  ## The first value is s1
+              0.0, 0.9, 0.0), ## The second value is s2
             nrow=3, ncol=3, byrow=TRUE)
 A
 @
