@@ -25,13 +25,13 @@ rnw2pdf("lab-metapop",tangle=TRUE)
 {
   \Large
   \centering
-  Lab 6 Assignment --- Metapopulation Models \\
+  Lab 7 Assignment --- Metapopulation Models \\
   Due before your next lab \\
 }
 
 Answer each of the following questions and upload your answers to ELC
 as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab6.xlsx}. \\
+file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
 
 
 
