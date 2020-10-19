@@ -1,7 +1,7 @@
 ## ----eval=FALSE,include=FALSE-------------------------------------------------
 ## source("../../rnw2pdf.R")
-## rnw2pdf("lecture-pva")
-## rnw2pdf("lecture-pva",tangle=TRUE)
+## rnw2pdf("lecture-PVA")
+## rnw2pdf("lecture-PVA",tangle=TRUE)
 
 
 ## ----A,size='scriptsize'------------------------------------------------------
