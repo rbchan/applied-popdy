@@ -69,7 +69,8 @@
 
 \begin{frame}[plain]
   \begin{center}
-    {\huge \bf Population Viability Analysis \par}
+%    {\huge \bf Population Viability Analysis \par}
+    {\LARGE Population viability analysis \\ and sensitivity analysis}
 %    \vspace{0.5cm}
 %    { \Large March 6, 2019} \\
     {%\color{blue}
@@ -142,7 +143,7 @@
   \large
 %  \setbeamercovered{transparent}
 %  \begin{enumerate}[<+-| visible@+->][\bf \color{PineGreen} (1)]
-  \begin{enumerate}[\bf (1)]
+  \begin{enumerate}[(1)]%[\bf (1)]
 %    \item<1-| alert@1> Assessing the extinction risk of a single population
 %    \item<2-| alert@2> Comparing relative risks of two or more populations
     \item<1-> Assessing the extinction risk of a single population
@@ -170,14 +171,14 @@
   % \end{center}
   \large
 %  \begin{enumerate}[<+->][\bf (1)]
-  \begin{enumerate}[\bf (1)]
+  \begin{enumerate}[(1)]%[\bf (1)]
     \item Develop objectives
     \item Develop a set of competing models
     \item Design a study to collect necessary data
     \item Fit models to data and select the best model(s)
     \item Use model(s) to identify best management options
     \item Implement management option, monitor the consequences, and refine models
-    \item Return to step \color{beamer@blendedblue}{\bf (4)}
+    \item Return to step \color{beamer@blendedblue}{(4)}%{\bf (4)}
   \end{enumerate}
   \vfill
   \centering
@@ -255,14 +256,15 @@
 %    \text{Sensitivity of}\; \lambda \; \text{to parameter}\; x \;= \frac{\Delta \lambda}{\Delta x}
     \text{sensitivity} = \frac{\Delta \lambda}{\Delta \theta}
   \]
+  as $\lim\limits_{\Delta \to 0}$. 
   \pause
   \vfill
   {\bf Sensitivities allow us to make statements such as:} \\
   \begin{quote}
-  ``Increasing subadult fecundity by 1 unit increases $\lambda$ by
-  0.01, whereas increasing adult fecundity by 1 unit increases $\lambda$ by
-  0.02. Therefore, population growth is more sensitive to changes in
-  adult fecundity.''
+  ``Increasing subadult fecundity by a small amount increases
+  $\lambda$ by 0.01, whereas increasing adult fecundity by the same
+  amount increases $\lambda$ by 0.02. Therefore, population growth is
+  more sensitive to changes in adult fecundity.''
   \end{quote}
 \end{frame}
 
@@ -333,7 +335,7 @@ Suppose we have the following stage-structured projection matrix:
 \end{knitrout}
 
 We can use eigenanalysis to compute $\lambda$, stable age
-distribution, and reproductive value.
+distribution, reproductive value, sensitivities, and elasticities.  
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
