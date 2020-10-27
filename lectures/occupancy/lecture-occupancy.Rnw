@@ -23,8 +23,6 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 \begin{frame}[plain]
   \begin{center}
     {\huge Occupancy Estimation and Modeling \par}
-%    \vspace{0.5cm}
-%    { \Large March 18, 2019} \\
     \vfill
     \includegraphics[height=4.6cm,keepaspectratio]{figs/book} %\hfill
     \hspace{0.5cm}
@@ -89,7 +87,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
     any individuals \par}
   \pause
   \vspace{0.5cm}
-  {\bf Consequences}
+  {%\bf
+    Consequences}
   \begin{itemize}[<+->]
     \item We will underestimate the state variable: The proportion of
       sites occupied
@@ -111,7 +110,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 \begin{frame}
   \frametitle{Single-season models}
   \large
-  {\bf Scenario}
+  {%\bf
+    Scenario}
   \large
   \begin{itemize}[<+->]
     \item No interest in colonization or extinction events
@@ -178,7 +178,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Data $y_{ij}$ -- low detection probability}
-  {\bf \centering \large 10 sites and 3 sampling occasions \par}
+  {%\bf
+    \centering \large 10 sites and 3 sampling occasions \par}
   \vspace{0.3cm}
   \begin{center}
     \small
@@ -210,7 +211,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Data $y_{ij}$ -- high detection probability}
-  {\bf \centering \large 10 sites and 3 sampling occasions \par}
+  {%\bf
+    \centering \large 10 sites and 3 sampling occasions \par}
   \vspace{0.3cm}
   \begin{center}
     \small
@@ -246,7 +248,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
   \pause
   \begin{columns}
     \begin{column}{0.6\textwidth}
-      \large {\bf Maximum likelihood \par}
+      \large {%\bf
+        Maximum likelihood \par}
       \large
       \begin{itemize}%[<+->]
       \item This method tries to find the most ``likely'' values of
@@ -261,8 +264,9 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
     \end{column}
   \end{columns}
   \pause
-  {\bf Software \par}
-  Program {\tt PRESENCE}, Program {\tt MARK}, {\bf R} package {\tt unmarked}
+  {%\bf
+    Software \par}
+  Program {\tt PRESENCE}, Program {\tt MARK}, {\tt R} package {\tt unmarked}
 \end{frame}
 
 
@@ -270,7 +274,8 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Estimates}
-  {\bf \centering \large 10 sites and 3 sampling occasions \par}
+  {%\bf
+    \centering \large 10 sites and 3 sampling occasions \par}
   \vspace{0.3cm}
   \begin{center}
     \small
@@ -420,7 +425,8 @@ dev.off()
 
 \begin{frame}
   \frametitle{Data format}
-  {\bf \centering \large 5 sites, 2 seasons, and 3 sampling occasions \par}
+  {%\bf
+    \centering \large 5 sites, 2 seasons, and 3 sampling occasions \par}
   \vspace{0.3cm}
   \begin{columns}
 %    \begin{center}

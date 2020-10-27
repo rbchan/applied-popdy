@@ -25,7 +25,7 @@ rnw2pdf("lab-occupancy-R",tangle=TRUE)
   \Large
   \centering
   Lab 8 Assignment --- Occupancy Models in R \\
-  Due before your next lab \par
+  Due before Monday \par
 }
 
 \vspace{10pt}
@@ -65,7 +65,7 @@ library(unmarked)
 
 
 Now we're ready to import the data. For exercise I, you will import
-the file named \texttt{quail-data-for-R.csv}. For exercise II, you
+the file named \\ \texttt{quail-data-for-R.csv}. For exercise II, you
 will import the file \texttt{dipnet-data-for-R.csv}. Before you import
 those files, here is some general guidance on importing data, followed
 by occupancy modeling examples.
