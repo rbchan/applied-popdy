@@ -297,7 +297,9 @@ Once it's installed, you need to load it:
 \begin{alltt}
 \hlkwd{library}\hlstd{(unmarked)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: lattice}}\end{kframe}
 \end{knitrout}
 
 \section*{Import the data}
@@ -310,7 +312,7 @@ Now we're ready to import the data. The easiest way to do this is to save the da
 \hlkwd{getwd}\hlstd{()}
 \end{alltt}
 \begin{verbatim}
-## [1] "c:/Users/rbchan/courses/applied-popdy/labs/occupancy-modeling"
+## [1] "/home/richard/courses/applied-popdy/labs/occupancy-modeling"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -386,7 +388,7 @@ Columns 2-4 have the occupancy data. The fifth column has a site-specific covari
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in validObject(.Object): invalid class "{}unmarkedFrame"{} object: siteCovData does not have same size number of sites as y.}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ncol(y): object 'occData' not found}}\end{kframe}
 \end{knitrout}
 
 
@@ -397,28 +399,9 @@ Now that we have the data formatted, we should summarize it again to make sure e
 \begin{alltt}
 \hlkwd{summary}\hlstd{(umf)}
 \end{alltt}
-\begin{verbatim}
-## unmarkedFrame Object
-## 
-## 50 sites
-## Maximum number of observations per site: 4 
-## Mean number of observations per site: 4 
-## Sites with at least one detection: 27 
-## 
-## Tabulation of y observations:
-##   0   1 
-## 139  61 
-## 
-## Site-level covariates:
-##   habitatIndex  
-##  Min.   :1.040  
-##  1st Qu.:1.925  
-##  Median :3.135  
-##  Mean   :3.021  
-##  3rd Qu.:3.895  
-##  Max.   :4.760
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': object 'umf' not found}}\end{kframe}
 \end{knitrout}
 
 All is well. Let's fit some models. 
@@ -436,7 +419,9 @@ We will fit two models using the {occu} function. In the first model, there are 
 \begin{alltt}
 \hlstd{nullModel} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlnum{1}\hlstd{, umf)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in is(data, "{}unmarkedFrameOccu"{}): object 'umf' not found}}\end{kframe}
 \end{knitrout}
 
 The line of code above fit the model. The first argument is a formula describing the model that you want to fit. If it is {~1 ~1}, then there are no covariates. We will add covariates later. First, let's summarize the results:
@@ -447,26 +432,9 @@ The line of code above fit the model. The first argument is a formula describing
 \begin{alltt}
 \hlkwd{summary}\hlstd{(nullModel)}
 \end{alltt}
-\begin{verbatim}
-## 
-## Call:
-## occu(formula = ~1 ~ 1, data = umf)
-## 
-## Occupancy (logit-scale):
-##  Estimate    SE     z P(>|z|)
-##     0.263 0.305 0.865   0.387
-## 
-## Detection (logit-scale):
-##  Estimate    SE     z P(>|z|)
-##     0.158 0.214 0.739    0.46
-## 
-## AIC: 218.689 
-## Number of sites: 50
-## optim convergence code: 0
-## optim iterations: 22 
-## Bootstrap iterations: 0
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': object 'nullModel' not found}}\end{kframe}
 \end{knitrout}
 
 Notice that the parameters are estimated on the logit-scale. To get estimates on the probability scale, we need to back-transform them. If there are no covariates, we can back-transform like this:
@@ -477,27 +445,15 @@ Notice that the parameters are estimated on the logit-scale. To get estimates on
 \hlcom{## Occupancy estimate - Pr(site is occupied)}
 \hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{)}
 \end{alltt}
-\begin{verbatim}
-## Backtransformed linear combination(s) of Occupancy estimate(s)
-## 
-##  Estimate     SE LinComb (Intercept)
-##     0.565 0.0748   0.263           1
-## 
-## Transformation: logistic
-\end{verbatim}
-\begin{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'obj' in selecting a method for function 'backTransform': object 'nullModel' not found}}\begin{alltt}
 \hlcom{## Detection estimate - Pr(detection | site is occupied)}
 \hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"det"}\hlstd{)}
 \end{alltt}
-\begin{verbatim}
-## Backtransformed linear combination(s) of Detection estimate(s)
-## 
-##  Estimate     SE LinComb (Intercept)
-##     0.539 0.0531   0.158           1
-## 
-## Transformation: logistic
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'obj' in selecting a method for function 'backTransform': object 'nullModel' not found}}\end{kframe}
 \end{knitrout}
 
 We conclude that the probability that a site is occupied is 0.565. The probability that the species is detected (on a single visit), if the site is occupied, is 0.539.
@@ -509,7 +465,9 @@ Let's now assess the possibility that occupancy probability depends on the habit
 \begin{alltt}
 \hlstd{detNullOccHab} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlstd{habitatIndex, umf)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in is(data, "{}unmarkedFrameOccu"{}): object 'umf' not found}}\end{kframe}
 \end{knitrout}
 
 The summary indicates that habitat effect is positive, indicating that occupancy probability increases as the index increases. 
@@ -519,27 +477,9 @@ The summary indicates that habitat effect is positive, indicating that occupancy
 \begin{alltt}
 \hlkwd{summary}\hlstd{(detNullOccHab)}
 \end{alltt}
-\begin{verbatim}
-## 
-## Call:
-## occu(formula = ~1 ~ habitatIndex, data = umf)
-## 
-## Occupancy (logit-scale):
-##              Estimate    SE     z P(>|z|)
-## (Intercept)     -1.46 0.883 -1.65  0.0982
-## habitatIndex     0.58 0.287  2.02  0.0429
-## 
-## Detection (logit-scale):
-##  Estimate    SE     z P(>|z|)
-##     0.156 0.214 0.731   0.465
-## 
-## AIC: 216.1208 
-## Number of sites: 50
-## optim convergence code: 0
-## optim iterations: 24 
-## Bootstrap iterations: 0
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'summary': object 'detNullOccHab' not found}}\end{kframe}
 \end{knitrout}
 
 
@@ -560,22 +500,15 @@ Now, let's do the prediction:
 \begin{alltt}
 \hlstd{predOcc} \hlkwb{<-} \hlkwd{predict}\hlstd{(detNullOccHab,} \hlkwc{newdata}\hlstd{=predData,}
                    \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{,} \hlkwc{append}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in h(simpleError(msg, call)): error in evaluating the argument 'object' in selecting a method for function 'predict': object 'detNullOccHab' not found}}\begin{alltt}
 \hlstd{predOcc}
 \end{alltt}
-\begin{verbatim}
-##    Predicted         SE     lower     upper habitatIndex
-## 1  0.2931627 0.12952825 0.1085915 0.5854200     1.000000
-## 2  0.3492662 0.11824286 0.1622006 0.5980656     1.444444
-## 3  0.4098804 0.10348112 0.2309460 0.6163436     1.888889
-## 4  0.4733619 0.08913042 0.3084423 0.6443065     2.333333
-## 5  0.5377165 0.08057270 0.3812750 0.6870678     2.777778
-## 6  0.6008384 0.08123399 0.4366166 0.7451336     3.222222
-## 7  0.6607787 0.08876466 0.4726798 0.8089068     3.666667
-## 8  0.7159729 0.09781079 0.4954656 0.8661436     4.111111
-## 9  0.7653753 0.10444806 0.5105962 0.9107126     4.555556
-## 10 0.8084834 0.10701643 0.5213756 0.9423951     5.000000
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'predOcc' not found}}\end{kframe}
 \end{knitrout}
 
 The ``Predicted'' values are the estimates of occupancy for each value of ``habitatIndex''. Standard errors and 95\% confidence intervals are also returned.
@@ -587,17 +520,20 @@ Here's how to visualize the predictions with the confidence intervals:
 \begin{alltt}
 \hlkwd{plot}\hlstd{(Predicted} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{),}
      \hlkwc{xlab}\hlstd{=}\hlstr{"Habitat index"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Occupancy"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(m\$data, eframe): object 'predOcc' not found}}\begin{alltt}
 \hlkwd{lines}\hlstd{(lower} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(m\$data, eframe): object 'predOcc' not found}}\begin{alltt}
 \hlkwd{lines}\hlstd{(upper} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
 \end{alltt}
-\end{kframe}
-
-{\centering \includegraphics[width=0.8\linewidth]{figure/plotOcc-1} 
-
-}
 
 
-
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(m\$data, eframe): object 'predOcc' not found}}\end{kframe}
 \end{knitrout}
 
 \end{document}
