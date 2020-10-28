@@ -74,7 +74,7 @@ by occupancy modeling examples.
 The easiest way to import data into R is to save the data as a
 \texttt{.csv} file, which has been done for you already, and put it in
 your working directory. The working directory is the location on your
-computer where {\bf R} will look for files by default. To find out
+computer where R will look for files by default. To find out
 where the working directory is, do this:  
     
 <<getwd>>=
@@ -161,9 +161,11 @@ nullModel <- occu(~1 ~1, umf)
 
 The line of code above fits the single-season model to the data. The
 first argument is a formula 
-describing the model that you want to fit. If it is {\tt ~1 ~1}, then
-there are no covariates. We will add covariates later. First, let's
-summarize the results: 
+describing the model that you want to fit. If it is \verb+~1 ~1+, then
+there are no covariates. If there are covariates, the detection
+probability covariates go after the first \verb+~+ and the occupancy
+covariates go after the second \verb+~+. We will add covariates
+later. First, let's summarize the results: 
 
 
 <<summaryNull>>=
@@ -204,7 +206,7 @@ summary(detNullOccHab)
 To visualize the habitat effect, we need to predict occupancy at
 several values of the habitat index, which ranged in value from
 approximately 1-5. We can create a sequence of values and put it into
-a dataframe for prediction like this: 
+a data frame for prediction like this: 
 
 <<predData>>=
 predData <- data.frame(habitatIndex=seq(from=1, to=5, length.out=10))
@@ -303,19 +305,17 @@ affects both occupancy and detection probability so you measure
 average vegetation height at each site. Vegetation height will be the
 covariate used in the analysis. 
 
-Import the file {\tt quali-data-for-R.csv}.
+Import the file {\tt quail-data-for-R.csv}.
 
 \begin{enumerate}
-  \item[(a)] Fit the single-season model using the \texttt{occu}
+  \item[(a)] Fit the single-season null model using the \texttt{occu} 
     function. Report the estimates and standard errors for psi
     ($\psi$) and p (on the probability scale). Interpret 
     these estimates (ie, what are the definitions of $\psi$ and p in this
     context?). 
-    
   \item[(b)] Now run another model using \texttt{veght} as a
-    predictor variable (covariate) for both occupancy and detection
+    predictor variable (covariate) for {\bf both} occupancy and detection
     probability. 
-
   \item[(c)] Is this model better than the first, based on AIC? The
     lower the AIC the better the model.\footnote{$\mathrm{AIC} =
       -2*\mathrm{log(likelihood)} + 2*\mathrm{nParameters}$. AIC
@@ -324,9 +324,8 @@ Import the file {\tt quali-data-for-R.csv}.
   \item[(d)] Use the occupancy estimates (on the logit scale) to
     create a plot of the relationship between occurrence probability
     and vegetation height. Do this using the \texttt{predict} function
-    as described above, and do it in Excel using the provided template.
-    Add both graphs to your Word document.
-  \item[(e)] Based on your graphs, does occurrence probability
+    as described above. Add the graph to your Word document.
+  \item[(e)] Based on your graph, does occurrence probability
     increase or decrease with vegetation height?  
 \end{enumerate}
 
@@ -341,17 +340,17 @@ data from the 5 swipes of each team.
 Begin by importing the file \texttt{dipnet-data-for-R.csv}.
 
 \begin{enumerate}
-  \item[(a)] Use the \texttt{colext} function to estimate psi ($\psi$), gamma
-    ($\gamma$), epsilon ($\epsilon$), 
-    and p. Report the 4 estimates and standard errors by creating a
-    table in your Word document.  
-  \item[(c)] Provide clear interpretations of these estimates. 
+  \item[(a)] Use the \texttt{colext} function to fit the null
+    multi-season occupancy model. Report the estimates and standard
+    errors for psi ($\psi$), gamma ($\gamma$), epsilon ($\epsilon$),
+    and p on the probability scale. Report these values in a table in
+    your Word document.   
+  \item[(c)] Provide clear interpretations of the estimates. 
   \item[(d)] Based on these estimates, is there any reason to believe
     that occupancy has decreased over these years? Explain. 
   \item[(e)] How certain are you of these conclusions? Answer by
     describing how well you think our study design met the assumptions
     of the multi-season occupancy model. 
-
 \end{enumerate}
 
 
