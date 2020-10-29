@@ -56,7 +56,7 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
   \vfill
 %  \Large
   \centering
-  \bf
+%  \bf
   Most methods differ in how they estimate $p$ \\
 \end{frame}
 
@@ -68,7 +68,8 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 \begin{frame}
   \frametitle{Estimating abundance}
   \large
-  {\bf Challenges}
+  {%\bf
+    Challenges}
   \begin{itemize}
     \item<1-> Detection probability is rarely constant
     \item<2-> It is a function of: %\dots
@@ -102,7 +103,8 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
   \frametitle{Distance Sampling}
 %  \begin{block}
   \large
-  {\bf Basic idea} \\
+  {%\bf
+    Basic idea} \\
   \begin{itemize}
   \item<1-> $p_i$ is the probability of detecting individual $i$ at
     distance $x_i$.
@@ -118,7 +120,8 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 %  \pause
 %  \begin{block}
   \vspace{0.1cm}
-  \uncover<4->{{\bf Advantages of distance sampling}} \\
+  \uncover<4->{{%\bf
+      Advantages of distance sampling}} \\
     \begin{itemize}
       \item<5-> Population size can be estimated from a single survey
       \item<6-> Explicit link between population size and density
@@ -403,7 +406,7 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 \begin{frame}
   \frametitle{Assumptions}
   \large
-  \begin{enumerate}[<+- | visible@+->][\bf (1)]%[\bf \color{PineGreen} (1)]
+  \begin{enumerate}[<+- | visible@+->][(1)]%[\bf (1)]%[\bf \color{PineGreen} (1)]
     \item Animals on the line are detected with certainty (i.e., $p=1$ when distance=0).
     \item Animals do not move during the survey
     \item Distance is measured accurately
