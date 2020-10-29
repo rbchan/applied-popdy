@@ -62,6 +62,7 @@
 
 %% knitr stuff
 
+
 %% New command for inline code that isn't to be evaluated
 \definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
@@ -246,7 +247,15 @@ can load the package like so:
 \begin{alltt}
 \hlkwd{library}\hlstd{(Distance)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: mrds}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# This is mrds 2.2.3\\\#\# Built: R 4.0.3; ; 2020-10-17 13:10:23 UTC; unix}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'Distance'}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:mrds':\\\#\# \\\#\#\ \ \ \  create.bins}}\end{kframe}
 \end{knitrout}
 
 Before we can do any analysis, we need to import the Mongolian gazelle
@@ -259,14 +268,14 @@ working directory.
 \hlkwd{getwd}\hlstd{()}       \hlcom{## Location on your computer where R will look for files}
 \end{alltt}
 \begin{verbatim}
-## [1] "C:/Users/rbchan/courses/applied-popdy/labs/distance"
+## [1] "/home/rchandler/courses/applied-popdy/labs/distance"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'GazelleFakeData.txt' here}
 \end{alltt}
 \begin{verbatim}
-## [1] "figs"                "GazelleFakeData.txt" "lab-distance.pdf"   
-## [4] "lab-distance.Rnw"    "lab-distance.tex"
+## [1] "auto"                "figs"                "GazelleFakeData.txt"
+## [4] "lab-distance.pdf"    "lab-distance.Rnw"    "lab-distance.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}

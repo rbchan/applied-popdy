@@ -19,6 +19,7 @@ rnw2pdf("lab-distance",tangle=TRUE)
 ##knit_theme$set("navajo-night")
 knit_theme$set("edit-kwrite")
 @
+
 %% New command for inline code that isn't to be evaluated
 \definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
