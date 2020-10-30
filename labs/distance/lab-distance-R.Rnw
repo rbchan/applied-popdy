@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+
+
+%\usepackage[sans]{../pres1}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+%\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-distance-R")
+rnw2pdf("lab-distance-R",tangle=TRUE)
+@
+
+%% knitr stuff
+<<knitr-theme, include=FALSE, purl=FALSE>>=
+knit_theme$set("edit-kwrite")
+@
+
+%% New command for inline code that isn't to be evaluated
+\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
+\newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+
+
+\begin{document}
+
+{
+  \Large
+  \centering
+  {\bf Lab 9 Assignment --- Distance Sampling} \\
+  Due before Monday \par
+}
+
+\vspace{10pt}
+
+% Analysis of the (fake) Mongolian gazelle ({\it Procapra gutturosa})
+% data using program DISTANCE.  
+
+The purpose of this lab is to learn how to use the
+R package `Distance' to estimate abundance and density. You will
+do this by analyzing fake data on Mongolian gazelle ({\it Procapra
+  gutturosa}). The data are fake, but they are based loosely on the
+study that we discussed in lecture. Note that gazelles were detected
+in groups (ie, herds), and the distance data are distances to group
+centers. 
+
+Put your answers in a Word file and upload it to ELC. Name the file
+something like ``Chandler-lab9.docx''. Due before your next lab.  
+
+
+
+
+
+\section*{R package `Distance'}
+
+Open R (or RStudio) and install the package using the following
+command: 
+
+<<install,eval=FALSE>>=
+install.packages("Distance")
+@ 
+
+Several other packages will be installed during the process. Now we
+can load the package like so: 
+
+<<load>>=
+library(Distance)
+@ 
+
+Before we can do any analysis, we need to import the Mongolian gazelle
+data. Make sure that the file \texttt{GazelleFakeData.txt} is in your
+working directory.
+
+<<getwd>>=
+getwd()       ## Location on your computer where R will look for files
+list.files()  ## You should see 'GazelleFakeData.txt' here
+@ 
+
+If you need to change your working directory, you can use the dropdown
+menu options, or you can use a command like this:
+
+<<setwd,eval=FALSE>>=
+setwd("C:/Users/RichardC/courses/") ## Change the path in quotes!
+@
+
+Once you have the data file in your working directory, you can import
+the fake gazelle data. The data file is a tab-separated text file
+instead of a comma-seperated text file like we used last week:
+
+<<import>>=
+gazelleData <- read.table("GazelleFakeData.txt", header=TRUE, sep="\t")
+@
+
+
+\newpage
+
+The structure of the data can be assessed like this:
+
+<<str>>=
+str(gazelleData)
+@ 
+
+We have to reformat the data to meet the requirements of the Distance
+package. The code below creates a new data frame, renames the columns,
+and converts the distance units to kilometers.
+
+<<reformat>>=
+gazelleData2 <- gazelleData[,c("Transect", "GroupSize")]
+colnames(gazelleData2) <- c("Sample.Label", "size")
+gazelleData2$distance <- gazelleData$Distance / 1000 ## Convert to km
+gazelleData2$Region.Label <- 1
+gazelleData2$Effort <- gazelleData$TransectLength
+gazelleData2$Area <- gazelleData$RegionArea
+@ 
+
+The distance sampling model can be fitted to the data using the
+\inr{ds} function. The \inr{key} argument specifies the detection
+function. You could switch from the half-normal to the hazard-rate
+function using: \inr{key="hr"}.
+
+
+<<model-hn,results="hide">>=
+model.hn <- ds(data=gazelleData2, key="hn",
+               transect="line", truncation=250/1000,
+               adjustment=NULL, quiet=TRUE)
+@ 
+
+Once you have fitted the model, you can obtain the parameter estimates
+using the following command:
+
+<<model-hn-summary,eval=FALSE>>=
+summary(model.hn)
+@ 
+
+The estimates of abundance and density are toward the bottom of the
+output under 
+
+ 
+
+To view the estimated detection function, do this:
+
+<<model-hn-plot,out.width="80%",fig.align="center",eval=FALSE>>=
+plot(model.hn)
+@ 
+
+
+\clearpage
+
+\section*{Assignment -- Estimate gazelle density and abundance}
+
+\subsubsection*{\normalsize Half-normal detection function}
+
+
+\begin{enumerate}
+    name the data filter ``truncate250''. Click on the ``Truncation''
+    tab and tell it to discard all observations beyond 250m. Hit
+    OK. 
+  \item Run the model.
+  \item On the ``Results'' tab on the right, scroll through the
+    pages to the histograms of detection distances and the fitted
+    detection function. Find the one that looks the best, in terms of
+    the detection function fitting the histogram well, and then copy
+    and paste it into your Word file. The easiest way to do this is to
+    copy and paste into MS Paint and then save it as an image
+    file. Then use \verb+Insert > Picture+ in Word.  Or you can take a
+    screen shot of the histogram and paste that in. 
+  \item Add a figure caption below the histogram that explains
+    the graph.   
+  \item Create a table to report estimates of abundance (N), density
+    (D), group density (DS), sigma (called A(1) in DISTANCE), and
+    p. Include standard errors (SEs) and confidence intervals (CIs) in
+    your table. Define each of the parameters in your table (one sentence per parameter). 
+\end{enumerate}
+
+
+\subsubsection*{\normalsize Hazard-rate detection function}
+
+\begin{enumerate}
+  \item Run a second analysis in which you use a ``hazard-rate''
+    detection function instead of the half-normal detection
+    function. Do this by closing the results window, and
+    right-clicking under the ``Analyses'' tab to select ``New Analysis\dots''.  
+  \item Next, right-click on the new line that appeared (should be
+    highlighted in blue) and choose `Analysis Details' again as you
+    did before. Change the name of the analysis, and create a new
+    `Model definition' in which you change the key function to
+    `hazard-rate'. For all other options, use the same settings as
+    before.   
+  \item Repeat steps 6-7 above. Why do you think the results differ
+    when you use different detection functions? Which of the two
+    models is better (has the lower AIC)?  
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
+
+
+
+
