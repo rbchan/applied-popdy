@@ -6,6 +6,8 @@
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 %\hypersetup{pdfstartview=FitV,hidelinks}
+\usepackage{verbatim}
+
 
 
 <<eval=FALSE,include=FALSE>>=
@@ -116,17 +118,19 @@ gazelleData2$Effort <- gazelleData$TransectLength
 gazelleData2$Area <- gazelleData$RegionArea
 @ 
 
+
 The distance sampling model can be fitted to the data using the
 \inr{ds} function. The \inr{key} argument specifies the detection
 function. You could switch from the half-normal to the hazard-rate
-function using: \inr{key="hr"}.
+function using: \inr{key="hr"}. The \inr{truncation} argument
+indicates that we didn't record data beyond 250 m (0.25 km).
 
-
-<<model-hn,results="hide">>=
+<<model-hn,results="hide",message=FALSE>>=
 model.hn <- ds(data=gazelleData2, key="hn",
                transect="line", truncation=250/1000,
                adjustment=NULL, quiet=TRUE)
 @ 
+
 
 Once you have fitted the model, you can obtain the parameter estimates
 using the following command:
@@ -135,9 +139,16 @@ using the following command:
 summary(model.hn)
 @ 
 
-The estimates of abundance and density are toward the bottom of the
-output under 
+The estimate of the scale parameter $\sigma$ and average detection
+probability $\bar{p}$ can be found near the top of the output under
+\verb+Detection function parameters+. The scale parameter is estimated
+on the natural log scale, but it can be transformed to the original
+scale with the exponential function, for example using code like this:
+\inr{exp(-2.549)}. 
 
+The estimates of abundance and density are toward the bottom of the
+output under \\
+\verb+Summary for individuals+.
  
 
 To view the estimated detection function, do this:
@@ -149,51 +160,22 @@ plot(model.hn)
 
 \clearpage
 
-\section*{Assignment -- Estimate gazelle density and abundance}
-
-\subsubsection*{\normalsize Half-normal detection function}
-
+\section*{Assignment -- Compare results from half-normal and hazard-rate models}
 
 \begin{enumerate}
-    name the data filter ``truncate250''. Click on the ``Truncation''
-    tab and tell it to discard all observations beyond 250m. Hit
-    OK. 
-  \item Run the model.
-  \item On the ``Results'' tab on the right, scroll through the
-    pages to the histograms of detection distances and the fitted
-    detection function. Find the one that looks the best, in terms of
-    the detection function fitting the histogram well, and then copy
-    and paste it into your Word file. The easiest way to do this is to
-    copy and paste into MS Paint and then save it as an image
-    file. Then use \verb+Insert > Picture+ in Word.  Or you can take a
-    screen shot of the histogram and paste that in. 
-  \item Add a figure caption below the histogram that explains
-    the graph.   
-  \item Create a table to report estimates of abundance (N), density
-    (D), group density (DS), sigma (called A(1) in DISTANCE), and
-    p. Include standard errors (SEs) and confidence intervals (CIs) in
-    your table. Define each of the parameters in your table (one sentence per parameter). 
+  \item Run the model above with the half-normal detection function.
+  \item Run another model, but use a hazard-rate detection function
+    instead.  
+  \item Create a table in Word to compare the two models. The table
+    should have a row for each model. The column names should be:
+    \texttt{Model, pbar, Abundance, SE(N), Density, SE(D), AIC}.
+    The two \verb+SE+ columns are for the standard errors of
+    abundance and density. 
+  \item Create a figure with the two graphs of the detection functions
+    side-by-side.
+  \item Write a short paragraph summarizing your results. Indicate
+    which model was better according to AIC, and explain why 
 \end{enumerate}
-
-
-\subsubsection*{\normalsize Hazard-rate detection function}
-
-\begin{enumerate}
-  \item Run a second analysis in which you use a ``hazard-rate''
-    detection function instead of the half-normal detection
-    function. Do this by closing the results window, and
-    right-clicking under the ``Analyses'' tab to select ``New Analysis\dots''.  
-  \item Next, right-click on the new line that appeared (should be
-    highlighted in blue) and choose `Analysis Details' again as you
-    did before. Change the name of the analysis, and create a new
-    `Model definition' in which you change the key function to
-    `hazard-rate'. For all other options, use the same settings as
-    before.   
-  \item Repeat steps 6-7 above. Why do you think the results differ
-    when you use different detection functions? Which of the two
-    models is better (has the lower AIC)?  
-\end{enumerate}
-
 
 
 
