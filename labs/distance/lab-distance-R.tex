@@ -51,11 +51,8 @@
 \usepackage{alltt}
 
 
-%\usepackage[sans]{../pres1}
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
-%\hypersetup{pdfstartview=FitV,hidelinks}
 \usepackage{verbatim}
 
 
@@ -65,8 +62,10 @@
 %% knitr stuff
 
 
-%% New command for inline code that isn't to be evaluated
-\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
+
+%% New command for inline code, not to be evaluated 
+
+\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -74,14 +73,11 @@
 {
   \Large
   \centering
-  {\bf Lab 9 Assignment --- Distance Sampling} \\
-  Due before Monday \par
+  {\bf Lab 9 Assignment --- Distance Sampling \\ }
+  Due before Monday \\
 }
 
-\vspace{10pt}
-
-% Analysis of the (fake) Mongolian gazelle ({\it Procapra gutturosa})
-% data using program DISTANCE.  
+\vspace{24pt}
 
 The purpose of this lab is to learn how to use the
 R package `Distance' to estimate abundance and density. You will
@@ -91,9 +87,49 @@ study that we discussed in lecture. Note that gazelles were detected
 in groups (ie, herds), and the distance data are distances to group
 centers. 
 
-Put your answers in a Word file and upload it to ELC. Name the file
-something like ``Chandler-lab9.docx''. Due before your next lab.  
+Put {\bf your code and your answers} in a Word file and upload it to
+ELC. Name the file something like ``Chandler-lab9.docx''. Due before
+your next lab.   
 
+
+
+\section*{Assignment -- Half-normal and hazard-rate models}
+
+\begin{enumerate}
+  \item Import the gazelle data in the file
+    \verb+"GazelleFakeData.txt"+. Note that:
+    \begin{itemize}
+      \item Every row corresponds to the detection of a large herd.
+      \item The number of individuals in each herd is represented in
+        the \inr{GroupSize} column. 
+      \item The R package `Distance' will estimate the
+        \textit{Abundance of herds} as well as the abundance of
+        individuals.
+      \item All 10 transects were 100 m long, and herds were detected
+        out to 250 m (on both sides of the transect).
+      \item The area surveyed was therefore
+        10 $\times$ 100 m $\times$ 500 m = 0.5 km$^2$,
+        which is is one-tenth of the entire study area (5 km$^2$).
+    \end{itemize}
+  \item Format the data for the R package `Distance' as described in
+    the next section.  
+  \item Run two models, one with the half-normal detection function,
+    and another with the hazard-rate detection function.
+  \item Create a table in Word to compare the two models. The table
+    should have a row for each model. The column names should be:
+    \texttt{Model, pbar, Abundance, SE(N), Density, SE(D), AIC}.
+    The two \verb+SE+ columns are for the standard errors of
+    abundance and density. Report total abundance and density, not
+    herd abundance and density.
+  \item Create a figure with the two graphs of the detection functions
+    side-by-side.
+%  \item Write a short paragraph summarizing your results. Indicate
+%    which model was better according to AIC, and explain why 
+\end{enumerate}
+
+
+
+\clearpage
 
 
 
@@ -101,7 +137,9 @@ something like ``Chandler-lab9.docx''. Due before your next lab.
 \section*{R package `Distance'}
 
 Open R (or RStudio) and install the package using the following
-command: 
+command:
+
+
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
@@ -122,8 +160,8 @@ can load the package like so:
 \end{kframe}
 \end{knitrout}
 
-Before we can do any analysis, we need to import the Mongolian gazelle
-data. Make sure that the file \texttt{GazelleFakeData.txt} is in your
+Before we can do any analysis, we need to import the 
+data. Make sure that the file \texttt{ExampleData.txt} is in your
 working directory.
 
 \begin{knitrout}
@@ -132,16 +170,18 @@ working directory.
 \hlkwd{getwd}\hlstd{()}       \hlcom{## Location on your computer where R will look for files}
 \end{alltt}
 \begin{verbatim}
-## [1] "/home/rchandler/courses/applied-popdy/labs/distance"
+## [1] "/home/richard/courses/applied-popdy/labs/distance"
 \end{verbatim}
 \begin{alltt}
-\hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'GazelleFakeData.txt' here}
+\hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'ExampleData.txt' here}
 \end{alltt}
 \begin{verbatim}
-##  [1] "auto"                "figs"                "GazelleFakeData.txt"
-##  [4] "lab-distance-R.aux"  "lab-distance-R.log"  "lab-distance-R.pdf" 
-##  [7] "lab-distance-R.Rnw"  "lab-distance-R.tex"  "lab-distance.pdf"   
-## [10] "lab-distance.Rnw"    "lab-distance.tex"
+##  [1] "auto"                    "ExampleData.txt"        
+##  [3] "figs"                    "figure"                 
+##  [5] "GazelleFakeData.txt"     "GazelleFakeData.txt.csv"
+##  [7] "lab-distance-R.pdf"      "lab-distance-R.Rnw"     
+##  [9] "lab-distance-R.tex"      "lab-distance.Rnw"       
+## [11] "lab-distance.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -157,53 +197,54 @@ menu options, or you can use a command like this:
 \end{kframe}
 \end{knitrout}
 
-Once you have the data file in your working directory, you can import
-the fake gazelle data. The data file is a tab-separated text file
+Once you have specified your working directory, you can import
+the example data. The data file is a tab-separated text file
 instead of a comma-seperated text file like we used last week:
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{gazelleData} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"GazelleFakeData.txt"}\hlstd{,} \hlkwc{header}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{"\textbackslash{}t"}\hlstd{)}
+\hlstd{exampleData} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"ExampleData.txt"}\hlstd{,} \hlkwc{header}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{"\textbackslash{}t"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 
-\newpage
+%\newpage
 
 The structure of the data can be assessed like this:
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{str}\hlstd{(gazelleData)}
+\hlkwd{str}\hlstd{(exampleData)}
 \end{alltt}
 \begin{verbatim}
-## 'data.frame':	118 obs. of  6 variables:
+## 'data.frame':	56 obs. of  5 variables:
 ##  $ Transect      : int  1 1 1 1 1 1 1 1 1 2 ...
-##  $ GroupID       : int  1 2 3 4 5 6 7 8 9 1 ...
 ##  $ Distance      : int  23 23 17 40 87 77 50 62 3 33 ...
-##  $ GroupSize     : int  2977 2908 2899 2994 2998 3087 2992 3057 2928 3030 ...
+##  $ GroupSize     : int  744 727 724 748 749 771 748 764 732 757 ...
 ##  $ TransectLength: int  100 100 100 100 100 100 100 100 100 100 ...
 ##  $ RegionArea    : int  5 5 5 5 5 5 5 5 5 5 ...
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
+\clearpage
+
 We have to reformat the data to meet the requirements of the Distance
 package. The code below creates a new data frame, renames the columns,
-and converts the distance units to kilometers.
+and converts the units to kilometers.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{gazelleData2} \hlkwb{<-} \hlstd{gazelleData[,}\hlkwd{c}\hlstd{(}\hlstr{"Transect"}\hlstd{,} \hlstr{"GroupSize"}\hlstd{)]}
-\hlkwd{colnames}\hlstd{(gazelleData2)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"Sample.Label"}\hlstd{,} \hlstr{"size"}\hlstd{)}
-\hlstd{gazelleData2}\hlopt{$}\hlstd{distance} \hlkwb{<-} \hlstd{gazelleData}\hlopt{$}\hlstd{Distance} \hlopt{/} \hlnum{1000} \hlcom{## Convert to km}
-\hlstd{gazelleData2}\hlopt{$}\hlstd{Region.Label} \hlkwb{<-} \hlnum{1}
-\hlstd{gazelleData2}\hlopt{$}\hlstd{Effort} \hlkwb{<-} \hlstd{gazelleData}\hlopt{$}\hlstd{TransectLength}
-\hlstd{gazelleData2}\hlopt{$}\hlstd{Area} \hlkwb{<-} \hlstd{gazelleData}\hlopt{$}\hlstd{RegionArea}
+\hlstd{exampleData2} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"Transect"}\hlstd{,} \hlstr{"GroupSize"}\hlstd{)]}
+\hlkwd{colnames}\hlstd{(exampleData2)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"Sample.Label"}\hlstd{,} \hlstr{"size"}\hlstd{)}       \hlcom{## Rename}
+\hlstd{exampleData2}\hlopt{$}\hlstd{distance} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{Distance} \hlopt{/} \hlnum{1000}      \hlcom{## Convert to km}
+\hlstd{exampleData2}\hlopt{$}\hlstd{Region.Label} \hlkwb{<-} \hlnum{1}                            \hlcom{## Just one region}
+\hlstd{exampleData2}\hlopt{$}\hlstd{Effort} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{TransectLength} \hlopt{/} \hlnum{1000}  \hlcom{## Convert to km}
+\hlstd{exampleData2}\hlopt{$}\hlstd{Area} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{RegionArea}               \hlcom{## Square km}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -218,7 +259,7 @@ indicates that we didn't record data beyond 250 m (0.25 km).
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{model.hn} \hlkwb{<-} \hlkwd{ds}\hlstd{(}\hlkwc{data}\hlstd{=gazelleData2,} \hlkwc{key}\hlstd{=}\hlstr{"hn"}\hlstd{,}
+\hlstd{model.hn} \hlkwb{<-} \hlkwd{ds}\hlstd{(}\hlkwc{data}\hlstd{=exampleData2,} \hlkwc{key}\hlstd{=}\hlstr{"hn"}\hlstd{,}
                \hlkwc{transect}\hlstd{=}\hlstr{"line"}\hlstd{,} \hlkwc{truncation}\hlstd{=}\hlnum{250}\hlopt{/}\hlnum{1000}\hlstd{,}
                \hlkwc{adjustment}\hlstd{=}\hlkwa{NULL}\hlstd{,} \hlkwc{quiet}\hlstd{=}\hlnum{TRUE}\hlstd{)}
 \end{alltt}
@@ -237,17 +278,26 @@ using the following command:
 \end{kframe}
 \end{knitrout}
 
-The estimate of the scale parameter $\sigma$ and average detection
-probability $\bar{p}$ can be found near the top of the output under
-\verb+Detection function parameters+. The scale parameter is estimated
-on the natural log scale, but it can be transformed to the original
-scale with the exponential function, for example using code like this:
-\inr{exp(-2.549)}. 
+The output is organized in three categories:
+\begin{itemize}
+  \item Summary for distance analysis
+  \begin{itemize}
+    \item The estimate of the scale parameter $\sigma$ and average
+      detection probability $\bar{p}$ are in this section.
+    \item The scale parameter is estimated on the natural log scale,
+      but it can be transformed to the original scale with the
+      exponential function, for example using code like this: \inr{exp(-2.51)}.
+  \end{itemize}
+  \item Summary for clusters
+  \begin{itemize}
+    \item This has estimates of {\it herd} abundance and density.      
+  \end{itemize}
+  \item Summary for individuals
+  \begin{itemize}
+    \item This has estimates of {\it total} abundance and density.      
+  \end{itemize}
+\end{itemize}
 
-The estimates of abundance and density are toward the bottom of the
-output under \\
-\verb+Summary for individuals+.
- 
 
 To view the estimated detection function, do this:
 
@@ -257,28 +307,14 @@ To view the estimated detection function, do this:
 \hlkwd{plot}\hlstd{(model.hn)}
 \end{alltt}
 \end{kframe}
+
+{\centering \includegraphics[width=0.8\linewidth]{figure/model-hn-plot-1} 
+
+}
+
+
+
 \end{knitrout}
-
-
-\clearpage
-
-\section*{Assignment -- Compare results from half-normal and hazard-rate models}
-
-\begin{enumerate}
-  \item Run the model above with the half-normal detection function.
-  \item Run another model, but use a hazard-rate detection function
-    instead.  
-  \item Create a table in Word to compare the two models. The table
-    should have a row for each model. The column names should be:
-    \texttt{Model, pbar, Abundance, SE(N), Density, SE(D), AIC}.
-    The two \verb+SE+ columns are for the standard errors of
-    abundance and density. 
-  \item Create a figure with the two graphs of the detection functions
-    side-by-side.
-  \item Write a short paragraph summarizing your results. Indicate
-    which model was better according to AIC, and explain why 
-\end{enumerate}
-
 
 
 

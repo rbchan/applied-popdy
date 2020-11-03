@@ -1,11 +1,8 @@
 \documentclass[12pt]{article}
 
 
-%\usepackage[sans]{../pres1}
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
-%\hypersetup{pdfstartview=FitV,hidelinks}
 \usepackage{verbatim}
 
 
@@ -17,12 +14,15 @@ rnw2pdf("lab-distance-R",tangle=TRUE)
 @
 
 %% knitr stuff
-<<knitr-theme, include=FALSE, purl=FALSE>>=
-knit_theme$set("edit-kwrite")
+
+<<knitr-theme,include=FALSE,purl=FALSE>>=
+knit_theme$set('edit-kwrite')
+
 @
 
-%% New command for inline code that isn't to be evaluated
-\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
+%% New command for inline code, not to be evaluated 
+
+\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 
 
@@ -32,14 +32,11 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 9 Assignment --- Distance Sampling} \\
-  Due before Monday \par
+  {\bf Lab 9 Assignment --- Distance Sampling \\ }
+  Due before Monday \\
 }
 
-\vspace{10pt}
-
-% Analysis of the (fake) Mongolian gazelle ({\it Procapra gutturosa})
-% data using program DISTANCE.  
+\vspace{24pt}
 
 The purpose of this lab is to learn how to use the
 R package `Distance' to estimate abundance and density. You will
@@ -49,9 +46,48 @@ study that we discussed in lecture. Note that gazelles were detected
 in groups (ie, herds), and the distance data are distances to group
 centers. 
 
-Put your answers in a Word file and upload it to ELC. Name the file
-something like ``Chandler-lab9.docx''. Due before your next lab.  
+Put {\bf your code and your answers} in a Word file and upload it to
+ELC. Name the file something like ``Chandler-lab9.docx''. 
 
+
+
+\section*{Assignment -- Half-normal and hazard-rate models}
+
+\begin{enumerate}
+  \item Import the gazelle data in the file
+    \verb+"GazelleFakeData.txt"+. Note that:
+    \begin{itemize}
+      \item Every row corresponds to the detection of a large herd.
+      \item The number of individuals in each herd is represented in
+        the \inr{GroupSize} column. 
+      \item The R package `Distance' will estimate the
+        \textit{Abundance of herds} as well as the abundance of
+        individuals.
+      \item All 10 transects were 100 m long, and herds were detected
+        out to 250 m (on both sides of the transect).
+      \item The area surveyed was therefore
+        10 $\times$ 100 m $\times$ 500 m = 0.5 km$^2$,
+        which is is one-tenth of the entire study area (5 km$^2$).
+    \end{itemize}
+  \item Format the data for the R package `Distance' as described in
+    the next section.  
+  \item Run two models, one with the half-normal detection function,
+    and another with the hazard-rate detection function.
+  \item Create a table in Word to compare the two models. The table
+    should have a row for each model. The column names should be:
+    \texttt{Model, pbar, Abundance, SE(N), Density, SE(D), AIC}.
+    The two \verb+SE+ columns are for the standard errors of
+    abundance and density. Report total abundance and density, not
+    herd abundance and density.
+  \item Create a figure with the two graphs of the detection functions
+    side-by-side.
+%  \item Write a short paragraph summarizing your results. Indicate
+%    which model was better according to AIC, and explain why 
+\end{enumerate}
+
+
+
+\clearpage
 
 
 
@@ -59,7 +95,14 @@ something like ``Chandler-lab9.docx''. Due before your next lab.
 \section*{R package `Distance'}
 
 Open R (or RStudio) and install the package using the following
-command: 
+command:
+
+<<install0,eval=TRUE,include=FALSE>>=
+if(!require(Distance)) {
+    install.packages("Distance")
+    library(Distance)
+}
+@ 
 
 <<install,eval=FALSE>>=
 install.packages("Distance")
@@ -72,13 +115,13 @@ can load the package like so:
 library(Distance)
 @ 
 
-Before we can do any analysis, we need to import the Mongolian gazelle
-data. Make sure that the file \texttt{GazelleFakeData.txt} is in your
+Before we can do any analysis, we need to import the 
+data. Make sure that the file \texttt{ExampleData.txt} is in your
 working directory.
 
 <<getwd>>=
 getwd()       ## Location on your computer where R will look for files
-list.files()  ## You should see 'GazelleFakeData.txt' here
+list.files()  ## You should see 'ExampleData.txt' here
 @ 
 
 If you need to change your working directory, you can use the dropdown
@@ -88,34 +131,36 @@ menu options, or you can use a command like this:
 setwd("C:/Users/RichardC/courses/") ## Change the path in quotes!
 @
 
-Once you have the data file in your working directory, you can import
-the fake gazelle data. The data file is a tab-separated text file
+Once you have specified your working directory, you can import
+the example data. The data file is a tab-separated text file
 instead of a comma-seperated text file like we used last week:
 
 <<import>>=
-gazelleData <- read.table("GazelleFakeData.txt", header=TRUE, sep="\t")
+exampleData <- read.table("ExampleData.txt", header=TRUE, sep="\t")
 @
 
 
-\newpage
+%\newpage
 
 The structure of the data can be assessed like this:
 
 <<str>>=
-str(gazelleData)
+str(exampleData)
 @ 
+
+\clearpage
 
 We have to reformat the data to meet the requirements of the Distance
 package. The code below creates a new data frame, renames the columns,
-and converts the distance units to kilometers.
+and converts the units to kilometers.
 
 <<reformat>>=
-gazelleData2 <- gazelleData[,c("Transect", "GroupSize")]
-colnames(gazelleData2) <- c("Sample.Label", "size")
-gazelleData2$distance <- gazelleData$Distance / 1000 ## Convert to km
-gazelleData2$Region.Label <- 1
-gazelleData2$Effort <- gazelleData$TransectLength
-gazelleData2$Area <- gazelleData$RegionArea
+exampleData2 <- exampleData[,c("Transect", "GroupSize")]
+colnames(exampleData2) <- c("Sample.Label", "size")       ## Rename
+exampleData2$distance <- exampleData$Distance / 1000      ## Convert to km
+exampleData2$Region.Label <- 1                            ## Just one region
+exampleData2$Effort <- exampleData$TransectLength / 1000  ## Convert to km
+exampleData2$Area <- exampleData$RegionArea               ## Square km
 @ 
 
 
@@ -126,7 +171,7 @@ function using: \inr{key="hr"}. The \inr{truncation} argument
 indicates that we didn't record data beyond 250 m (0.25 km).
 
 <<model-hn,results="hide",message=FALSE>>=
-model.hn <- ds(data=gazelleData2, key="hn",
+model.hn <- ds(data=exampleData2, key="hn",
                transect="line", truncation=250/1000,
                adjustment=NULL, quiet=TRUE)
 @ 
@@ -137,46 +182,34 @@ using the following command:
 
 <<model-hn-summary,eval=FALSE>>=
 summary(model.hn)
-@ 
+@
 
-The estimate of the scale parameter $\sigma$ and average detection
-probability $\bar{p}$ can be found near the top of the output under
-\verb+Detection function parameters+. The scale parameter is estimated
-on the natural log scale, but it can be transformed to the original
-scale with the exponential function, for example using code like this:
-\inr{exp(-2.549)}. 
+The output is organized in three categories:
+\begin{itemize}
+  \item Summary for distance analysis
+  \begin{itemize}
+    \item The estimate of the scale parameter $\sigma$ and average
+      detection probability $\bar{p}$ are in this section.
+    \item The scale parameter is estimated on the natural log scale,
+      but it can be transformed to the original scale with the
+      exponential function, for example using code like this: \inr{exp(-2.51)}.
+  \end{itemize}
+  \item Summary for clusters
+  \begin{itemize}
+    \item This has estimates of {\it herd} abundance and density.      
+  \end{itemize}
+  \item Summary for individuals
+  \begin{itemize}
+    \item This has estimates of {\it total} abundance and density.      
+  \end{itemize}
+\end{itemize}
 
-The estimates of abundance and density are toward the bottom of the
-output under \\
-\verb+Summary for individuals+.
- 
 
 To view the estimated detection function, do this:
 
-<<model-hn-plot,out.width="80%",fig.align="center",eval=FALSE>>=
+<<model-hn-plot,out.width="80%",fig.align="center">>=
 plot(model.hn)
 @ 
-
-
-\clearpage
-
-\section*{Assignment -- Compare results from half-normal and hazard-rate models}
-
-\begin{enumerate}
-  \item Run the model above with the half-normal detection function.
-  \item Run another model, but use a hazard-rate detection function
-    instead.  
-  \item Create a table in Word to compare the two models. The table
-    should have a row for each model. The column names should be:
-    \texttt{Model, pbar, Abundance, SE(N), Density, SE(D), AIC}.
-    The two \verb+SE+ columns are for the standard errors of
-    abundance and density. 
-  \item Create a figure with the two graphs of the detection functions
-    side-by-side.
-  \item Write a short paragraph summarizing your results. Indicate
-    which model was better according to AIC, and explain why 
-\end{enumerate}
-
 
 
 
