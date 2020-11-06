@@ -1,3 +1,4 @@
+
 \documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
@@ -53,25 +54,29 @@
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
-%\hypersetup{pdfstartview=FitV,hidelinks}
+\usepackage{verbatim}
 
 
 
-
-%% knitr stuff
-%% New command for inline code that isn't to be evaluated
-
-\definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
+\definecolor{inlinecolor}{rgb}{0.878,0.918,0.933}  
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+
+
+
+
+
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
+
+
 
 {
   \Large
   \centering
-  {\bf Lab 10 -- Estimating abundance with
-    closed-population capture-mark-recapture data} \\
-  Due before your next lab \par
+  {\bf Lab 10 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  Due before Monday \\
 }
 
 \vspace{10pt}
@@ -84,50 +89,55 @@ emigration. The closure assumption is usually only valid over very
 short time periods. We will learn how to work with data from open
 populations later.
 
-Work through the problems below, put your answers in a Word file,
-and then upload it to ELC. Name the file something like
+Work through the problems below, put your code and your answers in a
+Word file, and then upload it to ELC. Name the file something like 
 ``Chandler-lab10.docx''.  
 
 
+\section*{Assignment}
 
+\subsection*{Exercise I: Lincoln-Peterson estimation}
 
-%\clearpage
-
-\section*{\large Part I: Lincoln-Peterson estimation}
 Suppose you capture, mark, and release 100 largmouth bass ({\it
   Micropterus salmoides}) at Lake Herrick. The next day, you return
 and capture 50 individuals, 25 of which were marked on the first
 occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
-You do not need to use MARK or R for this -- you can do it by
-hand. Be sure to show your work.  
+Do the calculations in R and show your work.  
 
-% \begin{figure}[h!]
-%   \centering
-%   \fbox{\includegraphics[height=8.5cm]{figs/ds-data1}} \hfill
-%   \fbox{\includegraphics[height=8.5cm]{figs/ds-data2}}   \\
-%   \caption{\small Data formatted in Excel (left) and the same data in
-%     program DISTANCE.}
-%   \label{fig:ds-data}
-% \end{figure}
-%\clearpage
+
+\subsection*{Exercise II: Closed-population models in R}
 
 
 
-%\clearpage
+\begin{enumerate}
+  \item Use the R package `mra' to fit the four
+    mark-recapture models described in Table~\ref{tab:Otis}.
+    Software instructions are in the next section.
+  \item Summarize your results by creating a table in which each row
+    is a model, and include the following columns: the estimates of $N$
+    (abundance), the standard errors of $N$ (SE), and the AICc
+    values. 
+  \item The model with the lowest AICc is considered the best in
+    the set of models. Which model has the lowest AICc? Do your
+    results suggest that it is important to account for variation in
+    capture (and recapture) probability over time? Explain.
+  \item Why do you think model $M_0$ is the worst model
+    in the set? Look at the capture histories when answering this
+    question. 
+  \item Given what you know about turtles and turtle trapping,
+    what sources of variation in capture probability (other than time)
+    do you think we might want to account for to obtain more reliable
+    abundance estimates?
+\end{enumerate}
 
-\section*{\large  Part II: Closed-population models in MARK and R}
-
-You will use either program MARK or R to fit the four mark-recapture
-models described in Table~\ref{tab:Otis}. Undergrads with access to
-Windows can use program MARK. Everyone else can use the R package
-`mra'. Software instructions are below. The assignment is at the end.  
+\clearpage
 
 \begin{table}[h!]
   \centering
   \caption{A description of the four models to be fitted to the
     stinkpot data.}
-  \footnotesize
-  \begin{tabular}[h!]{ll}
+%  \footnotesize
+  \begin{tabular}[h!]{lp{5in}}
     \hline
     Model & Description \\
     \hline
@@ -142,18 +152,8 @@ Windows can use program MARK. Everyone else can use the R package
 \end{table}
 
 
-%\clearpage
 
-% \begin{figure}[h!]
-%   \centering
-%   \fbox{\includegraphics[width=0.9\textwidth]{figs/pim-chart}}
-%   \caption{\small The parameter index chart in MARK can be
-%     used to specify models. In this case, capture probability ($p$) is
-%     set to be equal to recapture probability ($c$).}
-%   \label{fig:pim}
-% \end{figure}
 
-% \vspace{1cm}
 
 {\bf Parameter definitions}
 \begin{itemize}
@@ -168,93 +168,11 @@ Windows can use program MARK. Everyone else can use the R package
     population. $N=n+f_0$. 
 \end{itemize}
 
-%\vspace{1cm}
-
-
-
-\subsection*{Closed-population models in program MARK}
-
-You can download program MARK here:
-\url{http://www.phidot.org/software/mark/downloads/}. Even though it
-is possible to run MARK on Linux or OS/X, it isn't easy, and I don't
-recommend it. If you don't have Windows, use R as described below.
-
-The data file (\verb+CH-SO-Andy07.inp+) is a simple text file, formatted
-as required by program MARK. Each row of the file is a capture history
-for each of the 17 stinkpots ({\it Sternotherus odoratus}) captured in
-2007 (May 31 - June 5). There were 6 capture occasions, so for every
-turtle, there are 6 ones and zeros indicating if the turtle was
-captured on that occasion or not. After each capture history is a
-space followed by a 1 and a semi-colon to indicate that there was just
-1 turtle with this history (Fig.~\ref{fig:stink07-data}).
-
-\begin{figure}[h!]
-  \centering
-  \fbox{\includegraphics[height=0.6\textheight]{figs/stinkpot07-data}}
-  \caption{\small Stinkpot capture histories in a text file ready to
-    be imported to MARK.}
-  \label{fig:stink07-data}
-\end{figure}
-
-\clearpage
-
-{\bf Instructions}
-\begin{enumerate}
-  \item[(i)] Open MARK and create a new project by selecting:
-    \verb+"File > New"+.
-  \item[(ii)] Name the project ``Exercise I'' and select the encounter
-    history file \verb+"CH-SO-Andy07.inp"+ (see
-    Fig.~\ref{fig:stink07-data})
-  \item[(iii)] Choose \verb+"Closed Captures"+ from the list of ``data
-    types'' on the left and then select %\verb+"Full likelihood p and c"+.
-    \verb+"Huggins' p and c"+.
-  \item[(iv)] Set the number of encounter occasions to 6, then hit
-    \verb+"OK"+
-\end{enumerate}
-
-\begin{figure}[h!]
-  \centering
-  \fbox{\includegraphics[width=0.8\textwidth]{figs/stinkpot07-MARK}}
-  \caption{\small Setting up the MARK analysis of the stinkpot data.}
-  \label{fig:stink07-mark}
-\end{figure}
-
-\begin{enumerate}
-  \item[(v)] Run four models differing in their specifications of
-    capture probability ($p$) and recapture probability ($c$) by
-    clicking on  \verb+"Run > Pre-defined Model(s)"+. Next, click on the
-    \verb+"Select Models"+ button and choose models \verb+"M0"+,
-    \verb+"Mt"+, \verb+"Mb"+, and \verb+"Mtb"+. An explanation of these
-    models is shown below in Table 1. Next, click \verb+"OK"+, then
-    hit \verb+"OK to Run"+. 
-  \item[(vi)] Inspect the model results, by right-clicking on one of
-    the models in the Results Browser and look at
-    \verb+"Real Estimates"+ and \verb+"Derived estimates"+. See
-    Table~\ref{tab:Otis} and the parameter definitions above for help
-    interpreting ther results.
-  % \item[(vii)]	Now, run two more pre-defined models: one with
-  %   time-specific capture probabilities \verb+"p(t)"+ and one with
-  %   time-specific recapture probabilities \verb+"c(t)"+. These two models can
-  %   be run using the same steps above but by choosing \verb+"(t)"+ instead
-  %   of \verb+"(.)"+.
-  % \item[(viii)] Run a custom model in which capture probability ($p$)
-  %   is equal to recapture probability ($c$). You can do this by
-  %   selecting \verb+"PIM > Parameter Index Chart"+. Then drag the blue
-  %   box for $c$ to the left, so that it is on top of the blue box for $p$
-  %   (see Fig.~\ref{fig:pim}). Then select \verb+"Run > Current Model"+.
-\end{enumerate}
-
-
 
 \clearpage
 
 
 \section*{Closed-population models in R}
-
-
-Graduate students and undergraduates without access to Windows, should
-follow these instructions (instead of the MARK instructions above) for
-completing the assignment. 
 
 Open R (or RStudio) and install the ``mra'' package using the
 following command: 
@@ -274,9 +192,7 @@ Now load the package like so:
 \begin{alltt}
 \hlkwd{library}\hlstd{(mra)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# mra (version 2.16.11)}}\end{kframe}
+\end{kframe}
 \end{knitrout}
 
 We can import the data using \inr{read.table}. The only trick is to
@@ -324,25 +240,6 @@ It's a small dataset, so we can display it in full:
 \end{kframe}
 \end{knitrout}
 
-% As you can see, no turtle was caught more than twice out of the 6
-% occassions.
-
-% Run this command to convert this to format that \inr{secr} recognizes:
-
-% <<format>>=
-% cap.hist <- unRMarkInput(capture.histories, covariates=FALSE)
-% @ 
-
-
-% <<closedN>>=
-% closedN(cap.hist, estimator=c("null", "darroch", "zippin"))
-% @ 
-
-
-% <<Rcapture>>=
-% library(Rcapture)
-% closedp(cap.hist[,,1])
-% @ 
 
 We need to convert the capture histories from a character vector to a
 matrix. The following code does the trick.
@@ -490,29 +387,6 @@ needed to do the assignment) using code like this:
 
 For model $M_0$, capture probability is the same for all individuals
 during all time periods. This won't be the case for the other models. 
-
-\clearpage
-
-\section*{Assignment}
-
-\begin{enumerate}
-  \item[(a)] Summarize your results by creating a table in which each row
-    is a model, and include the following columns: the estimates of $N$
-    (abundance), the standard errors of $N$ (SE), and the AICc
-    values. 
-  \item[(b)] The model with the lowest AICc is considered the best in
-    the set of models. Which model has the lowest AICc? Do your
-    results suggest that it is important to account for variation in
-    capture (and recapture) probability over time? Explain.
-  \item[(c)] Why do you think model $M_0$ is the worst model
-    in the set? Look at the capture histories when answering this
-    question. 
-  \item[(d)] Given what you know about turtles and turtle trapping,
-    what sources of variation in capture probability (other than time)
-    do you think we might want to account for to obtain more reliable
-    abundance estimates?
-\end{enumerate}
-
 
 
 

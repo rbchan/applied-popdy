@@ -1,0 +1,231 @@
+
+\documentclass[12pt]{article}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim}
+
+
+
+\definecolor{inlinecolor}{rgb}{0.878,0.918,0.933}  
+\newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+
+<<build,eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-cap-recapI-R")
+rnw2pdf("lab-cap-recapI-R", tangle=TRUE)
+@
+
+
+<<knitr-theme,include=FALSE,purl=FALSE>>=
+knit_theme$set("edit-kwrite")
+@
+
+
+
+\begin{document}
+
+
+
+{
+  \Large
+  \centering
+  {\bf Lab 10 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  Due before Monday \\
+}
+
+\vspace{10pt}
+
+
+The purpose of this lab is to learn how to estimate abundance using
+mark-recapture data from surveys of closed populations. A closed
+population does not experience recruitment, mortality, immigration or
+emigration. The closure assumption is usually only valid over very
+short time periods. We will learn how to work with data from open
+populations later.
+
+Work through the problems below, put your code and your answers in a
+Word file, and then upload it to ELC. Name the file something like 
+``Chandler-lab10.docx''.  
+
+
+\section*{Assignment}
+
+\subsection*{Exercise I: Lincoln-Peterson estimation}
+
+Suppose you capture, mark, and release 100 largmouth bass ({\it
+  Micropterus salmoides}) at Lake Herrick. The next day, you return
+and capture 50 individuals, 25 of which were marked on the first
+occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
+Do the calculations in R and show your work.  
+
+
+\subsection*{Exercise II: Closed-population models in R}
+
+
+
+\begin{enumerate}
+  \item Use the R package `mra' to fit the four
+    mark-recapture models described in Table~\ref{tab:Otis}.
+    Software instructions are in the next section.
+  \item Summarize your results by creating a table in which each row
+    is a model, and include the following columns: the estimates of $N$
+    (abundance), the standard errors of $N$ (SE), and the AICc
+    values. 
+  \item The model with the lowest AICc is considered the best in
+    the set of models. Which model has the lowest AICc? Do your
+    results suggest that it is important to account for variation in
+    capture (and recapture) probability over time? Explain.
+  \item Why do you think model $M_0$ is the worst model
+    in the set? Look at the capture histories when answering this
+    question. 
+  \item Given what you know about turtles and turtle trapping,
+    what sources of variation in capture probability (other than time)
+    do you think we might want to account for to obtain more reliable
+    abundance estimates?
+\end{enumerate}
+
+\clearpage
+
+\begin{table}[h!]
+  \centering
+  \caption{A description of the four models to be fitted to the
+    stinkpot data.}
+%  \footnotesize
+  \begin{tabular}[h!]{lp{5in}}
+    \hline
+    Model & Description \\
+    \hline
+    $M_0$ & The most basic model in which $p$ and $c$ are constant \\
+    $M_t$ & $p$ differs among sampling occasions and $p_t=c_t$. \\
+    $M_b$ & Behavioral response model in which $p$ and $c$
+            differ. Can describe trap happiness or trap shiness. \\
+    $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
+    \hline
+  \end{tabular}
+  \label{tab:Otis}
+\end{table}
+
+
+
+
+
+{\bf Parameter definitions}
+\begin{itemize}
+  \item $p$ -- capture probability. The probability of capturing an
+    individual on a single occasion
+  \item $p_t$ -- capture probability on occasion $t$
+  \item $c$ -- recapture probability. The probability of capturing an
+    individual that has been captured previously.
+  \item $n$ -- the number of individuals captured
+  \item $f_0$ -- the number of individual not captured
+  \item $N$ -- abundance. The number of individuals in the
+    population. $N=n+f_0$. 
+\end{itemize}
+
+
+\clearpage
+
+
+\section*{Closed-population models in R}
+
+Open R (or RStudio) and install the ``mra'' package using the
+following command: 
+
+<<install,eval=FALSE>>=
+install.packages("mra")
+@ 
+
+Now load the package like so: 
+
+<<load,warning=FALSE,results='hide'>>=
+library(mra)
+@ 
+
+We can import the data using \inr{read.table}. The only trick is to
+tell R that the capture histories should be treated as a character
+string, rather than as a numeric variable. The \inr{colClasses}
+arguments let's us do that.
+
+<<import>>=
+capture.histories <- read.table("CH-SO-Andy07.inp", sep=" ",
+                                colClasses=c("character", "character"),
+                                col.names=c("ch", "freq"))
+@ 
+
+It's a small dataset, so we can display it in full:
+
+<<display>>=
+capture.histories
+@ 
+
+
+We need to convert the capture histories from a character vector to a
+matrix. The following code does the trick.
+
+
+<<capmat-format>>=
+ch.mat <- t(sapply(capture.histories$ch,
+                   function(x) as.integer(strsplit(x, "")[[1]])))
+dimnames(ch.mat) <- list(paste0("Turtle", 1:17), paste0("Time", 1:6))
+@
+
+
+Now the capture histories look like this:
+
+<<capmat-view>>=
+ch.mat
+@ 
+
+We will use the \inr{F.huggins.estim} function to fit the
+closed population models. Model $M_0$ can be fit like this: 
+
+<<M0>>=
+M0 <- F.huggins.estim(capture=~1, recapture=NULL, histories=ch.mat)
+@ 
+
+Model $M_b$ like this:
+
+<<Mb>>=
+Mb <- F.huggins.estim(capture=~1, recapture=~1, histories=ch.mat)
+@ 
+
+To fit model $M_t$, we have to create a time variable.
+
+<<Mt>>=
+time <- tvar(factor(1:6), nan=17) ## 6 time periods. 17 animals.
+Mt <- F.huggins.estim(capture=~time, recapture=NULL, histories=ch.mat)
+@ 
+
+
+You should be able to figure out how to fit model $M_{tb}$ by
+extending the code above.
+
+Estimates of abundance along with AICc values can be found by typing
+the name of the fitted model object. For example:
+
+<<M0-view>>=
+M0
+@ 
+
+
+You can extract information about capture probability (which isn't
+needed to do the assignment) using code like this:
+
+<<M0-p>>=
+round(M0$p.hat, 3)
+@ 
+
+For model $M_0$, capture probability is the same for all individuals
+during all time periods. This won't be the case for the other models. 
+
+
+
+
+\end{document}
+
+
+
+
