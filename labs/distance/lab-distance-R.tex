@@ -88,8 +88,7 @@ in groups (ie, herds), and the distance data are distances to group
 centers. 
 
 Put {\bf your code and your answers} in a Word file and upload it to
-ELC. Name the file something like ``Chandler-lab9.docx''. Due before
-your next lab.   
+ELC. Name the file something like ``Chandler-lab9.docx''. 
 
 
 
@@ -99,8 +98,8 @@ your next lab.
   \item Import the gazelle data in the file
     \verb+"GazelleFakeData.txt"+. Note that:
     \begin{itemize}
-      \item Every row corresponds to the detection of a large herd.
-      \item The number of individuals in each herd is represented in
+      \item Every row corresponds to a detection of a large herd.
+      \item The number of individuals in each herd is found in
         the \inr{GroupSize} column. 
       \item The R package `Distance' will estimate the
         \textit{Abundance of herds} as well as the abundance of
@@ -109,7 +108,7 @@ your next lab.
         out to 250 m (on both sides of the transect).
       \item The area surveyed was therefore
         10 $\times$ 100 m $\times$ 500 m = 0.5 km$^2$,
-        which is is one-tenth of the entire study area (5 km$^2$).
+        which is one-tenth of the entire study area (5 km$^2$).
     \end{itemize}
   \item Format the data for the R package `Distance' as described in
     the next section.  
@@ -149,8 +148,8 @@ command:
 \end{kframe}
 \end{knitrout}
 
-Several other packages will be installed during the process. Now we
-can load the package like so: 
+Several other packages will be installed during the process. Now
+load the package: 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
@@ -176,12 +175,10 @@ working directory.
 \hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'ExampleData.txt' here}
 \end{alltt}
 \begin{verbatim}
-##  [1] "auto"                    "ExampleData.txt"        
-##  [3] "figs"                    "figure"                 
-##  [5] "GazelleFakeData.txt"     "GazelleFakeData.txt.csv"
-##  [7] "lab-distance-R.pdf"      "lab-distance-R.Rnw"     
-##  [9] "lab-distance-R.tex"      "lab-distance.Rnw"       
-## [11] "lab-distance.tex"
+##  [1] "auto"                "ExampleData.txt"     "figs"               
+##  [4] "figure"              "GazelleFakeData.txt" "lab-distance-R.pdf" 
+##  [7] "lab-distance-R.Rnw"  "lab-distance-R.tex"  "lab-distance.Rnw"   
+## [10] "lab-distance.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
