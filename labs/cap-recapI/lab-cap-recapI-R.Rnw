@@ -68,12 +68,17 @@ Do the calculations in R and show your work.
 
 \begin{enumerate}
   \item Use the R package `mra' to fit the four
-    mark-recapture models described in Table~\ref{tab:Otis}.
-    Software instructions are in the next section.
+    mark-recapture models described in Table~\ref{tab:Otis} to the
+    stinkpot ({\it Sternotherus odoratus}) data found in the file
+    \verb+CH-SO-Andy07.inp+. These data were collected using baited
+    `hoop traps' at Andy's Pond in 2007. Software instructions are in
+    the next section. 
   \item Summarize your results by creating a table in which each row
     is a model, and include the following columns: the estimates of $N$
     (abundance), the standard errors of $N$ (SE), and the AICc
-    values. 
+    values.
+  \item Use model $M_t$ to make a graph of capture probability ($p_t$)
+    at each time point. You can do this in either Excel or R.
   \item The model with the lowest AICc is considered the best in
     the set of models. Which model has the lowest AICc? Do your
     results suggest that it is important to account for variation in
@@ -91,9 +96,7 @@ Do the calculations in R and show your work.
 
 \begin{table}[h!]
   \centering
-  \caption{A description of the four models to be fitted to the
-    stinkpot data.}
-%  \footnotesize
+  \caption{The four models to be fitted to the stinkpot data.}
   \begin{tabular}[h!]{lp{5in}}
     \hline
     Model & Description \\
@@ -109,6 +112,7 @@ Do the calculations in R and show your work.
 \end{table}
 
 
+\vfill
 
 
 
@@ -125,11 +129,21 @@ Do the calculations in R and show your work.
     population. $N=n+f_0$. 
 \end{itemize}
 
+\vfill
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/Stinkpot} \\
+  \caption{A stinkpot}
+\end{figure}
+
+
 
 \clearpage
 
 
-\section*{Closed-population models in R}
+\section*{Example analysis in R}
 
 Open R (or RStudio) and install the ``mra'' package using the
 following command: 
@@ -144,13 +158,14 @@ Now load the package like so:
 library(mra)
 @ 
 
-We can import the data using \inr{read.table}. The only trick is to
-tell R that the capture histories should be treated as a character
-string, rather than as a numeric variable. The \inr{colClasses}
-arguments let's us do that.
+The data (i.e., the capture histories) are formatted for program MARK,
+but we can import them using 
+\inr{read.table}. The only trick is to tell R that the capture
+histories should be treated as a character string, rather than as a
+numeric variable. The \inr{colClasses} arguments let's us do that.
 
 <<import>>=
-capture.histories <- read.table("CH-SO-Andy07.inp", sep=" ",
+capture.histories <- read.table("CH-example.inp", sep=" ",
                                 colClasses=c("character", "character"),
                                 col.names=c("ch", "freq"))
 @ 
@@ -169,7 +184,8 @@ matrix. The following code does the trick.
 <<capmat-format>>=
 ch.mat <- t(sapply(capture.histories$ch,
                    function(x) as.integer(strsplit(x, "")[[1]])))
-dimnames(ch.mat) <- list(paste0("Turtle", 1:17), paste0("Time", 1:6))
+dimnames(ch.mat) <- list(paste0("Bear", 1:nrow(capture.histories)),
+                         paste0("Time", 1:6))
 @
 
 
@@ -195,7 +211,7 @@ Mb <- F.huggins.estim(capture=~1, recapture=~1, histories=ch.mat)
 To fit model $M_t$, we have to create a time variable.
 
 <<Mt>>=
-time <- tvar(factor(1:6), nan=17) ## 6 time periods. 17 animals.
+time <- tvar(factor(1:6), nan=nrow(ch.mat)) ## 6 time periods. 14 animals.
 Mt <- F.huggins.estim(capture=~time, recapture=NULL, histories=ch.mat)
 @ 
 
@@ -211,8 +227,7 @@ M0
 @ 
 
 
-You can extract information about capture probability (which isn't
-needed to do the assignment) using code like this:
+You can extract the capture probability estimates:
 
 <<M0-p>>=
 round(M0$p.hat, 3)

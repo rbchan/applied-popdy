@@ -111,12 +111,17 @@ Do the calculations in R and show your work.
 
 \begin{enumerate}
   \item Use the R package `mra' to fit the four
-    mark-recapture models described in Table~\ref{tab:Otis}.
-    Software instructions are in the next section.
+    mark-recapture models described in Table~\ref{tab:Otis} to the
+    stinkpot ({\it Sternotherus odoratus}) data found in the file
+    \verb+CH-SO-Andy07.inp+. These data were collected using baited
+    `hoop traps' at Andy's Pond in 2007. Software instructions are in
+    the next section. 
   \item Summarize your results by creating a table in which each row
     is a model, and include the following columns: the estimates of $N$
     (abundance), the standard errors of $N$ (SE), and the AICc
-    values. 
+    values.
+  \item Use model $M_t$ to make a graph of capture probability ($p_t$)
+    at each time point. You can do this in either Excel or R.
   \item The model with the lowest AICc is considered the best in
     the set of models. Which model has the lowest AICc? Do your
     results suggest that it is important to account for variation in
@@ -134,9 +139,7 @@ Do the calculations in R and show your work.
 
 \begin{table}[h!]
   \centering
-  \caption{A description of the four models to be fitted to the
-    stinkpot data.}
-%  \footnotesize
+  \caption{The four models to be fitted to the stinkpot data.}
   \begin{tabular}[h!]{lp{5in}}
     \hline
     Model & Description \\
@@ -152,6 +155,7 @@ Do the calculations in R and show your work.
 \end{table}
 
 
+\vfill
 
 
 
@@ -168,11 +172,21 @@ Do the calculations in R and show your work.
     population. $N=n+f_0$. 
 \end{itemize}
 
+\vfill
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/Stinkpot} \\
+  \caption{A stinkpot}
+\end{figure}
+
+
 
 \clearpage
 
 
-\section*{Closed-population models in R}
+\section*{Example analysis in R}
 
 Open R (or RStudio) and install the ``mra'' package using the
 following command: 
@@ -195,15 +209,16 @@ Now load the package like so:
 \end{kframe}
 \end{knitrout}
 
-We can import the data using \inr{read.table}. The only trick is to
-tell R that the capture histories should be treated as a character
-string, rather than as a numeric variable. The \inr{colClasses}
-arguments let's us do that.
+The data (i.e., the capture histories) are formatted for program MARK,
+but we can import them using 
+\inr{read.table}. The only trick is to tell R that the capture
+histories should be treated as a character string, rather than as a
+numeric variable. The \inr{colClasses} arguments let's us do that.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{capture.histories} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"CH-SO-Andy07.inp"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{,}
+\hlstd{capture.histories} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"CH-example.inp"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{,}
                                 \hlkwc{colClasses}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"character"}\hlstd{,} \hlstr{"character"}\hlstd{),}
                                 \hlkwc{col.names}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"ch"}\hlstd{,} \hlstr{"freq"}\hlstd{))}
 \end{alltt}
@@ -219,23 +234,20 @@ It's a small dataset, so we can display it in full:
 \end{alltt}
 \begin{verbatim}
 ##        ch freq
-## 1  101000   1;
-## 2  100000   1;
-## 3  100000   1;
+## 1  101001   1;
+## 2  100001   1;
+## 3  100001   1;
 ## 4  010000   1;
 ## 5  101000   1;
-## 6  100100   1;
-## 7  100000   1;
-## 8  010000   1;
-## 9  010000   1;
-## 10 001000   1;
-## 11 001010   1;
-## 12 001000   1;
-## 13 001000   1;
-## 14 001000   1;
-## 15 000010   1;
-## 16 000010   1;
-## 17 000100   1;
+## 6  010001   1;
+## 7  001000   1;
+## 8  001011   1;
+## 9  001000   1;
+## 10 001001   1;
+## 11 001000   1;
+## 12 000011   1;
+## 13 000010   1;
+## 14 000101   1;
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -250,7 +262,8 @@ matrix. The following code does the trick.
 \begin{alltt}
 \hlstd{ch.mat} \hlkwb{<-} \hlkwd{t}\hlstd{(}\hlkwd{sapply}\hlstd{(capture.histories}\hlopt{$}\hlstd{ch,}
                    \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)} \hlkwd{as.integer}\hlstd{(}\hlkwd{strsplit}\hlstd{(x,} \hlstr{""}\hlstd{)[[}\hlnum{1}\hlstd{]])))}
-\hlkwd{dimnames}\hlstd{(ch.mat)} \hlkwb{<-} \hlkwd{list}\hlstd{(}\hlkwd{paste0}\hlstd{(}\hlstr{"Turtle"}\hlstd{,} \hlnum{1}\hlopt{:}\hlnum{17}\hlstd{),} \hlkwd{paste0}\hlstd{(}\hlstr{"Time"}\hlstd{,} \hlnum{1}\hlopt{:}\hlnum{6}\hlstd{))}
+\hlkwd{dimnames}\hlstd{(ch.mat)} \hlkwb{<-} \hlkwd{list}\hlstd{(}\hlkwd{paste0}\hlstd{(}\hlstr{"Bear"}\hlstd{,} \hlnum{1}\hlopt{:}\hlkwd{nrow}\hlstd{(capture.histories)),}
+                         \hlkwd{paste0}\hlstd{(}\hlstr{"Time"}\hlstd{,} \hlnum{1}\hlopt{:}\hlnum{6}\hlstd{))}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -264,24 +277,21 @@ Now the capture histories look like this:
 \hlstd{ch.mat}
 \end{alltt}
 \begin{verbatim}
-##          Time1 Time2 Time3 Time4 Time5 Time6
-## Turtle1      1     0     1     0     0     0
-## Turtle2      1     0     0     0     0     0
-## Turtle3      1     0     0     0     0     0
-## Turtle4      0     1     0     0     0     0
-## Turtle5      1     0     1     0     0     0
-## Turtle6      1     0     0     1     0     0
-## Turtle7      1     0     0     0     0     0
-## Turtle8      0     1     0     0     0     0
-## Turtle9      0     1     0     0     0     0
-## Turtle10     0     0     1     0     0     0
-## Turtle11     0     0     1     0     1     0
-## Turtle12     0     0     1     0     0     0
-## Turtle13     0     0     1     0     0     0
-## Turtle14     0     0     1     0     0     0
-## Turtle15     0     0     0     0     1     0
-## Turtle16     0     0     0     0     1     0
-## Turtle17     0     0     0     1     0     0
+##        Time1 Time2 Time3 Time4 Time5 Time6
+## Bear1      1     0     1     0     0     1
+## Bear2      1     0     0     0     0     1
+## Bear3      1     0     0     0     0     1
+## Bear4      0     1     0     0     0     0
+## Bear5      1     0     1     0     0     0
+## Bear6      0     1     0     0     0     1
+## Bear7      0     0     1     0     0     0
+## Bear8      0     0     1     0     1     1
+## Bear9      0     0     1     0     0     0
+## Bear10     0     0     1     0     0     1
+## Bear11     0     0     1     0     0     0
+## Bear12     0     0     0     0     1     1
+## Bear13     0     0     0     0     1     0
+## Bear14     0     0     0     1     0     1
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -312,7 +322,7 @@ To fit model $M_t$, we have to create a time variable.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{time} \hlkwb{<-} \hlkwd{tvar}\hlstd{(}\hlkwd{factor}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{6}\hlstd{),} \hlkwc{nan}\hlstd{=}\hlnum{17}\hlstd{)} \hlcom{## 6 time periods. 17 animals.}
+\hlstd{time} \hlkwb{<-} \hlkwd{tvar}\hlstd{(}\hlkwd{factor}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{6}\hlstd{),} \hlkwc{nan}\hlstd{=}\hlkwd{nrow}\hlstd{(ch.mat))} \hlcom{## 6 time periods. 14 animals.}
 \hlstd{Mt} \hlkwb{<-} \hlkwd{F.huggins.estim}\hlstd{(}\hlkwc{capture}\hlstd{=}\hlopt{~}\hlstd{time,} \hlkwc{recapture}\hlstd{=}\hlkwa{NULL}\hlstd{,} \hlkwc{histories}\hlstd{=ch.mat)}
 \end{alltt}
 \end{kframe}
@@ -335,27 +345,26 @@ the name of the fitted model object. For example:
 ## F.huggins.estim(capture = ~1, recapture = NULL, histories = ch.mat)
 ## 
 ##  Capture and Recapture model:
-##  Variable     Est       SE     
-##  (Intercept)  -2.37255  0.49911 
+##  Variable     Est    SE     
+##  (Intercept)  -1.15  0.30982 
 ## 
-## Population Size Estimate (se): 41.0364 (16.6626)
-## 95% confidence interval for population size: 24.04 to 99.05
-## Individuals observed: 17
-## Effective sample size: 102
+## Population Size Estimate (se): 17.3258 (2.7389)
+## 95% confidence interval for population size: 14.81 to 27.63
+## Individuals observed: 14
+## Effective sample size: 84
 ## 
 ## Message =  SUCCESS: Convergence criterion met
 ## Number of estimable coefficients (estimated) =  1
-## Log likelihood =  -43.9354578026216
-## Deviance =  87.8709156052432
-## AIC =  89.8709156052432
-## AICc =  89.9109156052432
+## Log likelihood =  -48.8728076296472
+## Deviance =  97.7456152592943
+## AIC =  99.7456152592943
+## AICc =  99.7943957470992
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
-You can extract information about capture probability (which isn't
-needed to do the assignment) using code like this:
+You can extract the capture probability estimates:
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
@@ -363,24 +372,21 @@ needed to do the assignment) using code like this:
 \hlkwd{round}\hlstd{(M0}\hlopt{$}\hlstd{p.hat,} \hlnum{3}\hlstd{)}
 \end{alltt}
 \begin{verbatim}
-##        [,1]  [,2]  [,3]  [,4]  [,5]  [,6]
-##  [1,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [2,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [3,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [4,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [5,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [6,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [7,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [8,] 0.085 0.085 0.085 0.085 0.085 0.085
-##  [9,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [10,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [11,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [12,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [13,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [14,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [15,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [16,] 0.085 0.085 0.085 0.085 0.085 0.085
-## [17,] 0.085 0.085 0.085 0.085 0.085 0.085
+##       [,1] [,2] [,3] [,4] [,5] [,6]
+##  [1,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [2,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [3,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [4,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [5,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [6,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [7,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [8,] 0.24 0.24 0.24 0.24 0.24 0.24
+##  [9,] 0.24 0.24 0.24 0.24 0.24 0.24
+## [10,] 0.24 0.24 0.24 0.24 0.24 0.24
+## [11,] 0.24 0.24 0.24 0.24 0.24 0.24
+## [12,] 0.24 0.24 0.24 0.24 0.24 0.24
+## [13,] 0.24 0.24 0.24 0.24 0.24 0.24
+## [14,] 0.24 0.24 0.24 0.24 0.24 0.24
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
