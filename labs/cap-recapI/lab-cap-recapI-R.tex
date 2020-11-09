@@ -124,8 +124,10 @@ Do the calculations in R and show your work.
     at each time point. You can do this in either Excel or R.
   \item The model with the lowest AICc is considered the best in
     the set of models. Which model has the lowest AICc? Do your
-    results suggest that it is important to account for variation in
-    capture (and recapture) probability over time? Explain.
+    results suggest that %it is important to account for variation in
+    % capture (and recapture) probability over time? Explain.
+    there was a behavioral (i.e., a trap-happy or
+    trap-shy) resposne? Explain.
   \item Why do you think model $M_0$ is the worst model
     in the set? Look at the capture histories when answering this
     question. 
@@ -209,11 +211,11 @@ Now load the package like so:
 \end{kframe}
 \end{knitrout}
 
-The data (i.e., the capture histories) are formatted for program MARK,
-but we can import them using 
-\inr{read.table}. The only trick is to tell R that the capture
-histories should be treated as a character string, rather than as a
-numeric variable. The \inr{colClasses} arguments let's us do that.
+The example bear data are formatted for program MARK, but we can
+import them using  \inr{read.table}. The only trick is to tell R that
+the capture histories should be treated as a character string, rather
+than as a numeric variable. The \inr{colClasses} arguments let's us do
+that. 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
@@ -224,6 +226,9 @@ numeric variable. The \inr{colClasses} arguments let's us do that.
 \end{alltt}
 \end{kframe}
 \end{knitrout}
+
+%                                #"CH-SO-Andy07.inp", sep=" ",
+
 
 It's a small dataset, so we can display it in full:
 
@@ -242,10 +247,10 @@ It's a small dataset, so we can display it in full:
 ## 6  010001   1;
 ## 7  001000   1;
 ## 8  001011   1;
-## 9  001000   1;
+## 9  000100   1;
 ## 10 001001   1;
 ## 11 001000   1;
-## 12 000011   1;
+## 12 000010   1;
 ## 13 000010   1;
 ## 14 000101   1;
 \end{verbatim}
@@ -269,6 +274,8 @@ matrix. The following code does the trick.
 \end{knitrout}
 
 
+\clearpage
+
 Now the capture histories look like this:
 
 \begin{knitrout}
@@ -286,10 +293,10 @@ Now the capture histories look like this:
 ## Bear6      0     1     0     0     0     1
 ## Bear7      0     0     1     0     0     0
 ## Bear8      0     0     1     0     1     1
-## Bear9      0     0     1     0     0     0
+## Bear9      0     0     0     1     0     0
 ## Bear10     0     0     1     0     0     1
 ## Bear11     0     0     1     0     0     0
-## Bear12     0     0     0     0     1     1
+## Bear12     0     0     0     0     1     0
 ## Bear13     0     0     0     0     1     0
 ## Bear14     0     0     0     1     0     1
 \end{verbatim}
@@ -332,6 +339,8 @@ To fit model $M_t$, we have to create a time variable.
 You should be able to figure out how to fit model $M_{tb}$ by
 extending the code above.
 
+\clearpage
+
 Estimates of abundance along with AICc values can be found by typing
 the name of the fitted model object. For example:
 
@@ -345,48 +354,49 @@ the name of the fitted model object. For example:
 ## F.huggins.estim(capture = ~1, recapture = NULL, histories = ch.mat)
 ## 
 ##  Capture and Recapture model:
-##  Variable     Est    SE     
-##  (Intercept)  -1.15  0.30982 
+##  Variable     Est       SE     
+##  (Intercept)  -1.25004  0.32308 
 ## 
-## Population Size Estimate (se): 17.3258 (2.7389)
-## 95% confidence interval for population size: 14.81 to 27.63
+## Population Size Estimate (se): 17.962 (3.1462)
+## 95% confidence interval for population size: 15.01 to 29.6
 ## Individuals observed: 14
 ## Effective sample size: 84
 ## 
 ## Message =  SUCCESS: Convergence criterion met
 ## Number of estimable coefficients (estimated) =  1
-## Log likelihood =  -48.8728076296472
-## Deviance =  97.7456152592943
-## AIC =  99.7456152592943
-## AICc =  99.7943957470992
+## Log likelihood =  -47.6734852287387
+## Deviance =  95.3469704574774
+## AIC =  97.3469704574774
+## AICc =  97.3957509452822
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
-You can extract the capture probability estimates:
+You can extract the capture probability estimates for each individual
+on each sampling occasion:
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{round}\hlstd{(M0}\hlopt{$}\hlstd{p.hat,} \hlnum{3}\hlstd{)}
+\hlkwd{round}\hlstd{(M0}\hlopt{$}\hlstd{p.hat,} \hlkwc{digits}\hlstd{=}\hlnum{3}\hlstd{)}
 \end{alltt}
 \begin{verbatim}
-##       [,1] [,2] [,3] [,4] [,5] [,6]
-##  [1,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [2,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [3,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [4,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [5,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [6,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [7,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [8,] 0.24 0.24 0.24 0.24 0.24 0.24
-##  [9,] 0.24 0.24 0.24 0.24 0.24 0.24
-## [10,] 0.24 0.24 0.24 0.24 0.24 0.24
-## [11,] 0.24 0.24 0.24 0.24 0.24 0.24
-## [12,] 0.24 0.24 0.24 0.24 0.24 0.24
-## [13,] 0.24 0.24 0.24 0.24 0.24 0.24
-## [14,] 0.24 0.24 0.24 0.24 0.24 0.24
+##        [,1]  [,2]  [,3]  [,4]  [,5]  [,6]
+##  [1,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [2,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [3,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [4,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [5,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [6,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [7,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [8,] 0.223 0.223 0.223 0.223 0.223 0.223
+##  [9,] 0.223 0.223 0.223 0.223 0.223 0.223
+## [10,] 0.223 0.223 0.223 0.223 0.223 0.223
+## [11,] 0.223 0.223 0.223 0.223 0.223 0.223
+## [12,] 0.223 0.223 0.223 0.223 0.223 0.223
+## [13,] 0.223 0.223 0.223 0.223 0.223 0.223
+## [14,] 0.223 0.223 0.223 0.223 0.223 0.223
 \end{verbatim}
 \end{kframe}
 \end{knitrout}

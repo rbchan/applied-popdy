@@ -81,8 +81,10 @@ Do the calculations in R and show your work.
     at each time point. You can do this in either Excel or R.
   \item The model with the lowest AICc is considered the best in
     the set of models. Which model has the lowest AICc? Do your
-    results suggest that it is important to account for variation in
-    capture (and recapture) probability over time? Explain.
+    results suggest that %it is important to account for variation in
+    % capture (and recapture) probability over time? Explain.
+    there was a behavioral (i.e., a trap-happy or
+    trap-shy) resposne? Explain.
   \item Why do you think model $M_0$ is the worst model
     in the set? Look at the capture histories when answering this
     question. 
@@ -158,17 +160,20 @@ Now load the package like so:
 library(mra)
 @ 
 
-The data (i.e., the capture histories) are formatted for program MARK,
-but we can import them using 
-\inr{read.table}. The only trick is to tell R that the capture
-histories should be treated as a character string, rather than as a
-numeric variable. The \inr{colClasses} arguments let's us do that.
+The example bear data are formatted for program MARK, but we can
+import them using  \inr{read.table}. The only trick is to tell R that
+the capture histories should be treated as a character string, rather
+than as a numeric variable. The \inr{colClasses} arguments let's us do
+that. 
 
 <<import>>=
 capture.histories <- read.table("CH-example.inp", sep=" ",
                                 colClasses=c("character", "character"),
                                 col.names=c("ch", "freq"))
 @ 
+
+%                                #"CH-SO-Andy07.inp", sep=" ",
+
 
 It's a small dataset, so we can display it in full:
 
@@ -188,6 +193,8 @@ dimnames(ch.mat) <- list(paste0("Bear", 1:nrow(capture.histories)),
                          paste0("Time", 1:6))
 @
 
+
+\clearpage
 
 Now the capture histories look like this:
 
@@ -219,6 +226,8 @@ Mt <- F.huggins.estim(capture=~time, recapture=NULL, histories=ch.mat)
 You should be able to figure out how to fit model $M_{tb}$ by
 extending the code above.
 
+\clearpage
+
 Estimates of abundance along with AICc values can be found by typing
 the name of the fitted model object. For example:
 
@@ -227,10 +236,11 @@ M0
 @ 
 
 
-You can extract the capture probability estimates:
+You can extract the capture probability estimates for each individual
+on each sampling occasion:
 
 <<M0-p>>=
-round(M0$p.hat, 3)
+round(M0$p.hat, digits=3)
 @ 
 
 For model $M_0$, capture probability is the same for all individuals
