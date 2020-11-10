@@ -50,16 +50,23 @@ Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
 ``Chandler-lab10.docx''.  
 
+\vspace{-6pt}
 
 \section*{Assignment}
 
 \subsection*{Exercise I: Lincoln-Peterson estimation}
 
-Suppose you capture, mark, and release 100 largmouth bass ({\it
-  Micropterus salmoides}) at Lake Herrick. The next day, you return
-and capture 50 individuals, 25 of which were marked on the first
-occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
-Do the calculations in R and show your work.  
+\begin{enumerate}
+  \item Suppose you capture, mark, and release 100 largemouth bass ({\it
+      Micropterus salmoides}) at Lake Herrick. The next day, you return
+    and capture 50 individuals, 25 of which were marked on the first
+    occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
+    Do the calculations in R and show your work.
+  \item Come up with your own Lincoln-Peterson example like the one
+    above, and estimate abundance for a species of your choosing.
+    Show your work.
+\end{enumerate}
+
 
 
 \subsection*{Exercise II: Closed-population models in R}
@@ -70,13 +77,13 @@ Do the calculations in R and show your work.
   \item Use the R package `mra' to fit the four
     mark-recapture models described in Table~\ref{tab:Otis} to the
     stinkpot ({\it Sternotherus odoratus}) data found in the file
-    \verb+CH-SO-Andy07.inp+. These data were collected using baited
+    \texttt{CH-SO-Andy07.inp}. These data were collected using baited
     `hoop traps' at Andy's Pond in 2007. Software instructions are in
     the next section. 
   \item Summarize your results by creating a table in which each row
-    is a model, and include the following columns: the estimates of $N$
-    (abundance), the standard errors of $N$ (SE), and the AICc
-    values.
+    is a model, and include the following columns: model description,
+    the estimates of $N$ (abundance), the standard errors of $N$ (SE),
+    and the AICc values.
   \item Use model $M_t$ to make a graph of capture probability ($p_t$)
     at each time point. You can do this in either Excel or R.
   \item The model with the lowest AICc is considered the best in
@@ -84,7 +91,7 @@ Do the calculations in R and show your work.
     results suggest that %it is important to account for variation in
     % capture (and recapture) probability over time? Explain.
     there was a behavioral (i.e., a trap-happy or
-    trap-shy) resposne? Explain.
+    trap-shy) response? Explain.
   \item Why do you think model $M_0$ is the worst model
     in the set? Look at the capture histories when answering this
     question. 
@@ -106,7 +113,7 @@ Do the calculations in R and show your work.
     $M_0$ & The most basic model in which $p$ and $c$ are constant \\
     $M_t$ & $p$ differs among sampling occasions and $p_t=c_t$. \\
     $M_b$ & Behavioral response model in which $p$ and $c$
-            differ. Can describe trap happiness or trap shiness. \\
+            differ. Can describe trap happiness or trap shyness. \\
     $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
     \hline
   \end{tabular}
