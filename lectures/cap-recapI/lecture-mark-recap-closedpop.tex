@@ -72,7 +72,7 @@
 %    \LARGE Closed-population models \\
     \vspace{0.5cm}
 %    { \Large April 1, 2019} \\
-    {\color{RoyalBlue} \rule{\textwidth}{1pt}}
+    {\color{RoyalBlue} \rule{\textwidth}{0.1pt}}
     \vfill
     \includegraphics[height=3.5cm,keepaspectratio]{figs/SBNT} %\hfill
     \hspace{0.5cm}
@@ -102,8 +102,9 @@
   \end{itemize}
   \pause
   \vfill
-  \Large \bf
-  Most methods differ in how they estimate $p$
+  \centering
+  \Large %\bf
+  Most methods differ in how they estimate $p$ \\
 \end{frame}
 
 
@@ -112,14 +113,16 @@
 \begin{frame}
   \frametitle{Overview}
   \large
-  {\bf Estimating $p$}
+  {%\bf
+    Estimating $p$}
   \begin{itemize}[<+->]
+    \normalsize
     \item Set traps in a study area and mark each captured individual
     \item Repeat the trapping on $K$ occasions
     \item On each occasion, mark new individuals and record recaptures
     \item If capture probability is high\dots
     \begin{itemize}
-      \large
+      \normalsize
       \item You will detect most of the population on the first
         occasion
       \item Most of the captures on subsequent occasions will be
@@ -185,7 +188,7 @@
 
  \begin{frame}
    \frametitle{Lincoln-Peterson Study Design}
-   \Large
+   \large %\Large
    \begin{itemize}[<+->]
      \item There are only 2 capture occasions
      \item On the first, $n_1$ animals are captured and marked
@@ -272,6 +275,9 @@
 
 
 
+\section{$K$-sampler CMR}
+
+
 
 
 
@@ -300,6 +306,50 @@
 %   \frametitle{Notes}
 %   Batch marking
 % \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Common models}
+  \begin{tabular}[h!]{lp{0.8\textwidth}}
+    \hline
+    Model & Description \\
+    \hline
+    $M_0$ & The most basic model in which $p$ and $c$ are constant \\
+    $M_t$ & $p$ differs among sampling occasions and $p_t=c_t$. \\
+    $M_b$ & Behavioral response model in which $p$ and $c$
+            differ. Can describe trap happiness or trap shiness. \\
+    $M_{tb}$ & A combination of models $M_t$ and $M_b$. \\
+    \hline
+  \end{tabular}
+  \vfill
+%  {Parameter definitions \\}
+  {where \\}
+  \vspace{6pt}
+%  \begin{itemize}
+%  \item
+%  $p$ --- capture probability. The probability of capturing an
+%      individual on a single occasion \\
+      % \item
+%  $p_t$ --- capture probability on occasion $t$ \\
+  % \item
+%  $c$ --- recapture probability. The probability of capturing an
+%      individual that has been captured previously.
+%\end{itemize}
+  \begin{tabular}[h!]{rl}
+%    \hline
+%    Parameter & Description \\
+%    \hline
+    $p =$ & capture probability \\%. The probability of capturing an
+      %individual on a single occasion \\
+    $p_t =$ & capture probability on occasion $t$ \\
+    $c =$ & recapture probability \\%. The probability of capturing an
+      %individual that has been captured previously \\
+%    \hline
+  \end{tabular}
+
+\end{frame}
+
 
 
 \section{Removal sampling}
@@ -376,7 +426,8 @@
 \begin{frame}
   \frametitle{Estimating density}
   \large
-  {\bf Lingering questions}
+  {%\bf
+    Lingering questions}
   \begin{itemize}
     \item How do we convert abundance to density?
     \item What is the area surveyed?
