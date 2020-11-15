@@ -19,12 +19,10 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
 
 \begin{frame}[plain]
   \begin{center}
-    {\huge \bf Mark-recapture methods for estimating survival and recruitment \par}
-%    \vspace{0.5cm}
-%    { \Large April 8 \& 10, 2019} \\
-    {\color{blue} \rule{\textwidth}{1pt}}
+    {\huge \bf Mark-recapture methods for estimating survival and recruitment \\}
+    {\color{blue} \rule{\textwidth}{0.1pt}}
     \vfill
-    \includegraphics[height=3cm,keepaspectratio]{figs/hammerhead} %\hfill
+    \includegraphics[height=3cm,keepaspectratio]{figs/hammerhead} 
     \hspace{0.5cm}
     \includegraphics[height=3cm,keepaspectratio]{figs/dolphins}
   \end{center}
@@ -144,7 +142,7 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
 \begin{frame}
   \frametitle{Tag recovery models}
   {\bf Design}
-  \begin{itemize}
+  \begin{itemize} \small
     \item Animals are marked and released
     \item Hunters or anglers report tags from harvested individuals
     \item Desirable to have at least 5 releases
@@ -153,23 +151,25 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
 %  \vspace{0.5cm}
   \vfill
   {\bf Data}                                                 \\
-  Two release years followed by 2 years of recoveries:
+  {\small Three release years followed by 3 years of recoveries:}
   \begin{center}
-    \begin{tabular}{ccc}
+    \small
+    \begin{tabular}{cccc}
       \hline
-      Number released & \multicolumn{2}{c}{Period recovered} \\
-      \cline{2-3}
-                      & 1         & 2                        \\
+      Number released & \multicolumn{3}{c}{Period recovered} \\
+      \cline{2-4}
+                      & 1         & 2         & 3            \\
       \hline
-      $R_1$           & $m_{1,1}$ & $m_{1,2}$                \\
-      $R_2$           &           & $m_{2,2}$                \\
+      $R_1$           & $m_{1,1}$ & $m_{1,2}$ & $m_{1,3}$      \\
+      $R_2$           &           & $m_{2,2}$ & $m_{2,3}$      \\
+      $R_3$           &           &           & $m_{3,3}$      \\
       \hline
     \end{tabular}
   \end{center}
   \pause
   \vfill
   {\bf Parameters}                                           \\
-  \begin{itemize}
+  \begin{itemize} \small
     \item Survival ($S$)
     \item Recovery rate ($f$)
   \end{itemize}
@@ -247,7 +247,7 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
   \begin{itemize}[<+->]
     \item When permanent emigration is possible, we can't be sure if
     an animal died or left study area
-    \item So, we often have to estimate ``apparent survival'' ($\phi$)
+    \item So, we often have to estimate ``apparent survival'' ($\Phi$)
       instead of actual survival ($S$)
     \item Apparent survival is the probability that an individual
       survives and does not permanently emigrate out of the study area
@@ -296,7 +296,7 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
 \begin{frame}
   \frametitle{CJS capture histories}
   \large
-  Estimation is accomplished by finding the values of $p$ and $\phi$
+  Estimation is accomplished by finding the values of $p$ and $\Phi$
   that best align the expected values with the observed capture
   histories \\
   \vfill
@@ -305,10 +305,10 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
       \hline
       Capture history & Expected values \\
       \hline
-      111 & $\phi_1p_2\phi_2p_3$ \\ %\pause
-      110 & $\phi_1p_2(1-\phi_2p_3)$ \\ %\pause
-      101 & $\phi_1(1-p_2)\phi_2p_3$ \\ %\pause
-      100 & $(1-\phi_1)+\phi_1(1-p_2)(1-\phi_2p_3)$ \\
+      111 & $\Phi_1p_2\Phi_2p_3$ \\ %\pause
+      110 & $\Phi_1p_2(1-\Phi_2p_3)$ \\ %\pause
+      101 & $\Phi_1(1-p_2)\Phi_2p_3$ \\ %\pause
+      100 & $(1-\Phi_1)+\Phi_1(1-p_2)(1-\Phi_2p_3)$ \\
       \hline
     \end{tabular}
   \end{center}
