@@ -1,0 +1,393 @@
+\documentclass[12pt]{article}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{verbatim}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+\definecolor{inlinecolor}{rgb}{0.878,0.918,0.933}  
+\newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+
+<<build,eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-cap-recapII-R")
+rnw2pdf("lab-cap-recapII-R", tangle=TRUE)
+@
+
+
+<<knitr-theme,include=FALSE,purl=FALSE>>=
+knit_theme$set("edit-kwrite")
+@
+
+
+
+
+\begin{document}
+
+{
+  \Large
+  \centering
+  {\bf Lab 11 -- Estimating survival, recruitment, and growth rate
+    with capture-mark-recapture data} \\
+  Due before Monday \\
+}
+
+\vspace{10pt}
+
+The purpose of this lab is to learn how to use program MARK to
+estimate survival, recruitment, and growth rate using mark-recapture
+data. Put your code and answers in a Word file named something like
+``Chandler-lab11.docx'', and upload it to ELC.
+
+\vspace{-12pt}
+
+
+\section*{\large Exercise I: Estimating Canada Warbler survival with the CJS model}
+
+\vspace{-10pt}
+
+{\bf Background}
+
+The Canada Warbler ({\it Cardellina canadensis}) is a long-distance
+migratory bird that primarily breeds in the boreal forests of
+Canada. However, a small portion of the range extends down through the
+Appalachian Mountains to northern Georgia.
+
+Canada Warblers are too small to use telemetry to estimate annual
+survival, so we use mark-recapture methods instead. Each year, we
+visit multiple sites and run mist-nets for 4 consecutive days at each
+site. All newly captured individuals are marked with a uniquely
+numbered metal band, and a unique combination of color bands.
+
+The data come from five years (2014--2018) of surveys. Even though
+``the robust design'' was used, the data were collapsed so that only
+one value (0 or 1) is shown for each year for each individual. Program
+MARK will ignore all leading zeros in the encounter histories.
+
+{\bf Instructions}
+
+\begin{enumerate}
+  \item Create a New Project, name it \verb+"Exercise I"+, and select
+    the \verb+"cawa-cjs.inp"+ data file.
+  \item Choose the \verb+"Live Recaptures (CJS)"+ Data Type
+  \item The number of \verb+"Encounter occasions"+ should be set to 5
+  \item Hit \verb+"OK"+ and then \verb+"OK"+ again when the dialog box
+    appears
+  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
+    option to run all four pre-defined models, which differ only in
+    whether or not $p$  and $\phi$ vary over time. Hit \verb+"OK"+ and
+    then \verb+"OK to Run"+.
+\end{enumerate}
+
+{\bf Assignment}
+
+\begin{enumerate}
+  \item What is the best model according to AICc?
+  \item Create a table to report the estimates, standard errors, and
+    95\% confidence intervals for $p$ and $\phi$ from the best model.
+  \item Interpret the estimates of $p$ and $\phi$ using one sentence
+    for each parameter.
+  \item The estimate of $p$ is fairly low and imprecise. Describe two
+    ways in which we could modify our design (and analysis) to improve
+    our estimate of $p$.  
+\end{enumerate}
+
+  
+\clearpage
+
+\section*{\large  Exercise II: The Jolly-Seber model for estimating
+  survival, recruitment, and growth rate}
+
+\textcolor{red}{THE CH DATA HAVE CHANGED AND THERE ARE MORE THAN 5 SIX
+  YEARS NOW. NEED TO FIX THIS}
+
+{\bf Background}
+
+Stinkpots ({\it Sternotherus odoratus}) were captured, marked,
+released, and occasionally recaptured at Dean's Pond at
+Whitehall Forest using baited hoop traps. Sampling began in 2007.
+
+
+{\bf Instructions}
+
+\begin{enumerate}
+  \item Create a New Project, name it \verb+"Exercise II"+, and select
+    the \verb+"CH-SO-Dean-AllYears.inp"+ data file.
+  \item Choose the \verb+"Jolly-Seber"+ Data Type
+  \item Set \verb+"Encounter Occasions"+ to 6 (for 6 years of data)
+  \item Sampling occurred on years 2007, 2010, 2011, 2012, 2014, and
+    2015, so the time intervals between sampling occasions differs. To
+    account for this, select \verb+"Set Time Intervals"+ and specify the
+    time gaps as 3, 1, 1, 2, 1. Hit \verb+"OK"+, then hit it again on
+    the next screen.
+  \item Close the next screen and then click
+    \verb+"PIM > Change Data Type"+ and select the \\
+    \verb+"Link-Barker Jolly-Seber"+ option. This lets us estimate
+    survival ($\phi$), recruitment ($f$), and capture probability
+    ($p$) rather than survival, growth rate and capture probability,
+    which is the default option. 
+  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
+    option to fit at all 8 possible models, which differ in whether or
+    not each parameter is constant or varies among years.
+%  \item Right-click on the model with the lowest AICc
+%  score and selected \verb+"Derived parameters"+ to view yearly
+%  estimates of lambda ($\lambda_t$).
+\end{enumerate}
+
+
+
+
+
+% \begin{figure}[h!]
+%   \centering
+%   \fbox{\includegraphics[height=7.5cm]{figs/stinkpot07-data}}
+%   \caption{\small Stinkpot capture histories in a text file ready to
+%     be imported to MARK.}
+%   \label{fig:stink07-data}
+% \end{figure}
+
+{\bf Assignment}
+
+\begin{enumerate}
+  \item What is the best model in terms of AICc?
+  \item Interpret the parameter estimates (\verb+"Real Estimates"+)
+    from the model with the lowest AICc. (For parameters that are
+    year-specific, you do not need to interpret each yearly-estimate.)
+  \item What are the estimates of lambda ($\lambda_t$) for each time
+    interval? These can be found by right-clicking on a model and
+    choosing \verb+"Derived parameters"+.
+%  \item What is the relationship between the estimates of survival,
+%    recruitment and lambda?
+  \item Bring the estimates of lambda into Excel and create a plot of
+    lambda over time. Include this in your Word file.
+  \item What conclusions can you draw from
+    this analysis? Do you think the population is growing, shrinking,
+    remaining constant, or is it difficult to tell?
+%  \item How could you get more precise parameter estimates?
+\end{enumerate}
+
+
+\clearpage
+
+\section*{Example analysis}
+
+
+<<install-ghost,results='hide',include=FALSE>>=
+if(!require(marked)) install.packages("marked")
+library(marked)
+@ 
+
+We will fit models using the R package `marked'. You can install it
+using the following command, which only needs to be run once: 
+
+<<install,eval=FALSE>>=
+install.packages("marked")
+@ 
+
+
+You can load the package with this command:
+
+<<load,eval=FALSE>>=
+library(marked)
+@ 
+
+Capture history data are in a text file formatted for program MARK. We
+can important the data and prepare them for `marked' using code like
+this: 
+
+<<input-cjs>>=
+example.cjs.data <- read.table("example-cjs.inp", sep=" ",
+                               colClasses=c("character","character"),
+                               col.names=c("ch", "count"))
+@ 
+
+The data must have a column called \inr{ch}, formatted as a character
+vector. The second column (\inr{count}) is not important, and it
+can be ignored.
+
+<<head-cjs>>=
+head(example.cjs.data, n=4) # Show the first 4 lines of data
+@
+
+Everything looks good, so we're ready to fit a model with the
+\inr{crm} function. 
+
+\subsection*{Cormack-Jolly-Seber model}
+
+The CJS model parameters are: apparent survival (Phi, $\Phi$) and capture
+probability ($p$). Let's start with the simplest CJS model in which
+$\Phi$ and $p$ are constant: 
+
+
+<<cjs-0,size='normalsize',results='hide',message=FALSE>>=
+phi0.p0 <- crm(data=example.cjs.data, model="CJS", hessian=TRUE,
+               model.parameters=list(
+                   Phi=list(formula=~1),  ## No variation
+                   p=list(formula=~1)))   ## No variation
+@ 
+
+The \inr{data} argument is for the capture history data. The
+\inr{model} specifies the type of model you want to fit. We will use
+\texttt{CJS} and \texttt{JS}. If \inr{hessian=FALSE}, you won't get
+standard errors or confidence intervals. The \inr{model.parameters}
+argument is one to focus on. This is where you specify the sources of
+variation in apparent survival and capture probability. 
+
+
+\clearpage
+
+Typing the name of the object dispays the AIC score and
+the estimates on the logit scale.  
+
+<<cjs-0-beta,size='small'>>=
+phi0.p0
+@ 
+
+To see the esimates on the probability scale, we need to use the
+\inr{predict} function.
+
+<<cjs-0-prob>>=
+predict(phi0.p0)
+@ 
+
+
+If we think survival probability varies over time, but detection
+probability is constant, we can change the \texttt{formula}:
+
+
+<<cjs-t,results='hide',message=FALSE>>=
+phiTime.p0 <- crm(data=example.cjs.data, model="cjs", hessian=TRUE,
+                  model.parameters=list(
+                      Phi=list(formula=~time),  ## Temporal variation
+                      p=list(formula=~1)))      ## No variation
+@ 
+
+Notice how the results now show survival probability for each time period:
+
+<<cjs-t-prob>>=
+predict(phiTime.p0)
+@ 
+
+
+\clearpage
+
+\subsection*{Jolly-Seber model}
+
+The JS model can be used to estimate abundance, apparent survival,
+recruitment, growth rate, and capture probability. First, let's import
+the example data: 
+
+<<input-js>>=
+example.js.data <- read.table("example-js.inp", sep=" ",
+                              colClasses=c("character","character"),
+                              col.names=c("ch", "count"))
+@ 
+
+The new parameter that will be estimated is called \texttt{pent} ($b_i$),
+which is the ``entrance probability'' describing the probability that
+an individual entered the population during a particular
+occasion. Here's a model in which all 3 parameters are constant.
+
+
+<<js-0,size='normalsize',results='hide',message=FALSE>>=
+js.phi0.pent0.p0 <- crm(data=example.js.data, model="JS", hessian=TRUE,
+                        model.parameters=list(
+                            Phi=list(formula=~1),   ## No variation
+                            pent=list(formula=~1),  ## No variation
+                            p=list(formula=~1)))    ## No variation
+@ 
+
+
+Here are the estimates on the probability scale:
+
+
+<<js-0-prob,size='small'>>=
+js0est <- predict(js.phi0.pent0.p0)
+js0est
+@ 
+
+The interpretations of Phi ($\Phi$) and $p$ are the same as in the CJS
+model. The estimate of $N$ is not what you might expect. Instead of
+$N$ being the number of individuals alive at a single point in time,
+it is the number of individuals alive during the entire sampling
+period that were not detected. For this reason,
+$N^{\mathrm{super}}=n+N$ is often called the ``super-population size''.
+
+So, how do we calculate $N_t$, abundance at each time point? We will
+tackle this in several steps. First, let's compute the number of
+recruits during each time period ($R_t=N^{\mathrm{super}}\times b_t$).  
+
+<<R,size='small'>>=
+n <- nrow(example.js.data)     # number of individuals captured
+Nsuper <- n+js0est$N$estimate  # Super-population size
+Nsuper
+b <- js0est$pent$estimate      # Entrance probabilities after first time period
+b0 <- 1-sum(b)                 # Compute first entrance probability
+round(b, digits=3)
+R <- Nsuper*b                  # Recruits
+R
+@ 
+
+Next, extract the estimate of apparent survival, which doesn't vary
+over time in this example:
+
+<<Phi>>=
+Phi <- js0est$Phi$estimate   ## Apparent survival probability
+Phi
+@ 
+
+Now we're ready to calculate abundance
+
+<<N>>=
+nYears <- length(R)+1
+N <- rep(NA, nYears)
+N[1] <- Nsuper*b0            ## Initial abundance
+N[2] <- N[1]*Phi + R[1]      ## Abundance in year 2
+N[3] <- N[2]*Phi + R[2]      ## Abundance in year 3
+N[4] <- N[3]*Phi + R[3]      ## Abundance in year 4
+N[5] <- N[4]*Phi + R[4]      ## Abundance in year 5
+N[6] <- N[5]*Phi + R[5]      ## Abundance in year 6
+N[7] <- N[6]*Phi + R[6]      ## Abundance in year 7
+N[8] <- N[7]*Phi + R[7]      ## Abundance in year 8
+N[9] <- N[8]*Phi + R[8]      ## Abundance in year 9
+round(N, digits=0)
+@ 
+
+\clearpage
+
+Rather than type out the equation each year, we could compute
+abundance in years 2 through 9 in a ``for loop'':
+
+<<N-loop>>=
+N[1] <- Nsuper*b0
+for(t in 2:nYears) {
+    N[t] <- N[t-1]*Phi + R[t-1]
+}
+round(N, digits=0)
+@ 
+
+We can calculate the growth rate $\lambda_t = N_{t}/N_{t-1}$:
+
+<<lambda>>=
+lambda <- N[2:9]/N[1:8]
+round(lambda, digits=3)
+@ 
+
+
+Clearly, the population is declining. Let's visualize the results:
+
+<<N-plot,fig.align='center',out.width="80%">>=
+plot(1:nYears, N, type="b", xlab="Time", ylab="Abundance")
+@ 
+
+
+\end{document}
+
+
+
+

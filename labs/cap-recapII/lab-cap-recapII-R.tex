@@ -1,0 +1,600 @@
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0, 0, 0}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0,0.341,0.682}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.004,0.004,0.506}{#1}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{verbatim}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+\definecolor{inlinecolor}{rgb}{0.878,0.918,0.933}  
+\newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
+
+
+
+
+
+
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+{
+  \Large
+  \centering
+  {\bf Lab 11 -- Estimating survival, recruitment, and growth rate
+    with capture-mark-recapture data} \\
+  Due before Monday \\
+}
+
+\vspace{10pt}
+
+The purpose of this lab is to learn how to use program MARK to
+estimate survival, recruitment, and growth rate using mark-recapture
+data. Put your code and answers in a Word file named something like
+``Chandler-lab11.docx'', and upload it to ELC.
+
+\vspace{-12pt}
+
+
+\section*{\large Exercise I: Estimating Canada Warbler survival with the CJS model}
+
+\vspace{-10pt}
+
+{\bf Background}
+
+The Canada Warbler ({\it Cardellina canadensis}) is a long-distance
+migratory bird that primarily breeds in the boreal forests of
+Canada. However, a small portion of the range extends down through the
+Appalachian Mountains to northern Georgia.
+
+Canada Warblers are too small to use telemetry to estimate annual
+survival, so we use mark-recapture methods instead. Each year, we
+visit multiple sites and run mist-nets for 4 consecutive days at each
+site. All newly captured individuals are marked with a uniquely
+numbered metal band, and a unique combination of color bands.
+
+The data come from five years (2014--2018) of surveys. Even though
+``the robust design'' was used, the data were collapsed so that only
+one value (0 or 1) is shown for each year for each individual. Program
+MARK will ignore all leading zeros in the encounter histories.
+
+{\bf Instructions}
+
+\begin{enumerate}
+  \item Create a New Project, name it \verb+"Exercise I"+, and select
+    the \verb+"cawa-cjs.inp"+ data file.
+  \item Choose the \verb+"Live Recaptures (CJS)"+ Data Type
+  \item The number of \verb+"Encounter occasions"+ should be set to 5
+  \item Hit \verb+"OK"+ and then \verb+"OK"+ again when the dialog box
+    appears
+  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
+    option to run all four pre-defined models, which differ only in
+    whether or not $p$  and $\phi$ vary over time. Hit \verb+"OK"+ and
+    then \verb+"OK to Run"+.
+\end{enumerate}
+
+{\bf Assignment}
+
+\begin{enumerate}
+  \item What is the best model according to AICc?
+  \item Create a table to report the estimates, standard errors, and
+    95\% confidence intervals for $p$ and $\phi$ from the best model.
+  \item Interpret the estimates of $p$ and $\phi$ using one sentence
+    for each parameter.
+  \item The estimate of $p$ is fairly low and imprecise. Describe two
+    ways in which we could modify our design (and analysis) to improve
+    our estimate of $p$.  
+\end{enumerate}
+
+  
+\clearpage
+
+\section*{\large  Exercise II: The Jolly-Seber model for estimating
+  survival, recruitment, and growth rate}
+
+\textcolor{red}{THE CH DATA HAVE CHANGED AND THERE ARE MORE THAN 5 SIX
+  YEARS NOW. NEED TO FIX THIS}
+
+{\bf Background}
+
+Stinkpots ({\it Sternotherus odoratus}) were captured, marked,
+released, and occasionally recaptured at Dean's Pond at
+Whitehall Forest using baited hoop traps. Sampling began in 2007.
+
+
+{\bf Instructions}
+
+\begin{enumerate}
+  \item Create a New Project, name it \verb+"Exercise II"+, and select
+    the \verb+"CH-SO-Dean-AllYears.inp"+ data file.
+  \item Choose the \verb+"Jolly-Seber"+ Data Type
+  \item Set \verb+"Encounter Occasions"+ to 6 (for 6 years of data)
+  \item Sampling occurred on years 2007, 2010, 2011, 2012, 2014, and
+    2015, so the time intervals between sampling occasions differs. To
+    account for this, select \verb+"Set Time Intervals"+ and specify the
+    time gaps as 3, 1, 1, 2, 1. Hit \verb+"OK"+, then hit it again on
+    the next screen.
+  \item Close the next screen and then click
+    \verb+"PIM > Change Data Type"+ and select the \\
+    \verb+"Link-Barker Jolly-Seber"+ option. This lets us estimate
+    survival ($\phi$), recruitment ($f$), and capture probability
+    ($p$) rather than survival, growth rate and capture probability,
+    which is the default option. 
+  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
+    option to fit at all 8 possible models, which differ in whether or
+    not each parameter is constant or varies among years.
+%  \item Right-click on the model with the lowest AICc
+%  score and selected \verb+"Derived parameters"+ to view yearly
+%  estimates of lambda ($\lambda_t$).
+\end{enumerate}
+
+
+
+
+
+% \begin{figure}[h!]
+%   \centering
+%   \fbox{\includegraphics[height=7.5cm]{figs/stinkpot07-data}}
+%   \caption{\small Stinkpot capture histories in a text file ready to
+%     be imported to MARK.}
+%   \label{fig:stink07-data}
+% \end{figure}
+
+{\bf Assignment}
+
+\begin{enumerate}
+  \item What is the best model in terms of AICc?
+  \item Interpret the parameter estimates (\verb+"Real Estimates"+)
+    from the model with the lowest AICc. (For parameters that are
+    year-specific, you do not need to interpret each yearly-estimate.)
+  \item What are the estimates of lambda ($\lambda_t$) for each time
+    interval? These can be found by right-clicking on a model and
+    choosing \verb+"Derived parameters"+.
+%  \item What is the relationship between the estimates of survival,
+%    recruitment and lambda?
+  \item Bring the estimates of lambda into Excel and create a plot of
+    lambda over time. Include this in your Word file.
+  \item What conclusions can you draw from
+    this analysis? Do you think the population is growing, shrinking,
+    remaining constant, or is it difficult to tell?
+%  \item How could you get more precise parameter estimates?
+\end{enumerate}
+
+
+\clearpage
+
+\section*{Example analysis}
+
+
+
+
+We will fit models using the R package `marked'. You can install it
+using the following command, which only needs to be run once: 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{install.packages}\hlstd{(}\hlstr{"marked"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+You can load the package with this command:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(marked)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Capture history data are in a text file formatted for program MARK. We
+can important the data and prepare them for `marked' using code like
+this: 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{example.cjs.data} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"example-cjs.inp"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{,}
+                               \hlkwc{colClasses}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"character"}\hlstd{,}\hlstr{"character"}\hlstd{),}
+                               \hlkwc{col.names}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"ch"}\hlstd{,} \hlstr{"count"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The data must have a column called \inr{ch}, formatted as a character
+vector. The second column (\inr{count}) is not important, and it
+can be ignored.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{head}\hlstd{(example.cjs.data,} \hlkwc{n}\hlstd{=}\hlnum{4}\hlstd{)} \hlcom{# Show the first 4 lines of data}
+\end{alltt}
+\begin{verbatim}
+##      ch count
+## 1 10000    1;
+## 2 00100    1;
+## 3 01000    1;
+## 4 01000    1;
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Everything looks good, so we're ready to fit a model with the
+\inr{crm} function. 
+
+\subsection*{Cormack-Jolly-Seber model}
+
+The CJS model parameters are: apparent survival (Phi, $\Phi$) and capture
+probability ($p$). Let's start with the simplest CJS model in which
+$\Phi$ and $p$ are constant: 
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{phi0.p0} \hlkwb{<-} \hlkwd{crm}\hlstd{(}\hlkwc{data}\hlstd{=example.cjs.data,} \hlkwc{model}\hlstd{=}\hlstr{"CJS"}\hlstd{,} \hlkwc{hessian}\hlstd{=}\hlnum{TRUE}\hlstd{,}
+               \hlkwc{model.parameters}\hlstd{=}\hlkwd{list}\hlstd{(}
+                   \hlkwc{Phi}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{),}  \hlcom{## No variation}
+                   \hlkwc{p}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{)))}   \hlcom{## No variation}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The \inr{data} argument is for the capture history data. The
+\inr{model} specifies the type of model you want to fit. We will use
+\texttt{CJS} and \texttt{JS}. If \inr{hessian=FALSE}, you won't get
+standard errors or confidence intervals. The \inr{model.parameters}
+argument is one to focus on. This is where you specify the sources of
+variation in apparent survival and capture probability. 
+
+
+\clearpage
+
+Typing the name of the object dispays the AIC score and
+the estimates on the logit scale.  
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{phi0.p0}
+\end{alltt}
+\begin{verbatim}
+## 
+## crm Model Summary
+## 
+## Npar :  2
+## -2lnL:  154.104
+## AIC  :  158.104
+## 
+## Beta
+##                  Estimate        se       lcl       ucl
+## Phi.(Intercept)  2.321548 2.2567894 -2.101759  6.744855
+## p.(Intercept)   -1.977161 0.4428573 -2.845161 -1.109161
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+To see the esimates on the probability scale, we need to use the
+\inr{predict} function.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{predict}\hlstd{(phi0.p0)}
+\end{alltt}
+\begin{verbatim}
+## $Phi
+##   occ estimate        se       lcl       ucl
+## 1   4 0.910646 0.1836347 0.1089259 0.9988245
+## 
+## $p
+##   occ  estimate         se        lcl       ucl
+## 1   5 0.1216218 0.04731041 0.05493197 0.2480274
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+If we think survival probability varies over time, but detection
+probability is constant, we can change the \texttt{formula}:
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{phiTime.p0} \hlkwb{<-} \hlkwd{crm}\hlstd{(}\hlkwc{data}\hlstd{=example.cjs.data,} \hlkwc{model}\hlstd{=}\hlstr{"cjs"}\hlstd{,} \hlkwc{hessian}\hlstd{=}\hlnum{TRUE}\hlstd{,}
+                  \hlkwc{model.parameters}\hlstd{=}\hlkwd{list}\hlstd{(}
+                      \hlkwc{Phi}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlstd{time),}  \hlcom{## Temporal variation}
+                      \hlkwc{p}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{)))}      \hlcom{## No variation}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Notice how the results now show survival probability for each time period:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{predict}\hlstd{(phiTime.p0)}
+\end{alltt}
+\begin{verbatim}
+## $Phi
+##   time occ  estimate          se          lcl       ucl
+## 1    4   4 0.6527671 0.264050300 1.608282e-01 0.9485600
+## 2    3   3 0.6808526 0.250026508 1.827878e-01 0.9531561
+## 3    2   2 0.9998875 0.006369273 5.588457e-45 1.0000000
+## 4    1   1 0.8994609 0.401574682 1.482594e-03 0.9999814
+## 
+## $p
+##   occ  estimate         se        lcl       ucl
+## 1   5 0.1557208 0.04990822 0.08058259 0.2796134
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\clearpage
+
+\subsection*{Jolly-Seber model}
+
+The JS model can be used to estimate abundance, apparent survival,
+recruitment, growth rate, and capture probability. First, let's import
+the example data: 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{example.js.data} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"example-js.inp"}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{" "}\hlstd{,}
+                              \hlkwc{colClasses}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"character"}\hlstd{,}\hlstr{"character"}\hlstd{),}
+                              \hlkwc{col.names}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"ch"}\hlstd{,} \hlstr{"count"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The new parameter that will be estimated is called \texttt{pent} ($b_i$),
+which is the ``entrance probability'' describing the probability that
+an individual entered the population during a particular
+occasion. Here's a model in which all 3 parameters are constant.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{js.phi0.pent0.p0} \hlkwb{<-} \hlkwd{crm}\hlstd{(}\hlkwc{data}\hlstd{=example.js.data,} \hlkwc{model}\hlstd{=}\hlstr{"JS"}\hlstd{,} \hlkwc{hessian}\hlstd{=}\hlnum{TRUE}\hlstd{,}
+                        \hlkwc{model.parameters}\hlstd{=}\hlkwd{list}\hlstd{(}
+                            \hlkwc{Phi}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{),}   \hlcom{## No variation}
+                            \hlkwc{pent}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{),}  \hlcom{## No variation}
+                            \hlkwc{p}\hlstd{=}\hlkwd{list}\hlstd{(}\hlkwc{formula}\hlstd{=}\hlopt{~}\hlnum{1}\hlstd{)))}    \hlcom{## No variation}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Here are the estimates on the probability scale:
+
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{js0est} \hlkwb{<-} \hlkwd{predict}\hlstd{(js.phi0.pent0.p0)}
+\hlstd{js0est}
+\end{alltt}
+\begin{verbatim}
+## $Phi
+##   occ  estimate         se       lcl      ucl
+## 1   1 0.7239384 0.03646061 0.6471427 0.789458
+## 
+## $p
+##   occ  estimate         se       lcl      ucl
+## 1   1 0.5941143 0.06060417 0.4721316 0.705492
+## 
+## $pent
+##   time occ   estimate         se        lcl        ucl
+## 1    2   2 0.05722326 0.01154076 0.03837741 0.08451043
+## 2    3   3 0.05722326 0.01154076 0.03837741 0.08451043
+## 3    4   4 0.05722326 0.01154076 0.03837741 0.08451043
+## 4    5   5 0.05722326 0.01154076 0.03837741 0.08451043
+## 5    6   6 0.05722326 0.01154076 0.03837741 0.08451043
+## 6    7   7 0.05722326 0.01154076 0.03837741 0.08451043
+## 7    8   8 0.05722326 0.01154076 0.03837741 0.08451043
+## 8    9   9 0.05722326 0.01154076 0.03837741 0.08451043
+## 
+## $N
+##   estimate       se      lcl     ucl
+## 1  14.0758 5.313293 6.716731 29.4977
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+The interpretations of Phi ($\Phi$) and $p$ are the same as in the CJS
+model. The estimate of $N$ is not what you might expect. Instead of
+$N$ being the number of individuals alive at a single point in time,
+it is the number of individuals alive during the entire sampling
+period that were not detected. For this reason,
+$N^{\mathrm{super}}=n+N$ is often called the ``super-population size''.
+
+So, how do we calculate $N_t$, abundance at each time point? We will
+tackle this in several steps. First, let's compute the number of
+recruits during each time period ($R_t=N^{\mathrm{super}}\times b_t$).  
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{n} \hlkwb{<-} \hlkwd{nrow}\hlstd{(example.js.data)}     \hlcom{# number of individuals captured}
+\hlstd{Nsuper} \hlkwb{<-} \hlstd{n}\hlopt{+}\hlstd{js0est}\hlopt{$}\hlstd{N}\hlopt{$}\hlstd{estimate}  \hlcom{# Super-population size}
+\hlstd{Nsuper}
+\end{alltt}
+\begin{verbatim}
+## [1] 81.0758
+\end{verbatim}
+\begin{alltt}
+\hlstd{b} \hlkwb{<-} \hlstd{js0est}\hlopt{$}\hlstd{pent}\hlopt{$}\hlstd{estimate}      \hlcom{# Entrance probabilities after first time period}
+\hlstd{b0} \hlkwb{<-} \hlnum{1}\hlopt{-}\hlkwd{sum}\hlstd{(b)}                 \hlcom{# Compute first entrance probability}
+\hlkwd{round}\hlstd{(b,} \hlkwc{digits}\hlstd{=}\hlnum{3}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.057 0.057 0.057 0.057 0.057 0.057 0.057 0.057
+\end{verbatim}
+\begin{alltt}
+\hlstd{R} \hlkwb{<-} \hlstd{Nsuper}\hlopt{*}\hlstd{b}                  \hlcom{# Recruits}
+\hlstd{R}
+\end{alltt}
+\begin{verbatim}
+## [1] 4.639422 4.639422 4.639422 4.639422 4.639422 4.639422 4.639422 4.639422
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Next, extract the estimate of apparent survival, which doesn't vary
+over time in this example:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Phi} \hlkwb{<-} \hlstd{js0est}\hlopt{$}\hlstd{Phi}\hlopt{$}\hlstd{estimate}   \hlcom{## Apparent survival probability}
+\hlstd{Phi}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.7239384
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Now we're ready to calculate abundance
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(R)}\hlopt{+}\hlnum{1}
+\hlstd{N} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
+\hlstd{N[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{Nsuper}\hlopt{*}\hlstd{b0}            \hlcom{## Initial abundance}
+\hlstd{N[}\hlnum{2}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{1}\hlstd{]}      \hlcom{## Abundance in year 2}
+\hlstd{N[}\hlnum{3}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{2}\hlstd{]}      \hlcom{## Abundance in year 3}
+\hlstd{N[}\hlnum{4}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{3}\hlstd{]}      \hlcom{## Abundance in year 4}
+\hlstd{N[}\hlnum{5}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{4}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{4}\hlstd{]}      \hlcom{## Abundance in year 5}
+\hlstd{N[}\hlnum{6}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{5}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{5}\hlstd{]}      \hlcom{## Abundance in year 6}
+\hlstd{N[}\hlnum{7}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{6}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{6}\hlstd{]}      \hlcom{## Abundance in year 7}
+\hlstd{N[}\hlnum{8}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{7}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{7}\hlstd{]}      \hlcom{## Abundance in year 8}
+\hlstd{N[}\hlnum{9}\hlstd{]} \hlkwb{<-} \hlstd{N[}\hlnum{8}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[}\hlnum{8}\hlstd{]}      \hlcom{## Abundance in year 9}
+\hlkwd{round}\hlstd{(N,} \hlkwc{digits}\hlstd{=}\hlnum{0}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 44 36 31 27 24 22 21 20 19
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\clearpage
+
+Rather than type out the equation each year, we could compute
+abundance in years 2 through 9 in a ``for loop'':
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\hlkwd{round}\hlstd{(N,} \hlkwc{digits}\hlstd{=}\hlnum{0}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 44 36 31 27 24 22 21 20 19
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+We can calculate the growth rate $\lambda_t = N_{t}/N_{t-1}$:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{lambda} \hlkwb{<-} \hlstd{N[}\hlnum{2}\hlopt{:}\hlnum{9}\hlstd{]}\hlopt{/}\hlstd{N[}\hlnum{1}\hlopt{:}\hlnum{8}\hlstd{]}
+\hlkwd{round}\hlstd{(lambda,} \hlkwc{digits}\hlstd{=}\hlnum{3}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.829 0.851 0.873 0.895 0.915 0.933 0.948 0.960
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+Clearly, the population is declining. Let's visualize the results:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+
+{\centering \includegraphics[width=0.8\linewidth]{figure/N-plot-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+\end{document}
+
+
+
+
