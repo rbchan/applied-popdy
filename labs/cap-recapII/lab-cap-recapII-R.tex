@@ -86,14 +86,14 @@ estimate survival, recruitment, and growth rate using mark-recapture
 data. Put your code and answers in a Word file named something like
 ``Chandler-lab11.docx'', and upload it to ELC.
 
-\vspace{-12pt}
+%\vspace{-12pt}
 
 
 \section*{\large Exercise I: Estimating Canada Warbler survival with the CJS model}
 
-\vspace{-10pt}
+%\vspace{-10pt}
 
-{\bf Background}
+%{\bf Background}
 
 The Canada Warbler ({\it Cardellina canadensis}) is a long-distance
 migratory bird that primarily breeds in the boreal forests of
@@ -111,75 +111,52 @@ The data come from five years (2014--2018) of surveys. Even though
 one value (0 or 1) is shown for each year for each individual. Program
 MARK will ignore all leading zeros in the encounter histories.
 
-{\bf Instructions}
-
-\begin{enumerate}
-  \item Create a New Project, name it \verb+"Exercise I"+, and select
-    the \verb+"cawa-cjs.inp"+ data file.
-  \item Choose the \verb+"Live Recaptures (CJS)"+ Data Type
-  \item The number of \verb+"Encounter occasions"+ should be set to 5
-  \item Hit \verb+"OK"+ and then \verb+"OK"+ again when the dialog box
-    appears
-  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
-    option to run all four pre-defined models, which differ only in
-    whether or not $p$  and $\phi$ vary over time. Hit \verb+"OK"+ and
-    then \verb+"OK to Run"+.
-\end{enumerate}
-
 {\bf Assignment}
 
 \begin{enumerate}
-  \item What is the best model according to AICc?
+  \item Import the capture histories in the file
+    \texttt{cawa-cjs.inp}.
+  \item Fit 4 models:
+    \begin{itemize}
+      \item $\Phi(.)p(.)$ -- No variation in apparent survival or capture probability
+      \item $\Phi(t)p(.)$ -- Temporal variation in apparent survival
+      \item $\Phi(.)p(t)$ -- Temporal variation in capture probability
+      \item $\Phi(t)p(t)$ -- Temporal variation in apparent survival and capture probability
+    \end{itemize}
+  \item What is the best model according to AIC?
   \item Create a table to report the estimates, standard errors, and
-    95\% confidence intervals for $p$ and $\phi$ from the best model.
-  \item Interpret the estimates of $p$ and $\phi$ using one sentence
-    for each parameter.
-  \item The estimate of $p$ is fairly low and imprecise. Describe two
-    ways in which we could modify our design (and analysis) to improve
-    our estimate of $p$.  
+    95\% confidence intervals for $p$ and $\Phi$ from the best model.
+  % \item The estimates of $p$ is fairly low and imprecise. Describe two
+  %   ways in which we could modify our design (and analysis) to improve
+  %   our estimate of $p$.  
 \end{enumerate}
 
   
 \clearpage
 
-\section*{\large  Exercise II: The Jolly-Seber model for estimating
-  survival, recruitment, and growth rate}
+\section*{\large  Exercise II: The Jolly-Seber model
+  for estimating survival, recruitment, and growth rate}
 
-\textcolor{red}{THE CH DATA HAVE CHANGED AND THERE ARE MORE THAN 5 SIX
-  YEARS NOW. NEED TO FIX THIS}
+% \textcolor{red}{THE CH DATA HAVE CHANGED AND THERE ARE MORE THAN 5 SIX
+%   YEARS NOW. NEED TO FIX THIS}
 
-{\bf Background}
+%{\bf Background}
 
 Stinkpots ({\it Sternotherus odoratus}) were captured, marked,
-released, and occasionally recaptured at Dean's Pond at
-Whitehall Forest using baited hoop traps. Sampling began in 2007.
+released, and occasionally recaptured at Dean's Pond at Whitehall
+Forest using baited hoop traps. Sampling began in 2007. 
 
 
-{\bf Instructions}
+% {\bf Instructions}
 
-\begin{enumerate}
-  \item Create a New Project, name it \verb+"Exercise II"+, and select
-    the \verb+"CH-SO-Dean-AllYears.inp"+ data file.
-  \item Choose the \verb+"Jolly-Seber"+ Data Type
-  \item Set \verb+"Encounter Occasions"+ to 6 (for 6 years of data)
-  \item Sampling occurred on years 2007, 2010, 2011, 2012, 2014, and
-    2015, so the time intervals between sampling occasions differs. To
-    account for this, select \verb+"Set Time Intervals"+ and specify the
-    time gaps as 3, 1, 1, 2, 1. Hit \verb+"OK"+, then hit it again on
-    the next screen.
-  \item Close the next screen and then click
-    \verb+"PIM > Change Data Type"+ and select the \\
-    \verb+"Link-Barker Jolly-Seber"+ option. This lets us estimate
-    survival ($\phi$), recruitment ($f$), and capture probability
-    ($p$) rather than survival, growth rate and capture probability,
-    which is the default option. 
-  \item Use the \verb+"Run > Pre-defined Model(s) > Select Models"+
-    option to fit at all 8 possible models, which differ in whether or
-    not each parameter is constant or varies among years.
-%  \item Right-click on the model with the lowest AICc
-%  score and selected \verb+"Derived parameters"+ to view yearly
-%  estimates of lambda ($\lambda_t$).
-\end{enumerate}
+% \begin{enumerate}
+%   \item Set verb Encounter Occasions  to 6 (for 6 years of data)
+%   \item Sampling occurred on years 2007, 2010, 2011, 2012, 2014, and
+%     2015, so the time intervals between sampling occasions differs. To
+%     account for this, select verb "Set Time Intervals" and specify the
+%     time gaps as 3, 1, 1, 2, 1. Hit verb "OK", then hit it again on
+%     the next screen.
+% \end{enumerate}
 
 
 
@@ -196,21 +173,23 @@ Whitehall Forest using baited hoop traps. Sampling began in 2007.
 {\bf Assignment}
 
 \begin{enumerate}
-  \item What is the best model in terms of AICc?
-  \item Interpret the parameter estimates (\verb+"Real Estimates"+)
-    from the model with the lowest AICc. (For parameters that are
-    year-specific, you do not need to interpret each yearly-estimate.)
-  \item What are the estimates of lambda ($\lambda_t$) for each time
-    interval? These can be found by right-clicking on a model and
-    choosing \verb+"Derived parameters"+.
-%  \item What is the relationship between the estimates of survival,
-%    recruitment and lambda?
-  \item Bring the estimates of lambda into Excel and create a plot of
-    lambda over time. Include this in your Word file.
-  \item What conclusions can you draw from
-    this analysis? Do you think the population is growing, shrinking,
-    remaining constant, or is it difficult to tell?
-%  \item How could you get more precise parameter estimates?
+  \item Import data from the file \texttt{CH-SO-Dean-AllYears.inp}.
+  \item Fit a Jolly-Seber model with constant capture probability
+    ($p$), constant entrance probabilities (\texttt{pent}, $b_t$), and
+    temporal variation in apparent survival.
+  \item Interpret the parameter estimates. (For parameters that are
+    year-specific, you do not need to interpret each yearly-estimate.) 
+  \item Use the parameter estimates to compute:
+    \begin{itemize}
+      \item Super-population size
+      \item The number of recruits in each time interval
+      \item Abundance at each time point
+      \item Growth rate for each time interval ($\lambda_t$)
+    \end{itemize}
+  \item Plot $\lambda_t$ over time.
+  % \item What conclusions can you draw from this analysis? Do you think
+  %   the population is growing, shrinking, remaining constant, or is it
+  %   difficult to tell? 
 \end{enumerate}
 
 
@@ -549,6 +528,7 @@ abundance in years 2 through 9 in a ``for loop'':
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlstd{N[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{Nsuper}\hlopt{*}\hlstd{b0}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{Phi} \hlopt{+} \hlstd{R[t}\hlopt{-}\hlnum{1}\hlstd{]}
 \hlstd{\}}
