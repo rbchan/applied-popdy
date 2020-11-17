@@ -81,7 +81,7 @@
 
 \vspace{10pt}
 
-The purpose of this lab is to learn how to use program MARK to
+The purpose of this lab is to learn how to use the R package `marked' to
 estimate survival, recruitment, and growth rate using mark-recapture
 data. Put your code and answers in a Word file named something like
 ``Chandler-lab11.docx'', and upload it to ELC.
@@ -124,11 +124,9 @@ MARK will ignore all leading zeros in the encounter histories.
       \item $\Phi(t)p(t)$ -- Temporal variation in apparent survival and capture probability
     \end{itemize}
   \item What is the best model according to AIC?
-  \item Create a table to report the estimates, standard errors, and
-    95\% confidence intervals for $p$ and $\Phi$ from the best model.
-  % \item The estimates of $p$ is fairly low and imprecise. Describe two
-  %   ways in which we could modify our design (and analysis) to improve
-  %   our estimate of $p$.  
+  \item Create a table to report the estimates (on the probability
+    scale), standard errors, and 95\% confidence intervals for $p$ and
+    $\Phi$ from the best model. 
 \end{enumerate}
 
   
@@ -183,7 +181,8 @@ Forest using baited hoop traps. Sampling began in 2007.
     \begin{itemize}
       \item Super-population size
       \item The number of recruits in each time interval
-      \item Abundance at each time point
+      \item Abundance at each time point. Hint: apparent survival
+        (Phi) varies over time.
       \item Growth rate for each time interval ($\lambda_t$)
     \end{itemize}
   \item Plot $\lambda_t$ over time.
@@ -358,8 +357,8 @@ Notice how the results now show survival probability for each time period:
 ##   time occ  estimate          se          lcl       ucl
 ## 1    4   4 0.6527671 0.264050300 1.608282e-01 0.9485600
 ## 2    3   3 0.6808526 0.250026508 1.827878e-01 0.9531561
-## 3    2   2 0.9998875 0.006369273 5.588457e-45 1.0000000
-## 4    1   1 0.8994609 0.401574682 1.482594e-03 0.9999814
+## 3    2   2 0.9998875 0.006369269 5.588049e-45 1.0000000
+## 4    1   1 0.8994609 0.401574681 1.482594e-03 0.9999814
 ## 
 ## $p
 ##   occ  estimate         se        lcl       ucl
