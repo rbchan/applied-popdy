@@ -68,10 +68,11 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge Estimating survival using telemetry \\ 
-      \st{or age distribution} data \par}
+      \only<1>{{or age distribution data \\}}
+      \only<2>{\st{or age distribution} data \\}}
 %    \vspace{0.5cm}
 %    { \Large April 17, 2019} \\
-    {\color{blue} \rule{\textwidth}{1pt}}
+    {\color{blue} \rule{\textwidth}{0.1pt}}
     \vfill
     \includegraphics[height=4.5cm,keepaspectratio]{figs/radiotelemetry} %\hfill
     \hspace{0.5cm}
@@ -90,7 +91,8 @@
 %  \huge \centering
 %  Why not estimate yearly abundance and call it a day? \\
   \Large %\large
-  {\bf Options}
+  {%\bf
+    Options}
   \begin{enumerate}[\bf (1)]
     \large
     \item[]
@@ -108,7 +110,7 @@
     \item[]
     \item<3-> Capture-mark-recapture
       \begin{itemize}
-        \item Covered in the next lecture 
+        \item Covered in the previous lecture
       \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -133,13 +135,15 @@
   \frametitle{Telemetry}
   \begin{columns}
     \begin{column}{0.5\textwidth}
-      {\bf Pros}
+      {\large%\bf
+        Pros}
       \begin{itemize}
         \item Fate is often known
         \item Analysis can be straight-forward
         \item Much additional information can be obtained
       \end{itemize}
-      \uncover<2->{\textbf{Cons}}
+      \uncover<2->{\large %\bf
+        {Cons}}
       \begin{itemize}[<2->]
         \item Batteries don't last as long as bands
         \item When fate is unknown, analysis can be hard
@@ -165,9 +169,11 @@
 
 \begin{frame}
   \frametitle{Binomial model}
-%  \large
-  {\bf Design}
+  \large
+  {%\bf
+    Design}
   \begin{itemize}%[<+->]
+    \normalsize
     \item<1-> $n$ animals are randomly sampled from population of size $N$
     \item<2-> The fates of all $n$ are known at end of the study period
     \item<3-> $x$ of the $n$ animals survive
@@ -188,15 +194,17 @@
 \begin{frame}
   \frametitle{Binomial model}
   \large
-  {\bf Assumptions}
-  \begin{enumerate}[\bf (1)] %[<+- | visible@+->][\bf \color{PineGreen} (1)]
+  {%\bf
+    Assumptions}
+  \begin{enumerate}[(1)]%[\bf (1)] %[<+- | visible@+->][\bf \color{PineGreen} (1)]
+    \normalsize
     \item<1-> Fates are independent
     \item<1-> Fates are known
     \item<1-> All individuals are exposed to mortality during the same time interval
   \end{enumerate}
 %  \pause
   \vspace{0.5cm}
-  \bf
+%  \bf
   \uncover<2->{\centering When \alert{censoring} occurs, assumptions
     (2) and (3) are violated \par}
   \vspace{0.5cm}
@@ -210,8 +218,10 @@
 
 \begin{frame}
   \frametitle{Censoring}
-  {\bf Right censoring} 
+  {\large %\bf
+    Right censoring} 
   \begin{itemize}
+    \normalsize
     \item Occurs when animals leave the sample before they die.
     \item Examples
     \begin{itemize}
@@ -222,8 +232,10 @@
 %      survival estimates will be biased low
   \end{itemize}
   \pause
-  {\bf Left censoring}
+  {\large %\bf
+    Left censoring}
   \begin{itemize}
+    \normalsize
     \item Occurs when mortality is known to have occurred before some
       point in time
     \item Rarely an issue in telemetry studies
@@ -245,8 +257,8 @@
   \centering
   \includegraphics[width=0.9\textwidth]{figs/censoring} \\
   Diamonds indicate mortality. Circles indicate censoring. \\
-  Black lines show the observation period. Gray lines are unobserved
-  time periods. 
+  Black lines show the observation period. \\ %Gray lines are unobserved
+  %time periods. 
 \end{frame}
 
 
@@ -305,7 +317,8 @@
 
 \begin{frame}
   \frametitle{Age distribution data}
-  {\bf Standard practice}
+  {%\bf
+    Standard practice}
   \begin{itemize}
     \item We have a pile of wings that can be aged \\
     \item We assume the age ratios tell us something about survival
@@ -324,9 +337,9 @@
 
 \begin{frame}
   \frametitle{Alternative scenario}
-  \large
+%  \large
   Suppose a cohort of individuals is monitored over time, so that we
-  can obtain information about survival
+  can obtain information about survival.
   \Large
 \[
   n_{i+1,t+1} = n_{i,t}S_{i,t}
@@ -335,11 +348,13 @@
 \[
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
 \]
-\large
+% \large
+\normalsize
 \pause
 \vfill
-{\centering \bf All is well. This is a valid approach based on the
-  binomial model \par}
+\centering %\bf
+  All is well. This is a valid approach based on the
+  binomial model. \\
 \end{frame}
 
 
@@ -367,8 +382,8 @@
 \begin{frame}
   \frametitle{Pitfall I}
   \large
-  {Standing age distribution data can't be used to estimate
-    survival, unless\dots}
+  Standing age distribution data can't be used to estimate
+    survival, unless\dots \\
   \begin{itemize}
     \item Population is at the stable age distribution
     \item $\lambda = 1$
@@ -382,15 +397,15 @@
   \large
   {\bf Population reconstruction} refers to the calculation of the abundance
   and age distribution of a cohort at some initial time, usually based
-  on ``ages at death'' \\
+  on ``ages at death''. \\
   \pause
   \vspace{0.5cm}
   This is only possible if we know the ages of death for \alert{\bf all}
-  individuals in the cohort \\
+  individuals in the cohort. \\
   \pause
   \vspace{0.5cm}
   Never use this type of ``reconstruction data'' as real data in a
-  subsequent analysis
+  subsequent analysis.
 \end{frame}
 
 
@@ -398,10 +413,11 @@
 
 \begin{frame}
   \frametitle{Pitfall III}
-  \Large
-  {\bf The age data are biased}
+  {\large %\bf
+    The age data are biased \\}
   \large
   \begin{itemize}
+    \normalsize
     \item Age data not representative of actual age distribution
     \item Hunting, trapping, and capture-recapture methods do not
       evenly sample the population
@@ -415,8 +431,10 @@
 \begin{frame}
   \frametitle{Avoiding the pitfalls}
   \large
-  {\bf When estimating survival, it is always good to\dots}
+  %\bf
+    When estimating survival, it is always good to\dots \\
   \begin{itemize}
+    \normalsize
     \item Collect more than 1 year of data
     \item Follow multiple cohorts of individuals over long periods of time
     \item Estimate survival using telemetry or mark-recapture methods
