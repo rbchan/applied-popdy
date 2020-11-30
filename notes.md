@@ -1,5 +1,13 @@
 # Notes for the future
 
+## For 2021
+
+- Use one of the final labs for Q&A session to help students finish final paper
+
+- Grade first drafts earlier
+
+
+
 ## 2020 writing assignment
 
 - First draft
