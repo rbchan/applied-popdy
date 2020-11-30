@@ -1,5 +1,20 @@
 # Notes for the future
 
+## 2020 writing assignment
+
+- First draft
+  * Peer review
+  * Add name and title
+  * Use scientific writing style
+     + Avoid first person
+	 + Imitate the writing style in the papers that you cited
+  * Fecundity is birth rate multiplied by s0
+  * Abundance of each stage must be estimated at one point in time
+  * All of the models should have stochasticity
+    + Multiple runs for each scenario
+
+
+
 ## For 2020
 
 - Make lab assignments more challenging by forcing them to develop
