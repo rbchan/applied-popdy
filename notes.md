@@ -6,6 +6,10 @@
 
 - Grade first drafts earlier
 
+- Ask Jake Knox to guest lecture towards end of semester
+
+- Consider Microsoft Teams for group conversations, instead of GroupMe
+
 
 
 ## 2020 writing assignment
