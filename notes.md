@@ -14,6 +14,11 @@
 
 - More details about pre-reproductive vs post-reproductive surveys
 
+- Larger breakout rooms?
+
+- Force R early if we're going to use it for estimation
+
+
 
 
 
