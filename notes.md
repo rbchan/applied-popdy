@@ -10,6 +10,12 @@
 
 - Consider Microsoft Teams for group conversations, instead of GroupMe
 
+- More on fecundity estimation 
+
+- More details about pre-reproductive vs post-reproductive surveys
+
+
+
 
 
 ## 2020 writing assignment
