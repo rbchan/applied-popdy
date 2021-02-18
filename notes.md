@@ -2,6 +2,8 @@
 
 ## For 2021
 
+- Read Yellowstone Wolves book chapter from 2020 book
+
 - Use one of the final labs for Q&A session to help students finish final paper
 
 - Grade first drafts earlier
