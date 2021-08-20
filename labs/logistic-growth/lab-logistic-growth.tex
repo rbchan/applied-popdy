@@ -50,9 +50,6 @@
 
 \usepackage{alltt}
 
-%\usepackage[roman]{../pres1}
-%\usepackage[sans]{../pres1}
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{hyperref}
@@ -64,6 +61,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
+
 {
   \Large
   \centering
@@ -72,9 +70,8 @@
 }
 
 Answer each of the following questions by completing the provided Excel 
-template.  Upload your Excel file (and R script) to
-ELC before Monday. Name the files with your last name first. \\
-% Be sure to show your calculations. \par
+template and by replicating your work in R. Upload your Excel file and R script to 
+ELC before Monday. Name the files with your last name followed by your first name. \\
 
 \vspace{12pt}
 
@@ -103,37 +100,37 @@ died. There was no immigration or emigration.
 
 \clearpage
 
-{\bf Exercise 2 \\}
+% {\bf Exercise 2 \\}
 
-Abundance data on harbor seals ({\it Phoca vitulina}) in the Wadden
-Sea are provided from 1997--2009.
+% Abundance data on harbor seals ({\it Phoca vitulina}) in the Wadden
+% Sea are provided from 1997--2009.
 
-\begin{enumerate}
-  \item Assuming logistic growth, find values of $r_{max}$ and $K$
-    that provide a good fit to the data. Use trial error to find these
-    values by comparing the actual number of seals to the number of
-    seals predicted by your model. You don't have to be too
-    precise, but try to get the predicted values within $\pm 2$ of the
-    actual data.
-  \item Use your model to predict how many seals will be in the
-    population in the year 2020.
-  \item Create a graph with year on the x-axis and abundance on the
-    y-axis. Show the data and the model predictions as separate
-    lines. 
-\end{enumerate}
+% \begin{enumerate}
+%   \item Assuming logistic growth, find values of $r_{max}$ and $K$
+%     that provide a good fit to the data. Use trial error to find these
+%     values by comparing the actual number of seals to the number of
+%     seals predicted by your model. You don't have to be too
+%     precise, but try to get the predicted values within $\pm 2$ of the
+%     actual data.
+%   \item Use your model to predict how many seals will be in the
+%     population in the year 2020.
+%   \item Create a graph with year on the x-axis and abundance on the
+%     y-axis. Show the data and the model predictions as separate
+%     lines. 
+% \end{enumerate}
 
-\vspace{24pt}
+% \vspace{24pt}
 
-{
-  \centering
-  \includegraphics[width=0.8\textwidth]{figs/pacific-harbor-seal} \\
-}
+% {
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figs/pacific-harbor-seal} \\
+% }
 
 
 
-\clearpage
+% \clearpage
 
-{\bf Exercise 3a \\}
+{\bf Exercise 2a \\}
 
 
 Many people assume that the human population acts differently than
@@ -152,16 +149,18 @@ billion people in 1999, and passed 7 billion in 2012.
   \item Graph your results.
   \item How closely does your model's prediction compare to the actual
     human population size in 2020? You can find the current population
-    size here: \url{https://www.worldometers.info/world-population/}.
+    size here: \url{
+      https://www.worldometers.info/world-population/
+    }.
 \end{enumerate}
 
 \vspace{24pt}
 
-{\bf Exercise 3b \\}
+{\bf Exercise 2b \\}
 
 
 UN data on human population size from 1999 to 2012 are provided on
-sheet ``Exercise 3b''.
+sheet ``Exercise 2b''.
 
 
 \begin{enumerate}
@@ -204,7 +203,6 @@ Here's an example of a logistic growth model.
 {\centering \includegraphics[width=0.8\textwidth]{figure/logistic-1} 
 
 }
-
 
 
 \end{knitrout}
