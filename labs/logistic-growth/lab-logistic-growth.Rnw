@@ -39,7 +39,8 @@ died. There was no immigration or emigration.
     ($\lambda$)?
   \item Assuming geometric growth, what will population size be in
     each of the subsequent 10 years? Create a graph of the results,
-    including important chart elements such as axis titles.
+    including important chart elements such as axis titles. Remember,
+    the geometric growth model is: $N_{t+1} = N_t + N_t r$.
 \end{enumerate}
 
 \vspace{24pt}
@@ -118,8 +119,11 @@ sheet ``Exercise 2b''.
 \begin{enumerate}
   \item Calculate the population growth rate (``lambda'':
     $\lambda_t = N_{t+1}/N_t$) for each year after 1999.
-  \item Using these values, make two figures for abundance ($N$) over
-    time and lambda ($\lambda_t$) over time. 
+  \item Using a starting values of 6 billion people in 1999, pick
+    values of $r_{max}$ and $K$ that make a logistic growth curve
+    closely approximate the actual data.
+  \item Using these values, make two graphs for abundance ($N$) over
+    time and lambda ($\lambda_t$) over time.
   \item Is recent human population growth more similar to geometric or
     logistic growth? Be explicit about how the observed trends of
     abundance and $\lambda_t$ indicate how the human population is
