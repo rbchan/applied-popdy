@@ -76,7 +76,6 @@ ELC before Monday. Name the files with your last name followed by your first nam
 \vspace{12pt}
 
 {\bf Exercise 1 \\}
-
 A study was conducted in which a population of 100 Mexican grey wolves
 ({\it Canis lupus baileyi}) was monitored intensively for 1 year. In
 that time, 10 pups were born, and 20 of the original 100 individuals 
@@ -87,7 +86,8 @@ died. There was no immigration or emigration.
     ($\lambda$)?
   \item Assuming geometric growth, what will population size be in
     each of the subsequent 10 years? Create a graph of the results,
-    including important chart elements such as axis titles.
+    including important chart elements such as axis titles. Remember,
+    the geometric growth model is: $N_{t+1} = N_t + N_t r$.
 \end{enumerate}
 
 \vspace{24pt}
@@ -131,43 +131,54 @@ died. There was no immigration or emigration.
 % \clearpage
 
 {\bf Exercise 2a \\}
-
-
 Many people assume that the human population acts differently than
 most wildlife populations and is increasing at an exponential rate, or
-close to it. The UN estimated that the human population passed 6
-billion people in 1999, and passed 7 billion in 2012. 
+close to it. The UN estimated that the human population was approximately 6
+billion people in 1999, and 7 billion in 2012. 
 
 \begin{enumerate}
   \item Given this data and the geometric growth equation:
     $N_t = N_0(1+r)^t$, calculate $r$ for the human population over
     this 13-yr period. You will need to recall how to solve algebraic
     equations with exponents. Google it if you forgot.
-  \item Use the geometric growth equation and the value of $r$ that
-    you calculated above to predict the human population size from 
-    2013--2020.
+  \item Use the geometric growth equation ($N_{t+1} = N_t + N_t r$)
+    and the value of $r$ that you calculated above to predict the
+    human population size from 2013--2021.
   \item Graph your results.
   \item How closely does your model's prediction compare to the actual
-    human population size in 2020? You can find the current population
+    human population size in 2021? You can find the current population
     size here: \url{
       https://www.worldometers.info/world-population/
+    }. More data about the world population can be found here: \url{
+      https://ourworldindata.org/world-population-growth      
     }.
 \end{enumerate}
 
 \vspace{24pt}
 
 {\bf Exercise 2b \\}
-
-
 UN data on human population size from 1999 to 2012 are provided on
 sheet ``Exercise 2b''.
 
 
 \begin{enumerate}
   \item Calculate the population growth rate (``lambda'':
-    $\lambda_t = N_{t+1}/N_t$) for each year after 1999.
-  \item Using these values, make two figures for abundance ($N$) over
-    time and lambda ($\lambda_t$) over time. 
+    $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 1999.
+  \item Using a starting values of 6 billion people in 1999, pick
+    values of $r$ that make a geometric growth curve
+    closely approximate the actual data. Use trial and error to find a
+    good value of $r$.
+  \item Using a starting values of 6 billion people in 1999, pick
+    values of $r_{max}$ and $K$ that make a logistic growth curve
+    closely approximate the actual data. Again, use trial and error to
+    find good parameter values. 
+  \item Use the values you calculated above, make four graphs of:
+    \begin{itemize}
+      \item Actual abundance ($N$) over time
+      \item Lambda ($\lambda_t$) over time
+      \item Predicted geometric growth over time
+      \item Predicted logistic growth over time.
+    \end{itemize}
   \item Is recent human population growth more similar to geometric or
     logistic growth? Be explicit about how the observed trends of
     abundance and $\lambda_t$ indicate how the human population is
