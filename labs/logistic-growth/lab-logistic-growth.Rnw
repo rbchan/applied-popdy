@@ -123,7 +123,8 @@ sheet ``Exercise 2b''.
   \item Using a starting values of 6 billion people in 1999, pick
     values of $r_{max}$ and $K$ that make a logistic growth curve
     closely approximate the actual data. Again, use trial and error to
-    find good parameter values. 
+    find good parameter values. The logistic growth model is: \\
+    $N_{t+1} = N_t + N_t r_{\rm max}(1 - N_t/K)$.
   \item Use the values you calculated above, make four graphs of:
     \begin{itemize}
       \item Actual abundance ($N$) over time
