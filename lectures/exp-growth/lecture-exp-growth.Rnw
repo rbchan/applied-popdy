@@ -54,14 +54,14 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
 
 \begin{frame}[plain]
   \frametitle{Today's learning objectives}
-  \Large
+  \large
   The equations for geometric and exponential growth \\
   \pause
   \vfill
   The relationship between geometric growth and the BIDE model \\
   \pause
   \vfill
-  The difference between continuous and discrete time models
+  The difference between continuous and discrete time models of
   population growth \\
   \pause
   \vfill
@@ -276,8 +276,8 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
       \includegraphics<7 | handout:0>[width=\textwidth]{figs/growth6} %\\
       \includegraphics<8 | handout:0>[width=\textwidth]{figs/growth7} %\\
       \includegraphics<9 | handout:0>[width=\textwidth]{figs/growth8} %\\
-      \includegraphics<10 | handout:0>[width=\textwidth]{figs/growth9}
-      \includegraphics<11>[width=\textwidth]{figs/growth10}
+      \includegraphics<10 | handout:0>[width=\textwidth]{figs/growth9} 
+      \includegraphics<11>[width=\textwidth]{figs/growth10} \\
     \end{column}
   \end{columns}
 \end{frame}
@@ -594,7 +594,9 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
   \fbox{\includegraphics[width=0.9\textwidth]{figs/World-Population-since-10-thousand-BC}} \\
   \vfill
   \small
-  \url{https://ourworldindata.org/world-population-growth} \\
+  \url{
+    https://ourworldindata.org/world-population-growth
+  } \\
 \end{frame}
 
 

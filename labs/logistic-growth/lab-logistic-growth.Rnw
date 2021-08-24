@@ -89,11 +89,11 @@ close to it. The UN estimated that the human population was approximately 6
 billion people in 1999, and 7 billion in 2012. 
 
 \begin{enumerate}
-  \item Given this data and the geometric growth equation:
+  \item Given this data and the (multi-step) geometric growth equation:
     $N_t = N_0(1+r)^t$, calculate $r$ for the human population over
     this 13-yr period. You will need to recall how to solve algebraic
     equations with exponents. Google it if you forgot.
-  \item Use the geometric growth equation ($N_{t+1} = N_t + N_t r$)
+  \item Use the (single-step) geometric growth equation ($N_{t+1} = N_t + N_t r$)
     and the value of $r$ that you calculated above to predict the
     human population size from 2013--2021.
   \item Graph your results.
@@ -119,13 +119,13 @@ sheet ``Exercise 2b''.
   \item Using a starting values of 6 billion people in 1999, pick
     values of $r$ that make a geometric growth curve
     closely approximate the actual data. Use trial and error to find a
-    good value of $r$.
+    good value of $r$. 
   \item Using a starting values of 6 billion people in 1999, pick
     values of $r_{max}$ and $K$ that make a logistic growth curve
     closely approximate the actual data. Again, use trial and error to
     find good parameter values. The logistic growth model is: \\
     $N_{t+1} = N_t + N_t r_{\rm max}(1 - N_t/K)$.
-  \item Use the values you calculated above, make four graphs of:
+  \item Use the values you calculated above to make four graphs of:
     \begin{itemize}
       \item Actual abundance ($N$) over time
       \item Lambda ($\lambda_t$) over time
@@ -135,7 +135,7 @@ sheet ``Exercise 2b''.
   \item Is recent human population growth more similar to geometric or
     logistic growth? Be explicit about how the observed trends of
     abundance and $\lambda_t$ indicate how the human population is
-    growing. Write your answer in the Excel sheet.
+    growing. Write your answer (3--4 sentences) in the Excel sheet.
 \end{enumerate}
 
 
