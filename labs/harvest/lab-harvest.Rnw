@@ -23,11 +23,12 @@ rnw2pdf("lab-harvest",tangle=TRUE)
   \Large
   \centering
   Lab 3 Assignment --- Harvest Models \\
-  Due before Monday \par
+  Due before Tuesday \par
 }
 
 Answer each of the following questions and upload your completed Excel
-file to ELC. Be sure to show your calculations. \par
+file and R script to ELC. Be sure to show your calculations. Undergraduates
+only need to do Exercise I in R.
 
 \vspace{12pt}
 
@@ -41,17 +42,38 @@ The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
   \item If you determine that the per-capita birth rate ($b$) is 2.0,
     what must be the per-capita mortality rate ($d$)?
   \item What harvest rate ($h$) would result in a sustainable yield?
-  \item Use the harvest rate ($h$) from part (4) to project the population
+  \item Use the sustainable harvest rate ($h$) from part (4) to project the population
     forward from 2012 to 2024. You will need to compute the number of
     individuals removed ($H_t$) each year using the equation
-    $H_t=N_{t}h$\footnote{$H_t$ can be greater than $N_t$ because
+    $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because
       harvest is assumed to occur at the end of the year, after the
-      population has grown}. Create a graph of python abundance from
+      population has grown). Create a graph of python abundance from
     2005--2024.  
 %  \item How is it possible that $H_t$ can be greater than $N_{t}$?
 \end{enumerate}
 
-\vspace{12pt}
+\vspace{24pt}
+
+Here's some R code to get you started on Exercise I:
+
+<<ex1,fig.show='hide',eval=FALSE>>=
+years1 <- 2005:2024                                  ## All years
+nYears1 <- length(years1)                            ## Number of years
+nYearsWithData <- 8                                  ## nYears with data
+nYearsWithoutData <- nYears1-nYearsWithData          ## nYears without data
+pythons <- c(10, 25, 63, 156, 391, 977, 2441, 6104,  ## Python counts
+             rep(NA, nYears1-nYearsWithData))
+
+## For question 5, you will want a loop similar to this:
+for(t in (nYearsWithData+1):nYears) {
+   ## PUT CODE HERE
+}
+@ 
+
+
+
+\clearpage
+
 
 
 {\bf Exercise II \\}
@@ -61,16 +83,16 @@ and an initial population size of 100 individuals.
 \begin{enumerate}
   \item Project the population for 40 years, and plot abundance over
     time. Add axis labels as always.
-  \item Compute the number of individuals that could be sustainably
+  \item Compute the number of individuals that {\it could be} sustainably
     harvested each year. Plot abundance on the x-axis and sustainable
     harvest on the y-axis.
   \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
-  \item What is the value of MSY in this case? What is the harvest rate ($h$) at MSY?
+  \item What is the value of MSY in this case? %What is the harvest rate ($h$) at MSY?
   \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
     forward again, but include harvest ($H_t$). Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
     harvest be zero in some years.
-\end{enumerate}
+\end{enumerate}a
 
 %\vspace{12pt}
 

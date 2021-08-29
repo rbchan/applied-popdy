@@ -1,5 +1,15 @@
 # Notes for the future
 
+
+## For 2022
+
+
+- Improve BIDE to Geo derivation slides
+
+- Don't ask students to pick good values of r, rmax and K in lab 2. Just give them values.
+
+
+
 ## For 2021
 
 - Read Yellowstone Wolves book chapter from 2020 book
