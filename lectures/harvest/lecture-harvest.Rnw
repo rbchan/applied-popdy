@@ -1,5 +1,5 @@
-\documentclass[color=usenames,dvipsnames]{beamer}
-%\documentclass[color=usenames,dvipsnames,handout]{beamer}
+%\documentclass[color=usenames,dvipsnames]{beamer}
+\documentclass[color=usenames,dvipsnames,handout]{beamer}
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}

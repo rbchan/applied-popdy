@@ -8,6 +8,7 @@
 
 - Don't ask students to pick good values of r, rmax and K in lab 2. Just give them values.
 
+- Undergrads shouldn't do more than 1 or 2 exercises in R each week
 
 
 ## For 2021
