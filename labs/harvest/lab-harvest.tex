@@ -111,7 +111,12 @@ Here's some R code to get you started on Exercise I:
 \hlstd{pythons} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{25}\hlstd{,} \hlnum{63}\hlstd{,} \hlnum{156}\hlstd{,} \hlnum{391}\hlstd{,} \hlnum{977}\hlstd{,} \hlnum{2441}\hlstd{,} \hlnum{6104}\hlstd{,}  \hlcom{## Python counts}
              \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears1}\hlopt{-}\hlstd{nYearsWithData))}
 
-\hlcom{## For question 5, you will want a loop similar to this:}
+\hlcom{## Question 1 hint: you can compute the first lambda like this:}
+\hlstd{lambda} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears1}\hlopt{-}\hlnum{1}\hlstd{)}
+\hlstd{lambda[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{pythons[}\hlnum{2}\hlstd{]}\hlopt{/}\hlstd{pythons[}\hlnum{1}\hlstd{]}
+\hlcom{## You could use a 'for loop' to compute lambda in each year}
+
+\hlcom{## For question 5, you will want a loop like this:}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlstd{(nYearsWithData}\hlopt{+}\hlnum{1}\hlstd{)}\hlopt{:}\hlstd{nYears) \{}
    \hlcom{## PUT CODE HERE}
 \hlstd{\}}
@@ -141,7 +146,7 @@ and an initial population size of 100 individuals.
     forward again, but include harvest ($H_t$). Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
     harvest be zero in some years.
-\end{enumerate}a
+\end{enumerate}
 
 %\vspace{12pt}
 

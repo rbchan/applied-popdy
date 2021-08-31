@@ -1,5 +1,5 @@
-%\documentclass[color=usenames,dvipsnames]{beamer}
-\documentclass[color=usenames,dvipsnames,handout]{beamer}
+\documentclass[color=usenames,dvipsnames]{beamer}
+%\documentclass[color=usenames,dvipsnames,handout]{beamer}
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
@@ -23,54 +23,30 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
 \begin{frame}[plain]
   \begin{center}
     {\huge Harvest Models} \\
-%    {\large January 28 \& 30, 2019} \\
     \vfill
-    \includegraphics[height=5.5cm,keepaspectratio]{figs/book} \hspace{0.3cm}
+    \includegraphics[height=5.5cm,keepaspectratio]{figs/book}
+    \hspace{0.3cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/tuna}
   \end{center}
 \end{frame}
 
-% QUIZ: Write down and label (1) exponential growth and (2) logistic growth
-
 
 \begin{frame}
-  \frametitle{Today's topics}
+  \frametitle{Learning objectives}
   \large
-%  \begin{itemize}
-%  \item
   Sustainable harvest and geometric growth \\
   \vfill
-  % \item
   Sustainable harvest and logistic growth \\
   \vfill
-  % \item
   Definition of maximum sustainable yield (MSY) \\
   \vfill
-  % \item
   Limitations of MSY \\
   \vfill
-  % \item
   Additive vs compensatory mortality
-%    \item Definition of compensatory mortality
-%  \end{itemize}
 \end{frame}
 
 
 %\section{Introduction}
-
-
-
-%% \begin{frame}
-%%   \frametitle{Harvest}
-%% How is it that we can harvest 2M ducks each year and the population
-%% size doesn't change much?
-
-%% How is it that cats can kill 2M songbirds each year and the population
-%% size doesn't change much?
-
-%% \end{frame}
-
-
 
 
 
@@ -85,8 +61,8 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
 %  \begin{block}{Definition}
   {%\bf
     Sustainable harvest:}
-    A harvest that is balanced by population growth such that $N_{t+1}
-    = N_t$
+  A harvest that is balanced by population growth such that
+  $N_{t+1} = N_t$
 %  \end{block}
 \end{frame}
 
@@ -106,14 +82,12 @@ rnw2pdf("lecture-harvest",tangle=TRUE)
    N_{t+1} = N_t + N_tr \pause - \color{red}{H_t}
   \] \\
   \pause
-%  \vspace{1cm}
   \large
-  where $H_t$ is the number of animals harvested at the end of year $t$ \\
+  where $H_t$ is the number of animals harvested at the end of
+  year $t$ \\
   \pause
   \vfill %\vspace{2cm}
-%  \Large
-%  \vfill
-  What value of $H_t$ achieves equilibrium (i.e., $N_{t+1} = N_t$)?  \\
+  What value of $H_t$ achieves equilibrium (i.e., $N_{t+1} = N_t$)? \\
 %  \pause
 %  \vfill
 %  Equilibrium is condition in which $N_{t+1} = N_t$?
@@ -569,16 +543,16 @@ overall survival.
 %  \large
   {\bf Key points}
   \begin{itemize}
-    \item If growth is geometric, sustainable harvest occurs when $h=r$
-    \item If growth is logisitic, maximum sustainable yield occurs at $N=K/2$
+    \item If growth is geometric, sustainable harvest occurs when $h=r$.
+    \item If growth is logisitic, maximum sustainable yield occurs at $N=K/2$.
     \item If survival is density-dependent, harvest mortality can be
       compensated for by increased survival of remaining individuals
-      (up to a point)
+      (up to a point).
     \item If mortality is additive, extra caution is needed
       because harvest is adding to natural mortality without any
-      compensation
-    \item Managers need to understand population dynamics when setting
-      harvest regulations
+      compensation.
+    \item Managers need to know if harvest mortality is additive or
+      compensatory when setting harvest regulations.
   \end{itemize}
 \end{frame}
 
@@ -586,7 +560,7 @@ overall survival.
 
 \begin{frame}
   \frametitle{Assignment}
-  \huge \centering
+  \LARGE \centering
   Read pages 22--25 in Conroy and Carroll
 \end{frame}
 

@@ -64,7 +64,12 @@ nYearsWithoutData <- nYears1-nYearsWithData          ## nYears without data
 pythons <- c(10, 25, 63, 156, 391, 977, 2441, 6104,  ## Python counts
              rep(NA, nYears1-nYearsWithData))
 
-## For question 5, you will want a loop similar to this:
+## Question 1 hint: you can compute the first lambda like this:
+lambda <- rep(NA, nYears1-1)
+lambda[1] <- pythons[2]/pythons[1]
+## You could use a 'for loop' to compute lambda in each year
+
+## For question 5, you will want a loop like this:
 for(t in (nYearsWithData+1):nYears) {
    ## PUT CODE HERE
 }
@@ -92,7 +97,7 @@ and an initial population size of 100 individuals.
     forward again, but include harvest ($H_t$). Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
     harvest be zero in some years.
-\end{enumerate}a
+\end{enumerate}
 
 %\vspace{12pt}
 
