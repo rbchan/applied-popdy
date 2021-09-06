@@ -16,20 +16,15 @@ rnw2pdf("lecture-stochasticity")
 rnw2pdf("lecture-stochasticity",tangle=TRUE)
 @
 
-
-
-
 \begin{document}
 
 
 \begin{frame}[plain]
   \begin{center}
     {\huge Stochasticity} \\
-%    { February 4, 2019} \\
     \vfill
     \includegraphics[height=3.8cm,keepaspectratio]{figs/pelagic-cormorants} \hspace{0.1cm}
     \includegraphics[height=3.8cm,keepaspectratio]{figs/kittiwakes} %\hspace{0.5cm}
-%    \includegraphics[height=5.5cm,keepaspectratio]{figs/Vermivora_bachmanii} %\hspace{0.1cm}
   \end{center}
 \end{frame}
 
@@ -40,7 +35,7 @@ rnw2pdf("lecture-stochasticity",tangle=TRUE)
 
 
 \begin{frame}[plain]
-  \frametitle{Today's topics}
+  \frametitle{Learning objectives}
   \tableofcontents%[currentsection]
 \end{frame}
 
@@ -48,7 +43,7 @@ rnw2pdf("lecture-stochasticity",tangle=TRUE)
 
 
 \begin{frame}
-  \frametitle{Random Variables}
+  \frametitle{Random variables}
   \large
   A random variable is a variable whose value can't be predicted
   with certainty. \\
@@ -69,7 +64,7 @@ rnw2pdf("lecture-stochasticity",tangle=TRUE)
   \frametitle{Probability distributions}
   \large
   {A random variable ($X$) can be described by a probability distribution. \\}
-  \pause
+%  \pause
   \vspace{1cm}
   {There are many types of probability distributions}
   \begin{itemize}
@@ -133,7 +128,7 @@ for(i in 1:10) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Normal (Gaussian) Distribution}
+  \frametitle{Normal (Gaussian) distribution}
   \vspace{-0.7cm}
   \begin{center}
 <<norm1,echo=FALSE,include=FALSE,fig.width=8,fig.height=6>>=
@@ -322,21 +317,29 @@ for(i in 1:10) {
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Geometric growth with demographic stochasticity}
-  \LARGE
+  \Large
 \[
   N_{t+1} = N_t + N_t r_t
 \]
 
 \vspace{0.3cm} \pause
-{\large \centering where \par}
+{\large \centering where \\}
 \[
   r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
-\]
+\] 
+\normalsize
+{\tt \R} code:
+<<geo-dem,eval=FALSE,size='small'>>=
+r.bar <- 0.5
+sigma.d <- 0.1
+for(t in 2:nYears) {
+    r[t-1] <- rnorm(n=1, mean=r.bar, sd=sigma.d)
+    N[t] <- N[t-1] + N[t-1]*r[t-1]
+}
+@
 \end{frame}
-
-
 
 
 
@@ -505,19 +508,12 @@ for(i in 1:10) {
 \begin{frame}
   \frametitle{Summary}
   \Large
-%  \begin{itemize}[<+->]
-%    \item Stochasticity is everywhere and we have to recognize it our models
-%    \item Stochastic models produce outcomes that look like real data
-%    \item
   Purely deterministic models are too rigid \\
   \vfill
-  % \item
-  Purely stochastic models don't tell us much \\
+  Purely stochastic models don't describe ecological processes \\
   \vfill
-  % \item
   The goal is to develop a mechanistic model that represents 
   our biological understanding while allowing for stochasticity \\
-%  \end{itemize}
 \end{frame}
 
 
@@ -531,11 +527,7 @@ for(i in 1:10) {
 
 
 
-
-
 % quasi-equilibrium
-
-
 
 %% \subsection{Birth-death process}
 

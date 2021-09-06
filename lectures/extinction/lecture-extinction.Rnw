@@ -25,9 +25,7 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
 \begin{frame}[plain]
   \begin{center}
     {\Huge Extinction} \\
-%    {February 6, 2019} \\
     \vfill
-%    \includegraphics[height=3.5cm,keepaspectratio]{figs/Carolina-parakeet} \hspace{0.1cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/passenger-pigeon} \hspace{0.5cm}
     \includegraphics[height=5.5cm,keepaspectratio]{figs/Vermivora_bachmanii} %\hspace{0.1cm}
   \end{center}
@@ -70,8 +68,12 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
     \\ %\hspace{0.5cm}
 %    \includegraphics[height=2.5cm,keepaspectratio]{figs/honeycreepers} \\
     \vfill \tiny
-%\url{http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/} \\
-\url{https://vimeo.com/42592260}
+% \url{
+%    http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/
+%  } \\
+    \url{
+      https://vimeo.com/42592260
+    }
   \end{center}
   }
 %  {\bf Local}

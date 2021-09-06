@@ -69,11 +69,9 @@
 \begin{frame}[plain]
   \begin{center}
     {\huge Stochasticity} \\
-%    { February 4, 2019} \\
     \vfill
     \includegraphics[height=3.8cm,keepaspectratio]{figs/pelagic-cormorants} \hspace{0.1cm}
     \includegraphics[height=3.8cm,keepaspectratio]{figs/kittiwakes} %\hspace{0.5cm}
-%    \includegraphics[height=5.5cm,keepaspectratio]{figs/Vermivora_bachmanii} %\hspace{0.1cm}
   \end{center}
 \end{frame}
 
@@ -84,7 +82,7 @@
 
 
 \begin{frame}[plain]
-  \frametitle{Today's topics}
+  \frametitle{Learning objectives}
   \tableofcontents%[currentsection]
 \end{frame}
 
@@ -92,7 +90,7 @@
 
 
 \begin{frame}
-  \frametitle{Random Variables}
+  \frametitle{Random variables}
   \large
   A random variable is a variable whose value can't be predicted
   with certainty. \\
@@ -113,7 +111,7 @@
   \frametitle{Probability distributions}
   \large
   {A random variable ($X$) can be described by a probability distribution. \\}
-  \pause
+%  \pause
   \vspace{1cm}
   {There are many types of probability distributions}
   \begin{itemize}
@@ -159,7 +157,7 @@
 
 
 \begin{frame}[fragile]
-  \frametitle{Normal (Gaussian) Distribution}
+  \frametitle{Normal (Gaussian) distribution}
   \vspace{-0.7cm}
   \begin{center}
 
@@ -294,21 +292,33 @@
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Geometric growth with demographic stochasticity}
-  \LARGE
+  \Large
 \[
   N_{t+1} = N_t + N_t r_t
 \]
 
 \vspace{0.3cm} \pause
-{\large \centering where \par}
+{\large \centering where \\}
 \[
   r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
-\]
+\] 
+\normalsize
+{\tt \R} code:
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{r.bar} \hlkwb{<-} \hlnum{0.5}
+\hlstd{sigma.d} \hlkwb{<-} \hlnum{0.1}
+\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
+    \hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=r.bar,} \hlkwc{sd}\hlstd{=sigma.d)}
+    \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \end{frame}
-
-
 
 
 
@@ -434,11 +444,7 @@
 
 
 
-
-
 % quasi-equilibrium
-
-
 
 %% \subsection{Birth-death process}
 

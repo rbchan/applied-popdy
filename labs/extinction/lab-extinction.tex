@@ -50,8 +50,6 @@
 
 \usepackage{alltt}
 
-%\usepackage[roman]{../pres1}
-%\usepackage[sans]{../pres1}
 
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
@@ -77,7 +75,9 @@
 
 \begin{figure}[h]
   \centering
-  \fbox{\includegraphics[width=\textwidth]{figs/Excel-RNG}}
+  \fbox{
+    \includegraphics[width=\textwidth]{figs/Excel-RNG}
+  }
   \caption{To generate random numbers in Excel, you must load the
     ``Analysis Toolpak'' add-in by clicking
     {\tt File $>$ Options $>$ Add-Ins $>$ Analysis Toolpak}. Then hit
@@ -85,7 +85,6 @@
   \label{fig:rng}
 \end{figure}
 
-%\newpage
 \clearpage
 
 \begin{figure}[h]
@@ -93,7 +92,8 @@
   \fbox{\includegraphics[width=0.6\textwidth]{figs/Excel-RNG-2}}
   \caption{\footnotesize Once the Analysis ToolPak is installed, you can generate
     random numbers by clicking the ``Data Analysis'' button in the
-    ``Data'' tab.}
+    ``Data'' tab.
+  }
   \label{fig:rng-2}
 \end{figure}
 
@@ -106,36 +106,40 @@
     Binomial, and Poisson. The latter two are only used in Exercise
     III. Note: You can think of the ``number of variables'' as the
     number of columns of random variables, and the ``number of random
-    numbers'' as the number of cells in each column.}
+    numbers'' as the number of cells in each column.
+  }
   \label{fig:rng-3}
 \end{figure}
 
 
-%\newpage
 \clearpage
 
 Answer each of the following questions and upload your completed Excel
-file to ELC. Be sure to show your calculations. \\
+file and R script to ELC. Be sure to show your calculations. \\
 
 \vspace{12pt}
 
 {\bf Exercise I \\}
 \begin{enumerate}
-  \item If a population is growing geometrically and there is no
-    random variation, what is the time to quasi-extinction ($T_e$) when
-    $r=-0.2$ and $N_0=500$. Assume quasi-extinction occurs when $N$ falls
-    below 20 individuals.
-  \item Suppose that there is no demographic stochasticity,
+  \item Suppose a population is growing geometrically with
+    $r=-0.2$ and $N_0=500$. There is no random variation, and
+    quasi-extinction occurs when $N$ falls below 20 individuals.
+    What is the time to quasi-extinction ($T_e$)? In other words, how
+    long will it take for the population to fall below 20 individuals?
+  \item Now imagine that there is no demographic stochasticity,
     but environmental stochasticity occurs with $X_t \sim
     \mathrm{Normal}(\mu=0, \sigma=10)$, where $\mu$ is the mean
-    and $\sigma$ is the standard deviation. Conduct 10 simulations over a
-    30 year time period, and force the population size to zero if it
-    falls below the threshold. This can be done by multiplying the
+    and $\sigma$ is the standard deviation of the random variable
+    $X$. Generate the random values of $X$ that will be
+    used in the 10 simulations in the next step.
+  \item Conduct 10 simulations over a 30 year time period, and force
+    the population size to zero after it falls below the threshold.
+    This can be done by multiplying the
     growth equation by a ``test statement'', like this:
-    \verb+=(equation)*(CELL>$O$2)+, where \verb+CELL+ should be
-    replaced by the actual cell reference for abundance in the
-    previous year . Plot the projections. (Hint: Generate the 
-    random variables before trying to calculate $N_t$).
+    {\tt =(EQUATION)*(CELL>20)}, where {\tt EQUATION} should be
+    replaced with the population growth equation and {\tt CELL} should
+    be replaced with the cell reference for abundance at the previous
+    time step. Plot the projections.
   \item What is the average $T_e$ based on these 10 simulations?
 \end{enumerate}
 
@@ -146,30 +150,19 @@ file to ELC. Be sure to show your calculations. \\
 \begin{enumerate}
   \item Simulate 10 populations under a logistic growth model with
     $N_0$=20, $K$=40, and a normally-distributed growth rate $r_{\mathrm{max}_t}
-    \sim \mathrm{Norm}(\mu=0.1, \sigma=0.5)$, where $\mu$ is the mean
-    and $\sigma$ is the standard deviation. Assume that the
-    quasi-extinction threshold is
-    equal to 10, and force the population size to zero if it falls
-    below the threshold using a test statement as before. Plot the
-    projections.
+    \sim \mathrm{Norm}(\mu=0.1, \sigma=0.2)$. Assume that the
+    quasi-extinction threshold is equal to 10, and force the
+    population size to zero if it falls below the threshold using a
+    test statement as before. Plot the projections.
   \item What are the quasi-extinction risks at years 5, 10, and 15?
-  % \item Suppose you are using this model to determine how many
-  %   individuals should be released as part of a reintroduction program
-  %   to recover a species that was locally extirpated. What is the
-  %   minimum number of individuals that you would need to release to
-  %   ensure that the quasi-extinction risk is less than 10\% over a 30
-  %   year time horizon? Answer this using 10 projections, as before,
-  %   but {\bf create a duplicate sheet} so that you can report all your
-  %   work. Duplicate sheets can be created by right-clicking on the
-  %   sheet name, and then choose \verb+Move or Copy...+.
 \end{enumerate}
 
 
 \newpage
 
 
-{\bf Exercise III \\}
-In this exercise, you will be exposed to two new probably
+{\bf Exercise III \\ }
+In this exercise, you will be exposed to two new probability
 distributions: the Poisson and the binomial. The Poisson distribution
 is useful for data that are non-negative integers. It only has
 a single parameter (often called ``lambda'' but not to be confused with the
@@ -248,7 +241,6 @@ Geometric growth with environmental stochasticity
 }
 
 
-
 \end{knitrout}
 
 
@@ -278,7 +270,6 @@ Poisson-Binomial birth-death model
 {\centering \includegraphics[width=0.9\textwidth]{figure/pois-bin-1} 
 
 }
-
 
 
 \end{knitrout}
