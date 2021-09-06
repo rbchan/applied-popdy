@@ -70,7 +70,7 @@ lambda[1] <- pythons[2]/pythons[1]
 ## You could use a 'for loop' to compute lambda in each year
 
 ## For question 5, you will want a loop like this:
-for(t in (nYearsWithData+1):nYears) {
+for(t in (nYearsWithData+1):nYears1) {
    ## PUT CODE HERE
 }
 @ 
