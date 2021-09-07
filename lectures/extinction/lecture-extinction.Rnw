@@ -3,9 +3,6 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
-\usepackage{graphicx}
-\usepackage{bm}
-% \usepackage{changepage}
 
 
 
@@ -38,15 +35,11 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
 
 
 \begin{frame}[plain]
-  \frametitle{Today's topics}
+  \frametitle{Learning objectives}
 %  {\huge Today's topics}
   \tableofcontents%[currentsection]
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{BBC series -- Extinction: The Facts}
-\end{frame}
 
 
 \begin{frame}
@@ -66,7 +59,6 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
   \begin{center}
     \includegraphics[height=2.5cm,keepaspectratio]{figs/bird-radiation}
     \\ %\hspace{0.5cm}
-%    \includegraphics[height=2.5cm,keepaspectratio]{figs/honeycreepers} \\
     \vfill \tiny
 % \url{
 %    http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/
@@ -76,10 +68,44 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
     }
   \end{center}
   }
-%  {\bf Local}
-%  \begin{itemize}
-%    \item
-%  \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{}
+
+BBC series -- Extinction: The Facts
+  
+% {https://www.bbc.co.uk/programmes/p08rg347} % overview
+
+  \url{
+    https://www.bbc.co.uk/programmes/p08qy8lr % brief overview
+  }
+  
+  \url{
+    https://www.bbc.co.uk/programmes/p08qym98 % vortex
+  }
+
+  \url{
+    https://www.bbc.co.uk/programmes/p08qy8lz % last white rhino
+  }
+
+  \url{
+    https://www.bbc.co.uk/programmes/p08qym6s % giraffe
+  }
+
+Hawaii
+
+  \url{
+    https://vimeo.com/42592260 % 
+  }
+
+  \url{
+    https://youtu.be/J0UlrJeW8n8 % Hawaii birds
+  }
+  
 \end{frame}
 
 
