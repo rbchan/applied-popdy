@@ -219,19 +219,23 @@
 \[
   N_{t+1} = N_t + N_tr + X_t
 \]
-%\vspace{0.3cm} \pause
 {\large \centering where \\}
+\vspace{-12pt}
 \[
   X_t \sim \mbox{Normal}(0, \sigma_e^2)
 \]
 \pause
-\vfill
-{\tt \R} code:
+%\vfill
+% {\tt \R} code:
+R code
 \begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{r} \hlkwb{<-} \hlnum{0.1}
-\hlstd{sigma.e} \hlkwb{<-} \hlnum{10}
+\hlstd{nYears} \hlkwb{<-} \hlnum{20}
+\hlstd{N} \hlkwb{<-} \hlstd{X} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Create empty N and X}
+\hlstd{N[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}                \hlcom{## Initial value of N}
+\hlstd{r} \hlkwb{<-} \hlnum{0.1}                   \hlcom{## Growth rate}
+\hlstd{sigma.e} \hlkwb{<-} \hlnum{10}              \hlcom{## StdDev of enviro variation}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma.e)}
     \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]}
@@ -298,19 +302,23 @@
 \[
   N_{t+1} = N_t + N_t r_t
 \]
-
-\vspace{0.3cm} \pause
+%\vspace{0.3cm} \pause
 {\large \centering where \\}
+\vspace{-12pt}
 \[
   r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
 \] 
-\normalsize
-{\tt \R} code:
+%\normalsize
+%{\tt \R} code:
+R code
 \begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{r.bar} \hlkwb{<-} \hlnum{0.5}
-\hlstd{sigma.d} \hlkwb{<-} \hlnum{0.1}
+\hlstd{nYears} \hlkwb{<-} \hlnum{20}
+\hlstd{N} \hlkwb{<-} \hlstd{r} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Create empty N and r}
+\hlstd{N[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}                \hlcom{## Initial value of N}
+\hlstd{r.bar} \hlkwb{<-} \hlnum{0.5}               \hlcom{## Average growth rate}
+\hlstd{sigma.d} \hlkwb{<-} \hlnum{0.1}             \hlcom{## StdDev of growth rate}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=r.bar,} \hlkwc{sd}\hlstd{=sigma.d)}
     \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]}
@@ -378,13 +386,12 @@
 
 \begin{frame}
   \frametitle{Logistic growth with stochastic carrying capacity}
-  \LARGE
+  \Large
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
 \]
-
-\vspace{0.3cm}
-{\large \centering where \par}
+{\large \centering where \\}
+\vspace{-12pt}
 \[
   K_t \sim \mbox{Normal}(\bar{K}, \sigma_e^2)
 \]
@@ -418,19 +425,12 @@
 \begin{frame}
   \frametitle{Summary}
   \Large
-%  \begin{itemize}[<+->]
-%    \item Stochasticity is everywhere and we have to recognize it our models
-%    \item Stochastic models produce outcomes that look like real data
-%    \item
-  Purely deterministic models are too rigid \\
+  Purely deterministic models are too rigid. \\
   \vfill
-  % \item
-  Purely stochastic models don't tell us much \\
+  Purely stochastic models don't describe population processes. \\
   \vfill
-  % \item
   The goal is to develop a mechanistic model that represents 
-  our biological understanding while allowing for stochasticity \\
-%  \end{itemize}
+  our biological understanding while allowing for stochasticity. \\
 \end{frame}
 
 

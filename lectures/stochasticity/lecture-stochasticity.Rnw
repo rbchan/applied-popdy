@@ -202,17 +202,21 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 \[
   N_{t+1} = N_t + N_tr + X_t
 \]
-%\vspace{0.3cm} \pause
 {\large \centering where \\}
+\vspace{-12pt}
 \[
   X_t \sim \mbox{Normal}(0, \sigma_e^2)
 \]
 \pause
-\vfill
-{\tt \R} code:
+%\vfill
+% {\tt \R} code:
+R code
 <<geo-env,eval=FALSE,size='small'>>=
-r <- 0.1
-sigma.e <- 10
+nYears <- 20
+N <- X <- rep(NA, nYears)  ## Create empty N and X
+N[1] <- 100                ## Initial value of N
+r <- 0.1                   ## Growth rate
+sigma.e <- 10              ## StdDev of enviro variation
 for(t in 2:nYears) {
     X[t-1] <- rnorm(n=1, mean=0, sd=sigma.e)
     N[t] <- N[t-1] + N[t-1]*r + X[t-1]
@@ -323,17 +327,21 @@ for(i in 1:10) {
 \[
   N_{t+1} = N_t + N_t r_t
 \]
-
-\vspace{0.3cm} \pause
+%\vspace{0.3cm} \pause
 {\large \centering where \\}
+\vspace{-12pt}
 \[
   r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
 \] 
-\normalsize
-{\tt \R} code:
+%\normalsize
+%{\tt \R} code:
+R code
 <<geo-dem,eval=FALSE,size='small'>>=
-r.bar <- 0.5
-sigma.d <- 0.1
+nYears <- 20
+N <- r <- rep(NA, nYears)  ## Create empty N and r
+N[1] <- 100                ## Initial value of N
+r.bar <- 0.5               ## Average growth rate
+sigma.d <- 0.1             ## StdDev of growth rate
 for(t in 2:nYears) {
     r[t-1] <- rnorm(n=1, mean=r.bar, sd=sigma.d)
     N[t] <- N[t-1] + N[t-1]*r[t-1]
@@ -443,13 +451,12 @@ for(i in 1:10) {
 
 \begin{frame}
   \frametitle{Logistic growth with stochastic carrying capacity}
-  \LARGE
+  \Large
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
 \]
-
-\vspace{0.3cm}
-{\large \centering where \par}
+{\large \centering where \\}
+\vspace{-12pt}
 \[
   K_t \sim \mbox{Normal}(\bar{K}, \sigma_e^2)
 \]
@@ -508,12 +515,12 @@ for(i in 1:10) {
 \begin{frame}
   \frametitle{Summary}
   \Large
-  Purely deterministic models are too rigid \\
+  Purely deterministic models are too rigid. \\
   \vfill
-  Purely stochastic models don't describe ecological processes \\
+  Purely stochastic models don't describe population processes. \\
   \vfill
   The goal is to develop a mechanistic model that represents 
-  our biological understanding while allowing for stochasticity \\
+  our biological understanding while allowing for stochasticity. \\
 \end{frame}
 
 
