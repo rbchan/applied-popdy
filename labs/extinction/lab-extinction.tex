@@ -66,18 +66,24 @@
 {
   \Large
   \centering
-  Lab 3 Assignment --- Stochasticity and Extinction \\
-  Due before Monday \par
+  Lab 3 Assignment --- Stochasticity and Extinction \par
+  % \large
+  \normalsize
+  Submit your Excel file and R script before Monday.
+%  \normalsize
+  Undergrads only need to do the first exercise in R, but you will get
+  10 bonus points if you do the second one too. \\
 }
 
-{\bf Random Numbers in Excel \\}
+\vspace{12pt}
 
+{\bf Random Numbers in Excel \\}
 
 \begin{figure}[h]
   \centering
   \fbox{
-    \includegraphics[width=\textwidth]{figs/Excel-RNG}
-  }
+    \includegraphics[width=0.95\textwidth]{figs/Excel-RNG}
+  } \\
   \caption{To generate random numbers in Excel, you must load the
     ``Analysis Toolpak'' add-in by clicking
     {\tt File $>$ Options $>$ Add-Ins $>$ Analysis Toolpak}. Then hit
@@ -143,25 +149,25 @@ file and R script to ELC. Be sure to show your calculations. \\
   \item What is the average $T_e$ based on these 10 simulations?
 \end{enumerate}
 
-\vspace{12pt}
+% \vspace{12pt}
 
 
-{\bf Exercise II \\}
-\begin{enumerate}
-  \item Simulate 10 populations under a logistic growth model with
-    $N_0$=20, $K$=40, and a normally-distributed growth rate $r_{\mathrm{max}_t}
-    \sim \mathrm{Norm}(\mu=0.1, \sigma=0.2)$. Assume that the
-    quasi-extinction threshold is equal to 10, and force the
-    population size to zero if it falls below the threshold using a
-    test statement as before. Plot the projections.
-  \item What are the quasi-extinction risks at years 5, 10, and 15?
-\end{enumerate}
+% {\bf Exercise II \\}
+% \begin{enumerate}
+%   \item Simulate 10 populations under a logistic growth model with
+%     $N_0$=20, $K$=40, and a normally-distributed growth rate $r_{\mathrm{max}_t}
+%     \sim \mathrm{Norm}(\mu=0.1, \sigma=0.2)$. Assume that the
+%     quasi-extinction threshold is equal to 10, and force the
+%     population size to zero if it falls below the threshold using a
+%     test statement as before. Plot the projections.
+%   \item What are the quasi-extinction risks at years 5, 10, and 15?
+% \end{enumerate}
 
 
 \newpage
 
 
-{\bf Exercise III \\ }
+{\bf Exercise II \\ }
 In this exercise, you will be exposed to two new probability
 distributions: the Poisson and the binomial. The Poisson distribution
 is useful for data that are non-negative integers. It only has
@@ -225,18 +231,21 @@ Geometric growth with environmental stochasticity
 \hlstd{r} \hlkwb{<-} \hlnum{0.01}
 \hlstd{sigma} \hlkwb{<-} \hlnum{5}
 \hlstd{nYears} \hlkwb{<-} \hlnum{50}
-\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Empty vector for population size }
+
+\hlcom{## Repeat the next steps 10 times to do 10 simulations}
+\hlcom{## Or, do a 'nested for loop' and save each simulation (harder)}
+\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Population size }
 \hlstd{X} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for environmental stochasticity}
 \hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{X[t]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma)}
-    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t]}
+    \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma)}
+    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]}
 \hlstd{\}}
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N1,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=0.9\textwidth]{figure/geom-stoch-1} 
+{\centering \includegraphics[width=0.8\textwidth]{figure/geom-stoch-1} 
 
 }
 
