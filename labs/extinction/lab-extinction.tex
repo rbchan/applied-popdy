@@ -228,9 +228,10 @@ Geometric growth with environmental stochasticity
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{r} \hlkwb{<-} \hlnum{0.01}
+\hlstd{r} \hlkwb{<-} \hlopt{-}\hlnum{0.1}
 \hlstd{sigma} \hlkwb{<-} \hlnum{5}
 \hlstd{nYears} \hlkwb{<-} \hlnum{50}
+\hlstd{extinctionThreshold} \hlkwb{<-} \hlnum{10}
 
 \hlcom{## Repeat the next steps 10 times to do 10 simulations}
 \hlcom{## Or, do a 'nested for loop' and save each simulation (harder)}
@@ -239,7 +240,7 @@ Geometric growth with environmental stochasticity
 \hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{sd}\hlstd{=sigma)}
-    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{]}
+    \hlstd{N1[t]} \hlkwb{<-} \hlstd{(N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r} \hlopt{+} \hlstd{X[t}\hlopt{-}\hlnum{1}\hlstd{])}\hlopt{*}\hlstd{(N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{>}\hlstd{extinctionThreshold)}
 \hlstd{\}}
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N1,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
 \end{alltt}
