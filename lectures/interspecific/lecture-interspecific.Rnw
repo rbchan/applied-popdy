@@ -7,9 +7,6 @@
 \usepackage{bm}
 
 
-
-
-
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lecture-interspecific")
@@ -17,10 +14,7 @@ rnw2pdf("lecture-interspecific",tangle=TRUE)
 @
 
 
-
 \begin{document}
-
-
 
 
 \begin{frame}[plain]
@@ -94,12 +88,10 @@ rnw2pdf("lecture-interspecific",tangle=TRUE)
   \includegraphics[width=0.75\textwidth]{figs/lynx-hare} \par
 %  \includegraphics[width=0.8\textwidth]{figs/lynx-hare_cycle} \par
 %  \small
-%  \url{http://www.youtube.com/watch?v=t43Li0dLkvw}
+%  \url{
+%  http://www.youtube.com/watch?v=t43Li0dLkvw
+%}
 \end{frame}
-
-
-
-
 
 
 
@@ -183,25 +175,28 @@ legend(0, 250, c("Prey", "Predator"), lty=1, pch=16, col=c("cyan4", "red"))
 
 
 
-
 \begin{frame}
   \frametitle{Isle Royale wolves and moose}
   \centering
   \includegraphics[width=1\textwidth]{figs/Fig01_wolfmoosechronology} \par
-%  \url{http://www.youtube.com/watch?v=PdwnfPurXcs}
-%  \url{http://vimeo.com/15411376}
-  \url{https://youtu.be/PdwnfPurXcs}
+  % \url{
+%  http://www.youtube.com/watch?v=PdwnfPurXcs
+%}
+% \url{
+%http://vimeo.com/15411376
+%}
+%  \url{
+%  https://youtu.be/PdwnfPurXcs
+% }
 %  \pause
-%  Attack video: \url{https://youtu.be/Ju3er3xIl7E}
+%  Attack video: \url{
+%  https://youtu.be/Ju3er3xIl7E
+% }
 \end{frame}
 
 
 
-
-
-
 \section{Competition}
-
 
 
 
@@ -219,6 +214,8 @@ legend(0, 250, c("Prey", "Predator"), lty=1, pch=16, col=c("cyan4", "red"))
 %    \item Usually applied to inter-specific competition
 %  \end{itemize}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -363,7 +360,9 @@ legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red")
   \frametitle{Don't forget about intraspecific competition}
   \centering 
   \includegraphics[width=0.8\textwidth]{figs/giraffe} \\
-  \url{https://youtu.be/KQLPL1qRhn8}
+  \url{
+    https://youtu.be/KQLPL1qRhn8
+  }
 \end{frame}
 
 
@@ -413,7 +412,9 @@ legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red")
 %% \begin{frame}
 %%   \frametitle{Assignment}
 %%   Read this article on the Isle Royale wolves and moose:
-%%   \url{http://www.isleroyalewolf.org/http\%3A//www.cpc.ncep.noaa.gov/products/precip/CWlink/pna/nao.shtml}
+%%   \url{
+%%   http://www.isleroyalewolf.org/http\%3A//www.cpc.ncep.noaa.gov/products/precip/CWlink/pna/nao.shtml
+%% }
 %% \end{frame}
 
 
