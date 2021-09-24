@@ -395,6 +395,59 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
 
 
 
+\begin{frame}
+  \frametitle{\large Three age class example -- post-reproductive census}
+  \small
+  The previous model was an example of a \alert{\bf pre-reproductive
+    census} scenario, in which we count individuals right before they
+  reproduce.\\
+  \pause
+  \vfill
+  An alternative is the \alert{\bf post-reproductive census} scenario, in
+  which we count individuals right after they reproduce. \\
+%  \begin{itemize}
+%  \item<3>
+  \pause
+  \vfill
+  For a post-reproductive census, fecundity is defined as
+  the product of age-specific survival and birth rates,
+  $f_i = s_i \times b_i$ \\
+%  \end{itemize}
+%  \vspace{0.5cm}
+  \pause
+  \vfill      
+  \begin{center}
+    \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm,
+    node distance=4cm, text centered, fill=blue!10]
+    \only<4 | handout:0>{
+    \begin{tikzpicture}%[scale=0.9]
+      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
+      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
+      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
+      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
+      \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
+      \draw[->,thick] (n2) to [bend right=40] node[above] {$s_1 \times b_1$} (n1);
+      \draw[->,thick] (n3) to [bend right=60] node[above] {$s_2 \times b_2$} (n1);
+   \end{tikzpicture}
+   } %\\
+   \uncover<5>{
+   \begin{tikzpicture}%[scale=0.9]
+      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
+      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
+      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
+      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
+      \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
+      \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1);
+      \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1);
+   \end{tikzpicture}
+   } %\\
+  \end{center}
+\end{frame}
+
+
+
+
+
 
 
 
@@ -812,7 +865,7 @@ box()
     \includegraphics[width=0.4\textwidth]{figs/fisher1} \hspace{12pt} %\hfill
     \includegraphics[width=0.4\textwidth]{figs/fisher2}
   \end{center}
-  He was also a eugenicist and a Nazi sympathizer.
+  He was also a terrible person (eugenicist and Nazi sympathizer).
 \end{frame}
 
 
