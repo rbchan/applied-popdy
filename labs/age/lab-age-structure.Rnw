@@ -17,8 +17,6 @@ rnw2pdf("lab-age-structure",tangle=TRUE)
 @
 
 
-
-
 \begin{document}
 
 {
@@ -61,9 +59,9 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
   \item[(e)] What is the stable age distribution? (Graduate students only:
     Compute asymptotic $\lambda$ and the stable age distribution using
     the \texttt{eigen} function in {\tt R}.)
-  \item[(f)] What happens to the estimates of $\lambda$ if you change the
-    initial population sizes to: $n_{1,0}=75$, $n_{2,0}=1$, $n_{3,0}=1$,
-    $n_{4,0}=1$. Explain.
+  % \item[(f)] What happens to the estimates of $\lambda$ if you change the
+  %   initial population sizes to: $n_{1,0}=75$, $n_{2,0}=1$, $n_{3,0}=1$,
+  %   $n_{4,0}=1$. Explain.
 \end{itemize}
 
 
@@ -85,7 +83,7 @@ projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The n
 projection will have all 200 individuals in the next age class, and so
 on. For each projection, record the total population size after 50
 time steps. Reproductive value is calculated by dividing each
-projection's total population sizes at t=50 by the total population
+projection's total population size ($N_t$) at $t=50$ by the total population
 size from the first projection. (As a result, RV will always be 1 for
 the first age class when using this method).
 
