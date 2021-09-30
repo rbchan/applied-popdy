@@ -84,6 +84,14 @@ rnw2pdf("lecture-age-structure",tangle=TRUE)
 
 
 
+
+\begin{frame}
+  \frametitle{Human mortality risk}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/Mortality_by_age} \\
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Matrix models vs life tables}
   \begin{columns}
