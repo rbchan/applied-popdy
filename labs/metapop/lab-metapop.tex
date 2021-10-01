@@ -69,17 +69,19 @@
 {
   \Large
   \centering
-  Lab 7 Assignment --- Metapopulation Models \\
+  Lab 8 Assignment --- Metapopulation Models \\
   Due before Monday \\
 }
 
-Answer each of the following questions and upload your answers to ELC
-as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
+\vspace{6pt}
 
+Answer each of the following questions and upload your Excel file and
+R script to ELC. Be sure to show your calculations. Undergraduates
+only have to do Exercise I in R. \\
+% Name the 
+% file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
 
-
-\vspace{12pt}
+\vspace{6pt}
 
 \section*{Exercise I: Occupancy-based metapopulation models}
 
@@ -97,7 +99,7 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     best way to generate a Bernoulli random variable in Excel is to use
     the \texttt{IF} and \texttt{RAND} functions, not the Bernoulli
     random number generator. Your formula should look something like
-    \texttt{=IF(RAND()<CELL, 1, 0)} with \texttt{CELL} replaced by an
+    \texttt{=IF(RAND()<\textcolor{blue}{CELL}, 1, 0)} with \texttt{\textcolor{blue}{CELL}} replaced by an
     actual cell containing the expected occurrence probability
     ($\psi$). It will be much faster to drag these equations across
     cells for all years and sites, than it would be using the
@@ -138,7 +140,7 @@ of special concern -- the Magnificent Frigatebird.
 \vspace{-24pt}
 
 \subsection*{Part A}
-\vspace{-12pt}
+\vspace{-6pt}
 Historical (fake) data showed that 2 populations of frigatebirds were
 isolated for 40 years.
 
@@ -161,7 +163,7 @@ isolated for 40 years.
 \end{enumerate}
 
 \subsection*{Part B}
-\vspace{-12pt}
+\vspace{-6pt}
 After further research, you have discovered that the frigatebirds
 currently occupy a metapopulation consisting of 4 subpopulations
 (islands). Movement probabilities and starting population sizes of
@@ -238,17 +240,17 @@ Take a look at the binary occupancy data.
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    1    1    1    1    1    1    1    0     0
-##  [2,]    0    1    1    0    1    0    0    1    0     0
-##  [3,]    0    0    1    1    1    0    0    1    0     0
-##  [4,]    0    1    1    1    1    1    0    1    0     0
-##  [5,]    0    1    0    1    0    1    0    1    0     0
-##  [6,]    0    0    0    1    0    0    0    1    0     0
-##  [7,]    0    1    0    0    0    0    0    1    1     1
-##  [8,]    0    1    0    0    0    0    1    1    1     1
-##  [9,]    0    1    0    0    0    0    1    1    1     1
-## [10,]    0    0    0    0    0    0    1    1    0     1
-## [11,]    1    0    1    0    0    0    0    1    0     1
-## [12,]    0    0    0    0    0    0    0    1    0     0
+##  [2,]    1    0    1    1    1    1    1    1    0     0
+##  [3,]    1    1    0    0    0    1    1    1    0     0
+##  [4,]    0    0    1    0    0    1    0    1    0     0
+##  [5,]    0    0    0    0    0    1    1    1    0     0
+##  [6,]    0    0    1    0    0    1    0    0    0     0
+##  [7,]    0    0    0    0    0    0    0    0    0     0
+##  [8,]    1    0    0    0    0    0    0    0    0     0
+##  [9,]    1    0    0    0    0    0    0    0    1     0
+## [10,]    1    0    1    1    0    1    0    0    1     0
+## [11,]    1    0    1    1    0    1    0    0    1     0
+## [12,]    1    0    1    1    0    0    0    0    1     0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -261,7 +263,7 @@ Compute the number of sites occupied each year.
 \hlstd{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 4 4 6 4 2 4 5 5 3 4 1
+##  [1] 8 7 5 3 3 2 0 1 2 5 5 4
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -276,7 +278,7 @@ Compute the proportion of sites occupied (PrO) each year.
 \hlstd{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.4 0.4 0.6 0.4 0.2 0.4 0.5 0.5 0.3 0.4 0.1
+##  [1] 0.8 0.7 0.5 0.3 0.3 0.2 0.0 0.1 0.2 0.5 0.5 0.4
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -290,7 +292,6 @@ Graph it.
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/PrO-graph-1} 
-
 \end{knitrout}
 
 
@@ -395,7 +396,6 @@ Visualize changes in abundance over time.
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/Nmeta-plot-n-1} 
-
 \end{knitrout}
 
 \clearpage
@@ -413,7 +413,6 @@ Visualize changes in growth rates over time.
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/Nmeta-plot-lam-1} 
-
 \end{knitrout}
 
 

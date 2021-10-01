@@ -25,17 +25,19 @@ rnw2pdf("lab-metapop",tangle=TRUE)
 {
   \Large
   \centering
-  Lab 7 Assignment --- Metapopulation Models \\
+  Lab 8 Assignment --- Metapopulation Models \\
   Due before Monday \\
 }
 
-Answer each of the following questions and upload your answers to ELC
-as a single Excel file. Be sure to show your calculations. Name the
-file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
+\vspace{6pt}
 
+Answer each of the following questions and upload your Excel file and
+R script to ELC. Be sure to show your calculations. Undergraduates
+only have to do Exercise I in R. \\
+% Name the 
+% file something like: \texttt{Chandler\_Richard-lab7.xlsx}. \\
 
-
-\vspace{12pt}
+\vspace{6pt}
 
 \section*{Exercise I: Occupancy-based metapopulation models}
 
@@ -53,7 +55,7 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     best way to generate a Bernoulli random variable in Excel is to use
     the \texttt{IF} and \texttt{RAND} functions, not the Bernoulli
     random number generator. Your formula should look something like
-    \texttt{=IF(RAND()<CELL, 1, 0)} with \texttt{CELL} replaced by an
+    \texttt{=IF(RAND()<\textcolor{blue}{CELL}, 1, 0)} with \texttt{\textcolor{blue}{CELL}} replaced by an
     actual cell containing the expected occurrence probability
     ($\psi$). It will be much faster to drag these equations across
     cells for all years and sites, than it would be using the
@@ -94,7 +96,7 @@ of special concern -- the Magnificent Frigatebird.
 \vspace{-24pt}
 
 \subsection*{Part A}
-\vspace{-12pt}
+\vspace{-6pt}
 Historical (fake) data showed that 2 populations of frigatebirds were
 isolated for 40 years.
 
@@ -117,7 +119,7 @@ isolated for 40 years.
 \end{enumerate}
 
 \subsection*{Part B}
-\vspace{-12pt}
+\vspace{-6pt}
 After further research, you have discovered that the frigatebirds
 currently occupy a metapopulation consisting of 4 subpopulations
 (islands). Movement probabilities and starting population sizes of
