@@ -115,9 +115,9 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     on the y-axis, and time on the x-axis.
   \item[(c)] According to this model, is it possible for this
     metapopulation to go permanently extinct? Why or why not?
-  \item[(d)] Repeat the simulation several times by double-clicking in
-    an empty cell or hitting F9. Why does the metapopulation appear to
-    converge to a stochastic equilibrium?
+  % \item[(d)] Repeat the simulation several times by double-clicking in
+  %   an empty cell or hitting F9. Why does the metapopulation appear to
+  %   converge to a stochastic equilibrium?
 \end{enumerate}
 
 
@@ -240,17 +240,17 @@ Take a look at the binary occupancy data.
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    1    1    1    1    1    1    1    0     0
-##  [2,]    1    1    1    1    1    0    1    1    1     0
-##  [3,]    0    1    1    0    1    0    0    0    0     0
-##  [4,]    0    1    1    0    1    0    0    0    0     0
-##  [5,]    0    1    1    0    1    1    0    0    0     0
-##  [6,]    0    1    1    0    1    1    0    0    0     0
-##  [7,]    0    1    1    0    1    1    0    1    0     0
-##  [8,]    0    1    0    0    1    1    0    1    0     1
-##  [9,]    0    1    0    0    1    0    0    0    0     1
-## [10,]    0    1    0    0    1    0    0    0    0     1
-## [11,]    0    1    0    1    1    1    1    1    0     1
-## [12,]    0    1    0    1    1    0    1    0    0     0
+##  [2,]    0    1    1    1    0    1    1    0    0     0
+##  [3,]    0    0    1    1    1    1    1    0    0     0
+##  [4,]    0    0    1    1    1    1    1    1    0     1
+##  [5,]    0    0    1    1    0    1    1    1    0     1
+##  [6,]    0    0    1    1    0    1    1    0    0     1
+##  [7,]    1    0    1    1    0    1    1    0    0     1
+##  [8,]    0    0    1    1    0    1    0    0    0     1
+##  [9,]    0    1    0    1    0    1    0    0    0     0
+## [10,]    0    1    0    1    0    0    0    1    0     0
+## [11,]    0    1    0    1    0    0    0    0    1     0
+## [12,]    1    1    0    0    0    0    0    1    1     0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -263,7 +263,7 @@ Compute the number of sites occupied each year.
 \hlstd{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 8 3 3 4 4 5 5 3 3 7 4
+##  [1] 8 5 5 7 6 5 6 4 3 3 3 4
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -278,7 +278,7 @@ Compute the proportion of sites occupied (PrO) each year.
 \hlstd{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.8 0.3 0.3 0.4 0.4 0.5 0.5 0.3 0.3 0.7 0.4
+##  [1] 0.8 0.5 0.5 0.7 0.6 0.5 0.6 0.4 0.3 0.3 0.3 0.4
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
