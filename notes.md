@@ -3,6 +3,10 @@
 
 ## For 2022
 
+- Shiny Apps for:
+  * Metapop lecture
+  * Geo/logistic growth
+  * Others
 
 - Improve BIDE to Geo derivation slides
 
