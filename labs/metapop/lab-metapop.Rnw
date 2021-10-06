@@ -71,9 +71,9 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     on the y-axis, and time on the x-axis.
   \item[(c)] According to this model, is it possible for this
     metapopulation to go permanently extinct? Why or why not?
-  \item[(d)] Repeat the simulation several times by double-clicking in
-    an empty cell or hitting F9. Why does the metapopulation appear to
-    converge to a stochastic equilibrium?
+  % \item[(d)] Repeat the simulation several times by double-clicking in
+  %   an empty cell or hitting F9. Why does the metapopulation appear to
+  %   converge to a stochastic equilibrium?
 \end{enumerate}
 
 
@@ -95,8 +95,8 @@ of special concern -- the Magnificent Frigatebird.
 
 \vspace{-24pt}
 
-\subsection*{Part A}
-\vspace{-6pt}
+% \subsection*{Part A}
+% \vspace{-6pt}
 Historical (fake) data showed that 2 populations of frigatebirds were
 isolated for 40 years.
 
@@ -118,23 +118,23 @@ isolated for 40 years.
     dispersal if your goal was to sustain frigatebirds.
 \end{enumerate}
 
-\subsection*{Part B}
-\vspace{-6pt}
-After further research, you have discovered that the frigatebirds
-currently occupy a metapopulation consisting of 4 subpopulations
-(islands). Movement probabilities and starting population sizes of
-subpopulations are given for you in Excel.
+% \subsection*{Part B}
+% \vspace{-6pt}
+% After further research, you have discovered that the frigatebirds
+% currently occupy a metapopulation consisting of 4 subpopulations
+% (islands). Movement probabilities and starting population sizes of
+% subpopulations are given for you in Excel.
 
-\begin{enumerate}
-  \item[(a)] Using the abundance-based metapopulation model, project
-    the metapopulation forward 50 years. (Be especially careful about
-    locking cells and using the movement rates in the appropriate
-    places in the model).
-  \item[(b)] Create two graphs depicting population sizes ($n_{i,t}$)
-    and growth rates ($\lambda_{i,t}$) over time.
-  \item[(c)] Is this metapopulation viable or is it likely to go
-    extinct? Explain.
-\end{enumerate}
+% \begin{enumerate}
+%   \item[(a)] Using the abundance-based metapopulation model, project
+%     the metapopulation forward 50 years. (Be especially careful about
+%     locking cells and using the movement rates in the appropriate
+%     places in the model).
+%   \item[(b)] Create two graphs depicting population sizes ($n_{i,t}$)
+%     and growth rates ($\lambda_{i,t}$) over time.
+%   \item[(c)] Is this metapopulation viable or is it likely to go
+%     extinct? Explain.
+% \end{enumerate}
 
 
 
