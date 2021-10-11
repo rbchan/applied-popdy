@@ -6,7 +6,7 @@ function(input, output, session) {
                       0, input$s2, input$s3),
                     nrow=3, byrow=TRUE)
         eA <- eigen(A)
-        lambda <- eA$values[1]
+        lambda <- Re(eA$values[1])
         ageDist <- Re(eA$vectors[,1])
         ageDist <- ageDist/sum(ageDist)
         reproValue <- Re(eigen(t(A))$vectors[,1])
@@ -24,16 +24,18 @@ function(input, output, session) {
     }, colnames=FALSE)
     
     output$lambda <- renderTable({
-        lambda <- projMat()$lambda
-        names(lambda) <- lambda
+        lambda <- rbind("Growth rate (lambda)" = projMat()$lambda)
+        colnames(lambda) <- "Growth rate (lambda)"
         return(lambda)
-    }, colnames=FALSE)
+    }, rownames=TRUE, colnames=FALSE)
 
-    output$ageDist <- renderTable({
-        ageDist <- t(projMat()$ageDist)
-        colnames(ageDist) <- c("Fawns", "Yearlings", "Adults")
-        return(ageDist)
-    }, colnames=TRUE)
+    output$ageRepro <- renderTable({
+        eA <- projMat()
+        ageRepro <- rbind("Age distribution" = eA$ageDist,
+                          "Reproductive value" = eA$reproValue)
+        colnames(ageRepro) <- c("Fawns", "Yearlings", "Adults")
+        return(ageRepro)
+    }, rownames=TRUE, colnames=TRUE)
     
     
 }
