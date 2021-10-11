@@ -204,7 +204,7 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 %    \text{Sensitivity of}\; \lambda \; \text{to parameter}\; x \;= \frac{\Delta \lambda}{\Delta x}
     \text{sensitivity} = \frac{\Delta \lambda}{\Delta \theta}
   \]
-  as $\lim\limits_{\Delta \to 0}$. 
+  as $\lim\limits_{\Delta \theta \to 0}$. 
   \pause
   \vfill
   {\bf Sensitivities allow us to make statements such as:} \\
@@ -243,7 +243,7 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
   \frametitle{Elasticity}
   A problem with sensitivities is that it is hard to compare values
   for parameters on different scales, such as survival and
-  fecundity. For this reason, it is usually better to report
+  fecundity. For this reason, it can be better to report
   ``elasticities'' instead. \\
   \pause
   \vfill
@@ -336,7 +336,7 @@ e  ## Elasticities
   \frametitle{Problems with PVA}
   \large
   Most PVA's are {\it ``essentially games played with
-    guesses.''} (Caughley, G. 1994. Conservation Biology) \par
+    guesses.''} (Caughley, G. 1994. Conservation Biology). \par
   \pause
   \vspace{0.5cm}
   Many PVA's don't include multiple models corresponding to different
