@@ -5,15 +5,11 @@
 \usepackage[sans]{../pres1}
 
 
-
-
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lecture-sampling")
 rnw2pdf("lecture-sampling",tangle=TRUE)
 @
-
-
 
 
 \begin{document}
