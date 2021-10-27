@@ -127,7 +127,7 @@ occData <- exampleData[,c("season1visit1", "season1visit2",
                           "season2visit1", "season2visit2")]
 ## Next, extract the column with the site covariate.
 ## It must be formatted as a data.frame
-habIndex <- exampleData[,c("habitatIndex"),drop=FALSE]
+habIndex <- exampleData[,"habitatIndex",drop=FALSE]
 ## Finally, put the pieces together
 umf <- unmarkedFrameOccu(y=occData, siteCovs=habIndex)
 @
@@ -235,11 +235,6 @@ lines(upper ~ habitatIndex, data=predOcc, lty=2)
 
 
 
-
-
-
-
-
 \subsection*{Example: Fitting multi-season occupancy models}
 
 
@@ -251,7 +246,7 @@ using the \texttt{numPrimary} argument.
 
 
 <<unmarkedFrameMS>>=
-umfMS <- unmarkedMultFrame(y=occData, siteCovs=habIndex, numPrimary=2)
+umfMS <- unmarkedMultFrame(y=occData, numPrimary=2)
 @
 
 Let's take a look.
@@ -317,8 +312,8 @@ Import the file {\tt quail-data-for-R.csv}.
     predictor variable (covariate) for {\bf both} occupancy and detection
     probability. 
   \item[(c)] Is this model better than the first, based on AIC? The
-    lower the AIC the better the model.\footnote{$\mathrm{AIC} =
-      -2*\mathrm{log(likelihood)} + 2*\mathrm{nParameters}$. AIC
+    lower the AIC, the better the model.\footnote{$\mathrm{AIC} =
+      -2\times \mathrm{log(likelihood)} + 2\times \mathrm{nParameters}$. AIC
       favors models that explain a lot of variation in the data using
       a small number of parameters.}  
   \item[(d)] Use the occupancy estimates (on the logit scale) to

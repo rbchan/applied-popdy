@@ -136,7 +136,7 @@ where the working directory is, do this:
 \hlkwd{getwd}\hlstd{()}
 \end{alltt}
 \begin{verbatim}
-## [1] "C:/Users/rbchan/courses/applied-popdy/labs/occupancy-modeling"
+## [1] "/home/rchandler/courses/applied-popdy/labs/occupancy-modeling"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -217,7 +217,7 @@ each site.
                           \hlstr{"season2visit1"}\hlstd{,} \hlstr{"season2visit2"}\hlstd{)]}
 \hlcom{## Next, extract the column with the site covariate.}
 \hlcom{## It must be formatted as a data.frame}
-\hlstd{habIndex} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"habitatIndex"}\hlstd{),}\hlkwc{drop}\hlstd{=}\hlnum{FALSE}\hlstd{]}
+\hlstd{habIndex} \hlkwb{<-} \hlstd{exampleData[,}\hlstr{"habitatIndex"}\hlstd{,}\hlkwc{drop}\hlstd{=}\hlnum{FALSE}\hlstd{]}
 \hlcom{## Finally, put the pieces together}
 \hlstd{umf} \hlkwb{<-} \hlkwd{unmarkedFrameOccu}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{siteCovs}\hlstd{=habIndex)}
 \end{alltt}
@@ -460,11 +460,6 @@ Here's how to visualize the predictions with the confidence intervals:
 
 
 
-
-
-
-
-
 \subsection*{Example: Fitting multi-season occupancy models}
 
 
@@ -478,7 +473,7 @@ using the \texttt{numPrimary} argument.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{umfMS} \hlkwb{<-} \hlkwd{unmarkedMultFrame}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{siteCovs}\hlstd{=habIndex,} \hlkwc{numPrimary}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlstd{umfMS} \hlkwb{<-} \hlkwd{unmarkedMultFrame}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{numPrimary}\hlstd{=}\hlnum{2}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -502,16 +497,7 @@ Let's take a look.
 ## 
 ## Tabulation of y observations:
 ##   0   1 
-## 109  51 
-## 
-## Site-level covariates:
-##   habitatIndex  
-##  Min.   :1.040  
-##  1st Qu.:1.885  
-##  Median :2.805  
-##  Mean   :2.912  
-##  3rd Qu.:3.835  
-##  Max.   :4.740
+## 109  51
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -651,8 +637,8 @@ Import the file {\tt quail-data-for-R.csv}.
     predictor variable (covariate) for {\bf both} occupancy and detection
     probability. 
   \item[(c)] Is this model better than the first, based on AIC? The
-    lower the AIC the better the model.\footnote{$\mathrm{AIC} =
-      -2*\mathrm{log(likelihood)} + 2*\mathrm{nParameters}$. AIC
+    lower the AIC, the better the model.\footnote{$\mathrm{AIC} =
+      -2\times \mathrm{log(likelihood)} + 2\times \mathrm{nParameters}$. AIC
       favors models that explain a lot of variation in the data using
       a small number of parameters.}  
   \item[(d)] Use the occupancy estimates (on the logit scale) to
