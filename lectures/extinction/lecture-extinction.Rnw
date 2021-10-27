@@ -72,42 +72,32 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
 
 
 
-
+\begin{comment}
 \begin{frame}
   \frametitle{}
-
 BBC series -- Extinction: The Facts
-  
 % {https://www.bbc.co.uk/programmes/p08rg347} % overview
-
   \url{
     https://www.bbc.co.uk/programmes/p08qy8lr % brief overview
   }
-  
   \url{
     https://www.bbc.co.uk/programmes/p08qym98 % vortex
   }
-
   \url{
     https://www.bbc.co.uk/programmes/p08qy8lz % last white rhino
   }
-
   \url{
     https://www.bbc.co.uk/programmes/p08qym6s % giraffe
   }
-
 Hawaii
-
   \url{
     https://vimeo.com/42592260 % 
   }
-
   \url{
     https://youtu.be/J0UlrJeW8n8 % Hawaii birds
   }
-  
 \end{frame}
-
+\end{comment}
 
 
 % \begin{frame}
