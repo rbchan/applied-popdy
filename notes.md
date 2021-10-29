@@ -3,6 +3,14 @@
 
 ## For 2022
 
+- Guest speakers
+  * Dave Shindle
+  * Kirk Olson
+  * Elina Garrison
+  * Sarah Converse
+  * Jose Jimenez
+  * Ullas Karanth
+
 - Shiny Apps for:
   * Metapop lecture
   * Geo/logistic growth

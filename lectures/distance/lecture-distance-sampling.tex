@@ -202,46 +202,6 @@
 
 
 
-% \begin{frame}
-%   \frametitle{Conventional Distance Sampling}
-%   \begin{block}{\bf Same as it ever was---almost}
-%     \begin{itemize}%[<+->]
-%       \item<1-> {\Large $E[C] = Np$ } % $N = \frac{C}{p}$}
-% %      \item<2-> Except, $p_c$ and $p_a$ are assumed to be known
-% %      \item<2-> $p_c = a/A$ and $p_a = 1$
-%       \item<2-> But, detection probability ($p$) is a function of distance
-%       \item<3-> So, $p$ is \alert{average} detection probability
-%     \end{itemize}
-%     \uncover<4>{
-%     \Large
-% %    \begin{columns}
-% %      \begin{column}{2cm}
-%         \begin{equation*}
-%           \hat{N} = \frac{C}{\color{Red} \hat{p}}
-%           \label{eq:dsN1}
-%         \end{equation*}
-% %      \end{column}
-%       % \pause
-% %      \begin{column}{2cm}
-% %        \begin{equation*}
-% %          \hat{N_s} = \frac{C}{\color{Red} \hat{p_d}}
-% %          \label{eq:dsN1}
-% %        \end{equation*}
-% %      \end{column}
-% %    \end{columns}
-%     }
-%   \end{block}
-% \end{frame}
-
-
-
-
-
-
-
-
-
-
 \section{Line transects}
 
 
@@ -305,18 +265,22 @@
 
 \begin{frame}
   \frametitle{Estimating $\bar{p}$, average detection probability}
-  \large
+  %\large
   \begin{itemize}
+    \normalsize
     \item<1-> Fit a detection function, $\mathrm{g}(x)$, to the data
       \begin{itemize}
         \item Assume $\mathrm{g}(0) = 1$
-        \item Half-normal, hazard-rate, negative exponential, etc...
+%        \item Half-normal, hazard-rate, negative exponential, etc...
 %  is a good one, $\mathrm{g}(x) = \exp(-x^2/(2\sigma^2))$
       \end{itemize}
     \item<2-> Assume individuals are ``uniformly'' distributed with
-      respect to the transect (valid under random sampling)
-    \item<3-> $\bar{p}$ is then the proportion of the area under the
-      detection function.
+      respect to the transect (valid under random sampling): $p(x) =
+      1/B$ where $B$ is the transect half-width.
+    \item<3-> $\bar{p}$ is then the
+%      proportion of the area under the detection function.
+      average detection function, weighted by $p(x)$. $$\bar{p} =
+      \int_0^B g(x)p(x) \mathrm{d} x$$.  
     \end{itemize}
     \includegraphics<1->[width=\textwidth]{figs/detfuns}
 \end{frame}
