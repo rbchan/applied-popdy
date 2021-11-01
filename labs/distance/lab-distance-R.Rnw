@@ -32,7 +32,7 @@ knit_theme$set('edit-kwrite')
 {
   \Large
   \centering
-  {\bf Lab 9 Assignment --- Distance Sampling \\ }
+  {\bf Lab 11 Assignment --- Distance Sampling \\ }
   Due before Monday \\
 }
 

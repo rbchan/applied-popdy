@@ -174,6 +174,9 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Real design}
+  \centering
+  Mongolian gazelle \\
+  {\it Procapra gutturosa} \\
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \includegraphics[width=\textwidth]{figs/Kirk}
@@ -272,14 +275,25 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 % \end{frame}
 
 
-
-
 \begin{frame}
-  \frametitle{Computing $\bar{p}$, average detection probability}
-\begin{center}
-  \includegraphics[width=7cm]{figs/detfun0-3}
-\end{center}
+  \frametitle{Shiny App}
+  % \large
+  \color{blue}
+  \centering
+  \url{
+    https://richard-chandler.shinyapps.io/distance-sampling/
+  } \\
 \end{frame}
+
+
+
+
+% \begin{frame}
+%   \frametitle{Computing $\bar{p}$, average detection probability}
+% \begin{center}
+%   \includegraphics[width=7cm]{figs/detfun0-3}
+% \end{center}
+% \end{frame}
 
 
 
