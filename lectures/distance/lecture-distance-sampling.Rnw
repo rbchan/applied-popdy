@@ -175,8 +175,10 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 \begin{frame}
   \frametitle{Real design}
   \centering
+  \large
   Mongolian gazelle \\
   {\it Procapra gutturosa} \\
+  \vfill
   \begin{columns}
     \begin{column}{0.6\textwidth}
       \includegraphics[width=\textwidth]{figs/Kirk}
@@ -248,52 +250,40 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 
 
 
-% \begin{frame}
-%   \frametitle{Computing $\bar{p}$, average detection probability}
-% \begin{center}
-%   \includegraphics[width=7cm]{figs/detfun0-0}
-% \end{center}
-% \end{frame}
+\begin{frame}
+  \frametitle{Computing $\bar{p}$, average detection probability}
+\begin{center}
+  \includegraphics[width=7cm]{figs/detfun0-0}
+\end{center}
+\end{frame}
 
-
-
-% \begin{frame}
-%   \frametitle{Computing $\bar{p}$, average detection probability}
-% \begin{center}
-%   \includegraphics[width=7cm]{figs/detfun0-1}
-% \end{center}
-% \end{frame}
-
-
-
-
-% \begin{frame}
-%   \frametitle{Computing $\bar{p}$, average detection probability}
-% \begin{center}
-%   \includegraphics[width=7cm]{figs/detfun0-2}
-% \end{center}
-% \end{frame}
 
 
 \begin{frame}
-  \frametitle{Shiny App}
-  % \large
-  \color{blue}
-  \centering
-  \url{
-    https://richard-chandler.shinyapps.io/distance-sampling/
-  } \\
+  \frametitle{Computing $\bar{p}$, average detection probability}
+\begin{center}
+  \includegraphics[width=7cm]{figs/detfun0-1}
+\end{center}
 \end{frame}
 
 
 
 
-% \begin{frame}
-%   \frametitle{Computing $\bar{p}$, average detection probability}
-% \begin{center}
-%   \includegraphics[width=7cm]{figs/detfun0-3}
-% \end{center}
-% \end{frame}
+\begin{frame}
+  \frametitle{Computing $\bar{p}$, average detection probability}
+\begin{center}
+  \includegraphics[width=7cm]{figs/detfun0-2}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Computing $\bar{p}$, average detection probability}
+\begin{center}
+  \includegraphics[width=7cm]{figs/detfun0-3}
+\end{center}
+\end{frame}
 
 
 
@@ -334,6 +324,19 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 \end{center}
 \end{frame}
 
+
+
+
+
+\begin{frame}
+  \frametitle{Shiny App}
+  % \large
+  \color{blue}
+  \centering
+  \url{
+    https://richard-chandler.shinyapps.io/distance-sampling/
+  } \\
+\end{frame}
 
 
 
@@ -465,15 +468,15 @@ rnw2pdf("lecture-distance-sampling",tangle=TRUE)
 %      \begin{block}
   \large
   {We still use the same type of detection function (half-normal,
-    hazard, etc.) \par}
+    hazard, etc\dots). \\}
   \pause
   \vfill %\vspace{0.3cm}
   {We don't expect a ``flat'' histogram of distances when
-    $\bar{p}=1$. Why? \par}
+    $\bar{p}=1$. Why? \\}
   \pause
   \vfill %\vspace{0.3cm}
-  {Because there is a slim chance of an individual being
-    close to point} \par
+  {More individuals occur far from the observer than close to the
+    observer because area increases with distance. } \\
 %  \begin{itemize}
 %    \item $\mathrm{g}(x)$ is the same (half-normal, hazard, etc...)
 %    \item But individuals are not

@@ -9,6 +9,7 @@
   * Elina Garrison
   * Sarah Converse
   * Jose Jimenez
+  * Krithi Karanth
   * Ullas Karanth
 
 - Shiny Apps for:
