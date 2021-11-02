@@ -17,7 +17,6 @@ rnw2pdf("lab-distance-R",tangle=TRUE)
 
 <<knitr-theme,include=FALSE,purl=FALSE>>=
 knit_theme$set('edit-kwrite')
-
 @
 
 %% New command for inline code, not to be evaluated 
@@ -47,7 +46,7 @@ in groups (ie, herds), and the distance data are distances to group
 centers. 
 
 Put {\bf your code and your answers} in a Word file and upload it to
-ELC. Name the file something like ``Chandler-lab9.docx''. 
+ELC. Name the file something like ``Chandler-lab11.docx''. 
 
 
 
@@ -81,8 +80,8 @@ ELC. Name the file something like ``Chandler-lab9.docx''.
     herd abundance and density.
   \item Create a figure with the two graphs of the detection functions
     side-by-side.
-%  \item Write a short paragraph summarizing your results. Indicate
-%    which model was better according to AIC, and explain why 
+% \item Which model was better according to AIC (ie, which model had
+%   the lowest AIC)? Why 
 \end{enumerate}
 
 
@@ -92,7 +91,7 @@ ELC. Name the file something like ``Chandler-lab9.docx''.
 
 
 
-\section*{R package `Distance'}
+\section*{R package `Distance' -- Example analysis}
 
 Open R (or RStudio) and install the package using the following
 command:

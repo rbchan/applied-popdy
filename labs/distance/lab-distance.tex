@@ -50,7 +50,6 @@
 
 \usepackage{alltt}
 
-
 %\usepackage[sans]{../pres1}
 
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
@@ -60,10 +59,13 @@
 
 
 
-%% knitr stuff
+% knitr stuff
+
+
 
 
 %% New command for inline code that isn't to be evaluated
+
 \definecolor{inlinecolor}{rgb}{0.878, 0.918, 0.933}         % edit-kwrite
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -73,7 +75,7 @@
   \Large
   \centering
   {\bf Lab 9 Assignment --- Distance Sampling} \\
-  Due before your next lab \par
+  Due before your next lab \\
 }
 
 \vspace{10pt}
@@ -84,7 +86,7 @@
 The purpose of this lab is to learn how to use program DISTANCE or the
 R package `Distance' to estimate abundance and density. You will
 do this by analyzing fake data on Mongolian gazelle ({\it Procapra
-  gutturosa}). The data are fake, but they are based loosely on the
+gutturosa}). The data are fake, but they are based loosely on the  
 study that we discussed in lecture. Note that gazelles were detected
 in groups (ie, herds), and the distance data are distances to group
 centers. 
@@ -93,9 +95,6 @@ Put your answers in a Word file and upload it to ELC. Name the file
 something like ``Chandler-lab9.docx''. Due before your next lab.  
 
 
-
-
-%\clearpage
 
 \section*{Program DISTANCE}
 
@@ -107,7 +106,6 @@ something like ``Chandler-lab9.docx''. Due before your next lab.
 \item Open DISTANCE and create a new project by clicking
   \verb+File > New Project ...+. Name the project something like
   ``Gazelle.dst''  
-    
   \item Use the ``New Project Setup Wizard'' and select the
     following options: 
   \begin{enumerate}
@@ -119,7 +117,6 @@ something like ``Chandler-lab9.docx''. Due before your next lab.
     \item Do not add any multipliers
     \item \textcolor{red}{Proceed to Data Import Wizard}
   \end{enumerate}
-
 
   \item Import Data Wizard
   \begin{enumerate}
@@ -251,11 +248,11 @@ can load the package like so:
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: mrds}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# This is mrds 2.2.3\\\#\# Built: R 4.0.3; ; 2020-10-17 13:10:23 UTC; unix}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# This is mrds 2.2.5\\\#\# Built: R 4.1.0; ; 2021-10-31 14:39:18 UTC; unix}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'Distance'}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:mrds':\\\#\# \\\#\#\ \ \ \  create.bins}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:mrds':\\\#\# \\\#\# \ \ \ \ create.bins}}\end{kframe}
 \end{knitrout}
 
 Before we can do any analysis, we need to import the Mongolian gazelle
@@ -274,8 +271,11 @@ working directory.
 \hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'GazelleFakeData.txt' here}
 \end{alltt}
 \begin{verbatim}
-## [1] "auto"                "figs"                "GazelleFakeData.txt"
-## [4] "lab-distance.pdf"    "lab-distance.Rnw"    "lab-distance.tex"
+##  [1] "auto"                "ExampleData.txt"     "figs"               
+##  [4] "figure"              "GazelleFakeData.txt" "lab-distance-R.aux" 
+##  [7] "lab-distance-R.log"  "lab-distance-R.pdf"  "lab-distance-R.Rnw" 
+## [10] "lab-distance-R.tex"  "lab-distance.pdf"    "lab-distance.Rnw"   
+## [13] "lab-distance.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -311,9 +311,8 @@ The structure of the data can be assessed like this:
 \hlkwd{str}\hlstd{(gazelleData)}
 \end{alltt}
 \begin{verbatim}
-## 'data.frame':	118 obs. of  6 variables:
+## 'data.frame':	118 obs. of  5 variables:
 ##  $ Transect      : int  1 1 1 1 1 1 1 1 1 2 ...
-##  $ GroupID       : int  1 2 3 4 5 6 7 8 9 1 ...
 ##  $ Distance      : int  23 23 17 40 87 77 50 62 3 33 ...
 ##  $ GroupSize     : int  2977 2908 2899 2994 2998 3087 2992 3057 2928 3030 ...
 ##  $ TransectLength: int  100 100 100 100 100 100 100 100 100 100 ...
