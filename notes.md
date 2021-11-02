@@ -11,6 +11,11 @@
   * Jose Jimenez
   * Krithi Karanth
   * Ullas Karanth
+  * Julien Martin
+  * Jesse Whittington
+  * Abby Sterling
+
+
 
 - Shiny Apps for:
   * Metapop lecture
