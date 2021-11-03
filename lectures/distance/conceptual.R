@@ -433,28 +433,28 @@ system("open ../figs/detfun0-3.png")
 
 
 
-png("../figs/detfun1.png", width=7, height=7, units="in", res=400)
+png("figs/detfun1.png", width=7, height=7, units="in", res=400)
 par(mai=c(0.9, 0.9, 0.8, 0.2))
 curve(g, 0, 50, ylim=c(0, 1),
       xlab="Distance (x)",
       ylab="Detection probability",
-      main=expression(g(x) == exp(-x^2/sigma^2)),
+      main=expression(g(x) == exp(-x^2/(2*sigma^2))),
       cex.lab=1.8, cex.main=1.8, lwd=2)
 abline(h=0, col=gray(0.9))
 text(30, 0.6, expression(sigma == 25), cex=1.8)
 dev.off()
-system("open ../figs/detfun1.png")
+system("open figs/detfun1.png")
 
 
 
 
 
-png("../figs/detfun2.png", width=7, height=7, units="in", res=400)
+png("figs/detfun2.png", width=7, height=7, units="in", res=400)
 par(mai=c(0.9, 0.9, 0.8, 0.2))
 curve(g, 0, 50, ylim=c(0, 1),
       xlab="Distance (x)",
       ylab="Detection probability",
-      main=expression(g(x) == exp(-x^2/sigma^2)),
+      main=expression(g(x) == exp(-x^2/(2*sigma^2))),
       cex.lab=1.8, cex.main=1.8, lwd=2)
 text(30, 0.6, expression(sigma == 25), cex=1.8)
 curve(g(x, 10), lwd=2, add=TRUE, col="blue")
@@ -463,7 +463,7 @@ curve(g(x, 50), lwd=2, add=TRUE, col="purple")
 text(40, 0.8, expression(sigma == 50), cex=1.8, col="purple")
 abline(h=0, col=gray(0.9))
 dev.off()
-system("open ../figs/detfun2.png")
+system("open figs/detfun2.png")
 
 
 
