@@ -33,7 +33,7 @@ rnw2pdf("lab-occupancy-R",tangle=TRUE)
 
 Answer each of the following questions, and submit your answers by 
 uploading a single \textcolor{red}{WORD} file to ELC. Unlike previous labs,
-copy and paste results from R to the WORD file. You should
+copy and paste code and results from R to the WORD file. You should
 also copy and paste entire screenshots to show the relevant output. Name  
 the file something like \texttt{Chandler-lab.docx}.  
 

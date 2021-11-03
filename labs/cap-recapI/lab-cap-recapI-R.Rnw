@@ -32,7 +32,7 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 10 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  {\bf Lab 12 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
   Due before Monday \\
 }
 
@@ -48,7 +48,7 @@ populations later.
 
 Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
-``Chandler-lab10.docx''.  
+``Chandler-lab11.docx''.  
 
 \vspace{-6pt}
 
