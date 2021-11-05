@@ -24,9 +24,7 @@ knit_theme$set("edit-kwrite")
 @
 
 
-
 \begin{document}
-
 
 
 {
@@ -48,7 +46,7 @@ populations later.
 
 Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
-``Chandler-lab11.docx''.  
+``Chandler-lab12.docx''.  
 
 \vspace{-6pt}
 
@@ -62,9 +60,9 @@ Word file, and then upload it to ELC. Name the file something like
     and capture 50 individuals, 25 of which were marked on the first
     occasion. What is the Lincoln-Peterson estimate of abundance ($N$)?
     Do the calculations in R and show your work.
-  \item Come up with your own Lincoln-Peterson example like the one
-    above, and estimate abundance for a species of your choosing.
-    Show your work.
+  % \item Come up with your own Lincoln-Peterson example like the one
+  %   above, and estimate abundance for a species of your choosing.
+  %   Show your work.
 \end{enumerate}
 
 
