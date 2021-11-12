@@ -59,7 +59,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
         \item Kaplan-Meier model
       \end{itemize}
     \item[]
-    \item<2-> \st{Age distribution data}
+    \item<2-> Age distribution data
       \begin{itemize}
         \item Often used but rarely valid
       \end{itemize}
@@ -188,21 +188,22 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 %      survival estimates will be biased low
   \end{itemize}
   \pause
+  \vfill
   {\large %\bf
-    Left censoring}
-  \begin{itemize}
-    \normalsize
-    \item Occurs when mortality is known to have occurred before some
-      point in time
-    \item Rarely an issue in telemetry studies
+    Left censoring and interval censoring are rarely a concern}
+  % \begin{itemize}
+  %   \normalsize
+  %   \item Occurs when mortality is known to have occurred before some
+  %     point in time
+  %   \item Rarely an issue in telemetry studies
 %    \item Also known as ``staggered entry''
 %    \item If left-censored animals are incorrectly thought to enter
 %      the study at $t=1$, survival estimates will be biased high
-  \end{itemize}
+  % \end{itemize}
   \pause
   \vfill
-  {\centering If either type of censoring occurs, 
-    Kaplan-Meier model is more appropriate than the binomial model \par}
+  {\centering If censoring occurs, 
+    the Kaplan-Meier estimator is more appropriate than the binomial model. \\}
 \end{frame}
 
 
@@ -238,7 +239,11 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 %    \Large
 %    Survivorship curve \\
 %    \includegraphics[width=0.6\textwidth]{figs/survivorship}
-    \includegraphics[width=0.75\textwidth]{deerSurv/deerSurvSex}
+    \includegraphics[width=0.70\textwidth]{deerSurv/deerSurvSex} \\
+    \color{blue} 
+    \url{
+      https://youtu.be/Mgp46izlfeo
+    }
   \end{center}
 \end{frame}
 
@@ -250,9 +255,10 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   \large
   {\bf Critical Assumption}: \\
   Censoring must be independent of survival \\
-%  \begin{itemize}
-%    \item Censoring must be independent of survival
-%  \end{itemize}
+ \begin{itemize}
+   \item It's fine if transmitters fail randomly
+   \item It's a problem if they fail because of mortality
+ \end{itemize}
   \pause
   \vfill
 %  {\bf }
@@ -263,7 +269,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 %  \large
   {\bf Consequence of violating this assumption}: \\
   If an animal dies, but you mistakenly right censor it because you
-  think its battery died, survival will be over-estimated  
+  think its battery died, survival will be over-estimated.  
 \end{frame}
 
 
