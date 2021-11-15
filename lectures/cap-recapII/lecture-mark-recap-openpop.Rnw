@@ -213,7 +213,8 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
     \item Fates are independent
   \end{itemize}
   \pause
-  \vspace{0.5cm}
+  % \vspace{0.5cm}
+  \vfill
   {\bf Extensions}
   \begin{itemize}
     \item Age-specific models
@@ -221,6 +222,15 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
     \item Time variables
     \item Habitat variables
   \end{itemize}
+  \vfill
+  \centering
+  \color{blue}
+  \url{
+    https://youtu.be/baQAjq0NyrM
+  } \\
+  \url{
+    https://youtu.be/J8lfqZ46OQ0 
+  } \\
 \end{frame}
 
 
@@ -465,7 +475,7 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
       & Day 1 & Day 2 & Day 3 & & Day 1 & Day 2 & Day 3 \\
       \hline
       Animal 1 & 0 & 0 & 1 & & 1 & 0 & 0 \\
-      Animal 2 & 0 & 0 & 0 & & 0 & 0 & 0 \\
+      Animal 2 & 1 & 0 & 1 & & 1 & 1 & 1 \\
       Animal 3 & 0 & 0 & 0 & & 1 & 0 & 0 \\
       Animal 4 & 1 & 1 & 1 & & 0 & 0 & 0 \\
       Animal 5 & 0 & 0 & 0 & & 1 & 1 & 0 \\

@@ -3,6 +3,10 @@
 
 ## For 2022
 
+
+- Go back to 'RMark' instead of 'mra'
+  * Should be possible to run on Mac
+
 - Guest speakers
   * Dave Shindle
   * Kirk Olson
@@ -14,7 +18,6 @@
   * Julien Martin
   * Jesse Whittington
   * Abby Sterling
-
 
 
 - Shiny Apps for:
