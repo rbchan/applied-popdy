@@ -338,7 +338,7 @@ round(N, digits=0)
 
 \clearpage
 
-Rather than type out the equation each year, we could compute
+An alternative to typing out the equation each year, we could compute
 abundance in years 2 through 9 in a ``for loop'':
 
 <<N-loop>>=
