@@ -130,7 +130,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
     Design}
   \begin{itemize}%[<+->]
     \normalsize
-    \item<1-> $n$ animals are randomly sampled from population of size $N$
+    \item<1-> $n$ animals are randomly sampled %from population of size $N$
     \item<2-> The fates of all $n$ are known at end of the study period
     \item<3-> $x$ of the $n$ animals survive
     \item<4-> The estimate of survival over the time interval is:
@@ -366,7 +366,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   individuals in the cohort. \\
   \pause
   \vspace{0.5cm}
-  Never use this type of ``reconstruction data'' as real data in a
+  Shouldn't use this type of ``reconstruction data'' as real data in a
   subsequent analysis.
 \end{frame}
 
