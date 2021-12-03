@@ -3,17 +3,24 @@
 
 ## For 2022
 
+- TA expectations
+  * They will gradually take over the labs as the semester progresses
+  * Three field labs
+  * Pick up vans
+  * Grading
+  * Attendance
 
-- Go back to 'RMark' instead of 'mra'
+- Go back to 'RMark' instead of 'mra' and 'marked'
   * Should be possible to run on Mac
 
 - Guest speakers
   * Dave Shindle
   * Kirk Olson
+    + Ask Kirk to show photos
   * Elina Garrison
   * Sarah Converse
   * Jose Jimenez
-  * Krithi Karanth
+  x Krithi Karanth
   * Ullas Karanth
   * Julien Martin
   * Jesse Whittington
