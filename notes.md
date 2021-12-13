@@ -3,6 +3,8 @@
 
 ## For 2022
 
+- Add a page of general questions to the final exam
+
 - TA expectations
   * They will gradually take over the labs as the semester progresses
   * Three field labs
@@ -20,7 +22,6 @@
   * Elina Garrison
   * Sarah Converse
   * Jose Jimenez
-  x Krithi Karanth
   * Ullas Karanth
   * Julien Martin
   * Jesse Whittington
