@@ -3,6 +3,8 @@
 
 ## For 2022
 
+- Use real datasets from Hastings and Krebs textbooks
+
 - Add a page of general questions to the final exam
 
 - TA expectations
@@ -26,6 +28,7 @@
   * Julien Martin
   * Jesse Whittington
   * Abby Sterling
+  * Arno Lyet
 
 
 - Shiny Apps for:
