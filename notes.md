@@ -3,9 +3,13 @@
 
 ## For 2022
 
+
 - Add score item for estimation to final project rubric
   * Grad students only
   * Provide examples
+
+- Use real datasets from Hastings and Krebs textbooks
+
 
 - Add a page of general questions to the final exam
 
@@ -30,6 +34,7 @@
   * Julien Martin
   * Jesse Whittington
   * Abby Sterling
+  * Arno Lyet
 
 
 - Shiny Apps for:
