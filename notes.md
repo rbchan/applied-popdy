@@ -3,6 +3,10 @@
 
 ## For 2022
 
+- Add score item for estimation to final project rubric
+  * Grad students only
+  * Provide examples
+
 - Add a page of general questions to the final exam
 
 - TA expectations
