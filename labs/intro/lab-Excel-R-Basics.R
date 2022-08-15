@@ -18,6 +18,11 @@ year <- 1950:1961 # A vector of integers
 year              # Type the name of an object to see its values
 
 
+## ----seq,size='scriptsize'----------------------------------------------------
+updown <- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))
+updown            # Two sequences, combined
+
+
 ## ----nYears,size='footnotesize'-----------------------------------------------
 nYears <- length(year)
 nYears

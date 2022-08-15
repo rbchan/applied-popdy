@@ -6,6 +6,7 @@
 %\usepackage{pdfpages}
 \usepackage{animate}
 \usepackage{pgfpages}
+\usepackage{xmpmulti}
 
 %\setbeameroption{notes on second screen}
 %\renewcommand*\sfdefault{lmss} % cmss, lmss (latin modern), phv (Helvetica) qhv, qag
@@ -76,8 +77,8 @@
     \item<2-> Design a study to collect the data necessary to estimate
       the demographic parameters of the model
     \item[]
-    \item<3-> Use software (e.g., {\tt PRESENCE}, {\tt DISTANCE}, {\tt
-        MARK}) to estimate parameters from field data
+    \item<3-> Use software (e.g., {\tt R}, %{\tt PRESENCE}, {\tt DISTANCE},
+      {\tt MARK}) to estimate parameters from field data
   \end{enumerate}
   \note{If you can do these three things well, you will do well as a
     wildlife ecologist}
@@ -188,45 +189,60 @@
 
 \begin{frame}
   \frametitle{Estimated extinction risk}
-  \begin{columns}
-    \begin{column}{0.6\textwidth}
-      \begin{itemize}%[<+->]
-      \item<1-> We estimated extinction probability to be 2\% by 2100
-      \item[]
-      \item<2-> What can be done about it?
+  % \begin{columns}
+  %   \begin{column}{0.6\textwidth}
+    %\begin{itemize}%[<+->]
+      % \item<1-> We estimated extinction probability to be 2\% by 2100
+      % \item[]
+      % \item<1->
+   Management options %What can be done about it?
         \begin{itemize}
-        \item<3-> Control predators
-        \item<4-> Increase hydroperiod in existing wetlands
-        \item<5-> Create new wetlands\dots
+          \item<1-> Control predators
+          \item<1-> Increase hydroperiod in existing wetlands
+          \item<1-> Create new wetlands\dots
 %        \item<6-> \dots but where?
         \end{itemize}
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-      \begin{center}
-%        \includegraphics[width=0.4\textwidth]{figs/extinction3}
-        \includegraphics[width=\textwidth]{figs/proj-ext-JAPPL}
-      \end{center}
-    \end{column}
-  \end{columns}
+        % \item<2->
+    \pause
+    \vfill
+    Extinction risk was predicted to be 4\% after 50
+    years. Restoring just 1 pond, reduced the risk to 2.5\%.  \\
+%    \end{itemize}
+    % \pause
+    % \vfill
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/lich-forecasts}
+%     \end{column}
+%     \begin{column}{0.4\textwidth}
+%       \begin{center}
+% %        \includegraphics[width=0.4\textwidth]{figs/extinction3}
+%         \includegraphics[width=\textwidth]{figs/proj-ext-JAPPL}
+%       \end{center}
+%     \end{column}
+%   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{Extinction risk}
-  \begin{center}
-    \includegraphics[width=\textwidth]{figs/lich-forecasts}
-  \end{center}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Extinction risk}
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{figs/lich-forecasts}
+%   \end{center}
+% \end{frame}
 
 
 
-\begin{frame}
+\begin{frame}{Embedded Animation}
   \frametitle{Colonization Probability Maps}
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{figs/colMap1-9nohill}
-  \end{center}
+  \centering
+%  \begin{center}
+%%     \includegraphics[width=0.7\textwidth]{figs/colMap1-9nohill} \\
+% \end{center}
+% \includegraphics[width=0.7\textwidth]{figs/colMap-animation2} \\
+%% \animategraphics[loop,width=0.7\textwidth]{2}{figs/colMap}{2004}{2012} \\
+  \transduration<0-8>{1}
+  \multiinclude[<+->][format=png,graphics={width=0.7\textwidth}]{figs/colMap} \\
 \end{frame}
 
 
@@ -289,6 +305,21 @@
 
 
 
+\begin{frame}
+  \frametitle{Abundance over time}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figs/deer-N-timeseries} \\
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Survival and predation rate}
+  \centering
+  \includegraphics[width=0.95\textwidth]{figs/deer-pred-time} \\
+\end{frame}
+
 
 
 \section{Assignment}
@@ -329,6 +360,26 @@
 
 
 
+\begin{frame}
+  \frametitle{Tips for success in this course}
+  \begin{enumerate}[<+->][(1)]
+    \large
+    \item Take notes on the handouts 
+      % \pause \vfill
+    \item[]
+    \item Review notes before each lecture 
+%    \pause \vfill
+    \item[]
+    \item Finish lab assignments during lab %\\
+%    \pause \vfill
+    \item[]
+    \item Ask questions %\\
+%    \pause \vfill
+    \item[]
+    \item Visit with me or the TAs during office hours %\\
+%    \pause \vfill
+  \end{enumerate}
+\end{frame}
 
 
 
