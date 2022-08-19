@@ -22,7 +22,8 @@ rnw2pdf("lab-logistic-growth")
 }
 
 Answer each of the following questions by completing the provided Excel 
-template and by replicating your work in R. Upload your Excel file and R script to 
+template and by replicating your work in R. Undergraduates should do
+Exercise 1 in R, but not Exercise 2. Upload your Excel file and R script to  
 ELC before Monday. Name the files with your last name followed by your first name. \\
 
 \vspace{12pt}
