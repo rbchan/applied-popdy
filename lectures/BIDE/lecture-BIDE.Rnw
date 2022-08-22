@@ -111,7 +111,7 @@ legend(1, 230, c("Population size (N)",
     \item Formalize and evaluate hypotheses
 %    \item Evaluate hypotheses while accounting for uncertainty
     \item Predict future outcomes
-    \item \dots all while accounting from uncertainty
+    \item \dots all while accounting for uncertainty
   \end{itemize}
 \end{frame}
 
@@ -121,19 +121,16 @@ legend(1, 230, c("Population size (N)",
 \begin{frame}
   \frametitle{Models and science}
   \large
-  {\bf But don't models require assumptions?}
+  {\it But don't models require assumptions?}
   \pause
   \vfill
-  Yes. %\pause So what?
-  \pause
-  \vfill
-  We have to simplify, so we have to make assumptions.
+  Yes. We have to simplify, so we have to make assumptions.
   \pause
   \vfill
   We do this all the time, for example when deciding how long it will take you to get to class. 
   \pause
   \vfill
-  \includegraphics[width=0.2\textwidth]{figs/Box}
+  \includegraphics[width=0.3\textwidth]{figs/box}
   ``All models are wrong, but some are useful.'' G.E.P. Box (1987)
 \end{frame}
 
@@ -142,7 +139,7 @@ legend(1, 230, c("Population size (N)",
 
 \begin{frame}
   \frametitle{Model validation}
-  \Large
+  \large
   {%\bf
     Putting the model to the test}
   \begin{itemize}[<+->]
@@ -246,7 +243,7 @@ legend(1, 230, c("Population size (N)",
 
 \begin{frame}
   \frametitle{Assignment}
-  \Large
+  \large
 %  \bf
   Read the first 3 pages of Chapter 3 in Conroy and Carroll \\
   \vfill
