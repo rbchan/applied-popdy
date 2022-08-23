@@ -23,8 +23,9 @@ rnw2pdf("lab-logistic-growth")
 
 Answer each of the following questions by completing the provided Excel 
 template and by replicating your work in R. Undergraduates should do
-Exercise 1 in R, but not Exercise 2. Upload your Excel file and R script to  
-ELC before Monday. Name the files with your last name followed by your first name. \\
+Exercise 1 in R, but not Exercise 2. Upload your Excel file and a
+single R script to ELC before Monday. Name the files with your last
+name followed by your first name. \\ 
 
 \vspace{12pt}
 
@@ -116,7 +117,7 @@ sheet ``Exercise 2b''.
 
 \begin{enumerate}
   \item Calculate the population growth rate (``lambda'':
-    $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 1999.
+    $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 2000.
   \item Using a starting values of 6 billion people in 1999, pick
     values of $r$ that make a geometric growth curve
     closely approximate the actual data. Use trial and error to find a
