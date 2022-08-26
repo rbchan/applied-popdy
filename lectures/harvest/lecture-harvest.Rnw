@@ -410,7 +410,7 @@ segments(K/2, 0, K/2, max(H), lty=2, lwd=2, col="purple")
 \begin{frame}
   \frametitle{Compensatory mortality}
   \large
-  {\bf Additive vs. compensatory mortality}
+  {Additive vs. compensatory mortality}
   \begin{itemize}[<+->]
     \item One possible mechanism giving rise to logistic growth is
       density-dependence in survival
@@ -526,7 +526,7 @@ plot(function(h) (1-h)*(0.8 - 0.005*(100 - 100*h)), 0, 1,
 \pause
 %\vfill
 \small
-{\bf Conclusion}: Because harvest mortality is compensatory, the
+{Conclusion}: Because harvest mortality is compensatory, the
 harvest rate ($h$) can be as high as 0.2 without negatively impacting
 overall survival.
 \end{frame}
@@ -541,7 +541,7 @@ overall survival.
 \begin{frame}
   \frametitle{Summary}
 %  \large
-  {\bf Key points}
+  {Key points}
   \begin{itemize}
     \item If growth is geometric, sustainable harvest occurs when $h=r$.
     \item If growth is logisitic, maximum sustainable yield occurs at $N=K/2$.

@@ -23,12 +23,13 @@ rnw2pdf("lab-harvest",tangle=TRUE)
   \Large
   \centering
   Lab 3 Assignment --- Harvest Models \\
-  Due before Tuesday \par
+  Due before Monday, Sept 5 \par
 }
 
 Answer each of the following questions and upload your completed Excel
 file and R script to ELC. Be sure to show your calculations. Undergraduates
-only need to do Exercise I in R.
+need to do all the exercises in Excel, but only Exercise I in
+R. Graduate students should do all exercises in both Excel and R.  
 
 \vspace{12pt}
 
@@ -99,9 +100,10 @@ and an initial population size of 100 individuals.
     harvest be zero in some years.
 \end{enumerate}
 
-%\vspace{12pt}
+\vspace{12pt}
 
-\newpage
+%\newpage
+%\vfill
 
 
 {\bf Exercise III \\}
