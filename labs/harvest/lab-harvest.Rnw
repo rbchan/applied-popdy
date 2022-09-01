@@ -95,7 +95,7 @@ and an initial population size of 100 individuals.
   \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
   \item What is the value of MSY in this case? %What is the harvest rate ($h$) at MSY?
   \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
-    forward again, but include harvest ($H_t$). Choose values of $H_t$ that
+    forward again, but include harvest ($H_t$) in the model. Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
     harvest be zero in some years.
 \end{enumerate}
@@ -166,12 +166,12 @@ for(t in 2:nYears) {
 
 Here's an example of a logistic growth model with harvest
 <<logistic-harvest,out.width="0.5\\textwidth",fig.align="center",size='small'>>=
-h <- 0.02                ## harvest rate
+h <- 0.02                ## harvest rate (not the sustainable harvest rate)
 N2 <- rep(NA, nYears)
 N2[1] <- 100             ## abundance in first year
 H <- rep(NA, nYears-1)
 for(t in 2:nYears) {
-    H[t-1] <- N2[t-1]*h
+    H[t-1] <- N2[t-1]*h  ## harvest
     N2[t] <- N2[t-1] + N2[t-1]*rmax*(1 - N2[t-1]/K) - H[t-1]
 }
 plot(years, N1, type="l", xlab="Year", ylab="Abundance")

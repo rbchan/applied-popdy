@@ -144,7 +144,7 @@ and an initial population size of 100 individuals.
   \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
   \item What is the value of MSY in this case? %What is the harvest rate ($h$) at MSY?
   \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
-    forward again, but include harvest ($H_t$). Choose values of $H_t$ that
+    forward again, but include harvest ($H_t$) in the model. Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
     harvest be zero in some years.
 \end{enumerate}
@@ -221,12 +221,12 @@ Here's an example of a logistic growth model with harvest
 \begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{h} \hlkwb{<-} \hlnum{0.02}                \hlcom{## harvest rate}
+\hlstd{h} \hlkwb{<-} \hlnum{0.02}                \hlcom{## harvest rate (not the sustainable harvest rate)}
 \hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
 \hlstd{N2[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
 \hlstd{H} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears}\hlopt{-}\hlnum{1}\hlstd{)}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{H[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{h}
+    \hlstd{H[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{h}  \hlcom{## harvest}
     \hlstd{N2[t]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{rmax}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{K)} \hlopt{-} \hlstd{H[t}\hlopt{-}\hlnum{1}\hlstd{]}
 \hlstd{\}}
 \hlkwd{plot}\hlstd{(years, N1,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
