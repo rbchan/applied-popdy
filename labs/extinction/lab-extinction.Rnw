@@ -23,10 +23,11 @@ rnw2pdf("lab-extinction",tangle=TRUE)
   Lab 4 Assignment --- Stochasticity and Extinction \par
   % \large
   \normalsize
-  Submit your Excel file and R script before Monday.
-%  \normalsize
-  Undergrads only need to do the first exercise in R, but you will get
-  10 bonus points if you do the second one too. \\
+  % Submit your Excel file and R script before Monday.
+  % \normalsize
+  Answer each of the following questions and upload your completed Excel
+  file and R script to ELC. Be sure to show your calculations. \\
+  Undergrads only need to do the first exercise in R. \\
 }
 
 \vspace{12pt}
@@ -74,10 +75,8 @@ rnw2pdf("lab-extinction",tangle=TRUE)
 
 \clearpage
 
-Answer each of the following questions and upload your completed Excel
-file and R script to ELC. Be sure to show your calculations. \\
 
-\vspace{12pt}
+% \vspace{12pt}
 
 {\bf Exercise I \\}
 \begin{enumerate}
@@ -173,15 +172,9 @@ born, minus the number that died:
 
 {\bf Example {\tt R} code \\}
 
-
-
 Geometric growth with environmental stochasticity
-
-<<seed,include=FALSE>>=
+<<geom-stoch,out.width="0.75\\textwidth",fig.align='center',size='normalsize',echo=-1>>=
 set.seed(430)
-@ 
-
-<<geom-stoch,out.width="0.8\\textwidth",fig.align='center',size='normalsize'>>=
 r <- -0.1
 sigma <- 5
 nYears <- 50

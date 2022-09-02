@@ -13,8 +13,6 @@ rnw2pdf("lecture-extinction",tangle=TRUE)
 @
 
 
-
-
 \begin{document}
 
 

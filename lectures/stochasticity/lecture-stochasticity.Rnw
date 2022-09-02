@@ -133,7 +133,7 @@ for(i in 1:10) {
   \begin{center}
 <<norm1,echo=FALSE,include=FALSE,fig.width=8,fig.height=6>>=
 curve(dnorm(x, 0, 0.6), -2, 2, xlab="X", cex.lab=1.4,
-      ylab="Relative probability", ylim=c(0, 3), lwd=3)
+      ylab="Probability density", ylim=c(0, 3), lwd=3)
 curve(dnorm(x, 0, 0.4), -2, 2, col="blue", lwd=3, add=TRUE)
 curve(dnorm(x, 0, 0.2), -2, 2, col="red", lwd=3, add=TRUE)
 legend(-2.1, 3, c(expression(paste(mu, "=0, ", sigma^2, "=0.6")),
@@ -197,13 +197,14 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 
 
 \begin{frame}[fragile]
-  \frametitle{Geometric growth with environmental stochasticity}
+  \frametitle{\large Geometric growth with environmental stochasticity}
   \Large
 \[
   N_{t+1} = N_t + N_tr + X_t
-\]
-{\large \centering where \\}
-\vspace{-12pt}
+\] \\
+%\vspace{12pt}
+%{\large \centering where \\}
+%\vspace{-12pt}
 \[
   X_t \sim \mbox{Normal}(0, \sigma_e^2)
 \]
@@ -322,14 +323,14 @@ for(i in 1:10) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Geometric growth with demographic stochasticity}
+  \frametitle{\large Geometric growth with demographic stochasticity}
   \Large
 \[
   N_{t+1} = N_t + N_t r_t
 \]
 %\vspace{0.3cm} \pause
-{\large \centering where \\}
-\vspace{-12pt}
+%{\large \centering where \\}
+%\vspace{-12pt}
 \[
   r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
 \] 
@@ -450,13 +451,13 @@ for(i in 1:10) {
 
 
 \begin{frame}
-  \frametitle{Logistic growth with stochastic carrying capacity}
+  \frametitle{\large Logistic growth with stochastic carrying capacity}
   \Large
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
 \]
-{\large \centering where \\}
-\vspace{-12pt}
+%{\large \centering where \\}
+%\vspace{-12pt}
 \[
   K_t \sim \mbox{Normal}(\bar{K}, \sigma_e^2)
 \]
