@@ -814,7 +814,7 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
   \pause
   \vfill
 %  {\bf Fact}:
-  A post-reproductive individual will have a reproductive value of zero \\
+  A post-reproductive individual will have a reproductive value of zero. \\
   \pause
   \vspace{1cm}
   % {\bf Question}:

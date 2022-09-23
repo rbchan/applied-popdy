@@ -30,7 +30,7 @@ rnw2pdf("lab-age-structure",tangle=TRUE)
 
 Answer each of the following questions and upload your Excel file and
 R script (graduate students only) to ELC. Be sure to show your
-calculations. Undergraduates will get 20 bonus points for doing the
+calculations. Undergraduates will get 20 bonus points for doing the (entire) 
 lab in Excel and R. \\ 
 
 \section*{Exercises}
