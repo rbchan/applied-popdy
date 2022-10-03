@@ -95,15 +95,15 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
       \includegraphics[width=\textwidth]{figs/levins}
     \end{column}
     \begin{column}{0.7\textwidth}
-      {\bf First metapopulation models were parameterized in terms of the
+      {First metapopulation models were parameterized in terms of the
         \alert{proportion of patches occupied}. \par}
 %      \begin{itemize}
 %        \item The \alert{state variable} is the proportion of patches occupied
 %      \end{itemize}
       \pause
       \vspace{1cm}
-      {\bf Modern models are formulated in terms of patch-specific
-        \alert{occupancy} or \alert{abundance}. \par}
+      {Modern models are formulated in terms of patch-specific
+        \alert{site occupancy} or \alert{abundance}. \par}
 %      {\bf Limitations}
 %      \begin{itemize}
 %        \item Non-spatial (or spatially implicit)
@@ -123,7 +123,7 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
 \begin{frame}
   \frametitle{Abundance formulation}
   \Large
-  {\centering \bf A simple case with only three subpopulations \par}
+  {\centering A simple case with only three subpopulations \par}
   \[
     N_t = n_{1,t} + n_{2,t} + n_{3,t}
   \]
@@ -171,10 +171,11 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
     \uncover<3->{\color{Red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
   \]
   \large
-  {\bf Three components}
-  \begin{enumerate}[\bf (1)]
+  \vfill
+  {Three components}
+  \begin{enumerate}[(1)]
     \item<1-> Geometric growth
-    \item<2-> \color{Blue}{1 minus emigration rates}
+    \item<2-> \color{Blue}{1 minus emigration rates, Pr(not emigrating)}
     \item<3-> \color{Red}{Immigration from subpopulations 2 and 3}
   \end{enumerate}
 \end{frame}
@@ -182,14 +183,15 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
 
 
 \begin{frame}
-  \frametitle{What influences movement?}
-  The movement probabilities ($\pi_{i,j}$) represent the outcomes of
-  both immigration and emigration.
-  \vfill
-  What influences these probabilities?
+  \frametitle{Movement}
+  % The movement probabilities ($\pi_{i,j}$) represent the outcomes of
+  % both immigration and emigration.
+  % \vfill
+  {\bf What influences the movement probabilities?}
   \pause
-  \vfill
-  Examples
+  \vspace{6pt}
+  %\vfill
+  %Examples
   \begin{itemize}
     \item Habitat quality in the patch of origin
     \item Habitat quality in the landscape between origin and
@@ -226,7 +228,7 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
   \begin{columns}
     \wide
     \centering
-    \fbox{\includegraphics[width=0.95\textwidth]{figs/vanhorne_1983}} \\
+    \fbox{\includegraphics[width=0.9\textwidth]{figs/vanhorne_1983}} \\
   \end{columns}
 %  \pause
   \vfill
@@ -372,7 +374,7 @@ dev.off()
 
 \begin{frame}[fragile]
   \frametitle{Example}
-<<ex2,include=TRUE,echo=FALSE,results='hide',fig.height=5.5,fig.align='left'>>=
+<<ex2,include=TRUE,echo=FALSE,results='hide',fig.height=5.5,fig.align='left',out.width='95%'>>=
 par(mfrow=c(3,2), mai=c(0.5,0.5,0.1,0.1))
 plot(0, 0, type="n", ann=FALSE, axes=FALSE,)
 text(0, 0, "Low extinction\nLow colonization", cex=1.5)
@@ -400,11 +402,11 @@ plot(1:5, colSums(z3)/N, type="b", xlab="Year",
   \[
     \psi_{i,t+1} = O_{i,t}(1-\varepsilon) + (1-O_{i,t})\gamma
   \]
-  \uncover<2>{
+  %\uncover<2>{
   \[
     O_{i,t+1} \sim \mbox{Bernoulli}(\psi_{i,t+1})
   \]
-  } \\
+  %} \\
 %  where \\
   \vspace{0.5cm}
   \rule{0.5\textwidth}{1pt} \\
@@ -686,14 +688,16 @@ plot(1:5, colSums(z3)/N, type="b", xlab="Year",
 
 
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Results}
-  \begin{columns}
-    \begin{column}{\textwidth}
+%  \begin{columns}
+%    \begin{column}{\textwidth}
       \centering
-      \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012} \\
-    \end{column}
-  \end{columns}
+      %\uncover<handout:0>{
+        \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012} \\
+      %} %\\
+%    \end{column}
+%  \end{columns}
 \end{frame}
 
 

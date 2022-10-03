@@ -55,8 +55,9 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     best way to generate a Bernoulli random variable in Excel is to use
     the \texttt{IF} and \texttt{RAND} functions, not the Bernoulli
     random number generator. Your formula should look something like
-    \texttt{=IF(RAND()<\textcolor{blue}{CELL}, 1, 0)} with \texttt{\textcolor{blue}{CELL}} replaced by an
-    actual cell containing the expected occurrence probability
+    \texttt{=IF(RAND()<\textcolor{blue}{CELL}, 1, 0)} with
+    \texttt{\textcolor{blue}{CELL}} replaced by an  
+    actual cell containing the occupancy probability
     ($\psi$). It will be much faster to drag these equations across
     cells for all years and sites, than it would be using the
     Bernoulli random number generator.
