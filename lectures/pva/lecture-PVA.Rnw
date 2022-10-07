@@ -41,8 +41,9 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 
 \begin{frame}
   \frametitle{What is PVA?}
-  \Large
+  \large
   {\bf Population Viability Analysis \\}
+  \vspace{6pt}
   \begin{quote}
     The use of quantitative methods to predict the likely future
     status of a population or collection of populations of
@@ -88,7 +89,7 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Uses of PVA (from Morris and Doak (2002))}
-  \large
+  %\large
 %  \setbeamercovered{transparent}
 %  \begin{enumerate}[<+-| visible@+->][\bf \color{PineGreen} (1)]
   \begin{enumerate}[(1)]%[\bf (1)]
@@ -143,27 +144,27 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
   \frametitle{Types of PVA}
   \large
 %  \begin{enumerate}[<+- | visible@+->][\bf \color{PineGreen} (1)]
-  \begin{enumerate}[\bf (1)]
+  \begin{enumerate}[(1)]
     \item<1-> Count-based PVA
       \begin{itemize}
-        \large
+%        \large
         \item All you have is estimates of abundance in each year
         \item This is the cheapest, but least-informative method
       \end{itemize}
     \item<1-> Demographic PVA
       \begin{itemize}
-        \large
+%        \large
         \item Requires estimates of vital rates
         \item Useful for identifying key demographic parameters
       \end{itemize}
     \item<1-> Metapopulation viability analysis
       \begin{itemize}
-        \large
+%        \large
         \item Useful in reserve design
       \end{itemize}
     \item<1-> Spatially-explicit, individual-based PVA
       \begin{itemize}
-        \large
+%        \large
         \item Most realistic, but hardest to parameterize
       \end{itemize}
   \end{enumerate}
@@ -352,7 +353,7 @@ e  ## Elasticities
 \begin{frame}
   \frametitle{Summary}
   \large
-  {\bf Final thoughts}
+  {Final thoughts}
   \begin{itemize}%[<+->]
     \item<1-> People often say that PVA's require too much data.
     \item[]
