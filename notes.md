@@ -35,6 +35,7 @@
   * Jesse Whittington
   * Abby Sterling
   * Arno Lyet
+  * Jhala Yadvendradev
 
 
 - Shiny Apps for:
