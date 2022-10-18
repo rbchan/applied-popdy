@@ -206,11 +206,11 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
 \begin{frame}
   \frametitle{Sources, sinks, and traps}
   {\bf Source \\}
-  A patch with $\lambda>1$. Sources tend to be net exporters of individuals.  
+  A patch with $\lambda>1$ in the absence of immigration. Sources tend to be net exporters of individuals.  
   \pause
   \vfill
   {\bf Sink \\}
-  A patch with $\lambda<1$. Sinks would go extinct in the absence of immigration.
+  A patch with $\lambda<1$ in the absence of immigration. Sinks would go extinct in the absence of immigration.
   \pause
   \vfill
   {\bf Ecological trap \\}
