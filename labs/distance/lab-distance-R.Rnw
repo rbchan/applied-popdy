@@ -46,7 +46,7 @@ in groups (ie, herds), and the distance data are distances to group
 centers. 
 
 Put {\bf your code and your answers} in a Word file and upload it to
-ELC. Name the file something like ``Chandler-lab11.docx''. 
+ELC. Name the file something like ``Chandler-distance-lab.docx''. 
 
 
 
