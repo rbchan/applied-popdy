@@ -4,7 +4,7 @@
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{verbatim}
-
+\usepackage[hidelinks=true]{hyperref}
 
 
 <<eval=FALSE,include=FALSE>>=
@@ -31,7 +31,7 @@ knit_theme$set('edit-kwrite')
 {
   \Large
   \centering
-  {\bf Lab 11 Assignment --- Distance Sampling \\ }
+  {\bf Lab 12 --- Distance Sampling \\ }
   Due before Monday \\
 }
 
@@ -45,8 +45,10 @@ study that we discussed in lecture. Note that gazelles were detected
 in groups (ie, herds), and the distance data are distances to group
 centers. 
 
-Put {\bf your code and your answers} in a Word file and upload it to
-ELC. Name the file something like ``Chandler-distance-lab.docx''. 
+Put {\bf your code and your answers} in a Word file\footnote{Feel free
+  to use \href{https://rmarkdown.rstudio.com/}{R Markdown} if you'd
+  like.} and upload it to ELC. Name the file something like
+``Chandler-distance-lab.docx''.
 
 
 
