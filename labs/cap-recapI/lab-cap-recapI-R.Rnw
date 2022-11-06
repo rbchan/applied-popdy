@@ -1,4 +1,3 @@
-
 \documentclass[12pt]{article}
 
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
@@ -30,7 +29,7 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 12 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  {\bf Lab 13 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
   Due before Monday \\
 }
 
@@ -46,7 +45,7 @@ populations later.
 
 Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
-``Chandler-lab12.docx''.  
+``Chandler-lab.docx''.  
 
 \vspace{-6pt}
 
