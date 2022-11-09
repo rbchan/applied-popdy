@@ -45,7 +45,7 @@ populations later.
 
 Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
-``Chandler-lab.docx''.  
+``Chandler-lab.docx''. Feel free to use R Markdown if you wish.
 
 \vspace{-6pt}
 

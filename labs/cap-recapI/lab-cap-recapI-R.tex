@@ -12,9 +12,6 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0, 0, 0}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0, 0, 0}}}
-\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
@@ -49,14 +46,6 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-}}
-\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -84,7 +73,7 @@
 {
   \Large
   \centering
-  {\bf Lab 12 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  {\bf Lab 13 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
   Due before Monday \\
 }
 
@@ -100,7 +89,7 @@ populations later.
 
 Work through the problems below, put your code and your answers in a
 Word file, and then upload it to ELC. Name the file something like 
-``Chandler-lab12.docx''.  
+``Chandler-lab.docx''. Feel free to use R Markdown if you wish.
 
 \vspace{-6pt}
 
@@ -224,9 +213,7 @@ Now load the package like so:
 \begin{alltt}
 \hlkwd{library}\hlstd{(mra)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# mra (version 2.16.11)}}\end{kframe}
+\end{kframe}
 \end{knitrout}
 
 The example bear data are formatted for program MARK, but we can
