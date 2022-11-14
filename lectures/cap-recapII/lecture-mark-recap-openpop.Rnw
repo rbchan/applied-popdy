@@ -55,7 +55,7 @@ rnw2pdf("lecture-mark-recap-openpop",tangle=TRUE)
   \frametitle{Accounting for imperfect detection}
 %  \large
 %  \bf
-  Suppose we mark and { release} $R$ individuals, and then
+  Suppose we mark and release $R$ individuals, and then
     recapture $m$ of them on the second occasion. \par
 %    \vspace{0.5cm}
     \vfill
