@@ -22,8 +22,9 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 \begin{frame}[plain]
   \begin{center}
     {\huge Estimating survival using telemetry \\ 
-      \only<1>{{or age distribution data \\}}
-      \only<2>{\st{or age distribution} data \\}}
+      % \only<1>{{
+      or age distribution data \\}%}
+%      \only<2>{\st{or age distribution} data \\}}
 %    \vspace{0.5cm}
 %    { \Large April 17, 2019} \\
     {\color{blue} \rule{\textwidth}{0.1pt}}
@@ -129,10 +130,10 @@ rnw2pdf("lecture-survival",tangle=TRUE)
     Design}
   \begin{itemize}%[<+->]
     \normalsize
-    \item<1-> $n$ animals are randomly sampled %from population of size $N$
+    \item<1-> $n$ animals are randomly sampled and monitored over a fixed time interval
     \item<2-> The fates of all $n$ are known at end of the study period
     \item<3-> $x$ of the $n$ animals survive
-    \item<4-> The estimate of survival over the time interval is:
+    \item<4-> The estimate of survival over the time interval is given by:
   \end{itemize}
   \pause
 %  \LARGE
@@ -189,7 +190,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   \pause
   \vfill
   {\large %\bf
-    Left censoring and interval censoring are rarely a concern}
+    Left censoring and interval censoring are rarely a concern.}
   % \begin{itemize}
   %   \normalsize
   %   \item Occurs when mortality is known to have occurred before some
@@ -335,6 +336,9 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 \[
   S_{i,t} = \frac{n_{i+1,t}}{n_{i,t}}
 \]
+  \pause
+  \vfill
+  This problem can 
 \end{frame}
 
 
