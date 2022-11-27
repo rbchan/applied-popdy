@@ -12,6 +12,9 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0, 0, 0}}}
+\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
@@ -46,6 +49,14 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -357,8 +368,8 @@ Notice how the results now show survival probability for each time period:
 ##   time occ  estimate          se          lcl       ucl
 ## 1    4   4 0.6527671 0.264050300 1.608282e-01 0.9485600
 ## 2    3   3 0.6808526 0.250026508 1.827878e-01 0.9531561
-## 3    2   2 0.9998875 0.006369278 5.588893e-45 1.0000000
-## 4    1   1 0.8994609 0.401574687 1.482594e-03 0.9999814
+## 3    2   2 0.9998875 0.006369273 5.588457e-45 1.0000000
+## 4    1   1 0.8994609 0.401574682 1.482594e-03 0.9999814
 ## 
 ## $p
 ##   occ  estimate         se        lcl       ucl
@@ -521,7 +532,7 @@ Now we're ready to calculate abundance
 
 \clearpage
 
-Rather than type out the equation each year, we could compute
+An alternative to typing out the equation each year, we could compute
 abundance in years 2 through 9 in a ``for loop'':
 
 \begin{knitrout}
