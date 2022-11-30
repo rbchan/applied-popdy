@@ -42,7 +42,7 @@ knit_theme$set("edit-kwrite")
 The purpose of this lab is to learn how to use the R package `marked' to
 estimate survival, recruitment, and growth rate using mark-recapture
 data. Put your code and answers in a Word file named something like
-``Chandler-lab11.docx'', and upload it to ELC.
+``Chandler-lab14.docx'', and upload it to ELC.
 
 %\vspace{-12pt}
 
