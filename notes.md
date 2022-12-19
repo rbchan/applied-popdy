@@ -1,5 +1,26 @@
 # Notes for the future
 
+## For 2023
+
+- Add more examples from Clutton-Brock, Krebs, etc...
+
+- Need more group activities during lecture in second half of the semester
+
+- Have a guest lecture earlier?
+
+- Spend more time going over solutions from previous labs
+
+- Make the labs shorter and easier to understand for undergrads
+  * Especially the first few in which R is introduced
+  
+- Overhaul lecture on enviro/demographic stochasticity
+
+- Provide example of final paper?
+
+- Still need to improve items in notes below
+
+- Kaplan-Meier survival lab
+
 
 ## For 2022
 
