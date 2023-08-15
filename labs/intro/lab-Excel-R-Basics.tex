@@ -1,4 +1,4 @@
-\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -116,10 +116,14 @@
 \begin{frame}
   \frametitle{Relative Cell References}
   \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/relative-ref}}}
-  \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/relative-ref2}}}
-  \begin{center}
-    Cell C2 will take on the value of A2
-  \end{center}
+  \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/relative-ref2}} \\}
+  \vfill
+  % \begin{center}
+  \centering
+  \only<1>{Cell referencing must begin with the ``equals sign'' ({\tt =}) \\}
+  \only<2>{Cell C2 will take on the value of A2 \\}
+  % \end{center}
+  %}
 \end{frame}
 
 
@@ -155,7 +159,10 @@
 \begin{frame}
   \frametitle{Equations}
     \only<1>{\fbox{\includegraphics[width=\textwidth]{figs/equation}}}
-    \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/equation2}}}
+    \only<2 | handout:0>{\fbox{\includegraphics[width=\textwidth]{figs/equation2}} \\}
+    \vfill
+    \centering
+    \only<1>{Equations also have to begin with the equals sign ({\tt =}) \\}
 \end{frame}
 
 
