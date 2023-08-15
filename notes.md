@@ -2,6 +2,19 @@
 
 ## For 2023
 
+- Ice-breaker
+  * Name, major, primary interests
+
+- Assign more papers
+  * With mini-assignment
+  * Group discussions
+
+- Kahout
+
+- chatGPT
+  * Group presentation
+    + Self-scoring
+
 - Add more examples from Clutton-Brock, Krebs, etc...
 
 - Need more group activities during lecture in second half of the semester
@@ -20,17 +33,20 @@
 - Still need to improve items in notes below
 
 - Kaplan-Meier survival lab
+  * Move it earlier so students can incorporate into final paper
+
+- Excel templates for data collectino
+  * Add all names
+  
 
 
 ## For 2022
-
 
 - Add score item for estimation to final project rubric
   * Grad students only
   * Provide examples
 
 - Use real datasets from Hastings and Krebs textbooks
-
 
 - Add a page of general questions to the final exam
 
