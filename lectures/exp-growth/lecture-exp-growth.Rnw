@@ -8,7 +8,6 @@
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
 
 
-
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lecture-exp-growth")
@@ -325,12 +324,15 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
   $r$ is the discrete growth rate \par
   \vspace{0.5cm}
   $\lambda$ is the finite growth rate \par
-  \[
-  \lambda = \frac{N_{t+1}}{N_t}
-  \]
+%  \[
+  \begin{align*}
+    \lambda &= \frac{N_{t+1}}{N_t} \\
+    \lambda &= 1+r
+  \end{align*}
+  % \]
 %  \pause
-  \vspace{0.5cm}
-  $\lambda = 1 + r$
+%  \vspace{0.5cm}
+%  $\lambda = 1 + r$
 \end{frame}
 
 
