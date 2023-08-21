@@ -60,7 +60,6 @@
 
 
 
-
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -370,12 +369,15 @@
   $r$ is the discrete growth rate \par
   \vspace{0.5cm}
   $\lambda$ is the finite growth rate \par
-  \[
-  \lambda = \frac{N_{t+1}}{N_t}
-  \]
+%  \[
+  \begin{align*}
+    \lambda &= \frac{N_{t+1}}{N_t} \\
+    \lambda &= 1+r
+  \end{align*}
+  % \]
 %  \pause
-  \vspace{0.5cm}
-  $\lambda = 1 + r$
+%  \vspace{0.5cm}
+%  $\lambda = 1 + r$
 \end{frame}
 
 
