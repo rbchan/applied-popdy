@@ -112,7 +112,11 @@ legend(1, 230, c("Population size (N)",
 %    \item Evaluate hypotheses while accounting for uncertainty
     \item Predict future outcomes
     \item \dots all while accounting for uncertainty
-  \end{itemize}
+    \end{itemize}
+  \pause
+  \vfill
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/jay-model} \\
 \end{frame}
 
 
@@ -146,7 +150,11 @@ legend(1, 230, c("Population size (N)",
     \item How well does it predict?
     \item Will your results hold up in court?
     \item Can your results be replicated/reproduced?
-  \end{itemize}
+    \end{itemize}
+  \pause
+  \vfill
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/nasa-prediction} \\
 \end{frame}
 
 
@@ -158,14 +166,23 @@ legend(1, 230, c("Population size (N)",
 \begin{frame}
   \frametitle{Types of models}
   \Large
-  \begin{itemize}
-    \item {\color<2>{Red} Conceptual}
-    \item Physical
-    \item Graphical
-%    \item {\color<2>[rgb]{0,0,1} Mathematical}
-    \item {\color<2>{Red} Mathematical}
-    \item {\color<2>{Red} Statistical}
-  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+      \item {\color<2>{Red} Conceptual}
+      \item Physical
+      \item Graphical
+        % \item {\color<2>[rgb]{0,0,1} Mathematical}
+      \item {\color<2>{Red} Mathematical}
+      \item {\color<2>{Red} Statistical}
+      \end{itemize}
+    \end{column}
+    \begin{column}[c]{0.6\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{figs/atm-model} \\
+      \includegraphics[width=0.7\textwidth]{figs/hrrr-model} \\
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
