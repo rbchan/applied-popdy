@@ -18,13 +18,13 @@ rnw2pdf("lab-logistic-growth")
   \Large
   \centering
   Lab 2 assignment --- Geometric and logistic growth models \\
-  Due before Monday \par
+  Due by 8:00am on Monday \par
 }
 
 Answer the following questions by completing the provided Excel 
 template and by replicating your work in R. Undergraduates should do
 Exercise 1 in R, but not Exercise 2. Upload your Excel file and a
-single R script to ELC before Monday. Name the files with your last
+single R script to ELC. Name the files with your last
 name followed by your first name. \\ 
 
 \vspace{12pt}
@@ -128,7 +128,8 @@ sheet ``Exercise 2b''.
     Using a starting values of 6 billion people in 1999, pick
     values of $r_{max}$ and $K$ that make a logistic growth curve
     closely approximate the actual data. Again, use trial and error to
-    find good parameter values. 
+    find good parameter values. Start by choosing a carrying capacity
+    ($K$) that seems sensible for the human population.  
   \item Use the values you calculated above to make four graphs of:
     \begin{itemize}
       \item Actual abundance ($N$) over time
