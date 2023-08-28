@@ -7,6 +7,12 @@
 
 \usepackage{changepage}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
 
@@ -500,6 +506,36 @@ text(53, 55, "amplitude (k1)", pos=2, cex=1)
 
 
 
+
+
+
+\begin{frame}
+  \frametitle{Does logistic growth occur in nature?}
+  Fruit fly ({\it Drosophila melanogaster}) in the lab\blfootnote{\tiny
+    %\vspace{-12pt}
+    \flushleft
+    Data from Pearl (1927). Figure from Krebs (2014) %\\
+  }. \\
+  \vfill
+  \centering
+  \includegraphics[width=0.6\textwidth]{figs/logistic-drosophila}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Does logistic growth occur in nature?}
+  Ibex ({\it Capra ibex}) in Switzerland\blfootnote{\tiny
+    %\vspace{-12pt}
+    \flushleft
+    Data from S{\ae}ther et al. (2002). Figure from Krebs (2014) \\
+  }. \\
+  \vfill
+  \centering
+  \includegraphics[width=0.6\textwidth]{figs/logistic-ibex}\\
+\end{frame}
 
 
 
