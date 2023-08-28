@@ -1,4 +1,4 @@
-\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -468,10 +468,10 @@
   such that survival probability ($S$) declines as $N$ increases. \\
 %    \item
   \pause \vfill
-  A simple model is $S = \beta_0 - \beta1 \times N$ \\
-  \pause \vfill
+%%  A simple model is $S = \beta_0 - \beta1 \times N$ \\
+%%  \pause \vfill
 %    \item
-  Let's assume $\beta_0 = 0.8$ and $\beta_1 = 0.005$, so
+  Let's assume %% $\beta_0 = 0.8$ and $\beta_1 = 0.005$, so
   $S = 0.8 - 0.005 \times N$
 %  \end{itemize}
 \end{frame}
@@ -484,7 +484,8 @@
 %  \vspace{-0.5cm}
 
 \centering
-\includegraphics[width=\textwidth]{figure/phi1-1} \\
+$S = 0.8 - 0.005 \times N$ \\
+\includegraphics[width=0.9\textwidth]{figure/phi1-1} \\
 \end{frame}
 
 
@@ -498,11 +499,11 @@
 %  \large
   \begin{itemize}[<+->]
     \small
-    \item If 20 individuals are harvested, what is $S$ for
-      remaining individuals?
+    \item Suppose 20 individuals are harvested from an initial
+      population of 100 individuals.
     \item How many individuals will remain at the end of the year?
-    \item How many would remain at the end of the year if no hunting
-      occurred?
+    \item How many would have remained at the end of the year if no
+      hunting had occurred?
   \end{itemize}
   \begin{center}
     \includegraphics[width=0.7\textwidth]{figure/phi1-1}
@@ -528,15 +529,17 @@
   \frametitle{Overall survival vs. harvest rate}
   \vspace{-0.5cm}
 
+
 \begin{center}
-  \includegraphics[width=0.8\textwidth]{figure/phibar-1}
+  \only<1|handout:0>{\includegraphics[width=0.95\textwidth]{figure/phibar-1} \\}
+  \only<2>{\includegraphics[width=0.95\textwidth]{figure/phibar2-1} \\}
 \end{center}
-\pause
+%\pause
 %\vfill
-\small
-{Conclusion}: Because harvest mortality is compensatory, the
-harvest rate ($h$) can be as high as 0.2 without negatively impacting
-overall survival.
+% \small
+% {Conclusion}: Because harvest mortality is compensatory, the
+% harvest rate ($h$) can be as high as 0.2 without negatively impacting
+% overall survival.
 \end{frame}
 
 
@@ -544,6 +547,16 @@ overall survival.
 %harvest rates, because the natural survival rate compensates for the
 %increase in harvest rate by increasing because of the decreasing
 %number of animals in the population
+
+
+
+\begin{frame}
+  \frametitle{Density-dependent survival example}
+  Mule deer fawn survival (From Bartman et al. 1992) \\
+  \centering
+  \vfill
+  \includegraphics[width=0.7\textwidth]{figs/deer-survival-dd} \\
+\end{frame}
 
 
 \begin{frame}
