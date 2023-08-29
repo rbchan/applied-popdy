@@ -23,7 +23,7 @@ rnw2pdf("lab-harvest",tangle=TRUE)
   \Large
   \centering
   Lab 3 Assignment --- Harvest Models \\
-  Due before Monday, Sept 5 \par
+  Due by Monday 8:00am \par
 }
 
 Answer each of the following questions and upload your completed Excel
@@ -37,13 +37,12 @@ R. Graduate students should do all exercises in both Excel and R.
 The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
 \begin{enumerate}
   \item What growth model best describes these data, geometric or
-    logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$ to assess if
-    growth rates change over time.
+    logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$.
   \item What is the growth rate ($r$)?
   \item If you determine that the per-capita birth rate ($b$) is 2.0,
     what must be the per-capita mortality rate ($d$)?
   \item What harvest rate ($h$) would result in a sustainable yield?
-  \item Use the sustainable harvest rate ($h$) from part (4) to project the population
+  \item Use the sustainable harvest rate ($h$) from part 4 to project the population
     forward from 2012 to 2024. You will need to compute the number of
     individuals removed ($H_t$) each year using the equation
     $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because
@@ -93,7 +92,8 @@ and an initial population size of 100 individuals.
     harvested each year. Plot abundance on the x-axis and sustainable
     harvest on the y-axis.
   \item At what value of abundance ($N$) would maximum sustainable yield (MSY) occur?
-  \item What is the value of MSY in this case? %What is the harvest rate ($h$) at MSY?
+  \item What is the value of MSY in this case? In other words, what is
+    maximum number of individuals that can be sustainably harvested? 
   \item Using the same values of $r_\mathrm{max}$, $K$, and $N_0$, project the population
     forward again, but include harvest ($H_t$) in the model. Choose values of $H_t$ that
     allow for the greatest number of years at MSY. Hint: You can let
