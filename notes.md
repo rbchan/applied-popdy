@@ -1,5 +1,12 @@
 # Notes for the future
 
+## For 2024
+
+- Simplify harvest lab
+  * Use new years
+  * Be clear that pythons need to flatline
+  
+
 ## For 2023
 
 - Ice-breaker
