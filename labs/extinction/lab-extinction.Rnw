@@ -26,7 +26,8 @@ rnw2pdf("lab-extinction",tangle=TRUE)
   % Submit your Excel file and R script before Monday.
   % \normalsize
   Answer each of the following questions and upload your completed Excel
-  file and R script to ELC. Be sure to show your calculations. \\
+  file and R script to ELC by 8:00am on Monday. Be sure to show your
+  calculations. \\
   Undergrads only need to do the first exercise in R. \\
 }
 
@@ -85,11 +86,15 @@ rnw2pdf("lab-extinction",tangle=TRUE)
     quasi-extinction occurs when $N$ falls below 20 individuals.
     What is the time to quasi-extinction ($T_e$)? In other words, how
     long will it take for the population to fall below 20 individuals?
+  % \item Now imagine that there is no demographic stochasticity,
+  %   but environmental stochasticity occurs with $X_t \sim
+  %   \mathrm{Normal}(\mu=0, \sigma=10)$, where $\mu$ is the mean
+  %   and $\sigma$ is the standard deviation of the random variable
+  %   $X$. Generate the random values of $X$ that will be
+  %   used in the 10 simulations in the next step.
   \item Now imagine that there is no demographic stochasticity,
-    but environmental stochasticity occurs with $X_t \sim
-    \mathrm{Normal}(\mu=0, \sigma=10)$, where $\mu$ is the mean
-    and $\sigma$ is the standard deviation of the random variable
-    $X$. Generate the random values of $X$ that will be
+    but environmental stochasticity occurs with $r_t \sim
+    \mathrm{Normal}(mean=-0.2, SD=0.1)$. Generate the random values of $r_t$ that will be
     used in the 10 simulations in the next step.
   \item Conduct 10 simulations over a 30 year time period, and force
     the population size to zero after it falls below the threshold.
@@ -121,19 +126,19 @@ rnw2pdf("lab-extinction",tangle=TRUE)
 
 
 {\bf Exercise II \\ }
-In this exercise, you will be exposed to two new probability
-distributions: the Poisson and the binomial. The Poisson distribution
-is useful for data that are non-negative integers. It only has
-a single parameter (often called ``lambda'' but not to be confused with the
-finite rate of increase) that describes the expected value of the
-count data. In stochastic population models, the Poisson distribution
-can be used to model the number of births ($B_t$) that occur in a time
-interval. 
+% In this exercise, you will be exposed to two new probability
+% distributions: the Poisson and the binomial. The Poisson distribution
+% is useful for data that are non-negative integers. It only has
+% a single parameter (often called ``lambda'' but not to be confused with the
+% finite rate of increase) that describes the expected value of the
+% count data. In stochastic population models, the Poisson distribution
+% can be used to model the number of births ($B_t$) that occur in a time
+% interval. 
 
-The binomial distribution is also useful for data that are
-non-negative integers, but it has an upper bound. In population
-models, the upper bound is often population size, and we use the model
-to describe how many individuals die during some time period.
+% The binomial distribution is also useful for data that are
+% non-negative integers, but it has an upper bound. In population
+% models, the upper bound is often population size, and we use the model
+% to describe how many individuals die during some time period.
 
 Assume that a population is geographically closed such that there is
 no immigration or emigration. The number of individuals born is a
@@ -153,9 +158,8 @@ born, minus the number that died:
 \begin{enumerate}
   \item Beginning with $N_0=300$, conduct one simulation over 5
     years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
-    abundance over time. Hint: You have  
-    to randomly generate $B_t$ and $D_t$ each year before you can compute
-    $N_t$.
+    abundance over time. Hint: You have  to randomly generate $B_t$
+    and $D_t$ each year before you can compute  $N_t$.
   \item Do you think this population will reach a stochastic
     equilibrium? Why or why not? (A stochastic equilibrium occurs when
     a population fluctuates around a long-term average).
@@ -172,22 +176,42 @@ born, minus the number that died:
 
 {\bf Example {\tt R} code \\}
 
-Geometric growth with environmental stochasticity
+% Geometric growth with environmental stochasticity
+% <<geom-stoch,out.width="0.75\\textwidth",fig.align='center',size='normalsize',echo=-1>>=
+% set.seed(430)
+% r <- -0.1
+% sigma <- 5
+% nYears <- 50
+% extinctionThreshold <- 10
+
+% ## Repeat the next steps 10 times to do 10 simulations
+% ## Or, do a 'nested for loop' and save each simulation (harder)
+% N1 <- rep(NA, nYears)  ## Population size 
+% X <- rep(NA, nYears)   ## Random variable for environmental stochasticity
+% N1[1] <- 100           ## Initial population size
+% for(t in 2:nYears) {
+%     X[t-1] <- rnorm(n=1, mean=0, sd=sigma)
+%     N1[t] <- (N1[t-1] + N1[t-1]*r + X[t-1])*(N1[t-1]>extinctionThreshold)
+% }
+% plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="b")
+% @ 
+
+
+Geometric growth with demographic stochasticity
 <<geom-stoch,out.width="0.75\\textwidth",fig.align='center',size='normalsize',echo=-1>>=
 set.seed(430)
-r <- -0.1
-sigma <- 5
+rbar <- -0.1
+sigma <- 0.1
 nYears <- 50
 extinctionThreshold <- 10
 
 ## Repeat the next steps 10 times to do 10 simulations
 ## Or, do a 'nested for loop' and save each simulation (harder)
 N1 <- rep(NA, nYears)  ## Population size 
-X <- rep(NA, nYears)   ## Random variable for environmental stochasticity
 N1[1] <- 100           ## Initial population size
 for(t in 2:nYears) {
-    X[t-1] <- rnorm(n=1, mean=0, sd=sigma)
-    N1[t] <- (N1[t-1] + N1[t-1]*r + X[t-1])*(N1[t-1]>extinctionThreshold)
+    r[t-1] <- rnorm(n=1, mean=rbar, sd=sigma)
+    N1[t] <- (N1[t-1] + N1[t-1]*r[t-1])*(N1[t-1]>extinctionThreshold)
 }
 plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="b")
 @ 
