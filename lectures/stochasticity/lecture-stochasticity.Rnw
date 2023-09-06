@@ -85,7 +85,7 @@ rnw2pdf("lecture-stochasticity",tangle=TRUE)
 \[
   X \sim \mbox{Normal}(\mu=0, \sigma^2=1)
 \]
-<<echo=FALSE,results='hide',eval=TRUE>>=
+<<echo=FALSE,results='hide',eval=TRUE,include=FALSE>>=
 if(!dir.exists("figs/norm"))
     dir.create("figs/norm")
 pdf("figs/norm/norm0.pdf", width=8, height=6)
@@ -131,7 +131,7 @@ for(i in 1:10) {
   \frametitle{Normal (Gaussian) distribution}
   \vspace{-0.7cm}
   \begin{center}
-<<norm1,echo=FALSE,include=FALSE,fig.width=8,fig.height=6>>=
+<<normals,echo=FALSE,fig.width=8,fig.height=6>>=
 curve(dnorm(x, 0, 0.6), -2, 2, xlab="X", cex.lab=1.4,
       ylab="Probability density", ylim=c(0, 3), lwd=3)
 curve(dnorm(x, 0, 0.4), -2, 2, col="blue", lwd=3, add=TRUE)
@@ -142,7 +142,7 @@ legend(-2.1, 3, c(expression(paste(mu, "=0, ", sigma^2, "=0.6")),
        col=c("black", "blue", "red"), lwd=2, cex=0.9)
 @
   \end{center}
-\includegraphics[width=\textwidth]{figure/norm1-1}
+%\includegraphics[width=\textwidth]{figure/norm1-1}
 \end{frame}
 
 
@@ -173,15 +173,18 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
   \frametitle{Two important types of stochasticity}
   {\bf Environmental stochasticity}
   \begin{itemize}
-    \item Random variation in demographic parameters caused by
-      changes in weather, habitat, etc\dots conditions among years  
+    \item Random variation in demographic rates (such as the birth
+      rate and the death rate)
+    \item Caused by unpredictable changes in weather, habitat,
+      etc\dots conditions among years
     \item[]
   \end{itemize}
   \pause
   {\bf Demographic stochasticity}
   \begin{itemize}
-    \item Random variation in the number of births and deaths among
-      years occuring even when birth and death rates are constant
+    \item Random variation in demographic outcomes (such as the number
+      of births and deaths)
+    \item Occurs even when demographic rates are constant 
     \item[]
   \end{itemize}
 \end{frame}
@@ -192,7 +195,8 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 
 
 
-\section{Geometric Growth}
+% \section{Geometric Growth}
+\section{Environmental stochasticity}
 
 
 
@@ -360,7 +364,7 @@ for(t in 2:nYears) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma_d^2=0.01$}
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.01$}
 <<fig.show='hide',echo=FALSE>>=
 r.bar <- 0.1
 sigma.d <- 0.1
@@ -405,7 +409,7 @@ for(i in 1:10) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma_d^2=0.25$}
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.25$}
 <<fig.show='hide',echo=FALSE>>=
 r.bar <- 0.1
 sigma.d <- 0.5
@@ -448,14 +452,15 @@ for(i in 1:10) {
 
 
 
-\section{Logistic growth}
 
 
 
 
 \begin{frame}
-  \frametitle{\large Logistic growth with stochastic carrying capacity}
+  \frametitle{\large Logistic growth with environmental stochasticity}
   \Large
+  \centering
+  Imagine the carrying capacity fluctuates randomly from year to year. \\
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
 \]
@@ -472,18 +477,18 @@ for(i in 1:10) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Logistic example, $r_{max}=0.2$, $\bar{K}=100$, $\sigma_e^2=400$}
+  \frametitle{Logistic example, $r_{max}=0.2$, $\bar{K}=200$, $\sigma^2=50$}
 <<fig.show='hide',echo=FALSE>>=
 r.max <- 0.3
-K.bar <- 100
-sigma.d <- 20
+K.bar <- 200
+sigma.d <- 50
 T <- 20
 if(!dir.exists("figs/lg-d"))
     dir.create("figs/lg-d")
 set.seed(4450)
 for(i in 1:10) {
     N <- Nlr <- integer(T+1)
-    N[1] <- Nlr[1] <- 200
+    N[1] <- Nlr[1] <- 50 ##200
     fl <- paste("figs/lg-d/lg-d", i, ".pdf", sep="")
     for(t in 1:T) {
         K.t <- rnorm(1, K.bar, sigma.d)
@@ -517,20 +522,24 @@ for(i in 1:10) {
 
 
 
+\section{Demographic stochasticity}
+
+
 
 \begin{frame}[fragile]
   \frametitle{Demographic stochasticity}
   We can make the BIDE model stochastic by modeling random variation
-  in the number of individual that are born and die each year (we'll
-  ignore movement for now):
+  in the number of individuals that are born and die each year (we'll
+  ignore movement):
   \[
      N_{t+1} = N_t + B_t - D_t
   \]
   \pause
+  \vfill
   What distributions should we use for $B_t$ and $D_t$? 
   \pause
   \[
-    B_t \sim \mathrm{Poisson}(N_t b)
+    B_t \sim \mathrm{Poisson}(N_t\times b)
   \]
   \[
     D_t \sim \mathrm{Binomial}(N_t, d)
@@ -541,28 +550,96 @@ for(i in 1:10) {
 \begin{frame}
   \frametitle{Poisson distribution}
   The Poisson distribution is useful for data that are non-negative
-  integers. It only has a single parameter (often called ``lambda''
-  but not to be confused with the finite rate of increase) that
-  describes the expected value of the count data. In stochastic
-  population models, the Poisson distribution can be used to model the
-  number of births ($B_t$) that occur in a time interval. 
+  integers. \\
+  \vfill
+  It has a single parameter that describes the expected value of the
+  random outcomes. \\
+  \vfill
+  In stochastic population models, the Poisson distribution can be
+  used to model the number of births ($B_t$) that occur in a time
+  interval. 
+  \vfill
   \[
-    B_t \sim \mathrm{Poisson}(N_t b)
+    B_t \sim \mathrm{Poisson}(N_t \times b)
   \]
 \end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Poisson distributions}
+<<pois,echo=FALSE,fig.width=7,fig.height=5,out.width="0.9\\textwidth",fig.align='center'>>=
+  par(mfrow=c(2,2), mai=c(0.8,0.8,0.2,0.2))
+  X <- 0:50
+  plot(X, dpois(X, 1), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(1)", col="royalblue")
+  plot(X, dpois(X, 10), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(10)", col="royalblue")
+  plot(X, dpois(X, 20), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(20)", col="royalblue")
+  plot(X, dpois(X, 30), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(30)", col="royalblue")
+@   
+\end{frame}
+
 
 
 \begin{frame}
   \frametitle{Binomial distribution}
   The binomial distribution is also useful for data that are
-  non-negative integers, but it has an upper bound. In population
-  models, the upper bound is often population size, and we use the model
-  to describe how many individuals die during some time period.
+  non-negative integers, but it has an upper bound. \\
+  \vfill
+  In population models, the upper bound is often population size, and
+  we use the model to describe how many individuals die during some
+  time period. \\
   \[
     D_t \sim \mathrm{Binomial}(N_t, d)
   \]
 \end{frame}
 
+
+
+\begin{frame}[fragile]
+  \frametitle{Binomial distributions}
+<<bin,echo=FALSE,fig.width=7,fig.height=5,out.width="0.9\\textwidth",fig.align='center'>>=
+  par(mfrow=c(2,2), mai=c(0.8,0.8,0.2,0.2))
+  N <- 10
+  X <- 0:N
+  plot(X, dbinom(X, N, 0.1), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.1)", col="royalblue")
+  plot(X, dbinom(X, N, 0.3), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.3)", col="royalblue")
+  plot(X, dbinom(X, N, 0.6), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.6)", col="royalblue")
+  plot(X, dbinom(X, N, 0.9), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.9)", col="royalblue")
+@   
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Demographic stochasticity}
+  Poisson-Binomial birth-death model \\
+  \[
+     N_{t+1} = N_t + B_t - D_t
+  \]
+<<pois-bin,fig.width=7,fig.height=5,out.width="0.8\\textwidth",fig.align='center',echo=FALSE>>=
+par(mai=c(0.9,0.9,0.2,0.2))  
+b <- 0.15  ## Birth rate
+d <- 0.2   ## Mortality rate
+nYears <- 50
+N2 <- rep(NA, nYears)  ## Empty vector for population size 
+B <- rep(NA, nYears-1)   ## Random variable for nBirths
+D <- rep(NA, nYears-1)   ## Random variable for nDeaths
+N2[1] <- 100           ## Initial population size
+for(t in 2:nYears) {
+    B[t-1] <- rpois(n=1, lambda=N2[t-1]*b)
+    D[t-1] <- rbinom(n=1, size=N2[t-1], prob=d)
+    N2[t] <- N2[t-1] + B[t-1] - D[t-1]
+}
+plot(1:nYears, N2, xlab="Time", ylab="Abundance", type="l")
+## lines(1:(nYears-1), B)
+@ 
+\end{frame}
 
 
 \begin{frame}
@@ -572,8 +649,8 @@ for(i in 1:10) {
   \vfill
   Purely stochastic models don't describe population processes. \\
   \vfill
-  The goal is to develop a mechanistic model that represents 
-  our biological understanding while allowing for stochasticity. \\
+  The goal is to develop mechanistic model that represent 
+  our biological understanding while allowing for uncertainty. \\
 \end{frame}
 
 

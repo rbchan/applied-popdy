@@ -160,9 +160,12 @@
   \frametitle{Normal (Gaussian) distribution}
   \vspace{-0.7cm}
   \begin{center}
-
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/normals-1} 
+\end{knitrout}
   \end{center}
-\includegraphics[width=\textwidth]{figure/norm1-1}
+%\includegraphics[width=\textwidth]{figure/norm1-1}
 \end{frame}
 
 
@@ -190,15 +193,18 @@
   \frametitle{Two important types of stochasticity}
   {\bf Environmental stochasticity}
   \begin{itemize}
-    \item Random variation in demographic parameters caused by
-      changes in weather, habitat, etc\dots conditions among years  
+    \item Random variation in demographic rates (such as the birth
+      rate and the death rate)
+    \item Caused by unpredictable changes in weather, habitat,
+      etc\dots conditions among years
     \item[]
   \end{itemize}
   \pause
   {\bf Demographic stochasticity}
   \begin{itemize}
-    \item Random variation in the number of births and deaths among
-      years occuring even when birth and death rates are constant
+    \item Random variation in demographic outcomes (such as the number
+      of births and deaths)
+    \item Occurs even when demographic rates are constant 
     \item[]
   \end{itemize}
 \end{frame}
@@ -209,7 +215,8 @@
 
 
 
-\section{Geometric Growth}
+% \section{Geometric Growth}
+\section{Environmental stochasticity}
 
 
 
@@ -381,7 +388,7 @@ R code
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma_d^2=0.01$}
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.01$}
 
 \vspace{-0.3cm}
 \begin{center}
@@ -404,7 +411,7 @@ R code
 
 
 \begin{frame}[fragile]
-  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma_d^2=0.25$}
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.25$}
 
 \vspace{-0.3cm}
 \begin{center}
@@ -425,14 +432,15 @@ R code
 
 
 
-\section{Logistic growth}
 
 
 
 
 \begin{frame}
-  \frametitle{\large Logistic growth with stochastic carrying capacity}
+  \frametitle{\large Logistic growth with environmental stochasticity}
   \Large
+  \centering
+  Imagine the carrying capacity fluctuates randomly from year to year. \\
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
 \]
@@ -449,7 +457,7 @@ R code
 
 
 \begin{frame}[fragile]
-  \frametitle{Logistic example, $r_{max}=0.2$, $\bar{K}=100$, $\sigma_e^2=400$}
+  \frametitle{Logistic example, $r_{max}=0.2$, $\bar{K}=200$, $\sigma^2=50$}
 
 \vspace{-0.2cm}
 \begin{center}
@@ -469,20 +477,24 @@ R code
 
 
 
+\section{Demographic stochasticity}
+
+
 
 \begin{frame}[fragile]
   \frametitle{Demographic stochasticity}
   We can make the BIDE model stochastic by modeling random variation
-  in the number of individual that are born and die each year (we'll
-  ignore movement for now):
+  in the number of individuals that are born and die each year (we'll
+  ignore movement):
   \[
      N_{t+1} = N_t + B_t - D_t
   \]
   \pause
+  \vfill
   What distributions should we use for $B_t$ and $D_t$? 
   \pause
   \[
-    B_t \sim \mathrm{Poisson}(N_t b)
+    B_t \sim \mathrm{Poisson}(N_t\times b)
   \]
   \[
     D_t \sim \mathrm{Binomial}(N_t, d)
@@ -493,28 +505,81 @@ R code
 \begin{frame}
   \frametitle{Poisson distribution}
   The Poisson distribution is useful for data that are non-negative
-  integers. It only has a single parameter (often called ``lambda''
-  but not to be confused with the finite rate of increase) that
-  describes the expected value of the count data. In stochastic
-  population models, the Poisson distribution can be used to model the
-  number of births ($B_t$) that occur in a time interval. 
+  integers. \\
+  \vfill
+  It has a single parameter that describes the expected value of the
+  random outcomes. \\
+  \vfill
+  In stochastic population models, the Poisson distribution can be
+  used to model the number of births ($B_t$) that occur in a time
+  interval. 
+  \vfill
   \[
-    B_t \sim \mathrm{Poisson}(N_t b)
+    B_t \sim \mathrm{Poisson}(N_t \times b)
   \]
 \end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Poisson distributions}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=0.9\textwidth]{figure/pois-1} 
+
+}
+
+
+\end{knitrout}
+\end{frame}
+
 
 
 \begin{frame}
   \frametitle{Binomial distribution}
   The binomial distribution is also useful for data that are
-  non-negative integers, but it has an upper bound. In population
-  models, the upper bound is often population size, and we use the model
-  to describe how many individuals die during some time period.
+  non-negative integers, but it has an upper bound. \\
+  \vfill
+  In population models, the upper bound is often population size, and
+  we use the model to describe how many individuals die during some
+  time period. \\
   \[
     D_t \sim \mathrm{Binomial}(N_t, d)
   \]
 \end{frame}
 
+
+
+\begin{frame}[fragile]
+  \frametitle{Binomial distributions}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=0.9\textwidth]{figure/bin-1} 
+
+}
+
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Demographic stochasticity}
+  Poisson-Binomial birth-death model \\
+  \[
+     N_{t+1} = N_t + B_t - D_t
+  \]
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=0.8\textwidth]{figure/pois-bin-1} 
+
+}
+
+
+\end{knitrout}
+\end{frame}
 
 
 \begin{frame}
@@ -524,8 +589,8 @@ R code
   \vfill
   Purely stochastic models don't describe population processes. \\
   \vfill
-  The goal is to develop a mechanistic model that represents 
-  our biological understanding while allowing for stochasticity. \\
+  The goal is to develop mechanistic model that represent 
+  our biological understanding while allowing for uncertainty. \\
 \end{frame}
 
 
