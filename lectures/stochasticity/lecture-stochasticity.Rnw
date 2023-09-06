@@ -173,8 +173,8 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
   \frametitle{Two important types of stochasticity}
   {\bf Environmental stochasticity}
   \begin{itemize}
-    \item Random variation in demographic rates (such as the birth
-      rate and the death rate)
+    \item Random variation in demographic rates (such as birth
+      and death rates)
     \item Caused by unpredictable changes in weather, habitat,
       etc\dots conditions among years
     \item[]
@@ -339,7 +339,7 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 %{\large \centering where \\}
 %\vspace{-12pt}
 \[
-  r_t \sim \mbox{Normal}(\bar{r}, \sigma_d^2)
+  r_t \sim \mbox{Normal}(\bar{r}, \sigma^2)
 \] 
 %\normalsize
 %{\tt \R} code:
@@ -349,9 +349,9 @@ nYears <- 20
 N <- r <- rep(NA, nYears)  ## Create empty N and r
 N[1] <- 100                ## Initial value of N
 r.bar <- 0.5               ## Average growth rate
-sigma.d <- 0.1             ## StdDev of growth rate
+sigma <- 0.1               ## StdDev of growth rate
 for(t in 2:nYears) {
-    r[t-1] <- rnorm(n=1, mean=r.bar, sd=sigma.d)
+    r[t-1] <- rnorm(n=1, mean=r.bar, sd=sigma)
     N[t] <- N[t-1] + N[t-1]*r[t-1]
 }
 @
@@ -459,7 +459,7 @@ for(i in 1:10) {
 \begin{frame}
   \frametitle{\large Logistic growth with environmental stochasticity}
   \Large
-  \centering
+  %\centering
   Imagine the carrying capacity fluctuates randomly from year to year. \\
 \[
   N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
@@ -467,7 +467,7 @@ for(i in 1:10) {
 %{\large \centering where \\}
 %\vspace{-12pt}
 \[
-  K_t \sim \mbox{Normal}(\bar{K}, \sigma_e^2)
+  K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
 \]
 \end{frame}
 
@@ -618,11 +618,14 @@ for(i in 1:10) {
 
 \begin{frame}[fragile]
   \frametitle{Demographic stochasticity}
-  Poisson-Binomial birth-death model \\
-  \[
-     N_{t+1} = N_t + B_t - D_t
-  \]
-<<pois-bin,fig.width=7,fig.height=5,out.width="0.8\\textwidth",fig.align='center',echo=FALSE>>=
+  Poisson-Binomial birth-death model. %\\
+  \small
+  \begin{gather*}
+    N_{t+1} = N_t + B_t - D_t \\
+    B_t \sim \mathrm{Poisson}(N_t \times b) \\
+    D_t \sim \mathrm{Binomial}(N_t, d)
+  \end{gather*}
+<<pois-bin,fig.width=7,fig.height=5,out.width="0.7\\textwidth",fig.align='center',echo=FALSE>>=
 par(mai=c(0.9,0.9,0.2,0.2))  
 b <- 0.15  ## Birth rate
 d <- 0.2   ## Mortality rate
@@ -649,7 +652,7 @@ plot(1:nYears, N2, xlab="Time", ylab="Abundance", type="l")
   \vfill
   Purely stochastic models don't describe population processes. \\
   \vfill
-  The goal is to develop mechanistic model that represent 
+  The goal is to develop mechanistic models that represent 
   our biological understanding while allowing for uncertainty. \\
 \end{frame}
 
