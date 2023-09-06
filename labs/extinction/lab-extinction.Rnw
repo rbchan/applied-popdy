@@ -27,8 +27,8 @@ rnw2pdf("lab-extinction",tangle=TRUE)
   % \normalsize
   Answer each of the following questions and upload your completed Excel
   file and R script to ELC by 8:00am on Monday. Be sure to show your
-  calculations. \\
-  Undergrads only need to do the first exercise in R. \\
+  calculations. Undergrads only need to do the \textit{second}
+  exercise in R, not the first. \\
 }
 
 \vspace{12pt}
@@ -81,7 +81,7 @@ rnw2pdf("lab-extinction",tangle=TRUE)
 
 {\bf Exercise I \\}
 \begin{enumerate}
-  \item Suppose a population is growing geometrically with
+  \item[(A)] Suppose a population is growing geometrically with
     $r=-0.2$ and $N_0=500$. There is no random variation, and
     quasi-extinction occurs when $N$ falls below 20 individuals.
     What is the time to quasi-extinction ($T_e$)? In other words, how
@@ -92,11 +92,12 @@ rnw2pdf("lab-extinction",tangle=TRUE)
   %   and $\sigma$ is the standard deviation of the random variable
   %   $X$. Generate the random values of $X$ that will be
   %   used in the 10 simulations in the next step.
-  \item Now imagine that there is no demographic stochasticity,
+  \item[(B)] Now imagine that there is no demographic stochasticity,
     but environmental stochasticity occurs with $r_t \sim
-    \mathrm{Normal}(mean=-0.2, SD=0.1)$. Generate the random values of $r_t$ that will be
+    \mathrm{Normal}(\mathrm{mean}=-0.2, \mathrm{SD}=0.05)$. Generate
+    the random values of $r_t$ that will be  
     used in the 10 simulations in the next step.
-  \item Conduct 10 simulations over a 30 year time period, and force
+  \item[(C)] Conduct 10 simulations over a 30 year time period, and force
     the population size to zero after it falls below the threshold.
     This can be done by multiplying the
     growth equation by a ``test statement'', like this:
@@ -104,7 +105,8 @@ rnw2pdf("lab-extinction",tangle=TRUE)
     replaced with the population growth equation and {\tt CELL} should
     be replaced with the cell reference for abundance at the previous
     time step. Plot the projections.
-  \item What is the average $T_e$ based on these 10 simulations?
+  \item[(D)] What is the average $T_e$ based on these 10 simulations?
+  \item[(E)] What is extinction risk at year 15?
 \end{enumerate}
 
 % \vspace{12pt}
@@ -159,7 +161,7 @@ born, minus the number that died:
   \item Beginning with $N_0=300$, conduct one simulation over 5
     years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
     abundance over time. Hint: You have  to randomly generate $B_t$
-    and $D_t$ each year before you can compute  $N_t$.
+    and $D_t$ each year before you can compute  $N_{t+1}$.
   \item Do you think this population will reach a stochastic
     equilibrium? Why or why not? (A stochastic equilibrium occurs when
     a population fluctuates around a long-term average).
@@ -197,18 +199,19 @@ born, minus the number that died:
 % @ 
 
 
-Geometric growth with demographic stochasticity
+Geometric growth with environmental stochasticity
 <<geom-stoch,out.width="0.75\\textwidth",fig.align='center',size='normalsize',echo=-1>>=
 set.seed(430)
-rbar <- -0.1
-sigma <- 0.1
+rbar <- 0
+sigma <- 0.5
 nYears <- 50
 extinctionThreshold <- 10
 
 ## Repeat the next steps 10 times to do 10 simulations
 ## Or, do a 'nested for loop' and save each simulation (harder)
 N1 <- rep(NA, nYears)  ## Population size 
-N1[1] <- 100           ## Initial population size
+N1[1] <- 50           ## Initial population size
+r <- rep(NA, nYears-1)
 for(t in 2:nYears) {
     r[t-1] <- rnorm(n=1, mean=rbar, sd=sigma)
     N1[t] <- (N1[t-1] + N1[t-1]*r[t-1])*(N1[t-1]>extinctionThreshold)
