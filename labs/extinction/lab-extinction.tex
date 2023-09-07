@@ -145,7 +145,7 @@
     used in the 10 simulations in the next step.
   \item[(C)] Conduct 10 simulations over a 30 year time period, and force
     the population size to zero after it falls below the threshold.
-    This can be done by multiplying the
+    This can be done by multiplying the geometric
     growth equation by a ``test statement'', like this:
     {\tt =(EQUATION)*(CELL>20)}, where {\tt EQUATION} should be
     replaced with the population growth equation and {\tt CELL} should
@@ -204,16 +204,16 @@ born, minus the number that died:
   N_{t+1} = N_t + B_t - D_t
 \]
 \begin{enumerate}
-  \item Beginning with $N_0=300$, conduct one simulation over 5
+  \item[(A)] Beginning with $N_0=300$, conduct one simulation over 5
     years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
     abundance over time. Hint: You have  to randomly generate $B_t$
-    and $D_t$ each year before you can compute  $N_{t+1}$.
-  \item Do you think this population will reach a stochastic
+    and $D_t$ before you can compute  $N_{t+1}$, one year at a time.
+  \item[(B)] Do you think this population will reach a stochastic
     equilibrium? Why or why not? (A stochastic equilibrium occurs when
     a population fluctuates around a long-term average).
-  \item Can population size ever be less than zero under this model?
+  \item[(C)] Can population size ever be less than zero under this model?
     Why or why not?
-  \item Do another simulation, but this time make the mortality rate
+  \item[(D)] Do another simulation, but this time make the mortality rate
     ($d$) density-dependent according to the model $d_t = 0.2 +
     0.001\times N_t$. Will this population reach a stochastic equilibrium? If
     so, at what value of abundance does the equilibrium point occur?
@@ -257,7 +257,7 @@ Geometric growth with environmental stochasticity
 \hlcom{## Repeat the next steps 10 times to do 10 simulations}
 \hlcom{## Or, do a 'nested for loop' and save each simulation (harder)}
 \hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Population size }
-\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{50}           \hlcom{## Initial population size}
+\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{50}            \hlcom{## Initial population size}
 \hlstd{r} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears}\hlopt{-}\hlnum{1}\hlstd{)}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
     \hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=rbar,} \hlkwc{sd}\hlstd{=sigma)}
