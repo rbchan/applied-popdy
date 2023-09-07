@@ -4,8 +4,6 @@
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
 
-
-
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
 rnw2pdf("lecture-extinction")
@@ -273,7 +271,7 @@ arrows(Te-1, 19, Te-1, 3, length=0.1)
 \vspace{0.3cm}
 {\large \centering where \par}
 \[
-  K_t \sim \mbox{Normal}(\bar{K}, \sigma_e^2)
+  K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
 \]
 \end{frame}
 
@@ -283,7 +281,7 @@ arrows(Te-1, 19, Te-1, 3, length=0.1)
 
 
 \begin{frame}[fragile]
-  \frametitle{Logistic example, $r_{max}=0.3$, $\bar{K}=100$, $\sigma_e^2=400$}
+  \frametitle{Logistic example, $r_{max}=0.3$, $\bar{K}=100$, $\sigma^2=400$}
 <<fig.show='hide',include=FALSE,echo=FALSE,fig.width=8,fig.height=6>>=
 r.max <- 0.3
 K.bar <- 100
@@ -362,7 +360,7 @@ for(i in 1:nSim) {
 
 
 \begin{frame}[fragile]
-  \frametitle{Logistic example, $r_{max}=0.3$, $\bar{K}=100$, $\sigma_e^2=1600$}
+  \frametitle{Logistic example, $r_{max}=0.3$, $\bar{K}=100$, $\sigma^2=1600$}
 <<fig.show='hide',echo=FALSE>>=
 r.max <- 0.3
 K.bar <- 100

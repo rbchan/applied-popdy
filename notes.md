@@ -5,7 +5,13 @@
 - Simplify harvest lab
   * Use new years
   * Be clear that pythons need to flatline
-  
+
+- Discussion: Is the universe random?
+
+- Combine stochastic models and extinction lectures
+
+
+
 
 ## For 2023
 
