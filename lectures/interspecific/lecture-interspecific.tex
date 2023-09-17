@@ -1,4 +1,4 @@
-\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -153,7 +153,7 @@
   \Large
   Model for prey
   \[
-    N^{prey}_{t+1} = N^{prey}_t + N^{prey}_t (r^{prey} - d^{prey} N^{pred}_t)
+    N^{prey}_{t+1} = N^{prey}_t + N^{prey}_t (r^{prey} - d^{pred} N^{pred}_t)
   \] \\
   \vspace{1cm}
   \pause
@@ -168,7 +168,7 @@
     \item Model is based on geometric growth
     \item $r^{prey}$ is the growth rate of the prey in the absence of
       predators
-    \item $d^{prey}$ is the kill rate
+    \item $d^{pred}$ is the kill rate
     \item $b^{pred}$ is the birth rate of the predators
     \item $d^{pred}$ is the mortality rate of the predator
   \end{itemize}
