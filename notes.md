@@ -1,6 +1,9 @@
 # Notes for the future
 
+
 ## For 2024
+
+- Use predator-prey parameter notation in Williams et al. 
 
 - Simplify harvest lab
   * Use new years
