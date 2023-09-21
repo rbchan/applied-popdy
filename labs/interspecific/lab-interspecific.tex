@@ -68,7 +68,7 @@
   \Large
   \centering
   Lab 6 Assignment --- Models of Interspecific Interactions \\
-  Due before Monday \par
+  Due by 8:00am on Monday \par
 }
 
 Answer each of the following questions and upload your Excel file and
@@ -83,7 +83,7 @@ You are studying the dynamics of jaguar (\textit{Panthera onca}) and Baird's
 tapir (\textit{Tapirus bairdii}) in Costa Rica's Corcavodo National Park. After
 years of research, you obtain the following parameter estimates, which
 you would like to use in a Lotka-Volterra model: $r^{prey}=0.05$,
-$d^{prey}=0.0005$, $b^{pred}=0.001$, and $d^{pred}=0.45$.  
+$k^{pred}=0.0005$, $b^{pred}=0.001$, and $d^{pred}=0.45$.  
 \begin{enumerate}
   \item[(A)] What predator population size corresponds to prey equilibrium?
     What prey population size corresponds to predator equilibrium? 
@@ -154,7 +154,7 @@ $\alpha^{B}=0.1$.
 \begin{alltt}
 \hlstd{nYears} \hlkwb{<-} \hlnum{5000}
 \hlstd{r.prey} \hlkwb{<-} \hlnum{0.01}
-\hlstd{d.prey} \hlkwb{<-} \hlnum{0.00001}
+\hlstd{k.pred} \hlkwb{<-} \hlnum{0.00001}
 \hlstd{b.pred} \hlkwb{<-} \hlnum{0.00001}
 \hlstd{d.pred} \hlkwb{<-} \hlnum{0.01}
 \hlstd{N.prey} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
@@ -162,7 +162,7 @@ $\alpha^{B}=0.1$.
 \hlstd{N.prey[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{1000}
 \hlstd{N.pred[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{300}
 \hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{N.prey[t]} \hlkwb{<-} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(r.prey}\hlopt{-}\hlstd{d.prey}\hlopt{*}\hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{])}
+    \hlstd{N.prey[t]} \hlkwb{<-} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(r.prey}\hlopt{-}\hlstd{k.pred}\hlopt{*}\hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{])}
     \hlstd{N.pred[t]} \hlkwb{<-} \hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(b.pred}\hlopt{*}\hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{-} \hlstd{d.pred)}
 \hlstd{\}}
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N.prey,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"black"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{3500}\hlstd{),}
