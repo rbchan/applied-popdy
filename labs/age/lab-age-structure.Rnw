@@ -30,7 +30,7 @@ rnw2pdf("lab-age-structure",tangle=TRUE)
 
 Answer each of the following questions and upload your Excel file and
 R script (graduate students only) to ELC. Be sure to show your
-calculations. Undergraduates will get 20 bonus points for doing the (entire) 
+calculations. Undergraduates will get 20 bonus points for doing the entire 
 lab in Excel and R. \\ 
 
 \section*{Exercises}
@@ -41,7 +41,7 @@ lab in Excel and R. \\
 Imagine a population with 4 age classes. The fecundities are $f_1=0$,
 $f_2=1.0$, $f_3=1.5$, and $f_4=1.2$. The survival probabilities are
 $s_1=0.8$, $s_2=0.5$, $s_3=0.25$, and $s_4=0.0$. The initial
-population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
+population sizes are $n_{1,1}=45$, $n_{2,1}=18$, $n_{3,1}=11$, $n_{4,1}=4$.
 \begin{itemize}
   \item[(a)] Create a Leslie matrix with the vital rates provided above.
   \item[(b)] Project the population forward 25 years and plot abundance for
@@ -79,7 +79,7 @@ classes.
 
 For each projection, use a population size of 200 individuals, and put
 all individuals in one of the four age classes. For example, one
-projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The next
+projection will have $n_{1,1}=200$, $n_{2,1}=0$, $n_{3,1}=0$, $n_{4,1}=0$. The next
 projection will have all 200 individuals in the next age class, and so
 on. For each projection, record the total population size after 50
 time steps. Reproductive value is calculated by dividing each
@@ -137,7 +137,7 @@ A
 
 Set values of initial abundance and prepare to project over 50 years.
 <<ex1-n0>>=
-years <- 0:50
+years <- 1:50
 nYears <- length(years)
 n <- matrix(NA, nYears, 3)
 n[1,] <- c(100, 50, 25)    ## Initial abundance
