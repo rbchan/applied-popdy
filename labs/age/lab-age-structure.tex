@@ -69,14 +69,14 @@
   \Large
   \centering
   Lab 7 Assignment --- Age-structured Models \\
-  Due before Monday \par
+  Due by 8:00am on Monday \par
 }
 
 \vspace{12pt}
 
 Answer each of the following questions and upload your Excel file and
 R script (graduate students only) to ELC. Be sure to show your
-calculations. Undergraduates will get 20 bonus points for doing the (entire) 
+calculations. Undergraduates will get 20 bonus points for doing the entire 
 lab in Excel and R. \\ 
 
 \section*{Exercises}
@@ -87,7 +87,7 @@ lab in Excel and R. \\
 Imagine a population with 4 age classes. The fecundities are $f_1=0$,
 $f_2=1.0$, $f_3=1.5$, and $f_4=1.2$. The survival probabilities are
 $s_1=0.8$, $s_2=0.5$, $s_3=0.25$, and $s_4=0.0$. The initial
-population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
+population sizes are $n_{1,1}=45$, $n_{2,1}=18$, $n_{3,1}=11$, $n_{4,1}=4$.
 \begin{itemize}
   \item[(a)] Create a Leslie matrix with the vital rates provided above.
   \item[(b)] Project the population forward 25 years and plot abundance for
@@ -102,9 +102,9 @@ population sizes are $n_{1,0}=45$, $n_{2,0}=18$, $n_{3,0}=11$, $n_{4,0}=4$.
   \item[(d)] Calculate and plot the age-specific
     growth rates: $\lambda_{i,t}$. What is the asymptotic growth rate
     ($\lambda$), rounded to 4 decimals places?
-  \item[(e)] What is the stable age distribution? (Graduate students only:
-    Compute asymptotic $\lambda$ and the stable age distribution using
-    the \texttt{eigen} function in {\tt R}.)
+  \item[(e)] What is the stable age distribution?
+  \item[(f)] Graduate students only: Compute asymptotic $\lambda$ and
+    the stable age distribution using the \texttt{eigen} function in {\tt R}.
   % \item[(f)] What happens to the estimates of $\lambda$ if you change the
   %   initial population sizes to: $n_{1,0}=75$, $n_{2,0}=1$, $n_{3,0}=1$,
   %   $n_{4,0}=1$. Explain.
@@ -125,7 +125,7 @@ classes.
 
 For each projection, use a population size of 200 individuals, and put
 all individuals in one of the four age classes. For example, one
-projection will have $n_{1,0}=200$, $n_{2,0}=0$, $n_{3,0}=0$, $n_{4,0}=0$. The next
+projection will have $n_{1,1}=200$, $n_{2,1}=0$, $n_{3,1}=0$, $n_{4,1}=0$. The next
 projection will have all 200 individuals in the next age class, and so
 on. For each projection, record the total population size after 50
 time steps. Reproductive value is calculated by dividing each
@@ -195,7 +195,7 @@ Set values of initial abundance and prepare to project over 50 years.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{years} \hlkwb{<-} \hlnum{0}\hlopt{:}\hlnum{50}
+\hlstd{years} \hlkwb{<-} \hlnum{1}\hlopt{:}\hlnum{50}
 \hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
 \hlstd{n} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nYears,} \hlnum{3}\hlstd{)}
 \hlstd{n[}\hlnum{1}\hlstd{,]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{50}\hlstd{,} \hlnum{25}\hlstd{)}    \hlcom{## Initial abundance}
@@ -322,8 +322,8 @@ First compute $\lambda$.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{eA} \hlkwb{<-} \hlkwd{eigen}\hlstd{(A)}
-\hlstd{lambda} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{])}
-\hlstd{lambda}  \hlcom{## Asymptotic growth rate}
+\hlstd{lambda} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{])}  \hlcom{## Dominant eigenvalue is the }
+\hlstd{lambda}                      \hlcom{## asymptotic growth rate}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199
@@ -354,7 +354,7 @@ Now find the stable age distribution.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{SADu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}
+\hlstd{SADu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}  \hlcom{## Right eigenvector is stable age dist}
 \hlstd{SAD} \hlkwb{<-} \hlstd{SADu}\hlopt{/}\hlkwd{sum}\hlstd{(SADu)}
 \hlstd{SAD}
 \end{alltt}
@@ -390,8 +390,8 @@ Now compute the reproductive value (RV) of each age class.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{eAT} \hlkwb{<-} \hlkwd{eigen}\hlstd{(}\hlkwd{t}\hlstd{(A))}
-\hlstd{RVu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eAT}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}
-\hlstd{RV} \hlkwb{<-} \hlstd{RVu}\hlopt{/}\hlstd{RVu[}\hlnum{1}\hlstd{]}
+\hlstd{RVu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eAT}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])} \hlcom{## Left eigenvector gives the RVs}
+\hlstd{RV} \hlkwb{<-} \hlstd{RVu}\hlopt{/}\hlstd{RVu[}\hlnum{1}\hlstd{]}           \hlcom{## Standard to divide by first RV}
 \hlstd{RV}
 \end{alltt}
 \begin{verbatim}

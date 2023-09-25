@@ -23,7 +23,7 @@ rnw2pdf("lab-age-structure",tangle=TRUE)
   \Large
   \centering
   Lab 7 Assignment --- Age-structured Models \\
-  Due before Monday \par
+  Due by 8:00am on Monday \par
 }
 
 \vspace{12pt}
@@ -56,9 +56,9 @@ population sizes are $n_{1,1}=45$, $n_{2,1}=18$, $n_{3,1}=11$, $n_{4,1}=4$.
   \item[(d)] Calculate and plot the age-specific
     growth rates: $\lambda_{i,t}$. What is the asymptotic growth rate
     ($\lambda$), rounded to 4 decimals places?
-  \item[(e)] What is the stable age distribution? (Graduate students only:
-    Compute asymptotic $\lambda$ and the stable age distribution using
-    the \texttt{eigen} function in {\tt R}.)
+  \item[(e)] What is the stable age distribution?
+  \item[(f)] Graduate students only: Compute asymptotic $\lambda$ and
+    the stable age distribution using the \texttt{eigen} function in {\tt R}.
   % \item[(f)] What happens to the estimates of $\lambda$ if you change the
   %   initial population sizes to: $n_{1,0}=75$, $n_{2,0}=1$, $n_{3,0}=1$,
   %   $n_{4,0}=1$. Explain.
@@ -207,8 +207,8 @@ distribution, and reproductive value.
 First compute $\lambda$.
 <<ex1-lam>>=
 eA <- eigen(A)
-lambda <- Re(eA$values[1])
-lambda  ## Asymptotic growth rate
+lambda <- Re(eA$values[1])  ## Dominant eigenvalue is the 
+lambda                      ## asymptotic growth rate
 @
 
 Make sure it's the same growth rate that we found earlier.
@@ -220,7 +220,7 @@ lambda
 
 Now find the stable age distribution.
 <<ex1-sad>>=
-SADu <- Re(eA$vectors[,1])
+SADu <- Re(eA$vectors[,1])  ## Right eigenvector is stable age dist
 SAD <- SADu/sum(SADu)
 SAD
 @
@@ -237,8 +237,8 @@ SAD.proj
 Now compute the reproductive value (RV) of each age class.
 <<ex1-rv>>=
 eAT <- eigen(t(A))
-RVu <- Re(eAT$vectors[,1])
-RV <- RVu/RVu[1]
+RVu <- Re(eAT$vectors[,1]) ## Left eigenvector gives the RVs
+RV <- RVu/RVu[1]           ## Standard to divide by first RV
 RV
 @
 
