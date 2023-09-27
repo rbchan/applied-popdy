@@ -3,6 +3,10 @@
 
 ## For 2024
 
+- Derive logistic growth from DD birth/death rates
+
+- Stick with 3 age classes in age lecture
+
 - Use predator-prey parameter notation in Williams et al. 
 
 - Simplify harvest lab
