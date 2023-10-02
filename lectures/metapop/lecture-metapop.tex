@@ -1,4 +1,4 @@
-\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[color=usenames,dvipsnames]{beamer}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -249,11 +249,11 @@
 \begin{frame}
   \frametitle{Sources, sinks, and traps}
   {\bf Source \\}
-  A patch with $\lambda>1$. Sources tend to be net exporters of individuals.  
+  A patch with $\lambda>1$ in the absence of immigration. Sources tend to be net exporters of individuals.  
   \pause
   \vfill
   {\bf Sink \\}
-  A patch with $\lambda<1$. Sinks would go extinct in the absence of immigration.
+  A patch with $\lambda<1$ in the absence of immigration. Sinks would go extinct in the absence of immigration.
   \pause
   \vfill
   {\bf Ecological trap \\}
@@ -423,9 +423,9 @@
   {\bf All else equal\dots}
   \begin{itemize}%[<+->]
     \item An unoccupied site should have a higher chance of being
-      colonized if it is close to an occupied site than if it is isolated
+      colonized if it is close to an occupied site than if it is isolated. 
     \item<2-> Similarly, isolated sites should have a higher extinction
-      probability than connected sites (rescue effect)
+      probability than connected sites (rescue effect).
     \item<3-> Connectivity is determined by:
       \begin{itemize}
         \large
@@ -664,10 +664,19 @@
 %    \begin{column}{\textwidth}
       \centering
       %\uncover<handout:0>{
-        \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012} \\
+%        \animategraphics[loop,controls,width=0.65\textwidth]{1}{figs/colMap}{2004}{2012} \\
       %} %\\
 %    \end{column}
 %  \end{columns}
+      \only<handout:0|1>{\includegraphics[width=0.65\textwidth]{figs/colMap2004} \\}
+      \only<handout:0|2>{\includegraphics[width=0.65\textwidth]{figs/colMap2005} \\}
+      \only<handout:0|3>{\includegraphics[width=0.65\textwidth]{figs/colMap2006} \\}
+      \only<4>{\includegraphics[width=0.65\textwidth]{figs/colMap2007} \\}
+      \only<handout:0|5>{\includegraphics[width=0.65\textwidth]{figs/colMap2008} \\}
+      \only<handout:0|6>{\includegraphics[width=0.65\textwidth]{figs/colMap2009} \\}
+      \only<handout:0|7>{\includegraphics[width=0.65\textwidth]{figs/colMap2010} \\}
+      \only<handout:0|8>{\includegraphics[width=0.65\textwidth]{figs/colMap2011} \\}
+      \only<handout:0|9>{\includegraphics[width=0.65\textwidth]{figs/colMap2012} \\}
 \end{frame}
 
 
@@ -689,7 +698,7 @@
       dynamics of fragmented populations. \\
   \vfill
   Model can be formulated in terms of patch-level abundance
-      and/or occupancy. \\
+      or occupancy. \\
   \vfill
   Modern models are stochastic and spatially explicit.
 \end{frame}
