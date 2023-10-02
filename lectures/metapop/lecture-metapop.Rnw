@@ -21,8 +21,6 @@ rnw2pdf("lecture-metapop",tangle=TRUE)
 
 
 
-
-
 \begin{document}
 
 \begin{frame}[plain]
