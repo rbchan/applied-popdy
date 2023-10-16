@@ -3,6 +3,12 @@
 
 ## For 2024
 
+- Do M&M sampling exercise
+
+
+
+- Make tiger example more realistic (more money)
+
 - Derive logistic growth from DD birth/death rates
 
 - Stick with 3 age classes in age lecture
