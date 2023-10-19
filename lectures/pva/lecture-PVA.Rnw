@@ -184,6 +184,49 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 
 
 
+\begin{frame}
+  \frametitle{Central Georgia black bears}
+  Smallest and most isolated bear population in GA. \\
+  \vfill
+  Little information about the effects of harvest on population viability. \\
+  \vfill
+  Five years of genetic capture-recapture data were used to estimate
+  abundance and develop population models. \\
+  \vfill
+  % \pause
+  \centering
+  \uncover<1->{\fbox{\includegraphics[height=3.5cm]{figs/ga-bears-studyarea}}}
+  \uncover<2->{\fbox{\includegraphics[height=3.5cm]{figs/ga-bears-density}}} \\
+  \vfill
+  \tiny
+  \flushright
+  Hooker et al. (2020, JWM) \\
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Central Georgia black bears}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figs/ga-bears-recruitment}\\
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \frametitle{Central Georgia black bears}
+  \only<handout:0|1>{\includegraphics[width=\textwidth]{figs/ga-bears-status-quo}\\}
+  \only<handout:0|2>{\includegraphics[width=\textwidth]{figs/ga-bears-10}\\}
+  \only<3>{\includegraphics[width=\textwidth]{figs/ga-bears-20}}
+\end{frame}
+
+
+
+
+
 
 \section{Sensitivity Analysis}
 
