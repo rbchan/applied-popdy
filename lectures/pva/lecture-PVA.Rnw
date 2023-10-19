@@ -31,8 +31,6 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 \end{frame}
 
 
-
-
 \section{Introduction}
 
 
