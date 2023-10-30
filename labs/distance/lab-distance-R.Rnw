@@ -1,11 +1,9 @@
 \documentclass[12pt]{article}
 
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{verbatim}
 \usepackage[hidelinks=true]{hyperref}
-
 
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
@@ -32,7 +30,7 @@ knit_theme$set('edit-kwrite')
   \Large
   \centering
   {\bf Lab 12 --- Distance Sampling \\ }
-  Due before Monday \\
+  Due by noon on Monday \\
 }
 
 \vspace{24pt}
