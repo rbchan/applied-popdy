@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -70,7 +70,7 @@
   \Large
   \centering
   Lab Assignment --- Occupancy Models in R \\
-  Due before Monday \par
+  Due by noon on Monday \par
 }
 
 \vspace{10pt}
@@ -171,26 +171,19 @@ data using this command:
 \newpage
 Let's look at a summary:
 
-\begin{knitrout}\footnotesize
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{summary}\hlstd{(exampleData)}
 \end{alltt}
 \begin{verbatim}
-##       Site       season1visit1 season1visit2   season2visit1 season2visit2 
-##  Min.   : 1.00   Min.   :0.0   Min.   :0.000   Min.   :0.0   Min.   :0.00  
-##  1st Qu.:10.75   1st Qu.:0.0   1st Qu.:0.000   1st Qu.:0.0   1st Qu.:0.00  
-##  Median :20.50   Median :0.0   Median :0.000   Median :0.0   Median :0.00  
-##  Mean   :20.50   Mean   :0.4   Mean   :0.325   Mean   :0.3   Mean   :0.25  
-##  3rd Qu.:30.25   3rd Qu.:1.0   3rd Qu.:1.000   3rd Qu.:1.0   3rd Qu.:0.25  
-##  Max.   :40.00   Max.   :1.0   Max.   :1.000   Max.   :1.0   Max.   :1.00  
-##   habitatIndex  
-##  Min.   :1.040  
-##  1st Qu.:1.885  
-##  Median :2.805  
-##  Mean   :2.912  
-##  3rd Qu.:3.835  
-##  Max.   :4.740
+##       Site       season1visit1 season1visit2   season2visit1 season2visit2   habitatIndex  
+##  Min.   : 1.00   Min.   :0.0   Min.   :0.000   Min.   :0.0   Min.   :0.00   Min.   :1.040  
+##  1st Qu.:10.75   1st Qu.:0.0   1st Qu.:0.000   1st Qu.:0.0   1st Qu.:0.00   1st Qu.:1.885  
+##  Median :20.50   Median :0.0   Median :0.000   Median :0.0   Median :0.00   Median :2.805  
+##  Mean   :20.50   Mean   :0.4   Mean   :0.325   Mean   :0.3   Mean   :0.25   Mean   :2.912  
+##  3rd Qu.:30.25   3rd Qu.:1.0   3rd Qu.:1.000   3rd Qu.:1.0   3rd Qu.:0.25   3rd Qu.:3.835  
+##  Max.   :40.00   Max.   :1.0   Max.   :1.000   Max.   :1.0   Max.   :1.00   Max.   :4.740
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -617,9 +610,8 @@ The occupancy estimate is associated with the first season.
 
 Suppose we are interested in estimating occupancy of bobwhite quail
 ({\it Colinus virginianus}) in abandoned ag fields. We randomly select
-50 sites and survey them 4 times each May. The resulting data indicate
-whether at least one quail was detected at each site on each visit in
-each season.    
+50 sites and survey them 4 times each in May. The resulting data indicate
+whether at least one quail was detected at each site on each visit.    
 
 In addition, you think there is a possibility that vegetation height
 affects both occupancy and detection probability so you measure
@@ -638,7 +630,7 @@ Import the file {\tt quail-data-for-R.csv}.
     predictor variable (covariate) for {\bf both} occupancy and detection
     probability. 
   \item[(c)] Is this model better than the first, based on AIC? The
-    lower the AIC, the better the model.\footnote{$\mathrm{AIC} =
+    lower the AIC, the better the model's predictive performance.\footnote{$\mathrm{AIC} =
       -2\times \mathrm{log(likelihood)} + 2\times \mathrm{nParameters}$. AIC
       favors models that explain a lot of variation in the data using
       a small number of parameters.}  
@@ -646,8 +638,7 @@ Import the file {\tt quail-data-for-R.csv}.
     create a plot of the relationship between occurrence probability
     and vegetation height. Do this using the \texttt{predict} function
     as described above. Add the graph to your Word document.
-  \item[(e)] Based on your graph, does occurrence probability
-    increase or decrease with vegetation height?  
+  \item[(e)] Write one sentence to summarize the results displayed in the graph. 
 \end{enumerate}
 
 \clearpage
@@ -666,10 +657,10 @@ Begin by importing the file \texttt{dipnet-data-for-R.csv}.
     errors for psi ($\psi$), gamma ($\gamma$), epsilon ($\epsilon$),
     and p on the probability scale. Report these values in a table in
     your Word document.   
-  \item[(c)] Provide clear interpretations of the estimates. 
-  \item[(d)] Based on these estimates, is there any reason to believe
+  \item[(b)] Provide clear interpretations of the estimates. 
+  \item[(c)] Based on these estimates, is there any reason to believe
     that occupancy has decreased over these years? Explain. 
-  \item[(e)] How certain are you of these conclusions? Answer by
+  \item[(d)] How certain are you of these conclusions? Answer by
     describing how well you think our study design met the assumptions
     of the multi-season occupancy model. 
 \end{enumerate}
