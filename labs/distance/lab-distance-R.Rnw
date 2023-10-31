@@ -30,7 +30,7 @@ knit_theme$set('edit-kwrite')
   \Large
   \centering
   {\bf Lab 12 --- Distance Sampling \\ }
-  Due by noon on Monday \\
+  Due by 8:00am on Monday \\
 }
 
 \vspace{24pt}
