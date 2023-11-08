@@ -3,9 +3,9 @@
 
 ## For 2024
 
-- Do M&M sampling exercise
+- Do M&M sampling exercise for mark-recapture
 
-
+- Go back to using RMark for closed pop lab?
 
 - Make tiger example more realistic (more money)
 
