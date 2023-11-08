@@ -12,8 +12,6 @@ rnw2pdf("lecture-mark-recap-closedpop",tangle=TRUE)
 @
 
 
-
-
 %\renewcommand\mathfamilydefault{\rmdefault}
 
 
