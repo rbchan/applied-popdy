@@ -32,9 +32,9 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 11 -- Estimating survival, recruitment, and growth rate
+  {\bf Lab 14 -- Estimating survival, recruitment, and growth rate
     with capture-mark-recapture data} \\
-  Due before Monday \\
+  Due by 8:00am on Monday \\
 }
 
 \vspace{10pt}
@@ -42,7 +42,8 @@ knit_theme$set("edit-kwrite")
 The purpose of this lab is to learn how to use the R package `marked' to
 estimate survival, recruitment, and growth rate using mark-recapture
 data. Put your code and answers in a Word file named something like
-``Chandler-lab14.docx'', and upload it to ELC.
+``Chandler-lab14.docx'', and upload it to ELC. The use of RMarkdown is
+encouraged but not required.  
 
 %\vspace{-12pt}
 
@@ -66,8 +67,8 @@ numbered metal band, and a unique combination of color bands.
 
 The data come from five years (2014--2018) of surveys. Even though
 ``the robust design'' was used, the data were collapsed so that only
-one value (0 or 1) is shown for each year for each individual. Program
-MARK will ignore all leading zeros in the encounter histories.
+one value (0 or 1) is shown for each year for each individual.
+%% Program MARK will ignore all leading zeros in the encounter histories.
 
 {\bf Assignment}
 
