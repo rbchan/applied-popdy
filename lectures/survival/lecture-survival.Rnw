@@ -224,6 +224,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   \LARGE
   \[
     \hat{S}_t = \prod_{j: t_i \le t}\left(\frac{r_j - d_j}{r_j}\right)
+%    \hat{S}(t) = \prod_{j: t_i \le t}\left(\frac{r(j) - d(j)}{r(j)}\right)
   \]
   \large
   $S_t$ -- probability of surviving to time $t$ \\
