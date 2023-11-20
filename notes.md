@@ -3,6 +3,8 @@
 
 ## For 2024
 
+- Use 4-5 questions in the quizzes, instead of 2-3. 
+
 - Do M&M sampling exercise for mark-recapture
 
 - Go back to using RMark for closed pop lab?
