@@ -26,7 +26,9 @@
 - Combine stochastic models and extinction lectures
 
 - Improve PVA slides
-
+  * Introduce the concepts of resilence, redundancy, and representation as used by the USFWS
+  * Use a species status assessment, like the one I reviewed for GCWA
+  
 
 
 ## For 2023
