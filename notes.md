@@ -29,6 +29,9 @@
   * Introduce the concepts of resilence, redundancy, and representation as used by the USFWS
   * Use a species status assessment, like the one I reviewed for GCWA
   
+- Ditch short essays on final exam
+  * Too much grading and too redundant with final project
+  * Convert them to multiple choice scenarios
 
 
 ## For 2023
