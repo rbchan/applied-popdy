@@ -33,6 +33,8 @@
   * Too much grading and too redundant with final project
   * Convert them to multiple choice scenarios
 
+- Review previous lab materials and common issues at the beginning of each lab
+
 
 ## For 2023
 
