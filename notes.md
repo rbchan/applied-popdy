@@ -3,6 +3,10 @@
 
 ## For 2024
 
+- Show deer data from N GA on body condition and density
+
+- Quiz them on density dependent vs independent factors
+
 - Use 4-5 questions in the quizzes, instead of 2-3. 
 
 - Do M&M sampling exercise for mark-recapture
