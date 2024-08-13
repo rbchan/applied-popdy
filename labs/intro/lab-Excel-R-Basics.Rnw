@@ -344,7 +344,7 @@ legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1
         and \inr{c}, like we did with the \inr{updown} example earlier.  
       \end{itemize}
     \item[5.] Upload the Excel workbook (with both sheets) and the
-      R script to ELC by 8:00am on Monday.
+      R script to ELC by 5:00pm on Friday.
   \end{enumerate}
 \end{frame}
 
