@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0, 0, 0}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0,0,0}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0,0.341,0.682}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
@@ -279,8 +279,8 @@
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{year} \hlkwb{<-} \hlnum{1950}\hlopt{:}\hlnum{1961} \hlcom{# A vector of integers}
-\hlstd{year}              \hlcom{# Type the name of an object to see its values}
+\hldef{year} \hlkwb{<-} \hlnum{1950}\hlopt{:}\hlnum{1961} \hlcom{# A vector of integers}
+\hldef{year}              \hlcom{# Type the name of an object to see its values}
 \end{alltt}
 \begin{verbatim}
 ##  [1] 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961
@@ -294,8 +294,8 @@
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{updown} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlkwd{seq}\hlstd{(}\hlkwc{from}\hlstd{=}\hlnum{20}\hlstd{,} \hlkwc{to}\hlstd{=}\hlnum{100}\hlstd{,} \hlkwc{by}\hlstd{=}\hlnum{20}\hlstd{),} \hlkwd{seq}\hlstd{(}\hlkwc{from}\hlstd{=}\hlnum{100}\hlstd{,} \hlkwc{to}\hlstd{=}\hlnum{20}\hlstd{,} \hlkwc{by}\hlstd{=}\hlopt{-}\hlnum{20}\hlstd{))}
-\hlstd{updown}            \hlcom{# Two sequences, combined}
+\hldef{updown} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlkwd{seq}\hldef{(}\hlkwc{from}\hldef{=}\hlnum{20}\hldef{,} \hlkwc{to}\hldef{=}\hlnum{100}\hldef{,} \hlkwc{by}\hldef{=}\hlnum{20}\hldef{),} \hlkwd{seq}\hldef{(}\hlkwc{from}\hldef{=}\hlnum{100}\hldef{,} \hlkwc{to}\hldef{=}\hlnum{20}\hldef{,} \hlkwc{by}\hldef{=}\hlopt{-}\hlnum{20}\hldef{))}
+\hldef{updown}            \hlcom{# Two sequences, combined}
 \end{alltt}
 \begin{verbatim}
 ##  [1]  20  40  60  80 100 100  80  60  40  20
@@ -309,8 +309,8 @@ vector. \\
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(year)}
-\hlstd{nYears}
+\hldef{nYears} \hlkwb{<-} \hlkwd{length}\hldef{(year)}
+\hldef{nYears}
 \end{alltt}
 \begin{verbatim}
 ## [1] 12
@@ -327,8 +327,8 @@ vector. \\
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{females} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
-\hlstd{females[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}
+\hldef{females} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
+\hldef{females[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -338,9 +338,9 @@ Use a ``for loop'' to compute female abundance in subsequent years.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{females[t]} \hlkwb{<-} \hlstd{females[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{females[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlnum{0.01}
-\hlstd{\}}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{females[t]} \hlkwb{<-} \hldef{females[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{females[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hlnum{0.01}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -360,7 +360,7 @@ Use a ``for loop'' to compute female abundance in subsequent years.
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{males} \hlkwb{<-} \hlstd{females}\hlopt{*}\hlnum{0.8}
+\hldef{males} \hlkwb{<-} \hldef{females}\hlopt{*}\hlnum{0.8}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -371,8 +371,8 @@ Use a ``for loop'' to compute female abundance in subsequent years.
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{model1} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(year, females, males)}
-\hlstd{model1}
+\hldef{model1} \hlkwb{<-} \hlkwd{data.frame}\hldef{(year, females, males)}
+\hldef{model1}
 \end{alltt}
 \begin{verbatim}
 ##    year  females    males
@@ -401,10 +401,10 @@ Use a ``for loop'' to compute female abundance in subsequent years.
 \begin{knitrout}\tiny
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(females} \hlopt{~} \hlstd{year,} \hlkwc{data}\hlstd{=model1,} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
-     \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{120}\hlstd{))}
-\hlkwd{lines}\hlstd{(males} \hlopt{~} \hlstd{year,} \hlkwc{data}\hlstd{=model1,} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlkwc{x}\hlstd{=}\hlnum{1950}\hlstd{,} \hlkwc{y}\hlstd{=}\hlnum{40}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Females"}\hlstd{,} \hlstr{"Males"}\hlstd{),} \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"black"}\hlstd{,} \hlstr{"blue"}\hlstd{),} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{)}
+\hlkwd{plot}\hldef{(females} \hlopt{~} \hldef{year,} \hlkwc{data}\hldef{=model1,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Year"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,}
+     \hlkwc{lwd}\hldef{=}\hlnum{2}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{120}\hldef{))}
+\hlkwd{lines}\hldef{(males} \hlopt{~} \hldef{year,} \hlkwc{data}\hldef{=model1,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"blue"}\hldef{,} \hlkwc{lwd}\hldef{=}\hlnum{2}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlkwc{x}\hldef{=}\hlnum{1950}\hldef{,} \hlkwc{y}\hldef{=}\hlnum{40}\hldef{,} \hlkwc{legend}\hldef{=}\hlkwd{c}\hldef{(}\hlsng{"Females"}\hldef{,} \hlsng{"Males"}\hldef{),} \hlkwc{col}\hldef{=}\hlkwd{c}\hldef{(}\hlsng{"black"}\hldef{,} \hlsng{"blue"}\hldef{),} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/plot-1} 
