@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -66,7 +66,7 @@
   \Large
   \centering
   Lab 2 assignment --- Geometric and logistic growth models \\
-  Due by 8:00am on Monday \par
+  Due by 5:00pm on Friday \par
 }
 
 Answer the following questions by completing the provided Excel 
@@ -202,18 +202,18 @@ Here's an example of a logistic growth model.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
-\hlstd{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
-\hlstd{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
-\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
-\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
-\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
+\hldef{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
+\hldef{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
+\hldef{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
+\hldef{nYears} \hlkwb{<-} \hlkwd{length}\hldef{(years)}
+\hldef{N1} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
+\hldef{N1[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
 \hlcom{## for loop}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{N1[t]} \hlkwb{<-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{rmax}\hlopt{*}\hlstd{(}\hlnum{1} \hlopt{-} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{K)}
-\hlstd{\}}
-\hlkwd{plot}\hlstd{(years, N1,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
-     \hlkwc{main}\hlstd{=}\hlstr{"Logistic growth"}\hlstd{)}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{N1[t]} \hlkwb{<-} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{rmax}\hlopt{*}\hldef{(}\hlnum{1} \hlopt{-} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{/}\hldef{K)}
+\hldef{\}}
+\hlkwd{plot}\hldef{(years, N1,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Year"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,}
+     \hlkwc{main}\hldef{=}\hlsng{"Logistic growth"}\hldef{)}
 \end{alltt}
 \end{kframe}
 

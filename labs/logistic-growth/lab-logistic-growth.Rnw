@@ -18,7 +18,7 @@ rnw2pdf("lab-logistic-growth")
   \Large
   \centering
   Lab 2 assignment --- Geometric and logistic growth models \\
-  Due by 8:00am on Monday \par
+  Due by 5:00pm on Friday \par
 }
 
 Answer the following questions by completing the provided Excel 
