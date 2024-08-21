@@ -1,11 +1,18 @@
 \documentclass[color=usenames,dvipsnames]{beamer}
-%\documentclass[color=usenames,dvipsnames,handout]{beamer}
+% \documentclass[color=usenames,dvipsnames,handout]{beamer}
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
 
 
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm] % Comment out if you want 1 on 1
+%  \pgfpagesuselayout{1}[letterpaper,border shrink=10mm]
+}
 
 
 <<eval=FALSE,include=FALSE>>=
