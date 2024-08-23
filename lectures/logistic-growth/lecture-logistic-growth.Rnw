@@ -4,6 +4,13 @@
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 \usepackage{changepage}
 
@@ -15,6 +22,9 @@
 }
 
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+
+
 
 
 <<eval=FALSE,include=FALSE>>=
@@ -511,11 +521,13 @@ text(53, 55, "amplitude (k1)", pos=2, cex=1)
 
 \begin{frame}
   \frametitle{Does logistic growth occur in nature?}
-  Fruit fly ({\it Drosophila melanogaster}) in the lab\blfootnote{\tiny
-    %\vspace{-12pt}
-    \flushleft
-    Data from Pearl (1927). Figure from Krebs (2014) %\\
-  }. \\
+  \pause
+  Fruit fly ({\it Drosophila melanogaster}) in the lab
+  %% \blfootnote{\tiny
+  %%   %\vspace{-12pt}
+  %%   \flushleft
+  %%   Data from Pearl (1927). Figure from Krebs (2014) %\\
+  %% }. \\
   \vfill
   \centering
   \includegraphics[width=0.6\textwidth]{figs/logistic-drosophila}
@@ -565,8 +577,9 @@ text(53, 55, "amplitude (k1)", pos=2, cex=1)
     \item Growth rate ($\lambda_t=N_{t+1}/N_t$) declines as $N$ approaches $K$
     \item Growth ($\Delta_t=N_{t+1}-N_t$) peaks at $K/2$ (the
       inflection point)
-    \item The model isn't mechanistic in the sense that it doesn't
-      include birth, mortality, and movement processes. 
+    \item The model doesn't include birth, mortality, and movement
+      processes, but it can be derived from density-dependent birth
+      and death rates.  
     \item But it does allow for complex dynamics that resemble
       patterns seen in nature.
   \end{itemize}
