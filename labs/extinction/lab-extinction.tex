@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -249,21 +249,21 @@ Geometric growth with environmental stochasticity
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{rbar} \hlkwb{<-} \hlnum{0}
-\hlstd{sigma} \hlkwb{<-} \hlnum{0.5}
-\hlstd{nYears} \hlkwb{<-} \hlnum{50}
-\hlstd{extinctionThreshold} \hlkwb{<-} \hlnum{10}
+\hldef{rbar} \hlkwb{<-} \hlnum{0}
+\hldef{sigma} \hlkwb{<-} \hlnum{0.5}
+\hldef{nYears} \hlkwb{<-} \hlnum{50}
+\hldef{extinctionThreshold} \hlkwb{<-} \hlnum{10}
 
 \hlcom{## Repeat the next steps 10 times to do 10 simulations}
 \hlcom{## Or, do a 'nested for loop' and save each simulation (harder)}
-\hlstd{N1} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Population size }
-\hlstd{N1[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{50}            \hlcom{## Initial population size}
-\hlstd{r} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears}\hlopt{-}\hlnum{1}\hlstd{)}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=rbar,} \hlkwc{sd}\hlstd{=sigma)}
-    \hlstd{N1[t]} \hlkwb{<-} \hlstd{(N1[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{])}\hlopt{*}\hlstd{(N1[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{>}\hlstd{extinctionThreshold)}
-\hlstd{\}}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N1,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
+\hldef{N1} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}  \hlcom{## Population size }
+\hldef{N1[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{50}            \hlcom{## Initial population size}
+\hldef{r} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears}\hlopt{-}\hlnum{1}\hldef{)}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{r[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rnorm}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{mean}\hldef{=rbar,} \hlkwc{sd}\hldef{=sigma)}
+    \hldef{N1[t]} \hlkwb{<-} \hldef{(N1[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{r[t}\hlopt{-}\hlnum{1}\hldef{])}\hlopt{*}\hldef{(N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{>}\hldef{extinctionThreshold)}
+\hldef{\}}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N1,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,} \hlkwc{type}\hldef{=}\hlsng{"b"}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -282,19 +282,19 @@ Poisson-Binomial birth-death model
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{b} \hlkwb{<-} \hlnum{0.15}  \hlcom{## Birth rate}
-\hlstd{d} \hlkwb{<-} \hlnum{0.2}   \hlcom{## Mortality rate}
-\hlstd{nYears} \hlkwb{<-} \hlnum{50}
-\hlstd{N2} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Empty vector for population size }
-\hlstd{B} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for nBirths}
-\hlstd{D} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}   \hlcom{## Random variable for nDeaths}
-\hlstd{N2[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{B[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rpois}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lambda}\hlstd{=N2[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{b)}
-    \hlstd{D[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rbinom}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{size}\hlstd{=N2[t}\hlopt{-}\hlnum{1}\hlstd{],} \hlkwc{prob}\hlstd{=d)}
-    \hlstd{N2[t]} \hlkwb{<-} \hlstd{N2[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{B[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{-} \hlstd{D[t}\hlopt{-}\hlnum{1}\hlstd{]}
-\hlstd{\}}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N2,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{)}
+\hldef{b} \hlkwb{<-} \hlnum{0.15}  \hlcom{## Birth rate}
+\hldef{d} \hlkwb{<-} \hlnum{0.2}   \hlcom{## Mortality rate}
+\hldef{nYears} \hlkwb{<-} \hlnum{50}
+\hldef{N2} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}  \hlcom{## Empty vector for population size }
+\hldef{B} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}   \hlcom{## Random variable for nBirths}
+\hldef{D} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}   \hlcom{## Random variable for nDeaths}
+\hldef{N2[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{B[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rpois}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{lambda}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{b)}
+    \hldef{D[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rbinom}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{size}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{],} \hlkwc{prob}\hldef{=d)}
+    \hldef{N2[t]} \hlkwb{<-} \hldef{N2[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{B[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{-} \hldef{D[t}\hlopt{-}\hlnum{1}\hldef{]}
+\hldef{\}}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N2,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,} \hlkwc{type}\hldef{=}\hlsng{"b"}\hldef{)}
 \end{alltt}
 \end{kframe}
 
