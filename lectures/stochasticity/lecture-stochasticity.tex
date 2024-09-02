@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -59,6 +59,13 @@
 
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 
 
@@ -96,12 +103,15 @@
   with certainty. \\
   \pause
   \vfill
-  Examples?
+  Examples
   \begin{itemize}
     \item Weather
     \item Our own behavior
     \item Population size
   \end{itemize}
+  \pause
+  \vfill
+  Is the universe random? Or is just too complex to be predicted with certainty? 
 \end{frame}
 
 
@@ -367,15 +377,15 @@ R code
 \begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nYears} \hlkwb{<-} \hlnum{20}
-\hlstd{N} \hlkwb{<-} \hlstd{r} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}  \hlcom{## Create empty N and r}
-\hlstd{N[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{100}                \hlcom{## Initial value of N}
-\hlstd{r.bar} \hlkwb{<-} \hlnum{0.5}               \hlcom{## Average growth rate}
-\hlstd{sigma} \hlkwb{<-} \hlnum{0.1}               \hlcom{## StdDev of growth rate}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlkwc{n}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{mean}\hlstd{=r.bar,} \hlkwc{sd}\hlstd{=sigma)}
-    \hlstd{N[t]} \hlkwb{<-} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{r[t}\hlopt{-}\hlnum{1}\hlstd{]}
-\hlstd{\}}
+\hldef{nYears} \hlkwb{<-} \hlnum{20}
+\hldef{N} \hlkwb{<-} \hldef{r} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}  \hlcom{## Create empty N and r}
+\hldef{N[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}                \hlcom{## Initial value of N}
+\hldef{r.bar} \hlkwb{<-} \hlnum{0.5}               \hlcom{## Average growth rate}
+\hldef{sigma} \hlkwb{<-} \hlnum{0.1}               \hlcom{## StdDev of growth rate}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{r[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rnorm}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{mean}\hldef{=r.bar,} \hlkwc{sd}\hldef{=sigma)}
+    \hldef{N[t]} \hlkwb{<-} \hldef{N[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{r[t}\hlopt{-}\hlnum{1}\hldef{]}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}

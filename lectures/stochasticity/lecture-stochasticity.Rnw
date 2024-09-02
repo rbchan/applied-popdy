@@ -9,6 +9,13 @@
 
 %\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
@@ -49,12 +56,15 @@ rnw2pdf("lecture-stochasticity",tangle=TRUE)
   with certainty. \\
   \pause
   \vfill
-  Examples?
+  Examples
   \begin{itemize}
     \item Weather
     \item Our own behavior
     \item Population size
   \end{itemize}
+  \pause
+  \vfill
+  Is the universe random? Or is just too complex to be predicted with certainty? 
 \end{frame}
 
 
