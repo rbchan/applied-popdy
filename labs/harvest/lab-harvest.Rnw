@@ -42,14 +42,15 @@ The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
   \item If you determine that the per-capita birth rate ($b$) is 2.0,
     what must be the per-capita mortality rate ($d$)?
   \item What harvest rate ($h$) would result in a sustainable yield?
-  \item Use the sustainable harvest rate ($h$) from part 4 to project the population
-    forward from 2012 to 2024. You will need to compute the number of
+  \item Use the sustainable harvest rate ($h$) from part 4 to project
+    the population forward from 2025 to 2036. Sustainable harvest
+    should cause the population to stop growing. To implement
+    sustainable harvest, you will need to compute the number of
     individuals removed ($H_t$) each year using the equation
     $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because
-      harvest is assumed to occur at the end of the year, after the
-      population has grown). Create a graph of python abundance from
+    harvest is assumed to occur at the end of the year, after the 
+    population has grown). Create a graph of python abundance from 
     2005--2024.  
-%  \item How is it possible that $H_t$ can be greater than $N_{t}$?
 \end{enumerate}
 
 \vspace{24pt}
