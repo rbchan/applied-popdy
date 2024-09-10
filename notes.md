@@ -1,5 +1,14 @@
 # Notes for the future
 
+## For 2025
+
+- Quizzes
+  * Shoot for 13
+  * At least 4 questions/quiz
+  
+- Schedule
+  * Consider slowing things down so that labs aren't ahead of lectures
+  * Maybe add another lab: Lab 2 on geometric growth
 
 ## For 2024
 
