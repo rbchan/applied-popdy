@@ -13,6 +13,13 @@ rnw2pdf("lecture-interspecific")
 rnw2pdf("lecture-interspecific",tangle=TRUE)
 @
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 \begin{document}
 
@@ -120,11 +127,11 @@ rnw2pdf("lecture-interspecific",tangle=TRUE)
   \normalsize
   \begin{itemize}
     \item Model is based on geometric growth
-    \item $r^{prey}$ is the growth rate of the prey in the absence of
+    \item $r^{prey}$: growth rate of the prey in the absence of
       predators
-    \item $k^{pred}$ is the kill rate
-    \item $b^{pred}$ is the birth rate of the predators
-    \item $d^{pred}$ is the mortality rate of the predator
+    \item $k^{pred}$: kill rate
+    \item $b^{pred}$: effect of prey on predator birth rate
+    \item $d^{pred}$: predator mortality rate
   \end{itemize}
 \end{frame}
 

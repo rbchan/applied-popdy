@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -87,7 +87,7 @@ $k^{pred}=0.0005$, $b^{pred}=0.001$, and $d^{pred}=0.45$.
 \begin{enumerate}
   \item[(A)] What predator population size corresponds to prey equilibrium?
     What prey population size corresponds to predator equilibrium? 
-  \item[(B)] Project the populations 50 years following an initial prey
+  \item[(B)] Project the populations 100 years following an initial prey
     population size of $N_0^{prey}=500$ and an initial predator
     population size of $N_0^{pred}=100$. Plot the projections.  
   \item[(C)] Clearly, these populations have not reached a stable
@@ -152,23 +152,23 @@ $\alpha^{B}=0.1$.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nYears} \hlkwb{<-} \hlnum{5000}
-\hlstd{r.prey} \hlkwb{<-} \hlnum{0.01}
-\hlstd{k.pred} \hlkwb{<-} \hlnum{0.00001}
-\hlstd{b.pred} \hlkwb{<-} \hlnum{0.00001}
-\hlstd{d.pred} \hlkwb{<-} \hlnum{0.01}
-\hlstd{N.prey} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
-\hlstd{N.pred} \hlkwb{<-} \hlkwd{rep}\hlstd{(}\hlnum{NA}\hlstd{, nYears)}
-\hlstd{N.prey[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{1000}
-\hlstd{N.pred[}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{300}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{N.prey[t]} \hlkwb{<-} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(r.prey}\hlopt{-}\hlstd{k.pred}\hlopt{*}\hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{])}
-    \hlstd{N.pred[t]} \hlkwb{<-} \hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{N.pred[t}\hlopt{-}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(b.pred}\hlopt{*}\hlstd{N.prey[t}\hlopt{-}\hlnum{1}\hlstd{]} \hlopt{-} \hlstd{d.pred)}
-\hlstd{\}}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N.prey,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"black"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{3500}\hlstd{),}
-     \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
-\hlkwd{lines}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, N.pred,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{3500}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Prey"}\hlstd{,} \hlstr{"Predator"}\hlstd{),} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"black"}\hlstd{,} \hlstr{"blue"}\hlstd{))}
+\hldef{nYears} \hlkwb{<-} \hlnum{5000}
+\hldef{r.prey} \hlkwb{<-} \hlnum{0.01}
+\hldef{k.pred} \hlkwb{<-} \hlnum{0.00001}
+\hldef{b.pred} \hlkwb{<-} \hlnum{0.00001}
+\hldef{d.pred} \hlkwb{<-} \hlnum{0.01}
+\hldef{N.prey} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
+\hldef{N.pred} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
+\hldef{N.prey[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{1000}
+\hldef{N.pred[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{300}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{N.prey[t]} \hlkwb{<-} \hldef{N.prey[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N.prey[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{(r.prey}\hlopt{-}\hldef{k.pred}\hlopt{*}\hldef{N.pred[t}\hlopt{-}\hlnum{1}\hldef{])}
+    \hldef{N.pred[t]} \hlkwb{<-} \hldef{N.pred[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N.pred[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{(b.pred}\hlopt{*}\hldef{N.prey[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{-} \hldef{d.pred)}
+\hldef{\}}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N.prey,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"black"}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{3500}\hldef{),}
+     \hlkwc{xlab}\hldef{=}\hlsng{"Year"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{)}
+\hlkwd{lines}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N.pred,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"blue"}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlnum{1}\hldef{,} \hlnum{3500}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Prey"}\hldef{,} \hlsng{"Predator"}\hldef{),} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{col}\hldef{=}\hlkwd{c}\hldef{(}\hlsng{"black"}\hldef{,} \hlsng{"blue"}\hldef{))}
 \end{alltt}
 \end{kframe}
 
