@@ -48,11 +48,11 @@ $k^{pred}=0.0005$, $b^{pred}=0.001$, and $d^{pred}=0.45$.
     equilibrium, so what is the interpretation of the equilibrium
     values from part (a)? What happens if you set the initial
     population sizes to the equilibrium values?  
-  \item[(D)] Change the value of $r^{prey}$ from 0.05 to 0.1,
-    and recalculate the equilibrium points for prey and
-    predators. Project the dynamics of both species again. Plot the
-    results. What are the primary differences?  What explains these
-    differences? 
+  %% \item[(D)] Change the value of $r^{prey}$ from 0.05 to 0.1,
+  %%   and recalculate the equilibrium points for prey and
+  %%   predators. Project the dynamics of both species again. Plot the
+  %%   results. What are the primary differences?  What explains these
+  %%   differences? 
 \end{enumerate}
 
 \vspace{12pt}
