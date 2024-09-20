@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -175,11 +175,11 @@ First, create the projection matrix.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0.0}\hlstd{,} \hlnum{1.5}\hlstd{,} \hlnum{0.5}\hlstd{,}  \hlcom{## The fecundities}
-              \hlnum{0.5}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,}  \hlcom{## The first value is s1}
-              \hlnum{0.0}\hlstd{,} \hlnum{0.9}\hlstd{,} \hlnum{0.0}\hlstd{),} \hlcom{## The second value is s2}
-            \hlkwc{nrow}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{ncol}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{A}
+\hldef{A} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlkwd{c}\hldef{(}\hlnum{0.0}\hldef{,} \hlnum{1.5}\hldef{,} \hlnum{0.5}\hldef{,}  \hlcom{## The fecundities}
+              \hlnum{0.5}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,}  \hlcom{## The first value is s1}
+              \hlnum{0.0}\hldef{,} \hlnum{0.9}\hldef{,} \hlnum{0.0}\hldef{),} \hlcom{## The second value is s2}
+            \hlkwc{nrow}\hldef{=}\hlnum{3}\hldef{,} \hlkwc{ncol}\hldef{=}\hlnum{3}\hldef{,} \hlkwc{byrow}\hldef{=}\hlnum{TRUE}\hldef{)}
+\hldef{A}
 \end{alltt}
 \begin{verbatim}
 ##      [,1] [,2] [,3]
@@ -195,10 +195,10 @@ Set values of initial abundance and prepare to project over 50 years.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{years} \hlkwb{<-} \hlnum{1}\hlopt{:}\hlnum{50}
-\hlstd{nYears} \hlkwb{<-} \hlkwd{length}\hlstd{(years)}
-\hlstd{n} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nYears,} \hlnum{3}\hlstd{)}
-\hlstd{n[}\hlnum{1}\hlstd{,]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{50}\hlstd{,} \hlnum{25}\hlstd{)}    \hlcom{## Initial abundance}
+\hldef{years} \hlkwb{<-} \hlnum{1}\hlopt{:}\hlnum{50}
+\hldef{nYears} \hlkwb{<-} \hlkwd{length}\hldef{(years)}
+\hldef{n} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlnum{NA}\hldef{, nYears,} \hlnum{3}\hldef{)}
+\hldef{n[}\hlnum{1}\hldef{,]} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlnum{100}\hldef{,} \hlnum{50}\hldef{,} \hlnum{25}\hldef{)}    \hlcom{## Initial abundance}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -208,9 +208,9 @@ Do the projection.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-  \hlstd{n[t,]} \hlkwb{<-} \hlstd{A} \hlopt{%*%} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,]}   \hlcom{## Matrix multiplication}
-\hlstd{\}}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+  \hldef{n[t,]} \hlkwb{<-} \hldef{A} \hlopt{%*%} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,]}   \hlcom{## Matrix multiplication}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -222,9 +222,9 @@ Visualize it.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{matplot}\hlstd{(years, n,} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlnum{35}\hlstd{,} \hlnum{100}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Age class 1"}\hlstd{,} \hlstr{"Age class 2"}\hlstd{,} \hlstr{"Age class 3"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\hlkwd{matplot}\hldef{(years, n,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{100}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -241,12 +241,12 @@ Compute the age distribution and take a look.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{N} \hlkwb{<-} \hlkwd{rowSums}\hlstd{(n)} \hlcom{## Total abundance each year}
-\hlstd{c} \hlkwb{<-} \hlstd{n}\hlopt{/}\hlstd{N}        \hlcom{## This works because of R's recycling rules}
-\hlkwd{matplot}\hlstd{(years, c,} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,}
-        \hlkwc{ylab}\hlstd{=}\hlstr{"Proportion in each age class"}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlnum{35}\hlstd{,} \hlnum{1}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Age class 1"}\hlstd{,} \hlstr{"Age class 2"}\hlstd{,} \hlstr{"Age class 3"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\hldef{N} \hlkwb{<-} \hlkwd{rowSums}\hldef{(n)} \hlcom{## Total abundance each year}
+\hldef{c} \hlkwb{<-} \hldef{n}\hlopt{/}\hldef{N}        \hlcom{## This works because of R's recycling rules}
+\hlkwd{matplot}\hldef{(years, c,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{1}\hldef{),} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,}
+        \hlkwc{ylab}\hldef{=}\hlsng{"Proportion in each age class"}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{1}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -261,8 +261,8 @@ Grab the stable age distribution from the final year.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{SAD.proj} \hlkwb{<-} \hlstd{c[nYears,]}
-\hlstd{SAD.proj}
+\hldef{SAD.proj} \hlkwb{<-} \hldef{c[nYears,]}
+\hldef{SAD.proj}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.508639 0.257221 0.234140
@@ -277,12 +277,12 @@ Now compute the annual growth rates for each age class and plot them.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{lambda.it} \hlkwb{<-} \hlstd{n[}\hlopt{-}\hlnum{1}\hlstd{,]}\hlopt{/}\hlstd{n[}\hlopt{-}\hlstd{nYears,]} \hlcom{## Divide each row by the row before it}
-\hlkwd{matplot}\hlstd{(years[}\hlopt{-}\hlnum{1}\hlstd{],} \hlcom{## There are nYears-1 *intervals* between years}
-        \hlstd{lambda.it,} \hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Growth rates"}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"grey"}\hlstd{)} \hlcom{## Horizontal line}
-\hlkwd{legend}\hlstd{(}\hlnum{35}\hlstd{,} \hlnum{1.8}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"Age class 1"}\hlstd{,} \hlstr{"Age class 2"}\hlstd{,} \hlstr{"Age class 3"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\hldef{lambda.it} \hlkwb{<-} \hldef{n[}\hlopt{-}\hlnum{1}\hldef{,]}\hlopt{/}\hldef{n[}\hlopt{-}\hldef{nYears,]} \hlcom{## Divide each row by the row before it}
+\hlkwd{matplot}\hldef{(years[}\hlopt{-}\hlnum{1}\hldef{],} \hlcom{## There are nYears-1 *intervals* between years}
+        \hldef{lambda.it,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Growth rates"}\hldef{)}
+\hlkwd{abline}\hldef{(}\hlkwc{h}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{2}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"grey"}\hldef{)} \hlcom{## Horizontal line}
+\hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{1.8}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -297,14 +297,14 @@ Find asymptotic $\lambda$ from the last time interval.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{lambda.it[nYears}\hlopt{-}\hlnum{1}\hlstd{,]} \hlcom{## These should all be the same}
+\hldef{lambda.it[nYears}\hlopt{-}\hlnum{1}\hldef{,]} \hlcom{## These should all be the same}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199 0.9887199 0.9887199
 \end{verbatim}
 \begin{alltt}
-\hlstd{lambda.proj} \hlkwb{<-} \hlstd{lambda.it[nYears}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}
-\hlstd{lambda.proj} \hlcom{## Asymptotic growth rate}
+\hldef{lambda.proj} \hlkwb{<-} \hldef{lambda.it[nYears}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]}
+\hldef{lambda.proj} \hlcom{## Asymptotic growth rate}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199
@@ -321,9 +321,9 @@ First compute $\lambda$.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{eA} \hlkwb{<-} \hlkwd{eigen}\hlstd{(A)}
-\hlstd{lambda} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{])}  \hlcom{## Dominant eigenvalue is the }
-\hlstd{lambda}                      \hlcom{## asymptotic growth rate}
+\hldef{eA} \hlkwb{<-} \hlkwd{eigen}\hldef{(A)}
+\hldef{lambda} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{values[}\hlnum{1}\hldef{])}  \hlcom{## Dominant eigenvalue is the }
+\hldef{lambda}                      \hlcom{## asymptotic growth rate}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199
@@ -335,13 +335,13 @@ Make sure it's the same growth rate that we found earlier.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{lambda.proj}
+\hldef{lambda.proj}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199
 \end{verbatim}
 \begin{alltt}
-\hlstd{lambda}
+\hldef{lambda}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.9887199
@@ -354,9 +354,9 @@ Now find the stable age distribution.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{SADu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}  \hlcom{## Right eigenvector is stable age dist}
-\hlstd{SAD} \hlkwb{<-} \hlstd{SADu}\hlopt{/}\hlkwd{sum}\hlstd{(SADu)}
-\hlstd{SAD}
+\hldef{SADu} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])}  \hlcom{## Right eigenvector is stable age dist}
+\hldef{SAD} \hlkwb{<-} \hldef{SADu}\hlopt{/}\hlkwd{sum}\hldef{(SADu)}
+\hldef{SAD}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.508639 0.257221 0.234140
@@ -369,13 +369,13 @@ eigenanalysis is equal to that calculated from the projection.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{SAD}
+\hldef{SAD}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.508639 0.257221 0.234140
 \end{verbatim}
 \begin{alltt}
-\hlstd{SAD.proj}
+\hldef{SAD.proj}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.508639 0.257221 0.234140
@@ -389,10 +389,10 @@ Now compute the reproductive value (RV) of each age class.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{eAT} \hlkwb{<-} \hlkwd{eigen}\hlstd{(}\hlkwd{t}\hlstd{(A))}
-\hlstd{RVu} \hlkwb{<-} \hlkwd{Re}\hlstd{(eAT}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])} \hlcom{## Left eigenvector gives the RVs}
-\hlstd{RV} \hlkwb{<-} \hlstd{RVu}\hlopt{/}\hlstd{RVu[}\hlnum{1}\hlstd{]}           \hlcom{## Standard to divide by first RV}
-\hlstd{RV}
+\hldef{eAT} \hlkwb{<-} \hlkwd{eigen}\hldef{(}\hlkwd{t}\hldef{(A))}
+\hldef{RVu} \hlkwb{<-} \hlkwd{Re}\hldef{(eAT}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])} \hlcom{## Left eigenvector gives the RVs}
+\hldef{RV} \hlkwb{<-} \hldef{RVu}\hlopt{/}\hldef{RVu[}\hlnum{1}\hldef{]}           \hlcom{## Standard to divide by first RV}
+\hldef{RV}
 \end{alltt}
 \begin{verbatim}
 ## [1] 1.0000000 1.9774397 0.5057044
