@@ -7,7 +7,8 @@
   * At least 4 questions/quiz
   
 - Schedule
-  * Consider slowing things down so that labs aren't ahead of lectures
+  * Slow things down so that labs aren't ahead of lectures
+  * Allow more time for class discussions/debates
   * Maybe add another lab: Lab 2 on geometric growth
 
 ## For 2024

@@ -16,6 +16,13 @@ rnw2pdf("lecture-age-structure")
 rnw2pdf("lecture-age-structure",tangle=TRUE)
 @
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 
 \begin{document}
@@ -949,7 +956,9 @@ box()
   \pause
   \vfill
   {\bf Generation time \\}
-  The time required for a population to increase by a factor of $R_0$.
+  The time required for a population to increase by a factor of
+  $R_0$. Can also be defined as the age at which individuals are
+  expected to reproduce.  
   % \[
   %   T = \frac{\log(R_0)}{\log(\lambda)}
   % \]
