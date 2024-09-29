@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -70,7 +70,7 @@
   \Large
   \centering
   Lab 8 Assignment --- Metapopulation Models \\
-  Due before Monday \\
+  Due by 8:00am on Monday \\
 }
 
 \vspace{6pt}
@@ -147,9 +147,9 @@ isolated for 40 years.
 
 \begin{enumerate}
   \item[(a)] Project each population forward 40 years using the basic
-    geometric growth model with $\lambda_1=1.05$ and
-    $\lambda_2=0.95$. Calculate the final growth rate ($N_{t+1}/N_t$)
-    for each population.
+    geometric growth model (not the metapopulation model) with
+    $\lambda_1=1.05$ and $\lambda_2=0.95$. Calculate the final growth
+    rate ($N_{t+1}/N_t$) for each population.
   \item[(b)] Next, imagine the 2 populations were actually connected
     in a small metapopulation. Use the abundance-based metapopulation
     model (including immigration and emigration) to project these
@@ -197,10 +197,10 @@ presence/absence data.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nSites} \hlkwb{<-} \hlnum{10}
-\hlstd{nYears} \hlkwb{<-} \hlnum{12}
-\hlstd{gamma} \hlkwb{<-} \hlnum{0.2}    \hlcom{## Colonization probability}
-\hlstd{epsilon} \hlkwb{<-} \hlnum{0.25} \hlcom{## Local extinction probability}
+\hldef{nSites} \hlkwb{<-} \hlnum{10}
+\hldef{nYears} \hlkwb{<-} \hlnum{12}
+\hldef{gamma} \hlkwb{<-} \hlnum{0.2}    \hlcom{## Colonization probability}
+\hldef{epsilon} \hlkwb{<-} \hlnum{0.25} \hlcom{## Local extinction probability}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -211,8 +211,8 @@ Let's assume that we know that the first 8 sites were occupied in year
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{O} \hlkwb{<-} \hlstd{psi} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nYears, nSites)}
-\hlstd{O[}\hlnum{1}\hlstd{,]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlkwd{rep}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{8}\hlstd{),} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{)}
+\hldef{O} \hlkwb{<-} \hldef{psi} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlnum{NA}\hldef{, nYears, nSites)}
+\hldef{O[}\hlnum{1}\hldef{,]} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlkwd{rep}\hldef{(}\hlnum{1}\hldef{,} \hlnum{8}\hldef{),} \hlnum{0}\hldef{,} \hlnum{0}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -224,10 +224,10 @@ generates random numbers from a Bernoulli distribution.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{psi.t} \hlkwb{<-} \hlstd{O[t}\hlopt{-}\hlnum{1}\hlstd{,]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{epsilon)} \hlopt{+} \hlstd{(}\hlnum{1}\hlopt{-}\hlstd{O[t}\hlopt{-}\hlnum{1}\hlstd{,])}\hlopt{*}\hlstd{gamma}
-    \hlstd{O[t,]} \hlkwb{<-} \hlkwd{rbinom}\hlstd{(nSites,} \hlkwc{size}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{prob}\hlstd{=psi.t)}
-\hlstd{\}}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{psi.t} \hlkwb{<-} \hldef{O[t}\hlopt{-}\hlnum{1}\hldef{,]}\hlopt{*}\hldef{(}\hlnum{1}\hlopt{-}\hldef{epsilon)} \hlopt{+} \hldef{(}\hlnum{1}\hlopt{-}\hldef{O[t}\hlopt{-}\hlnum{1}\hldef{,])}\hlopt{*}\hldef{gamma}
+    \hldef{O[t,]} \hlkwb{<-} \hlkwd{rbinom}\hldef{(nSites,} \hlkwc{size}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{prob}\hldef{=psi.t)}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -236,22 +236,22 @@ Take a look at the binary occupancy data.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{O}
+\hldef{O}
 \end{alltt}
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    1    1    1    1    1    1    1    0     0
-##  [2,]    0    1    1    1    1    0    1    1    1     0
-##  [3,]    0    1    0    1    1    0    1    0    0     0
-##  [4,]    0    1    0    0    1    0    1    0    0     0
-##  [5,]    0    1    0    1    1    0    1    1    0     0
-##  [6,]    0    1    0    1    0    0    1    1    0     0
-##  [7,]    0    0    0    0    0    1    0    1    0     0
-##  [8,]    0    0    0    0    0    1    0    1    0     0
-##  [9,]    0    0    0    1    0    1    0    1    0     1
-## [10,]    0    0    0    1    1    0    0    1    1     0
-## [11,]    1    0    0    0    1    1    0    1    1     0
-## [12,]    1    1    0    0    1    1    1    1    1     0
+##  [2,]    0    0    1    1    1    1    0    1    0     0
+##  [3,]    0    0    1    1    1    1    0    1    1     0
+##  [4,]    0    1    1    1    1    0    1    1    1     0
+##  [5,]    1    1    1    0    0    0    1    0    1     0
+##  [6,]    1    1    0    1    0    1    1    0    1     0
+##  [7,]    1    1    1    1    0    1    1    0    1     1
+##  [8,]    1    1    1    1    0    0    1    0    1     1
+##  [9,]    0    1    0    1    0    0    1    0    1     1
+## [10,]    0    0    0    0    0    0    1    1    1     0
+## [11,]    0    0    1    1    1    0    1    0    1     0
+## [12,]    1    0    1    1    1    0    1    0    1     0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -260,11 +260,11 @@ Compute the number of sites occupied each year.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nOccupied} \hlkwb{<-} \hlkwd{rowSums}\hlstd{(O)}
-\hlstd{nOccupied}
+\hldef{nOccupied} \hlkwb{<-} \hlkwd{rowSums}\hldef{(O)}
+\hldef{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 7 4 3 5 4 2 2 4 4 5 7
+##  [1] 8 5 6 7 5 6 8 7 5 3 5 6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -275,11 +275,11 @@ Compute the proportion of sites occupied (PrO) each year.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{PrO} \hlkwb{<-} \hlstd{nOccupied} \hlopt{/} \hlstd{nSites}
-\hlstd{PrO}
+\hldef{PrO} \hlkwb{<-} \hldef{nOccupied} \hlopt{/} \hldef{nSites}
+\hldef{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.7 0.4 0.3 0.5 0.4 0.2 0.2 0.4 0.4 0.5 0.7
+##  [1] 0.8 0.5 0.6 0.7 0.5 0.6 0.8 0.7 0.5 0.3 0.5 0.6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -288,8 +288,8 @@ Graph it.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlstd{nYears, PrO,} \hlkwc{type}\hlstd{=}\hlstr{"b"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Proportion of sites occupied"}\hlstd{,}
-     \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{1}\hlstd{))}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, PrO,} \hlkwc{type}\hldef{=}\hlsng{"b"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Proportion of sites occupied"}\hldef{,}
+     \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{1}\hldef{))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/PrO-graph-1} 
@@ -319,13 +319,13 @@ Define parameters in \texttt{R}.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{lambda} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{0.98}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.02}\hlstd{)}
-\hlstd{pi} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}
-    \hlnum{0.9}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.1}\hlstd{,}
-    \hlnum{0.2}\hlstd{,} \hlnum{0.7}\hlstd{,} \hlnum{0.1}\hlstd{,}
-    \hlnum{0.1}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.9}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{ncol}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{nPatches} \hlkwb{<-} \hlnum{3}
-\hlstd{nYears} \hlkwb{<-} \hlnum{50}
+\hldef{lambda} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlnum{0.98}\hldef{,} \hlnum{1}\hldef{,} \hlnum{1.02}\hldef{)}
+\hldef{pi} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlkwd{c}\hldef{(}
+    \hlnum{0.9}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.1}\hldef{,}
+    \hlnum{0.2}\hldef{,} \hlnum{0.7}\hldef{,} \hlnum{0.1}\hldef{,}
+    \hlnum{0.1}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.9}\hldef{),} \hlkwc{nrow}\hldef{=}\hlnum{3}\hldef{,} \hlkwc{ncol}\hldef{=}\hlnum{3}\hldef{,} \hlkwc{byrow}\hldef{=}\hlnum{TRUE}\hldef{)}
+\hldef{nPatches} \hlkwb{<-} \hlnum{3}
+\hldef{nYears} \hlkwb{<-} \hlnum{50}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -334,8 +334,8 @@ Set the initial population sizes to 100, 110, and 120.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{n} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlnum{NA}\hlstd{, nYears, nPatches)}
-\hlstd{n[}\hlnum{1}\hlstd{,]} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{110}\hlstd{,} \hlnum{120}\hlstd{)}
+\hldef{n} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlnum{NA}\hldef{, nYears, nPatches)}
+\hldef{n[}\hlnum{1}\hldef{,]} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlnum{100}\hldef{,} \hlnum{110}\hldef{,} \hlnum{120}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -344,14 +344,14 @@ Project the metapopulation forward.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{n[t,}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{])} \hlopt{+}
-        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{]}
-    \hlstd{n[t,}\hlnum{2}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{])} \hlopt{+}
-        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{2}\hlstd{]}
-    \hlstd{n[t,}\hlnum{3}\hlstd{]} \hlkwb{<-} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{3}\hlstd{]}\hlopt{*}\hlstd{(}\hlnum{1}\hlopt{-}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{-}\hlstd{pi[}\hlnum{3}\hlstd{,}\hlnum{2}\hlstd{])} \hlopt{+}
-        \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{1}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{]} \hlopt{+} \hlstd{n[t}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{lambda[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{pi[}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{]}
-\hlstd{\}}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{n[t,}\hlnum{1}\hldef{]} \hlkwb{<-} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{1}\hldef{]}\hlopt{*}\hldef{(}\hlnum{1}\hlopt{-}\hldef{pi[}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]}\hlopt{-}\hldef{pi[}\hlnum{1}\hldef{,}\hlnum{3}\hldef{])} \hlopt{+}
+        \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{2}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{2}\hldef{,}\hlnum{1}\hldef{]} \hlopt{+} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{3}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{3}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{3}\hldef{,}\hlnum{1}\hldef{]}
+    \hldef{n[t,}\hlnum{2}\hldef{]} \hlkwb{<-} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{2}\hldef{]}\hlopt{*}\hldef{(}\hlnum{1}\hlopt{-}\hldef{pi[}\hlnum{2}\hldef{,}\hlnum{1}\hldef{]}\hlopt{-}\hldef{pi[}\hlnum{2}\hldef{,}\hlnum{3}\hldef{])} \hlopt{+}
+        \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{1}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]} \hlopt{+} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{3}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{3}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{3}\hldef{,}\hlnum{2}\hldef{]}
+    \hldef{n[t,}\hlnum{3}\hldef{]} \hlkwb{<-} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{3}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{3}\hldef{]}\hlopt{*}\hldef{(}\hlnum{1}\hlopt{-}\hldef{pi[}\hlnum{3}\hldef{,}\hlnum{1}\hldef{]}\hlopt{-}\hldef{pi[}\hlnum{3}\hldef{,}\hlnum{2}\hldef{])} \hlopt{+}
+        \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{1}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{1}\hldef{,}\hlnum{3}\hldef{]} \hlopt{+} \hldef{n[t}\hlopt{-}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]}\hlopt{*}\hldef{lambda[}\hlnum{2}\hldef{]}\hlopt{*}\hldef{pi[}\hlnum{2}\hldef{,}\hlnum{3}\hldef{]}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -361,11 +361,11 @@ Do the same projection, but use matrix multiplication.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwa{for}\hlstd{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hlstd{nYears) \{}
-    \hlstd{n[t,]} \hlkwb{<-} \hlkwd{t}\hlstd{(pi)} \hlopt{%*%} \hlstd{(n[t}\hlopt{-}\hlnum{1}\hlstd{,]}\hlopt{*}\hlstd{lambda)}
+\hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
+    \hldef{n[t,]} \hlkwb{<-} \hlkwd{t}\hldef{(pi)} \hlopt{%*%} \hldef{(n[t}\hlopt{-}\hlnum{1}\hldef{,]}\hlopt{*}\hldef{lambda)}
     \hlcom{## Same as:}
     \hlcom{## n[t,] <- t(pi) %*% diag(lambda) %*% n[t-1,]}
-\hlstd{\}}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -375,7 +375,7 @@ Calculate the growth rates.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{lambda.it} \hlkwb{<-} \hlstd{n[}\hlopt{-}\hlnum{1}\hlstd{,]} \hlopt{/} \hlstd{n[}\hlopt{-}\hlstd{nYears,]}
+\hldef{lambda.it} \hlkwb{<-} \hldef{n[}\hlopt{-}\hlnum{1}\hldef{,]} \hlopt{/} \hldef{n[}\hlopt{-}\hldef{nYears,]}
 \hlcom{## Same as:}
 \hlcom{## lambda.it <- n[2:nYears,] / n[1:(nYears-1),]}
 \end{alltt}
@@ -389,11 +389,11 @@ Visualize changes in abundance over time.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{matplot}\hlstd{(n,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Abundance"}\hlstd{,}
-        \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{220}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlkwc{x}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{y}\hlstd{=}\hlnum{220}\hlstd{,}
-       \hlkwd{c}\hlstd{(}\hlstr{"Subpopulation 1"}\hlstd{,} \hlstr{"Subpopulation 2"}\hlstd{,} \hlstr{"Subpopulation 3"}\hlstd{),}
-       \hlkwc{lty}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{)}
+\hlkwd{matplot}\hldef{(n,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,}
+        \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{220}\hldef{),} \hlkwc{lwd}\hldef{=}\hlnum{2}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlkwc{x}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{y}\hldef{=}\hlnum{220}\hldef{,}
+       \hlkwd{c}\hldef{(}\hlsng{"Subpopulation 1"}\hldef{,} \hlsng{"Subpopulation 2"}\hldef{,} \hlsng{"Subpopulation 3"}\hldef{),}
+       \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/Nmeta-plot-n-1} 
@@ -405,12 +405,12 @@ Visualize changes in growth rates over time.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{matplot}\hlstd{(lambda.it,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Time"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Growth rate"}\hlstd{,}
-        \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0.7}\hlstd{,} \hlnum{1.23}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlkwc{x}\hlstd{=}\hlnum{5}\hlstd{,} \hlkwc{y}\hlstd{=}\hlnum{1.23}\hlstd{,}
-       \hlkwd{c}\hlstd{(}\hlstr{"Subpopulation 1"}\hlstd{,} \hlstr{"Subpopulation 2"}\hlstd{,} \hlstr{"Subpopulation 3"}\hlstd{),}
-       \hlkwc{lty}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"grey"}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
+\hlkwd{matplot}\hldef{(lambda.it,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Growth rate"}\hldef{,}
+        \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0.7}\hldef{,} \hlnum{1.23}\hldef{),} \hlkwc{lwd}\hldef{=}\hlnum{2}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlkwc{x}\hldef{=}\hlnum{5}\hldef{,} \hlkwc{y}\hldef{=}\hlnum{1.23}\hldef{,}
+       \hlkwd{c}\hldef{(}\hlsng{"Subpopulation 1"}\hldef{,} \hlsng{"Subpopulation 2"}\hldef{,} \hlsng{"Subpopulation 3"}\hldef{),}
+       \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{)}
+\hlkwd{abline}\hldef{(}\hlkwc{h}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"grey"}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/Nmeta-plot-lam-1} 

@@ -103,9 +103,9 @@ isolated for 40 years.
 
 \begin{enumerate}
   \item[(a)] Project each population forward 40 years using the basic
-    geometric growth model with $\lambda_1=1.05$ and
-    $\lambda_2=0.95$. Calculate the final growth rate ($N_{t+1}/N_t$)
-    for each population.
+    geometric growth model (not the metapopulation model) with
+    $\lambda_1=1.05$ and $\lambda_2=0.95$. Calculate the final growth
+    rate ($N_{t+1}/N_t$) for each population.
   \item[(b)] Next, imagine the 2 populations were actually connected
     in a small metapopulation. Use the abundance-based metapopulation
     model (including immigration and emigration) to project these
