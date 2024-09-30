@@ -1109,21 +1109,32 @@ box()
     We can add these
     transition probabilities to our projection matrix like this:}
   \pause
-  \vfill
+  %% \vfill
+  %% \begin{center}
+  %%   \[
+  %%   {\bf A} =
+  %%   \begin{bmatrix}
+  %%     f_1 & f_2 & f_3 & f_4 \\
+  %%     s_1 & s_2(1-p_2) & 0 & 0 \\
+  %%     0 & s_2 p_2 & s_3(1-p_3) & 0 \\
+  %%     0 & 0 & s_3p_3 & s_4
+  %%   \end{bmatrix}
+  %%   \]
+  %% \end{center}
   \begin{center}
+    \large
     \[
     {\bf A} =
     \begin{bmatrix}
-      f_1 & f_2 & f_3 & f_4 \\
-      s_1 & s_2(1-p_2) & 0 & 0 \\
-      0 & s_2 p_2 & s_3(1-p_3) & 0 \\
-      0 & 0 & s_3p_3 & s_4
+      f_1 & f_2 & f_3 \\
+      s_1 & s_2(1-p_2) & 0 \\
+      0 & s_2 p_2 & s_3
     \end{bmatrix}
     \]
   \end{center}
 \pause
 \vfill
-This example allows for individual to remain in stages 2, 3, and 4 for 
+This example allows for individual to remain in stages 2 and 3 for 
 more than one time period.
 \end{frame}
 %\end{comment}
