@@ -1,8 +1,5 @@
 \documentclass[12pt]{article}
 
-%\usepackage[roman]{../pres1}
-%\usepackage[sans]{../pres1}
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{hyperref}

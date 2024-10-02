@@ -10,6 +10,12 @@
   * Slow things down so that labs aren't ahead of lectures
   * Allow more time for class discussions/debates
   * Maybe add another lab: Lab 2 on geometric growth
+  
+- Shorten PVA lecture to 1 class period
+  * Replace with ideal free/despotic lecture
+  * Would be good to simulate ideal free dynamics
+
+  
 
 ## For 2024
 
