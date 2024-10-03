@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -57,6 +57,13 @@
 \usepackage{bm}
 \usepackage{array}
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 
 
@@ -74,8 +81,6 @@
     \includegraphics[height=4cm,keepaspectratio]{figs/Urocyon_littoralis}
   \end{center}
 \end{frame}
-
-
 
 
 \section{Introduction}
@@ -362,11 +367,11 @@ Suppose we have the following stage-structured projection matrix:
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}
-    \hlnum{0.2}\hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{1.0}\hlstd{,} \hlnum{0.9}\hlstd{,}
-    \hlnum{0.4}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,}
-    \hlnum{0.0}\hlstd{,} \hlnum{0.6}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,}
-    \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{0.5}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hldef{A} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlkwd{c}\hldef{(}
+    \hlnum{0.2}\hldef{,} \hlnum{0.8}\hldef{,} \hlnum{1.0}\hldef{,} \hlnum{0.9}\hldef{,}
+    \hlnum{0.4}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,}
+    \hlnum{0.0}\hldef{,} \hlnum{0.6}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,}
+    \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.8}\hldef{,} \hlnum{0.5}\hldef{),} \hlkwc{nrow}\hldef{=}\hlnum{4}\hldef{,} \hlkwc{byrow}\hldef{=}\hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -377,18 +382,18 @@ distribution, reproductive value, sensitivities, and elasticities.
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{eA} \hlkwb{<-} \hlkwd{eigen}\hlstd{(A)}
-\hlstd{lam} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{])}
-\hlstd{lam}                              \hlcom{## Asymtotic growth rate}
+\hldef{eA} \hlkwb{<-} \hlkwd{eigen}\hldef{(A)}
+\hldef{lam} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{values[}\hlnum{1}\hldef{])}
+\hldef{lam}                              \hlcom{## Asymtotic growth rate}
 \end{alltt}
 \begin{verbatim}
 ## [1] 1.034908
 \end{verbatim}
 \begin{alltt}
-\hlstd{w} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}
-\hlstd{w} \hlkwb{<-} \hlstd{w}\hlopt{/}\hlkwd{sum}\hlstd{(w)}                    \hlcom{## Stable age distribution}
+\hldef{w} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])}
+\hldef{w} \hlkwb{<-} \hldef{w}\hlopt{/}\hlkwd{sum}\hldef{(w)}                    \hlcom{## Stable age distribution}
 
-\hlstd{v} \hlkwb{<-} \hlkwd{Re}\hlstd{(}\hlkwd{eigen}\hlstd{(}\hlkwd{t}\hlstd{(A))}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])} \hlcom{## Reproductive value}
+\hldef{v} \hlkwb{<-} \hlkwd{Re}\hldef{(}\hlkwd{eigen}\hldef{(}\hlkwd{t}\hldef{(A))}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])} \hlcom{## Reproductive value}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -402,8 +407,8 @@ distribution, reproductive value, sensitivities, and elasticities.
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{z} \hlkwb{<-} \hlkwd{outer}\hlstd{(v,w)}\hlopt{/}\hlkwd{c}\hlstd{(v}\hlopt{%*%}\hlstd{w)}
-\hlstd{z} \hlcom{## Sensitivites}
+\hldef{z} \hlkwb{<-} \hlkwd{outer}\hldef{(v,w)}\hlopt{/}\hlkwd{c}\hldef{(v}\hlopt{%*%}\hldef{w)}
+\hldef{z} \hlcom{## Sensitivites}
 \end{alltt}
 \begin{verbatim}
 ##           [,1]      [,2]       [,3]      [,4]
@@ -420,8 +425,8 @@ The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{e} \hlkwb{<-} \hlstd{A}\hlopt{*}\hlstd{z}\hlopt{/}\hlstd{lam}
-\hlstd{e}  \hlcom{## Elasticities}
+\hldef{e} \hlkwb{<-} \hldef{A}\hlopt{*}\hldef{z}\hlopt{/}\hldef{lam}
+\hldef{e}  \hlcom{## Elasticities}
 \end{alltt}
 \begin{verbatim}
 ##            [,1]      [,2]      [,3]       [,4]
@@ -491,19 +496,19 @@ The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{A} \hlkwb{<-} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}
-    \hlnum{0.2}\hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{1.0}\hlstd{,} \hlnum{0.9}\hlstd{,}
-    \hlnum{0.4}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,}
-    \hlnum{0.0}\hlstd{,} \hlnum{0.6}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,}
-    \hlnum{0.0}\hlstd{,} \hlnum{0.0}\hlstd{,} \hlnum{0.8}\hlstd{,} \hlnum{0.5}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{,} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{eA} \hlkwb{<-} \hlkwd{eigen}\hlstd{(A)}
-\hlstd{eA}
+\hldef{A} \hlkwb{<-} \hlkwd{matrix}\hldef{(}\hlkwd{c}\hldef{(}
+    \hlnum{0.2}\hldef{,} \hlnum{0.8}\hldef{,} \hlnum{1.0}\hldef{,} \hlnum{0.9}\hldef{,}
+    \hlnum{0.4}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,}
+    \hlnum{0.0}\hldef{,} \hlnum{0.6}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,}
+    \hlnum{0.0}\hldef{,} \hlnum{0.0}\hldef{,} \hlnum{0.8}\hldef{,} \hlnum{0.5}\hldef{),} \hlkwc{nrow}\hldef{=}\hlnum{4}\hldef{,} \hlkwc{byrow}\hldef{=}\hlnum{TRUE}\hldef{)}
+\hldef{eA} \hlkwb{<-} \hlkwd{eigen}\hldef{(A)}
+\hldef{eA}
 \end{alltt}
 \begin{verbatim}
 ## eigen() decomposition
 ## $values
-## [1]  1.0349085+0.0000000i  0.0164566+0.3720685i  0.0164566-0.3720685i
-## [4] -0.3678217+0.0000000i
+## [1]  1.03490847+0.0000000i  0.01645661+0.3720685i  0.01645661-0.3720685i
+## [4] -0.36782169+0.0000000i
 ## 
 ## $vectors
 ##               [,1]                  [,2]                  [,3]          [,4]
@@ -513,29 +518,29 @@ The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 ## [4,] -0.2925937+0i  0.7071036+0.0000000i  0.7071036+0.0000000i -0.5780326+0i
 \end{verbatim}
 \begin{alltt}
-\hlstd{lam} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{values[}\hlnum{1}\hlstd{])}
-\hlstd{lam}
+\hldef{lam} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{values[}\hlnum{1}\hldef{])}
+\hldef{lam}
 \end{alltt}
 \begin{verbatim}
 ## [1] 1.034908
 \end{verbatim}
 \begin{alltt}
-\hlstd{w} \hlkwb{<-} \hlkwd{Re}\hlstd{(eA}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}
-\hlstd{w}
+\hldef{w} \hlkwb{<-} \hlkwd{Re}\hldef{(eA}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])}
+\hldef{w}
 \end{alltt}
 \begin{verbatim}
 ## [1] -0.8730660 -0.3374467 -0.1956386 -0.2925937
 \end{verbatim}
 \begin{alltt}
-\hlstd{v} \hlkwb{<-} \hlkwd{Re}\hlstd{(}\hlkwd{eigen}\hlstd{(}\hlkwd{t}\hlstd{(A))}\hlopt{$}\hlstd{vectors[,}\hlnum{1}\hlstd{])}
-\hlstd{v}
+\hldef{v} \hlkwb{<-} \hlkwd{Re}\hldef{(}\hlkwd{eigen}\hldef{(}\hlkwd{t}\hldef{(A))}\hlopt{$}\hldef{vectors[,}\hlnum{1}\hldef{])}
+\hldef{v}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.2739325 0.5717713 0.6209750 0.4608998
 \end{verbatim}
 \begin{alltt}
-\hlstd{sen} \hlkwb{<-} \hlkwd{outer}\hlstd{(v,w)}\hlopt{/}\hlkwd{c}\hlstd{(v}\hlopt{%*%}\hlstd{w)}
-\hlstd{sen}
+\hldef{sen} \hlkwb{<-} \hlkwd{outer}\hldef{(v,w)}\hlopt{/}\hlkwd{c}\hldef{(v}\hlopt{%*%}\hldef{w)}
+\hldef{sen}
 \end{alltt}
 \begin{verbatim}
 ##           [,1]      [,2]       [,3]      [,4]
@@ -545,8 +550,8 @@ The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 ## [4,] 0.5844985 0.2259131 0.13097572 0.1958851
 \end{verbatim}
 \begin{alltt}
-\hlstd{el} \hlkwb{<-} \hlstd{A}\hlopt{*}\hlstd{sen}\hlopt{/}\hlstd{lam}
-\hlstd{el}
+\hldef{el} \hlkwb{<-} \hldef{A}\hlopt{*}\hldef{sen}\hlopt{/}\hldef{lam}
+\hldef{el}
 \end{alltt}
 \begin{verbatim}
 ##            [,1]      [,2]      [,3]       [,4]
@@ -556,21 +561,21 @@ The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 ## [4,] 0.00000000 0.0000000 0.1012462 0.09463883
 \end{verbatim}
 \begin{alltt}
-\hlstd{A2} \hlkwb{<-} \hlstd{A}
-\hlstd{A2[}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]} \hlkwb{<-} \hlstd{A[}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{]}\hlopt{+}\hlnum{0.1}
-\hlstd{lam2} \hlkwb{<-} \hlkwd{Re}\hlstd{(}\hlkwd{eigen}\hlstd{(A2)}\hlopt{$}\hlstd{val[}\hlnum{1}\hlstd{])}
+\hldef{A2} \hlkwb{<-} \hldef{A}
+\hldef{A2[}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]} \hlkwb{<-} \hldef{A[}\hlnum{1}\hldef{,}\hlnum{1}\hldef{]}\hlopt{+}\hlnum{0.1}
+\hldef{lam2} \hlkwb{<-} \hlkwd{Re}\hldef{(}\hlkwd{eigen}\hldef{(A2)}\hlopt{$}\hldef{val[}\hlnum{1}\hldef{])}
 
-\hlstd{A3} \hlkwb{<-} \hlstd{A}
-\hlstd{A3[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]} \hlkwb{<-} \hlstd{A[}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{]}\hlopt{+}\hlnum{0.1}
-\hlstd{lam3} \hlkwb{<-} \hlkwd{Re}\hlstd{(}\hlkwd{eigen}\hlstd{(A3)}\hlopt{$}\hlstd{val[}\hlnum{1}\hlstd{])}
+\hldef{A3} \hlkwb{<-} \hldef{A}
+\hldef{A3[}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]} \hlkwb{<-} \hldef{A[}\hlnum{1}\hldef{,}\hlnum{2}\hldef{]}\hlopt{+}\hlnum{0.1}
+\hldef{lam3} \hlkwb{<-} \hlkwd{Re}\hldef{(}\hlkwd{eigen}\hldef{(A3)}\hlopt{$}\hldef{val[}\hlnum{1}\hldef{])}
 
-\hlstd{(lam2}\hlopt{-}\hlstd{lam)}\hlopt{/}\hlnum{0.1}
+\hldef{(lam2}\hlopt{-}\hldef{lam)}\hlopt{/}\hlnum{0.1}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.3641666
 \end{verbatim}
 \begin{alltt}
-\hlstd{(lam3}\hlopt{-}\hlstd{lam)}\hlopt{/}\hlnum{0.1}
+\hldef{(lam3}\hlopt{-}\hldef{lam)}\hlopt{/}\hlnum{0.1}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.1349474
