@@ -103,7 +103,8 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
     \item<1-> Assessing the extinction risk of a single population
     \item<1-> Comparing relative risks of two or more populations
     \item<1-> Analyzing and synthesizing monitoring data
-    \item<1-| alert@2-> Identifying key life stages or demographic processes as management targets (sensitivity analysis)
+    %% \item<1-| alert@2-> Identifying key life stages or demographic processes as management targets (sensitivity analysis)
+    \item<1-> Identifying key life stages or demographic processes as management targets (sensitivity analysis)
     \item<1-> Determining how large a reserve needs to be to achieve a
       desired level of protection from extinction
     \item<1-> Determining how many individuals to release to establish a
@@ -225,9 +226,12 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 
 \begin{frame}
   \frametitle{Central Georgia black bears}
+  \begin{columns}
+    \wide
   \only<handout:0|1>{\includegraphics[width=\textwidth]{figs/ga-bears-status-quo}\\}
   \only<handout:0|2>{\includegraphics[width=\textwidth]{figs/ga-bears-10}\\}
   \only<3>{\includegraphics[width=\textwidth]{figs/ga-bears-20}}
+  \end{columns}
 \end{frame}
 
 
@@ -241,7 +245,8 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
 \begin{frame}
   \frametitle{Sensitivity analysis}
   A sensitivity analysis seeks to understand the degree to which
-  $\lambda$ is sensitive to changes in vital rates.
+  $\lambda$ is sensitive to changes in a vital rate, while holding all
+  other rates constant.
   \pause
   \vfill
   Usually applied to age- or stage-based population models. \par
@@ -251,9 +256,9 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
   $\theta$ (e.g., survival or fecundity), is:
   \[
 %    \text{Sensitivity of}\; \lambda \; \text{to parameter}\; x \;= \frac{\Delta \lambda}{\Delta x}
-    \text{sensitivity} = \frac{\Delta \lambda}{\Delta \theta}
+    \text{sensitivity} = {\small \lim\limits_{\Delta \theta \to 0}}\; \frac{\Delta \lambda}{\Delta \theta}
   \]
-  as $\lim\limits_{\Delta \theta \to 0}$. 
+%  as $\lim\limits_{\Delta \theta \to 0}$. 
   \pause
   \vfill
   {\bf Sensitivities allow us to make statements such as:} \\
@@ -282,9 +287,9 @@ rnw2pdf("lecture-PVA",tangle=TRUE)
     \hline
   \end{tabular}
 %  \pause
-  \vfill
-  \normalsize
-  \centering Sensitivies don't have to sum to 1 \par
+  %% \vfill
+  %% \normalsize
+  %% \centering Sensitivies don't have to sum to 1 \par
 \end{frame}
 
 
@@ -363,54 +368,79 @@ e  ## Elasticities
 
 
 
-\begin{frame}
-  \frametitle{Sensitivity and elasticity}
- {\bf Take-home points} \\
- \vfill
-  Sensitivity measures the change in $\lambda$ given an absolute
-  change in a parameter. \\
-  \vfill
-  Elasticity measures the proportional change in $\lambda$ given a
-  proportional change in a parameter.
-\end{frame}
-
-
 
 
 \section{Summary}
 
 
 
-\begin{frame}
-  \frametitle{Problems with PVA}
-  \large
-  Most PVA's are {\it ``essentially games played with
-    guesses.''} (Caughley, G. 1994. Conservation Biology). \par
-  \pause
-  \vspace{0.5cm}
-  Many PVA's don't include multiple models corresponding to different
-  hypotheses. \par
-  \pause
-  \vspace{0.5cm}
-  {Some software encourages this. \\}
-\end{frame}
-
-
 
 
 \begin{frame}
   \frametitle{Summary}
-  \large
-  {Final thoughts}
-  \begin{itemize}%[<+->]
-    \item<1-> People often say that PVA's require too much data.
-    \item[]
-    \item<2-> But what is the alternative?
-    \item[]
-    \item<3-> When data are limited (and they always are), you must
-      decrease the time horizon and acknowledge uncertainty in decision process. 
+  %% {\bf Take-home points } \\
+  %% \vspace{12pt}
+  PVA covers almost all methods for predicting how populations will
+  respond to future scenarios.
+  \pause
+  \vfill
+  The most common use is to assess how different conservation
+  strategies will affect extinction risk. \\
+  \pause
+  \vfill
+  Sensitivity analysis is a component of PVA that can guide
+  conservation planning. \\
+  \pause
+  \begin{itemize}
+    \item Sensitivity measures the change in $\lambda$ given an absolute
+      change in a parameter.
+    \item Elasticity measures the proportional change in $\lambda$ given a
+      proportional change in a parameter.
   \end{itemize}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Summary}
+  %  \large
+  {\bf Problems with PVA} \\
+  Most PVAs are {\it ``essentially games played with
+    guesses.''} (Caughley, G. 1994. Conservation Biology). \\
+  \pause
+  \vspace{12pt}
+  Many PVA's don't include multiple models corresponding to different
+  hypotheses, and population parameters are often not estimated from
+  data. \\ 
+  \pause
+  \vspace{12pt}
+  Some software encourages this. \\
+  \pause
+  \vfill
+  {\bf Solutions } \\
+  Collect better data! We need more demographic research, conducted in
+  an adaptive management framework. \\
+  \pause
+  \vspace{12pt}
+  When data are limited (and they always are), decrease the time
+  horizon and acknowledge uncertainty in decision process.  
+\end{frame}
+
+
+
+
+%% \begin{frame}
+%%   \frametitle{Summary}
+%%   \large
+%%   {Final thoughts}
+%%   \begin{itemize}%[<+->]
+%%     \item<1-> People often say that PVA's require too much data.
+%%     \item[]
+%%     \item<2-> But what is the alternative?
+%%     \item[]
+%%     \item<3-> When data are limited (and they always are), you must
+%%       decrease the time horizon and acknowledge uncertainty in decision process. 
+%%   \end{itemize}
+%% \end{frame}
 
 
 \begin{comment}
