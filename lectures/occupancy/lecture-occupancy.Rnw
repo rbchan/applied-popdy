@@ -39,7 +39,7 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
 \begin{frame}
   \frametitle{Motivation}
   {\centering \large Occupancy models were developed to estimate metapopulation
-    parameters when \alert{detection probability} ($p$) is $<1$. \par}
+    parameters when {detection probability} ($p$) is $<1$. \par}
   \pause
 %  \Large
 %  \[
