@@ -60,6 +60,12 @@
 
 
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -84,7 +90,7 @@
 \begin{frame}
   \frametitle{Motivation}
   {\centering \large Occupancy models were developed to estimate metapopulation
-    parameters when \alert{detection probability} ($p$) is $<1$. \par}
+    parameters when {detection probability} ($p$) is $<1$. \par}
   \pause
 %  \Large
 %  \[
@@ -311,7 +317,10 @@
   \pause
   {%\bf
     Software \par}
-  Program {\tt PRESENCE}, Program {\tt MARK}, {\tt R} package {\tt unmarked}
+  Program {\tt PRESENCE}, Program {\tt MARK}, {\tt R} package {\tt unmarked} \\
+  \vfill
+  \centering
+  \url{https://richard-chandler.shinyapps.io/occupancy/} \\
 \end{frame}
 
 

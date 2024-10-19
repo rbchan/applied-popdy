@@ -14,6 +14,13 @@ rnw2pdf("lecture-occupancy")
 rnw2pdf("lecture-occupancy",tangle=TRUE)
 @
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
 
 
 \begin{document}
@@ -266,7 +273,10 @@ rnw2pdf("lecture-occupancy",tangle=TRUE)
   \pause
   {%\bf
     Software \par}
-  Program {\tt PRESENCE}, Program {\tt MARK}, {\tt R} package {\tt unmarked}
+  Program {\tt PRESENCE}, Program {\tt MARK}, {\tt R} package {\tt unmarked} \\
+  \vfill
+  \centering
+  \url{https://richard-chandler.shinyapps.io/occupancy/} \\
 \end{frame}
 
 
