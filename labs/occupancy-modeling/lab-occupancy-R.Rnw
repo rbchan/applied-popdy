@@ -85,8 +85,9 @@ getwd()
 If that is the location where your data are, you're ready to
 import. Otherwise, you need to change your working directory to the
 location where your data files are located. You can change your
-working directory using the drop-down menu options, or using a command
-like:   
+working directory using the drop-down menu options
+(\texttt{Session > Set Working Directory}), or using a command
+like this: 
 
 <<setwd,eval=FALSE>>=
 ## You will need to modify the path in quotes

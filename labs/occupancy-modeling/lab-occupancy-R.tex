@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -97,7 +97,7 @@ R}. To install `unmarked', issue this command in R or RStudio:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{install.packages}\hlstd{(}\hlstr{"unmarked"}\hlstd{)}
+\hlkwd{install.packages}\hldef{(}\hlsng{"unmarked"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -107,7 +107,7 @@ Once it's installed, you need to load it:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(unmarked)}
+\hlkwd{library}\hldef{(unmarked)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -134,7 +134,7 @@ where the working directory is, do this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{getwd}\hlstd{()}
+\hlkwd{getwd}\hldef{()}
 \end{alltt}
 \begin{verbatim}
 ## [1] "/home/rchandler/courses/applied-popdy/labs/occupancy-modeling"
@@ -145,14 +145,15 @@ where the working directory is, do this:
 If that is the location where your data are, you're ready to
 import. Otherwise, you need to change your working directory to the
 location where your data files are located. You can change your
-working directory using the drop-down menu options, or using a command
-like:   
+working directory using the drop-down menu options
+(\texttt{Session > Set Working Directory}), or using a command
+like this: 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{## You will need to modify the path in quotes}
-\hlkwd{setwd}\hlstd{(}\hlstr{"C:/Users/Richard/Documents/APD/"}\hlstd{)}
+\hlkwd{setwd}\hldef{(}\hlsng{"C:/Users/Richard/Documents/APD/"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -163,7 +164,7 @@ data using this command:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{exampleData} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"example-data.csv"}\hlstd{)}
+\hldef{exampleData} \hlkwb{<-} \hlkwd{read.csv}\hldef{(}\hlsng{"example-data.csv"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -174,7 +175,7 @@ Let's look at a summary:
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(exampleData)}
+\hlkwd{summary}\hldef{(exampleData)}
 \end{alltt}
 \begin{verbatim}
 ##       Site       season1visit1 season1visit2   season2visit1 season2visit2   habitatIndex  
@@ -207,13 +208,13 @@ each site.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{## First, extract columns 2-4 with the occupancy data}
-\hlstd{occData} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"season1visit1"}\hlstd{,} \hlstr{"season1visit2"}\hlstd{,}
-                          \hlstr{"season2visit1"}\hlstd{,} \hlstr{"season2visit2"}\hlstd{)]}
+\hldef{occData} \hlkwb{<-} \hldef{exampleData[,}\hlkwd{c}\hldef{(}\hlsng{"season1visit1"}\hldef{,} \hlsng{"season1visit2"}\hldef{,}
+                          \hlsng{"season2visit1"}\hldef{,} \hlsng{"season2visit2"}\hldef{)]}
 \hlcom{## Next, extract the column with the site covariate.}
 \hlcom{## It must be formatted as a data.frame}
-\hlstd{habIndex} \hlkwb{<-} \hlstd{exampleData[,}\hlstr{"habitatIndex"}\hlstd{,}\hlkwc{drop}\hlstd{=}\hlnum{FALSE}\hlstd{]}
+\hldef{habIndex} \hlkwb{<-} \hldef{exampleData[,}\hlsng{"habitatIndex"}\hldef{,}\hlkwc{drop}\hldef{=}\hlnum{FALSE}\hldef{]}
 \hlcom{## Finally, put the pieces together}
-\hlstd{umf} \hlkwb{<-} \hlkwd{unmarkedFrameOccu}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{siteCovs}\hlstd{=habIndex)}
+\hldef{umf} \hlkwb{<-} \hlkwd{unmarkedFrameOccu}\hldef{(}\hlkwc{y}\hldef{=occData,} \hlkwc{siteCovs}\hldef{=habIndex)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -225,7 +226,7 @@ make sure everything looks good:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(umf)}
+\hlkwd{summary}\hldef{(umf)}
 \end{alltt}
 \begin{verbatim}
 ## unmarkedFrame Object
@@ -269,7 +270,7 @@ this the null model:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nullModel} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlnum{1}\hlstd{, umf)}
+\hldef{nullModel} \hlkwb{<-} \hlkwd{occu}\hldef{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlnum{1}\hldef{, umf)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -286,7 +287,7 @@ later. First, let's summarize the results:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(nullModel)}
+\hlkwd{summary}\hldef{(nullModel)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -318,7 +319,7 @@ there are no covariates, we can back-transform like this:
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{## Occupancy estimate - Pr(site is occupied)}
-\hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModel,} \hlkwc{type}\hldef{=}\hlsng{"state"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Occupancy estimate(s)
@@ -330,7 +331,7 @@ there are no covariates, we can back-transform like this:
 \end{verbatim}
 \begin{alltt}
 \hlcom{## Detection estimate - Pr(detection | site is occupied)}
-\hlkwd{backTransform}\hlstd{(nullModel,} \hlkwc{type}\hlstd{=}\hlstr{"det"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModel,} \hlkwc{type}\hldef{=}\hlsng{"det"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Detection estimate(s)
@@ -354,7 +355,7 @@ the habitat index. We can fit such a model like this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{detNullOccHab} \hlkwb{<-} \hlkwd{occu}\hlstd{(}\hlopt{~}\hlnum{1} \hlopt{~}\hlstd{habitatIndex, umf)}
+\hldef{detNullOccHab} \hlkwb{<-} \hlkwd{occu}\hldef{(}\hlopt{~}\hlnum{1} \hlopt{~}\hldef{habitatIndex, umf)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -365,7 +366,7 @@ occupancy probability increases as the index increases.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(detNullOccHab)}
+\hlkwd{summary}\hldef{(detNullOccHab)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -399,7 +400,7 @@ a data frame for prediction like this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{predData} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{habitatIndex}\hlstd{=}\hlkwd{seq}\hlstd{(}\hlkwc{from}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{to}\hlstd{=}\hlnum{5}\hlstd{,} \hlkwc{length.out}\hlstd{=}\hlnum{10}\hlstd{))}
+\hldef{predData} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{habitatIndex}\hldef{=}\hlkwd{seq}\hldef{(}\hlkwc{from}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{to}\hldef{=}\hlnum{5}\hldef{,} \hlkwc{length.out}\hldef{=}\hlnum{10}\hldef{))}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -409,9 +410,9 @@ Now, let's do the prediction:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{predOcc} \hlkwb{<-} \hlkwd{predict}\hlstd{(detNullOccHab,} \hlkwc{newdata}\hlstd{=predData,}
-                   \hlkwc{type}\hlstd{=}\hlstr{"state"}\hlstd{,} \hlkwc{append}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{predOcc}
+\hldef{predOcc} \hlkwb{<-} \hlkwd{predict}\hldef{(detNullOccHab,} \hlkwc{newdata}\hldef{=predData,}
+                   \hlkwc{type}\hldef{=}\hlsng{"state"}\hldef{,} \hlkwc{append}\hldef{=}\hlnum{TRUE}\hldef{)}
+\hldef{predOcc}
 \end{alltt}
 \begin{verbatim}
 ##    Predicted         SE      lower     upper habitatIndex
@@ -438,10 +439,10 @@ Here's how to visualize the predictions with the confidence intervals:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(Predicted} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{),}
-     \hlkwc{xlab}\hlstd{=}\hlstr{"Habitat index"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Occupancy"}\hlstd{)}
-\hlkwd{lines}\hlstd{(lower} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{lines}\hlstd{(upper} \hlopt{~} \hlstd{habitatIndex,} \hlkwc{data}\hlstd{=predOcc,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{plot}\hldef{(Predicted} \hlopt{~} \hldef{habitatIndex,} \hlkwc{data}\hldef{=predOcc,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,}\hlnum{1}\hldef{),}
+     \hlkwc{xlab}\hldef{=}\hlsng{"Habitat index"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Occupancy"}\hldef{)}
+\hlkwd{lines}\hldef{(lower} \hlopt{~} \hldef{habitatIndex,} \hlkwc{data}\hldef{=predOcc,} \hlkwc{lty}\hldef{=}\hlnum{2}\hldef{)}
+\hlkwd{lines}\hldef{(upper} \hlopt{~} \hldef{habitatIndex,} \hlkwc{data}\hldef{=predOcc,} \hlkwc{lty}\hldef{=}\hlnum{2}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -467,7 +468,7 @@ using the \texttt{numPrimary} argument.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{umfMS} \hlkwb{<-} \hlkwd{unmarkedMultFrame}\hlstd{(}\hlkwc{y}\hlstd{=occData,} \hlkwc{numPrimary}\hlstd{=}\hlnum{2}\hlstd{)}
+\hldef{umfMS} \hlkwb{<-} \hlkwd{unmarkedMultFrame}\hldef{(}\hlkwc{y}\hldef{=occData,} \hlkwc{numPrimary}\hldef{=}\hlnum{2}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -477,7 +478,7 @@ Let's take a look.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(umfMS)}
+\hlkwd{summary}\hldef{(umfMS)}
 \end{alltt}
 \begin{verbatim}
 ## unmarkedFrame Object
@@ -504,7 +505,7 @@ between them, unlike before.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{nullModelMS} \hlkwb{<-} \hlkwd{colext}\hlstd{(}\hlopt{~}\hlnum{1}\hlstd{,} \hlopt{~}\hlnum{1}\hlstd{,} \hlopt{~}\hlnum{1}\hlstd{,} \hlopt{~}\hlnum{1}\hlstd{, umfMS)}
+\hldef{nullModelMS} \hlkwb{<-} \hlkwd{colext}\hldef{(}\hlopt{~}\hlnum{1}\hldef{,} \hlopt{~}\hlnum{1}\hldef{,} \hlopt{~}\hlnum{1}\hldef{,} \hlopt{~}\hlnum{1}\hldef{, umfMS)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -514,7 +515,7 @@ Here are the results:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(nullModelMS)}
+\hlkwd{summary}\hldef{(nullModelMS)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -553,7 +554,7 @@ be one of: ``psi'', ``col'', ``ext'', or ``det''.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{backTransform}\hlstd{(nullModelMS,} \hlkwc{type}\hlstd{=}\hlstr{"psi"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModelMS,} \hlkwc{type}\hldef{=}\hlsng{"psi"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Initial estimate(s)
@@ -564,7 +565,7 @@ be one of: ``psi'', ``col'', ``ext'', or ``det''.
 ## Transformation: logistic
 \end{verbatim}
 \begin{alltt}
-\hlkwd{backTransform}\hlstd{(nullModelMS,} \hlkwc{type}\hlstd{=}\hlstr{"col"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModelMS,} \hlkwc{type}\hldef{=}\hlsng{"col"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Colonization estimate(s)
@@ -575,7 +576,7 @@ be one of: ``psi'', ``col'', ``ext'', or ``det''.
 ## Transformation: logistic
 \end{verbatim}
 \begin{alltt}
-\hlkwd{backTransform}\hlstd{(nullModelMS,} \hlkwc{type}\hlstd{=}\hlstr{"ext"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModelMS,} \hlkwc{type}\hldef{=}\hlsng{"ext"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Extinction estimate(s)
@@ -586,7 +587,7 @@ be one of: ``psi'', ``col'', ``ext'', or ``det''.
 ## Transformation: logistic
 \end{verbatim}
 \begin{alltt}
-\hlkwd{backTransform}\hlstd{(nullModelMS,} \hlkwc{type}\hlstd{=}\hlstr{"det"}\hlstd{)}
+\hlkwd{backTransform}\hldef{(nullModelMS,} \hlkwc{type}\hldef{=}\hlsng{"det"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## Backtransformed linear combination(s) of Detection estimate(s)
