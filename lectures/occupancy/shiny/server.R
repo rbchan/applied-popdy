@@ -73,4 +73,21 @@ function(input, output, session) {
     
   })
 
+
+  elevation <- seq(0, 10, by=0.1)
+
+  output$logistic_link <- renderPlot({
+    beta0 <- input$beta0
+    beta1 <- input$beta1
+    plot(elevation, beta0 + beta1*elevation, xlab="Elevation",
+         ylab="Occupancy on the logit scale", ylim=c(-10, 10), type="l")
+  })
+
+  output$logistic_prob <- renderPlot({
+    beta0 <- input$beta0
+    beta1 <- input$beta1
+    plot(elevation, plogis(beta0 + beta1*elevation), xlab="Elevation",
+         ylab="Occupancy", ylim=c(0,1), type="l")
+  })
+
 }
