@@ -29,8 +29,8 @@ knit_theme$set('edit-kwrite')
 {
   \Large
   \centering
-  {\bf Lab 12 --- Distance Sampling \\ }
-  Due by 8:00am on Monday \\
+  {\bf Lab 10 --- Distance Sampling \\ }
+  Due by noon on Monday \\
 }
 
 \vspace{24pt}
@@ -124,7 +124,8 @@ list.files()  ## You should see 'ExampleData.txt' here
 @ 
 
 If you need to change your working directory, you can use the dropdown
-menu options, or you can use a command like this:
+menu options (\texttt{Session > Set Working Directory}), or you can
+use a command like this : 
 
 <<setwd,eval=FALSE>>=
 setwd("C:/Users/RichardC/courses/") ## Change the path in quotes!

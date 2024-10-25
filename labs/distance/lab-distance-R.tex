@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0, 0, 0}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0,0,0}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0,0.341,0.682}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
@@ -71,8 +71,8 @@
 {
   \Large
   \centering
-  {\bf Lab 12 --- Distance Sampling \\ }
-  Due by 8:00am on Monday \\
+  {\bf Lab 10 --- Distance Sampling \\ }
+  Due by noon on Monday \\
 }
 
 \vspace{24pt}
@@ -143,7 +143,7 @@ command:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{install.packages}\hlstd{(}\hlstr{"Distance"}\hlstd{)}
+\hlkwd{install.packages}\hldef{(}\hlsng{"Distance"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -154,7 +154,7 @@ load the package:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(Distance)}
+\hlkwd{library}\hldef{(Distance)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -166,29 +166,31 @@ working directory.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{getwd}\hlstd{()}       \hlcom{## Location on your computer where R will look for files}
+\hlkwd{getwd}\hldef{()}       \hlcom{## Location on your computer where R will look for files}
 \end{alltt}
 \begin{verbatim}
-## [1] "/home/richard/courses/applied-popdy/labs/distance"
+## [1] "/home/rchandler/courses/applied-popdy/labs/distance"
 \end{verbatim}
 \begin{alltt}
-\hlkwd{list.files}\hlstd{()}  \hlcom{## You should see 'ExampleData.txt' here}
+\hlkwd{list.files}\hldef{()}  \hlcom{## You should see 'ExampleData.txt' here}
 \end{alltt}
 \begin{verbatim}
-## [1] "auto"                "ExampleData.txt"     "figs"               
-## [4] "figure"              "GazelleFakeData.txt" "lab-distance-R.pdf" 
-## [7] "lab-distance-R.Rnw"  "lab-distance-R.tex"
+##  [1] "auto"                "ExampleData.txt"     "figs"               
+##  [4] "figure"              "GazelleFakeData.txt" "KEY-lab-distance.R" 
+##  [7] "lab-distance-R.aux"  "lab-distance-R.log"  "lab-distance-R.pdf" 
+## [10] "lab-distance-R.Rnw"  "lab-distance-R.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 If you need to change your working directory, you can use the dropdown
-menu options, or you can use a command like this:
+menu options (\texttt{Session > Set Working Directory}), or you can
+use a command like this : 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{setwd}\hlstd{(}\hlstr{"C:/Users/RichardC/courses/"}\hlstd{)} \hlcom{## Change the path in quotes!}
+\hlkwd{setwd}\hldef{(}\hlsng{"C:/Users/RichardC/courses/"}\hldef{)} \hlcom{## Change the path in quotes!}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -200,7 +202,7 @@ instead of a comma-seperated text file like we used last week:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{exampleData} \hlkwb{<-} \hlkwd{read.table}\hlstd{(}\hlstr{"ExampleData.txt"}\hlstd{,} \hlkwc{header}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{sep}\hlstd{=}\hlstr{"\textbackslash{}t"}\hlstd{)}
+\hldef{exampleData} \hlkwb{<-} \hlkwd{read.table}\hldef{(}\hlsng{"ExampleData.txt"}\hldef{,} \hlkwc{header}\hldef{=}\hlnum{TRUE}\hldef{,} \hlkwc{sep}\hldef{=}\hlsng{"\textbackslash{}t"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -213,7 +215,7 @@ The structure of the data can be assessed like this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{str}\hlstd{(exampleData)}
+\hlkwd{str}\hldef{(exampleData)}
 \end{alltt}
 \begin{verbatim}
 ## 'data.frame':	56 obs. of  5 variables:
@@ -235,12 +237,12 @@ and converts the units to kilometers.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{exampleData2} \hlkwb{<-} \hlstd{exampleData[,}\hlkwd{c}\hlstd{(}\hlstr{"Transect"}\hlstd{,} \hlstr{"GroupSize"}\hlstd{)]}
-\hlkwd{colnames}\hlstd{(exampleData2)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"Sample.Label"}\hlstd{,} \hlstr{"size"}\hlstd{)}       \hlcom{## Rename}
-\hlstd{exampleData2}\hlopt{$}\hlstd{distance} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{Distance} \hlopt{/} \hlnum{1000}      \hlcom{## Convert to km}
-\hlstd{exampleData2}\hlopt{$}\hlstd{Region.Label} \hlkwb{<-} \hlnum{1}                            \hlcom{## Just one region}
-\hlstd{exampleData2}\hlopt{$}\hlstd{Effort} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{TransectLength} \hlopt{/} \hlnum{1000}  \hlcom{## Convert to km}
-\hlstd{exampleData2}\hlopt{$}\hlstd{Area} \hlkwb{<-} \hlstd{exampleData}\hlopt{$}\hlstd{RegionArea}               \hlcom{## Square km}
+\hldef{exampleData2} \hlkwb{<-} \hldef{exampleData[,}\hlkwd{c}\hldef{(}\hlsng{"Transect"}\hldef{,} \hlsng{"GroupSize"}\hldef{)]}
+\hlkwd{colnames}\hldef{(exampleData2)} \hlkwb{<-} \hlkwd{c}\hldef{(}\hlsng{"Sample.Label"}\hldef{,} \hlsng{"size"}\hldef{)}       \hlcom{## Rename}
+\hldef{exampleData2}\hlopt{$}\hldef{distance} \hlkwb{<-} \hldef{exampleData}\hlopt{$}\hldef{Distance} \hlopt{/} \hlnum{1000}      \hlcom{## Convert to km}
+\hldef{exampleData2}\hlopt{$}\hldef{Region.Label} \hlkwb{<-} \hlnum{1}                            \hlcom{## Just one region}
+\hldef{exampleData2}\hlopt{$}\hldef{Effort} \hlkwb{<-} \hldef{exampleData}\hlopt{$}\hldef{TransectLength} \hlopt{/} \hlnum{1000}  \hlcom{## Convert to km}
+\hldef{exampleData2}\hlopt{$}\hldef{Area} \hlkwb{<-} \hldef{exampleData}\hlopt{$}\hldef{RegionArea}               \hlcom{## Square km}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -255,9 +257,9 @@ indicates that we didn't record data beyond 250 m (0.25 km).
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{model.hn} \hlkwb{<-} \hlkwd{ds}\hlstd{(}\hlkwc{data}\hlstd{=exampleData2,} \hlkwc{key}\hlstd{=}\hlstr{"hn"}\hlstd{,}
-               \hlkwc{transect}\hlstd{=}\hlstr{"line"}\hlstd{,} \hlkwc{truncation}\hlstd{=}\hlnum{250}\hlopt{/}\hlnum{1000}\hlstd{,}
-               \hlkwc{adjustment}\hlstd{=}\hlkwa{NULL}\hlstd{,} \hlkwc{quiet}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hldef{model.hn} \hlkwb{<-} \hlkwd{ds}\hldef{(}\hlkwc{data}\hldef{=exampleData2,} \hlkwc{key}\hldef{=}\hlsng{"hn"}\hldef{,}
+               \hlkwc{transect}\hldef{=}\hlsng{"line"}\hldef{,} \hlkwc{truncation}\hldef{=}\hlnum{250}\hlopt{/}\hlnum{1000}\hldef{,}
+               \hlkwc{adjustment}\hldef{=}\hlkwa{NULL}\hldef{,} \hlkwc{quiet}\hldef{=}\hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -269,7 +271,7 @@ using the following command:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(model.hn)}
+\hlkwd{summary}\hldef{(model.hn)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -300,7 +302,7 @@ To view the estimated detection function, do this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(model.hn)}
+\hlkwd{plot}\hldef{(model.hn)}
 \end{alltt}
 \end{kframe}
 
