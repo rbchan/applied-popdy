@@ -15,7 +15,9 @@
   * Replace with ideal free/despotic lecture
   * Would be good to simulate ideal free dynamics
 
-  
+- Add [https://www.tylervigen.com/spurious-correlations](spurious correlations) to sampling lecture 
+
+- 
 
 ## For 2024
 
