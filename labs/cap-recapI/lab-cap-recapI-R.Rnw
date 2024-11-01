@@ -29,8 +29,8 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 13 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
-  Due by 8:00am on Monday \\
+  {\bf Lab 11 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  Due by noon on Monday \\
 }
 
 \vspace{10pt}
