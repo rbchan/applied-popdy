@@ -17,7 +17,10 @@
 
 - Add [https://www.tylervigen.com/spurious-correlations](spurious correlations) to sampling lecture 
 
-- 
+- Must switch back from 'mra' to 'RMark' b/c mra no longer on CRAN
+  * Need simple steps for iOS users
+
+- Do M&M exercise for Lincoln-Peterson
 
 ## For 2024
 
