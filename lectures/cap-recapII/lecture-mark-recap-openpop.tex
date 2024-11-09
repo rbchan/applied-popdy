@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -53,6 +53,13 @@
 
 %\usepackage[roman]{../pres1}
 \usepackage[sans]{../pres1}
+
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
 
 
 
@@ -240,8 +247,8 @@
   \pause
   \vfill
   \centering
-  Software programs like {\tt MARK} find the most likely values of $S$
-  and $f$, given the data. \\
+  Software programs like {\tt MARK} (and {\tt RMark} in {\tt R}) find
+  the most likely values of $S$ and $f$, given the data. \\
 \end{frame}
 
 
@@ -426,11 +433,10 @@
   new individual enter the population.  \\
   \vfill
   If immigration is not possible, recruitment is equivalent to
-  fecundity, defined as the birth rate multipled by the probability of
-  surviving one time interval. \\
+  fecundity. \\
   \vfill
   Note that in other applications, recruitment is defined as the
-  product of the birth and the probability of surviving to maturity. \\
+  product of the birth rate and the probability of surviving to maturity. \\
 \end{frame}
 
 
