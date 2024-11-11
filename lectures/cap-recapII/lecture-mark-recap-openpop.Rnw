@@ -11,6 +11,9 @@
 %  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
 }
 
+%%%%% Add Figs 16.1 and 17.1 from Williams et al book !!!!!!!!!
+
+
 
 <<eval=FALSE,include=FALSE>>=
 source("../../rnw2pdf.R")
