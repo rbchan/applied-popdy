@@ -134,14 +134,14 @@ Forest using baited hoop traps. Sampling began in 2007.
   \item Fit a Jolly-Seber model with constant capture probability
     ($p$), constant entrance probabilities (\texttt{pent}, $b_t$), and
     temporal variation in apparent survival.
-  \item Interpret the parameter estimates. (For parameters that are
-    year-specific, you do not need to interpret each yearly-estimate.) 
+%  \item Interpret the parameter estimates. (For parameters that are
+%    year-specific, you do not need to interpret each yearly-estimate.) 
   \item Use the parameter estimates to compute:
     \begin{itemize}
       \item Super-population size
       \item The number of recruits in each time interval
       \item Abundance at each time point. Hint: apparent survival
-        (Phi) varies over time.
+        ($\Phi$) varies over time.
       \item Growth rate for each time interval ($\lambda_t$)
     \end{itemize}
   \item Plot $\lambda_t$ over time.
