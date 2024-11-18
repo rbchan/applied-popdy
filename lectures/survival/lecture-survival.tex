@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -60,6 +60,13 @@
 
 
 
+
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
@@ -177,7 +184,7 @@
   \begin{itemize}%[<+->]
     \normalsize
     \item<1-> $n$ animals are randomly sampled and monitored over a fixed time interval
-    \item<2-> The fates of all $n$ are known at end of the study period
+    \item<2-> The fates of all animals are known at end of the study period
     \item<3-> $x$ of the $n$ animals survive
     \item<4-> The estimate of survival over the time interval is given by:
   \end{itemize}
@@ -276,6 +283,25 @@
   $S_t$ -- probability of surviving to time $t$ \\
   $r_j$ -- number of individuals ``at risk'' prior to time $t$ \\
   $d_j$ -- number of mortalities prior to time $t$
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Kaplan-Meier in R}
+\begin{knitrout}\footnotesize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hldef{(survival)}                    \hlcom{## Load survival package}
+\hldef{deer} \hlkwb{<-} \hlkwd{read.csv}\hldef{(}\hlsng{"deer_data.csv"}\hldef{)}    \hlcom{## Import data}
+\hldef{S} \hlkwb{<-} \hlkwd{Surv}\hldef{(deer}\hlopt{$}\hldef{SurvTime, deer}\hlopt{$}\hldef{Fate)}  \hlcom{## Format survival data}
+\hlkwd{plot}\hldef{(}\hlkwd{survfit}\hldef{(S}\hlopt{~}\hldef{deer}\hlopt{$}\hldef{Sex),} \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{2}\hldef{,}   \hlcom{## Kaplan-Meier}
+     \hlkwc{main}\hldef{=}\hlsng{"Survivorship curve"}\hldef{,}
+     \hlkwc{xlab}\hldef{=}\hlsng{"Days since capture (t)"}\hldef{,}
+     \hlkwc{ylab}\hldef{=}\hlsng{"Probability of surviving to time t"}\hldef{,} \hlkwc{cex.lab}\hldef{=}\hlnum{1.5}\hldef{)}
+\hlkwd{legend}\hldef{(}\hlnum{400}\hldef{,} \hlnum{1}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Female"}\hldef{,} \hlsng{"Male"}\hldef{),} \hlkwc{lty}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{1}\hldef{,}\hlnum{2}\hldef{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \end{frame}
 
 

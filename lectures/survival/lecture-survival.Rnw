@@ -15,6 +15,14 @@ rnw2pdf("lecture-survival",tangle=TRUE)
 @
 
 
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
+
 \begin{document}
 
 %\fontfamily{lmodern}
@@ -131,7 +139,7 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   \begin{itemize}%[<+->]
     \normalsize
     \item<1-> $n$ animals are randomly sampled and monitored over a fixed time interval
-    \item<2-> The fates of all $n$ are known at end of the study period
+    \item<2-> The fates of all animals are known at end of the study period
     \item<3-> $x$ of the $n$ animals survive
     \item<4-> The estimate of survival over the time interval is given by:
   \end{itemize}
@@ -230,6 +238,22 @@ rnw2pdf("lecture-survival",tangle=TRUE)
   $S_t$ -- probability of surviving to time $t$ \\
   $r_j$ -- number of individuals ``at risk'' prior to time $t$ \\
   $d_j$ -- number of mortalities prior to time $t$
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Kaplan-Meier in R}
+<<kapmeier,size='footnotesize',eval=FALSE,fig.show='hide'>>=
+library(survival)                    ## Load survival package
+deer <- read.csv("deer_data.csv")    ## Import data
+S <- Surv(deer$SurvTime, deer$Fate)  ## Format survival data
+plot(survfit(S~deer$Sex), lty=1:2,   ## Kaplan-Meier
+     main="Survivorship curve",
+     xlab="Days since capture (t)",
+     ylab="Probability of surviving to time t", cex.lab=1.5)
+legend(400, 1, c("Female", "Male"), lty=c(1,2))
+
+@ 
 \end{frame}
 
 
