@@ -73,8 +73,8 @@ rnw2pdf("lecture-survival",tangle=TRUE)
     \item[]
     \item<3-> Capture-mark-recapture
       \begin{itemize}
-%        \item Covered in the previous lecture
-        \item Covered in the next lecture
+        \item Covered in the previous lecture
+%        \item Covered in the next lecture
       \end{itemize}
   \end{enumerate}
 \end{frame}
