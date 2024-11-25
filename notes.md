@@ -22,6 +22,12 @@
 
 - Do M&M exercise for Lincoln-Peterson
 
+- Schedule Jake Knox 
+
+- Project
+  * Remove mention of rubric, or make sure that students don't use it during peer review
+  
+
 ## For 2024
 
 - Show deer data from N GA on body condition and density
