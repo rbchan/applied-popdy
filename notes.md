@@ -27,6 +27,10 @@
 - Project
   * Remove mention of rubric, or make sure that students don't use it during peer review
   
+- Voice/speech coaching
+  * Jimmy Cannon
+    + https://youtu.be/7pWAUiGQvQE?feature=shared
+  
 
 ## For 2024
 
