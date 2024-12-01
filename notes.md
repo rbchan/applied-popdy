@@ -10,6 +10,7 @@
   * Slow things down so that labs aren't ahead of lectures
   * Allow more time for class discussions/debates
   * Maybe add another lab: Lab 2 on geometric growth
+  * The only problem with this is that we need to finish off the estimation stuff as early as possible for grad students
   
 - Shorten PVA lecture to 1 class period
   * Replace with ideal free/despotic lecture
@@ -26,6 +27,7 @@
 
 - Project
   * Remove mention of rubric, or make sure that students don't use it during peer review
+  * Make the final paper due before Thanksgiving? So they don't have to stress about it? 
   
 - Voice/speech coaching
   * Jimmy Cannon
