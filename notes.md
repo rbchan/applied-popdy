@@ -2,6 +2,10 @@
 
 ## For 2025
 
+- Take off max of 50 points for being late
+
+- Post all grades at least a day before graduation.
+
 - Quizzes
   * Shoot for 13
   * At least 4 questions/quiz
