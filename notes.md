@@ -2,9 +2,27 @@
 
 ## For 2025
 
+- Course evaluations
+  * Overall, they were very good
+  * Students seem to think that the labs are hard and confusing 
+    + Add more discussion?
+	+ Review labs in more detail
+  * They want more R instruction
+    + Periodic R review
+	+ More on 'for loops'
+	+ Tell students about Duncan's class
+	+ Remind them this is not Intro to R
+  * They don't see direct connection to the lecture materials
+    + Add links to relevant slides
+  * Final project is hard
+  * They want more interactive lectures and more real-world examples
+
+- Somehow force students to work on final project during last lab
+
+- Post all grades at least a day before graduation.
+
 - Make a good conceptual figure organizing population models and estimation methods
   * Tree diagrams?
-
 - Quizzes
   * Shoot for 13
   * At least 4 questions/quiz
