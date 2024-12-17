@@ -2,6 +2,9 @@
 
 ## For 2025
 
+- Make a good conceptual figure organizing population models and estimation methods
+  * Tree diagrams?
+
 - Quizzes
   * Shoot for 13
   * At least 4 questions/quiz
