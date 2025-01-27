@@ -2,6 +2,11 @@
 
 ## For 2025
 
+- Number one priority is to add more examples
+  * Pull from textbooks 
+  * Exp growth (and extinction) -> passenger pigeon
+
+
 - Course evaluations
   * Overall, they were very good
   * Students seem to think that the labs are hard and confusing 
