@@ -3,9 +3,9 @@
 ## For 2025
 
 - Number one priority is to add more examples
-  * Pull from textbooks 
+  * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
-
+  
 
 - Course evaluations
   * Overall, they were very good
