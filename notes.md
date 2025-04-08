@@ -5,7 +5,11 @@
 - Number one priority is to add more examples
   * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
+
+- Digital policy?
+  * Put computers/phones away after quizzes?
   
+- Make students meet with me to present their model results
 
 - Course evaluations
   * Overall, they were very good
