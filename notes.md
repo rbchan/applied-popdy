@@ -11,6 +11,14 @@
   
 - Make students meet with me to present their model results
 
+- Tips for success
+  * Take notes
+  * Study previous notes before each class
+  * Do the readings
+  * Come to office hours
+  * Avoid distractions during class
+  * Ask questions during class
+
 - Course evaluations
   * Overall, they were very good
   * Students seem to think that the labs are hard and confusing 
