@@ -5,6 +5,8 @@
 - Number one priority is to add more examples
   * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
+  * Hebblewhite et al. 2003, black bears in Yellowstone
+  * Age models for spotted owls
 
 - Digital policy?
   * Put computers/phones away after quizzes?
