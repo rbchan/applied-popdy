@@ -8,6 +8,10 @@
   * Hebblewhite et al. 2003, black bears in Yellowstone
   * Age models for spotted owls
 
+- Show final project assignment early, like second week
+
+- Mealworm project
+
 - Digital policy?
   * Put computers/phones away after quizzes?
   
