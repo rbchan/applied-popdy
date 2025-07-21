@@ -5,7 +5,8 @@
 - Number one priority is to add more examples
   * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
-  
+  * Add "species days"
+    + Focus on popdy of charismatic/unique species
 
 - Course evaluations
   * Overall, they were very good
