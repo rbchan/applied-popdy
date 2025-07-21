@@ -5,8 +5,29 @@
 - Number one priority is to add more examples
   * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
+
   * Add "species days"
     + Focus on popdy of charismatic/unique species
+
+  * Hebblewhite et al. 2003, black bears in Yellowstone
+  * Age models for spotted owls
+
+- Show final project assignment early, like second week
+
+- Mealworm project
+
+- Digital policy?
+  * Put computers/phones away after quizzes?
+  
+- Make students meet with me to present their model results
+
+- Tips for success
+  * Take notes
+  * Study previous notes before each class
+  * Do the readings
+  * Come to office hours
+  * Avoid distractions during class
+  * Ask questions during class
 
 - Course evaluations
   * Overall, they were very good
