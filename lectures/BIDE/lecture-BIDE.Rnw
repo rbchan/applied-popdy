@@ -116,7 +116,8 @@ legend(1, 230, c("Population size (N)",
   \pause
   \vfill
   \centering
-  \includegraphics[width=0.7\textwidth]{figs/jay-model} \\
+  \includegraphics[height=2.5cm]{figs/issj} \hspace{10mm}
+  \includegraphics[height=2.4cm]{figs/jay-model} \\
 \end{frame}
 
 
