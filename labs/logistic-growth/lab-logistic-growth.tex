@@ -65,7 +65,7 @@
 {
   \Large
   \centering
-  Lab 2 assignment --- Geometric and logistic growth models \\
+  Lab 2 assignment --- Geometric growth models \\
   Due by 5:00pm on Friday \par
 }
 
@@ -132,64 +132,66 @@ died. There was no immigration or emigration.
 
 % \clearpage
 
-{\bf Exercise 2a \\}
+{\bf Exercise 2 \\}
 Many people assume that the human population acts differently than
 most wildlife populations and is increasing at an exponential rate, or
-close to it. The UN estimated that the human population was approximately 6
-billion people in 1999, and 7 billion in 2012. 
+close to it. The UN estimated that the human population was
+approximately 7.02 billion in 2010, and 7.11 billion in 2011.
+
 
 \begin{enumerate}
-  \item Given this data and the (multi-step) geometric growth equation:
-    $N_t = N_0(1+r)^t$, calculate $r$ for the human population over
-    this 13-yr period. You will need to recall how to solve algebraic
-    equations with exponents. Google it if you forgot.
-  \item Use the (single-step) geometric growth equation ($N_{t+1} = N_t + N_t r$)
-    and the value of $r$ that you calculated above to predict the
-    human population size from 2013--2021.
-  \item Graph your results.
-  \item How closely does your model's prediction compare to the actual
-    human population size in 2021? You can find the current population
-    size here: \url{
-      https://www.worldometers.info/world-population/
-    }. More data about the world population can be found here: \url{
-      https://ourworldindata.org/world-population-growth      
-    }. Write your answer in the Excel sheet.
+  \item Given these two years of data and the geometric growth equation:
+    $N_{t+1} = N_t + N_t r$, calculate $r$ for the human population. 
+  \item Use the geometric growth equation with the value of $r$ that
+    you calculated above to predict the human population from 2013 to
+    2025. 
+  \item Graph your predictions of the human population along with the
+    actual human population over time period.
+  \item Calculate lambda ($\lambda_t = N_t / N_{t-1}$) for each year,
+    and graph it from 2011 to 2025. 
+  \item Based on these results, did the human population exhibit
+    geometric growth? Write 2-3 sentences to defend your answer. 
+    Write your answer in the Excel sheet.
 \end{enumerate}
 
 \vspace{24pt}
 
-{\bf Exercise 2b \\}
-UN data on human population size from 1999 to 2012 are provided on
-sheet ``Exercise 2b''.
+More data about the human population: \\
+\url{https://www.worldometers.info/world-population/} \\
+\url{https://ourworldindata.org/world-population-growth}.
+
+%% {\bf Exercise 2b \\}
+%% UN data on human population size from 1999 to 2012 are provided on
+%% sheet ``Exercise 2b''.
 
 
-\begin{enumerate}
-  \item Calculate the population growth rate (``lambda'':
-    $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 2000.
-  \item Using a starting values of 6 billion people in 1999, pick
-    values of $r$ that make a geometric growth curve
-    closely approximate the actual data. Use trial and error to find a
-    good value of $r$. 
-  \item The logistic growth model is: 
-    $N_{t+1} = N_t + N_t r_{\rm max}(1 - N_t/K)$ where $r_{\rm max}$
-    is the maximum growth rate and $K$ is the carrying capacity.
-    Using a starting values of 6 billion people in 1999, pick
-    values of $r_{max}$ and $K$ that make a logistic growth curve
-    closely approximate the actual data. Again, use trial and error to
-    find good parameter values. Start by choosing a carrying capacity
-    ($K$) that seems sensible for the human population.  
-  \item Use the values you calculated above to make four graphs of:
-    \begin{itemize}
-      \item Actual abundance ($N$) over time
-      \item Lambda ($\lambda_t$) over time
-      \item Predicted geometric growth over time
-      \item Predicted logistic growth over time.
-    \end{itemize}
-  \item Is recent human population growth more similar to geometric or
-    logistic growth? Be explicit about how the observed trends of
-    abundance and $\lambda_t$ indicate how the human population is
-    growing. Write your answer (3--4 sentences) in the Excel sheet.
-\end{enumerate}
+%% \begin{enumerate}
+%%   \item Calculate the population growth rate (``lambda'':
+%%     $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 2000.
+%%   \item Using a starting values of 6 billion people in 1999, pick
+%%     values of $r$ that make a geometric growth curve
+%%     closely approximate the actual data. Use trial and error to find a
+%%     good value of $r$. 
+%%   \item The logistic growth model is: 
+%%     $N_{t+1} = N_t + N_t r_{\rm max}(1 - N_t/K)$ where $r_{\rm max}$
+%%     is the maximum growth rate and $K$ is the carrying capacity.
+%%     Using a starting values of 6 billion people in 1999, pick
+%%     values of $r_{max}$ and $K$ that make a logistic growth curve
+%%     closely approximate the actual data. Again, use trial and error to
+%%     find good parameter values. Start by choosing a carrying capacity
+%%     ($K$) that seems sensible for the human population.  
+%%   \item Use the values you calculated above to make four graphs of:
+%%     \begin{itemize}
+%%       \item Actual abundance ($N$) over time
+%%       \item Lambda ($\lambda_t$) over time
+%%       \item Predicted geometric growth over time
+%%       \item Predicted logistic growth over time.
+%%     \end{itemize}
+%%   \item Is recent human population growth more similar to geometric or
+%%     logistic growth? Be explicit about how the observed trends of
+%%     abundance and $\lambda_t$ indicate how the human population is
+%%     growing. Write your answer (3--4 sentences) in the Excel sheet.
+%% \end{enumerate}
 
 
 
@@ -198,31 +200,48 @@ sheet ``Exercise 2b''.
 {\bf R tips \\}
 
 
-Here's an example of a logistic growth model.
-\begin{knitrout}
+Here's an example of a geometric growth model.
+\begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hldef{rmax} \hlkwb{<-} \hlnum{0.1}              \hlcom{## max growth rate}
-\hldef{K} \hlkwb{<-} \hlnum{200}                 \hlcom{## carrying capacity}
-\hldef{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}       \hlcom{## years}
+\hldef{r} \hlkwb{<-} \hlnum{0.1}                \hlcom{# growth rate}
+\hldef{years} \hlkwb{<-} \hlnum{2001}\hlopt{:}\hlnum{2050}      \hlcom{# years}
 \hldef{nYears} \hlkwb{<-} \hlkwd{length}\hldef{(years)}
-\hldef{N1} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
-\hldef{N1[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
+\hldef{N} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}
+\hldef{N[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}             \hlcom{## abundance in first year}
 \hlcom{## for loop}
 \hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
-    \hldef{N1[t]} \hlkwb{<-} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{rmax}\hlopt{*}\hldef{(}\hlnum{1} \hlopt{-} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{/}\hldef{K)}
+    \hldef{N[t]} \hlkwb{<-} \hldef{N[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{r}
 \hldef{\}}
-\hlkwd{plot}\hldef{(years, N1,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Year"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,}
-     \hlkwc{main}\hldef{=}\hlsng{"Logistic growth"}\hldef{)}
+\hlkwd{plot}\hldef{(years, N,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Year"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,}
+     \hlkwc{main}\hldef{=}\hlsng{"Geometric growth"}\hldef{)}
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=0.8\textwidth]{figure/logistic-1} 
+{\centering \includegraphics[width=0.8\textwidth]{figure/geo-1} 
 
 }
 
 
 \end{knitrout}
+
+
+
+%% Logistic growth.
+%% <<logistic,out.width="0.6\\textwidth",fig.align="center",size='small'>>=
+%% rmax <- 0.1              ## max growth rate
+%% K <- 200                 ## carrying capacity
+%% years <- 2001:2050       ## years
+%% nYears <- length(years)
+%% N <- rep(NA, nYears)
+%% N[1] <- 100             ## abundance in first year
+%% ## for loop
+%% for(t in 2:nYears) {
+%%     N[t] <- N[t-1] + N[t-1]*rmax*(1 - N[t-1]/K)
+%% }
+%% plot(years, N, type="l", xlab="Year", ylab="Abundance",
+%%      main="Logistic growth")
+%% @ 
 
 
 
