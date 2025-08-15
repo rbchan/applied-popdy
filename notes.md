@@ -5,10 +5,8 @@
 - Number one priority is to add more examples
   * Pull from textbooks like Krebs
   * Exp growth (and extinction) -> passenger pigeon
-
   * Add "species days"
     + Focus on popdy of charismatic/unique species
-
   * Hebblewhite et al. 2003, black bears in Yellowstone
   * Age models for spotted owls
 
@@ -22,7 +20,7 @@
 - Make students meet with me to present their model results
 
 - Tips for success
-  * Take notes
+  * Take notes on paper
   * Study previous notes before each class
   * Do the readings
   * Come to office hours
