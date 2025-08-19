@@ -30,7 +30,7 @@ name followed by your first name. \\
 \vspace{12pt}
 
 {\bf Exercise 1 \\}
-A study was conducted in which a population of 100 Mexican grey wolves
+A study was conducted in which a population of 100 Mexican wolves
 ({\it Canis lupus baileyi}) was monitored intensively for 1 year. In
 that time, 10 pups were born, and 20 of the original 100 individuals 
 died. There was no immigration or emigration.  
@@ -95,15 +95,16 @@ approximately 7.02 billion in 2010, and 7.11 billion in 2011.
   \item Given these two years of data and the geometric growth equation:
     $N_{t+1} = N_t + N_t r$, calculate $r$ for the human population. 
   \item Use the geometric growth equation with the value of $r$ that
-    you calculated above to predict the human population from 2013 to
+    you calculated above to predict the human population from 2012 to
     2025. 
   \item Graph your predictions of the human population along with the
     actual human population over time period.
-  \item Calculate lambda ($\lambda_t = N_t / N_{t-1}$) for each year,
-    and graph it from 2011 to 2025. 
+  \item Calculate the growth rate lambda ($\lambda_t = N_t / N_{t-1}$)
+    for each year and for both the predicted human population and the
+    actual human population data. Graph both values of lambda from
+    2011 to 2025.
   \item Based on these results, did the human population exhibit
     geometric growth? Write 2-3 sentences to defend your answer. 
-    Write your answer in the Excel sheet.
 \end{enumerate}
 
 \vspace{24pt}
@@ -153,15 +154,14 @@ More data about the human population: \\
 
 
 Here's an example of a geometric growth model.
-<<geo,out.width="0.8\\textwidth",fig.align="center",size='small'>>=
-r <- 0.1                # growth rate
-years <- 2001:2050      # years
-nYears <- length(years)
-N <- rep(NA, nYears)
-N[1] <- 100             ## abundance in first year
-## for loop
+<<geo,out.width="0.8\\textwidth",fig.align="center",size='normalsize'>>=
+r <- 0.1                      # growth rate
+years <- 2001:2050            # years
+nYears <- length(years)       # number of years
+N <- rep(NA, nYears)          # empty vector
+N[1] <- 100                   # abundance in first year
 for(t in 2:nYears) {
-    N[t] <- N[t-1] + N[t-1]*r
+    N[t] <- N[t-1] + N[t-1]*r 
 }
 plot(years, N, type="l", xlab="Year", ylab="Abundance",
      main="Geometric growth")
