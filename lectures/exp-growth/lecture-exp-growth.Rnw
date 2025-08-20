@@ -324,23 +324,23 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
 
 
 
-\begin{frame}
-  \frametitle{$r$ and $\lambda$, $N_{t+1} = N_t + N_tr$}
-  \Large
-%  \bf
-  $r$ is the discrete growth rate \par
-  \vspace{0.5cm}
-  $\lambda$ is the finite growth rate \par
-%  \[
-  \begin{align*}
-    \lambda &= \frac{N_{t+1}}{N_t} \\
-    \lambda &= 1+r
-  \end{align*}
-  % \]
-%  \pause
-%  \vspace{0.5cm}
-%  $\lambda = 1 + r$
-\end{frame}
+%% \begin{frame}
+%%   \frametitle{$r$ and $\lambda$, $N_{t+1} = N_t + N_tr$}
+%%   \Large
+%% %  \bf
+%%   $r$ is the discrete growth rate \par
+%%   \vspace{0.5cm}
+%%   $\lambda$ is the finite growth rate \par
+%% %  \[
+%%   \begin{align*}
+%%     \lambda &= \frac{N_{t+1}}{N_t} \\
+%%     \lambda &= 1+r
+%%   \end{align*}
+%%   % \]
+%% %  \pause
+%% %  \vspace{0.5cm}
+%% %  $\lambda = 1 + r$
+%% \end{frame}
 
 
 
@@ -406,6 +406,10 @@ rnw2pdf("lecture-exp-growth",tangle=TRUE)
       \begin{center}
         $N_{t+1} = N_t + N_tr$
       \end{center}
+    }
+    \vfill
+    \uncover<6->{
+      Note that $\lambda = N_{t+1}/N_t = 1+r$.
     }
 \end{frame}
 
