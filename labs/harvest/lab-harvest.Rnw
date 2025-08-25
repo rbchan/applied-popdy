@@ -124,10 +124,12 @@ equation: $S = \beta_0 - \beta_1 \times N$.
     options. To accomplish this:
   \begin{itemize}
     \item Compute how many individuals will be alive immediately after
-      harvest
+      harvest (Hint: You just have to subtract $H$ from $N=200$).
     \item Compute survival probability for these remaining individuals
-      using the survival equation
-    \item Compute how many will be alive at the end of the year.
+      using the survival equation above
+    \item Compute how many will be alive at the end of the year. In
+      other words, what fraction of the individuals after harvest
+      will survive and be alive next year?
   \end{itemize}
   \item Create a graph with final abundance ($N$) on the y-axis and
     harvest ($H$) of the x-axis. %Why does this graph peak at
