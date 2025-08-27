@@ -354,7 +354,7 @@ segments(K/2, 0, K/2, max(H), lty=2, lwd=2, col="purple")
   \begin{itemize}
     \item MSY is found when $N=K/2$
     \item[]
-    \item The actual maximum yield is $H = r_{max}K/4$
+    \item The maximum yield is $H = r_{max}K/4$
     \item[]
     \item The optimal harvest rate is $h = r_{max}/2$
   \end{itemize}
