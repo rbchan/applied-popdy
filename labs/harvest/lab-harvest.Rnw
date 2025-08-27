@@ -50,7 +50,7 @@ The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
     $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because
     harvest is assumed to occur at the end of the year, after the 
     population has grown). Create a graph of python abundance from 
-    2005--2024.  
+    2017--2036.  
 \end{enumerate}
 
 \vspace{24pt}
@@ -58,7 +58,7 @@ The Excel sheet shows (fake) data on Burmese python abundance in South Florida.
 Here's some R code to get you started on Exercise I:
 
 <<ex1,fig.show='hide',eval=FALSE>>=
-years1 <- 2005:2024                                  ## All years
+years1 <- 2017:2036                                  ## All years
 nYears1 <- length(years1)                            ## Number of years
 nYearsWithData <- 8                                  ## nYears with data
 nYearsWithoutData <- nYears1-nYearsWithData          ## nYears without data
