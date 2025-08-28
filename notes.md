@@ -1,5 +1,9 @@
 # Notes for the future
 
+## For 2026
+
+- Make the R part of the harvest lab easier for undergrads. Need more incremental developtment. 
+
 ## For 2025
 
 - Number one priority is to add more examples
