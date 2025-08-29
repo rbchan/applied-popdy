@@ -29,7 +29,7 @@ rnw2pdf("lab-harvest",tangle=TRUE)
 Answer each of the following questions and upload your completed Excel
 file and R script to ELC. Be sure to show your calculations. Undergraduates
 need to do all the exercises in Excel, but only Exercise I in
-R. Graduate students should do all exercises in Excel and R.  
+R. Graduate students should do all exercises in Excel and Exercises I \& II (not III) in R.  
 
 \vspace{12pt}
 
