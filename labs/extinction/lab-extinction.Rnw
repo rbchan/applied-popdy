@@ -161,7 +161,9 @@ born, minus the number that died:
   \item[(A)] Beginning with $N_0=300$, conduct one simulation over 5
     years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
     abundance over time. Hint: You have  to randomly generate $B_t$
-    and $D_t$ before you can compute  $N_{t+1}$, one year at a time.
+    and $D_t$ before you can compute  $N_{t+1}$, one year at a
+    time. When simulating $D_t$ from the binomial distribution, the
+    ``number of trials'' is the population size. 
   \item[(B)] Do you think this population will reach a stochastic
     equilibrium? Why or why not? (A stochastic equilibrium occurs when
     a population fluctuates around a long-term average).
@@ -199,7 +201,9 @@ born, minus the number that died:
 % @ 
 
 
-Geometric growth with environmental stochasticity
+Geometric growth with environmental stochasticity. %% The function
+%% \inr{rnorm} generates random numbers from the normal distribution.
+
 <<geom-stoch,out.width="0.75\\textwidth",fig.align='center',size='normalsize',echo=-1>>=
 set.seed(430)
 rbar <- 0
@@ -213,7 +217,7 @@ N1 <- rep(NA, nYears)  ## Population size
 N1[1] <- 50            ## Initial population size
 r <- rep(NA, nYears-1)
 for(t in 2:nYears) {
-    r[t-1] <- rnorm(n=1, mean=rbar, sd=sigma)
+    r[t-1] <- rnorm(n=1, mean=rbar, sd=sigma) # Growth rate from normal distribution
     N1[t] <- (N1[t-1] + N1[t-1]*r[t-1])*(N1[t-1]>extinctionThreshold)
 }
 plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="b")
@@ -222,7 +226,9 @@ plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="b")
 
 \newpage
 
-Poisson-Binomial birth-death model
+Poisson-Binomial birth-death model. %% The \inr{rpois} function generates
+%% random numbers from the Poisson distribution, and \inr{rbinom} is used
+%% for the binomial distribution.
 
 <<pois-bin,out.width="0.9\\textwidth",fig.align='center'>>=
 b <- 0.15  ## Birth rate
@@ -233,8 +239,8 @@ B <- rep(NA, nYears)   ## Random variable for nBirths
 D <- rep(NA, nYears)   ## Random variable for nDeaths
 N2[1] <- 100           ## Initial population size
 for(t in 2:nYears) {
-    B[t-1] <- rpois(n=1, lambda=N2[t-1]*b)
-    D[t-1] <- rbinom(n=1, size=N2[t-1], prob=d)
+    B[t-1] <- rpois(n=1, lambda=N2[t-1]*b)      # Poisson births
+    D[t-1] <- rbinom(n=1, size=N2[t-1], prob=d) # Binomial deaths
     N2[t] <- N2[t-1] + B[t-1] - D[t-1]
 }
 plot(1:nYears, N2, xlab="Time", ylab="Abundance", type="b")

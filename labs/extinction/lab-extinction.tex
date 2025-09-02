@@ -207,7 +207,9 @@ born, minus the number that died:
   \item[(A)] Beginning with $N_0=300$, conduct one simulation over 5
     years, in which $b=0.3$ and $d=0.2$. Plot the simulated values of
     abundance over time. Hint: You have  to randomly generate $B_t$
-    and $D_t$ before you can compute  $N_{t+1}$, one year at a time.
+    and $D_t$ before you can compute  $N_{t+1}$, one year at a
+    time. When simulating $D_t$ from the binomial distribution, the
+    ``number of trials'' is the population size. 
   \item[(B)] Do you think this population will reach a stochastic
     equilibrium? Why or why not? (A stochastic equilibrium occurs when
     a population fluctuates around a long-term average).
@@ -245,7 +247,9 @@ born, minus the number that died:
 % @ 
 
 
-Geometric growth with environmental stochasticity
+Geometric growth with environmental stochasticity. %% The function
+%% \inr{rnorm} generates random numbers from the normal distribution.
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -260,7 +264,7 @@ Geometric growth with environmental stochasticity
 \hldef{N1[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{50}            \hlcom{## Initial population size}
 \hldef{r} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears}\hlopt{-}\hlnum{1}\hldef{)}
 \hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
-    \hldef{r[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rnorm}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{mean}\hldef{=rbar,} \hlkwc{sd}\hldef{=sigma)}
+    \hldef{r[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rnorm}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{mean}\hldef{=rbar,} \hlkwc{sd}\hldef{=sigma)} \hlcom{# Growth rate from normal distribution}
     \hldef{N1[t]} \hlkwb{<-} \hldef{(N1[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{r[t}\hlopt{-}\hlnum{1}\hldef{])}\hlopt{*}\hldef{(N1[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{>}\hldef{extinctionThreshold)}
 \hldef{\}}
 \hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N1,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,} \hlkwc{type}\hldef{=}\hlsng{"b"}\hldef{)}
@@ -277,7 +281,9 @@ Geometric growth with environmental stochasticity
 
 \newpage
 
-Poisson-Binomial birth-death model
+Poisson-Binomial birth-death model. %% The \inr{rpois} function generates
+%% random numbers from the Poisson distribution, and \inr{rbinom} is used
+%% for the binomial distribution.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -290,8 +296,8 @@ Poisson-Binomial birth-death model
 \hldef{D} \hlkwb{<-} \hlkwd{rep}\hldef{(}\hlnum{NA}\hldef{, nYears)}   \hlcom{## Random variable for nDeaths}
 \hldef{N2[}\hlnum{1}\hldef{]} \hlkwb{<-} \hlnum{100}           \hlcom{## Initial population size}
 \hlkwa{for}\hldef{(t} \hlkwa{in} \hlnum{2}\hlopt{:}\hldef{nYears) \{}
-    \hldef{B[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rpois}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{lambda}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{b)}
-    \hldef{D[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rbinom}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{size}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{],} \hlkwc{prob}\hldef{=d)}
+    \hldef{B[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rpois}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{lambda}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{]}\hlopt{*}\hldef{b)}      \hlcom{# Poisson births}
+    \hldef{D[t}\hlopt{-}\hlnum{1}\hldef{]} \hlkwb{<-} \hlkwd{rbinom}\hldef{(}\hlkwc{n}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{size}\hldef{=N2[t}\hlopt{-}\hlnum{1}\hldef{],} \hlkwc{prob}\hldef{=d)} \hlcom{# Binomial deaths}
     \hldef{N2[t]} \hlkwb{<-} \hldef{N2[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{+} \hldef{B[t}\hlopt{-}\hlnum{1}\hldef{]} \hlopt{-} \hldef{D[t}\hlopt{-}\hlnum{1}\hldef{]}
 \hldef{\}}
 \hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hldef{nYears, N2,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{,} \hlkwc{type}\hldef{=}\hlsng{"b"}\hldef{)}
