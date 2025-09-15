@@ -176,10 +176,11 @@ for(t in 1:T) {
     Nprey[t+1] <- Nprey[t] + Nprey[t]*(rprey - dprey*Npred[t])
     Npred[t+1] <- Npred[t] + Npred[t]*(bpred*Nprey[t] - dpred)
 }
-plot(0:T, Nprey, xlab="Time", ylab="Population size", type="b", col="cyan4",
+plot(0:T, Nprey, xlab="Time", ylab="Population size", type="l", col="cyan4",
      pch=16, ylim=c(0, 250))
-lines(0:T, Npred, type="b", col="red", pch=16)
-legend(0, 250, c("Prey", "Predator"), lty=1, pch=16, col=c("cyan4", "red"))
+lines(0:T, Npred, type="l", col="red", pch=16)
+legend(0, 250, c("Prey", "Predator"), lty=1, ##pch=16,
+       col=c("cyan4", "red"))
 @
 \begin{center}
   \includegraphics[width=\textwidth]{figure/predprey1-1}
