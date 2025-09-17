@@ -4,6 +4,8 @@
 
 - Make the R part of the harvest lab easier for undergrads. Need more incremental developtment. 
 
+- Discuss various types of competition, eg resource, interference, exploitative
+
 ## For 2025
 
 - Number one priority is to add more examples
