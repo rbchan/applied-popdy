@@ -69,7 +69,7 @@
   \Large
   \centering
   Lab 7 Assignment --- Age-structured Models \\
-  Due by 8:00am on Monday \par
+  Due by 5:00pm on Friday \par
 }
 
 \vspace{12pt}
@@ -222,9 +222,9 @@ Visualize it.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{matplot}\hldef{(years, n,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{)}
+\hlkwd{matplot}\hldef{(years, n,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Abundance"}\hldef{)}
 \hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{100}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
-       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -243,10 +243,10 @@ Compute the age distribution and take a look.
 \begin{alltt}
 \hldef{N} \hlkwb{<-} \hlkwd{rowSums}\hldef{(n)} \hlcom{## Total abundance each year}
 \hldef{c} \hlkwb{<-} \hldef{n}\hlopt{/}\hldef{N}        \hlcom{## This works because of R's recycling rules}
-\hlkwd{matplot}\hldef{(years, c,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{1}\hldef{),} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,}
+\hlkwd{matplot}\hldef{(years, c,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{ylim}\hldef{=}\hlkwd{c}\hldef{(}\hlnum{0}\hldef{,} \hlnum{1}\hldef{),} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,}
         \hlkwc{ylab}\hldef{=}\hlsng{"Proportion in each age class"}\hldef{)}
 \hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{1}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
-       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 
@@ -279,10 +279,10 @@ Now compute the annual growth rates for each age class and plot them.
 \begin{alltt}
 \hldef{lambda.it} \hlkwb{<-} \hldef{n[}\hlopt{-}\hlnum{1}\hldef{,]}\hlopt{/}\hldef{n[}\hlopt{-}\hldef{nYears,]} \hlcom{## Divide each row by the row before it}
 \hlkwd{matplot}\hldef{(years[}\hlopt{-}\hlnum{1}\hldef{],} \hlcom{## There are nYears-1 *intervals* between years}
-        \hldef{lambda.it,} \hlkwc{type}\hldef{=}\hlsng{"o"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Growth rates"}\hldef{)}
+        \hldef{lambda.it,} \hlkwc{type}\hldef{=}\hlsng{"l"}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{xlab}\hldef{=}\hlsng{"Time"}\hldef{,} \hlkwc{ylab}\hldef{=}\hlsng{"Growth rates"}\hldef{)}
 \hlkwd{abline}\hldef{(}\hlkwc{h}\hldef{=}\hlnum{1}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{2}\hldef{,} \hlkwc{col}\hldef{=}\hlsng{"grey"}\hldef{)} \hlcom{## Horizontal line}
 \hlkwd{legend}\hldef{(}\hlnum{35}\hldef{,} \hlnum{1.8}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"Age class 1"}\hldef{,} \hlsng{"Age class 2"}\hldef{,} \hlsng{"Age class 3"}\hldef{),}
-       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{pch}\hldef{=}\hlnum{16}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hldef{)}
+       \hlkwc{col}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{,} \hlkwc{lty}\hldef{=}\hlnum{1}\hlopt{:}\hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 
