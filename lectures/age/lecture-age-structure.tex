@@ -194,26 +194,27 @@
 
 \begin{frame}
   \frametitle{Three age class example}
-%  {\bf How does this population grow? \par}
-%  \vspace{5mm}
-%  \large
   Abundance of age class $i$ in year $t$ is denoted by $n_{i,t}$. \\
-%%  \pause
-  % \vfill
-  % Total abundance in year $t$ is $N_t = \sum_i n_{i,t}$. \\
+  \pause
   \vfill
-%%  We need a model for
-  The model for $n_{i,t+1}$ depends on: %%, abundance of each age class in next time step \\
+  The model for $n_{i,t+1}$ depends on: 
 %  \vfill
   \begin{itemize}
-    \item Age class survival rates $s_{i}$, and
-    \item Age class birth rates $b_{i}$
-    \item Fecundity is often defined as %the product of birth rate
-      %and offspring survival,
-      $f_i = b_i \times s_0$
+    \item Age class survival $s_{i}$, and
+%    \item Age class birth rates $b_{i}$
+    \item Age class fecundity $f_{i}$
+    \item Fecundity is the birth rate ($b_i$) multiplied by survival
+    \pause
+    \begin{itemize}
+      \normalsize
+      \item In pre-reproductive surveys, $f_i = b_i \times s_0$
+      \item In post-reproductive surveys, $f_i = b_i \times s_i$
+    \end{itemize}
+    %and offspring survival,
+    %% $f_i = b_i \times s_0$
 %    \item Note the lack of $t$ subscripts (for now)
   \end{itemize}
-  % \vspace{0.5cm}
+  \pause
   \vfill
 %  \pause
   \centering
@@ -221,23 +222,23 @@
    \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm,
   node distance=4cm, text centered, fill=blue!10]
 %  \begin{center}
-    \only<1 | handout:0>{
-%  \begin{minipage}{0.5\textwidth}
-   \resizebox{!}{.4\textheight}{
-   \begin{tikzpicture}%[scale=0.5]
-      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
-      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
-      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
-      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
-      \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
-      \draw[->,thick] (n2) to [bend right=40] node[above] {$b_2 \times s_0$} (n1);
-      \draw[->,thick] (n3) to [bend right=60] node[above] {$b_3 \times s_0$} (n1);
-    \end{tikzpicture}
-    }
-%  \end{minipage}
- } %\\
+%%     \only<1 | handout:0>{
+%% %  \begin{minipage}{0.5\textwidth}
+%%    \resizebox{!}{.4\textheight}{
+%%    \begin{tikzpicture}%[scale=0.5]
+%%       \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
+%%       \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
+%%       \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
+%%       \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
+%%       \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
+%%       \draw[->,thick] (n2) to [bend right=40] node[above] {$b_2 \times s_0$} (n1);
+%%       \draw[->,thick] (n3) to [bend right=60] node[above] {$b_3 \times s_0$} (n1);
+%%     \end{tikzpicture}
+%%     }
+%% %  \end{minipage}
+%%  } %\\
  
-   \only<2>{
+   %% \only<2>{
 %  \begin{minipage}{0.5\textwidth}
    \resizebox{!}{.4\textheight}{
    \begin{tikzpicture}%[scale=0.5]
@@ -251,7 +252,7 @@
    \end{tikzpicture}
 %  \end{minipage}
  } %\\
- }
+ %% }
 %  \end{center}
 \end{frame}
 
@@ -420,54 +421,54 @@
 
 
 
-\begin{frame}
-  \frametitle{\large Three age class example -- post-reproductive census}
-  \small
-  The previous model was an example of a \alert{\bf pre-reproductive
-    census} scenario, in which we count individuals right before they
-  reproduce.\\
-  %\pause
-  \vfill
-  An alternative is the \alert{\bf post-reproductive census} scenario, in
-  which we count individuals right after they reproduce. \\
-%  \begin{itemize}
-%  \item<3>
-  %\pause
-  \vfill
-  For a post-reproductive census, fecundity is defined as
-  the product of age-specific survival and birth rates,
-  $f_i = s_i \times b_i$ \\
-%  \end{itemize}
-%  \vspace{0.5cm}
-  %\pause
-  \vfill      
-  \begin{center}
-    \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm,
-    node distance=4cm, text centered, fill=blue!10]
-    \only<1 | handout:0>{
-    \begin{tikzpicture}%[scale=0.9]
-      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
-      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
-      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
-      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
-      \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
-      \draw[->,thick] (n2) to [bend right=40] node[above] {$s_1 \times b_1$} (n1);
-      \draw[->,thick] (n3) to [bend right=60] node[above] {$s_2 \times b_2$} (n1);
-   \end{tikzpicture}
-   } %\\
-   \only<2>{
-   \begin{tikzpicture}%[scale=0.9]
-      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
-      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
-      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
-      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
-      \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
-      \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1);
-      \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1);
-   \end{tikzpicture}
-   } %\\
-  \end{center}
-\end{frame}
+%% \begin{frame}
+%%   \frametitle{\large Three age class example -- post-reproductive census}
+%%   \small
+%%   The previous model was an example of a \alert{\bf pre-reproductive
+%%     census} scenario, in which we count individuals right before they
+%%   reproduce.\\
+%%   %\pause
+%%   \vfill
+%%   An alternative is the \alert{\bf post-reproductive census} scenario, in
+%%   which we count individuals right after they reproduce. \\
+%% %  \begin{itemize}
+%% %  \item<3>
+%%   %\pause
+%%   \vfill
+%%   For a post-reproductive census, fecundity is defined as
+%%   the product of age-specific survival and birth rates,
+%%   $f_i = s_i \times b_i$ \\
+%% %  \end{itemize}
+%% %  \vspace{0.5cm}
+%%   %\pause
+%%   \vfill      
+%%   \begin{center}
+%%     \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm,
+%%     node distance=4cm, text centered, fill=blue!10]
+%%     \only<1 | handout:0>{
+%%     \begin{tikzpicture}%[scale=0.9]
+%%       \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
+%%       \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
+%%       \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
+%%       \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
+%%       \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
+%%       \draw[->,thick] (n2) to [bend right=40] node[above] {$s_1 \times b_1$} (n1);
+%%       \draw[->,thick] (n3) to [bend right=60] node[above] {$s_2 \times b_2$} (n1);
+%%    \end{tikzpicture}
+%%    } %\\
+%%    \only<2>{
+%%    \begin{tikzpicture}%[scale=0.9]
+%%       \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
+%%       \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
+%%       \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
+%%       \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
+%%       \draw[->,thick] (n2) to node[above] {$s_2$} (n3);
+%%       \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1);
+%%       \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1);
+%%    \end{tikzpicture}
+%%    } %\\
+%%   \end{center}
+%% \end{frame}
 
 
 
@@ -862,7 +863,7 @@
   \pause
   \vfill
 %  {\bf Fact}:
-  A post-reproductive individual will have a reproductive value of zero. \\
+  Post-reproductive individuals have reproductive values of zero. \\
   \pause
   \vspace{1cm}
   % {\bf Question}:
@@ -965,8 +966,8 @@
   \vfill
   {\bf Generation time \\}
   The time required for a population to increase by a factor of
-  $R_0$. Can also be defined as the age at which individuals are
-  expected to reproduce.  
+  $R_0$. %% Can also be defined as the age at which individuals are
+  %% expected to reproduce.  
   % \[
   %   T = \frac{\log(R_0)}{\log(\lambda)}
   % \]
