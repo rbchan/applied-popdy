@@ -656,7 +656,7 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
   {\bf What is it?}
   \begin{itemize}
     \item Square matrix %$s \times s$
-    \item Fertilities on first row
+    \item Fecundities on first row
     \item Survival probs on lower off-diagonal
   \end{itemize}
   \pause
