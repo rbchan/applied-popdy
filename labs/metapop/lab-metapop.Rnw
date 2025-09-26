@@ -23,7 +23,7 @@ rnw2pdf("lab-metapop",tangle=TRUE)
   \Large
   \centering
   Lab 8 Assignment --- Metapopulation Models \\
-  Due by 8:00am on Monday \\
+  Due by 5:00pm on Friday \\
 }
 
 \vspace{6pt}
@@ -67,8 +67,8 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     number.
   \item[(b)] Make a graph of the proportion of sites occupied (PrO)
     on the y-axis, and time on the x-axis.
-  \item[(c)] According to this model, is it possible for this
-    metapopulation to go permanently extinct? Why or why not?
+  %% \item[(c)] According to this model, is it possible for this
+  %%   metapopulation to go permanently extinct? Why or why not?
   % \item[(d)] Repeat the simulation several times by double-clicking in
   %   an empty cell or hitting F9. Why does the metapopulation appear to
   %   converge to a stochastic equilibrium?

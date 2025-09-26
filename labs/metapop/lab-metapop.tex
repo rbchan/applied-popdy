@@ -50,9 +50,6 @@
 
 \usepackage{alltt}
 
-%\usepackage[roman]{../pres1}
-%\usepackage[sans]{../pres1}
-
 \usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{parskip}
 \usepackage{hyperref}
@@ -70,7 +67,7 @@
   \Large
   \centering
   Lab 8 Assignment --- Metapopulation Models \\
-  Due by 8:00am on Monday \\
+  Due by 5:00pm on Friday \\
 }
 
 \vspace{6pt}
@@ -114,8 +111,8 @@ Imagine a metapopulation consisting of 16 sites. In the first year
     number.
   \item[(b)] Make a graph of the proportion of sites occupied (PrO)
     on the y-axis, and time on the x-axis.
-  \item[(c)] According to this model, is it possible for this
-    metapopulation to go permanently extinct? Why or why not?
+  %% \item[(c)] According to this model, is it possible for this
+  %%   metapopulation to go permanently extinct? Why or why not?
   % \item[(d)] Repeat the simulation several times by double-clicking in
   %   an empty cell or hitting F9. Why does the metapopulation appear to
   %   converge to a stochastic equilibrium?
@@ -241,17 +238,17 @@ Take a look at the binary occupancy data.
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    1    1    1    1    1    1    1    0     0
-##  [2,]    1    1    0    0    1    1    1    0    0     0
-##  [3,]    1    1    0    0    1    1    0    0    0     1
-##  [4,]    0    1    0    0    1    0    0    0    1     1
-##  [5,]    0    1    0    0    1    0    0    0    0     1
-##  [6,]    1    1    0    0    1    0    0    0    0     1
-##  [7,]    1    0    1    0    0    0    1    0    0     1
-##  [8,]    1    0    1    0    0    0    1    0    0     1
-##  [9,]    1    1    0    0    0    0    0    0    0     1
-## [10,]    0    1    0    0    1    0    1    0    0     0
-## [11,]    1    1    1    0    1    1    1    0    0     1
-## [12,]    1    1    0    0    0    1    1    0    1     0
+##  [2,]    1    0    1    1    0    1    1    0    0     0
+##  [3,]    1    0    1    1    1    1    0    0    1     0
+##  [4,]    0    0    0    1    0    1    0    1    0     0
+##  [5,]    0    0    0    0    0    1    0    1    0     0
+##  [6,]    0    0    0    1    1    0    1    1    0     0
+##  [7,]    1    0    1    1    0    0    0    1    0     0
+##  [8,]    1    0    1    0    0    0    0    0    0     0
+##  [9,]    1    0    0    1    0    0    0    0    0     0
+## [10,]    0    1    0    1    0    1    0    0    1     0
+## [11,]    0    1    1    1    0    1    0    0    1     0
+## [12,]    1    0    1    1    1    1    1    0    0     0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -264,7 +261,7 @@ Compute the number of sites occupied each year.
 \hldef{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 5 5 4 3 4 4 4 3 3 7 5
+##  [1] 8 5 6 3 2 4 4 2 2 4 5 6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -279,7 +276,7 @@ Compute the proportion of sites occupied (PrO) each year.
 \hldef{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.5 0.5 0.4 0.3 0.4 0.4 0.4 0.3 0.3 0.7 0.5
+##  [1] 0.8 0.5 0.6 0.3 0.2 0.4 0.4 0.2 0.2 0.4 0.5 0.6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
