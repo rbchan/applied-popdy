@@ -145,16 +145,16 @@ isolated for 40 years.
 \begin{enumerate}
   \item[(a)] Project each population forward 40 years using the basic
     geometric growth model (not the metapopulation model) with
-    $\lambda_1=1.05$ and $\lambda_2=0.95$. Calculate the final growth
-    rate ($N_{t+1}/N_t$) for each population.
+    $\lambda_1=1.05$ and $\lambda_2=0.95$. 
   \item[(b)] Next, imagine the 2 populations were actually connected
     in a small metapopulation. Use the abundance-based metapopulation
     model (including immigration and emigration) to project these
     connected subpopulations forward 40 years. Calculate the final
     growth rates for each population.
-  \item[(c)] Make a graph of abundance vs. time for the isolated and
+  \item[(c)] Calculate the final growth rate ($N_{t+1}/N_t$) for each population, in each of the two scenarios above. 
+  \item[(d)] Make a graph of abundance vs. time for the isolated and
     connected populations.
-  \item[(d)] Is site 2 a source or a sink? With this in mind,
+  \item[(e)] Is site 2 a source or a sink? With this in mind,
     briefly describe the patterns you see in the graph and discuss the
     effects (positive and negative) of linking the two populations via
     dispersal if your goal was to sustain frigatebirds.
@@ -238,17 +238,17 @@ Take a look at the binary occupancy data.
 \begin{verbatim}
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    1    1    1    1    1    1    1    0     0
-##  [2,]    1    0    1    1    0    1    1    0    0     0
-##  [3,]    1    0    1    1    1    1    0    0    1     0
-##  [4,]    0    0    0    1    0    1    0    1    0     0
-##  [5,]    0    0    0    0    0    1    0    1    0     0
-##  [6,]    0    0    0    1    1    0    1    1    0     0
-##  [7,]    1    0    1    1    0    0    0    1    0     0
-##  [8,]    1    0    1    0    0    0    0    0    0     0
-##  [9,]    1    0    0    1    0    0    0    0    0     0
-## [10,]    0    1    0    1    0    1    0    0    1     0
-## [11,]    0    1    1    1    0    1    0    0    1     0
-## [12,]    1    0    1    1    1    1    1    0    0     0
+##  [2,]    0    1    1    1    1    0    1    1    0     0
+##  [3,]    1    1    1    1    1    0    1    1    0     0
+##  [4,]    1    1    0    1    1    0    0    1    0     0
+##  [5,]    1    1    0    1    1    0    0    1    0     0
+##  [6,]    1    1    0    1    1    0    0    1    0     0
+##  [7,]    0    0    0    0    1    0    0    0    0     0
+##  [8,]    0    0    0    0    0    0    0    0    0     1
+##  [9,]    0    1    0    1    1    1    1    0    0     1
+## [10,]    1    0    0    0    0    1    0    0    1     1
+## [11,]    0    0    0    0    0    1    0    0    1     1
+## [12,]    1    0    0    0    0    1    0    0    0     0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -261,7 +261,7 @@ Compute the number of sites occupied each year.
 \hldef{nOccupied}
 \end{alltt}
 \begin{verbatim}
-##  [1] 8 5 6 3 2 4 4 2 2 4 5 6
+##  [1] 8 6 7 5 5 5 1 1 6 4 3 2
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -276,7 +276,7 @@ Compute the proportion of sites occupied (PrO) each year.
 \hldef{PrO}
 \end{alltt}
 \begin{verbatim}
-##  [1] 0.8 0.5 0.6 0.3 0.2 0.4 0.4 0.2 0.2 0.4 0.5 0.6
+##  [1] 0.8 0.6 0.7 0.5 0.5 0.5 0.1 0.1 0.6 0.4 0.3 0.2
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
