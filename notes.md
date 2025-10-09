@@ -6,6 +6,9 @@
 
 - Discuss various types of competition, eg resource, interference, exploitative
 
+- Use youtube shorts for teaching lab tricks (random number generation etc..)
+
+
 ## For 2025
 
 - Number one priority is to add more examples
