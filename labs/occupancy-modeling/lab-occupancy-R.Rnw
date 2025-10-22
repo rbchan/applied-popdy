@@ -25,7 +25,7 @@ rnw2pdf("lab-occupancy-R",tangle=TRUE)
   \Large
   \centering
   Lab Assignment --- Occupancy Models in R \\
-  Due by noon on Monday \par
+  Due by 5:00pm on Friday \par
 }
 
 \vspace{10pt}
@@ -47,7 +47,7 @@ package `unmarked'}
 
 
 Occupancy models can be fit using the `unmarked' package in {\tt
-R}. To install `unmarked', issue this command in R or RStudio: 
+R}. To install `unmarked', issue this R command: 
 
 <<install,eval=FALSE>>=
 install.packages("unmarked")
