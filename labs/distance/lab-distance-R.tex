@@ -95,6 +95,9 @@ Put {\bf your code and your answers} in a Word file\footnote{Feel free
 \section*{Assignment -- Half-normal and hazard-rate models}
 
 \begin{enumerate}
+  \item Download the gazelle data, open R, and then set your working
+    directory (\texttt{Session > Set Working Directory}) to the
+    location where you put the data.
   \item Import the gazelle data in the file
     \verb+"GazelleFakeData.txt"+. Note that:
     \begin{itemize}
@@ -169,14 +172,15 @@ working directory.
 \hlkwd{getwd}\hldef{()}       \hlcom{## Location on your computer where R will look for files}
 \end{alltt}
 \begin{verbatim}
-## [1] "/home/richard-chandler/courses/applied-popdy/labs/distance"
+## [1] "/home/richard/courses/applied-popdy/labs/distance"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{list.files}\hldef{()}  \hlcom{## You should see 'ExampleData.txt' here}
 \end{alltt}
 \begin{verbatim}
-## [1] "ExampleData.txt"     "figs"                "GazelleFakeData.txt"
-## [4] "lab-distance-R.Rnw"  "lab-distance-R.tex"
+## [1] "auto"                "ExampleData.txt"     "figs"               
+## [4] "figure"              "GazelleFakeData.txt" "lab-distance-R.pdf" 
+## [7] "lab-distance-R.Rnw"  "lab-distance-R.tex"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -249,8 +253,10 @@ and converts the units to kilometers.
 The distance sampling model can be fitted to the data using the
 \inr{ds} function. The \inr{key} argument specifies the detection
 function. You could switch from the half-normal to the hazard-rate
-function using: \inr{key="hr"}. The \inr{truncation} argument
-indicates that we didn't record data beyond 250 m (0.25 km).
+function using: \inr{key="hr"}. When you run the hazard-rate model,
+you will get estimates of two parameters, not just sigma
+($\sigma$). The \inr{truncation} argument indicates that we didn't
+record data beyond 250 m (0.25 km). 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
