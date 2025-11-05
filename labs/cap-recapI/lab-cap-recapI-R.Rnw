@@ -6,7 +6,6 @@
 \usepackage{verbatim}
 
 
-
 \definecolor{inlinecolor}{rgb}{0.878,0.918,0.933}  
 \newcommand{\inr}[1]{\colorbox{inlinecolor}{\texttt{#1}}}
 
@@ -29,8 +28,8 @@ knit_theme$set("edit-kwrite")
 {
   \Large
   \centering
-  {\bf Lab 11 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
-  Due by noon on Monday \\
+  {\bf Lab 12 -- Estimating abundance with closed-population capture-mark-recapture data \\ }
+  Due by 5:00pm on Friday \\
 }
 
 \vspace{10pt}
