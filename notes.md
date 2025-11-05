@@ -11,7 +11,12 @@
 - Create new R package for mark-recapture
   * RMark is hard to install on Mac
   * mra is no longer on CRAN
+  * marked doesn't have closed pop models
+  * New R package should be lightweight and easy to install
 
+- Mark-recapture on candy
+  * Use jelly beans instead of peanut M&M
+  * Use gloves
 
 ## For 2025
 
