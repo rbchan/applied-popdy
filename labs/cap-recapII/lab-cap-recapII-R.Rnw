@@ -34,7 +34,7 @@ knit_theme$set("edit-kwrite")
   \centering
   {\bf Lab -- Estimating survival, recruitment, and growth rate
     with capture-mark-recapture data} \\
-  Due by noon on Monday \\
+  Due by 5:00pm on Friday \\
 }
 
 \vspace{10pt}
