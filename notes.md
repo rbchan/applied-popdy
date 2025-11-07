@@ -18,6 +18,9 @@
   * Use jelly beans instead of peanut M&M
   * Use gloves
 
+- Formalize "doomed surplus" by linking to density dependence and carrying capacity
+
+
 ## For 2025
 
 - Number one priority is to add more examples
