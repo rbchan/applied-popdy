@@ -142,9 +142,10 @@ Forest using baited hoop traps. Sampling began in 2007.
       \item The number of recruits in each time interval
       \item Abundance at each time point. Hint: apparent survival
         ($\Phi$) varies over time.
-      \item Growth rate for each time interval ($\lambda_t$)
+      \item Growth rate for each time interval ($\lambda_t$). 
     \end{itemize}
-  \item Plot $\lambda_t$ over time.
+  \item Plot $\lambda_t$ over time. Note that the example shows how to
+    plot $N_t$ over time. Here you need to plot $\lambda_t$ over time. 
   % \item What conclusions can you draw from this analysis? Do you think
   %   the population is growing, shrinking, remaining constant, or is it
   %   difficult to tell? 
