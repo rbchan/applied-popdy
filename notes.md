@@ -2,6 +2,9 @@
 
 ## For 2026
 
+- More examples!
+  * Longer class periods should provide opportunity
+
 - Make the R part of the harvest lab easier for undergrads. Need more incremental developtment. 
 
 - Discuss various types of competition, eg resource, interference, exploitative
@@ -20,6 +23,23 @@
 
 - Formalize "doomed surplus" by linking to density dependence and carrying capacity
 
+- Final project
+  * One-on-one meetings for feedback were good
+  * Provide incentive (bonus point) for working with Jake Knox
+    + Doesn't have to be in-person meeting. Online editing works
+
+- Tips for success
+  * Take notes on paper
+  * Study previous notes before each class
+  * Do the readings
+  * Come to office hours
+  * Avoid distractions during class
+    + Laptops are the biggest problem
+	+ Yes, we need them for quizes
+	+ Take notes on paper. It will help.
+  * Ask questions during class
+
+- Maybe I should go back to paper quizzes?
 
 ## For 2025
 
