@@ -41,6 +41,9 @@
 
 - Maybe I should go back to paper quizzes?
 
+- Convert to Quarto?
+
+
 ## For 2025
 
 - Number one priority is to add more examples
