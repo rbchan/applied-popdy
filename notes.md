@@ -46,6 +46,9 @@
   * If we keep ELC quizzes, add password
 
 
+- Convert to Quarto?
+
+
 ## For 2025
 
 - Number one priority is to add more examples
