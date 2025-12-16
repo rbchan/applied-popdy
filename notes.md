@@ -5,6 +5,9 @@
 - More examples!
   * Longer class periods should provide opportunity
   * Possibilities
+    + [Eberhardt 1977](https://www.jstor.org/stable/pdf/44516720.pdf), conservation of large mammals, beyond MSY, density dependence
+	  - Debate on MSY?
+	+ [Eberhardt 2002](https://doi.org/10.1890/0012-9658(2002)083[2841:APFPAO]2.0.CO;2) paradigm for population analysis of long-lived vertebrates
     + [Oli et al. 2025](https://doi.org/10.1111/1365-2656.70169), snowshoe hare
 	+ [Lambin et al. 2025](https://doi.org/10.1073/pnas.2509516122), field vole cycles
 	
