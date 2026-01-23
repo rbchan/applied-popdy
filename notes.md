@@ -21,6 +21,8 @@
 
 - Use youtube shorts for teaching lab tricks (random number generation etc..)
 
+- "Demographic dominance of females" (Charlesworth page 4)
+
 - Create new R package for mark-recapture
   * RMark is hard to install on Mac
   * mra is no longer on CRAN
