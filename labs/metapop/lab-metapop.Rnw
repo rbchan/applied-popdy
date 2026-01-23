@@ -294,5 +294,18 @@ abline(h=1, col="grey", lty=1)
 \end{document}
 
 
+<<eval=FALSE,include=FALSE>>=
+
+diag(lambda)
+
+A <- t(pi) %*% diag(lambda)
+
+eigen(A)
+
+tail(lambda.it)
+
+N <- rowSums(n)
+N[-1]/N[-length(N)]
 
 
+@ 
