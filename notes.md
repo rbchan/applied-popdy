@@ -11,7 +11,7 @@
     + [Oli et al. 2025](https://doi.org/10.1111/1365-2656.70169), snowshoe hare
 	+ [Lambin et al. 2025](https://doi.org/10.1073/pnas.2509516122), field vole cycles
     + Central GA black bears: Anchor a lab around this topic. Invite Ben Carr to guest lecture. Density dependence or genetic introgression? 
-	
+    + Marc's peregrine falcons	
 
 
 - Start the semester with scenario questions like the ones on the final exam
