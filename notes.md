@@ -12,6 +12,9 @@
 	+ [Lambin et al. 2025](https://doi.org/10.1073/pnas.2509516122), field vole cycles
     + Central GA black bears: Anchor a lab around this topic. Invite Ben Carr to guest lecture. Density dependence or genetic introgression? 
     + Marc's peregrine falcons	
+	
+- Popsci readings
+  * [NYT on declining birthrate in US](https://www.nytimes.com/2026/07/11/opinion/population-forecast-birth-rate.html?unlocked_article_code=1.xFA.wo8R.YuLsvBN6Vp9Z&smid=url-share)
 
 
 - Start the semester with scenario questions like the ones on the final exam
