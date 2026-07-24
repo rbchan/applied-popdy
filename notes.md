@@ -61,7 +61,6 @@
   * And cut computers out of the classroom
   * If we keep ELC quizzes, add password
 
-
 - Convert to Quarto?
 
 
