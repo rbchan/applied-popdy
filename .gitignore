@@ -24,5 +24,9 @@ writing-assignment/2021/
 grades/
 KEY-*
 
+# Quarto
+*.html
+*files/
+
 # R Shiny
 rsconnect/

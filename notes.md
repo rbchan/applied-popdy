@@ -1,5 +1,14 @@
 # Notes for the future
 
+
+## Converting from beamer to Quarto/reveal.js
+
+- For plain .tex files, you can try this:
+  1. `pandoc -f latex -t markdown pres.tex -o pres.qmd`
+  2. Open pres.qmd and add YAML header
+  
+
+
 ## For 2026
 
 - More examples!

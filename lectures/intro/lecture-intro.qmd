@@ -1,0 +1,264 @@
+---
+title: "Applied Population Dynamics"
+subtitle: "WILD 5700/7700"
+author: "Richard Chandler"
+format:
+  revealjs:
+    theme: default      # Options: simple, dark, neutral, sky, serif, etc.
+#    transition: slide   # Slide transition effect
+    slide-number: true
+    chalkboard: true    # Adds a built-in drawing board/canvas!
+---
+
+
+# Introduction {visibility="hidden"}
+
+## Dynamic populations
+
+![](figs/wlswar.gif){width="80%" fig-align="center"}
+
+
+## Central Questions
+
+1.  What causes spatial and temporal variation in population size and
+    structure?
+
+2.  How do environmental change and human activities (including
+    management actions) affect populations?
+
+
+## Learning objectives
+
+**By the end of the semester, you should be able to:**
+
+::: {.incremental}
+1.  Develop a population model that
+
+    - Describes variation in demographic parameters over time
+
+    - Predicts how a population will respond to management and
+      conservation actions
+
+2.  Design a study to collect the data necessary to estimate the
+    demographic parameters of the model
+
+3.  Use `R` software to estimate parameters from field data
+:::
+
+
+## Themes
+
+
+::: columns
+::: {.column width="50%"}
+
+### Theory
+
+- Population models
+:::
+
+<!-- . . . -->
+
+::: {.column width="50%"}
+### Practice (Application)
+
+- Study design
+
+- Data collection
+
+- Parameter estimation
+
+- Population viability analysis
+
+- Harvest management
+
+- Small population management
+:::
+
+:::
+
+# Examples {visibility="hidden"}
+
+
+## Example I -- Louisiana black bear
+
+::: columns
+::: {.column width="50%"}
+![](figs/LAbear2.png)
+:::
+
+::: {.column width="40%"}
+![](figs/LA-bear-map.jpg)
+:::
+:::
+
+
+## Estimated demographic parameters
+
+![](figs/LA-bear-demographics.png){width="50%" fig-align="center"}
+
+
+## Example II -- Black-throated blue warbler {style="font-size: 80%;"}
+
+![](figs/btbw-density-trends.png){width="85%" fig-align="center"}
+
+![](figs/btbw1.jpg){width="20%" fig-align="center"}
+
+Why are dynamics so different in the southern part of the range?
+
+
+## Example III -- Chiricahua Leopard Frog
+
+::: columns
+::: {.column width="50%"}
+![](figs/lich.png)
+:::
+
+::: {.column width="40%"}
+![](figs/lich-dist.jpg)
+:::
+:::
+
+
+## Recovery Plan
+
+::: center
+![](figs/lich-recovery-plan.png)
+:::
+
+
+
+## Estimated extinction risk {.smaller}
+
+Management options
+
+- Control predators
+
+- Increase hydroperiod in existing wetlands
+
+- Create new wetlands...
+
+Extinction risk was predicted to be 4% after 50 years. Restoring just 1
+pond, reduced the risk to 2.5%.
+
+![](figs/lich-forecasts.PNG){width="65%" fig-align="center"}
+
+
+
+## Colonization Probability Maps
+
+![](figs/colMap-animation2.gif){width="50%" fig-align="center"}
+
+
+## Example IV -- South Florida Deer Study
+
+**Objectives**
+
+1.  Understand effects of hydrology, hunting, and predation on deer
+    population dynamics
+
+2.  Develop a camera trapping study for large-scale investigation and
+    monitoring of deer populations
+
+::: columns
+
+::: {.column width="50%"}
+![](figs/studyArea.jpg){width="70%" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](figs/deer2.jpg){width="70%" fig-align="center"}
+:::
+
+:::
+
+
+## Camera study
+
+![](figs/FL-base-cameras.png){width="70%" fig-align="center"}
+
+::: columns
+
+::: {.column width="35%"}
+![](figs/studyArea.jpg)
+:::
+
+::: {.column width="60%"}
+
+- 180 cameras
+
+- Operated Jan 2015 -- Jan 2018
+
+- Spanning hunting and hydrology gradients
+:::
+
+:::
+
+
+
+## Telemetry data
+
+250 deer collared 2015 -- 2018
+
+![](figs/camTelem.png)
+
+
+## Abundance over time
+
+![](figs/deer-N-timeseries.png){fig-align="center" width="90%"}
+
+
+## Survival and predation rate
+
+![](figs/deer-pred-time.png){width="95%"}
+
+
+# Syllabus {visibility="hidden"}
+
+## Syllabus
+
+<!-- ::: -->
+<!-- ![](../../APD-syllabus.pdf){fig-align="center" width="50%"} -->
+<!-- ::: -->
+
+<!-- <iframe src="../../APD-syllabus.pdf" width="50%" height="550px"></iframe> -->
+
+<!-- ![](APD-syllabus.pdf){fig-align="center" width="50%"} -->
+
+<div class="iframe-container">
+<iframe src="APD-syllabus.pdf" width="50%" height="550px" style="display: block; margin: 0 auto;"></iframe> 
+</div>
+
+## Tips for success in this course
+
+::: {.incremental}
+(1) Take notes on the handouts
+(2) Review notes before each lecture
+(3) Keep up with assigned readings
+(4) Avoid distractions during class
+(5) Finish lab assignments during lab
+(6) Ask questions during class
+(7) Start the final project early
+(8) Visit with me and the TAs during office hours
+:::
+
+
+# Assignment {visibility="hidden"}
+
+
+## Assignment
+
+::: columns
+:::  {.column width="60%"}
+
+::: {.non-incremental}
+1.  Read Chapters 1 and 2 of Conroy and Carroll
+
+2.  Complete the introductory "quiz" found [here](https://goo.gl/forms/OpmugP5lmMrrXTIY2)
+:::
+:::
+
+::: {.column width="40%"}
+![](figs/Conroy_Carroll.jpg)
+:::
+:::
