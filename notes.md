@@ -10,6 +10,21 @@
   
 - There might be a better pandoc command
 
+- Or could try to convert to Rmd first:
+```
+# 1. Install conversion utilities
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_github("Bioconductor/Rnw2Rmd")
+
+# 2. Run the programmatic conversion
+# This translates your standard <<>>= and @ block wrappers into ````{r} blocks
+Rnw2Rmd::Rnw2Rmd(from = "presentation.Rnw", to = "presentation.Rmd")
+
+# 3. Rename file to Quarto format
+file.rename("presentation.Rmd", "presentation.qmd")
+```
+
+
 - See [](lectures/intro/lecture-intro.qmd) for an example of what the formatted qmd file should look like that meets accessibility standards
   * Important to add `fig-alt` tags to every figure
   
@@ -22,7 +37,7 @@
   * The above isn't great. Better to create HTML, then enter print mode with `e` command in Chrome. Then print with 4 slides/page
 
 - To render from command line:
-  * `quarto render doc.qmd`
+  * `quarto render doc.qmd --to revealjs`
   * Or if you want just a compressed version
     + `quarto render doc.qmd --to html`
     + `quarto render doc.qmd --to html --toc`
