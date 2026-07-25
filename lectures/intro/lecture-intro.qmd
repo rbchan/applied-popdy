@@ -8,6 +8,9 @@ format:
 #    transition: slide   # Slide transition effect
     slide-number: true
     chalkboard: true    # Adds a built-in drawing board/canvas!
+#  pdf: 
+#     pdf-standard: ua2
+lang: en
 ---
 
 
@@ -15,7 +18,7 @@ format:
 
 ## Dynamic populations
 
-![](figs/wlswar.gif){width="80%" fig-align="center"}
+![](figs/wlswar.gif){width="80%" fig-align="center" fig-alt="Wilson warbler migration dynamics"}
 
 
 ## Central Questions
@@ -100,9 +103,9 @@ format:
 
 ## Example II -- Black-throated blue warbler {style="font-size: 80%;"}
 
-![](figs/btbw-density-trends.png){width="85%" fig-align="center"}
+![](figs/btbw-density-trends.png){width="75%" fig-align="center"}
 
-![](figs/btbw1.jpg){width="20%" fig-align="center"}
+![](figs/btbw1.jpg){width="15%" fig-align="center"}
 
 Why are dynamics so different in the southern part of the range?
 
@@ -150,7 +153,7 @@ pond, reduced the risk to 2.5%.
 ![](figs/colMap-animation2.gif){width="50%" fig-align="center"}
 
 
-## Example IV -- South Florida Deer Study
+## Example IV -- South Florida Deer Study {.smaller}
 
 **Objectives**
 
@@ -167,28 +170,25 @@ pond, reduced the risk to 2.5%.
 :::
 
 ::: {.column width="50%"}
-![](figs/deer2.jpg){width="70%" fig-align="center"}
+![](figs/deer2.jpg){width="80%" fig-align="center"}
 :::
 
 :::
 
 
-## Camera study
+## Camera study {.smaller}
 
-![](figs/FL-base-cameras.png){width="70%" fig-align="center"}
+![](figs/FL-base-cameras.png){width="50%" fig-align="center"}
 
 ::: columns
 
-::: {.column width="35%"}
+::: {.column width="25%"}
 ![](figs/studyArea.jpg)
 :::
 
-::: {.column width="60%"}
-
+::: {.column width="75%"}
 - 180 cameras
-
 - Operated Jan 2015 -- Jan 2018
-
 - Spanning hunting and hydrology gradients
 :::
 
