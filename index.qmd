@@ -1,6 +1,9 @@
 ---
 title: Applied Population Dynamics
-author: Richard Chandler
+author:
+  name: Richard Chandler
+  affiliation:
+    name: Warnell School of Forestry and Natural Resources, University of Georgia
 format: html
 ---
 
@@ -12,17 +15,19 @@ species interactions, and stochastic models for structured
 populations. Sampling design and analytical methods for estimating
 abundance and demographic parameters. Application of population models
 to harvest management and conversation of small
-populations. Integrative student project required. 
+populations. Integrative student project required.  
 
 ## Course Objectives and Learning Outcomes
 
 This course will present the theory necessary for understanding
 wildlife population dynamics, and it will explain how to use theory
-and data to inform management and conservation efforts. By the end of 
+and data to inform management and conservation efforts. By the end of
 the course, students will be able to: (1) Develop models to forecast
 the impacts of environmental change and management actions on wildlife
 populations; (2) Design field studies to collect data on wildlife
 demographics; (3) Use statistical software to analyze data on wildlife
 populations; (4) Review scientific literature to support modeling
 decisions; (5) Present modeling results in a short scientific paper
-and an oral presentation. 
+and an oral presentation.
+
+

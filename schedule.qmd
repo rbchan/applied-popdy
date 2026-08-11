@@ -11,4 +11,6 @@ format: html
 
 - Lab 1
 
-## Week 2
+## Week 2 - Geometric and logistic growth
+
+- Lecture 3
