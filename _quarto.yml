@@ -20,3 +20,6 @@ format:
     slide-number: true
     chalkboard: true
     scrollable: true
+
+execute:
+  freeze: auto
