@@ -4,14 +4,7 @@
     "href": "index.html",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "This is"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Week 1\n\nIntro\nView Lecture 1 Intro Slides"
+    "text": "Applied Population Dynamics (WILD 5700/7700)."
   },
   {
     "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",
@@ -145,5 +138,12 @@
     "title": "Applied Population Dynamics",
     "section": "Assignment",
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory “survey quiz” found here.\n\n\n\n\n\nSurvey: https://goo.gl/forms/OpmugP5lmMrrXTIY2"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Week 1\n\nIntro\nView Lecture 1 Intro Slides"
   }
 ]
