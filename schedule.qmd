@@ -5,4 +5,4 @@ format: html
 
 ### Week 1
   * Intro
-  * [View Lecture 1 Intro Slides](lectures/intro/lecture-intro.qmd)
+  * [View Lecture 1 Intro Slides](../lectures/intro/lecture-intro.qmd)
