@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",
+    "href": "lectures/intro/lecture-intro.html#dynamic-populations",
+    "title": "Applied Population Dynamics",
+    "section": "Dynamic populations",
+    "text": "Dynamic populations"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#central-questions",
+    "href": "lectures/intro/lecture-intro.html#central-questions",
+    "title": "Applied Population Dynamics",
+    "section": "Central Questions",
+    "text": "Central Questions\n\nWhat causes spatial and temporal variation in population size and structure?\nHow do environmental change and human activities (including management actions) affect populations?"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#learning-objectives",
+    "href": "lectures/intro/lecture-intro.html#learning-objectives",
+    "title": "Applied Population Dynamics",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the semester, you should be able to:\n\nDevelop a population model that:\n\nDescribes variation in demographic parameters over time\nPredicts how a population will respond to management and conservation actions.\n\nDesign a study to collect the data necessary to estimate the demographic parameters of the model.\nUse R software to estimate parameters from field data."
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#themes",
+    "href": "lectures/intro/lecture-intro.html#themes",
+    "title": "Applied Population Dynamics",
+    "section": "Themes",
+    "text": "Themes\n\n\nTheory\n\nPopulation models\n\n\nPractice (Application)\n\nStudy design\nData collection\nParameter estimation\nPopulation viability analysis\nHarvest management\nSmall population management"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
+    "href": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
+    "title": "Applied Population Dynamics",
+    "section": "Example I – Louisiana black bear",
+    "text": "Example I – Louisiana black bear"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
+    "href": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
+    "title": "Applied Population Dynamics",
+    "section": "Estimated demographic parameters",
+    "text": "Estimated demographic parameters"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
+    "href": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
+    "title": "Applied Population Dynamics",
+    "section": "Example II – Black-throated blue warbler",
+    "text": "Example II – Black-throated blue warbler\n\n\n\n\n\n\n\n\n\n\nWhy are dynamics so different in the southern part of the range?"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
+    "href": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
+    "title": "Applied Population Dynamics",
+    "section": "Example III – Chiricahua Leopard Frog",
+    "text": "Example III – Chiricahua Leopard Frog"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#recovery-plan",
+    "href": "lectures/intro/lecture-intro.html#recovery-plan",
+    "title": "Applied Population Dynamics",
+    "section": "Recovery Plan",
+    "text": "Recovery Plan"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#estimated-extinction-risk",
+    "href": "lectures/intro/lecture-intro.html#estimated-extinction-risk",
+    "title": "Applied Population Dynamics",
+    "section": "Estimated extinction risk",
+    "text": "Estimated extinction risk\nManagement options\n\nControl predators\nIncrease hydroperiod in existing wetlands\nCreate new wetlands…\n\nExtinction risk was predicted to be 4% after 50 years. Restoring just 1 pond, reduced the risk to 2.5%."
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#colonization-probability-maps",
+    "href": "lectures/intro/lecture-intro.html#colonization-probability-maps",
+    "title": "Applied Population Dynamics",
+    "section": "Colonization Probability Maps",
+    "text": "Colonization Probability Maps"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
+    "href": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
+    "title": "Applied Population Dynamics",
+    "section": "Example IV – South Florida Deer Study",
+    "text": "Example IV – South Florida Deer Study\nObjectives\n\nUnderstand effects of hydrology, hunting, and predation on deer population dynamics\nDevelop a camera trapping study for large-scale investigation and monitoring of deer populations"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#camera-study",
+    "href": "lectures/intro/lecture-intro.html#camera-study",
+    "title": "Applied Population Dynamics",
+    "section": "Camera study",
+    "text": "Camera study\n\n\n\n\n\n\n\n\n\n\n180 cameras\nOperated Jan 2015 – Jan 2018\nSpanning hunting and hydrology gradients"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#telemetry-data",
+    "href": "lectures/intro/lecture-intro.html#telemetry-data",
+    "title": "Applied Population Dynamics",
+    "section": "Telemetry data",
+    "text": "Telemetry data\n250 deer collared 2015 – 2018"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#abundance-over-time",
+    "href": "lectures/intro/lecture-intro.html#abundance-over-time",
+    "title": "Applied Population Dynamics",
+    "section": "Abundance over time",
+    "text": "Abundance over time"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
+    "href": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
+    "title": "Applied Population Dynamics",
+    "section": "Survival and predation rate",
+    "text": "Survival and predation rate"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#syllabus-1",
+    "href": "lectures/intro/lecture-intro.html#syllabus-1",
+    "title": "Applied Population Dynamics",
+    "section": "Syllabus",
+    "text": "Syllabus"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
+    "href": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
+    "title": "Applied Population Dynamics",
+    "section": "Tips for success in this course",
+    "text": "Tips for success in this course\n\nTake notes on printed handouts\nDon’t bring laptops/tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during class\nStart the final project early\nVisit with me and the TAs during office hours"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#assignment-1",
+    "href": "lectures/intro/lecture-intro.html#assignment-1",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory “survey quiz” found here.\n\n\n\n\n\nSurvey: https://goo.gl/forms/OpmugP5lmMrrXTIY2"
+  }
+]
