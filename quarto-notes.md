@@ -53,7 +53,8 @@ file.rename("presentation.Rmd", "presentation.qmd")
   * `pdfjam --nup 2x2 --landscape original_slides.pdf --output handout_4up.pdf`
   * Or `pandoc input.html --pdf-engine=chrome -o output.pdf`
   * Or `pandoc input.html --pdf-engine=weasyprint -o output.pdf`
-  * The above isn't great. Better to create HTML, then enter print mode with `e` command in Chrome. Then print with 4 slides/page
+
+- The above isn't great. Better to create HTML, then enter print mode with `e` command in Chrome. Then print with 4 slides/page
 
 
 ## To render from command line:
