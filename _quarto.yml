@@ -19,7 +19,7 @@ format:
     theme: simple
     slide-number: true
     chalkboard: true
-    scrollable: true
+#    scrollable: true
 
 execute:
   freeze: auto
