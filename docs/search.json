@@ -154,6 +154,76 @@
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory “survey quiz” found here.\n\n\n\n\n\nSurvey: https://goo.gl/forms/OpmugP5lmMrrXTIY2"
   },
   {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-topics",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-topics",
+    "title": "The BIDE model",
+    "section": "Today’s topics",
+    "text": "Today’s topics"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "title": "The BIDE model",
+    "section": "Definitions",
+    "text": "Definitions\nPopulation dynamics\nThe study of spatial and temporal variation in population size and structure\nPopulation\nIndividuals of the same species occuring in the same geographic region\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "title": "The BIDE model",
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "title": "The BIDE model",
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions? Yes. We have to simplify, so we have to make assumptions. We do this all the time, for example when deciding how long it will take you to get to class.\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "title": "The BIDE model",
+    "section": "Model validation",
+    "text": "Model validation\nPutting the model to the test\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "title": "The BIDE model",
+    "section": "Types of models",
+    "text": "Types of models\n\n\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "title": "The BIDE model",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "title": "The BIDE model",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "title": "The BIDE model",
+    "section": "The BIDE model",
+    "text": "The BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "title": "The BIDE model",
+    "section": "Assignment",
+    "text": "Assignment\nRead the first 3 pages of Chapter 3 in Conroy and Carroll\nExpect a quiz next time we meet"
+  },
+  {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Course Schedule",
