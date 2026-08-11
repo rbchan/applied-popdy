@@ -7,8 +7,8 @@ format:
     theme: default      # Options: simple, dark, neutral, sky, serif, etc.
 #    transition: slide   # Slide transition effect
     slide-number: true
-#    chalkboard: true    # Adds a built-in drawing board/canvas!
-    embed-resources: true
+    chalkboard: true    # Adds a built-in drawing board/canvas!
+#    embed-resources: true
 #  pdf: 
 #     pdf-standard: ua2
 lang: en

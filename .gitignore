@@ -30,3 +30,5 @@ KEY-*
 
 # R Shiny
 rsconnect/
+/.quarto/
+**/*.quarto_ipynb
