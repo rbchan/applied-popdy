@@ -2,4 +2,4 @@
 title: Applied Population Dynamics
 format: html
 ---
-This is
+Applied Population Dynamics (WILD 5700/7700).
