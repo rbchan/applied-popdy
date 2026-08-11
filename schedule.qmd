@@ -3,6 +3,12 @@ title: "Course Schedule"
 format: html
 ---
 
-### Week 1
-  * Intro
-  * [View Lecture 1 Intro Slides](lectures/intro/lecture-intro.qmd)
+## Week 1 - Introduction and the BIDE model
+
+- [Lecture 1 - Introduction](lectures/intro/lecture-intro.qmd)
+
+- Lecture 2 - BIDE model
+
+- Lab 1
+
+## Week 2

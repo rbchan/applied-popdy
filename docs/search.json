@@ -4,7 +4,21 @@
     "href": "index.html",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Applied Population Dynamics (WILD 5700/7700)."
+    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
+  },
+  {
+    "objectID": "index.html#course-objectives-and-learning-outcomes",
+    "href": "index.html#course-objectives-and-learning-outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Course Objectives and Learning Outcomes",
+    "text": "Course Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation."
   },
   {
     "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",
@@ -144,6 +158,20 @@
     "href": "schedule.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "Week 1\n\nIntro\nView Lecture 1 Intro Slides"
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
+    "href": "schedule.html#week-1---introduction-and-the-bide-model",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-2",
+    "href": "schedule.html#week-2",
+    "title": "Course Schedule",
+    "section": "Week 2",
+    "text": "Week 2"
   }
 ]
