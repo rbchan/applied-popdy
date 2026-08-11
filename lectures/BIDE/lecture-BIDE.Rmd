@@ -1,29 +1,4 @@
-\documentclass[color=usenames,dvipsnames]{beamer}
-%\documentclass[color=usenames,dvipsnames,handout]{beamer}
-
-%%\usepackage[roman]{../pres1}
-\usepackage[sans]{../pres1}
-\usepackage{graphicx}
-\usepackage{bm}
-
-
-<<eval=FALSE,include=FALSE>>=
-source("../../rnw2pdf.R")
-rnw2pdf("lecture-BIDE")
-rnw2pdf("lecture-BIDE",tangle=TRUE)
-@
-
-<<eval=FALSE,include=FALSE>>=
-source("../../rnw2qmd.R")
-
-@
-
-
-\begin{document}
-
-
-\begin{frame}[plain,fragile]
-  \centering
+\begin{frame}[plain,fragile]\centering
     \huge
     The BIDE model \\
 %    \large
@@ -64,18 +39,13 @@ legend(1, 230, c("Population size (N)",
 \end{columns}
 \end{frame}
 
-
-
-\section{Definitions}
-
+# Definitions
 
 \begin{frame}
   \frametitle{Today's topics}
   \LARGE
   \only<1>{\tableofcontents}%[hideallsubsections]}
 \end{frame}
-
-
 \begin{frame}
   \frametitle{Definitions}
   {\bf Population dynamics \\}
@@ -94,13 +64,7 @@ legend(1, 230, c("Population size (N)",
     habitat patches, etc\dots
 \end{frame}
 
-
-
-\section{Modeling 101}
-
-
-
-
+# Modeling 101
 
 \begin{frame}
   \frametitle{Models and science}
@@ -124,10 +88,6 @@ legend(1, 230, c("Population size (N)",
   \includegraphics[height=2.5cm]{figs/issj} \hspace{10mm}
   \includegraphics[height=2.4cm]{figs/jay-model} \\
 \end{frame}
-
-
-
-
 \begin{frame}
   \frametitle{Models and science}
   \large
@@ -143,10 +103,6 @@ legend(1, 230, c("Population size (N)",
   \includegraphics[width=0.3\textwidth]{figs/box}
   ``All models are wrong, but some are useful.'' G.E.P. Box (1987)
 \end{frame}
-
-
-
-
 \begin{frame}
   \frametitle{Model validation}
   \large
@@ -162,13 +118,6 @@ legend(1, 230, c("Population size (N)",
   \centering
   \includegraphics[width=0.7\textwidth]{figs/nasa-prediction} \\
 \end{frame}
-
-
-%\section{Modeling 101}
-
-
-
-
 \begin{frame}
   \frametitle{Types of models}
   \Large
@@ -191,12 +140,7 @@ legend(1, 230, c("Population size (N)",
   \end{columns}
 \end{frame}
 
-
-
-
-
-\section{BIDE}
-
+# BIDE
 
 \begin{frame}
   \frametitle{The BIDE model}
@@ -219,8 +163,6 @@ legend(1, 230, c("Population size (N)",
   \note{Classify each variable: attributes of the animal, other biotic
     factors e.g. competitors/prey, attributes of the habitat, and population}
 \end{frame}
-
-
 \begin{frame}
   \frametitle{The BIDE model}
   \huge
@@ -249,8 +191,6 @@ legend(1, 230, c("Population size (N)",
   \note{Spend the rest of lecture doing a group exercise to create
     list of factors influencing each process?}
 \end{frame}
-
-
 \begin{frame}
   \frametitle{The BIDE model}
   \begin{columns}
@@ -260,9 +200,7 @@ legend(1, 230, c("Population size (N)",
   \end{columns}
 \end{frame}
 
-
-\section{Assignment}
-
+# Assignment
 
 \begin{frame}
   \frametitle{Assignment}
@@ -272,11 +210,3 @@ legend(1, 230, c("Population size (N)",
   \vfill
   Expect a quiz next time we meet
 \end{frame}
-
-
-
-
-
-
-
-\end{document}
