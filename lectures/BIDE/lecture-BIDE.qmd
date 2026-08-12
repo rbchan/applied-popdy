@@ -5,12 +5,17 @@ format:
   revealjs:
     theme: default
     slide-number: true
+    toc: true
+    toc-title: "Today's topics"
 lang: en
 title-slide-attributes:
   data-background-image: "lecture-BIDE_files/figure-revealjs/bide0-1.png"
   data-background-size: contain
   data-background-opacity: "0.1"
 ---
+
+# Definitions {visibility="hidden"}
+
 
 ## BIDE fig to be hidden {visibility="hidden"}
 ```{r}
@@ -46,8 +51,7 @@ legend(1, 230, c("Population size (N)", "Births (B)",
        col=c("black", "blue", "green", "red","orange"))
 ```
 
-
-# Definitions {visibility="hidden"}
+## Outline
 
 
 ## Today's topics
