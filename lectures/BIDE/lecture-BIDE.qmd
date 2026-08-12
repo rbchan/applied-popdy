@@ -5,6 +5,7 @@ format:
   revealjs:
     theme: default
     slide-number: true
+    toc: true  
 lang: en
 title-slide-attributes:
   data-background-image: "lecture-BIDE_files/figure-revealjs/bide0-1.png"
