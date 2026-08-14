@@ -227,7 +227,7 @@ pond, reduced the risk to 2.5%.
 <!-- ![](APD-syllabus.pdf){fig-align="center" width="50%"} -->
 
 <div class="iframe-container">
-<iframe src="../../APD-syllabus.pdf" width="50%" height="550px" style="display: block; margin: 0 auto;"></iframe> 
+<iframe src="../../../APD-syllabus.pdf" width="50%" height="550px" style="display: block; margin: 0 auto;"></iframe> 
 </div>
 
 ## Tips for success in this course
