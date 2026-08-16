@@ -257,7 +257,7 @@ Restoring just 1 pond, reduced extinction risk from 4% to 2.5% after 50 years.
 1.  Read Chapters 1 and 2 of Conroy and Carroll
 
 
-2.  Complete the introductory "survey quiz" found [here](https://goo.gl/forms/OpmugP5lmMrrXTIY2).
+2.  Complete the introductory survey "quiz" found [here](https://goo.gl/forms/OpmugP5lmMrrXTIY2).
 :::
 :::
 
@@ -267,5 +267,5 @@ Restoring just 1 pond, reduced extinction risk from 4% to 2.5% after 50 years.
 :::
 
 
-Survey: https://goo.gl/forms/OpmugP5lmMrrXTIY2
+<!-- Survey: [https://goo.gl/forms/OpmugP5lmMrrXTIY2]() -->
 
