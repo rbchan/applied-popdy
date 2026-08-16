@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Richard Chandler">
 
-<title>Applied Population Dynamics</title>
+<title>apd-syllabus – Applied Population Dynamics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -91,11 +119,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./APD-syllabus.html"> 
+    <a class="nav-link active" href="./APD-syllabus.html" aria-current="page"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
@@ -120,51 +148,401 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course Description</a></li>
   <li><a href="#course-objectives-and-learning-outcomes" id="toc-course-objectives-and-learning-outcomes" class="nav-link" data-scroll-target="#course-objectives-and-learning-outcomes">Course Objectives and Learning Outcomes</a></li>
+  <li><a href="#tips-for-success" id="toc-tips-for-success" class="nav-link" data-scroll-target="#tips-for-success">Tips for Success</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty">Academic Honesty</a></li>
+  <li><a href="#format-and-attendance" id="toc-format-and-attendance" class="nav-link" data-scroll-target="#format-and-attendance">Format and Attendance</a></li>
+  <li><a href="#cell-phones-and-laptops" id="toc-cell-phones-and-laptops" class="nav-link" data-scroll-target="#cell-phones-and-laptops">Cell Phones and Laptops</a></li>
+  <li><a href="#uga-well-being-resources" id="toc-uga-well-being-resources" class="nav-link" data-scroll-target="#uga-well-being-resources">UGA Well-Being Resources</a></li>
+  <li><a href="#academic-coaching" id="toc-academic-coaching" class="nav-link" data-scroll-target="#academic-coaching">Academic Coaching</a></li>
+  <li><a href="#accommodations-for-disabilities" id="toc-accommodations-for-disabilities" class="nav-link" data-scroll-target="#accommodations-for-disabilities">Accommodations for Disabilities</a></li>
+  <li><a href="#generative-ai" id="toc-generative-ai" class="nav-link" data-scroll-target="#generative-ai">Generative AI</a></li>
+  <li><a href="#tentative-course-outline" id="toc-tentative-course-outline" class="nav-link" data-scroll-target="#tentative-course-outline">Tentative Course Outline</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Applied Population Dynamics</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Richard Chandler </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Warnell School of Forestry and Natural Resources, University of Georgia
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p><strong>Applied Population Dynamics</strong> WILD 5700/5700L, 7700/7700L, Fall 2025 Lecture: Mon, Wed 9:55–10:50 AM; Room 1-304 Lab: Wed 2:55–5:35; Room 1-304</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 30%">
+<col style="width: 4%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>Instructor</strong></td>
+<td style="text-align: center;"></td>
+<td colspan="2" style="text-align: center;"><strong>Teaching Assistants</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">Dr.&nbsp;Richard Chandler</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Urvi Gupta</td>
+<td style="text-align: center;">Katherine Araúz-Ponce</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Office room:</td>
+<td style="text-align: center;">3-407</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3-402</td>
+<td style="text-align: center;">3-402</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Email:</td>
+<td style="text-align: center;">rchandler@warnell.uga.edu</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">urvi.gupta@uga.edu</td>
+<td style="text-align: center;">arauzponce@uga.edu</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Office hours:</td>
+<td style="text-align: center;">Mon 11:00–12:00</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Mon 2:30–3:30</td>
+<td style="text-align: center;">Thur 11:00–12:00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">or by appointment</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<section id="course-description" class="level1 unnumbered">
+<h1 class="unnumbered">Course Description</h1>
 <p>Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.</p>
 </section>
-<section id="course-objectives-and-learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="course-objectives-and-learning-outcomes">Course Objectives and Learning Outcomes</h2>
+<section id="course-objectives-and-learning-outcomes" class="level1 unnumbered">
+<h1 class="unnumbered">Course Objectives and Learning Outcomes</h1>
 <p>This course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.</p>
+</section>
+<section id="tips-for-success" class="level1 unnumbered">
+<h1 class="unnumbered">Tips for Success</h1>
+<ul>
+<li><p>Take notes on printed handouts</p></li>
+<li><p>Don’t bring laptops or tablets to lecture</p></li>
+<li><p>Review notes before each lecture</p></li>
+<li><p>Keep up with assigned readings</p></li>
+<li><p>Finish lab assignments during lab</p></li>
+<li><p>Ask questions during lecture and lab.</p></li>
+<li><p>Start the final project early.</p></li>
+<li><p>Visit with the TAs and me during office hours.</p></li>
+</ul>
+</section>
+<section id="grading" class="level1 unnumbered">
+<h1 class="unnumbered">Grading</h1>
+<div class="center">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Quantity</th>
+<th style="text-align: right;">Grade percentage<span class="math inline">\(^*\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quizzes</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10%</td>
+</tr>
+<tr class="even">
+<td>Lab assignments</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">35%</td>
+</tr>
+<tr class="odd">
+<td>Final paper<span class="math inline">\(^{**}\)</span></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">20%</td>
+</tr>
+<tr class="even">
+<td>Exams</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">30%</td>
+</tr>
+<tr class="odd">
+<td>Class participation</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">5%</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<span class="math inline">\(^*\)</span>Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.<br>
+<span class="math inline">\(^{**}\)</span>Graduate students will analyze a real dataset and summarize the results in their final paper.<br>
+A = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,<br>
+C+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = <span class="math inline">\(&lt;\)</span><!-- -->60.</p>
+</div>
+</section>
+<section id="textbook" class="level1 unnumbered">
+<h1 class="unnumbered">Textbook</h1>
+<p>Conroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. <a href="http://preproxy.galib.uga.edu/login?url=http://onlinelibrary.wiley.com/book/10.1002/9781444303155">Digital copies</a> are available for free through the UGA library.</p>
+</section>
+<section id="prerequisites" class="level1 unnumbered">
+<h1 class="unnumbered">Prerequisites</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 78%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Undergrads:</td>
+<td style="text-align: left;">(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grads:</td>
+<td style="text-align: left;">FANR 6750-6750D or BIOS 7010 or BIOS 7010E</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="academic-honesty" class="level1 unnumbered">
+<h1 class="unnumbered">Academic Honesty</h1>
+<p>UGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at <a href="https://honesty.uga.edu/" class="uri">https://honesty.uga.edu/</a>. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.</p>
+</section>
+<section id="format-and-attendance" class="level1 unnumbered">
+<h1 class="unnumbered">Format and Attendance</h1>
+<p>Lectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.</p>
+</section>
+<section id="cell-phones-and-laptops" class="level1 unnumbered">
+<h1 class="unnumbered">Cell Phones and Laptops</h1>
+<p>Cell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.</p>
+</section>
+<section id="uga-well-being-resources" class="level1 unnumbered">
+<h1 class="unnumbered">UGA Well-Being Resources</h1>
+<p>UGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care &amp; Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit <a href="sco.uga.edu" class="uri">sco.uga.edu</a>. Student Care &amp; Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.</p>
+<p>UGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.</p>
+<p>University Health Center: <a href="healthcenter.uga.edu" class="uri">healthcenter.uga.edu</a><br>
+Counseling and Psychiatric Services: <a href="caps.uga.edu" class="uri">caps.uga.edu</a> or 24/7 crisis support at 706-542-2273<br>
+Health Promotion/ Fontaine Center: <a href="healthpromotion.uga.edu" class="uri">healthpromotion.uga.edu</a><br>
+Accessibility and Testing: <a href="accessibility.uga.edu" class="uri">accessibility.uga.edu</a><br>
+Additional information, including free digital well-being resources, can be accessed through the UGA app or by visiting <a href="https://well-being.uga.edu" class="uri">https://well-being.uga.edu</a>.</p>
+</section>
+<section id="academic-coaching" class="level1 unnumbered">
+<h1 class="unnumbered">Academic Coaching</h1>
+<p>For assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the <a href="https://dae.uga.edu/services/academic-coaching/">Office of Academic Enhancement</a>.</p>
+</section>
+<section id="accommodations-for-disabilities" class="level1 unnumbered">
+<h1 class="unnumbered">Accommodations for Disabilities</h1>
+<p>If you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (<a href="https://drc.uga.edu" class="uri">https://drc.uga.edu</a>; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.</p>
+</section>
+<section id="generative-ai" class="level1 unnumbered">
+<h1 class="unnumbered">Generative AI</h1>
+<p>Artificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.</p>
+<p>More on AI:</p>
+<ul>
+<li><p><a href="https://thebullshitmachines.com/">Under the AI hood</a></p></li>
+<li><p><a href="https://drive.google.com/file/d/1AN9GrksC4kLIE57fuS4zg8nPsyYtNEmr/view?usp=sharing">AI teaching-learning circle</a></p></li>
+</ul>
+</section>
+<section id="tentative-course-outline" class="level1 unnumbered">
+<h1 class="unnumbered">Tentative Course Outline</h1>
+<div class="center">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 41%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Date</strong></th>
+<th style="text-align: left;"><strong>Lecture</strong></th>
+<th style="text-align: left;"><strong>Lab</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td colspan="3" style="text-align: left;">PART I – Models</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aug 17</td>
+<td style="text-align: left;">Introduction</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aug 19</td>
+<td style="text-align: left;">BIDE model</td>
+<td style="text-align: left;">Excel and R basics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aug 24</td>
+<td style="text-align: left;">Exponential and geometric growth</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aug 26</td>
+<td style="text-align: left;">Logistic growth</td>
+<td style="text-align: left;">Geometric and logistic growth</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aug 31</td>
+<td style="text-align: left;">Harvest models</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sept 2</td>
+<td style="text-align: left;">Stochasticity</td>
+<td style="text-align: left;">Harvest models</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sept 7</td>
+<td style="text-align: left;">Labor Day – no lecture</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sept 9</td>
+<td style="text-align: left;">Extinction risk</td>
+<td style="text-align: left;">Extinction risk</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sept 14</td>
+<td style="text-align: left;">Extinction risk</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sept 16</td>
+<td style="text-align: left;">Exam I</td>
+<td style="text-align: left;">Data collection</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sept 21</td>
+<td style="text-align: left;">Competition and predation</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sept 23</td>
+<td style="text-align: left;">Competition and predation</td>
+<td style="text-align: left;">Competition and predation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sept 28</td>
+<td style="text-align: left;">Age structure</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sept 30</td>
+<td style="text-align: left;">Stage structure</td>
+<td style="text-align: left;">Age/stage structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oct 5</td>
+<td style="text-align: left;">Source-sink dynamics</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct 7</td>
+<td style="text-align: left;">Metapopulations</td>
+<td style="text-align: left;">Metapopulations</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oct 12</td>
+<td style="text-align: left;">Population viability analysis</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct 14</td>
+<td style="text-align: left;">Sensitivity analysis</td>
+<td style="text-align: left;">Population viability analysis</td>
+</tr>
+<tr class="even">
+<td colspan="3" style="text-align: left;">PART II – Estimation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct 19</td>
+<td style="text-align: left;">Study design</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oct 21</td>
+<td style="text-align: left;">Exam II</td>
+<td style="text-align: left;">Data collection</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct 26</td>
+<td style="text-align: left;">Occupancy models</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oct 28</td>
+<td style="text-align: left;">Occupancy models</td>
+<td style="text-align: left;">Occupancy models</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nov 2</td>
+<td style="text-align: left;">Distance sampling</td>
+<td style="text-align: left;">Due: First draft</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov 4</td>
+<td style="text-align: left;">Distance sampling</td>
+<td style="text-align: left;">Distance sampling</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nov 9</td>
+<td style="text-align: left;">Mark-recapture: closed populations</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov 11</td>
+<td style="text-align: left;">Mark-recapture: closed populations</td>
+<td style="text-align: left;">Mark-recapture I</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nov 16</td>
+<td style="text-align: left;">Mark-recapture: open populations</td>
+<td style="text-align: left;">Due: peer review</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov 18</td>
+<td style="text-align: left;">Mark-recapture: open populations</td>
+<td style="text-align: left;">Mark-recapture II</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nov 23</td>
+<td style="text-align: left;">Thanksgiving Break</td>
+<td style="text-align: left;">Thanksgiving Break</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov 25</td>
+<td style="text-align: left;">Thanksgiving Break</td>
+<td style="text-align: left;">Thanksgiving Break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nov 30</td>
+<td style="text-align: left;">Survival analysis</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dec 2</td>
+<td style="text-align: left;">Reading day</td>
+<td style="text-align: left;">No lab</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dec 9</td>
+<td style="text-align: left;">Final exam (8:00-11:00am)</td>
+<td style="text-align: left;">Room 1-304</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary.</p>
 
 
 </section>
