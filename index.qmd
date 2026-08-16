@@ -3,7 +3,7 @@ title: Applied Population Dynamics
 author:
   name: Richard Chandler
   affiliation:
-    name: Warnell School of Forestry and Natural Resources, University of Georgia
+    name: Warnell School of Forestry and Natural Resources\nUniversity of Georgia
 format: html
 ---
 
