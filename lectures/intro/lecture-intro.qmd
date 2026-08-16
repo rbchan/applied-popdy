@@ -88,11 +88,11 @@ lang: en
 
 ::: columns
 ::: {.column width="50%"}
-![](figs/LAbear2.png)
+![](figs/LAbear2.png){fig-alt="LA bears"}
 :::
 
 ::: {.column width="40%"}
-![](figs/LA-bear-map.jpg)
+![](figs/LA-bear-map.jpg){fig-alt="LA bear map"}
 :::
 :::
 
@@ -142,10 +142,12 @@ Management options
 
 - Create new wetlands...
 
-Extinction risk was predicted to be 4% after 50 years. Restoring just 1
-pond, reduced the risk to 2.5%.
+. . .
 
-![](figs/lich-forecasts.PNG){width="65%" fig-align="center"}
+
+Restoring just 1 pond, reduced extinction risk from 4% to 2.5% after 50 years.
+
+![](figs/lich-forecasts.PNG){width="60%" fig-align="center"}
 
 
 
@@ -161,8 +163,7 @@ pond, reduced the risk to 2.5%.
 1.  Understand effects of hydrology, hunting, and predation on deer
     population dynamics
 
-2.  Develop a camera trapping study for large-scale investigation and
-    monitoring of deer populations
+2.  Develop a camera trapping study for large-scale monitoring of deer populations
 
 ::: columns
 
@@ -179,15 +180,15 @@ pond, reduced the risk to 2.5%.
 
 ## Camera study {.smaller}
 
-![](figs/FL-base-cameras.png){width="50%" fig-align="center"}
+![](figs/FL-base-cameras.png){width="60%" fig-align="center"}
 
 ::: columns
 
-::: {.column width="25%"}
+::: {.column width="30%"}
 ![](figs/studyArea.jpg)
 :::
 
-::: {.column width="75%"}
+::: {.column width="65%"}
 - 180 cameras
 - Operated Jan 2015 -- Jan 2018
 - Spanning hunting and hydrology gradients
@@ -227,7 +228,7 @@ pond, reduced the risk to 2.5%.
 <!-- ![](APD-syllabus.pdf){fig-align="center" width="50%"} -->
 
 <div class="iframe-container">
-<iframe src="../../../APD-syllabus.pdf" width="50%" height="550px" style="display: block; margin: 0 auto;"></iframe> 
+<iframe src="APD-syllabus.pdf" width="50%" height="550px" style="display: block; margin: 0 auto;"></iframe> 
 </div>
 
 ## Tips for success in this course
@@ -267,3 +268,4 @@ pond, reduced the risk to 2.5%.
 
 
 Survey: https://goo.gl/forms/OpmugP5lmMrrXTIY2
+
