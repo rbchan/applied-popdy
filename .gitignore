@@ -7,3 +7,11 @@ _site/
 *.aux
 *.log
 *.out
+*.nav
+*.snm
+*.vrb
+*.toc
+*.pdf
+
+cache/
+auto/
