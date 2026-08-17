@@ -1,10 +1,11 @@
 ---
-title: "Applied Population Dynamics"
-subtitle: "WILD 5700/7700"
-author: "Richard Chandler"
+# title: "Applied Population Dynamics"
+# subtitle: "WILD 5700/7700"
+# author: "Richard Chandler"
 format:
   revealjs:
     theme: default      # Options: simple, dark, neutral, sky, serif, etc.
+    pagetitle: "Applied Population Dynamics"
 #    transition: slide   # Slide transition effect
     slide-number: true
     chalkboard: true    # Adds a built-in drawing board/canvas!
@@ -16,6 +17,25 @@ lang: en
 
 
 # Introduction {visibility="hidden"}
+
+
+## {content-align="center" style="font-size: 110%;"}
+
+<center>
+
+**Applied Population Dynamics**
+
+WILD 5700/7700
+
+Richard Chandler
+
+<br>
+
+![](figs/puma1.png){height="270" fig-align="center" fig-alt="Florida panther"}
+![](figs/deer_marked_helicopter.jpg){height="270" fig-align="center" fig-alt="White-tailed deer"}
+
+</center>
+
 
 ## Dynamic populations
 
@@ -132,7 +152,7 @@ Why are dynamics so different in the southern part of the range?
 
 
 
-## Estimated extinction risk {.smaller}
+## Avoiding extinction {.smaller}
 
 Management options
 
@@ -145,7 +165,7 @@ Management options
 . . .
 
 
-Restoring just 1 pond, reduced extinction risk from 4% to 2.5% after 50 years.
+Restoring just 1 pond reduced extinction risk from 4% to 2.5% after 50 years.
 
 ![](figs/lich-forecasts.PNG){width="60%" fig-align="center"}
 
