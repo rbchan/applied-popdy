@@ -39,7 +39,7 @@
     "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
     "title": "The BIDE model",
     "section": "Definitions",
-    "text": "Definitions\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
@@ -91,11 +91,18 @@
     "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
   },
   {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "title": "The BIDE model",
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
+  },
+  {
     "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
     "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
     "title": "The BIDE model",
     "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll\n\nExpect a quiz next time we meet"
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
   },
   {
     "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",

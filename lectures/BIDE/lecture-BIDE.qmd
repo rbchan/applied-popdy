@@ -61,25 +61,32 @@ legend(1, 230, c("Population size (N)", "Births (B)",
 # Definitions {visibility="hidden"}
 
 
-## Definitions 
+## Definitions
+
+
+::: {style="font-size: 0.9em;"}
 
 **Population dynamics**: The study of spatial and temporal variation in population *size* and *structure*
 
-. . .
+<br>
 
 
+::: {.fragment}
 **Population**: Individuals of the same species occuring in the same geographic region
+:::
 
-. . .
+<br>
 
+::: {.fragment}
 **Population size and structure**
 
 - *Size*: Abundance
 - *Structure*: Distribution of individuals among age groups, sexes,
 habitat patches, etc...
+:::
 
 
-
+:::
 
 
 # Modeling 101 {visibility="hidden"}
@@ -90,8 +97,8 @@ habitat patches, etc...
 A model is an abstraction of reality that describes the relationship
 between two or more variables.
 
-. . . 
 
+::: {.fragment}
 Models help us...
 
 ::: nonincremental
@@ -107,6 +114,7 @@ Models help us...
 ![](figs/issj.png){.absolute top="200" right="100" height="250" fig-alt="Island Scrub Jay"}
 
 ![](figs/jay-model.png){.absolute top="480" right="-50" height="150" fig-alt="Island Scrub Jay density"}
+:::
 
 
 ## Models and science
@@ -210,6 +218,20 @@ In reality, things are more complicated, and interest lies in
 understanding the factors influencing each process.
 
 
+## Group exercise 
+
+<br>
+
+::: {.text-center}
+Split into groups of 4--6.
+
+<br>
+Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.
+
+<br>
+
+Be prepared to explain which demographic variables are influenced by each factor.
+:::
 
 
 # Assignment {visibility="hidden"}
@@ -219,9 +241,9 @@ understanding the factors influencing each process.
 
 <br>
 
-Read the first 3 pages of Chapter 3 in Conroy and Carroll
+Read the first 3 pages of Chapter 3 in Conroy and Carroll.
 
 <br>
 
-Expect a quiz next time we meet
+Expect a quiz next time we meet.
 
