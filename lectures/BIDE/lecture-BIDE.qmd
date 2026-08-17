@@ -1,9 +1,10 @@
 ---
-title: "The BIDE model"
-subtitle: "Applied Population Dynamics WILD 5700/7700"
+# title: "The BIDE model"
+# subtitle: "Applied Population Dynamics WILD 5700/7700"
 format:
   revealjs:
     theme: default
+    pagetitle: "The BIDE model"
     slide-number: true
     toc: false
     # toc-title: "Today's topics"
@@ -13,18 +14,12 @@ lang: en
 ---
 
 
-## Today's class
-
-<br>
-
-::: {style="font-size: 1.2em;"}
-1. A few definitions
-2. Modeling 101
-3. The BIDE model
-:::
+# Definitions {visibility="hidden"}
 
 
-## BIDE fig to be hidden {visibility="hidden"}
+
+## {content-align="center" style="font-size: 110%;"}
+
 ```{r}
 #| label: bide0
 #| echo: false
@@ -58,7 +53,39 @@ legend(1, 230, c("Population size (N)", "Births (B)",
        col=c("black", "blue", "green", "red","orange"))
 ```
 
-# Definitions {visibility="hidden"}
+
+<center>
+
+**The BIDE Model**
+
+::: {style="font-size: 90%;"}
+
+Applied Population Dynamics
+
+WILD 5700/7700
+
+:::
+
+</center>
+
+
+![](lecture-BIDE_files/figure-html/bide0-1.png){width="60%" fig-align="center" fig-alt="BIDE model"}
+
+
+
+
+
+## Today's class
+
+<br>
+
+::: {style="font-size: 1.2em;"}
+1. A few definitions
+2. Modeling 101
+3. The BIDE model
+:::
+
+
 
 
 ## Definitions
@@ -223,7 +250,7 @@ understanding the factors influencing each process.
 <br>
 
 ::: {.text-center}
-Split into groups of 4--6.
+Split into groups of 4--6 students.
 
 <br>
 Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.
