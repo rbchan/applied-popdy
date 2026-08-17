@@ -8,11 +8,20 @@ format:
     toc: false
     # toc-title: "Today's topics"
     # center: false
-    margin: 0.5
+    margin: 0.1
 lang: en
 ---
 
 
+## Today's class
+
+<br>
+
+::: {style="font-size: 1.2em;"}
+1. A few definitions
+2. Modeling 101
+3. The BIDE model
+:::
 
 
 ## BIDE fig to be hidden {visibility="hidden"}
