@@ -81,14 +81,14 @@
     "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
     "title": "Applied Population Dynamics",
     "section": "The BIDE model",
-    "text": "The BIDE model"
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
     "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
     "title": "Applied Population Dynamics",
     "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+    "text": "The BIDE model"
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
