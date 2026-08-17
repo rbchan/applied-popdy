@@ -1,12 +1,14 @@
 ---
 title: "The BIDE model"
-subtitle: Applied Population Dynamics (WILD 5700/7700)
+subtitle: "Applied Population Dynamics WILD 5700/7700"
 format:
   revealjs:
     theme: default
     slide-number: true
     toc: true
-    toc-title: "Today's topics"
+    # toc-title: "Today's topics"
+    # center: false
+    margin: 0.0
 lang: en
 title-slide-attributes:
   data-background-image: "lecture-BIDE_files/figure-revealjs/bide0-1.png"
@@ -51,22 +53,20 @@ legend(1, 230, c("Population size (N)", "Births (B)",
        col=c("black", "blue", "green", "red","orange"))
 ```
 
-## Outline
-
-
-## Today's topics
-
-
-## Definitions
+## Definitions 
 
 **Population dynamics**
 
 The study of spatial and temporal variation in population *size* and
 *structure*
 
+. . .
+
 **Population**
 
 Individuals of the same species occuring in the same geographic region
+
+. . .
 
 **Population size and structure**
 
@@ -75,32 +75,52 @@ Individuals of the same species occuring in the same geographic region
 habitat patches, etc...
 
 
+
+
+
 # Modeling 101 {visibility="hidden"}
+
 
 ## Models and science
 
 A model is an abstraction of reality that describes the relationship
 between two or more variables.
 
+. . . 
+
 Models help us...
 
-- Describe complex natural systems in a manageable way
+::: incremental
+- Describe complex natural systems in<br> a manageable way
 
 - Formalize and evaluate hypotheses
 
 - Predict future outcomes
 
 - ...all while accounting for uncertainty
+:::
 
-![image](figs/issj.png){height="2.5cm"}
-![image](figs/jay-model.png){height="2.4cm"}\
+![](figs/issj.png){.absolute top="200" right="100" height="250" fig-alt="Island Scrub Jay"}
+
+![](figs/jay-model.png){.absolute top="480" right="-50" height="150" fig-alt="Island Scrub Jay density"}
 
 
 ## Models and science
 
-*But don't models require assumptions?* Yes. We have to simplify, so we
-have to make assumptions. We do this all the time, for example when
+*But don't models require assumptions?*
+
+. . .
+
+Yes. We have to simplify, so we have to make assumptions. We do this all the time. 
+
+::: {.notes}
+, for example when
 deciding how long it will take you to get to class.
+:::
+
+<br>
+
+. . . 
 
 ![image](figs/box.jpg){width="30%"} "All models are wrong, but some are
 useful." G.E.P. Box (1987)
@@ -110,34 +130,37 @@ useful." G.E.P. Box (1987)
 
 Putting the model to the test
 
+::: columns
+
+::: {.column width="45%"}
+
 - How well does it predict?
 
 - Will your results hold up in court?
 
 - Can your results be replicated/reproduced?
 
-![image](figs/nasa-prediction.png){width="70%"}\
+:::
 
 
+::: {.column width="55%"}
+![](figs/nasa-prediction.png){width="100%" fig-align="center" fig-alt="NASA climate models"}
+:::
+
+:::
 
 ## Types of models
 
-::: columns
-
-::: {.column width="40%"}
 - Conceptual
 - Physical
 - Graphical
 - Mathematical
 - Statistical
-:::
 
-::: {.column width="40%"}
-![image](figs/atm-model.png){width="70%"}\
-![image](figs/hrrr-model.jpg){width="70%"}\
-:::
 
-:::
+![](figs/atm-model.png){.absolute top="10" right="70" width="400"}
+
+![](figs/hrrr-model.jpg){.absolute top="410" right="350" width="390"}
 
 
 
@@ -155,26 +178,32 @@ $D_t$: deaths\
 $E_t$: emigrants
 
 
+
+## The BIDE model
+
+![](lecture-BIDE_files/figure-revealjs/bide0-1.png){width="75%" fig-align="center"}
+
+
 ## The BIDE model
 
 $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$ As written, this model implies
 the following:
 
+::: incremental
 - $B$, $I$, $D$, and $E$ are not rates, they are the number of events at
   time $t$.
 
 - The model is **deterministic**, not **stochastic**
 
 - Time is discrete, not continuous
+:::
+
+. . .
 
 In reality, things are more complicated, and interest lies in
 understanding the factors influencing each process.
 
 
-
-## The BIDE model
-
-![image](figure/bide0-1.pdf){width="75%"}\
 
 
 # Assignment {visibility="hidden"}
@@ -182,7 +211,11 @@ understanding the factors influencing each process.
 
 ## Assignment
 
+<br>
+
 Read the first 3 pages of Chapter 3 in Conroy and Carroll
+
+<br>
 
 Expect a quiz next time we meet
 
