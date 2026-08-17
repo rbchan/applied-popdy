@@ -32,7 +32,7 @@
     "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
     "title": "The BIDE model",
     "section": "Definitions",
-    "text": "Definitions\nPopulation dynamics\nThe study of spatial and temporal variation in population size and structure\n\nPopulation\nIndividuals of the same species occuring in the same geographic region\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+    "text": "Definitions\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
@@ -53,7 +53,7 @@
     "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
     "title": "The BIDE model",
     "section": "Model validation",
-    "text": "Model validation\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",

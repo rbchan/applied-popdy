@@ -5,18 +5,14 @@ format:
   revealjs:
     theme: default
     slide-number: true
-    toc: true
+    toc: false
     # toc-title: "Today's topics"
     # center: false
-    margin: 0.0
+    margin: 0.5
 lang: en
-title-slide-attributes:
-  data-background-image: "lecture-BIDE_files/figure-revealjs/bide0-1.png"
-  data-background-size: contain
-  data-background-opacity: "0.1"
 ---
 
-# Definitions {visibility="hidden"}
+
 
 
 ## BIDE fig to be hidden {visibility="hidden"}
@@ -53,18 +49,17 @@ legend(1, 230, c("Population size (N)", "Births (B)",
        col=c("black", "blue", "green", "red","orange"))
 ```
 
+# Definitions {visibility="hidden"}
+
+
 ## Definitions 
 
-**Population dynamics**
-
-The study of spatial and temporal variation in population *size* and
-*structure*
+**Population dynamics**: The study of spatial and temporal variation in population *size* and *structure*
 
 . . .
 
-**Population**
 
-Individuals of the same species occuring in the same geographic region
+**Population**: Individuals of the same species occuring in the same geographic region
 
 . . .
 
@@ -90,7 +85,7 @@ between two or more variables.
 
 Models help us...
 
-::: incremental
+::: nonincremental
 - Describe complex natural systems in<br> a manageable way
 
 - Formalize and evaluate hypotheses
@@ -127,6 +122,8 @@ useful." G.E.P. Box (1987)
 
 
 ## Model validation
+
+<br>
 
 Putting the model to the test
 
