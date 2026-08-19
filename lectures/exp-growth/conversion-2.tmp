@@ -1,0 +1,897 @@
+---
+title: "Converted Presentation"
+format:
+  revealjs:
+    theme: default
+    pagetitle: 'Dog'
+    slide-number: true
+lang: en
+---
+
+
+
+
+
+
+% \setlength\fboxsep{0pt}
+
+
+{
+\usebackgroundtemplate{
+  \parbox[][]![](\paperwidth){
+    ![](figs/doves)
+  }
+}
+[]
+  
+  <center>
+    {\huge Geometric and Exponential Growth } \\
+%    {\large January 16, 2019 \\}
+  </center>
+  % ::: columns
+  %   \wide
+  %   \rule![](\paperwidth){0.1pt}
+  % :::
+
+}
+
+
+
+
+
+# Background and Review
+
+
+
+[]
+  ## Today's learning objectives
+  \large
+  The equations for geometric and exponential growth \\
+  
+  
+  The relationship between geometric growth and the BIDE model \\
+  
+  
+  The difference between continuous and discrete time models of
+  population growth \\
+  
+  
+  The definition of density \textit{independent} population growth \\
+
+
+
+
+
+
+% 
+%   ## Outline
+%   \large
+%   \only<1>{\tableofcontents[]}
+%   \only<2>{\tableofcontents[]}
+% 
+
+
+
+
+
+  ## What is Population Dynamics?
+  {\centering \Large \bf The study of spatial and temporal variation in
+    population size and structure \\ }
+
+
+
+
+
+
+
+%[]
+  ## Fundamental Question
+  <center>
+   { \Large How does abundance go from $N_t$ to $N_{t+1}$?} \par
+   
+   \large
+   
+   Answer: The {\color{red} BIDE} Model  \\
+     $N_{t+1} = N_t + {\color{red}B}_t + {\color{red}I}_t - {\color{red}D}_t - {\color{red}E}_t$
+  
+  </center>
+  B=Births, I=Immigrations, D=Deaths, E=Emigrations \\
+  
+  
+  Geometric growth is a simplification of BIDE \\
+  
+  
+  Exponential growth is a continuous time version of geometric growth
+
+
+
+
+%# Classical Growth Models
+%# From BIDE To Exponential Growth
+# Geometric Growth
+
+
+
+% 
+%   ## Outline
+%   \large
+%   \tableofcontents[]
+% 
+
+
+
+
+
+
+  ## Reverend Thomas Malthus, 1766--1834
+  \begin{beamercolorbox}![](white)
+    <center>
+      ![](figs/MalthusGeometric)
+      \hspace{0.1cm}
+      ![](figs/MalthusBookCover)
+    </center>
+  \end{beamercolorbox}
+
+
+
+
+  ## \normalsize Relevance To Wildlife Biology and Management
+  Charles Darwin (\textit{Origin of Species})
+  \begin{quote}
+    ``There is no exception to the rule that every organic being
+    increases at so high a rate, that if not destroyed, the earth
+    would soon be covered by the progeny of a single pair.''
+  \end{quote}
+  
+  
+  \begin{quote}
+    ``Hence, as more individuals are produced than can possibly survive,
+    there must in every case be a struggle for existence$\dots$''
+  \end{quote}
+
+
+
+
+
+
+  ## \Large Aldo Leopold, Game Management 1946
+  ::: columns
+    ::: {.column width='50%'}
+      \small
+%      \begin{quote}
+      <center>
+        \it
+        ``Every wild species has certain fixed habits which govern the
+        reproductive process, and determine its maximum
+        rate. [] Thus one pair of quail, if entirely unmolested
+        in an ``ideal'' environment, would increase at this rate:''
+      </center>
+%      \end{quote}
+      <center>
+        \scriptsize
+          \begin{tabular}{lrrrr}
+            \hline
+            At End of && Young & Adults & Total \\
+            \hline
+            1st year  && 14  & 2   & 16  \\
+            2nd year  && (16/2)14=112 & 16  & 128 \\
+            3rd year  && (128/2)14=896 & 128 & 1024 \\
+            \hline
+          \end{tabular}
+%        \end{footnotesize}
+      </center>
+      \visible<2>{
+%        \begin{quote}
+        <center>
+          \it
+          ``The maximum rate of increase is of course never attained
+          in nature. Part of it never takes place, part of it is
+          absorbed by natural enemies, and part of it [] is
+          absorbed by hunters.''
+        </center>
+%        \end{quote}
+      }
+    :::
+%    \hspace{-2cm}
+    ::: {.column width='50%'}
+      ![](figs/Leopold1}) \\ 
+      ![](figs/nobo})
+    :::
+  :::
+
+
+
+
+
+
+
+
+  ## So What Is Geometric Growth?
+    \begin{block}{Discrete time, $t=1,2,\ldots$}
+     <center>
+       \Large
+       $N_t = N_0(1+r)^t$
+     </center>
+     \visible<2>{
+     Or, for one time step:
+     <center>
+       \Large
+       $N_{t+1} = N_t + N_tr$
+     </center>
+     }
+     $r$ = discrete-time version of intrinsic rate of increase
+%     \visible<3>{$\lambda = 1+r$ is the finite rate of increase}
+   \end{block}
+
+
+
+
+
+
+
+
+
+  ## Example, $N_{t+1 = N_t + N_tr$}
+  ::: columns[]
+    ::: {.column width='50%'}
+      <center>
+        $N_0 = 3$, $r=1$
+        \small
+        \begin{tabular}{cc}
+          \hline
+          Time & Population size \\
+          ($t$) & ($N_t$) \\
+          \hline
+          0 & 3  \\
+          \visible<2->{1 & 6}  \\
+          \visible<3->{2 & 12} \\
+          \visible<4->{3 & 24} \\
+          \visible<5->{4 & 48} \\
+          \visible<6->{5 & 96} \\
+          \visible<7->{6 & 192} \\
+          \visible<8->{7 & 384} \\
+          \visible<9->{8 & 768} \\
+          \visible<10->{9 & 1536} \\
+          \visible<11->{10 & 3072} \\
+          \hline
+        \end{tabular}
+      </center>
+    :::
+    ::: {.column width='50%'}
+      <1 | handout:0>![](figs/growth0) %\\
+      <2 | handout:0>![](figs/growth1) %\\
+      <3 | handout:0>![](figs/growth2) %\\
+      <4 | handout:0>![](figs/growth3) %\\
+      <5 | handout:0>![](figs/growth4) %\\
+      <6 | handout:0>![](figs/growth5) %\\
+      <7 | handout:0>![](figs/growth6) %\\
+      <8 | handout:0>![](figs/growth7) %\\
+      <9 | handout:0>![](figs/growth8) %\\
+      <10 | handout:0>![](figs/growth9) 
+      <11>![](figs/growth10) \\
+    :::
+  :::
+
+
+
+
+
+
+
+
+
+  ## Three Possible Outcomes, $N_{t+1 = N_t + N_tr$}
+  ::: columns
+    ::: {.column width='50%'}
+      \small
+      \centering
+      If $-1 \leq r < 0$ \\ population goes extinct \\
+      ![](figs/rl0)
+    :::
+    ::: {.column width='50%'}
+      \small
+      \centering
+      If $r = 0$ \\ population is stable \\
+      ![](figs/r0)
+    :::
+    ::: {.column width='50%'}
+      \small
+      \centering
+      If $r > 0$ \\ population grows to $\infty$ \\
+      ![](figs/rg0)
+    :::
+  :::
+
+
+
+
+
+
+
+
+%% 
+%%   ## $r$ and $\lambda$, $N_{t+1 = N_t + N_tr$}
+%%   \Large
+%% %  \bf
+%%   $r$ is the discrete growth rate \par
+%%   
+%%   $\lambda$ is the finite growth rate \par
+%% %  \[]
+%% %  
+%% %  
+%% %  $\lambda = 1 + r$
+%% 
+
+
+
+
+
+# Connection to BIDE
+
+
+
+
+
+  ## From {\color{red BIDE} To Geometric Growth}
+%  {\bf \large And how is it related to BIDE model?}
+  {\bf \large Fundamental equation of population ecology}
+  \[]
+  
+  \begin{tabular}{ccl}
+    $N_t$ & = & Abundance at year $t$ \\
+    {\color{red} $B$}    & = & Births       \\
+    {\color{red} $I$}    & = & Immigrations \\
+    {\color{red} $D$}    & = & Deaths       \\
+    {\color{red} $E$}    & = & Emigrations \\
+  \end{tabular}
+
+
+
+
+  ## From {\color{red BIDE} To Geometric Growth}
+  {\bf \large Ignore immigration and emigration}
+  \[]
+  
+  \begin{tabular}{ccl}
+    $N_t$ & = & Abundance in year $t$ \\
+    {\color{red} $B$}    & = & Births       \\
+    {\color{red} $D$}    & = & Deaths       \\
+  \end{tabular}
+
+
+
+
+  ## From {\color{red BIDE} To Geometric Growth}
+    \textbf{Step 1:} Divide both sides by $N_{t}$
+      \[]
+   
+    \textbf{Step 2:} Write in terms of \textit{per capita} birth and death \textit{rates}
+      % \[]
+    \begin{align*}
+      \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
+             \uncover<3->{\quad  &= \quad  1 + r} \\ 
+             \uncover<4->{\quad  &= \quad  \lambda} 
+    \end{align*}
+    % 
+    \uncover<5->{
+      \textbf{Step 3:} Geometric growth \par
+      <center>
+        $N_{t+1} = N_t + N_tr$
+      </center>
+    }
+    
+    \uncover<6->{
+      Note that $\lambda = N_{t+1}/N_t = 1+r$.
+    }
+
+
+
+
+
+
+% \begin{comment}
+%   
+%     ## What Factors Influence $r$?
+%     \textbf{Minimum age of reproduction}
+%      
+%     \textbf{Young produced per year}
+%     
+%       * Fertility (e.g. eggs/female)
+%       * Broods per year
+%       * Mating system (monogamous, polygynous, etc...)
+%       * etc\dots
+%     
+%      \textbf{Age structure}
+%      \textbf{Sex ratio}
+%      \textbf{Longevity}
+%   
+% \end{comment}
+
+
+
+
+%# Classical Growth Models
+%# From BIDE To Exponential Growth
+# Exponential Growth
+
+
+
+
+%\begin{comment}
+
+  ## So What Is Exponential Growth?
+  \begin{block}{Continuous time version of geometric growth}
+    <center>
+      \Large
+      $N_t = N_0 {e}^{rt}$
+    </center>
+    \visible<2->{
+      Or, in terms of instantaneous rate of change:
+    <center>
+      \Large
+      $\frac{\mathrm{d}N}{\mathrm{d}t} = rN$
+    </center>
+    }
+    $N_0$ = initial abundance \\
+    $r$ = intrinsic rate of increase \\
+    $t$ = time (any positive number)
+  \end{block}
+  \uncover<3->{
+    \small
+    The exponential growth model is often considered more appropriate
+    than the geometric growth model for \alert{birth flow populations}
+    in which reproduction occurs throughout the year \\
+  }
+  
+  \uncover<4->{
+    However, geometric growth models can provide a good approximation
+    of birth flow or \alert{birth pulse populations} 
+  }
+
+%\end{comment}
+
+
+
+
+
+  ## Density Independent Growth
+  \large
+  \textbf{Geometric and exponential growth are examples of \alert{\bf
+      density independent} growth} \\
+  
+  
+  \textbf{Definition:} Population growth rate ($r$) is \textit{not} affected by
+    population size ($N$). \\
+  
+  
+  \textbf{Implications}:  Resources are unlimited and there is no carrying capacity!
+
+
+
+
+
+
+
+
+
+
+  ## Model Assumptions
+  \large
+  
+  * [] {Population is geographically closed}
+    
+      \large
+      * No immigration
+      * No emigration
+    
+    \visible<2->{
+      
+    * [] {Reproduction
+        occurs seasonally (for geometric growth)}
+%      
+%        \large
+%        * Reproduction occurs seasonally
+%      
+    }
+    \visible<3->{
+      
+    * [] {Constant birth rate ($b$) and death rate ($d$)}
+      
+        \large
+        * No genetic variation among individuals
+        * No age- or stage-structure
+        * No time lags
+      
+    }
+    \visible<4>{
+      
+    * [] {No stochasticity}
+      
+        \large
+        * No random variation in birth or death 
+        * No random variation in environmental conditions
+      
+    }
+  
+
+
+
+
+% 
+%   ## Extensions
+%   \textbf{Growth rate is usually not constant}
+%   
+%   ::: columns
+%     ::: {.column width='50%'}
+% %      \textbf{Growth rate is usually not constant}
+% %      
+%         $r$ might depend on habitat \\ 
+%         Or, chance (stochasticity) might play a role
+% %      
+%     :::
+%     \begin{column}![](0.5\textwidth)
+%       ![](figs/rg0st)
+%     :::
+%   :::
+% 
+
+
+
+
+
+
+%  ## Of What Use is This?
+  ## \large Can We Apply The Model To Real Data?
+  {All models are wrong, but some are useful. (George Box)} \\ 
+  
+  \visible<2->{Is exponential growth a useful model?}
+  \visible<3->{
+  
+    * Possibly for describing some populations during short time
+      periods, e.g. invasive species
+    * Also useful as foundation for more realistic models
+  
+  
+  \centering
+%    
+      ![](figs/python1) \\  % \hspace{0.1cm}
+      % ![](figs/racoon_skunk)
+%    } \\
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  ## Looking Ahead
+  \centering
+  % {\large \bf Density dependence and logistic growth \\}
+  Is the human population exhibiting exponential growth? \\
+  
+  % ![](figs/UN-population)
+  ![](figs/World-Population-since-10-thousand-BC}) \\
+  
+  \small
+  \url{
+    https://ourworldindata.org/world-population-growth
+  } \\
+
+
+
+%\renewcommand*{\refname}{}
+%
+%  ## References
+%  \bibliography{popdyn}
+%
+
+
+
+
+
+  ## Assignment
+  \Large
+  Read pages 15--19 in Conroy and Carroll \\
+  
+  Be prepared for a quiz \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% # Applications to Management
+
+
+
+% 
+%   ## Outline
+%   \large
+%   \tableofcontents[]
+% 
+
+
+
+
+
+
+
+% %\subsection{Game Species}
+
+
+% %``We Americans, in most states at least, have not yet experienced a
+% %bear-less, eagle-less, cat- less, wolf-less woods. Germany strove for
+% %maximum yields of both timber and game and got neither.'' Notes on Wild
+% %Life Conservation in Germany (1935) LP: Writings: Reprints (bound):
+% %Publications of Aldo Leopold: game 735
+
+% []
+%   ## Setting Harvest Limits
+%   \textbf{How many individuals can be harvested to maintain a stable
+%     population?} \par
+%   \only<1>{
+%   <center>
+% %    \setlength\fboxsep{0pt}
+%     \only<1>{![](figs/buck1})}
+%   </center>
+%   }
+% %  \only<2->{
+%   
+%   \visible<2->{
+%   \textbf{Step 1:} Change the model to this:
+
+%   <center> $N_{t+1} = N_t + N_tr - H$ </center>
+
+%   \hspace{1.5cm} where $H$ is the number of harvested animals.
+%   }
+
+%   
+%   \visible<3->{
+%   {\bf Step 2:} Set $N_{t+1} = N_t$ and solve for $H$:
+
+%   <center> $H = N_tr$ </center>
+%   }
+
+%   
+%   \visible<4>{
+%   \textbf{So, we want to remove $H = N_tr$ animals from the
+%     population} \par
+%   }
+% %  }
+% 
+
+
+
+
+
+
+
+
+%\subsection{Declining Species}
+
+
+
+%
+%  ## Additive vs. Compensatory Mortality
+%
+
+
+% 
+%   ## Time to Extinction
+%   {\large \bf In what year will the population fall below, say, $N=10$?}
+%    <center>
+%      <1>![](figs/decline1)
+%      <2>![](figs/decline2)
+%      <3>![](figs/decline3)
+%    </center>
+% 
+
+
+
+% \begin{comment}
+% # Bear Example
+
+
+% 
+%   ## Outline
+%   \large
+%   \tableofcontents[]
+% 
+
+
+% %\subsection{Bear Example}
+
+% 
+%   ## Louisiana Black Bear
+% %  
+%   <center>
+%     \textit{Ursus americanus luteolus} %\\
+%     
+%     ![](figs/LAbear1) \hspace{0.2cm}
+%     ![](figs/LAbear2)
+%     }
+%   </center>
+% 
+
+
+% 
+%   ## Louisiana Black Bear
+% %  
+%   <center>
+%     \setlength\fboxsep{0pt}
+%     
+%     ![](figs/Black_bear_map) \hspace{0.2cm}
+%     ![](figs/LAbearHabitat1})
+%   </center>
+% 
+
+
+% 
+%   ## Louisiana Black Bear
+%   \large
+% %  
+%     \textbf{1 of 16 recognized subspecies} \\ 
+%     \textbf{Federally listed threatened subspecies}\\ 
+%     \textbf{Threats include:}
+%       
+%         * genetic isolation from habitat fragmentation
+%         * habitat loss
+%         * poaching
+%         * vehicle collisions
+%       
+% %  
+
+% 
+
+
+% 
+%   ## Study Design
+%   ::: columns
+%     ::: {.column width='50%'}
+%       \large
+%       \textbf{3 years of data collection (2007-2009)} \\
+%       
+%       \textbf{115 baited hair snares} \\
+%       
+%       \textbf{Capture-recapture methods used to estimate $N_t$ and $r$}
+%     :::
+%     ::: {.column width='50%'}
+%       ![](figs/bearMap1)
+%     :::
+%   :::
+% 
+
+
+
+
+% 
+%   ## Exponential Model Results
+%   <center>
+% %    \Large
+%     \begin{tabular}{llr}
+%       \hline
+%       Parameter & Description                        & Estimate \\
+%       \hline
+%       $b$       & Female cubs born per adult female  & 0.687    \\
+%       $d$       & Mortality rate                     & 0.178    \\
+%       $r$     & Growth rate                        & 0.509    \\
+%       \hline
+%     \end{tabular}
+%   </center>
+%   \visible<2->{\textbf{Is the population growing or declining?}} \\
+%   
+%   \visible<3>{\textbf{Growing because $r>0$}}
+% 
+
+
+
+
+% 
+%   ## Exponential Model Results
+%   <center>
+%     \only<1>{![](figs/bearNF1})
+%     \only<2>{![](figs/bearNF2})
+%   </center>
+% %  \visible<2>{\textbf{Not a good model!}}
+% 
+
+
+
+% 
+%   ## Implications
+%   \begin{quote}
+% %    \large
+%     ``LDWF has made delisting the Louisiana black bear one of its
+%     highest priorities. Transforming a perceived nuisance animal to a
+%     trophy game animal will be one of the greatest endangered species
+%     success stories to occur in Louisiana.'' \\
+%     
+%     \small
+%     --Louisiana Department of Wildlife and Fisheries, 2010
+%   \end{quote}
+% 
+
+
+
+% 
+%   ## What Would Be Optimal Harvest?
+%   \visible<2->{{\color{red} \bf Don't harvest threatened (sub)species!} \\}
+%   
+%   \visible<3->{\textbf{But, for argument's sake, what would be the optimal harvest
+%     size ($H$) to maintain a population of $N=100$ bears?}} \\
+%   
+%   \visible<4->{\textbf{Answer:} $H = Nr = 100\times0.509 = 50.9 \text{bears}$}
+% 
+
+
+
+
+
+% 
+%   ## Real World
+%   \textbf{Populations typically don't grow exponentially} \\
+%   
+%   \visible<2->{
+%   \textbf{We don't know $r$ or $N_t$} \\
+%   }
+%   
+%   \visible<3->{
+%   \textbf{$r$ changes unpredictably} \\
+%   }
+%   
+%   \visible<4->{
+%   \textbf{Conclusion:} Managing populations is very difficult, and we
+%   need a more realistic model.
+%   }
+% 
+
+
+
+
+% \end{comment}
+
+

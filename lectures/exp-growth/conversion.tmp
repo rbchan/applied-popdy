@@ -1,0 +1,295 @@
+---
+title: "Converted Presentation"
+author: "Author Name"
+format: revealjs
+---
+
+"'r #\| eval: false #\| include: false source(\"../../rnw2pdf.R\")
+rnw2pdf(\"lecture-exp-growth\")
+rnw2pdf(\"lecture-exp-growth\",tangle=TRUE) @
+
+:::: frame
+::: center
+Geometric and Exponential Growth \
+:::
+::::
+
+# Background and Review
+
+::: frame
+### Today's learning objectives
+
+The equations for geometric and exponential growth\
+The relationship between geometric growth and the BIDE model\
+The difference between continuous and discrete time models of population
+growth\
+The definition of density *independent* population growth\
+:::
+
+::: frame
+### What is Population Dynamics?
+
+**The study of spatial and temporal variation in population size and
+structure\**
+:::
+
+:::: frame
+### Fundamental Question
+
+::: center
+How does abundance go from $N_t$ to $N_{t+1}$?
+
+Answer: The BIDE Model\
+$N_{t+1} = N_t + {\color{red}B}_t + {\color{red}I}_t - {\color{red}D}_t - {\color{red}E}_t$
+:::
+
+B=Births, I=Immigrations, D=Deaths, E=Emigrations\
+Geometric growth is a simplification of BIDE\
+Exponential growth is a continuous time version of geometric growth
+::::
+
+# Geometric Growth
+
+::::: frame
+### Reverend Thomas Malthus, 1766--1834
+
+:::: beamercolorbox
+white
+
+::: center
+![image](figs/MalthusGeometric){height="4cm"}
+![image](figs/MalthusBookCover){height="4cm"}
+:::
+::::
+:::::
+
+::: frame
+### Relevance To Wildlife Biology and Management
+
+Charles Darwin (*Origin of Species*)
+
+> "There is no exception to the rule that every organic being increases
+> at so high a rate, that if not destroyed, the earth would soon be
+> covered by the progeny of a single pair."
+
+> "Hence, as more individuals are produced than can possibly survive,
+> there must in every case be a struggle for existence$\dots$"
+:::
+
+:::::::: frame
+### Aldo Leopold, Game Management 1946
+
+::::::: columns
+::::: column
+9cm
+
+::: center
+*"Every wild species has certain fixed habits which govern the
+reproductive process, and determine its maximum rate. \[$\dots$\] Thus
+one pair of quail, if entirely unmolested in an "ideal" environment,
+would increase at this rate:"*
+:::
+
+::: center
+  At End of                Young   Adults   Total
+  ----------- -- --------------- -------- -------
+  1st year                    14        2      16
+  2nd year          (16/2)14=112       16     128
+  3rd year         (128/2)14=896      128    1024
+:::
+:::::
+
+::: column
+2cm\
+:::
+:::::::
+::::::::
+
+::::: frame
+### So What Is Geometric Growth?
+
+:::: block
+Discrete time, $t=1,2,\ldots$
+
+::: center
+$N_t = N_0(1+r)^t$
+:::
+
+$r$ = discrete-time version of intrinsic rate of increase
+::::
+:::::
+
+::::::: frame
+### Example, $N_{t+1} = N_t + N_tr$
+
+:::::: columns
+:::: column
+0.5
+
+::: center
+$N_0 = 3$, $r=1$
+
+  ------- -----------------
+   Time    Population size
+   ($t$)       ($N_t$)
+     0            3
+                  6
+                 12
+                 24
+                 48
+                 96
+                 192
+                 384
+                 768
+                1536
+                3072
+  ------- -----------------
+:::
+::::
+
+::: column
+0.5 ![image](figs/growth0){width="\\textwidth"}
+![image](figs/growth1){width="\\textwidth"}
+![image](figs/growth2){width="\\textwidth"}
+![image](figs/growth3){width="\\textwidth"}
+![image](figs/growth4){width="\\textwidth"}
+![image](figs/growth5){width="\\textwidth"}
+![image](figs/growth6){width="\\textwidth"}
+![image](figs/growth7){width="\\textwidth"}
+![image](figs/growth8){width="\\textwidth"}
+![image](figs/growth9){width="\\textwidth"}
+![image](figs/growth10){width="\\textwidth"}\
+:::
+::::::
+:::::::
+
+::::::: frame
+### Three Possible Outcomes, $N_{t+1} = N_t + N_tr$
+
+:::::: columns
+::: column
+0.33 If $-1 \leq r < 0$\
+population goes extinct\
+![image](figs/rl0){width="\\textwidth"}
+:::
+
+::: column
+0.33 If $r = 0$\
+population is stable\
+![image](figs/r0){width="\\textwidth"}
+:::
+
+::: column
+0.33 If $r > 0$\
+population grows to $\infty$\
+![image](figs/rg0){width="\\textwidth"}
+:::
+::::::
+:::::::
+
+# Connection to BIDE
+
+::: frame
+### From  BIDE To Geometric Growth
+
+**Fundamental equation of population ecology**
+$$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
+
+  ------- --- -----------------------
+   $N_t$   =  Abundance at year $t$
+    $B$    =  Births
+    $I$    =  Immigrations
+    $D$    =  Deaths
+    $E$    =  Emigrations
+  ------- --- -----------------------
+:::
+
+::: frame
+### From  BIDE To Geometric Growth
+
+**Ignore immigration and emigration** $$N_{t+1} = N_t + B_t - D_t$$
+
+  ------- --- -----------------------
+   $N_t$   =  Abundance in year $t$
+    $B$    =  Births
+    $D$    =  Deaths
+  ------- --- -----------------------
+:::
+
+::: frame
+### From  BIDE To Geometric Growth
+
+**Step 1:** Divide both sides by $N_{t}$
+$$\frac{N_{t+1}}{N_{t}} \quad = \quad 1 + \frac{B_t}{N_{t}} - \frac{D_t}{N_{t}}$$
+**Step 2:** Write in terms of *per capita* birth and death *rates*
+$$\begin{aligned}
+      \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
+             \uncover<3->{\quad  &= \quad  1 + r} \\ 
+             \uncover<4->{\quad  &= \quad  \lambda} 
+    
+\end{aligned}$$
+:::
+
+# Exponential Growth
+
+::::: frame
+### So What Is Exponential Growth?
+
+:::: block
+Continuous time version of geometric growth
+
+::: center
+$N_t = N_0 {e}^{rt}$
+:::
+
+$N_0$ = initial abundance\
+$r$ = intrinsic rate of increase\
+$t$ = time (any positive number)
+::::
+:::::
+
+::: frame
+### Density Independent Growth
+
+**Geometric and exponential growth are examples of [ **density
+independent**]{.alert} growth**\
+**Definition:** Population growth rate ($r$) is *not* affected by
+population size ($N$).\
+**Implications**: Resources are unlimited and there is no carrying
+capacity!
+:::
+
+::: frame
+### Model Assumptions
+
+- Population is geographically closed
+
+  - No immigration
+
+  - No emigration
+:::
+
+::: frame
+### Can We Apply The Model To Real Data?
+
+All models are wrong, but some are useful. (George Box)\
+:::
+
+::: frame
+### Looking Ahead
+
+Is the human population exhibiting exponential growth?\
+\
+[
+    https://ourworldindata.org/world-population-growth
+  ](
+    https://ourworldindata.org/world-population-growth
+  ){.uri}\
+:::
+
+::: frame
+### Assignment
+
+Read pages 15--19 in Conroy and Carroll\
+Be prepared for a quiz\
+:::
