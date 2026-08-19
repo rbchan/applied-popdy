@@ -31,3 +31,17 @@ decisions; (5) Present modeling results in a short scientific paper
 and an oral presentation.
 
 
+## Course materials
+
+### Week 1 - Introduction and the BIDE model
+
+- [Lecture 1 - Introduction](lectures/intro/lecture-intro.qmd)
+
+- [Lecture 2 - BIDE model](lectures/BIDE/lecture-BIDE.qmd)
+
+- Lab 1
+
+### Week 2 - Geometric and logistic growth
+
+- Lecture 3
+
