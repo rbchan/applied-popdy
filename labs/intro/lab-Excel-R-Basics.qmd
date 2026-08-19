@@ -386,19 +386,17 @@ legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1
     script. Note that you will need code to create both graphs---the
     original one and the one with the new line color and thickness.
 
-    - Hint: You can make the juveniles data using
-      [`seq`]{style="background-color: inlinecolor"} and
-      [`c`]{style="background-color: inlinecolor"}, like we did with the
-      [`updown`]{style="background-color: inlinecolor"} example earlier.
+    - Hint: You can make the juveniles data using `seq` and `c`, like
+      we did with the `updown` example earlier.
 
 5.  Upload the Excel workbook (with both sheets) and the R script to ELC
-    by 5:00pm on Friday.^[Always clear your RStudio workspace and then
-    rerun the R script before submitting it to ELC.]
+    by 5:00pm on Friday.^[Always clear your RStudio workspace and
+    rerun the R script before uploading to ELC.]
 
 :::
 
 ## Excel sheet to be created
 
-![](figs/assignment-new.png){.framed-img fig-align="center" width="90%"}
+![](figs/Assignment-new.PNG){.framed-img fig-align="center" width="80%"}
 
 
