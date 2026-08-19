@@ -39,7 +39,7 @@ and an oral presentation.
 
 - [Lecture 2 - BIDE model](lectures/BIDE/lecture-BIDE.qmd)
 
-- Lab 1
+- [Lab 1 - Excel and R Basics](labs/intro/lab-Excel-R-Basics.qmd)
 
 ### Week 2 - Geometric and logistic growth
 
