@@ -1,5 +1,5 @@
 ---
-title: "Converted Presentation"
+# title: "Converted Presentation"
 format:
   revealjs:
     theme: default
@@ -12,7 +12,7 @@ lang: en
 # Background and Review {visibility="hidden"}
 
 
-## {content-align="center" style="font-size: 110%;" background-image="figs/doves" background-opacity=0.1}
+## {content-align="center" style="font-size: 110%;" background-image="figs/doves.jpg" background-opacity=0.1}
 
 
 <center>
@@ -22,269 +22,200 @@ Geometric and Exponential Growth
 
 
 
-[]
-  ## Today's learning objectives
-  \large
-  The equations for geometric and exponential growth \\
-  
-  
-  The relationship between geometric growth and the BIDE model \\
-  
-  
-  The difference between continuous and discrete time models of
-  population growth \\
-  
-  
-  The definition of density \textit{independent} population growth \\
+## Today's learning objectives
+
+The equations for geometric and exponential growth.
+
+<br>
+
+The relationship between geometric growth and the BIDE model.
+
+<br>
+
+The difference between continuous and discrete time models of
+population growth.
+
+<br>
+
+The definition of density *independent* population growth.
 
 
 
+## What is Population Dynamics?
+
+The study of spatial and temporal variation in population size and
+structure. 
 
 
 
-% 
-%   ## Outline
-%   \large
-%   \only<1>{\tableofcontents[]}
-%   \only<2>{\tableofcontents[]}
-% 
+## Fundamental Question
 
+<center>
 
-
-
-
-  ## What is Population Dynamics?
-  {\centering \Large \bf The study of spatial and temporal variation in
-    population size and structure \\ }
-
-
-
-
-
-
-
-%[]
-  ## Fundamental Question
-  <center>
-   { \Large How does abundance go from $N_t$ to $N_{t+1}$?} \par
+How does abundance go from $N_t$ to $N_{t+1}$?
    
-   \large
-   
-   Answer: The {\color{red} BIDE} Model  \\
-     $N_{t+1} = N_t + {\color{red}B}_t + {\color{red}I}_t - {\color{red}D}_t - {\color{red}E}_t$
+Answer: The [BIDE]{.highlight-red} Model 
+
+$N_{t+1} = N_t + B_t + I_t - D_t - E_t$
   
-  </center>
-  B=Births, I=Immigrations, D=Deaths, E=Emigrations \\
+</center>
+
+B=Births, I=Immigrations, D=Deaths, E=Emigrations
+
+Geometric growth is a simplification of BIDE.
   
-  
-  Geometric growth is a simplification of BIDE \\
-  
-  
-  Exponential growth is a continuous time version of geometric growth
+Exponential growth is a continuous time version of geometric growth.
 
 
 
-
-%# Classical Growth Models
-%# From BIDE To Exponential Growth
 # Geometric Growth
 
 
+## Reverend Thomas Malthus, 1766--1834
 
-% 
-%   ## Outline
-%   \large
-%   \tableofcontents[]
-% 
-
-
+<center>
+![](figs/MalthusGeometric.jpg)
+![](figs/MalthusBookCover.jpg)
+</center>
 
 
 
 
-  ## Reverend Thomas Malthus, 1766--1834
-  \begin{beamercolorbox}![](white)
-    <center>
-      ![](figs/MalthusGeometric)
-      \hspace{0.1cm}
-      ![](figs/MalthusBookCover)
-    </center>
-  \end{beamercolorbox}
+## Relevance To Wildlife Biology and Management
 
+Charles Darwin *Origin of Species*
 
-
-
-  ## \normalsize Relevance To Wildlife Biology and Management
-  Charles Darwin (\textit{Origin of Species})
-  \begin{quote}
-    ``There is no exception to the rule that every organic being
-    increases at so high a rate, that if not destroyed, the earth
-    would soon be covered by the progeny of a single pair.''
-  \end{quote}
+> There is no exception to the rule that every organic being increases
+> at so high a rate, that if not destroyed, the earth would soon be
+> covered by the progeny of a single pair.
   
-  
-  \begin{quote}
-    ``Hence, as more individuals are produced than can possibly survive,
-    there must in every case be a struggle for existence$\dots$''
-  \end{quote}
+. . .
+
+> Hence, as more individuals are produced than can possibly survive,
+> there must in every case be a struggle for existence...
+
+
+
+
+## Aldo Leopold, Game Management 1946
+
+<!-- ::: columns -->
+
+<!-- ::: {.column width='50%'} -->
+
+> Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ``ideal'' environment, would increase at this rate:
+
+<center>
+  At End of                Young   Adults   Total
+  ----------- -- --------------- -------- -------
+  1st year                    14        2      16
+  2nd year          (16/2)14=112       16     128
+  3rd year         (128/2)14=896      128    1024
+</center>
+
+> The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.''
+
+<!-- ::: -->
+
+<!-- ::: {.column width='50%'} -->
+![](figs/Leopold1.png) 
+
+![](figs/nobo.jpg)
+<!-- ::: -->
+<!-- ::: -->
+
+
+
+## So What Is Geometric Growth?
+
+For an arbitrary time step ($t$):
+
+$N_t = N_0(1+r)^t$
+
+Or, for one time step:
+
+<center>
+$N_{t+1} = N_t + N_tr$
+</center>
+
+$r$ = discrete-time version of intrinsic rate of increase
 
 
 
 
 
 
-  ## \Large Aldo Leopold, Game Management 1946
-  ::: columns
-    ::: {.column width='50%'}
-      \small
-%      \begin{quote}
-      <center>
-        \it
-        ``Every wild species has certain fixed habits which govern the
-        reproductive process, and determine its maximum
-        rate. [] Thus one pair of quail, if entirely unmolested
-        in an ``ideal'' environment, would increase at this rate:''
-      </center>
-%      \end{quote}
-      <center>
-        \scriptsize
-          \begin{tabular}{lrrrr}
-            \hline
-            At End of && Young & Adults & Total \\
-            \hline
-            1st year  && 14  & 2   & 16  \\
-            2nd year  && (16/2)14=112 & 16  & 128 \\
-            3rd year  && (128/2)14=896 & 128 & 1024 \\
-            \hline
-          \end{tabular}
-%        \end{footnotesize}
-      </center>
-      \visible<2>{
-%        \begin{quote}
-        <center>
-          \it
-          ``The maximum rate of increase is of course never attained
-          in nature. Part of it never takes place, part of it is
-          absorbed by natural enemies, and part of it [] is
-          absorbed by hunters.''
-        </center>
-%        \end{quote}
-      }
-    :::
-%    \hspace{-2cm}
-    ::: {.column width='50%'}
-      ![](figs/Leopold1}) \\ 
-      ![](figs/nobo})
-    :::
-  :::
+## Example, $N_{t+1 = N_t + N_tr$}
+
+<!-- ::: columns[] -->
+<!-- ::: {.column width='50%'} -->
+<!--       <center> -->
+<!--         $N_0 = 3$, $r=1$ -->
+<!--         \small -->
+<!--         \begin{tabular}{cc} -->
+<!--           \hline -->
+<!--           Time & Population size \\ -->
+<!--           ($t$) & ($N_t$) \\ -->
+<!--           \hline -->
+<!--           0 & 3  \\ -->
+<!--           \visible<2->{1 & 6}  \\ -->
+<!--           \visible<3->{2 & 12} \\ -->
+<!--           \visible<4->{3 & 24} \\ -->
+<!--           \visible<5->{4 & 48} \\ -->
+<!--           \visible<6->{5 & 96} \\ -->
+<!--           \visible<7->{6 & 192} \\ -->
+<!--           \visible<8->{7 & 384} \\ -->
+<!--           \visible<9->{8 & 768} \\ -->
+<!--           \visible<10->{9 & 1536} \\ -->
+<!--           \visible<11->{10 & 3072} \\ -->
+<!--           \hline -->
+<!--         \end{tabular} -->
+<!--       </center> -->
+<!--     ::: -->
+<!--     ::: {.column width='50%'} -->
+<!--       <1 | handout:0>![](figs/growth0) %\\ -->
+<!--       <2 | handout:0>![](figs/growth1) %\\ -->
+<!--       <3 | handout:0>![](figs/growth2) %\\ -->
+<!--       <4 | handout:0>![](figs/growth3) %\\ -->
+<!--       <5 | handout:0>![](figs/growth4) %\\ -->
+<!--       <6 | handout:0>![](figs/growth5) %\\ -->
+<!--       <7 | handout:0>![](figs/growth6) %\\ -->
+<!--       <8 | handout:0>![](figs/growth7) %\\ -->
+<!--       <9 | handout:0>![](figs/growth8) %\\ -->
+<!--       <10 | handout:0>![](figs/growth9)  -->
+<!--       <11>![](figs/growth10) \\ -->
+<!--     ::: -->
+<!--   ::: -->
 
 
 
 
 
+## Three Possible Outcomes, $N_{t+1} = N_t + N_t r$
 
+::: columns
+::: {.column width='50%'}
 
+If $-1 \leq r < 0$ population goes extinct
 
-  ## So What Is Geometric Growth?
-    \begin{block}{Discrete time, $t=1,2,\ldots$}
-     <center>
-       \Large
-       $N_t = N_0(1+r)^t$
-     </center>
-     \visible<2>{
-     Or, for one time step:
-     <center>
-       \Large
-       $N_{t+1} = N_t + N_tr$
-     </center>
-     }
-     $r$ = discrete-time version of intrinsic rate of increase
-%     \visible<3>{$\lambda = 1+r$ is the finite rate of increase}
-   \end{block}
+![](figs/rl0.png)
 
+:::
+::: {.column width='50%'}
 
+If $r = 0$ population is stable
 
+![](figs/r0.png)
 
+:::
+::: {.column width='50%'}
 
+If $r > 0$ population grows to $\infty$
+      
+![](figs/rg0)
 
-
-
-
-  ## Example, $N_{t+1 = N_t + N_tr$}
-  ::: columns[]
-    ::: {.column width='50%'}
-      <center>
-        $N_0 = 3$, $r=1$
-        \small
-        \begin{tabular}{cc}
-          \hline
-          Time & Population size \\
-          ($t$) & ($N_t$) \\
-          \hline
-          0 & 3  \\
-          \visible<2->{1 & 6}  \\
-          \visible<3->{2 & 12} \\
-          \visible<4->{3 & 24} \\
-          \visible<5->{4 & 48} \\
-          \visible<6->{5 & 96} \\
-          \visible<7->{6 & 192} \\
-          \visible<8->{7 & 384} \\
-          \visible<9->{8 & 768} \\
-          \visible<10->{9 & 1536} \\
-          \visible<11->{10 & 3072} \\
-          \hline
-        \end{tabular}
-      </center>
-    :::
-    ::: {.column width='50%'}
-      <1 | handout:0>![](figs/growth0) %\\
-      <2 | handout:0>![](figs/growth1) %\\
-      <3 | handout:0>![](figs/growth2) %\\
-      <4 | handout:0>![](figs/growth3) %\\
-      <5 | handout:0>![](figs/growth4) %\\
-      <6 | handout:0>![](figs/growth5) %\\
-      <7 | handout:0>![](figs/growth6) %\\
-      <8 | handout:0>![](figs/growth7) %\\
-      <9 | handout:0>![](figs/growth8) %\\
-      <10 | handout:0>![](figs/growth9) 
-      <11>![](figs/growth10) \\
-    :::
-  :::
-
-
-
-
-
-
-
-
-
-  ## Three Possible Outcomes, $N_{t+1 = N_t + N_tr$}
-  ::: columns
-    ::: {.column width='50%'}
-      \small
-      \centering
-      If $-1 \leq r < 0$ \\ population goes extinct \\
-      ![](figs/rl0)
-    :::
-    ::: {.column width='50%'}
-      \small
-      \centering
-      If $r = 0$ \\ population is stable \\
-      ![](figs/r0)
-    :::
-    ::: {.column width='50%'}
-      \small
-      \centering
-      If $r > 0$ \\ population grows to $\infty$ \\
-      ![](figs/rg0)
-    :::
-  :::
-
-
-
-
-
+:::
+:::
 
 
 
@@ -334,9 +265,10 @@ $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 **Step 2**: Write in terms of \textit{per capita} birth and death *rates*
 
 $$
-      \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
-             \uncover<3->{\quad  &= \quad  1 + r} \\ 
-             \uncover<4->{\quad  &= \quad  \lambda} 
+
+\frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
+                      \quad  &= \quad  1 + r} \\
+                      \quad  &= \quad  \lambda 
 $$
 
 **Step 3**: Geometric growth
@@ -355,19 +287,16 @@ Note that $\lambda = N_{t+1}/N_t = 1+r$.
 
 ## Density Independent Growth
 
-**{Geometric and exponential growth are examples of [density independent]{.alert} growth**
+**Geometric and exponential growth are examples of [density independent]{.alert} growth**.
+
+<br>
   
-  
-**Definition**: Population growth rate ($r$) is *not* affected b population size ($N$). \\
-  
+**Definition**: Population growth rate ($r$) is *not* affected b
+population size ($N$).
+
+<br>
   
 **Implications**:  Resources are unlimited and there is no carrying capacity!
-
-
-
-
-
-
 
 
 
