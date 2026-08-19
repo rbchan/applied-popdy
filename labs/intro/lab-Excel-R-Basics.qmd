@@ -1,6 +1,7 @@
 ---
 format:
   revealjs:
+#    theme: [default, custom.scss]
     theme: default
     pagetitle: "The BIDE model"
     slide-number: true
@@ -9,6 +10,7 @@ format:
     fig-align: "center"
     background-color: "gray"
     auto-stretch: false
+    css: custom.css
 lang: en
 ---
 
@@ -19,8 +21,7 @@ Applied Population Dynamics\
 Lab 1 -- Excel and R Basics
 </center>
 
-![](figs/excel.png){fig-align="center"}
-
+![](figs/excel.png){.framed-img fig-align="center" width="80%"}
 
 # Referencing {visibility="hidden"}
 

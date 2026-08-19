@@ -1,0 +1,6 @@
+.framed-img {
+  border: 3px solid #2F4F4F;
+  padding: 8px;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
