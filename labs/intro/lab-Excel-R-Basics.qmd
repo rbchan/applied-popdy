@@ -21,189 +21,199 @@ Applied Population Dynamics\
 Lab 1 -- Excel and R Basics
 </center>
 
-![](figs/excel.png){.framed-img fig-align="center" width="80%"}
+![](figs/excel.png){.framed-img fig-align="center" width="90%"}
 
-# Referencing {visibility="hidden"}
+# Referencing
 
 
 ## Referencing -- Column B
 
-![](figs/columnB.png)
+![](figs/columnB.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Referencing -- Row 3
 
-![](figs/row3.png)
+![](figs/row3.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Referencing -- Cell B3
 
-![](figs/cellB3.png)
+![](figs/cellB3.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Create Sequence Using Auto-fill
 
-![](figs/sequence.png)
+![](figs/sequence.png){.framed-img fig-align="center" width="80%"}
 
-
+<center>
+::: {.absolute bottom="3%" style="font-size: 90%;"}
 To use auto-fill: begin a sequence, highlight the cells, and then drag
 the box at the bottom-right of the last cell.\
+:::
+</center>
+
+## Relative Cell References
+
+![](figs/relative-ref.png){.framed-img fig-align="center" width="80%"}
+
+## Relative Cell References
+
+![](figs/relative-ref2.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Relative Cell References
 
-![](figs/relative-ref.png)
+![](figs/relative-ref3.png){.framed-img fig-align="center" width="80%"}
 
-![](figs/relative-ref2.png)
-
-
-## Relative Cell References
-
-![](figs/relative-ref3.png)
-
-::: center
+<center>
 Values of reference will change when using auto-fill
-:::
+</center>
 
 
 ## Absolute Cell References
 
-![](figs/absolute-ref.png)
+![](figs/absolute-ref.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Absolute Cell References
 
-![](figs/absolute-ref2.png)
+![](figs/absolute-ref2.png){.framed-img fig-align="center" width="80%"}
 
-::: center
+<center>
 Dollar sign "locks" a reference so that auto-fill won't change it
-:::
+</center>
 
 
 ## Partial Cell References
 
-![](figs/partial-ref.png)
-
+![](figs/partial-ref.png){.framed-img fig-align="center" width="80%"}
 
 # Equations
 
-![](figs/equation.png)
+## Equations
+
+![](figs/equation.png){.framed-img fig-align="center" width="80%"}
 
 
 
 ## Equations
 
-![](figs/equation2.png)
+![](figs/equation2.png){.framed-img fig-align="center" width="80%"}
 
-Equations also have to begin with the equals sign (` =`) 
+<center>
+Equations also have to begin with the equals sign (`=`) 
+</center>
+
+## Equations
+
+![](figs/equation3.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Equations
 
-![](figs/equation3.png)
-
-
-## Equations
-
-![](figs/equation4.png)
+![](figs/equation4.png){.framed-img fig-align="center" width="80%"}
 
 
 
 
 ## Formulas
 
-![](figs/formula.png)
+![](figs/formula.png){.framed-img fig-align="center" width="80%"}
 
 
 # Graphics
 
 ## Graphics
 
-![](figs/scatterlines.png)
+![](figs/scatterlines.png){.framed-img fig-align="center" width="80%"}
 
 
 
 ## Graphics
 
-![](figs/scatterlines2.png)
+![](figs/scatterlines2.png){.framed-img fig-align="center" width="80%"}
 
 
 ## Graphics
 
-![](figs/scatterlines3.png)
+![](figs/scatterlines3.png){.framed-img fig-align="center" width="80%"}
 
-
-::: center
+<center>
 Add a line for males
-:::
+</center>
 
 
 
 ## Customize
 
-![](figs/customize.png)
+![](figs/customize.png){.framed-img fig-align="center" width="80%"}
 
-::: center
+<center>
 Add legend
-:::
+</center>
 
 
 ## Customize
 
-![](figs/customize2.png)
+![](figs/customize2.png){.framed-img fig-align="center" width="80%"}
 
-::: center
+<center>
 Add axis labels
-:::
+</center>
 
 
 ## Customize
 
-![](figs/customize3.png)
+![](figs/customize3.png){.framed-img fig-align="center" width="80%"}
 
-::: center
+<center>
 Change line color
-:::
+</center>
 
 
 # R
 
 ## R -- Software for statistical computing
 
-**R** can be downloaded [here](https://www.r-project.org): <https://www.r-project.org/>\
+<br>
+
+**R** can be downloaded [here](https://www.r-project.org): <https://www.r-project.org/>
+
+<br>
 
 You can use the graphical user interface that comes with **R**, or you
 can run **R** through a system like **ESS+emacs** or **RStudio**
 (<https://posit.co/download/rstudio-desktop/>)\
+
+<br>
 
 Most people use **RStudio** these days
 
 
 ## RStudio
 
-![](figs/rstudio-no-script.png)
-
+![](figs/rstudio-no-script.PNG){.framed-img fig-align="center" width="90%"}
 
 ## RStudio
 
 To create a new script, click: `File > New File > R Script`
 
-![](figs/rstudio-open-script.png)
+![](figs/rstudio-open-script.png){.framed-img fig-align="center" width="60%"}
 
 Save your script using: `File > Save As`
 
 
 ## RStudio
 
-![](figs/rstudio-script-graphics.png)
+![](figs/rstudio-script-graphics.png){.framed-img fig-align="center" width="90%"}
 
 
-## Reproducing the Excel exercise
+## Reproducing the Excel exercise 
 
-
+::: {style="font-size: 80%;"}
 
 Create an object called [`year`]{style="background-color: inlinecolor"}
-to hold the sequence of years.\
+to hold the sequence of years.
 
 ```{r}
 #| echo: true
@@ -212,23 +222,26 @@ year <- 1950:1961 # A vector of integers
 year              # Type the name of an object to see its values
 ```
 
+<br>
 
-
+::: {.fragment}
 Note that you can use [`seq`]{style="background-color: inlinecolor"} to
-create sequences in a more general way. The
-[`c`]{style="background-color: inlinecolor"} function combines two or
-more vectors.
+create sequences in a more general way. The [`c`]{style="background-color: inlinecolor"} function combines two or more vectors.
 
-```{r}
+```{r} 
 #| echo: true
 #| label: seq
 updown <- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))
 updown            # Two sequences, combined
-```   
+```
+:::
 
+<br>
 
+::: {.fragment}
 Use the `length` function to determine the number of values in a
 vector.
+
 
 ```{r}
 #| echo: true
@@ -236,11 +249,15 @@ vector.
 nYears <- length(year)
 nYears
 ```
+:::
 
+:::
 
 
 
 ## A simple population model
+
+::: {style="font-size: 80%;"}
 
 Create an empty vector to store the data on females. Set female
 abundance to 100 in the first year.
@@ -252,6 +269,9 @@ females <- rep(NA, nYears)
 females[] <- 100
 ```
 
+<br>
+
+::: {.fragment}
 Use a "for loop" to compute female abundance in subsequent years.
 ```{r}
 #| echo: true
@@ -261,15 +281,21 @@ for(t in 2:nYears) {
 }
 ```
 
+:::
+
+<br>
+
+::: {.fragment}
 [**We will use "for loops" for almost every population model that we
-implement in R**]{.alert}\
+implement in R**]{.alert .center}
+:::
 
-
+:::
 
 ## A simple population model
 
 ::: {.columns}
-::: {.column width='50%'}
+::: {.column width='40%'}
 Generate the data on males using a single line of code.
 ```{r}
 #| echo: true
@@ -278,7 +304,7 @@ males <- females*0.8
 ```
 :::
 
-::: {.column width='50%'}
+::: {.column width='60%'}
 Put the objects in a `data.frame`
 
 ```{r}
@@ -298,13 +324,17 @@ model1
 #| label: plot
 #| fig-width: 7
 #| fig-height: 4.6
+#| fig-align: center
 plot(females ~ year, data=model1, type="o", xlab="Year", ylab="Abundance",
      lwd=2, pch=16, ylim=c(0, 120))
 lines(males ~ year, data=model1, type="o", col="blue", lwd=2, pch=16)
-legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1, pch=16)
+legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"),
+       lty=1, pch=16)
 ```
 
 ## Assignment
+
+::: {style="font-size: 65%;"}
 
 1.  Create an Excel file and name it "Yourlastname_Yourfirstname".
 
@@ -330,6 +360,8 @@ legend(x=1950, y=40, legend=c("Females", "Males"), col=c("black", "blue"), lty=1
       [`updown`]{style="background-color: inlinecolor"} example earlier.
 
 5.  Upload the Excel workbook (with both sheets) and the R script to ELC
-    by 5:00pm on Friday.
+    by 5:00pm on Friday. Always clear your RStudio workspace and then
+    rerun the R script before submitting it to ELC. 
 
 
+:::

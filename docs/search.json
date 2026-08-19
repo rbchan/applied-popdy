@@ -32,7 +32,7 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#create-sequence-using-auto-fill",
     "title": "Applied Population Dynamics",
     "section": "Create Sequence Using Auto-fill",
-    "text": "Create Sequence Using Auto-fill\n\nTo use auto-fill: begin a sequence, highlight the cells, and then drag the box at the bottom-right of the last cell."
+    "text": "Create Sequence Using Auto-fill\n\n\n\n\n\n\n\nTo use auto-fill: begin a sequence, highlight the cells, and then drag the box at the bottom-right of the last cell."
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references",
@@ -46,7 +46,14 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-1",
     "title": "Applied Population Dynamics",
     "section": "Relative Cell References",
-    "text": "Relative Cell References\n\n\nValues of reference will change when using auto-fill"
+    "text": "Relative Cell References"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
+    "title": "Applied Population Dynamics",
+    "section": "Relative Cell References",
+    "text": "Relative Cell References\n\n\n\n\n\n\nValues of reference will change when using auto-fill"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references",
@@ -60,7 +67,7 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references-1",
     "title": "Applied Population Dynamics",
     "section": "Absolute Cell References",
-    "text": "Absolute Cell References\n\n\nDollar sign “locks” a reference so that auto-fill won’t change it"
+    "text": "Absolute Cell References\n\n\n\n\n\n\nDollar sign “locks” a reference so that auto-fill won’t change it"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#partial-cell-references",
@@ -74,18 +81,25 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#equations-1",
     "title": "Applied Population Dynamics",
     "section": "Equations",
-    "text": "Equations\n\nEquations also have to begin with the equals sign (=)"
+    "text": "Equations"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-2",
     "href": "labs/intro/lab-Excel-R-Basics.html#equations-2",
     "title": "Applied Population Dynamics",
     "section": "Equations",
-    "text": "Equations"
+    "text": "Equations\n\n\n\n\n\n\nEquations also have to begin with the equals sign (=)"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-3",
     "href": "labs/intro/lab-Excel-R-Basics.html#equations-3",
+    "title": "Applied Population Dynamics",
+    "section": "Equations",
+    "text": "Equations"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-4",
+    "href": "labs/intro/lab-Excel-R-Basics.html#equations-4",
     "title": "Applied Population Dynamics",
     "section": "Equations",
     "text": "Equations"
@@ -116,35 +130,35 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#graphics-3",
     "title": "Applied Population Dynamics",
     "section": "Graphics",
-    "text": "Graphics\n\n\nAdd a line for males"
+    "text": "Graphics\n\n\n\n\n\n\nAdd a line for males"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#customize",
     "href": "labs/intro/lab-Excel-R-Basics.html#customize",
     "title": "Applied Population Dynamics",
     "section": "Customize",
-    "text": "Customize\n\n\nAdd legend"
+    "text": "Customize\n\n\n\n\n\n\nAdd legend"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-1",
     "href": "labs/intro/lab-Excel-R-Basics.html#customize-1",
     "title": "Applied Population Dynamics",
     "section": "Customize",
-    "text": "Customize\n\n\nAdd axis labels"
+    "text": "Customize\n\n\n\n\n\n\nAdd axis labels"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-2",
     "href": "labs/intro/lab-Excel-R-Basics.html#customize-2",
     "title": "Applied Population Dynamics",
     "section": "Customize",
-    "text": "Customize\n\n\nChange line color"
+    "text": "Customize\n\n\n\n\n\n\nChange line color"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
     "href": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
     "title": "Applied Population Dynamics",
     "section": "R – Software for statistical computing",
-    "text": "R – Software for statistical computing\nR can be downloaded here: https://www.r-project.org/\n\nYou can use the graphical user interface that comes with R, or you can run R through a system like ESS+emacs or RStudio (https://posit.co/download/rstudio-desktop/)\n\nMost people use RStudio these days"
+    "text": "R – Software for statistical computing\n\nR can be downloaded here: https://www.r-project.org/\n\nYou can use the graphical user interface that comes with R, or you can run R through a system like ESS+emacs or RStudio (https://posit.co/download/rstudio-desktop/)\n\n\nMost people use RStudio these days"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio",
@@ -158,7 +172,7 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#rstudio-1",
     "title": "Applied Population Dynamics",
     "section": "RStudio",
-    "text": "RStudio\nTo create a new script, click: File &gt; New File &gt; R Script\n\nSave your script using: File &gt; Save As"
+    "text": "RStudio\nTo create a new script, click: File &gt; New File &gt; R Script\n\n\n\n\n\nSave your script using: File &gt; Save As"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio-2",
@@ -172,14 +186,14 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#reproducing-the-excel-exercise",
     "title": "Applied Population Dynamics",
     "section": "Reproducing the Excel exercise",
-    "text": "Reproducing the Excel exercise\nCreate an object called year to hold the sequence of years.\n\n\nyear &lt;- 1950:1961 # A vector of integers\nyear              # Type the name of an object to see its values\n\n [1] 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961\n\n\nNote that you can use seq to create sequences in a more general way. The c function combines two or more vectors.\n\nupdown &lt;- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))\nupdown            # Two sequences, combined\n\n [1]  20  40  60  80 100 100  80  60  40  20\n\n\nUse the length function to determine the number of values in a vector.\n\nnYears &lt;- length(year)\nnYears\n\n[1] 12"
+    "text": "Reproducing the Excel exercise\n\nCreate an object called year to hold the sequence of years.\n\nyear &lt;- 1950:1961 # A vector of integers\nyear              # Type the name of an object to see its values\n\n [1] 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961\n\n\n\n\nNote that you can use seq to create sequences in a more general way. The c function combines two or more vectors.\n\nupdown &lt;- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))\nupdown            # Two sequences, combined\n\n [1]  20  40  60  80 100 100  80  60  40  20\n\n\n\n\n\nUse the length function to determine the number of values in a vector.\n\nnYears &lt;- length(year)\nnYears\n\n[1] 12"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
     "href": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
     "title": "Applied Population Dynamics",
     "section": "A simple population model",
-    "text": "A simple population model\nCreate an empty vector to store the data on females. Set female abundance to 100 in the first year.\n\nfemales &lt;- rep(NA, nYears)\nfemales[] &lt;- 100\n\nUse a “for loop” to compute female abundance in subsequent years.\n\nfor(t in 2:nYears) {\n    females[] &lt;- females[] + females[]*0.01\n}\n\nWe will use “for loops” for almost every population model that we implement in R"
+    "text": "A simple population model\n\nCreate an empty vector to store the data on females. Set female abundance to 100 in the first year.\n\nfemales &lt;- rep(NA, nYears)\nfemales[] &lt;- 100\n\n\n\nUse a “for loop” to compute female abundance in subsequent years.\n\nfor(t in 2:nYears) {\n    females[] &lt;- females[] + females[]*0.01\n}\n\n\n\n\nWe will use “for loops” for almost every population model that we implement in R"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model-1",
@@ -193,14 +207,14 @@
     "href": "labs/intro/lab-Excel-R-Basics.html#graphics-4",
     "title": "Applied Population Dynamics",
     "section": "Graphics",
-    "text": "Graphics\n\nplot(females ~ year, data=model1, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(males ~ year, data=model1, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"), lty=1, pch=16)"
+    "text": "Graphics\n\nplot(females ~ year, data=model1, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(males ~ year, data=model1, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"),\n       lty=1, pch=16)"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#assignment",
     "href": "labs/intro/lab-Excel-R-Basics.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\n\nCreate an Excel file and name it “Yourlastname_Yourfirstname”.\nCreate the sheet shown on the next page using the techniques covered in this lab.\n\nUse auto-fill to create the first two columns.\nFor the “Adults” column, use the equation shown for cells C3 through C22. Note: For cell C2, you can directly enter the value “10”.\n\nCopy “Sheet1” to a new sheet and change the color and thickness of the lines. You can pick any colors and thicknesses you want.\nReplicate steps 1–3 using a “for loop” in a self-contained R script. Note that you will need code to create both graphs—the original one and the one with the new line color and thickness.\n\nHint: You can make the juveniles data using seq and c, like we did with the updown example earlier.\n\nUpload the Excel workbook (with both sheets) and the R script to ELC by 5:00pm on Friday."
+    "text": "Assignment\n\n\nCreate an Excel file and name it “Yourlastname_Yourfirstname”.\nCreate the sheet shown on the next page using the techniques covered in this lab.\n\nUse auto-fill to create the first two columns.\nFor the “Adults” column, use the equation shown for cells C3 through C22. Note: For cell C2, you can directly enter the value “10”.\n\nCopy “Sheet1” to a new sheet and change the color and thickness of the lines. You can pick any colors and thicknesses you want.\nReplicate steps 1–3 using a “for loop” in a self-contained R script. Note that you will need code to create both graphs—the original one and the one with the new line color and thickness.\n\nHint: You can make the juveniles data using seq and c, like we did with the updown example earlier.\n\nUpload the Excel workbook (with both sheets) and the R script to ELC by 5:00pm on Friday. Always clear your RStudio workspace and then rerun the R script before submitting it to ELC."
   },
   {
     "objectID": "schedule.html",
