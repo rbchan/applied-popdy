@@ -5,6 +5,8 @@ format:
     theme: default
     pagetitle: "The BIDE model"
     slide-number: true
+    css: ../../custom.css
+    margin: 0.1
 lang: en
 ---
 
@@ -12,11 +14,19 @@ lang: en
 # Background and Review {visibility="hidden"}
 
 
-## {content-align="center" style="font-size: 110%;" background-image="figs/doves.jpg" background-opacity=0.1}
+## {content-align="center" style="font-size: 180%;" background-image="figs/doves.jpg" background-opacity=0.2}
 
 
 <center>
 Geometric and Exponential Growth
+
+<br>
+
+::: {style="font-size: 80%;"}
+Applied Population Dynamics\
+WILD 5700/7700
+:::
+
 </center>
 
 
@@ -48,24 +58,38 @@ structure.
 
 
 
-## Fundamental Question
+## Fundamental Question {style="font-size: 90%;"}
 
 <center>
 
 How does abundance go from $N_t$ to $N_{t+1}$?
-   
-Answer: The [BIDE]{.highlight-red} Model 
 
-$N_{t+1} = N_t + B_t + I_t - D_t - E_t$
-  
+<br>
+
+::: {.fragment fragment-index=1}
+Answer: The [BIDE]{style="color: red;"} Model 
+:::
+
 </center>
 
+::: {.fragment fragment-index=1}
+$$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
+
 B=Births, I=Immigrations, D=Deaths, E=Emigrations
+:::
 
+
+<br>
+
+::: {.fragment fragment-index=2}
 Geometric growth is a simplification of BIDE.
-  
-Exponential growth is a continuous time version of geometric growth.
+:::
 
+<br>
+  
+::: {.fragment fragment-index=3}
+Exponential growth is a continuous time version of geometric growth.
+:::
 
 
 # Geometric Growth
@@ -74,14 +98,16 @@ Exponential growth is a continuous time version of geometric growth.
 ## Reverend Thomas Malthus, 1766--1834
 
 <center>
-![](figs/MalthusGeometric.jpg)
-![](figs/MalthusBookCover.jpg)
+![](figs/MalthusGeometric.jpg){height="350"}
+![](figs/MalthusBookCover.jpg){height="350"}
 </center>
 
 
 
 
 ## Relevance To Wildlife Biology and Management
+
+<br>
 
 Charles Darwin *Origin of Species*
 
@@ -97,46 +123,56 @@ Charles Darwin *Origin of Species*
 
 
 
-## Aldo Leopold, Game Management 1946
+## Aldo Leopold, Game Management 1946 {style="font-size: 80%;"}
 
-<!-- ::: columns -->
+::: {.columns}
 
-<!-- ::: {.column width='50%'} -->
+::: {.column width='90%'}
 
-> Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ``ideal'' environment, would increase at this rate:
+> Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an "ideal" environment, would increase at this rate:
 
 <center>
+
   At End of                Young   Adults   Total
   ----------- -- --------------- -------- -------
   1st year                    14        2      16
   2nd year          (16/2)14=112       16     128
   3rd year         (128/2)14=896      128    1024
+
 </center>
 
-> The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.''
+::: {.fragment}
+> The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.
+:::
 
-<!-- ::: -->
+:::
 
-<!-- ::: {.column width='50%'} -->
-![](figs/Leopold1.png) 
+::: {.column width='10%'}
 
-![](figs/nobo.jpg)
-<!-- ::: -->
-<!-- ::: -->
+![](figs/Leopold1.png){width="100%"} 
+
+![](figs/nobo.jpg){width="100%"}
+
+:::
+
+:::
 
 
 
 ## So What Is Geometric Growth?
 
+<br>
+
 For an arbitrary time step ($t$):
 
-$N_t = N_0(1+r)^t$
+$$N_t = N_0(1+r)^t$$
 
+
+::: {.fragment}
 Or, for one time step:
 
-<center>
-$N_{t+1} = N_t + N_tr$
-</center>
+$$N_{t+1} = N_t + N_tr$$
+:::
 
 $r$ = discrete-time version of intrinsic rate of increase
 
@@ -145,7 +181,7 @@ $r$ = discrete-time version of intrinsic rate of increase
 
 
 
-## Example, $N_{t+1 = N_t + N_tr$}
+## Example, $N_{t+1} = N_t + N_t r$
 
 <!-- ::: columns[] -->
 <!-- ::: {.column width='50%'} -->
@@ -234,14 +270,17 @@ If $r > 0$ population grows to $\infty$
 
 $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 
-  ------- --- -----------------------
-   $N_t$   =  Abundance at year $t$
-    $B$    =  Births
-    $I$    =  Immigrations
-    $D$    =  Deaths
-    $E$    =  Emigrations
-  ------- --- -----------------------
+::: {.plain}
 
+|         |   |                       |
+|---------|---|-----------------------|
+|  $N_t$  | = | Abundance at year $t$ |
+|  $B$    | = | Births |
+|  $I$    | = | Immigrations |
+|  $D$    | = | Deaths |
+|  $E$    | = | Emigrations |
+
+:::
 
 
 
@@ -265,17 +304,14 @@ $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 **Step 2**: Write in terms of \textit{per capita} birth and death *rates*
 
 $$
-
 \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
                       \quad  &= \quad  1 + r} \\
-                      \quad  &= \quad  \lambda 
+                      \quad  &= \quad  \lambda
 $$
 
 **Step 3**: Geometric growth
 
-<center>
-  $N_{t+1} = N_t + N_tr$
-</center>
+$$N_{t+1} = N_t + N_tr$$
 
 Note that $\lambda = N_{t+1}/N_t = 1+r$.
 
@@ -319,29 +355,28 @@ Reproduction occurs seasonally (for geometric growth)
 - No time lags
       
 No stochasticity
-  * No random variation in birth or death 
-  * No random variation in environmental conditions
+
+- No random variation in birth or death 
+- No random variation in environmental conditions
 
   
-
-
-
-
 
 
 
 ## Can We Apply The Model To Real Data?
 
-{All models are wrong, but some are useful. (George Box)}
+> All models are wrong, but some are useful. (George Box)
   
-{Is exponential growth a useful model?}
+Is exponential growth a useful model?
 
-- Possibly for describing some populations during short time periods, e.g. invasive species
+. . .
 
-- Also useful as foundation for more realistic models
+Possibly for describing some populations during short time periods, e.g. invasive species
+
+Also useful as foundation for more realistic models
   
   
-![](figs/python1) 
+![](figs/python1.jpg){fig-align="center"}
 
 
 
@@ -360,7 +395,8 @@ No stochasticity
 
 Is the human population exhibiting exponential growth?
   
-![](figs/World-Population-since-10-thousand-BC) 
+![](figs/World-Population-since-10-thousand-BC.png){fig-align="center"
+width="80%"}
 
 
 [Our world in data](https://ourworldindata.org/world-population-growth)
@@ -370,10 +406,13 @@ Is the human population exhibiting exponential growth?
 
 
 
-## Assignment
+## Assignment {style="font-size: 150%;"}
+
+<br>
 
 Read pages 15--19 in Conroy and Carroll
-  
+
+<br>
 
 Be prepared for a quiz
 

@@ -480,7 +480,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Geometric and Exponential Growth"
+    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
@@ -501,7 +501,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
     "title": "Applied Population Dynamics",
     "section": "Fundamental Question",
-    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\nAnswer: The BIDE Model\n\\(N_{t+1} = N_t + B_t + I_t - D_t - E_t\\)\n\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\nGeometric growth is a simplification of BIDE.\nExponential growth is a continuous time version of geometric growth."
+    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
@@ -515,28 +515,28 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
     "title": "Applied Population Dynamics",
     "section": "Relevance To Wildlife Biology and Management",
-    "text": "Relevance To Wildlife Biology and Management\nCharles Darwin Origin of Species\n\nThere is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.\n\n\n\nHence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…"
+    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\nThere is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.\n\n\n\nHence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
     "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
     "title": "Applied Population Dynamics",
     "section": "Aldo Leopold, Game Management 1946",
-    "text": "Aldo Leopold, Game Management 1946\n\n\n\nEvery wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ``ideal’’ environment, would increase at this rate:\n\n\n\n\n\nEnd of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\ncenter&gt;\n\n\n\n\n\n\n\n\nThe maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.’’"
+    "text": "Aldo Leopold, Game Management 1946\n\n\n\nEvery wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an “ideal” environment, would increase at this rate:\n\n\n\n\n\nAt End of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\n\n\n\n\nThe maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
     "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
     "title": "Applied Population Dynamics",
     "section": "So What Is Geometric Growth?",
-    "text": "So What Is Geometric Growth?\nFor an arbitrary time step (\\(t\\)):\n\\(N_t = N_0(1+r)^t\\)\nOr, for one time step:\n\n\\(N_{t+1} = N_t + N_tr\\)\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
+    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\n\nOr, for one time step:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_tr",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_tr",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
     "title": "Applied Population Dynamics",
-    "section": "Example, \\(N_{t+1 = N_t + N_tr\\)}",
-    "text": "Example, \\(N_{t+1 = N_t + N_tr\\)}"
+    "section": "Example, \\(N_{t+1} = N_t + N_t r\\)",
+    "text": "Example, \\(N_{t+1} = N_t + N_t r\\)"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes-n_t1-n_t-n_t-r",
@@ -550,7 +550,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
     "title": "Applied Population Dynamics",
     "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nFundamental equation of population ecology\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
+    "text": "From BIDE To Geometric Growth\nFundamental equation of population ecology\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
@@ -564,7 +564,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
     "title": "Applied Population Dynamics",
     "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n$$\n &= + b - d \\ &= + r} \\ &= $$\nStep 3: Geometric growth\n\n\\(N_{t+1} = N_t + N_tr\\)\n\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
+    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r} \\\\\n                      \\quad  &= \\quad  \\lambda\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
@@ -578,14 +578,14 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
     "title": "Applied Population Dynamics",
     "section": "Model Assumptions",
-    "text": "Model Assumptions\nPopulation is geographically closed\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\n-Constant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity * No random variation in birth or death * No random variation in environmental conditions"
+    "text": "Model Assumptions\nPopulation is geographically closed\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\n-Constant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
     "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
     "title": "Applied Population Dynamics",
     "section": "Can We Apply The Model To Real Data?",
-    "text": "Can We Apply The Model To Real Data?\n{All models are wrong, but some are useful. (George Box)}\n{Is exponential growth a useful model?}\n\nPossibly for describing some populations during short time periods, e.g. invasive species\nAlso useful as foundation for more realistic models"
+    "text": "Can We Apply The Model To Real Data?\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\nPossibly for describing some populations during short time periods, e.g. invasive species\nAlso useful as foundation for more realistic models"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
@@ -599,7 +599,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\nRead pages 15–19 in Conroy and Carroll\nBe prepared for a quiz"
+    "text": "Assignment\n\nRead pages 15–19 in Conroy and Carroll\n\nBe prepared for a quiz"
   },
   {
     "objectID": "APD-syllabus.html",

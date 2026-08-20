@@ -1,0 +1,13 @@
+/* Frame for images */
+.framed-img {
+  border: 1px solid #2F4F4F;
+  padding: 2px;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+
+
+/* Reduce the font size of regular slide titles */
+.reveal h2 {
+  font-size: 1.2em; /* Default is usually around 2em or larger */
+}

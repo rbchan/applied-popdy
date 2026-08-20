@@ -29,6 +29,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../custom.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,10 +131,15 @@
 
 <section>
 
-<section id="section" class="slide level2" data-content-align="center" style="font-size: 110%;" data-background-image="figs/doves.jpg" data-background-opacity="0.1">
+<section id="section" class="slide level2" data-content-align="center" style="font-size: 180%;" data-background-image="figs/doves.jpg" data-background-opacity="0.2">
 <h2></h2>
 <center>
-Geometric and Exponential Growth
+<p>Geometric and Exponential Growth</p>
+<p><br></p>
+<div style="font-size: 80%;">
+<p>Applied Population Dynamics<br>
+WILD 5700/7700</p>
+</div>
 </center>
 </section>
 <section id="todays-learning-objectives" class="slide level2">
@@ -150,16 +156,27 @@ Geometric and Exponential Growth
 <h2>What is Population Dynamics?</h2>
 <p>The study of spatial and temporal variation in population size and structure.</p>
 </section>
-<section id="fundamental-question" class="slide level2">
+<section id="fundamental-question" class="slide level2" style="font-size: 90%;">
 <h2>Fundamental Question</h2>
 <center>
 <p>How does abundance go from <span class="math inline">\(N_t\)</span> to <span class="math inline">\(N_{t+1}\)</span>?</p>
-<p>Answer: The <span class="highlight-red">BIDE</span> Model</p>
-<p><span class="math inline">\(N_{t+1} = N_t + B_t + I_t - D_t - E_t\)</span></p>
+<p><br></p>
+<div class="fragment" data-fragment-index="1">
+<p>Answer: The <span style="color: red;">BIDE</span> Model</p>
+</div>
 </center>
+<div class="fragment" data-fragment-index="1">
+<p><span class="math display">\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\]</span></p>
 <p>B=Births, I=Immigrations, D=Deaths, E=Emigrations</p>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="2">
 <p>Geometric growth is a simplification of BIDE.</p>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="3">
 <p>Exponential growth is a continuous time version of geometric growth.</p>
+</div>
 </section></section>
 <section>
 <section id="geometric-growth" class="title-slide slide level1 center">
@@ -169,11 +186,12 @@ Geometric and Exponential Growth
 <section id="reverend-thomas-malthus-17661834" class="slide level2">
 <h2>Reverend Thomas Malthus, 1766–1834</h2>
 <center>
-<img data-src="figs/MalthusGeometric.jpg"> <img data-src="figs/MalthusBookCover.jpg">
+<img data-src="figs/MalthusGeometric.jpg" height="350"> <img data-src="figs/MalthusBookCover.jpg" height="350">
 </center>
 </section>
 <section id="relevance-to-wildlife-biology-and-management" class="slide level2">
 <h2>Relevance To Wildlife Biology and Management</h2>
+<p><br></p>
 <p>Charles Darwin <em>Origin of Species</em></p>
 <blockquote>
 <p>There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.</p>
@@ -184,75 +202,72 @@ Geometric and Exponential Growth
 </blockquote>
 </div>
 </section>
-<section id="aldo-leopold-game-management-1946" class="slide level2">
+<section id="aldo-leopold-game-management-1946" class="slide level2" style="font-size: 80%;">
 <h2>Aldo Leopold, Game Management 1946</h2>
-<!-- ::: columns -->
-<!-- ::: {.column width='50%'} -->
+<div class="columns">
+<div class="column" style="width:90%;">
 <blockquote>
-<p>Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ``ideal’’ environment, would increase at this rate:</p>
+<p>Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an “ideal” environment, would increase at this rate:</p>
 </blockquote>
 <center>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: center;">End of</th>
+<th style="text-align: left;">At End of</th>
 <th></th>
-<th style="text-align: center;">Young</th>
-<th style="text-align: left;">Adults</th>
-<th style="text-align: left;">Total</th>
+<th style="text-align: right;">Young</th>
+<th style="text-align: right;">Adults</th>
+<th style="text-align: right;">Total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1st year</td>
+<td style="text-align: left;">1st year</td>
 <td></td>
-<td style="text-align: center;">14</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">16</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2nd year</td>
+<td style="text-align: left;">2nd year</td>
 <td></td>
-<td style="text-align: center;">(16/2)14=112</td>
-<td style="text-align: left;">16</td>
-<td style="text-align: left;">128</td>
+<td style="text-align: right;">(16/2)14=112</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">128</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3rd year</td>
+<td style="text-align: left;">3rd year</td>
 <td></td>
-<td style="text-align: center;">(128/2)14=896</td>
-<td style="text-align: left;">128</td>
-<td style="text-align: left;">1024</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">center&gt;</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: right;">(128/2)14=896</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">1024</td>
 </tr>
 </tbody>
 </table>
+</center>
+<div class="fragment">
 <blockquote>
-<p>The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.’’</p>
+<p>The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.</p>
 </blockquote>
-<!-- ::: -->
-<!-- ::: {.column width='50%'} -->
-<p><img data-src="figs/Leopold1.png"></p>
-<p><img data-src="figs/nobo.jpg"> <!-- ::: --> <!-- ::: --></p>
-</center></section>
+</div>
+</div><div class="column" style="width:10%;">
+<p><img data-src="figs/Leopold1.png" style="width:100.0%"></p>
+<p><img data-src="figs/nobo.jpg" style="width:100.0%"></p>
+</div></div>
+</section>
 <section id="so-what-is-geometric-growth" class="slide level2">
 <h2>So What Is Geometric Growth?</h2>
+<p><br></p>
 <p>For an arbitrary time step (<span class="math inline">\(t\)</span>):</p>
-<p><span class="math inline">\(N_t = N_0(1+r)^t\)</span></p>
+<p><span class="math display">\[N_t = N_0(1+r)^t\]</span></p>
+<div class="fragment">
 <p>Or, for one time step:</p>
-<center>
-<span class="math inline">\(N_{t+1} = N_t + N_tr\)</span>
-</center>
+<p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
+</div>
 <p><span class="math inline">\(r\)</span> = discrete-time version of intrinsic rate of increase</p>
 </section>
-<section id="example-n_t1-n_t-n_tr" class="slide level2">
-<h2>Example, <span class="math inline">\(N_{t+1 = N_t + N_tr\)</span>}</h2>
+<section id="example-n_t1-n_t-n_t-r" class="slide level2">
+<h2>Example, <span class="math inline">\(N_{t+1} = N_t + N_t r\)</span></h2>
 <!-- ::: columns[] -->
 <!-- ::: {.column width='50%'} -->
 <!--       <center> -->
@@ -316,35 +331,37 @@ Geometric and Exponential Growth
 <h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
 <p><strong>Fundamental equation of population ecology</strong></p>
 <p><span class="math display">\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\]</span></p>
+<div class="plain">
 <table class="caption-top">
 <tbody>
 <tr class="odd">
-<td style="text-align: right;"><span class="math inline">\(N_t\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Abundance at year <span class="math inline">\(t\)</span></td>
+<td><span class="math inline">\(N_t\)</span></td>
+<td>=</td>
+<td>Abundance at year <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><span class="math inline">\(B\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Births</td>
+<td><span class="math inline">\(B\)</span></td>
+<td>=</td>
+<td>Births</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><span class="math inline">\(I\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Immigrations</td>
+<td><span class="math inline">\(I\)</span></td>
+<td>=</td>
+<td>Immigrations</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><span class="math inline">\(D\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Deaths</td>
+<td><span class="math inline">\(D\)</span></td>
+<td>=</td>
+<td>Deaths</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><span class="math inline">\(E\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Emigrations</td>
+<td><span class="math inline">\(E\)</span></td>
+<td>=</td>
+<td>Emigrations</td>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="from-bide-to-geometric-growth-1" class="slide level2">
 <h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
@@ -352,19 +369,19 @@ Geometric and Exponential Growth
 <table class="caption-top">
 <tbody>
 <tr class="odd">
-<td style="text-align: right;"><span class="math inline">\(N_t\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Abundance in year <span class="math inline">\(t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_t\)</span></td>
+<td style="text-align: center;">=</td>
+<td style="text-align: left;">Abundance in year <span class="math inline">\(t\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;"><span class="math inline">\(B\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Births</td>
+<td style="text-align: center;"><span class="math inline">\(B\)</span></td>
+<td style="text-align: center;">=</td>
+<td style="text-align: left;">Births</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;"><span class="math inline">\(D\)</span></td>
-<td style="text-align: right;">=</td>
-<td style="text-align: right;">Deaths</td>
+<td style="text-align: center;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: center;">=</td>
+<td style="text-align: left;">Deaths</td>
 </tr>
 </tbody>
 </table>
@@ -373,12 +390,13 @@ Geometric and Exponential Growth
 <h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
 <p><strong>Step 1</strong>: Divide both sides by <span class="math inline">\(N_{t}\)</span></p>
 <p><strong>Step 2</strong>: Write in terms of birth and death <em>rates</em></p>
-<p>$$</p>
-<p> &amp;= + b - d \ &amp;= + r} \ &amp;= $$</p>
+<p><span class="math display">\[
+\frac{N_{t+1}}{N_{t}} \quad  &amp;= \quad  1 + b - d \\
+                      \quad  &amp;= \quad  1 + r} \\
+                      \quad  &amp;= \quad  \lambda
+\]</span></p>
 <p><strong>Step 3</strong>: Geometric growth</p>
-<center>
-<span class="math inline">\(N_{t+1} = N_t + N_tr\)</span>
-</center>
+<p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
 <p>Note that <span class="math inline">\(\lambda = N_{t+1}/N_t = 1+r\)</span>.</p>
 </section></section>
 <section>
@@ -408,27 +426,39 @@ Geometric and Exponential Growth
 <li><p>No age- or stage-structure</p></li>
 <li><p>No time lags</p></li>
 </ul>
-<p>No stochasticity * No random variation in birth or death * No random variation in environmental conditions</p>
+<p>No stochasticity</p>
+<ul>
+<li>No random variation in birth or death</li>
+<li>No random variation in environmental conditions</li>
+</ul>
 </section>
 <section id="can-we-apply-the-model-to-real-data" class="slide level2">
 <h2>Can We Apply The Model To Real Data?</h2>
-<p>{All models are wrong, but some are useful. (George Box)}</p>
-<p>{Is exponential growth a useful model?}</p>
-<ul>
-<li><p>Possibly for describing some populations during short time periods, e.g.&nbsp;invasive species</p></li>
-<li><p>Also useful as foundation for more realistic models</p></li>
-</ul>
-
-<img data-src="figs/python1.png" class="r-stretch"></section>
+<blockquote>
+<p>All models are wrong, but some are useful. (George Box)</p>
+</blockquote>
+<p>Is exponential growth a useful model?</p>
+<div class="fragment">
+<p>Possibly for describing some populations during short time periods, e.g.&nbsp;invasive species</p>
+<p>Also useful as foundation for more realistic models</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/python1.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</section>
 <section id="looking-ahead" class="slide level2">
 <h2>Looking Ahead</h2>
 <p>Is the human population exhibiting exponential growth?</p>
 
-<img data-src="figs/World-Population-since-10-thousand-BC.png" class="r-stretch"><p><a href="https://ourworldindata.org/world-population-growth">Our world in data</a></p>
+<img data-src="figs/World-Population-since-10-thousand-BC.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><a href="https://ourworldindata.org/world-population-growth">Our world in data</a></p>
 </section>
-<section id="assignment" class="slide level2">
+<section id="assignment" class="slide level2" style="font-size: 150%;">
 <h2>Assignment</h2>
+<p><br></p>
 <p>Read pages 15–19 in Conroy and Carroll</p>
+<p><br></p>
 <p>Be prepared for a quiz</p>
 
 
