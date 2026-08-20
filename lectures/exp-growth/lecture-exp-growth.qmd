@@ -14,7 +14,7 @@ lang: en
 # Background and Review {visibility="hidden"}
 
 
-## {content-align="center" style="font-size: 180%;" background-image="figs/doves.jpg" background-opacity=0.2}
+## {content-align="center" style="font-size: 170%;" background-image="figs/doves.jpg" background-opacity=0.2}
 
 
 <center>
@@ -111,25 +111,25 @@ Exponential growth is a continuous time version of geometric growth.
 
 Charles Darwin *Origin of Species*
 
-> There is no exception to the rule that every organic being increases
+> "There is no exception to the rule that every organic being increases
 > at so high a rate, that if not destroyed, the earth would soon be
-> covered by the progeny of a single pair.
+> covered by the progeny of a single pair."
   
 . . .
 
-> Hence, as more individuals are produced than can possibly survive,
-> there must in every case be a struggle for existence...
+> "Hence, as more individuals are produced than can possibly survive,
+> there must in every case be a struggle for existence..."
 
 
 
 
-## Aldo Leopold, Game Management 1946 {style="font-size: 80%;"}
+## Aldo Leopold, Game Management 1946 {style="font-size: 70%;"}
 
 ::: {.columns}
 
-::: {.column width='90%'}
+::: {.column width='85%'}
 
-> Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an "ideal" environment, would increase at this rate:
+> "Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an "ideal" environment, would increase at this rate:"
 
 <center>
 
@@ -142,12 +142,12 @@ Charles Darwin *Origin of Species*
 </center>
 
 ::: {.fragment}
-> The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.
+> "The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters."
 :::
 
 :::
 
-::: {.column width='10%'}
+::: {.column width='15%'}
 
 ![](figs/Leopold1.png){width="100%"} 
 
@@ -224,6 +224,32 @@ $r$ = discrete-time version of intrinsic rate of increase
 <!--   ::: -->
 
 
+```{r}
+#| fig-show: animate
+#| interval: 0.5
+
+n0 <- 10
+r <- 1.2
+max_t <- 15
+
+max_y <- n0 * (r ^ max_t)
+
+# Loop creates each frame automatically
+for (i in 0:max_t) {
+  t_sub <- 0:i
+  N_sub <- n0 * (r ^ t_sub)
+  
+  plot(
+    t_sub, N_sub,
+    type = "b", col = "blue", pch = 19, lwd = 2, cex = 1.5,
+    xlim = c(0, max_t), ylim = c(0, max_y),
+    xlab = "Time Step (t)", ylab = "Population Size (N)",
+    main = paste("Geometric Growth (t =", i, ")")
+  )
+  grid()
+}
+```
+
 
 
 
@@ -234,21 +260,21 @@ $r$ = discrete-time version of intrinsic rate of increase
 
 If $-1 \leq r < 0$ population goes extinct
 
-![](figs/rl0.png)
+![](figs/rl0.pdf)
 
 :::
 ::: {.column width='50%'}
 
 If $r = 0$ population is stable
 
-![](figs/r0.png)
+![](figs/r0.pdf)
 
 :::
 ::: {.column width='50%'}
 
 If $r > 0$ population grows to $\infty$
       
-![](figs/rg0)
+![](figs/rg0.pdf)
 
 :::
 :::

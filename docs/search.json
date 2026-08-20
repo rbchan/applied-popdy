@@ -1,5 +1,411 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
+  },
+  {
+    "objectID": "index.html#course-objectives-and-learning-outcomes",
+    "href": "index.html#course-objectives-and-learning-outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Course Objectives and Learning Outcomes",
+    "text": "Course Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation."
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Applied Population Dynamics",
+    "section": "Course materials",
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3"
+  },
+  {
+    "objectID": "APD-syllabus.html",
+    "href": "APD-syllabus.html",
+    "title": "Course Description",
+    "section": "",
+    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\nOffice hours:\nMon 11:00–12:00\n\nMon 2:30–3:30\nThur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
+    "href": "lectures/BIDE/lecture-BIDE.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "title": "Applied Population Dynamics",
+    "section": "Today’s class",
+    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "title": "Applied Population Dynamics",
+    "section": "Model validation",
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "title": "Applied Population Dynamics",
+    "section": "Types of models",
+    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "title": "Applied Population Dynamics",
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
+    "href": "schedule.html#week-1---introduction-and-the-bide-model",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
+    "href": "schedule.html#week-2---geometric-and-logistic-growth",
+    "title": "Course Schedule",
+    "section": "Week 2 - Geometric and logistic growth",
+    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#section",
+    "href": "lectures/intro/lecture-intro.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Applied Population Dynamics\nWILD 5700/7700\nRichard Chandler"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",
+    "href": "lectures/intro/lecture-intro.html#dynamic-populations",
+    "title": "Applied Population Dynamics",
+    "section": "Dynamic populations",
+    "text": "Dynamic populations"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#central-questions",
+    "href": "lectures/intro/lecture-intro.html#central-questions",
+    "title": "Applied Population Dynamics",
+    "section": "Central Questions",
+    "text": "Central Questions\n\nWhat causes spatial and temporal variation in population size and structure?\nHow do environmental change and human activities (including management actions) affect populations?"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#learning-objectives",
+    "href": "lectures/intro/lecture-intro.html#learning-objectives",
+    "title": "Applied Population Dynamics",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of the semester, you should be able to:\n\nDevelop a population model that:\n\nDescribes variation in demographic parameters over time\nPredicts how a population will respond to management and conservation actions.\n\nDesign a study to collect the data necessary to estimate the demographic parameters of the model.\nUse R software to estimate parameters from field data."
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#themes",
+    "href": "lectures/intro/lecture-intro.html#themes",
+    "title": "Applied Population Dynamics",
+    "section": "Themes",
+    "text": "Themes\n\n\nTheory\n\nPopulation models\n\n\nPractice (Application)\n\nStudy design\nData collection\nParameter estimation\nPopulation viability analysis\nHarvest management\nSmall population management"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
+    "href": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
+    "title": "Applied Population Dynamics",
+    "section": "Example I – Louisiana black bear",
+    "text": "Example I – Louisiana black bear"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
+    "href": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
+    "title": "Applied Population Dynamics",
+    "section": "Estimated demographic parameters",
+    "text": "Estimated demographic parameters"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
+    "href": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
+    "title": "Applied Population Dynamics",
+    "section": "Example II – Black-throated blue warbler",
+    "text": "Example II – Black-throated blue warbler\n\n\n\n\n\n\n\n\n\n\nWhy are dynamics so different in the southern part of the range?"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
+    "href": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
+    "title": "Applied Population Dynamics",
+    "section": "Example III – Chiricahua Leopard Frog",
+    "text": "Example III – Chiricahua Leopard Frog"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#recovery-plan",
+    "href": "lectures/intro/lecture-intro.html#recovery-plan",
+    "title": "Applied Population Dynamics",
+    "section": "Recovery Plan",
+    "text": "Recovery Plan"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#avoiding-extinction",
+    "href": "lectures/intro/lecture-intro.html#avoiding-extinction",
+    "title": "Applied Population Dynamics",
+    "section": "Avoiding extinction",
+    "text": "Avoiding extinction\nManagement options\n\nControl predators\nIncrease hydroperiod in existing wetlands\nCreate new wetlands…\n\n\nRestoring just 1 pond reduced extinction risk from 4% to 2.5% after 50 years."
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#colonization-probability-maps",
+    "href": "lectures/intro/lecture-intro.html#colonization-probability-maps",
+    "title": "Applied Population Dynamics",
+    "section": "Colonization Probability Maps",
+    "text": "Colonization Probability Maps"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
+    "href": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
+    "title": "Applied Population Dynamics",
+    "section": "Example IV – South Florida Deer Study",
+    "text": "Example IV – South Florida Deer Study\nObjectives\n\nUnderstand effects of hydrology, hunting, and predation on deer population dynamics\nDevelop a camera trapping study for large-scale monitoring of deer populations"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#camera-study",
+    "href": "lectures/intro/lecture-intro.html#camera-study",
+    "title": "Applied Population Dynamics",
+    "section": "Camera study",
+    "text": "Camera study\n\n\n\n\n\n\n\n\n\n\n180 cameras\nOperated Jan 2015 – Jan 2018\nSpanning hunting and hydrology gradients"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#telemetry-data",
+    "href": "lectures/intro/lecture-intro.html#telemetry-data",
+    "title": "Applied Population Dynamics",
+    "section": "Telemetry data",
+    "text": "Telemetry data\n250 deer collared 2015 – 2018"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#abundance-over-time",
+    "href": "lectures/intro/lecture-intro.html#abundance-over-time",
+    "title": "Applied Population Dynamics",
+    "section": "Abundance over time",
+    "text": "Abundance over time"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
+    "href": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
+    "title": "Applied Population Dynamics",
+    "section": "Survival and predation rate",
+    "text": "Survival and predation rate"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#syllabus-1",
+    "href": "lectures/intro/lecture-intro.html#syllabus-1",
+    "title": "Applied Population Dynamics",
+    "section": "Syllabus",
+    "text": "Syllabus"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
+    "href": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
+    "title": "Applied Population Dynamics",
+    "section": "Tips for success in this course",
+    "text": "Tips for success in this course\n\nTake notes on printed handouts\nDon’t bring laptops/tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during class\nStart the final project early\nVisit with me and the TAs during office hours"
+  },
+  {
+    "objectID": "lectures/intro/lecture-intro.html#assignment-1",
+    "href": "lectures/intro/lecture-intro.html#assignment-1",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "title": "Applied Population Dynamics",
+    "section": "Today’s learning objectives",
+    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "title": "Applied Population Dynamics",
+    "section": "What is Population Dynamics?",
+    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "title": "Applied Population Dynamics",
+    "section": "Fundamental Question",
+    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "title": "Applied Population Dynamics",
+    "section": "Reverend Thomas Malthus, 1766–1834",
+    "text": "Reverend Thomas Malthus, 1766–1834"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "title": "Applied Population Dynamics",
+    "section": "Relevance To Wildlife Biology and Management",
+    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\n“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”\n\n\n\n“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "title": "Applied Population Dynamics",
+    "section": "Aldo Leopold, Game Management 1946",
+    "text": "Aldo Leopold, Game Management 1946\n\n\n\n“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an”ideal” environment, would increase at this rate:”\n\n\n\n\n\nAt End of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\n\n\n\n\n“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "So What Is Geometric Growth?",
+    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\n\nOr, for one time step:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
+    "title": "Applied Population Dynamics",
+    "section": "Example, \\(N_{t+1} = N_t + N_t r\\)",
+    "text": "Example, \\(N_{t+1} = N_t + N_t r\\)"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes-n_t1-n_t-n_t-r",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes-n_t1-n_t-n_t-r",
+    "title": "Applied Population Dynamics",
+    "section": "Three Possible Outcomes, \\(N_{t+1} = N_t + N_t r\\)",
+    "text": "Three Possible Outcomes, \\(N_{t+1} = N_t + N_t r\\)\n\n\nIf \\(-1 \\leq r &lt; 0\\) population goes extinct\n\n\nIf \\(r = 0\\) population is stable\n\n\nIf \\(r &gt; 0\\) population grows to \\(\\infty\\)"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\nFundamental equation of population ecology\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\nIgnore immigration and emigration \\[N_{t+1} = N_t + B_t - D_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance in year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(D\\)\n=\nDeaths"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r} \\\\\n                      \\quad  &= \\quad  \\lambda\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density Independent Growth",
+    "text": "Density Independent Growth\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\)) is not affected b population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "title": "Applied Population Dynamics",
+    "section": "Model Assumptions",
+    "text": "Model Assumptions\nPopulation is geographically closed\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\n-Constant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "title": "Applied Population Dynamics",
+    "section": "Can We Apply The Model To Real Data?",
+    "text": "Can We Apply The Model To Real Data?\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\nPossibly for describing some populations during short time periods, e.g. invasive species\nAlso useful as foundation for more realistic models"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "title": "Applied Population Dynamics",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\nOur world in data"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\nRead pages 15–19 in Conroy and Carroll\n\nBe prepared for a quiz"
+  },
+  {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#section",
     "href": "labs/intro/lab-Excel-R-Basics.html#section",
     "title": "Applied Population Dynamics",
@@ -229,411 +635,5 @@
     "title": "Applied Population Dynamics",
     "section": "Excel sheet to be created",
     "text": "Excel sheet to be created"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
-    "href": "schedule.html#week-1---introduction-and-the-bide-model",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
-    "href": "schedule.html#week-2---geometric-and-logistic-growth",
-    "title": "Course Schedule",
-    "section": "Week 2 - Geometric and logistic growth",
-    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#section",
-    "href": "lectures/intro/lecture-intro.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Applied Population Dynamics\nWILD 5700/7700\nRichard Chandler"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#dynamic-populations",
-    "href": "lectures/intro/lecture-intro.html#dynamic-populations",
-    "title": "Applied Population Dynamics",
-    "section": "Dynamic populations",
-    "text": "Dynamic populations"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#central-questions",
-    "href": "lectures/intro/lecture-intro.html#central-questions",
-    "title": "Applied Population Dynamics",
-    "section": "Central Questions",
-    "text": "Central Questions\n\nWhat causes spatial and temporal variation in population size and structure?\nHow do environmental change and human activities (including management actions) affect populations?"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#learning-objectives",
-    "href": "lectures/intro/lecture-intro.html#learning-objectives",
-    "title": "Applied Population Dynamics",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of the semester, you should be able to:\n\nDevelop a population model that:\n\nDescribes variation in demographic parameters over time\nPredicts how a population will respond to management and conservation actions.\n\nDesign a study to collect the data necessary to estimate the demographic parameters of the model.\nUse R software to estimate parameters from field data."
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#themes",
-    "href": "lectures/intro/lecture-intro.html#themes",
-    "title": "Applied Population Dynamics",
-    "section": "Themes",
-    "text": "Themes\n\n\nTheory\n\nPopulation models\n\n\nPractice (Application)\n\nStudy design\nData collection\nParameter estimation\nPopulation viability analysis\nHarvest management\nSmall population management"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
-    "href": "lectures/intro/lecture-intro.html#example-i-louisiana-black-bear",
-    "title": "Applied Population Dynamics",
-    "section": "Example I – Louisiana black bear",
-    "text": "Example I – Louisiana black bear"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
-    "href": "lectures/intro/lecture-intro.html#estimated-demographic-parameters",
-    "title": "Applied Population Dynamics",
-    "section": "Estimated demographic parameters",
-    "text": "Estimated demographic parameters"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
-    "href": "lectures/intro/lecture-intro.html#example-ii-black-throated-blue-warbler",
-    "title": "Applied Population Dynamics",
-    "section": "Example II – Black-throated blue warbler",
-    "text": "Example II – Black-throated blue warbler\n\n\n\n\n\n\n\n\n\n\nWhy are dynamics so different in the southern part of the range?"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
-    "href": "lectures/intro/lecture-intro.html#example-iii-chiricahua-leopard-frog",
-    "title": "Applied Population Dynamics",
-    "section": "Example III – Chiricahua Leopard Frog",
-    "text": "Example III – Chiricahua Leopard Frog"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#recovery-plan",
-    "href": "lectures/intro/lecture-intro.html#recovery-plan",
-    "title": "Applied Population Dynamics",
-    "section": "Recovery Plan",
-    "text": "Recovery Plan"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#avoiding-extinction",
-    "href": "lectures/intro/lecture-intro.html#avoiding-extinction",
-    "title": "Applied Population Dynamics",
-    "section": "Avoiding extinction",
-    "text": "Avoiding extinction\nManagement options\n\nControl predators\nIncrease hydroperiod in existing wetlands\nCreate new wetlands…\n\n\nRestoring just 1 pond reduced extinction risk from 4% to 2.5% after 50 years."
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#colonization-probability-maps",
-    "href": "lectures/intro/lecture-intro.html#colonization-probability-maps",
-    "title": "Applied Population Dynamics",
-    "section": "Colonization Probability Maps",
-    "text": "Colonization Probability Maps"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
-    "href": "lectures/intro/lecture-intro.html#example-iv-south-florida-deer-study",
-    "title": "Applied Population Dynamics",
-    "section": "Example IV – South Florida Deer Study",
-    "text": "Example IV – South Florida Deer Study\nObjectives\n\nUnderstand effects of hydrology, hunting, and predation on deer population dynamics\nDevelop a camera trapping study for large-scale monitoring of deer populations"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#camera-study",
-    "href": "lectures/intro/lecture-intro.html#camera-study",
-    "title": "Applied Population Dynamics",
-    "section": "Camera study",
-    "text": "Camera study\n\n\n\n\n\n\n\n\n\n\n180 cameras\nOperated Jan 2015 – Jan 2018\nSpanning hunting and hydrology gradients"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#telemetry-data",
-    "href": "lectures/intro/lecture-intro.html#telemetry-data",
-    "title": "Applied Population Dynamics",
-    "section": "Telemetry data",
-    "text": "Telemetry data\n250 deer collared 2015 – 2018"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#abundance-over-time",
-    "href": "lectures/intro/lecture-intro.html#abundance-over-time",
-    "title": "Applied Population Dynamics",
-    "section": "Abundance over time",
-    "text": "Abundance over time"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
-    "href": "lectures/intro/lecture-intro.html#survival-and-predation-rate",
-    "title": "Applied Population Dynamics",
-    "section": "Survival and predation rate",
-    "text": "Survival and predation rate"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#syllabus-1",
-    "href": "lectures/intro/lecture-intro.html#syllabus-1",
-    "title": "Applied Population Dynamics",
-    "section": "Syllabus",
-    "text": "Syllabus"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
-    "href": "lectures/intro/lecture-intro.html#tips-for-success-in-this-course",
-    "title": "Applied Population Dynamics",
-    "section": "Tips for success in this course",
-    "text": "Tips for success in this course\n\nTake notes on printed handouts\nDon’t bring laptops/tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during class\nStart the final project early\nVisit with me and the TAs during office hours"
-  },
-  {
-    "objectID": "lectures/intro/lecture-intro.html#assignment-1",
-    "href": "lectures/intro/lecture-intro.html#assignment-1",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
-    "href": "lectures/BIDE/lecture-BIDE.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "title": "Applied Population Dynamics",
-    "section": "Today’s class",
-    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "title": "Applied Population Dynamics",
-    "section": "Model validation",
-    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "title": "Applied Population Dynamics",
-    "section": "Types of models",
-    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "title": "Applied Population Dynamics",
-    "section": "Group exercise",
-    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
-    "title": "Applied Population Dynamics",
-    "section": "Today’s learning objectives",
-    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
-    "title": "Applied Population Dynamics",
-    "section": "What is Population Dynamics?",
-    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
-    "title": "Applied Population Dynamics",
-    "section": "Fundamental Question",
-    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
-    "title": "Applied Population Dynamics",
-    "section": "Reverend Thomas Malthus, 1766–1834",
-    "text": "Reverend Thomas Malthus, 1766–1834"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
-    "title": "Applied Population Dynamics",
-    "section": "Relevance To Wildlife Biology and Management",
-    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\nThere is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.\n\n\n\nHence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
-    "title": "Applied Population Dynamics",
-    "section": "Aldo Leopold, Game Management 1946",
-    "text": "Aldo Leopold, Game Management 1946\n\n\n\nEvery wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an “ideal” environment, would increase at this rate:\n\n\n\n\n\nAt End of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\n\n\n\n\nThe maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "So What Is Geometric Growth?",
-    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\n\nOr, for one time step:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#example-n_t1-n_t-n_t-r",
-    "title": "Applied Population Dynamics",
-    "section": "Example, \\(N_{t+1} = N_t + N_t r\\)",
-    "text": "Example, \\(N_{t+1} = N_t + N_t r\\)"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes-n_t1-n_t-n_t-r",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes-n_t1-n_t-n_t-r",
-    "title": "Applied Population Dynamics",
-    "section": "Three Possible Outcomes, \\(N_{t+1} = N_t + N_t r\\)",
-    "text": "Three Possible Outcomes, \\(N_{t+1} = N_t + N_t r\\)\n\n\nIf \\(-1 \\leq r &lt; 0\\) population goes extinct\n\n\nIf \\(r = 0\\) population is stable\n\n\nIf \\(r &gt; 0\\) population grows to \\(\\infty\\)"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nFundamental equation of population ecology\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nIgnore immigration and emigration \\[N_{t+1} = N_t + B_t - D_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance in year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(D\\)\n=\nDeaths"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r} \\\\\n                      \\quad  &= \\quad  \\lambda\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Density Independent Growth",
-    "text": "Density Independent Growth\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\)) is not affected b population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "title": "Applied Population Dynamics",
-    "section": "Model Assumptions",
-    "text": "Model Assumptions\nPopulation is geographically closed\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\n-Constant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "title": "Applied Population Dynamics",
-    "section": "Can We Apply The Model To Real Data?",
-    "text": "Can We Apply The Model To Real Data?\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\nPossibly for describing some populations during short time periods, e.g. invasive species\nAlso useful as foundation for more realistic models"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "title": "Applied Population Dynamics",
-    "section": "Looking Ahead",
-    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\nOur world in data"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\nRead pages 15–19 in Conroy and Carroll\n\nBe prepared for a quiz"
-  },
-  {
-    "objectID": "APD-syllabus.html",
-    "href": "APD-syllabus.html",
-    "title": "Course Description",
-    "section": "",
-    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\nOffice hours:\nMon 11:00–12:00\n\nMon 2:30–3:30\nThur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Foundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required."
-  },
-  {
-    "objectID": "index.html#course-objectives-and-learning-outcomes",
-    "href": "index.html#course-objectives-and-learning-outcomes",
-    "title": "Applied Population Dynamics",
-    "section": "Course Objectives and Learning Outcomes",
-    "text": "Course Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation."
-  },
-  {
-    "objectID": "index.html#course-materials",
-    "href": "index.html#course-materials",
-    "title": "Applied Population Dynamics",
-    "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3"
   }
 ]

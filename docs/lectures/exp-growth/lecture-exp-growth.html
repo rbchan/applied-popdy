@@ -131,7 +131,7 @@
 
 <section>
 
-<section id="section" class="slide level2" data-content-align="center" style="font-size: 180%;" data-background-image="figs/doves.jpg" data-background-opacity="0.2">
+<section id="section" class="slide level2" data-content-align="center" style="font-size: 170%;" data-background-image="figs/doves.jpg" data-background-opacity="0.2">
 <h2></h2>
 <center>
 <p>Geometric and Exponential Growth</p>
@@ -194,20 +194,20 @@ WILD 5700/7700</p>
 <p><br></p>
 <p>Charles Darwin <em>Origin of Species</em></p>
 <blockquote>
-<p>There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.</p>
+<p>“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”</p>
 </blockquote>
 <div class="fragment">
 <blockquote>
-<p>Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…</p>
+<p>“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”</p>
 </blockquote>
 </div>
 </section>
-<section id="aldo-leopold-game-management-1946" class="slide level2" style="font-size: 80%;">
+<section id="aldo-leopold-game-management-1946" class="slide level2" style="font-size: 70%;">
 <h2>Aldo Leopold, Game Management 1946</h2>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:85%;">
 <blockquote>
-<p>Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an “ideal” environment, would increase at this rate:</p>
+<p>“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an”ideal” environment, would increase at this rate:”</p>
 </blockquote>
 <center>
 <table class="caption-top">
@@ -247,10 +247,10 @@ WILD 5700/7700</p>
 </center>
 <div class="fragment">
 <blockquote>
-<p>The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.</p>
+<p>“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”</p>
 </blockquote>
 </div>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:15%;">
 <p><img data-src="figs/Leopold1.png" style="width:100.0%"></p>
 <p><img data-src="figs/nobo.jpg" style="width:100.0%"></p>
 </div></div>
@@ -307,19 +307,20 @@ WILD 5700/7700</p>
 <!--       <11>![](figs/growth10) \\ -->
 <!--     ::: -->
 <!--   ::: -->
-</section>
+
+<img data-src="lecture-exp-growth_files/figure-revealjs/unnamed-chunk-1-.gif" width="960" class="r-stretch"></section>
 <section id="three-possible-outcomes-n_t1-n_t-n_t-r" class="slide level2">
 <h2>Three Possible Outcomes, <span class="math inline">\(N_{t+1} = N_t + N_t r\)</span></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>If <span class="math inline">\(-1 \leq r &lt; 0\)</span> population goes extinct</p>
-<p><img data-src="figs/rl0.png"></p>
+<p><embed data-src="figs/rl0.pdf"></p>
 </div><div class="column" style="width:50%;">
 <p>If <span class="math inline">\(r = 0\)</span> population is stable</p>
-<p><img data-src="figs/r0.png"></p>
+<p><embed data-src="figs/r0.pdf"></p>
 </div><div class="column" style="width:50%;">
 <p>If <span class="math inline">\(r &gt; 0\)</span> population grows to <span class="math inline">\(\infty\)</span></p>
-<p><img data-src="figs/rg0.png"></p>
+<p><embed data-src="figs/rg0.pdf"></p>
 </div></div>
 </section></section>
 <section>
@@ -680,6 +681,44 @@ WILD 5700/7700</p>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
