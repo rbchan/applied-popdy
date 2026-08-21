@@ -559,9 +559,11 @@ $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 **Step 2**: Write in terms of \textit{per capita} birth and death *rates*
 
 $$
-\frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\ 
-                      \quad  &= \quad  1 + r} \\
+\begin{aligned}
+\frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\
+                      \quad  &= \quad  1 + r \\
                       \quad  &= \quad  \lambda
+\end{aligned}
 $$
 
 **Step 3**: Geometric growth
@@ -578,7 +580,9 @@ Note that $\lambda = N_{t+1}/N_t = 1+r$.
 
 ## Density Independent Growth
 
-**Geometric and exponential growth are examples of [density independent]{.alert} growth**.
+<br>
+
+Geometric and exponential growth are examples of [density independent]{.alert} growth.
 
 <br>
   
@@ -593,47 +597,61 @@ population size ($N$).
 
 
 ## Model Assumptions
-  
-Population is geographically closed
 
-- No immigration
-- No emigration
-    
-Reproduction occurs seasonally (for geometric growth)
 
- -Constant birth rate ($b$) and death rate ($d$)
 
-- No genetic variation among individuals
- 
-- No age- or stage-structure
- 
-- No time lags
-      
-No stochasticity
+<!-- 1. Population is geographically closed. -->
+<!--   i) No immigration -->
+<!--   ii) No emigration -->
+<!-- 2. Reproduction occurs seasonally (for geometric growth) -->
+<!-- 3. Constant birth rate ($b$) and death rate ($d$) -->
+<!--   i) No genetic variation among individuals -->
+<!--   ii) No age- or stage-structure -->
+<!--   iii) No time lags -->
+<!-- 4. No stochasticity -->
+<!--   i) No random variation in birth or death -->
+<!--   ii) No random variation in environmental conditions -->
 
-- No random variation in birth or death 
-- No random variation in environmental conditions
+::: {style="font-size: 80%;"}
 
-  
+::: incremental
+1. Population is geographically closed.
+    i) No immigration
+    ii) No emigration
+2. Reproduction occurs seasonally (for geometric growth)
+3. Constant birth rate ($b$) and death rate ($d$)
+    i) No genetic variation among individuals
+    ii) No age- or stage-structure
+    iii) No time lags
+4. No stochasticity
+    i) No random variation in birth or death
+    ii) No random variation in environmental conditions
+:::
 
+:::
 
 
 ## Can We Apply The Model To Real Data?
+
+::: {style="font-size: 80%;"}
 
 > All models are wrong, but some are useful. (George Box)
   
 Is exponential growth a useful model?
 
-. . .
+<br>
 
-Possibly for describing some populations during short time periods, e.g. invasive species
+::: {.fragment}
+Possibly for describing some populations during short time periods.
 
-Also useful as foundation for more realistic models
+And as foundation for more realistic models.
   
   
-![](figs/python1.jpg){fig-align="center"}
+![](figs/python1.jpg){fig-align="center" width="50%"}
+:::
 
 
+:::
 
 
 
@@ -651,10 +669,11 @@ Also useful as foundation for more realistic models
 Is the human population exhibiting exponential growth?
   
 ![](figs/World-Population-since-10-thousand-BC.png){fig-align="center"
-width="80%"}
+width="70%"}
 
-
+<center>
 [Our world in data](https://ourworldindata.org/world-population-growth)
+</center>
 
 
 

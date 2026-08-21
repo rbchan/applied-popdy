@@ -1020,9 +1020,11 @@ WILD 5700/7700</p>
 <p><strong>Step 1</strong>: Divide both sides by <span class="math inline">\(N_{t}\)</span></p>
 <p><strong>Step 2</strong>: Write in terms of birth and death <em>rates</em></p>
 <p><span class="math display">\[
+\begin{aligned}
 \frac{N_{t+1}}{N_{t}} \quad  &amp;= \quad  1 + b - d \\
-                      \quad  &amp;= \quad  1 + r} \\
+                      \quad  &amp;= \quad  1 + r \\
                       \quad  &amp;= \quad  \lambda
+\end{aligned}
 \]</span></p>
 <p><strong>Step 3</strong>: Geometric growth</p>
 <p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
@@ -1035,7 +1037,8 @@ WILD 5700/7700</p>
 </section>
 <section id="density-independent-growth" class="slide level2">
 <h2>Density Independent Growth</h2>
-<p><strong>Geometric and exponential growth are examples of <span class="alert">density independent</span> growth</strong>.</p>
+<p><br></p>
+<p>Geometric and exponential growth are examples of <span class="alert">density independent</span> growth.</p>
 <p><br></p>
 <p><strong>Definition</strong>: Population growth rate (<span class="math inline">\(r\)</span>) is <em>not</em> affected b population size (<span class="math inline">\(N\)</span>).</p>
 <p><br></p>
@@ -1043,37 +1046,55 @@ WILD 5700/7700</p>
 </section>
 <section id="model-assumptions" class="slide level2">
 <h2>Model Assumptions</h2>
-<p>Population is geographically closed</p>
-<ul>
-<li>No immigration</li>
-<li>No emigration</li>
-</ul>
-<p>Reproduction occurs seasonally (for geometric growth)</p>
-<p>-Constant birth rate (<span class="math inline">\(b\)</span>) and death rate (<span class="math inline">\(d\)</span>)</p>
-<ul>
-<li><p>No genetic variation among individuals</p></li>
-<li><p>No age- or stage-structure</p></li>
-<li><p>No time lags</p></li>
-</ul>
-<p>No stochasticity</p>
-<ul>
-<li>No random variation in birth or death</li>
-<li>No random variation in environmental conditions</li>
-</ul>
+<!-- 1. Population is geographically closed. -->
+<!--   i) No immigration -->
+<!--   ii) No emigration -->
+<!-- 2. Reproduction occurs seasonally (for geometric growth) -->
+<!-- 3. Constant birth rate ($b$) and death rate ($d$) -->
+<!--   i) No genetic variation among individuals -->
+<!--   ii) No age- or stage-structure -->
+<!--   iii) No time lags -->
+<!-- 4. No stochasticity -->
+<!--   i) No random variation in birth or death -->
+<!--   ii) No random variation in environmental conditions -->
+<div style="font-size: 80%;">
+<ol type="1">
+<li class="fragment">Population is geographically closed.
+<ol type="i">
+<li class="fragment">No immigration</li>
+<li class="fragment">No emigration</li>
+</ol></li>
+<li class="fragment">Reproduction occurs seasonally (for geometric growth)</li>
+<li class="fragment">Constant birth rate (<span class="math inline">\(b\)</span>) and death rate (<span class="math inline">\(d\)</span>)
+<ol type="i">
+<li class="fragment">No genetic variation among individuals</li>
+<li class="fragment">No age- or stage-structure</li>
+<li class="fragment">No time lags</li>
+</ol></li>
+<li class="fragment">No stochasticity
+<ol type="i">
+<li class="fragment">No random variation in birth or death</li>
+<li class="fragment">No random variation in environmental conditions</li>
+</ol></li>
+</ol>
+</div>
 </section>
 <section id="can-we-apply-the-model-to-real-data" class="slide level2">
 <h2>Can We Apply The Model To Real Data?</h2>
+<div style="font-size: 80%;">
 <blockquote>
 <p>All models are wrong, but some are useful. (George Box)</p>
 </blockquote>
 <p>Is exponential growth a useful model?</p>
+<p><br></p>
 <div class="fragment">
-<p>Possibly for describing some populations during short time periods, e.g.&nbsp;invasive species</p>
-<p>Also useful as foundation for more realistic models</p>
+<p>Possibly for describing some populations during short time periods.</p>
+<p>And as foundation for more realistic models.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figs/python1.jpg" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="figs/python1.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
+</div>
 </div>
 </div>
 </section>
@@ -1081,7 +1102,9 @@ WILD 5700/7700</p>
 <h2>Looking Ahead</h2>
 <p>Is the human population exhibiting exponential growth?</p>
 
-<img data-src="figs/World-Population-since-10-thousand-BC.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><a href="https://ourworldindata.org/world-population-growth">Our world in data</a></p>
+<img data-src="figs/World-Population-since-10-thousand-BC.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><center>
+<a href="https://ourworldindata.org/world-population-growth">Our world in data</a>
+</center>
 </section>
 <section id="assignment" class="slide level2" style="font-size: 150%;">
 <h2>Assignment</h2>

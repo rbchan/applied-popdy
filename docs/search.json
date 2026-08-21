@@ -368,35 +368,35 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
     "title": "Applied Population Dynamics",
     "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r} \\\\\n                      \\quad  &= \\quad  \\lambda\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
+    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r \\\\\n                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
     "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
     "title": "Applied Population Dynamics",
     "section": "Density Independent Growth",
-    "text": "Density Independent Growth\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\)) is not affected b population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
+    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\)) is not affected b population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
     "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
     "title": "Applied Population Dynamics",
     "section": "Model Assumptions",
-    "text": "Model Assumptions\nPopulation is geographically closed\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\n-Constant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
+    "text": "Model Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation is geographically closed.\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\nConstant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
     "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
     "title": "Applied Population Dynamics",
     "section": "Can We Apply The Model To Real Data?",
-    "text": "Can We Apply The Model To Real Data?\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\nPossibly for describing some populations during short time periods, e.g. invasive species\nAlso useful as foundation for more realistic models"
+    "text": "Can We Apply The Model To Real Data?\n\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\n\nPossibly for describing some populations during short time periods.\nAnd as foundation for more realistic models."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
     "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
     "title": "Applied Population Dynamics",
     "section": "Looking Ahead",
-    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\nOur world in data"
+    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\n\nOur world in data"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
