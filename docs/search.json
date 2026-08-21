@@ -529,7 +529,7 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
     "title": "Applied Population Dynamics",
     "section": "So What Is Geometric Growth?",
-    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\n\nOr, for one time step:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
+    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\nOr, for one time step:\n\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#example",
@@ -649,5 +649,19 @@
     "title": "Applied Population Dynamics",
     "section": "Course materials",
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-1",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example-1",
+    "title": "Applied Population Dynamics",
+    "section": "Example",
+    "text": "Example\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndog\na\nb\n\n\n\n\nro\na\nc\n\n\n\n\n\n\n\ndog\na\nb\n\n\n\n\nro\na\nc\n\n\nwo\nc\nq"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example-2",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example-2",
+    "title": "Applied Population Dynamics",
+    "section": "Example",
+    "text": "Example\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\ndog\na\nb\n\n\n\n\nro\na\nc\n\n\nwo\nc\nq"
   }
 ]

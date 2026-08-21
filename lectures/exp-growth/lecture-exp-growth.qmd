@@ -169,9 +169,9 @@ For an arbitrary time step ($t$):
 $$N_t = N_0(1+r)^t$$
 
 
-::: {.fragment}
 Or, for one time step:
 
+::: {.fragment .highlight-red}
 $$N_{t+1} = N_t + N_tr$$
 :::
 
@@ -260,40 +260,84 @@ for (i in 0:max_t) {
 }
 ```
 
-## {auto-animate=true}
+## Example
+
+$$N_{t+1} = N_t + N_t r$$
 
 ::: {.columns}
 ::: {.column width="50%"}
+::: {.r-stack}
 
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-1.png)
 
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-2.png)
 :::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-3.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-4.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-5.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-6.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-7.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-8.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-9.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-10.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-11.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-12.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-13.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-14.png)
+:::
+::: {.fragment .fade-in-then-out}
+![](lecture-exp-growth_files/figure-revealjs/geo-example-15.png)
+:::
+
+:::
+
+:::
+
 ::: {.column width="50%"}
+
+::: {.r-stack}
 
   dog | a | b 
   --- | - | --
   ro  | a | c
-:::
-:::
 
-
-## {auto-animate=true}
-
-::: {.columns}
-::: {.column width="50%"}
-
-![](lecture-exp-growth_files/figure-revealjs/geo-example-2.png)
-
-:::
-::: {.column width="50%"}
-
+::: {.fragment}
   dog | a | b 
   --- | - | --
   ro  | a | c
   wo  | c | q
+:::
+
+
+:::
 
 :::
 :::
+
 
 ## Three Possible Outcomes
 
