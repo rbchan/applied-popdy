@@ -521,58 +521,76 @@ $r > 0$ <br> population grows to $\infty$
 
 ## From [BIDE]{.highlight-red} To Geometric Growth
 
-**Fundamental equation of population ecology**
+<!-- **Fundamental equation** -->
 
 $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 
-::: {.plain}
 
 |         |   |                       |
 |---------|---|-----------------------|
-|  $N_t$  | = | Abundance at year $t$ |
-|  $B$    | = | Births |
-|  $I$    | = | Immigrations |
-|  $D$    | = | Deaths |
-|  $E$    | = | Emigrations |
+|	$N_t$	| = | Abundance		at	year	$t$ |
+|	$B$		| = | Births		|
+|	$I$		| = | Immigrations	|
+|	$D$		| = | Deaths		|
+|	$E$		| = | Emigrations	|
+|	| |		|
 
+
+
+
+<!-- ## From [BIDE]{.highlight-red} To Geometric Growth -->
+
+<!--   Ignore immigration and emigration -->
+<!--   $$N_{t+1} = N_t + B_t - D_t$$ -->
+
+<!--   ------- --- ----------------------- -->
+<!--    $N_t$   =  Abundance in year $t$ -->
+<!--     $B$    =  Births -->
+<!--     $D$    =  Deaths -->
+<!--   ------- --- ----------------------- -->
+
+
+
+## From [BIDE]{.highlight-red} To Geometric Growth
+
+
+::: {style="font-size: 60%;"}
+
+**Step 1**: Ignore immigration and emigration
+
+$$ N_{t+1} = N_t + B_t - D_t $$
+
+::: {.fragment}
+**Step 2**: Divide both sides by $N_{t}$.
+
+$$ \frac{N_{t+1}}{N_t} = \frac{N_t + B_t - D_t}{N_t}$$
 :::
 
-
-
-## From [BIDE]{.highlight-red} To Geometric Growth
-
-  Ignore immigration and emigration
-  $$N_{t+1} = N_t + B_t - D_t$$
-
-  ------- --- -----------------------
-   $N_t$   =  Abundance in year $t$
-    $B$    =  Births
-    $D$    =  Deaths
-  ------- --- -----------------------
-
-
-
-## From [BIDE]{.highlight-red} To Geometric Growth
-
-**Step 1**: Divide both sides by $N_{t}$
-
-**Step 2**: Write in terms of \textit{per capita} birth and death *rates*
+::: {.fragment}
+**Step 3**: Write in terms of \textit{per capita} birth and death
+*rates*, with $r=b-d$.
 
 $$
 \begin{aligned}
 \frac{N_{t+1}}{N_{t}} \quad  &= \quad  1 + b - d \\
-                      \quad  &= \quad  1 + r \\
-                      \quad  &= \quad  \lambda
+                      \quad  &= \quad  1 + r %\\
+%                      \quad  &= \quad  \lambda
 \end{aligned}
 $$
+:::
 
-**Step 3**: Geometric growth
+::: {.fragment}
+**Step 4**: Multiply through by $N_t$ to get the solution:
 
 $$N_{t+1} = N_t + N_tr$$
+:::
 
-Note that $\lambda = N_{t+1}/N_t = 1+r$.
+::: {.callout-note .fragment}
+  The finite rate of increase is defined as: $\lambda = N_{t+1}/N_t$,
+  which for geometric growth is equivalent to $\lambda = 1+r$. 
+:::
 
-
+:::
 
 
 # Exponential Growth
@@ -582,12 +600,13 @@ Note that $\lambda = N_{t+1}/N_t = 1+r$.
 
 <br>
 
-Geometric and exponential growth are examples of [density independent]{.alert} growth.
+Geometric and exponential growth are examples of 
+[density independent]{style="color: red;"} growth.
 
 <br>
   
-**Definition**: Population growth rate ($r$) is *not* affected b
-population size ($N$).
+**Definition**: Population growth rate ($r$ or $\lambda$) is *not*
+affected by population size ($N$).
 
 <br>
   

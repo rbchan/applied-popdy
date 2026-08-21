@@ -354,28 +354,21 @@
     "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
     "title": "Applied Population Dynamics",
     "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nFundamental equation of population ecology\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
+    "text": "From BIDE To Geometric Growth\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
     "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
     "title": "Applied Population Dynamics",
     "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nIgnore immigration and emigration \\[N_{t+1} = N_t + B_t - D_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance in year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(D\\)\n=\nDeaths"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-2",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\nStep 1: Divide both sides by \\(N_{t}\\)\nStep 2: Write in terms of birth and death rates\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r \\\\\n                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\nStep 3: Geometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nNote that \\(\\lambda = N_{t+1}/N_t = 1+r\\)."
+    "text": "From BIDE To Geometric Growth\n\nStep 1: Ignore immigration and emigration\n\\[ N_{t+1} = N_t + B_t - D_t \\]\n\nStep 2: Divide both sides by \\(N_{t}\\).\n\\[ \\frac{N_{t+1}}{N_t} = \\frac{N_t + B_t - D_t}{N_t}\\]\n\n\nStep 3: Write in terms of birth and death rates, with \\(r=b-d\\).\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r %\\\\\n%                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\n\n\nStep 4: Multiply through by \\(N_t\\) to get the solution:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe finite rate of increase is defined as: \\(\\lambda = N_{t+1}/N_t\\), which for geometric growth is equivalent to \\(\\lambda = 1+r\\)."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
     "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
     "title": "Applied Population Dynamics",
     "section": "Density Independent Growth",
-    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\)) is not affected b population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
+    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\) or \\(\\lambda\\)) is not affected by population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",

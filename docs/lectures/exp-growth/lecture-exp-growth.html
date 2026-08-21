@@ -958,9 +958,8 @@ WILD 5700/7700</p>
 </section>
 <section id="from-bide-to-geometric-growth" class="slide level2">
 <h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
-<p><strong>Fundamental equation of population ecology</strong></p>
+<!-- **Fundamental equation** -->
 <p><span class="math display">\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\]</span></p>
-<div class="plain">
 <table class="caption-top">
 <tbody>
 <tr class="odd">
@@ -988,47 +987,61 @@ WILD 5700/7700</p>
 <td>=</td>
 <td>Emigrations</td>
 </tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-</div>
+<!-- ## From [BIDE]{.highlight-red} To Geometric Growth -->
+<!--   Ignore immigration and emigration -->
+<!--   $$N_{t+1} = N_t + B_t - D_t$$ -->
+<!--   ------- --- ----------------------- -->
+<!--    $N_t$   =  Abundance in year $t$ -->
+<!--     $B$    =  Births -->
+<!--     $D$    =  Deaths -->
+<!--   ------- --- ----------------------- -->
 </section>
 <section id="from-bide-to-geometric-growth-1" class="slide level2">
 <h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
-<p>Ignore immigration and emigration <span class="math display">\[N_{t+1} = N_t + B_t - D_t\]</span></p>
-<table class="caption-top">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(N_t\)</span></td>
-<td style="text-align: center;">=</td>
-<td style="text-align: left;">Abundance in year <span class="math inline">\(t\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(B\)</span></td>
-<td style="text-align: center;">=</td>
-<td style="text-align: left;">Births</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(D\)</span></td>
-<td style="text-align: center;">=</td>
-<td style="text-align: left;">Deaths</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="from-bide-to-geometric-growth-2" class="slide level2">
-<h2>From <span class="highlight-red">BIDE</span> To Geometric Growth</h2>
-<p><strong>Step 1</strong>: Divide both sides by <span class="math inline">\(N_{t}\)</span></p>
-<p><strong>Step 2</strong>: Write in terms of birth and death <em>rates</em></p>
+<div style="font-size: 60%;">
+<p><strong>Step 1</strong>: Ignore immigration and emigration</p>
+<p><span class="math display">\[ N_{t+1} = N_t + B_t - D_t \]</span></p>
+<div class="fragment">
+<p><strong>Step 2</strong>: Divide both sides by <span class="math inline">\(N_{t}\)</span>.</p>
+<p><span class="math display">\[ \frac{N_{t+1}}{N_t} = \frac{N_t + B_t - D_t}{N_t}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Step 3</strong>: Write in terms of birth and death <em>rates</em>, with <span class="math inline">\(r=b-d\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{N_{t+1}}{N_{t}} \quad  &amp;= \quad  1 + b - d \\
-                      \quad  &amp;= \quad  1 + r \\
-                      \quad  &amp;= \quad  \lambda
+                      \quad  &amp;= \quad  1 + r %\\
+%                      \quad  &amp;= \quad  \lambda
 \end{aligned}
 \]</span></p>
-<p><strong>Step 3</strong>: Geometric growth</p>
+</div>
+<div class="fragment">
+<p><strong>Step 4</strong>: Multiply through by <span class="math inline">\(N_t\)</span> to get the solution:</p>
 <p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
-<p>Note that <span class="math inline">\(\lambda = N_{t+1}/N_t = 1+r\)</span>.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>The finite rate of increase is defined as: <span class="math inline">\(\lambda = N_{t+1}/N_t\)</span>, which for geometric growth is equivalent to <span class="math inline">\(\lambda = 1+r\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="exponential-growth" class="title-slide slide level1 center">
@@ -1038,9 +1051,9 @@ WILD 5700/7700</p>
 <section id="density-independent-growth" class="slide level2">
 <h2>Density Independent Growth</h2>
 <p><br></p>
-<p>Geometric and exponential growth are examples of <span class="alert">density independent</span> growth.</p>
+<p>Geometric and exponential growth are examples of <span style="color: red;">density independent</span> growth.</p>
 <p><br></p>
-<p><strong>Definition</strong>: Population growth rate (<span class="math inline">\(r\)</span>) is <em>not</em> affected b population size (<span class="math inline">\(N\)</span>).</p>
+<p><strong>Definition</strong>: Population growth rate (<span class="math inline">\(r\)</span> or <span class="math inline">\(\lambda\)</span>) is <em>not</em> affected by population size (<span class="math inline">\(N\)</span>).</p>
 <p><br></p>
 <p><strong>Implications</strong>: Resources are unlimited and there is no carrying capacity!</p>
 </section>
