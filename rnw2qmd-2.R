@@ -9,7 +9,7 @@ rnw2qmd <- function(input_file, output_file = NULL) {
   
   ## 1. Strip the LaTeX preamble up to \begin{document}
   ## Inject a basic Quarto Revealjs YAML header
-  yaml_header <- "---\ntitle: \"Converted Presentation\"\nformat:\n  revealjs:\n    theme: default\n    pagetitle: 'Dog'\n    slide-number: true\nlang: en\n---\n\n"
+  yaml_header <- "---\n## title: \"Converted Presentation\"\nformat:\n  revealjs:\n    theme: default\n    pagetitle: 'Dog'\n    slide-number: true\nlang: en\n---\n\n"
   if (grepl("\\\\begin\\{document\\}", content)) {
     content <- sub("(?s).*?\\\\begin\\{document\\}", yaml_header, content, perl = TRUE)
   } else {
@@ -57,6 +57,10 @@ rnw2qmd <- function(input_file, output_file = NULL) {
   content <- gsub("\\\\vfill", "", content)
   content <- gsub("\\\\hfill", "", content)
   content <- gsub("\\\\pause", "", content)
+  content <- gsub("\\\\huge", "", content)
+  content <- gsub("\\\\Large", "", content)
+  content <- gsub("\\\\large", "", content)
+  content <- gsub("\\\\normalsize", "", content)
   content <- gsub("\\\\begin\\{center\\}", "<center>", content)
   content <- gsub("\\\\end\\{center\\}", "</center>", content)
   content <- gsub("\\\\begin\\{align*\\}", "$$", content)

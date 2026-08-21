@@ -1,0 +1,148 @@
+::::: frame
+::: center
+Logistic Population Growth \
+:::
+
+::: adjustwidth
+-1cm-1cm
+
+------------------------------------------------------------------------
+:::
+:::::
+
+# Background
+
+::: frame
+### Learning objectives
+
+The equation for logistic growth in discrete time\
+The definition of density-dependent growth\
+Basic properties of the model\
+Strange behavior of the (discrete time) model, such as damped
+oscillations and chaos\
+:::
+
+# Logistic growth
+
+::: frame
+### From Geometric to Logistic Growth
+
+**Geometric growth** $$N_{t+1} = N_t + N_tr$$ **Logistic growth**
+$$N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K}\right)$$ where\
+
+- $r_{max}$ is the growth rate when $N_t$ is close to 0.\
+
+- $K$ is the carrying capacity
+:::
+
+::: frame
+### Density-dependent growth
+
+Logistic growth is an example of **density-dependent growth**\
+\
+\
+:::
+
+:::: frame
+### Graphical depiction
+
+::: center
+:::
+::::
+
+:::: frame
+### Growth rate ($\lambda_t = N_{t+1}/N_t$)
+
+::: center
+![image](figure/lr1-1.pdf){width="\\textwidth"}\
+![image](figure/lambda-1.pdf){width="\\textwidth"}
+:::
+::::
+
+:::: frame
+### Growth ($\Delta_t=N_{t+1}-N_t$)
+
+::: center
+![image](figure/lr2-1.pdf){width="\\textwidth"}\
+![image](figure/delta-1.pdf){width="\\textwidth"}
+:::
+::::
+
+:::: frame
+### Growth ($\Delta_t=N_{t+1}-N_t$) as a function of $N$
+
+::: center
+![image](figure/delta-N-1.pdf){width="\\textwidth"}
+:::
+::::
+
+:::: frame
+### What happens when we change $r_{max}$?
+
+::: center
+:::
+::::
+
+::::: frame
+### Definitions
+
+::: block
+Overcompensation Density-dependent response in which populations over-
+or under-shoot carrying capacity rather than approach it gradually
+:::
+
+::: block
+Chaos Highly variable deterministic dynamics that are extremely
+sensitive to small changes in parameters
+:::
+:::::
+
+::: frame
+### Assumptions of basic model
+
+- $K$ and $r_{max}$ are constant
+
+- No sex or age effects or other sources of individual heterogeneity
+
+- No time lags
+
+- No stochasticity
+:::
+
+::: frame
+### Does logistic growth occur in nature?
+
+Fruit fly (*Drosophila melanogaster*) in the lab
+![image](figs/logistic-drosophila.png){width="60%"}
+:::
+
+::: frame
+### Does logistic growth occur in nature?
+
+Ibex (*Capra ibex*) in Switzerland [^1]
+
+.\
+![image](figs/logistic-ibex.png){width="60%"}\
+:::
+
+# Summary
+
+::: frame
+### Summary and assignment
+
+**Summary**
+
+- Logistic growth is a form of density-dependent growth
+
+- Growth rate ($\lambda_t=N_{t+1}/N_t$) declines as $N$ approaches $K$
+
+- Growth ($\Delta_t=N_{t+1}-N_t$) peaks at $K/2$ (the inflection point)
+
+- The model doesn't include birth, mortality, and movement processes,
+  but it can be derived from density-dependent birth and death rates.
+
+- But it does allow for complex dynamics that resemble patterns seen in
+  nature.
+:::
+
+[^1]: Data from Sæther et al. (2002). Figure from Krebs (2014)\

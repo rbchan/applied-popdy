@@ -1,0 +1,563 @@
+---
+title: "Converted Presentation"
+format:
+  revealjs:
+    theme: default
+    pagetitle: 'Dog'
+    slide-number: true
+lang: en
+---
+
+
+
+
+\setlength\fboxsep{0pt}
+
+
+{
+\usebackgroundtemplate{
+  \parbox[][]![](\paperwidth){
+    ![](figs/turtles})
+  }
+[]
+  
+  <center>
+    {\huge Logistic Population Growth } \\
+  </center>
+  \begin{adjustwidth}{-1cm}{-1cm}
+    \rule![](\paperwidth){0.5pt}
+  \end{adjustwidth}
+
+}
+
+
+
+
+
+# Background
+
+
+
+[]
+  ## Learning objectives
+  \Large
+  The equation for logistic growth in discrete time \\
+  
+  
+  The definition of density-dependent growth \\
+  
+  
+  Basic properties of the model \\
+  
+  
+  Strange behavior of the (discrete time) model, such as damped oscillations and chaos \\
+
+
+
+
+# Logistic growth
+
+
+
+  ## From Geometric to Logistic Growth
+  \large
+  {\bf Geometric growth}
+  \[]
+  
+  {\bf Logistic growth}
+  \[]
+  where \\
+  
+    * $r_{max}$ is the growth rate when $N_t$ is close to 0. \\
+    * $K$ is the carrying capacity
+  
+
+
+
+
+
+
+
+  ## Density-dependent growth
+  \large
+  Logistic growth is an example of {\bf density-dependent
+    growth} \\
+  
+  \visible<2->{** Definition: ** Population growth rate %($\lambda$)
+    {\it is}  affected by population size ($N$).} \\
+  
+  \visible<3->{** Implications **:  Resources are limited and there
+    is a carrying capacity.} \\
+
+
+
+
+
+[]
+  ## Graphical depiction
+```{r, geomVlogistic,echo=FALSE}
+#Year <- 2000:3000
+Time <- 0:100
+T <- length(Time)
+rmax <- .1
+K <- 50
+Ng <- Nl <- rep(0, T)
+Ng[] <- Nl[] <- 2
+for(t in 2:T) {
+    Ng[] <- Ng[] + Ng[]*rmax
+    Nl[] <- Nl[] + Nl[]*rmax*(1 - Nl[]/K)
+}
+@
+```{r, geom,include=FALSE,echo=FALSE}
+plot(Time, Ng, lwd=5, type="l", ylim=c(0, 100), cex.lab=1.5,
+     xlab="Time (t)", ylab="Population size (N)")
+legend(50, 100, c("Geometric growth", ""), lty=1, col=c("black", NA), lwd=4)
+@
+
+```{r, geom-logistic,include=FALSE,echo=FALSE}
+plot(Time, Ng, lwd=5, type="l", ylim=c(0, 100), cex.lab=1.5,
+     xlab="Time (t)", ylab="Population size (N)")
+lines(Time, Nl, lwd=4, col="purple")
+legend(50, 100, c("Geometric growth", "Logistic growth"), lty=1,
+       col=c("black","purple"), lwd=4)
+@
+
+<center>
+  \only<1 | handout:0>{![](figure/geom-1})
+  \only<2>{![](figure/geom-logistic-1})
+</center>
+
+
+
+
+
+
+
+
+
+[]
+  ## Growth rate ($\lambda_t = N_{t+1/N_t$)}
+```{r, lr1,include=FALSE,echo=FALSE,fig.width=12,fig.height=4}
+par(mai=c(0.9,1,0.3,0.3))
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 60), cex.lab=1.9,
+     xlab="Time (t)", ylab="Population size (N)", col="purple")
+points(Time[], Nl[],
+       pch=16, cex=5, col="orange")
+text(Time[]+5, Nl[],
+     labels="Inflection point (K/2)", pos=4, cex=1.5)
+@
+```{r, lambda,include=FALSE,echo=FALSE,fig.width=12,fig.height=4}
+lambda <- Nl[]/Nl[]
+par(mai=c(0.9,1,0.3,0.3))
+plot(Time[], lambda, lwd=4, type="l", cex.lab=1.9,
+     xlab="Time (t)", col="blue",
+     ylab=expression(paste("Growth rate: ", "(", lambda, "=", N[]/N[], ")")))
+@
+<center>
+  ![](figure/lr1-1) \\ 
+  ![](figure/lambda-1)
+</center>
+
+
+
+
+
+
+
+
+[]
+  ## Growth ($\Delta_t=N_{t+1-N_t$)}
+```{r, lr2,include=FALSE,echo=FALSE,fig.width=12,fig.height=4}
+par(mai=c(0.9,1,0.3,0.3))
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 60), cex.lab=1.9,
+     xlab="Time (t)", ylab="Population size (N)", col="purple")
+points(Time[], Nl[],
+       pch=16, cex=5, col="orange")
+text(Time[]+5, Nl[],
+     labels="Inflection point (K/2)", pos=4, cex=1.5)
+@
+```{r, delta,include=FALSE,echo=FALSE,fig.width=12,fig.height=4}
+delta <- Nl[] - Nl[]
+par(mai=c(0.9,1,0.3,0.3))
+plot(Time[], delta, lwd=4, type="l", cex.lab=1.9,
+     xlab="Time (t)", col="turquoise4",
+     ylab=expression(paste("Growth: ", "(", Delta, "=", N[]-N[], ")")))
+@
+<center>
+  ![](figure/lr2-1) \\ 
+  ![](figure/delta-1)
+</center>
+
+
+
+
+[]
+  ## Growth ($\Delta_t=N_{t+1-N_t$) as a function of $N$}
+```{r, delta-N,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Nl[], delta, lwd=4, type="l", cex.lab=1.2,
+     xlab="Population size (N)",
+     ylab=expression(paste("Growth: ", "(", Delta, "=", N[]-N[], ")")))
+abline(h=0, col="gray")
+abline(v=K/2, lty=3, lwd=2)
+text(K/2, 0.05, "Inflection point (K/2)", pos=4)
+@
+<center>
+  ![](figure/delta-N-1)
+</center>
+
+
+
+
+
+
+
+[]
+  ## What happens when we change $r_{max$?}
+```{r, echo=FALSE}
+Nl4 <- Nl3 <- Nl2 <- Nl
+Nl4[] <- Nl3[] <- Nl2[] <- 2
+for(t in 2:T) {
+    Nl2[] <- Nl2[] + Nl2[]*0.5*(1-Nl2[]/K)
+    Nl3[] <- Nl3[] + Nl3[]*2.0*(1-Nl3[]/K)
+    Nl4[] <- Nl4[] + Nl4[]*3.0*(1-Nl4[]/K)
+}
+@
+```{r, Nl,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 100), cex.lab=1.3,
+     xlab="Time (t)", ylab="Population size (N)", col="purple")
+legend(0, 100, c("rmax=0.1", "", "", ""),
+       lwd=4, col=c("purple", NA, NA, NA))
+@
+```{r, Nl2,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 100), cex.lab=1.3,
+     xlab="Time (t)", ylab="Population size (N)", col="purple")
+lines(Time, Nl2, lwd=4, col="blue")
+legend(0, 100, c("rmax=0.1", "rmax=0.5", "", ""),
+       lwd=4, col=c("purple", "blue", NA, NA))
+@
+```{r, Nl3,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 100), cex.lab=1.3,
+     xlab="Time (t)", ylab="Population size (N)", col="purple",
+     main="Damped oscillation")
+lines(Time, Nl2, lwd=4, col="blue")
+lines(Time, Nl3, lwd=4, col="orange")
+legend(0, 100, c("rmax=0.1", "rmax=0.5", "rmax=2.0", ""),
+       lwd=4, col=c("purple", "blue", "orange", NA))
+@
+```{r, Nl4,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Time, Nl, lwd=4, type="l", ylim=c(0, 100), cex.lab=1.3,
+     xlab="Time (t)", ylab="Population size (N)", col="purple",
+     main="Chaos")
+lines(Time, Nl2, lwd=4, col="blue")
+lines(Time, Nl3, lwd=4, col="orange")
+lines(Time, Nl4, lwd=4, col="gray")
+legend(0, 100, c("rmax=0.1", "rmax=0.5", "rmax=2.0", "rmax=3.0"),
+       lwd=4, col=c("purple", "blue", "orange", "gray"))
+@
+<center>
+  \only<1|handout:0>{![](figure/Nl-1})
+  \only<2|handout:0>{![](figure/Nl2-1})
+  \only<3|handout:0>{![](figure/Nl3-1})
+  \only<4>{![](figure/Nl4-1})
+</center>
+
+
+
+
+
+
+
+  ## Definitions
+  \begin{block}{Overcompensation}
+    Density-dependent response in which populations over- or
+    under-shoot carrying capacity rather than approach it gradually
+  \end{block}
+  
+  \begin{block}{Chaos}
+    Highly variable deterministic dynamics that are extremely
+    sensitive to small changes in parameters
+  \end{block}
+
+
+
+
+
+
+
+%
+%  ## Allee effects%
+%
+%
+
+
+
+
+
+%# Assumptions
+
+
+  ## Assumptions of basic model
+  \Large
+  
+    * $K$ and $r_{max}$ are constant
+    * No sex or age effects or other sources of individual heterogeneity
+    * No time lags
+    * No stochasticity
+%    * Crowding affects all members of the population equally
+  
+
+
+
+
+
+%% This section is ignored for now
+\begin{comment}
+
+# Population Cycles
+
+
+
+
+
+
+
+  ## Population cycles
+  \centering
+  ![](figs/Lemmus_Lemmus}) \par
+
+
+
+
+
+  ## Population cycles
+  {\centering \bf Voles and Lemmings \par}
+  ![](figs/vole_lemming_cycles_Stenseth99) \par
+
+
+
+
+
+  ## Population cycles
+  {\centering \bf Insects, voles, and grouse \par}
+  ![](figs/cyclic_populations) \par
+
+
+
+
+
+  ## Real-world population cycles
+  {\centering \bf Soay sheep \par}
+  <center>
+    ![](../cyclesI/figs/Soay_sheep_Grenfell92)
+    ![](figs/Soay_sheep_lamb})
+  </center>
+
+
+
+
+
+
+
+%\subsection{Time lags}
+
+
+  ## Population cycles -- Time lags
+  {\bf Logistic growth with time lag}
+  \[]
+  where \\
+  
+    * $r_{max}$ is the growth rate when $N_t$ is close to 0. \\
+    * $K$ is the carrying capacity
+    * $lag$ is an integer (0,1,2,\dots) used to reference earlier
+      time point
+  
+
+
+
+
+[]
+  ## Time lags
+```{r, Nl5,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+Nl5 <- Nl
+Nl5[] <- 2
+Nl5[] <- 3
+Nl5[] <- 4
+for(t in 4:T) {
+    Nl5[] <- Nl5[] + Nl5[]*1.1*(1-Nl5[]/K)
+}
+plot(Nl5, type="l", xlab="Time (t)", ylab="Population size (N)",
+     cex.lab=1.3, panel.first=abline(h=K, col="blue", lty=2),
+     col="darkslategray3",
+     lwd=4, main="r=1.1, K=50, lag=2")
+@
+<center>
+  ![](figure/Nl5-1)
+</center>
+
+
+
+%\subsection{Cyclic carrying capacity}
+
+
+
+  ## Population cycles -- cyclic carrying capacity
+  {\bf Carrying capacity changes every year}
+  \begin{gather*}
+    K_t = k_0 + k_1\cos\left(\frac{2 \pi t}{c}\right) \\
+    \uncover<2>{N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K_t}\right)}
+  \end{gather*}
+
+
+
+
+
+
+%% []
+%%   ## Cyclic carrying capacity
+%% ```{r, Nl6,include=FALSE,echo=FALSE,width=8,height=6}
+%% Nl6 <- Nl
+%% Nl6[] <- 50
+%% k0 <- K
+%% k1 <- 10
+%% c <- 20
+%% Kt <- numeric(T)
+%% for(t in 2:T) {
+%%     Kt[] <- k0 + k1*cos(2*pi*t/c)
+%%     Nl6[] <- Nl6[] + Nl6[]*1.1*(1-Nl6[]/Kt[])
+%% }
+%% plot(Nl6, type="o", xlab="Time (t)", ylab="Population size (N)",
+%%      cex.lab=1.3, panel.first=abline(h=K, col="blue", lty=2),
+%%      col="steelblue", lwd=4, main="r=1.1, k0=50, k1=10, c=20")
+%% @
+%% <center>
+%%   ![](logistic-growth-Nl6)
+%% </center>
+%% 
+
+
+
+
+
+
+
+
+[]
+  ## Cyclic carrying capacity
+```{r, Nl6,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+Nl6 <- Nl
+Nl6[] <- 50
+k0 <- K
+k1 <- 10
+c <- 20
+Kt <- numeric(T)
+for(t in 2:T) {
+    Kt[] <- k0 + k1*cos(2*pi*t/c)
+    Nl6[] <- Nl6[] + Nl6[]*1.1*(1-Nl6[]/Kt[])
+}
+plot(Nl6, type="l", xlab="Time (t)", ylab="Population size (N)",
+     cex.lab=1.3, panel.first=abline(h=K, col="blue", lty=2),
+     lwd=4, main="r=1.1, k0=50, k1=10, c=20")
+@
+```{r, Nl6-2,include=FALSE,echo=FALSE,fig.width=8,fig.height=6}
+plot(Nl6, type="l", xlab="Time (t)", ylab="Population size (N)",
+     cex.lab=1.3, panel.first=abline(h=K, col="blue", lty=2),
+     lwd=4, col=1, main="k0=50, k1=10, c=20", xlim=c(25, 55),
+     ylim=c(35,65))
+arrows(30, 38, 50, 38, angle=90, code=3, length=0.05, lwd=2)
+text(40, 36, "period (c)", cex=1)
+arrows(53, 50, 53, 60, angle=90, code=3, length=0.05, lwd=2)
+text(53, 55, "amplitude (k1)", pos=2, cex=1)
+@
+<center>
+  \only<1>{![](figure/Nl6-1})
+  \only<2>{![](figure/Nl6-2-1})
+</center>
+
+
+
+
+
+
+
+\end{comment}
+
+
+
+
+
+
+
+  ## Does logistic growth occur in nature?
+  
+  Fruit fly ({\it Drosophila melanogaster}) in the lab
+  %% \blfootnote{\tiny
+  %%   %
+  %%   \flushleft
+  %%   Data from Pearl (1927). Figure from Krebs (2014) %\\
+  %% }. \\
+  
+  \centering
+  ![](figs/logistic-drosophila)
+
+
+
+
+
+
+
+  ## Does logistic growth occur in nature?
+  Ibex ({\it Capra ibex}) in Switzerland\blfootnote{\tiny
+    %
+    \flushleft
+    Data from S{\ae}ther et al. (2002). Figure from Krebs (2014) \\
+  }. \\
+  
+  \centering
+  ![](figs/logistic-ibex)\\
+
+
+
+
+
+
+# Summary
+
+
+%% 
+%%   ## Regulated or limited?
+%%   \begin{block}{Regulated}
+
+%%   \end{block}
+%%   \begin{block}{Limited}
+
+%%   \end{block}
+%% 
+
+
+
+
+  ## Summary and assignment
+  \large
+  {\bf Summary}
+  []
+    * Logistic growth is a form of density-dependent growth
+    * Growth rate ($\lambda_t=N_{t+1}/N_t$) declines as $N$ approaches $K$
+    * Growth ($\Delta_t=N_{t+1}-N_t$) peaks at $K/2$ (the
+      inflection point)
+    * The model doesn't include birth, mortality, and movement
+      processes, but it can be derived from density-dependent birth
+      and death rates.  
+    * But it does allow for complex dynamics that resemble
+      patterns seen in nature.
+  
+  
+  \uncover<6->{
+  {\bf Assignment \par}
+  Read pages 32--36 in Conroy and Carroll \par
+  }
+
+
+
+
+
+

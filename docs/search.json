@@ -35,109 +35,123 @@
     "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\nOffice hours:\nMon 11:00–12:00\n\nMon 2:30–3:30\nThur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
-    "href": "lectures/BIDE/lecture-BIDE.html#section",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
+    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
     "title": "Applied Population Dynamics",
-    "section": "Today’s class",
-    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
+    "section": "Today’s learning objectives",
+    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
     "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+    "section": "What is Population Dynamics?",
+    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
     "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
+    "section": "Fundamental Question",
+    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
     "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
+    "section": "Reverend Thomas Malthus, 1766–1834",
+    "text": "Reverend Thomas Malthus, 1766–1834"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
     "title": "Applied Population Dynamics",
-    "section": "Model validation",
-    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+    "section": "Relevance To Wildlife Biology and Management",
+    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\n“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”\n\n\n\n“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
     "title": "Applied Population Dynamics",
-    "section": "Types of models",
-    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
+    "section": "Aldo Leopold, Game Management 1946",
+    "text": "Aldo Leopold, Game Management 1946\n\n\n\n“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an”ideal” environment, would increase at this rate:”\n\n\n\n\n\nAt End of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\n\n\n\n\n“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
     "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
+    "section": "So What Is Geometric Growth?",
+    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\nOr, for one time step:\n\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example",
     "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+    "section": "Example",
+    "text": "Example\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n10240"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
     "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model"
+    "section": "Three Possible Outcomes",
+    "text": "Three Possible Outcomes\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\\(-1 \\leq r &lt; 0\\)  population goes extinct\n\n\n\\(r = 0\\)  population is at equilibrium\n\n\n\\(r &gt; 0\\)  population grows to \\(\\infty\\)"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
     "title": "Applied Population Dynamics",
-    "section": "Group exercise",
-    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\n\nStep 1: Ignore immigration and emigration\n\\[ N_{t+1} = N_t + B_t - D_t \\]\n\nStep 2: Divide both sides by \\(N_{t}\\).\n\\[ \\frac{N_{t+1}}{N_t} = \\frac{N_t + B_t - D_t}{N_t}\\]\n\n\nStep 3: Write in terms of birth and death rates, with \\(r=b-d\\).\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r %\\\\\n%                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\n\n\nStep 4: Multiply through by \\(N_t\\) to get the solution:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe finite rate of increase is defined as: \\(\\lambda = N_{t+1}/N_t\\), which for geometric growth is equivalent to \\(\\lambda = 1+r\\)."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density Independent Growth",
+    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\) or \\(\\lambda\\)) is not affected by population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "title": "Applied Population Dynamics",
+    "section": "Model Assumptions",
+    "text": "Model Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation is geographically closed.\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\nConstant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "title": "Applied Population Dynamics",
+    "section": "Can We Apply The Model To Real Data?",
+    "text": "Can We Apply The Model To Real Data?\n\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\n\nPossibly for describing some populations during short time periods.\nAnd as foundation for more realistic models."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "title": "Applied Population Dynamics",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\n\nOur world in data"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
-    "href": "schedule.html#week-1---introduction-and-the-bide-model",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
-    "href": "schedule.html#week-2---geometric-and-logistic-growth",
-    "title": "Course Schedule",
-    "section": "Week 2 - Geometric and logistic growth",
-    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+    "text": "Assignment\n\nRead pages 15–19 in Conroy and Carroll\n\nBe prepared for a quiz"
   },
   {
     "objectID": "lectures/intro/lecture-intro.html#section",
@@ -280,123 +294,144 @@
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
+    "href": "schedule.html#week-1---introduction-and-the-bide-model",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
+    "href": "schedule.html#week-2---geometric-and-logistic-growth",
+    "title": "Course Schedule",
+    "section": "Week 2 - Geometric and logistic growth",
+    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
+    "href": "lectures/BIDE/lecture-BIDE.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
+    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
     "title": "Applied Population Dynamics",
-    "section": "Today’s learning objectives",
-    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
+    "section": "Today’s class",
+    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
     "title": "Applied Population Dynamics",
-    "section": "What is Population Dynamics?",
-    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
+    "section": "Definitions",
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
     "title": "Applied Population Dynamics",
-    "section": "Fundamental Question",
-    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
     "title": "Applied Population Dynamics",
-    "section": "Reverend Thomas Malthus, 1766–1834",
-    "text": "Reverend Thomas Malthus, 1766–1834"
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
     "title": "Applied Population Dynamics",
-    "section": "Relevance To Wildlife Biology and Management",
-    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\n“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”\n\n\n\n“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”"
+    "section": "Model validation",
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
     "title": "Applied Population Dynamics",
-    "section": "Aldo Leopold, Game Management 1946",
-    "text": "Aldo Leopold, Game Management 1946\n\n\n\n“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an”ideal” environment, would increase at this rate:”\n\n\n\n\n\nAt End of\n\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n\n14\n2\n16\n\n\n2nd year\n\n(16/2)14=112\n16\n128\n\n\n3rd year\n\n(128/2)14=896\n128\n1024\n\n\n\n\n\n\n“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”"
+    "section": "Types of models",
+    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
     "title": "Applied Population Dynamics",
-    "section": "So What Is Geometric Growth?",
-    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\nOr, for one time step:\n\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#example",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
     "title": "Applied Population Dynamics",
-    "section": "Example",
-    "text": "Example\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n10240"
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
     "title": "Applied Population Dynamics",
-    "section": "Three Possible Outcomes",
-    "text": "Three Possible Outcomes\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\\(-1 \\leq r &lt; 0\\)  population goes extinct\n\n\n\\(r = 0\\)  population is at equilibrium\n\n\n\\(r &gt; 0\\)  population grows to \\(\\infty\\)"
+    "section": "The BIDE model",
+    "text": "The BIDE model"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
     "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\n\nStep 1: Ignore immigration and emigration\n\\[ N_{t+1} = N_t + B_t - D_t \\]\n\nStep 2: Divide both sides by \\(N_{t}\\).\n\\[ \\frac{N_{t+1}}{N_t} = \\frac{N_t + B_t - D_t}{N_t}\\]\n\n\nStep 3: Write in terms of birth and death rates, with \\(r=b-d\\).\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r %\\\\\n%                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\n\n\nStep 4: Multiply through by \\(N_t\\) to get the solution:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe finite rate of increase is defined as: \\(\\lambda = N_{t+1}/N_t\\), which for geometric growth is equivalent to \\(\\lambda = 1+r\\)."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Density Independent Growth",
-    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\) or \\(\\lambda\\)) is not affected by population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "title": "Applied Population Dynamics",
-    "section": "Model Assumptions",
-    "text": "Model Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation is geographically closed.\n\nNo immigration\nNo emigration\n\nReproduction occurs seasonally (for geometric growth)\nConstant birth rate (\\(b\\)) and death rate (\\(d\\))\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\nNo stochasticity\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "title": "Applied Population Dynamics",
-    "section": "Can We Apply The Model To Real Data?",
-    "text": "Can We Apply The Model To Real Data?\n\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\n\nPossibly for describing some populations during short time periods.\nAnd as foundation for more realistic models."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "title": "Applied Population Dynamics",
-    "section": "Looking Ahead",
-    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\n\nOur world in data"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\n\nRead pages 15–19 in Conroy and Carroll\n\nBe prepared for a quiz"
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Logistic Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#learning-objectives",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#learning-objectives",
+    "title": "Applied Population Dynamics",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nThe equation for logistic growth in discrete time.\nThe definition of density-dependent growth.\nBasic properties of the model.\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "title": "Applied Population Dynamics",
+    "section": "From Geometric to Logistic Growth",
+    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\nwhere\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density-dependent growth",
+    "text": "Density-dependent growth\nLogistic growth is an example of density-dependent growth\nDefinition: Population growth rate [is] affected by population size (\\(N\\)).\nImplications: Resources are limited and there is a carrying capacity."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "title": "Applied Population Dynamics",
+    "section": "Graphical depiction",
+    "text": "Graphical depiction"
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#section",

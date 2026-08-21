@@ -1,0 +1,21 @@
+{
+  "hash": "c1ec9b4ce0e74f7514c2eb2f0d963a91",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nformat:\n  revealjs:\n    theme: default\n    pagetitle: 'Logistic Population Growth'\n    slide-number: true\n    css: ../../custom.css\nlang: en\n---\n\n\n# Background {visibility=\"hidden\"}\n\n\n## {content-align=\"center\" style=\"font-size: 160%;\" background-image=\"figs/turtles.jpg\" background-opacity=0.2}\n\n<br><br><br><br>\n\n<center>\nLogistic Growth\n\n<br>\n\n::: {style=\"font-size: 70%;\"}\nApplied Population Dynamics\\\nWILD 5700/7700\n:::\n\n</center>\n\n\n\n\n## Learning objectives\n\nThe equation for logistic growth in discrete time.\n  \nThe definition of density-dependent growth.\n  \nBasic properties of the model.\n  \nStrange behavior of the (discrete time) model, such as damped oscillations and chaos.\n\n\n# Logistic growth {visibility=\"hidden\"}\n\n\n## From Geometric to Logistic Growth\n\n**Geometric growth** \n\n$$N_{t+1} = N_t + N_tr$$ \n\n**Logistic growth**\n\n$$N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)$$ \n\nwhere\n\n- $r_{max}$ is the growth rate when $N_t$ is close to 0\n\n- $K$ is the carrying capacity\n\n\n\n## Density-dependent growth\n\nLogistic growth is an example of **density-dependent growth**\n  \n**Definition**: Population growth rate [is]  affected by population size ($N$).\n  \n**Implications**:  Resources are limited and there is a carrying capacity.\n\n\n\n\n## Graphical depiction\n\n::: {.cell}\n\n:::\n\n\n\n\n\n\n<center>\n::: {.r-stack}\n::: {.fragment .fade-out fragment-index=1}\n![](lecture-logistic-growth_files/figure-revealjs/geom-1)\n:::\n::: {.fragment .fade-in fragment-index=1}\n![](lecture-logistic-growth_files/figure-revealjs/geom-logistic-1)\n:::\n:::\n</center>\n\n\n\n\n",
+    "supporting": [
+      "lecture-logistic-growth_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,123 @@
+---
+format:
+  revealjs:
+    theme: default
+    pagetitle: 'Logistic Population Growth'
+    slide-number: true
+    css: ../../custom.css
+lang: en
+---
+
+
+# Background {visibility="hidden"}
+
+
+## {content-align="center" style="font-size: 160%;" background-image="figs/turtles.jpg" background-opacity=0.2}
+
+<br><br><br><br>
+
+<center>
+Logistic Growth
+
+<br>
+
+::: {style="font-size: 70%;"}
+Applied Population Dynamics\
+WILD 5700/7700
+:::
+
+</center>
+
+
+
+
+## Learning objectives
+
+The equation for logistic growth in discrete time.
+  
+The definition of density-dependent growth.
+  
+Basic properties of the model.
+  
+Strange behavior of the (discrete time) model, such as damped oscillations and chaos.
+
+
+# Logistic growth {visibility="hidden"}
+
+
+## From Geometric to Logistic Growth
+
+**Geometric growth** 
+
+$$N_{t+1} = N_t + N_tr$$ 
+
+**Logistic growth**
+
+$$N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K}\right)$$ 
+
+where
+
+- $r_{max}$ is the growth rate when $N_t$ is close to 0
+
+- $K$ is the carrying capacity
+
+
+
+## Density-dependent growth
+
+Logistic growth is an example of **density-dependent growth**
+  
+**Definition**: Population growth rate [is]  affected by population size ($N$).
+  
+**Implications**:  Resources are limited and there is a carrying capacity.
+
+
+
+
+## Graphical depiction
+```{r}
+#| label: geomVlogistic
+Time <- 0:100
+T <- length(Time)
+rmax <- 0.1
+K <- 50
+Ng <- Nl <- rep(0, T)
+Ng[1] <- Nl[1] <- 2
+for(t in 2:T) {
+    Ng[t] <- Ng[t-1] + Ng[t-1]*rmax
+    Nl[t] <- Nl[t-1] + Nl[t-1]*rmax*(1 - Nl[t-1]/K)
+}
+```
+
+```{r}
+#| label: geom
+#| include: false
+plot(Time, Ng, lwd=5, type="l", ylim=c(0, 100), cex.lab=1.5,
+     xlab="Time (t)", ylab="Population size (N)")
+legend(50, 100, c("Geometric growth", ""), lty=1, col=c("black", NA), lwd=4)
+```
+
+```{r}
+#| label: geom-logistic
+#| include: false
+plot(Time, Ng, lwd=5, type="l", ylim=c(0, 100), cex.lab=1.5,
+     xlab="Time (t)", ylab="Population size (N)")
+lines(Time, Nl, lwd=4, col="purple")
+legend(50, 100, c("Geometric growth", "Logistic growth"), lty=1,
+       col=c("black","purple"), lwd=4)
+```
+
+<center>
+::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+![](lecture-logistic-growth_files/figure-revealjs/geom-1)
+:::
+::: {.fragment .fade-in fragment-index=1}
+![](lecture-logistic-growth_files/figure-revealjs/geom-logistic-1)
+:::
+:::
+</center>
+
+
+
+
