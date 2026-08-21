@@ -266,270 +266,687 @@ WILD 5700/7700</p>
 </div>
 <p><span class="math inline">\(r\)</span> = discrete-time version of intrinsic rate of increase</p>
 </section>
+
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p><span class="math display">\[N_{t+1} = N_t + N_t r\]</span></p>
-<!-- ::: columns[] -->
-<!-- ::: {.column width='50%'} -->
-<!--       <center> -->
-<!--         $N_0 = 3$, $r=1$ -->
-<!--         \small -->
-<!--         \begin{tabular}{cc} -->
-<!--           \hline -->
-<!--           Time & Population size \\ -->
-<!--           ($t$) & ($N_t$) \\ -->
-<!--           \hline -->
-<!--           0 & 3  \\ -->
-<!--           \visible<2->{1 & 6}  \\ -->
-<!--           \visible<3->{2 & 12} \\ -->
-<!--           \visible<4->{3 & 24} \\ -->
-<!--           \visible<5->{4 & 48} \\ -->
-<!--           \visible<6->{5 & 96} \\ -->
-<!--           \visible<7->{6 & 192} \\ -->
-<!--           \visible<8->{7 & 384} \\ -->
-<!--           \visible<9->{8 & 768} \\ -->
-<!--           \visible<10->{9 & 1536} \\ -->
-<!--           \visible<11->{10 & 3072} \\ -->
-<!--           \hline -->
-<!--         \end{tabular} -->
-<!--       </center> -->
-<!--     ::: -->
-<!--     ::: {.column width='50%'} -->
-<!--       <1 | handout:0>![](figs/growth0) %\\ -->
-<!--       <2 | handout:0>![](figs/growth1) %\\ -->
-<!--       <3 | handout:0>![](figs/growth2) %\\ -->
-<!--       <4 | handout:0>![](figs/growth3) %\\ -->
-<!--       <5 | handout:0>![](figs/growth4) %\\ -->
-<!--       <6 | handout:0>![](figs/growth5) %\\ -->
-<!--       <7 | handout:0>![](figs/growth6) %\\ -->
-<!--       <8 | handout:0>![](figs/growth7) %\\ -->
-<!--       <9 | handout:0>![](figs/growth8) %\\ -->
-<!--       <10 | handout:0>![](figs/growth9)  -->
-<!--       <11>![](figs/growth10) \\ -->
-<!--     ::: -->
-<!--   ::: -->
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-2.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-3.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-4.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-5.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-6.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-7.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-8.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-9.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-10.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-11.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-12.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-13.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-14.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-15.png" width="960"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-16.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
+<div style="font-size: 60%;">
 <p><span class="math display">\[N_{t+1} = N_t + N_t r\]</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-1.png"></p>
-<div class="fragment fade-in-then-out">
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="1">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-2.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="2">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-3.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="3">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-4.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="4">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-5.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="5">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-6.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="6">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-7.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="7">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-8.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="8">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-9.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="9">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-10.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="10">
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-11.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-12.png"></p>
 </div>
-<div class="fragment fade-in-then-out">
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-13.png"></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-14.png"></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><img data-src="lecture-exp-growth_files/figure-revealjs/geo-example-15.png"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:30%;">
 <div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>dog</th>
-<th>a</th>
-<th>b</th>
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ro</td>
-<td>a</td>
-<td>c</td>
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<div class="fragment">
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="1">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>dog</th>
-<th>a</th>
-<th>b</th>
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ro</td>
-<td>a</td>
-<td>c</td>
+<td>0</td>
+<td style="text-align: center;">10</td>
 </tr>
 <tr class="even">
-<td>wo</td>
-<td>c</td>
-<td>q</td>
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="6">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;">640</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="7">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;">640</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;">1280</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="8">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;">640</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;">1280</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;">2560</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="9">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;">640</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;">1280</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;">2560</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;">5120</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="10">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th style="text-align: center;">Population size (<span class="math inline">\(N\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">20</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">40</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td style="text-align: center;">640</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td style="text-align: center;">1280</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td style="text-align: center;">2560</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td style="text-align: center;">5120</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td style="text-align: center;">10240</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div></div>
+</div>
 </section>
 <section id="three-possible-outcomes" class="slide level2">
 <h2>Three Possible Outcomes</h2>
+<div style="font-size: 80%;">
 <p><span class="math display">\[N_{t+1} = N_t + N_t r\]</span></p>
+</div>
 <center>
-<div class="columns" style="font-size: 80%;">
+<div class="columns" style="font-size: 60%;">
 <div class="column" style="width:33%;">
-<p>If <span class="math inline">\(-1 \leq r &lt; 0\)</span> <br> population goes extinct</p>
+<p><span class="math inline">\(-1 \leq r &lt; 0\)</span> <br> population goes extinct</p>
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/r3-1.png"></p>
 </div><div class="column" style="width:33%;">
-<p>If <span class="math inline">\(r = 0\)</span> <br> population is stable</p>
+<p><span class="math inline">\(r = 0\)</span> <br> population is at equilibrium</p>
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/r3-2.png"></p>
 </div><div class="column" style="width:33%;">
-<p>If <span class="math inline">\(r &gt; 0\)</span> <br> population grows to <span class="math inline">\(\infty\)</span></p>
+<p><span class="math inline">\(r &gt; 0\)</span> <br> population grows to <span class="math inline">\(\infty\)</span></p>
 <p><img data-src="lecture-exp-growth_files/figure-revealjs/r3-3.png"></p>
 </div></div>
 </center>

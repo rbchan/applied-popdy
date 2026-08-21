@@ -182,166 +182,273 @@ $r$ = discrete-time version of intrinsic rate of increase
 
 
 
-## Example
-
-$$N_{t+1} = N_t + N_t r$$
-
-<!-- ::: columns[] -->
-<!-- ::: {.column width='50%'} -->
-<!--       <center> -->
-<!--         $N_0 = 3$, $r=1$ -->
-<!--         \small -->
-<!--         \begin{tabular}{cc} -->
-<!--           \hline -->
-<!--           Time & Population size \\ -->
-<!--           ($t$) & ($N_t$) \\ -->
-<!--           \hline -->
-<!--           0 & 3  \\ -->
-<!--           \visible<2->{1 & 6}  \\ -->
-<!--           \visible<3->{2 & 12} \\ -->
-<!--           \visible<4->{3 & 24} \\ -->
-<!--           \visible<5->{4 & 48} \\ -->
-<!--           \visible<6->{5 & 96} \\ -->
-<!--           \visible<7->{6 & 192} \\ -->
-<!--           \visible<8->{7 & 384} \\ -->
-<!--           \visible<9->{8 & 768} \\ -->
-<!--           \visible<10->{9 & 1536} \\ -->
-<!--           \visible<11->{10 & 3072} \\ -->
-<!--           \hline -->
-<!--         \end{tabular} -->
-<!--       </center> -->
-<!--     ::: -->
-<!--     ::: {.column width='50%'} -->
-<!--       <1 | handout:0>![](figs/growth0) %\\ -->
-<!--       <2 | handout:0>![](figs/growth1) %\\ -->
-<!--       <3 | handout:0>![](figs/growth2) %\\ -->
-<!--       <4 | handout:0>![](figs/growth3) %\\ -->
-<!--       <5 | handout:0>![](figs/growth4) %\\ -->
-<!--       <6 | handout:0>![](figs/growth5) %\\ -->
-<!--       <7 | handout:0>![](figs/growth6) %\\ -->
-<!--       <8 | handout:0>![](figs/growth7) %\\ -->
-<!--       <9 | handout:0>![](figs/growth8) %\\ -->
-<!--       <10 | handout:0>![](figs/growth9)  -->
-<!--       <11>![](figs/growth10) \\ -->
-<!--     ::: -->
-<!--   ::: -->
-
-
+## Example code {visibility="hidden"}
 
 
 ```{r}
 #| label: geo-example
-## #| fig-show: animate
-## #| interval: 0.5
-## #| fig.show: hide
+#| fig-show: hide
 #| include: false
-#| fig.width: 7
-#| fig.height: 7
+#| fig-width: 7
+#| fig-height: 7
 
 n0 <- 10
-r <- 1.2
-max_t <- 15
+r <- 1
+T <- 10
 
-max_y <- n0 * (r ^ max_t)
+max_y <- n0 * (1+r)^T
 
-# Loop creates each frame automatically
-for (i in 0:max_t) {
-  t_sub <- 0:i
-  N_sub <- n0 * (r ^ t_sub)
+par(mai=c(0.8,0.8,0.4,0.1))
+
+# Loop creates each figure
+for (t in 0:T) {
+  t_sub <- 0:t
+  N_sub <- n0 * (1+r)^t_sub
   
   plot(
     t_sub, N_sub,
-    type = "b", col = "blue", pch = 19, lwd = 2, cex = 1.5,
-    xlim = c(0, max_t), ylim = c(0, max_y),
-    xlab = "Time Step (t)", ylab = "Population Size (N)",
-    main = paste("Geometric Growth (t =", i, ")")
+    type="b", col="blue", pch=19, lwd=2, cex=1.5,
+    xlim=c(0, T), ylim=c(0, max_y), cex.lab=1.3,
+    xlab="Time", ylab="Population Size (N)",
+    main=expression(paste("Geometric Growth (t=", t, ") and ", italic(r), "=1")),
+    panel.first=grid()
   )
-  grid()
 }
+
 ```
 
-## Example
+## Example 
+
+::: {style="font-size: 60%;"}
 
 $$N_{t+1} = N_t + N_t r$$
+
 
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.r-stack}
 
+::: {.fragment .fade-out fragment-index=1}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-1.png)
-
-::: {.fragment .fade-in-then-out}
+:::
+::: {.fragment .fade-in-then-out fragment-index=1}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-2.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=2}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-3.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=3}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-4.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=4}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-5.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=5}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-6.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=6}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-7.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=7}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-8.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=8}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-9.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=9}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-10.png)
 :::
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=10}
 ![](lecture-exp-growth_files/figure-revealjs/geo-example-11.png)
 :::
-::: {.fragment .fade-in-then-out}
-![](lecture-exp-growth_files/figure-revealjs/geo-example-12.png)
-:::
-::: {.fragment .fade-in-then-out}
-![](lecture-exp-growth_files/figure-revealjs/geo-example-13.png)
-:::
-::: {.fragment .fade-in-then-out}
-![](lecture-exp-growth_files/figure-revealjs/geo-example-14.png)
-:::
-::: {.fragment .fade-in-then-out}
-![](lecture-exp-growth_files/figure-revealjs/geo-example-15.png)
-:::
 
 :::
-
 :::
 
-::: {.column width="50%"}
+::: {.column width="10%"}
+:::
 
+::: {.column width="30%"}
 ::: {.r-stack}
 
-  dog | a | b 
-  --- | - | --
-  ro  | a | c
-
-::: {.fragment}
-  dog | a | b 
-  --- | - | --
-  ro  | a | c
-  wo  | c | q
+::: {.fragment .fade-out fragment-index=1}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | 
+  2   | 
+  3   | 
+  4   | 
+  5   | 
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=1}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | 
+  3   | 
+  4   | 
+  5   | 
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=2}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | 
+  4   | 
+  5   | 
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=3}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | 
+  5   | 
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=4}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | 
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=5}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | 
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=6}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | `{r} N_sub[7]`
+  7   | 
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=7}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | `{r} N_sub[7]`
+  7   | `{r} N_sub[8]`
+  8   | 
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=8}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | `{r} N_sub[7]`
+  7   | `{r} N_sub[8]`
+  8   | `{r} N_sub[9]`
+  9   | 
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=9}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | `{r} N_sub[7]`
+  7   | `{r} N_sub[8]`
+  8   | `{r} N_sub[9]`
+  9   | `{r} N_sub[10]`
+  10  | 
+:::
+::: {.fragment .fade-in-then-out fragment-index=10}
+  Time | Population size ($N$)
+  --  | :---:
+  0   | `{r} N_sub[1]` 
+  1   | `{r} N_sub[2]`
+  2   | `{r} N_sub[3]`
+  3   | `{r} N_sub[4]`
+  4   | `{r} N_sub[5]`
+  5   | `{r} N_sub[6]`
+  6   | `{r} N_sub[7]`
+  7   | `{r} N_sub[8]`
+  8   | `{r} N_sub[9]`
+  9   | `{r} N_sub[10]`
+  10  | `{r} format(N_sub[11], scientific=FALSE)`
 :::
 
 
 :::
-
 :::
 :::
 
+:::
 
 ## Three Possible Outcomes
 
+::: {style="font-size: 80%;"}
 $$N_{t+1} = N_t + N_t r$$
+:::
 
 ```{r}
 #| label: r3
@@ -364,20 +471,20 @@ for(t in 2:n_years) {
 
 par(mai=c(0.8, 0.8, 0.1, 0.1))
 
-plot(1:n_years, N1, type="l", xlab="Time", ylab="Abundance")
-plot(1:n_years, N2, type="l", xlab="Time", ylab="Abundance")
-plot(1:n_years, N3, type="l", xlab="Time", ylab="Abundance")
+plot(1:n_years, N1, type="l", xlab="Time", ylab="Population size (N)")
+plot(1:n_years, N2, type="l", xlab="Time", ylab="Population size (N)")
+plot(1:n_years, N3, type="l", xlab="Time", ylab="Population size (N)")
 
 
 ```
 
 <center>
 
-::: {.columns style="font-size: 80%;"}
+::: {.columns style="font-size: 60%;"}
 
 ::: {.column width='33%'}
 
-If $-1 \leq r < 0$ <br> population goes extinct
+$-1 \leq r < 0$ <br> population goes extinct
 
 ![](lecture-exp-growth_files/figure-revealjs/r3-1.png)
 
@@ -385,7 +492,7 @@ If $-1 \leq r < 0$ <br> population goes extinct
 
 ::: {.column width='33%'}
 
-If $r = 0$ <br> population is stable
+$r = 0$ <br> population is at equilibrium
 
 ![](lecture-exp-growth_files/figure-revealjs/r3-2.png)
 
@@ -393,7 +500,7 @@ If $r = 0$ <br> population is stable
 
 ::: {.column width='33%'}
 
-If $r > 0$ <br> population grows to $\infty$
+$r > 0$ <br> population grows to $\infty$
       
 ![](lecture-exp-growth_files/figure-revealjs/r3-3.png)
 
