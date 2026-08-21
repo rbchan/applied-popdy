@@ -70,13 +70,14 @@ How does abundance go from $N_t$ to $N_{t+1}$?
 Answer: The [BIDE]{style="color: red;"} Model 
 :::
 
-</center>
 
 ::: {.fragment fragment-index=1}
 $$N_{t+1} = N_t + B_t + I_t - D_t - E_t$$
 
 B=Births, I=Immigrations, D=Deaths, E=Emigrations
 :::
+
+</center>
 
 
 <br>
@@ -181,7 +182,9 @@ $r$ = discrete-time version of intrinsic rate of increase
 
 
 
-## Example, $N_{t+1} = N_t + N_t r$
+## Example
+
+$$N_{t+1} = N_t + N_t r$$
 
 <!-- ::: columns[] -->
 <!-- ::: {.column width='50%'} -->
@@ -224,9 +227,16 @@ $r$ = discrete-time version of intrinsic rate of increase
 <!--   ::: -->
 
 
+
+
 ```{r}
-#| fig-show: animate
-#| interval: 0.5
+#| label: geo-example
+## #| fig-show: animate
+## #| interval: 0.5
+## #| fig.show: hide
+#| include: false
+#| fig.width: 7
+#| fig.height: 7
 
 n0 <- 10
 r <- 1.2
@@ -250,36 +260,104 @@ for (i in 0:max_t) {
 }
 ```
 
+## {auto-animate=true}
 
+::: {.columns}
+::: {.column width="50%"}
 
-
-## Three Possible Outcomes, $N_{t+1} = N_t + N_t r$
-
-::: columns
-::: {.column width='50%'}
-
-If $-1 \leq r < 0$ population goes extinct
-
-![](figs/rl0.pdf)
+![](lecture-exp-growth_files/figure-revealjs/geo-example-1.png)
 
 :::
-::: {.column width='50%'}
+::: {.column width="50%"}
 
-If $r = 0$ population is stable
+  dog | a | b 
+  --- | - | --
+  ro  | a | c
+:::
+:::
 
-![](figs/r0.pdf)
+
+## {auto-animate=true}
+
+::: {.columns}
+::: {.column width="50%"}
+
+![](lecture-exp-growth_files/figure-revealjs/geo-example-2.png)
 
 :::
-::: {.column width='50%'}
+::: {.column width="50%"}
 
-If $r > 0$ population grows to $\infty$
+  dog | a | b 
+  --- | - | --
+  ro  | a | c
+  wo  | c | q
+
+:::
+:::
+
+## Three Possible Outcomes
+
+$$N_{t+1} = N_t + N_t r$$
+
+```{r}
+#| label: r3
+#| include: false
+#| fig.width: 4
+#| fig.height: 4
+r1 <- -0.1
+r2 <- 0
+r3 <- 0.1
+
+n_years <- 20
+
+N1 <- N2 <- N3 <- numeric(n_years)
+N1[1] <- N2[1] <- N3[1] <- 20
+for(t in 2:n_years) {
+    N1[t] <- N1[t-1] + N1[t-1]*r1
+    N2[t] <- N2[t-1] + N2[t-1]*r2
+    N3[t] <- N3[t-1] + N3[t-1]*r3
+}
+
+par(mai=c(0.8, 0.8, 0.1, 0.1))
+
+plot(1:n_years, N1, type="l", xlab="Time", ylab="Abundance")
+plot(1:n_years, N2, type="l", xlab="Time", ylab="Abundance")
+plot(1:n_years, N3, type="l", xlab="Time", ylab="Abundance")
+
+
+```
+
+<center>
+
+::: {.columns style="font-size: 80%;"}
+
+::: {.column width='33%'}
+
+If $-1 \leq r < 0$ <br> population goes extinct
+
+![](lecture-exp-growth_files/figure-revealjs/r3-1.png)
+
+:::
+
+::: {.column width='33%'}
+
+If $r = 0$ <br> population is stable
+
+![](lecture-exp-growth_files/figure-revealjs/r3-2.png)
+
+:::
+
+::: {.column width='33%'}
+
+If $r > 0$ <br> population grows to $\infty$
       
-![](figs/rg0.pdf)
+![](lecture-exp-growth_files/figure-revealjs/r3-3.png)
 
 :::
 :::
 
 
+</center>
 
 
 

@@ -43,5 +43,8 @@ and an oral presentation.
 
 ### Week 2 - Geometric and logistic growth
 
-- Lecture 3
+- [Lecture 3 - Geometric growth](lectures/exp-growth/lecture-exp-growth.qmd)
 
+- Lecture 4 - Logistic growth
+
+- Lab 2 - Geometric and logistic growth
