@@ -130,15 +130,47 @@ Charles Darwin *Origin of Species*
 
 ::: {.column width='85%'}
 
-> "Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an "ideal" environment, would increase at this rate:"
+> "Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an 'ideal' environment, would increase at this rate:"
 
 <center>
 
-  At End of                Young   Adults   Total
-  ----------- -- --------------- -------- -------
-  1st year                    14        2      16
-  2nd year          (16/2)14=112       16     128
-  3rd year         (128/2)14=896      128    1024
+::: {.r-stack}
+
+::: {.fragment .fade-out fragment-index=1 width="80%"}
+  | At End of | Young    |     Adults  | Total |
+  |-----------|---------------|----|----|
+  | 1st year  |             14 |    2  |   16  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+
+<!-- : {tbl-colwidths="['3in','2in','1in','1in']"} -->
+
+:::
+::: {.fragment .fade-in-then-out fragment-index=1 width="80%"}
+  | At End of | Young    |     Adults  | Total |
+  |-----------|---------------|----|----|
+  | 1st year  |             14 |    2  |   16  |
+  | 2nd year  |   (16/2)14=112 |   16  |  128  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+
+<!-- : {tbl-colwidths="[55,45,5,5]"} -->
+
+:::
+::: {.fragment .fade-in fragment-index=2 width="80%"}
+  | At End of | Young    |     Adults  | Total |
+  |-----------|---------------|----|----|
+  | 1st year  |             14 |    2  |   16  |
+  | 2nd year  |   (16/2)14=112 |   16  |  128  |
+  | 3rd year  |  (128/2)14=896 |  128  | 1024  |
+  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+
+<!-- : {tbl-colwidths="[55,45,5,5]"} -->
+
+:::
+
+:::
 
 </center>
 
@@ -631,18 +663,25 @@ affected by population size ($N$).
 <!--   i) No random variation in birth or death -->
 <!--   ii) No random variation in environmental conditions -->
 
-::: {style="font-size: 80%;"}
+::: {style="font-size: 75%;"}
 
-::: incremental
+
+::: {.fragment}
 1. Population is geographically closed.
     i) No immigration
     ii) No emigration
-2. Reproduction occurs seasonally (for geometric growth)
-3. Constant birth rate ($b$) and death rate ($d$)
+:::
+::: {.fragment}
+2. Reproduction occurs seasonally (for geometric growth).
+:::
+::: {.fragment}
+3. Constant birth rate ($b$) and death rate ($d$).
     i) No genetic variation among individuals
     ii) No age- or stage-structure
     iii) No time lags
-4. No stochasticity
+:::
+::: {.fragment}
+4. No stochasticity.
     i) No random variation in birth or death
     ii) No random variation in environmental conditions
 :::
