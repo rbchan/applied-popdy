@@ -11,3 +11,19 @@
 .reveal h2 {
   font-size: 1.2em; /* Default is usually around 2em or larger */
 }
+
+
+.reveal .beamer-block {
+  border: 2px solid #123456;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+.reveal .beamer-block h3 {
+  background-color: #123456;
+  color: white;
+  margin: -10px -10px 10px -10px;
+  padding: 6px 10px;
+  font-size: 1em;
+}

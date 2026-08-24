@@ -410,21 +410,21 @@
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#learning-objectives",
     "title": "Applied Population Dynamics",
     "section": "Learning objectives",
-    "text": "Learning objectives\nThe equation for logistic growth in discrete time.\nThe definition of density-dependent growth.\nBasic properties of the model.\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+    "text": "Learning objectives\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
     "title": "Applied Population Dynamics",
     "section": "From Geometric to Logistic Growth",
-    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\nwhere\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
     "title": "Applied Population Dynamics",
     "section": "Density-dependent growth",
-    "text": "Density-dependent growth\nLogistic growth is an example of density-dependent growth\nDefinition: Population growth rate [is] affected by population size (\\(N\\)).\nImplications: Resources are limited and there is a carrying capacity."
+    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
@@ -663,5 +663,75 @@
     "title": "Applied Population Dynamics",
     "section": "Excel sheet to be created",
     "text": "Excel sheet to be created"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate-lambda_t-n_t1n_t",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate-lambda_t-n_t1n_t",
+    "title": "Applied Population Dynamics",
+    "section": "Growth rate (\\(\\lambda_t = N_{t+1}/N_t\\))",
+    "text": "Growth rate (\\(\\lambda_t = N_{t+1}/N_t\\))"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-delta_tn_t1-n_t",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-delta_tn_t1-n_t",
+    "title": "Applied Population Dynamics",
+    "section": "Growth (\\(\\Delta_t=N_{t+1}-N_t\\))",
+    "text": "Growth (\\(\\Delta_t=N_{t+1}-N_t\\))"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-delta_tn_t1-n_t-as-a-function-of-n",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-delta_tn_t1-n_t-as-a-function-of-n",
+    "title": "Applied Population Dynamics",
+    "section": "Growth (\\(\\Delta_t=N_{t+1}-N_t\\)) as a function of \\(N\\)",
+    "text": "Growth (\\(\\Delta_t=N_{t+1}-N_t\\)) as a function of \\(N\\)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\n\nOvercompensation\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually.\n\n\n\n\nChaos\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "title": "Applied Population Dynamics",
+    "section": "What happens when we change \\(r_{max}\\)?",
+    "text": "What happens when we change \\(r_{max}\\)?"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "title": "Applied Population Dynamics",
+    "section": "Assumptions of basic model",
+    "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from S{}ther et al. (2002). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#summary-and-assignment",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#summary-and-assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Summary and assignment",
+    "text": "Summary and assignment\nSummary\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\nAssignment Read pages 32–36 in Conroy and Carroll"
   }
 ]

@@ -143,11 +143,15 @@ WILD 5700/7700</p>
 </div>
 </center>
 </section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning objectives</h2>
+<section id="today-in-apd" class="slide level2">
+<h2>Today in APD</h2>
+<p><br></p>
 <p>The equation for logistic growth in discrete time.</p>
+<p><br></p>
 <p>The definition of density-dependent growth.</p>
+<p><br></p>
 <p>Basic properties of the model.</p>
+<p><br></p>
 <p>Strange behavior of the (discrete time) model, such as damped oscillations and chaos.</p>
 </section></section>
 <section>
@@ -156,19 +160,32 @@ WILD 5700/7700</p>
 <h2>From Geometric to Logistic Growth</h2>
 <p><strong>Geometric growth</strong></p>
 <p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
+<div class="fragment">
 <p><strong>Logistic growth</strong></p>
 <p><span class="math display">\[N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K}\right)\]</span></p>
+</div>
+<div class="fragment">
 <p>where</p>
+<div style="font-size: 80%;">
 <ul>
 <li><p><span class="math inline">\(r_{max}\)</span> is the growth rate when <span class="math inline">\(N_t\)</span> is close to 0</p></li>
 <li><p><span class="math inline">\(K\)</span> is the carrying capacity</p></li>
 </ul>
+</div>
+</div>
 </section>
 <section id="density-dependent-growth" class="slide level2">
 <h2>Density-dependent growth</h2>
-<p>Logistic growth is an example of <strong>density-dependent growth</strong></p>
-<p><strong>Definition</strong>: Population growth rate [is] affected by population size (<span class="math inline">\(N\)</span>).</p>
+<p><br></p>
+<p>Logistic growth is an example of <strong>density-dependent growth</strong>.</p>
+<div class="fragment">
+<p><br></p>
+<p><strong>Definition</strong>: Population growth rate <span style="color: red;">is</span> affected by population size (<span class="math inline">\(N\)</span>).</p>
+</div>
+<div class="fragment">
+<p><br></p>
 <p><strong>Implications</strong>: Resources are limited and there is a carrying capacity.</p>
+</div>
 </section>
 <section id="graphical-depiction" class="slide level2">
 <h2>Graphical depiction</h2>
@@ -182,9 +199,109 @@ WILD 5700/7700</p>
 </div>
 </div>
 </center>
+</section>
+<section id="growth-rate-lambda_t-n_t1n_t" class="slide level2">
+<h2>Growth rate (<span class="math inline">\(\lambda_t = N_{t+1}/N_t\)</span>)</h2>
+<center>
+<!-- ::: {.r-stack} -->
+<!-- ::: {.fragment .fade-out fragment-index=1} -->
+<img data-src="lecture-logistic-growth_files/figure-revealjs/lr1-1.png" style="width:80.0%"> <!-- ::: --> <!-- ::: {.fragment .fade-in fragment-index=1} --> <img data-src="lecture-logistic-growth_files/figure-revealjs/lambda-1.png" style="width:80.0%"> <!-- ::: -->
+</center>
+</section>
+<section id="growth-delta_tn_t1-n_t" class="slide level2">
+<h2>Growth (<span class="math inline">\(\Delta_t=N_{t+1}-N_t\)</span>)</h2>
+<center>
+<!-- ::: {.r-stack} -->
+<!-- ::: {.fragment .fade-out fragment-index=1} -->
+<img data-src="lecture-logistic-growth_files/figure-revealjs/lr2-1.png" style="width:80.0%"> <!-- ::: --> <!-- ::: {.fragment .fade-in fragment-index=1} --> <img data-src="lecture-logistic-growth_files/figure-revealjs/delta-1.png" style="width:80.0%"> <!-- ::: -->
+</center>
+</section>
+<section id="growth-delta_tn_t1-n_t-as-a-function-of-n" class="slide level2">
+<h2>Growth (<span class="math inline">\(\Delta_t=N_{t+1}-N_t\)</span>) as a function of <span class="math inline">\(N\)</span></h2>
+
+<!-- <center> -->
+<!--   ![](lecture-logistic-growth_files/figure-revealjs/delta-N-1) -->
+<!-- </center> -->
+<img data-src="lecture-logistic-growth_files/figure-revealjs/delta-N-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<section id="what-happens-when-we-change-r_max" class="slide level2">
+<h2>What happens when we change <span class="math inline">\(r_{max}\)</span>?</h2>
+<center>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="lecture-logistic-growth_files/figure-revealjs/Nl-1.png" style="width:80.0%"></p>
+</div>
+<div class="fragment fade-in-and-out" data-fragment-index="1">
+<p><img data-src="lecture-logistic-growth_files/figure-revealjs/Nl2-1.png" style="width:80.0%"></p>
+</div>
+<div class="fragment fade-in-and-out" data-fragment-index="2">
+<p><img data-src="lecture-logistic-growth_files/figure-revealjs/Nl3-1.png" style="width:80.0%"></p>
+</div>
+<div class="fragment fade-in-and-out" data-fragment-index="3">
+<p><img data-src="lecture-logistic-growth_files/figure-revealjs/Nl4-1.png" style="width:80.0%"></p>
+</div>
+</div>
+</center>
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<p><br></p>
+<section id="overcompensation" class="beamer-block">
+<h3>Overcompensation</h3>
+<p>Density-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually.</p>
+</section>
+<p><br></p>
+<div class="fragment">
+<section id="chaos" class="beamer-block">
+<h3>Chaos</h3>
+<p>Highly variable deterministic dynamics that are extremely sensitive to small changes in parameters.</p>
+</section>
+</div>
+</section>
+<section id="assumptions-of-basic-model" class="slide level2">
+<h2>Assumptions of basic model</h2>
+<ul>
+<li><p><span class="math inline">\(K\)</span> and <span class="math inline">\(r_{max}\)</span> are constant</p></li>
+<li><p>No sex or age effects or other sources of individual heterogeneity</p></li>
+<li><p>No time lags</p></li>
+<li><p>No stochasticity</p></li>
+</ul>
+</section>
+<section id="does-logistic-growth-occur-in-nature" class="slide level2">
+<h2>Does logistic growth occur in nature?</h2>
+<p>Fruit fly (<em>Drosophila melanogaster</em>) in the lab<sup>1</sup></p>
+<center>
+<img data-src="figs/logistic-drosophila.png">
+</center>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Data from Pearl (1927). Figure from Krebs (2014)</p></li></ol></aside></section>
+<section id="does-logistic-growth-occur-in-nature-1" class="slide level2">
+<h2>Does logistic growth occur in nature?</h2>
+<p>Ibex (<em>Capra ibex</em>) in Switzerland<sup>1</sup></p>
+<center>
+<img data-src="figs/logistic-ibex.png">
+</center>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Data from S{}ther et al.&nbsp;(2002). Figure from Krebs (2014)</p></li></ol></aside></section></section>
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
+</section>
+<section id="summary-and-assignment" class="slide level2">
+<h2>Summary and assignment</h2>
+<p>Summary</p>
+<ul>
+<li><p>Logistic growth is a form of density-dependent growth</p></li>
+<li><p>Growth rate (<span class="math inline">\(\lambda_t=N_{t+1}/N_t\)</span>) declines as <span class="math inline">\(N\)</span> approaches <span class="math inline">\(K\)</span></p></li>
+<li><p>Growth (<span class="math inline">\(\Delta_t=N_{t+1}-N_t\)</span>) peaks at <span class="math inline">\(K/2\)</span> (the inflection point)</p></li>
+<li><p>The model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.</p></li>
+<li><p>But it does allow for complex dynamics that resemble patterns seen in nature.</p></li>
+</ul>
+<div class="fragment">
+<p><strong>Assignment</strong> Read pages 32–36 in Conroy and Carroll</p>
 
 
+</div>
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
