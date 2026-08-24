@@ -13,17 +13,30 @@
 }
 
 
+/* Beamer-like blocks */
+/* Ensure the custom block behaves like a standard layout container */
 .reveal .beamer-block {
   border: 2px solid #123456;
   border-radius: 4px;
   margin-bottom: 20px;
-  padding: 10px;
   background-color: #f8f9fa;
+  overflow: hidden;
+  display: block !important;
+  position: relative;
 }
-.reveal .beamer-block h3 {
+
+/* Ensure the header block doesn't capture slide-advance click triggers */
+.reveal .beamer-block h4 {
   background-color: #123456;
   color: white;
-  margin: -10px -10px 10px -10px;
+  margin: 0 !important;
   padding: 6px 10px;
   font-size: 1em;
+  user-select: none; /* Prevents text highlights from hijacking focus */
 }
+
+.reveal .beamer-block .beamer-block-content {
+  padding: 10px;
+  display: block;
+}
+

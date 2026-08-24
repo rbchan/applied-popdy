@@ -466,7 +466,7 @@
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
     "title": "Applied Population Dynamics",
     "section": "Definitions",
-    "text": "Definitions\n\n\nOvercompensation\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually.\n\n\n\n\nChaos\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+    "text": "Definitions\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
@@ -487,14 +487,14 @@
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
     "title": "Applied Population Dynamics",
     "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from S{}ther et al. (2002). Figure from Krebs (2014)"
+    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#summary-and-assignment",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#summary-and-assignment",
     "title": "Applied Population Dynamics",
     "section": "Summary and assignment",
-    "text": "Summary and assignment\nSummary\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\nAssignment Read pages 32–36 in Conroy and Carroll"
+    "text": "Summary and assignment\nSummary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
   },
   {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#section",

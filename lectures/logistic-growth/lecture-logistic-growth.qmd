@@ -346,26 +346,30 @@ legend(0, 100, c("rmax=0.1", "rmax=0.5", "rmax=2.0", "rmax=3.0"),
 
 
 
-## Definitions
-
-<br>
+## Definitions 
 
 ::: {.beamer-block}
-### Overcompensation
-Density-dependent response in which populations over- or under-shoot
-carrying capacity rather than approach it gradually. 
+
+#### Overcompensation
+
+::: {.beamer-block-content}
+Density-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually.
 :::
 
-<br>
+:::
 
-. . . 
-
+---
 
 ::: {.beamer-block}
-### Chaos
-Highly variable deterministic dynamics that are extremely sensitive to
-small changes in parameters.
+
+#### Chaos
+
+::: {.beamer-block-content}
+Highly variable deterministic dynamics that are extremely sensitive to small changes in parameters.
 :::
+
+:::
+
 
 
 
@@ -403,10 +407,10 @@ small changes in parameters.
 
 ## Does logistic growth occur in nature?
 
-Ibex (*Capra ibex*) in Switzerland^[Data from S{\ae}ther et al. (2002). Figure from Krebs (2014)]
+Ibex (*Capra ibex*) in Switzerland^[Data from S&aelig;ther et al. (2002). Figure from Krebs (2014)]
   
 <center>
-![](figs/logistic-ibex)
+[![](figs/logistic-ibex)](https://youtu.be/hqqCafpgSVA?si=greGPq4_wLm_BQLI)
 </center>
 
 
@@ -414,14 +418,16 @@ Ibex (*Capra ibex*) in Switzerland^[Data from S{\ae}ther et al. (2002). Figure f
 
 
 
-# Summary
+# Summary {visibility="hidden"}
 
 
 
 
 ## Summary and assignment
 
-Summary
+**Summary**
+
+::: {.incremental style="font-size: 75%;"}
 
 - Logistic growth is a form of density-dependent growth
 
@@ -434,9 +440,17 @@ Summary
 
 - But it does allow for complex dynamics that resemble patterns seen in nature.
   
+:::
+
 . . . 
 
+<br>
+
 **Assignment**
-  Read pages 32--36 in Conroy and Carroll 
+
+<center>
+Read pages 32--36 in Conroy and Carroll.
+</center>
+
 
 
