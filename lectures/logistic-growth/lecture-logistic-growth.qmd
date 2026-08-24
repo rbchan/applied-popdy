@@ -140,17 +140,21 @@ legend(50, 100, c("Geometric growth", "Logistic growth"), lty=1,
 <center>
 ::: {.r-stack}
 ::: {.fragment .fade-out fragment-index=1}
-![](lecture-logistic-growth_files/figure-revealjs/geom-1)
+![](lecture-logistic-growth_files/figure-revealjs/geom-1){width="90%"}
 :::
 ::: {.fragment .fade-in fragment-index=1}
-![](lecture-logistic-growth_files/figure-revealjs/geom-logistic-1)
+![](lecture-logistic-growth_files/figure-revealjs/geom-logistic-1){width="90%"}
 :::
 :::
 </center>
 
 
 
-## Growth rate ($\lambda_t = N_{t+1}/N_t$)
+## Growth rate 
+
+::: {style="font-size: 70%;"}
+$$\lambda_t = N_{t+1}/N_t$$
+:::
 
 ```{r}
 #| label: lr1
@@ -175,22 +179,28 @@ lambda <- Nl[-1]/Nl[-T]
 par(mai=c(0.9,1,0.3,0.3))
 plot(Time[-T], lambda, lwd=4, type="l", cex.lab=1.9,
      xlab="Time (t)", col="blue",
-     ylab=expression(paste("Growth rate: ", "(", lambda, "=", N[]/N[], ")")))
+     ylab=expression(paste("Growth rate: ", "(", lambda, "=", N[t+1]/N[t], ")")))
 ```
 
 <center>
 <!-- ::: {.r-stack} -->
 <!-- ::: {.fragment .fade-out fragment-index=1} -->
-  ![](lecture-logistic-growth_files/figure-revealjs/lr1-1){width="80%"} 
+  ![](lecture-logistic-growth_files/figure-revealjs/lr1-1){width="70%"} 
 <!-- ::: -->
-<!-- ::: {.fragment .fade-in fragment-index=1} -->
-  ![](lecture-logistic-growth_files/figure-revealjs/lambda-1){width="80%"}
-<!-- ::: -->
+
+::: {.fragment}
+  ![](lecture-logistic-growth_files/figure-revealjs/lambda-1){width="70%"}
+:::
+
 </center>
 
 
 
-## Growth ($\Delta_t=N_{t+1}-N_t$)
+## Growth 
+
+::: {style="font-size: 70%;"}
+$$\Delta_t=N_{t+1}-N_t$$
+:::
 
 ```{r}
 #| label: lr2
@@ -215,23 +225,26 @@ delta <- Nl[-1] - Nl[-T]
 par(mai=c(0.9,1,0.3,0.3))
 plot(Time[-1], delta, lwd=4, type="l", cex.lab=1.9,
      xlab="Time (t)", col="turquoise4",
-     ylab=expression(paste("Growth: ", "(", Delta, "=", N[]-N[], ")")))
+     ylab=expression(paste("Growth: ", "(", Delta, "=", N[t+1]-N[t], ")")))
 ```
 
 
 <center>
+
 <!-- ::: {.r-stack} -->
 <!-- ::: {.fragment .fade-out fragment-index=1} -->
-  ![](lecture-logistic-growth_files/figure-revealjs/lr2-1){width="80%"}
+  ![](lecture-logistic-growth_files/figure-revealjs/lr2-1){width="70%"}
 <!-- ::: -->
-<!-- ::: {.fragment .fade-in fragment-index=1} -->
-  ![](lecture-logistic-growth_files/figure-revealjs/delta-1){width="80%"}
-<!-- ::: -->
+
+::: {.fragment}
+  ![](lecture-logistic-growth_files/figure-revealjs/delta-1){width="70%"}
+:::
+
 </center>
 
 
 
-## Growth ($\Delta_t=N_{t+1}-N_t$) as a function of $N$
+## Growth as a function of $N$
 
 ```{r}
 #| label: delta-N
@@ -348,30 +361,35 @@ legend(0, 100, c("rmax=0.1", "rmax=0.5", "rmax=2.0", "rmax=3.0"),
 
 ## Definitions 
 
-::: {.beamer-block}
+<br>
 
-#### Overcompensation
+<!-- ::: {.beamer-block} -->
 
-::: {.beamer-block-content}
+<!-- #### Overcompensation -->
+**Overcompensation**
+
+<!-- ::: {.beamer-block-content} -->
 Density-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually.
-:::
+<!-- ::: -->
 
-:::
+<!-- ::: -->
 
----
+<br>
 
-::: {.beamer-block}
+. . .
+
+<!-- ::: {.beamer-block} -->
 
 #### Chaos
 
-::: {.beamer-block-content}
+<!-- ::: {.beamer-block-content} -->
 Highly variable deterministic dynamics that are extremely sensitive to small changes in parameters.
-:::
+<!-- ::: -->
 
-:::
+<!-- ::: -->
 
 
-
+# Assumptions {visibility="hidden"}
 
 
 
@@ -423,7 +441,7 @@ Ibex (*Capra ibex*) in Switzerland^[Data from S&aelig;ther et al. (2002). Figure
 
 
 
-## Summary and assignment
+## 
 
 **Summary**
 
