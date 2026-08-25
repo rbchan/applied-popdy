@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\hypersetup{pdfstartview=FitV,hidelinks}
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lab-geometric-growth")
+@
+
+\begin{document}
+
+
+{
+  \Large
+  \centering
+  Lab 2 assignment --- Geometric growth models \\
+  Due by 5:00pm on Friday \par
+}
+
+Answer the following questions by completing the provided Excel 
+template and by replicating your work in R. Undergraduates should do
+Exercise 1 in R, but not Exercise 2. Graduate students should do both
+exercises in R. Upload your Excel file and a single R script to
+ELC. Name the files with your last name followed by your first
+name. \\ 
+
+\vspace{12pt}
+
+{\bf Exercise 1 \\}
+A study was conducted in which a population of 100 Mexican wolves
+({\it Canis lupus baileyi}) was monitored intensively for 1 year. In
+that time, 10 pups were born, and 20 of the original 100 individuals 
+died. There was no immigration or emigration.  
+
+\begin{enumerate}
+  \item What are the values of $B$, $D$, $b$, $d$, $r$, and lambda
+    ($\lambda$)?
+  \item Assuming geometric growth, what will population size be in
+    each of the subsequent 10 years? Create a graph of the results,
+    including important chart elements such as axis titles. Remember,
+    the geometric growth model is: $N_{t+1} = N_t + N_t r$.
+\end{enumerate}
+
+\vspace{24pt}
+
+{
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/Coronadopack2} \\
+}
+
+
+\clearpage
+
+% {\bf Exercise 2 \\}
+
+% Abundance data on harbor seals ({\it Phoca vitulina}) in the Wadden
+% Sea are provided from 1997--2009.
+
+% \begin{enumerate}
+%   \item Assuming logistic growth, find values of $r_{max}$ and $K$
+%     that provide a good fit to the data. Use trial error to find these
+%     values by comparing the actual number of seals to the number of
+%     seals predicted by your model. You don't have to be too
+%     precise, but try to get the predicted values within $\pm 2$ of the
+%     actual data.
+%   \item Use your model to predict how many seals will be in the
+%     population in the year 2020.
+%   \item Create a graph with year on the x-axis and abundance on the
+%     y-axis. Show the data and the model predictions as separate
+%     lines. 
+% \end{enumerate}
+
+% \vspace{24pt}
+
+% {
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figs/pacific-harbor-seal} \\
+% }
+
+
+
+% \clearpage
+
+{\bf Exercise 2 \\}
+Many people assume that the human population acts differently than
+most wildlife populations and is increasing at an exponential rate, or
+close to it. The UN estimated that the human population was
+approximately 7.02 billion in 2010, and 7.11 billion in 2011.
+
+
+\begin{enumerate}
+  \item Given these two years of data and the geometric growth equation:
+    $N_{t+1} = N_t + N_t r$, calculate $r$ for the human population. 
+  \item Use the geometric growth equation with the value of $r$ that
+    you calculated above to predict the human population from 2012 to
+    2025. 
+  \item Graph your predictions of the human population along with the
+    actual human population over time.
+  \item Calculate the growth rate lambda ($\lambda_t = N_t / N_{t-1}$)
+    for each year and for both the predicted human population and the
+    actual human population data. Graph both values of lambda from
+    2011 to 2025.
+  \item Based on these results, did the human population exhibit
+    geometric growth? Write 2-3 sentences to defend your answer. 
+\end{enumerate}
+
+\vspace{24pt}
+
+More data about the human population: \\
+\url{https://www.worldometers.info/world-population/} \\
+\url{https://ourworldindata.org/world-population-growth}.
+
+%% {\bf Exercise 2b \\}
+%% UN data on human population size from 1999 to 2012 are provided on
+%% sheet ``Exercise 2b''.
+
+
+%% \begin{enumerate}
+%%   \item Calculate the population growth rate (``lambda'':
+%%     $\lambda_t = N_{t}/N_{t-1}$) for each year starting in 2000.
+%%   \item Using a starting values of 6 billion people in 1999, pick
+%%     values of $r$ that make a geometric growth curve
+%%     closely approximate the actual data. Use trial and error to find a
+%%     good value of $r$. 
+%%   \item The logistic growth model is: 
+%%     $N_{t+1} = N_t + N_t r_{\rm max}(1 - N_t/K)$ where $r_{\rm max}$
+%%     is the maximum growth rate and $K$ is the carrying capacity.
+%%     Using a starting values of 6 billion people in 1999, pick
+%%     values of $r_{max}$ and $K$ that make a logistic growth curve
+%%     closely approximate the actual data. Again, use trial and error to
+%%     find good parameter values. Start by choosing a carrying capacity
+%%     ($K$) that seems sensible for the human population.  
+%%   \item Use the values you calculated above to make four graphs of:
+%%     \begin{itemize}
+%%       \item Actual abundance ($N$) over time
+%%       \item Lambda ($\lambda_t$) over time
+%%       \item Predicted geometric growth over time
+%%       \item Predicted logistic growth over time.
+%%     \end{itemize}
+%%   \item Is recent human population growth more similar to geometric or
+%%     logistic growth? Be explicit about how the observed trends of
+%%     abundance and $\lambda_t$ indicate how the human population is
+%%     growing. Write your answer (3--4 sentences) in the Excel sheet.
+%% \end{enumerate}
+
+
+
+\newpage
+
+{\bf R tips \\}
+
+
+Here's an example of a geometric growth model.
+<<geo,out.width="0.8\\textwidth",fig.align="center",size='normalsize'>>=
+r <- 0.1                      # growth rate
+years <- 2001:2050            # years
+nYears <- length(years)       # number of years
+N <- rep(NA, nYears)          # empty vector
+N[1] <- 100                   # abundance in first year
+for(t in 2:nYears) {
+    N[t] <- N[t-1] + N[t-1]*r 
+}
+plot(years, N, type="l", xlab="Year", ylab="Abundance",
+     main="Geometric growth")
+@ 
+
+
+
+%% Logistic growth.
+%% <<logistic,out.width="0.6\\textwidth",fig.align="center",size='small'>>=
+%% rmax <- 0.1              ## max growth rate
+%% K <- 200                 ## carrying capacity
+%% years <- 2001:2050       ## years
+%% nYears <- length(years)
+%% N <- rep(NA, nYears)
+%% N[1] <- 100             ## abundance in first year
+%% ## for loop
+%% for(t in 2:nYears) {
+%%     N[t] <- N[t-1] + N[t-1]*rmax*(1 - N[t-1]/K)
+%% }
+%% plot(years, N, type="l", xlab="Year", ylab="Abundance",
+%%      main="Logistic growth")
+%% @ 
+
+
+
+\end{document}
+
