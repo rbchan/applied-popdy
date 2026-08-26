@@ -22,7 +22,7 @@ Logistic Growth
 <br>
 
 ::: {style="font-size: 70%;"}
-Applied Population Dynamics\
+Applied Population Dynamics<br>
 WILD 5700/7700
 :::
 

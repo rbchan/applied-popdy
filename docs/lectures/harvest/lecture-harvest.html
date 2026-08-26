@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>Applied Population Dynamics – Dog</title>
+  <title>Applied Population Dynamics – Harvest models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -133,9 +133,15 @@
 
 <section id="section" class="slide level2" data-content-align="center" style="font-size: 160%;" data-background-image="figs/tuna.jpg" data-background-opacity="0.2">
 <h2></h2>
+<p><br></p>
 <center>
 <p>Harvest Models</p>
-<img data-src="figs/book.jpg"> <!-- ![](figs/tuna) -->
+<!-- ![](figs/book.jpg) -->
+<!-- ![](figs/tuna) -->
+<p><br></p>
+<div style="font-size: 70%;">
+<p>Applied Population Dynamics<br> WILD 5700/7700</p>
+</div>
 </center>
 </section>
 <section id="learning-objectives" class="slide level2">
@@ -152,14 +158,18 @@
 </section>
 <section id="sustainable-harvest" class="slide level2">
 <h2>Sustainable harvest</h2>
-<p>A sustainable (and large) harvest is a common objective in game management</p>
 <p><br></p>
-<p>Sustainable harvest:<br> A harvest that is balanced by population growth such that <span class="math inline">\(N_{t+1} = N_t\)</span></p>
+<p>A sustainable (and large) harvest is a common objective in game management.</p>
+<p><br></p>
+<div class="fragment">
+<p><strong>Sustainable harvest</strong>: A harvest that is balanced by population growth such that <span class="math inline">\(N_{t+1} = N_t\)</span>.</p>
+</div>
 </section></section>
 <section>
 
 <section id="harvest-and-geometric-growth" class="slide level2">
 <h2>Harvest and geometric growth</h2>
+<div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 <p><span class="math display">\[
   N_{t+1} = N_t + N_t r
@@ -170,34 +180,43 @@
   N_{t+1} = N_t + N_t r - \color{red}{H_t}
 \]</span></p>
 </div>
-<p>where <span class="math inline">\(H_t\)</span> is the number of animals harvested at the end of year <span class="math inline">\(t\)</span></p>
+</div>
+<div style="font-size: 90%;">
+<div class="fragment">
+<p>where <span class="math inline">\(\color{red}{H_t}\)</span> is the number of animals harvested at the end of year <span class="math inline">\(t\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment">
 <p>What value of <span class="math inline">\(H_t\)</span> achieves equilibrium (i.e., <span class="math inline">\(N_{t+1} = N_t\)</span>)?</p>
+</div>
+</div>
 </section>
 <section id="sustainable-harvest-and-geometric-growth" class="slide level2">
 <h2>Sustainable harvest and geometric growth</h2>
-<p>A sustainable harvest in this context is <span class="math display">\[
+<p>A sustainable harvest in this context is: <span class="math display">\[
   H_t = N_t r
 \]</span></p>
+<p><br></p>
+<div class="fragment">
 <p>Consequently, the sustainbale harvest rate (<span class="math inline">\(h\)</span>) is:<br></p>
 <p><span class="math display">\[
   \begin{align*}
     h &amp;= \frac{H_t}{N_t} \\
-    h= r \\
+    h &amp;= r \\
   \end{align*}
 \]</span></p>
+</div>
 </section></section>
 <section>
-<section id="logistic-growth" class="title-slide slide level1 center">
-<h1>Logistic growth</h1>
 
-</section>
-<section id="harvest-and-logistic-growth" class="slide level2">
+<section id="harvest-and-logistic-growth-1" class="slide level2">
 <h2>Harvest and logistic growth</h2>
 <p><span class="math display">\[
-N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K} \right) - {H_t}
+N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K} \right) - \color{red}{H_t}
 \]</span></p>
+<p><br></p>
 <center>
-What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
+What value of <span class="math inline">\(\color{red}{H_t}\)</span> achieves equilibrium?
 </center>
 </section>
 <section id="sustainable-harvest-and-logistic-growth" class="slide level2">
@@ -206,16 +225,18 @@ What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
 \]</span></p>
 <p><br></p>
-<p>In this case, the sustainable harvest rate (<span class="math inline">\(h\)</span>) depends on population size</p>
+<div class="fragment" style="font-size: 85%;">
+<p>In this case, the sustainable harvest rate (<span class="math inline">\(h\)</span>) depends on population size:</p>
 <p><span class="math display">\[
   \begin{align*}
     h_t &amp;= \frac{H_t}{N_t} \\
     h_t &amp;= r_{max}\left(1 - \frac{N_t}{K} \right) \\
   \end{align*}
 \]</span></p>
+</div>
 </section>
-<section id="example-when-k1000-and-r_max0.1" class="slide level2">
-<h2>Example when K=1000 and r_{max}=0.1</h2>
+<section id="example-when-k1000-and-rmax0.1" class="slide level2">
+<h2>Example when <em>K</em>=1000 and <em>r</em><sub>max</sub>=0.1</h2>
 <p><span class="math display">\[
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
 \]</span></p>
@@ -223,9 +244,9 @@ What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
 <!-- <center> -->
 <!--   ![](figure/msy1-1) -->
 <!-- </center> -->
-<img data-src="lecture-harvest_files/figure-revealjs/msy1-1.png" width="960" class="r-stretch"></section>
-<section id="example-when-k1000-and-r_max0.5" class="slide level2">
-<h2>Example when K=1000 and r_{max}=0.5</h2>
+<img data-src="lecture-harvest_files/figure-revealjs/msy1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="example-when-k1000-and-rmax0.5" class="slide level2">
+<h2>Example when <em>K</em>=1000 and <em>r</em><sub>max</sub>=0.5</h2>
 <p><span class="math display">\[
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
 \]</span></p>
@@ -234,7 +255,7 @@ What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
 <!-- %  ![](harvest-msy2) -->
 <!--   ![](figure/msy2-1) -->
 <!-- </center> -->
-<img data-src="lecture-harvest_files/figure-revealjs/msy2-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture-harvest_files/figure-revealjs/msy2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="maximum-sustainable-yield" class="slide level2">
 <h2>Maximum sustainable yield</h2>
 <ul>
@@ -246,12 +267,14 @@ What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
 <section id="is-msy-useful-in-practice" class="slide level2">
 <h2>Is MSY useful in practice?</h2>
 <center>
-<img data-src="figs/tuna.jpg">
+<img data-src="figs/tuna.jpg" style="width:50.0%">
 </center>
 </section>
 <section id="issues" class="slide level2">
 <h2>Issues</h2>
+<div style="font-size: 90%;">
 <p>Larkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.</p>
+<div class="fragment">
 <ul>
 <li>Same assumptions as logistic growth model
 <ul>
@@ -259,40 +282,59 @@ What value of <span class="math inline">\(H_t\)</span> achieves equilibrium?
 <li>No age/sex/individual variation</li>
 <li>No stochasticity</li>
 </ul></li>
-<li>Ecosystem impacts of reducing a population to half its carrying capacity?
-<ul>
-<li>Evolutionary consequences? % </li>
-</ul></li>
 </ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ecosystem impacts of reducing a population to half its carrying capacity?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Evolutionary consequences?</li>
+</ul>
+</div>
+</div>
 </section></section>
 <section>
 
-<section id="compensatory-mortality-1" class="slide level2">
-<h2>Compensatory mortality</h2>
-<p>Additive vs.&nbsp;compensatory mortality</p>
+<section id="additive-vs.-compensatory-mortality" class="slide level2">
+<h2>Additive vs.&nbsp;compensatory mortality</h2>
+<div style="font-size: 85%;">
 <ul>
-<li>One possible mechanism giving rise to logistic growth is density-dependence in survival.</li>
-<li>For example, if population size is reduced, survival of the remaining individuals might increase</li>
-<li>If harvest is compensated for by improved survival, harvest is a form of <strong>compensatory mortality</strong></li>
-<li>However, if harvest is not compensated for by improved survival, harvest is a form of <strong>additive mortality</strong></li>
+<li class="fragment">One possible mechanism giving rise to logistic growth is density-dependence in survival.</li>
+<li class="fragment">For example, if population size is reduced, survival of the remaining individuals might increase.</li>
+<li class="fragment">If harvest is compensated for by improved survival, harvest is a form of <strong>compensatory mortality</strong>.</li>
+<li class="fragment">However, if harvest is not compensated for by improved survival, harvest is a form of <strong>additive mortality</strong>.</li>
 </ul>
+<p><br></p>
+<div class="fragment" style="color: RoyalBlue;">
 <center>
 If harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines.
 </center>
+</div>
+</div>
 </section>
 <section id="compensatory-mortality-example" class="slide level2">
 <h2>Compensatory mortality example</h2>
+<div style="font-size: 85%;">
 <p>Suppose a population of 100 white-tailed deer is subjected to harvest.</p>
+<p><br></p>
 <p>Harvest takes place prior to any natural mortality.</p>
+<p><br></p>
 <p>Natural mortality occurs in a density dependent fashion, such that survival probability (<span class="math inline">\(S\)</span>) declines as <span class="math inline">\(N\)</span> increases.</p>
-<p>Let’s assume <span class="math inline">\(S = 0.8 - 0.005 \times N\)</span></p>
+<p><br></p>
+<div class="fragment">
+<p>Let’s assume: <span class="math display">\[S = 0.8 - 0.005 \times N\]</span></p>
+</div>
+</div>
 </section>
 <section id="individual-survival-vs.-population-size" class="slide level2">
 <h2>Individual survival vs.&nbsp;population size</h2>
 <p><span class="math display">\[S = 0.8 - 0.005 \times N\]</span></p>
 
 <!-- ![](figure/phi1-1) -->
-<img data-src="lecture-harvest_files/figure-revealjs/phi1-1.png" width="768" class="r-stretch"></section>
+<img data-src="lecture-harvest_files/figure-revealjs/phi1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="s-0.8---0.005-x-n" class="slide level2">
 <h2>S = 0.8 - 0.005 x N</h2>
 <p>Suppose 20 individuals are harvested from an initial population of 100 individuals.</p>

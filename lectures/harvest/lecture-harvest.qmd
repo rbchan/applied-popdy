@@ -3,7 +3,7 @@
 format:
   revealjs:
     theme: default
-    pagetitle: 'Dog'
+    pagetitle: 'Harvest models'
     slide-number: true
     css: ../../custom.css
 lang: en
@@ -15,11 +15,21 @@ lang: en
 
 ## {content-align="center" style="font-size: 160%;" background-image="figs/tuna.jpg" background-opacity=0.2}
 
+<br>
+
 <center>
 Harvest Models
     
-![](figs/book.jpg)
+<!-- ![](figs/book.jpg) -->
 <!-- ![](figs/tuna) -->
+
+<br>
+
+::: {style="font-size: 70%;"}
+Applied Population Dynamics<br>
+WILD 5700/7700
+:::
+
 </center>
 
 
@@ -49,13 +59,15 @@ Additive vs compensatory mortality.
 
 ## Sustainable harvest
   
-A sustainable (and large) harvest is a common objective in game management
+<br>
+
+A sustainable (and large) harvest is a common objective in game management. 
 
 <br>
   
-Sustainable harvest:<br>
-A harvest that is balanced by population growth such that $N_{t+1} = N_t$
-
+::: {.fragment}
+**Sustainable harvest**: A harvest that is balanced by population growth such that $N_{t+1} = N_t$.
+:::
 
 
 # Geometric growth and harvest {visibility="hidden"}
@@ -64,6 +76,7 @@ A harvest that is balanced by population growth such that $N_{t+1} = N_t$
 
 ## Harvest and geometric growth
 
+::: {.r-stack}
 ::: {.fragment .fade-out fragment-index=1}
 $$
   N_{t+1} = N_t + N_t r
@@ -75,47 +88,64 @@ $$
   N_{t+1} = N_t + N_t r - \color{red}{H_t}
 $$
 :::
+:::
 
-where $H_t$ is the number of animals harvested at the end of year $t$
-  
+::: {style="font-size: 90%;"}
+
+
+::: {.fragment}
+where $\color{red}{H_t}$ is the number of animals harvested at the end of year $t$.
+:::
+
+<br>
+
+::: {.fragment}
 What value of $H_t$ achieves equilibrium (i.e., $N_{t+1} = N_t$)?
+:::
+
+:::
 
 
 
 
 ## Sustainable harvest and geometric growth
   
-A sustainable harvest in this context is
+A sustainable harvest in this context is:
 $$
   H_t = N_t r
 $$
+
+<br>
   
-  
+::: {.fragment}
 Consequently, the sustainbale harvest rate ($h$) is:<br>
 
 $$
   \begin{align*}
     h &= \frac{H_t}{N_t} \\
-    h= r \\
+    h &= r \\
   \end{align*}
 $$
+:::
 
 
 
 
 
-# Logistic growth
+# Harvest and logistic growth {visibility="hidden"}
 
 
 
 ## Harvest and logistic growth
 
 $$
-N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K} \right) - {H_t}
+N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K} \right) - \color{red}{H_t}
 $$
-  
+
+<br>
+
 <center>
-What value of $H_t$ achieves equilibrium?
+What value of $\color{red}{H_t}$ achieves equilibrium?
 </center>
 
 
@@ -128,10 +158,11 @@ $$
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
 $$
   
-<br>  
+<br>
 
-In this case, the sustainable harvest rate ($h$) depends on population size
+::: {.fragment style="font-size: 85%;"}
 
+In this case, the sustainable harvest rate ($h$) depends on population size:
   
 $$
   \begin{align*}
@@ -140,9 +171,9 @@ $$
   \end{align*}
 $$
 
+:::
 
-
-## Example when K=1000 and r_{max}=0.1
+## Example when *K*=1000 and *r*~max~=0.1
 
 $$
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
@@ -151,6 +182,8 @@ $$
 ```{r}
 #| label: msy1
 #| include: true
+#| fig-align: center
+#| fig-height: 5
 N <- seq(0, 1000, by=10)
 rmax <- 0.1
 K <- 1000
@@ -173,7 +206,7 @@ segments(K/2, 0, K/2, max(H.1), lty=2, lwd=2, col="purple")
 
 
 
-## Example when K=1000 and r_{max}=0.5
+## Example when *K*=1000 and *r*~max~=0.5
 
 $$
     H_t = N_t r_{max}\left(1 - \frac{N_t}{K} \right)
@@ -183,6 +216,8 @@ $$
 ```{r}
 #| label: msy2
 #| include: true
+#| fig-align: center
+#| fig-height: 5
 N <- seq(0, 1000, by=10)
 rmax <- 0.5
 K <- 1000
@@ -216,60 +251,83 @@ segments(K/2, 0, K/2, max(H), lty=2, lwd=2, col="purple")
 ## Is MSY useful in practice?
 
 <center>
- ![](figs/tuna.jpg)
+ ![](figs/tuna.jpg){width="50%"}
 </center>
 
 
 
 ## Issues
 
+::: {style="font-size: 90%;"}
+
 Larkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.
   
+
+::: {.fragment}
 - Same assumptions as logistic growth model
   * K is constant
-  *  No age/sex/individual variation
-  *  No stochasticity
-      
+  * No age/sex/individual variation
+  * No stochasticity
+:::
+
+::: {.fragment}
 - Ecosystem impacts of reducing a population to half its carrying capacity? 
-  * Evolutionary consequences?
-%      \url{http://www.npr.org/templates/story/story.php?storyId=5434698}
-  
+:::
 
+::: {.fragment}
+- Evolutionary consequences?
+:::
 
+:::
 
 # Compensatory mortality {visibility="hidden"}
 
 
-## Compensatory mortality
-  
-Additive vs. compensatory mortality
+## Additive vs. compensatory mortality
 
+::: {style="font-size: 85%;"}
+
+
+::: incremental
 - One possible mechanism giving rise to logistic growth is density-dependence in survival.
-- For example, if population size is reduced, survival of the remaining individuals might increase
-- If harvest is compensated for by improved survival, harvest is a form of **compensatory mortality**
-- However, if harvest is not compensated for by improved survival, harvest is a form of **additive mortality**
-  
+- For example, if population size is reduced, survival of the remaining individuals might increase.
+- If harvest is compensated for by improved survival, harvest is a form of **compensatory mortality**.
+- However, if harvest is not compensated for by improved survival, harvest is a form of **additive mortality**.
+::: 
 
+<br>
+
+::: {.fragment style="color: RoyalBlue;"}
 <center>
 If harvest mortality is additive, extra caution is needed to ensure that harvest doesn't cause long-term population declines.
 </center>
+:::
 
-
+:::
 
 
 
 ## Compensatory mortality example
   
+::: {style="font-size: 85%;"}
+
 Suppose a population of 100 white-tailed deer is subjected to harvest.
 
+<br>
 
 Harvest takes place prior to any natural mortality.
 
+<br>
+
 Natural mortality occurs in a density dependent fashion, such that survival probability ($S$) declines as $N$ increases.
 
-Let's assume $S = 0.8 - 0.005 \times N$
+<br>
 
+::: {.fragment}
+Let's assume: $$S = 0.8 - 0.005 \times N$$
+:::
 
+:::
 
 
 ## Individual survival vs. population size
@@ -280,11 +338,12 @@ $$S = 0.8 - 0.005 \times N$$
 #| label: phi1
 #| include: true
 #| fig-width: 8
-#| fig-height: 6
+#| fig-height: 7
+#| fig-align: center
 plot(function(x) 0.8 - 0.005*x, 0, 100, col="blue",
      xlab="Population size (N)",
      ylab="Survival (S)",
-     ylim=c(0, 1), lwd=2)
+     ylim=c(0, 1), lwd=2, cex.lab=1.3)
 ```
 
 
