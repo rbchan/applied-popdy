@@ -9,7 +9,7 @@ rnw2qmd <- function(input_file, output_file = NULL) {
   
   ## 1. Strip the LaTeX preamble up to \begin{document}
   ## Inject a basic Quarto Revealjs YAML header
-  yaml_header <- "---\n## title: \"Converted Presentation\"\nformat:\n  revealjs:\n    theme: default\n    pagetitle: 'Dog'\n    slide-number: true\nlang: en\n---\n\n"
+  yaml_header <- "---\n## title: \"Converted Presentation\"\nformat:\n  revealjs:\n    theme: default\n    pagetitle: 'Dog'\n    slide-number: true\n    css: ../../custom.css\nlang: en\n---\n\n"
   if (grepl("\\\\begin\\{document\\}", content)) {
     content <- sub("(?s).*?\\\\begin\\{document\\}", yaml_header, content, perl = TRUE)
   } else {

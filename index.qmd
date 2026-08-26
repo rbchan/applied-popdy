@@ -48,3 +48,4 @@ and an oral presentation.
 - [Lecture 4 - Logistic growth](lectures/logistic-growth/lecture-logistic-growth.qmd)
 
 - [Lab 2 - Geometric and logistic growth](labs/geo-growth/lab-geometric-growth.qmd)
+
