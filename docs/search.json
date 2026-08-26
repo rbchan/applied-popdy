@@ -784,13 +784,6 @@
     "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#maximum-sustainable-yield",
-    "href": "lectures/harvest/lecture-harvest.html#maximum-sustainable-yield",
-    "title": "Applied Population Dynamics",
-    "section": "Maximum sustainable yield",
-    "text": "Maximum sustainable yield\n\nMSY is found when \\(N=K/2\\)\nThe maximum yield is \\(H = r_{max}K/4\\)\nThe optimal harvest rate is \\(h = r_{max}/2\\)"
-  },
-  {
     "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
     "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
     "title": "Applied Population Dynamics",
@@ -819,53 +812,53 @@
     "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#individual-survival-vs.-population-size",
-    "href": "lectures/harvest/lecture-harvest.html#individual-survival-vs.-population-size",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
     "title": "Applied Population Dynamics",
-    "section": "Individual survival vs. population size",
-    "text": "Individual survival vs. population size\n\\[S = 0.8 - 0.005 \\times N\\]"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#s-0.8---0.005-x-n",
-    "href": "lectures/harvest/lecture-harvest.html#s-0.8---0.005-x-n",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
     "title": "Applied Population Dynamics",
-    "section": "S = 0.8 - 0.005 x N",
-    "text": "S = 0.8 - 0.005 x N\nSuppose 20 individuals are harvested from an initial population of 100 individuals.\nHow many individuals will remain at the end of the year?\nHow many would have remained at the end of the year if no hunting had occurred?"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#overall-survival-vs.-harvest-rate",
-    "href": "lectures/harvest/lecture-harvest.html#overall-survival-vs.-harvest-rate",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
     "title": "Applied Population Dynamics",
-    "section": "Overall survival vs. harvest rate",
-    "text": "Overall survival vs. harvest rate\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#overall-survival-vs.-harvest-rate-1",
-    "href": "lectures/harvest/lecture-harvest.html#overall-survival-vs.-harvest-rate-1",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
     "title": "Applied Population Dynamics",
-    "section": "Overall survival vs. harvest rate",
-    "text": "Overall survival vs. harvest rate"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
     "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
     "title": "Applied Population Dynamics",
     "section": "Density-dependent survival example",
-    "text": "Density-dependent survival example\nMule deer fawn survival (From Bartman et al. 1992)"
+    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#summary",
     "href": "lectures/harvest/lecture-harvest.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\nKey points\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
+    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#assignment",
     "href": "lectures/harvest/lecture-harvest.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\nRead pages 22–25 in Conroy and Carroll"
+    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
   },
   {
     "objectID": "APD-syllabus.html",

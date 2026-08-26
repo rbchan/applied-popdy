@@ -256,14 +256,7 @@ What value of <span class="math inline">\(\color{red}{H_t}\)</span> achieves equ
 <!--   ![](figure/msy2-1) -->
 <!-- </center> -->
 <img data-src="lecture-harvest_files/figure-revealjs/msy2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="maximum-sustainable-yield" class="slide level2">
-<h2>Maximum sustainable yield</h2>
-<ul>
-<li><p>MSY is found when <span class="math inline">\(N=K/2\)</span></p></li>
-<li><p>The maximum yield is <span class="math inline">\(H = r_{max}K/4\)</span></p></li>
-<li><p>The optimal harvest rate is <span class="math inline">\(h = r_{max}/2\)</span></p></li>
-</ul>
-</section>
+
 <section id="is-msy-useful-in-practice" class="slide level2">
 <h2>Is MSY useful in practice?</h2>
 <center>
@@ -310,7 +303,7 @@ What value of <span class="math inline">\(\color{red}{H_t}\)</span> achieves equ
 <p><br></p>
 <div class="fragment" style="color: RoyalBlue;">
 <center>
-If harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines.
+<strong>If harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines</strong>.
 </center>
 </div>
 </div>
@@ -329,52 +322,74 @@ If harvest mortality is additive, extra caution is needed to ensure that harvest
 </div>
 </div>
 </section>
-<section id="individual-survival-vs.-population-size" class="slide level2">
-<h2>Individual survival vs.&nbsp;population size</h2>
+<section id="compensatory-mortality-example-1" class="slide level2">
+<h2>Compensatory mortality example</h2>
+<div style="font-size: 85%;">
 <p><span class="math display">\[S = 0.8 - 0.005 \times N\]</span></p>
+</div>
 
 <!-- ![](figure/phi1-1) -->
 <img data-src="lecture-harvest_files/figure-revealjs/phi1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
-<section id="s-0.8---0.005-x-n" class="slide level2">
-<h2>S = 0.8 - 0.005 x N</h2>
-<p>Suppose 20 individuals are harvested from an initial population of 100 individuals.</p>
+<section id="compensatory-mortality-example-2" class="slide level2">
+<h2>Compensatory mortality example</h2>
+<div style="font-size: 85%;">
+<p><span class="math display">\[S = 0.8 - 0.005 \times N\]</span></p>
+</div>
+<p>Suppose 20 individuals are harvested from the initial population of 100 individuals.</p>
+<p><br></p>
 <p>How many individuals will remain at the end of the year?</p>
+<p><br></p>
 <p>How many would have remained at the end of the year if no hunting had occurred?</p>
-<center>
-<img data-src="lecture-harvest_files/figure-revealjs/phi1-1.png">
-</center>
+<!-- <center> -->
+<!--   ![](lecture-harvest_files/figure-revealjs/phi1-1.png) -->
+<!-- </center> -->
 </section>
-<section id="overall-survival-vs.-harvest-rate" class="slide level2">
-<h2>Overall survival vs.&nbsp;harvest rate</h2>
+<section id="compensatory-mortality-example-3" class="slide level2">
+<h2>Compensatory mortality example</h2>
 <p>The overall survival rate (<span class="math inline">\(\bar{S}\)</span>) is product of survival throughout the hunting season (<span class="math inline">\(1-h\)</span>) and survial after the hunting season.</p>
 <p><span class="math display">\[
   \bar{S} = (1-h)(\beta_0 - \beta_1 (N - Nh))
 \]</span></p>
 </section>
-<section id="overall-survival-vs.-harvest-rate-1" class="slide level2">
-<h2>Overall survival vs.&nbsp;harvest rate</h2>
+<section id="compensatory-mortality-example-4" class="slide level2">
+<h2>Compensatory mortality example</h2>
 <center>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="lecture-harvest_files/figure-revealjs/phibar1-1.png" style="width:70.0%"></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<p><img data-src="lecture-harvest_files/figure-revealjs/phibar2-1.png" style="width:70.0%"></p>
+</div>
+</div>
 </center>
 </section>
 <section id="density-dependent-survival-example" class="slide level2">
 <h2>Density-dependent survival example</h2>
-<p>Mule deer fawn survival (From Bartman et al.&nbsp;1992)</p>
-
-<img data-src="figs/deer-survival-dd.png" class="r-stretch"></section>
+<p><br> Mule deer fawn survival (From Bartman et al.&nbsp;1992)</p>
+<center>
+<img data-src="figs/deer-survival-dd.png">
+</center>
+</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
-<p>Key points</p>
+<!-- Key points -->
+<div style="font-size: 90%;">
 <ul>
-<li>If growth is geometric, sustainable harvest occurs when <span class="math inline">\(h=r\)</span>.</li>
-<li>If growth is logisitic, maximum sustainable yield occurs at <span class="math inline">\(N=K/2\)</span>.</li>
-<li>If survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).</li>
-<li>If mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.</li>
-<li>Managers need to know if harvest mortality is additive or compensatory when setting harvest regulations.</li>
+<li class="fragment">If growth is geometric, sustainable harvest occurs when <span class="math inline">\(h=r\)</span>.</li>
+<li class="fragment">If growth is logisitic, maximum sustainable yield occurs at <span class="math inline">\(N=K/2\)</span>.</li>
+<li class="fragment">If survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).</li>
+<li class="fragment">If mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.</li>
+<li class="fragment">Managers need to know if harvest mortality is additive or compensatory when setting harvest regulations.</li>
 </ul>
+</div>
 </section>
 <section id="assignment" class="slide level2">
 <h2>Assignment</h2>
-<p>Read pages 22–25 in Conroy and Carroll</p>
+<br>
+<center>
+Read pages 22–25 in Conroy and Carroll
+</center>
 
 
 </section></section>
