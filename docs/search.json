@@ -873,5 +873,12 @@
     "title": "Applied Population Dynamics",
     "section": "",
     "text": "Answer the following questions by completing the provided Excel template and by replicating your work in R. Undergraduates should do Exercise 1 in R, but not Exercise 2. Graduate students should do both exercises in R. Upload your Excel file and a single R script to ELC. Name the files with your last name followed by your first name.\nExercise 1\nA study was conducted in which a population of 100 Mexican wolves (Canis lupus baileyi) was monitored intensively for 1 year. In that time, 10 pups were born, and 20 of the original 100 individuals died. There was no immigration or emigration.\nExercise 2\nMany people assume that the human population acts differently than most wildlife populations and is increasing at an exponential rate, or close to it. The UN estimated that the human population was approximately 7.02 billion in 2010, and 7.11 billion in 2011.\nMore data about the human population:  https://www.worldometers.info/world-population/  https://ourworldindata.org/world-population-growth\nR tips\nHere’s an example of a geometric growth model.\nr &lt;- 0.1                      # growth rate\nyears &lt;- 2001:2050            # years\nnYears &lt;- length(years)       # number of years\nN &lt;- rep(NA, nYears)          # empty vector\nN[1] &lt;- 100                   # abundance in first year\nfor(t in 2:nYears) {\n    N[t] &lt;- N[t-1] + N[t-1]*r \n}\nplot(years, N, type=\"l\", xlab=\"Year\", ylab=\"Abundance\",\n     main=\"Geometric growth\")"
+  },
+  {
+    "objectID": "labs/geo-growth/lab-geometric-growth.html#footnotes",
+    "href": "labs/geo-growth/lab-geometric-growth.html#footnotes",
+    "title": "Applied Population Dynamics",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nGraduate students, you can import the human population data into R using this code: humans &lt;- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)↩︎"
   }
 ]

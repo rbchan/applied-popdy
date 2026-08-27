@@ -50,7 +50,7 @@ approximately 7.02 billion in 2010, and 7.11 billion in 2011.
 
 2. Use the geometric growth equation with the value of $r$ that you calculated above to predict the human population from 2012 to 2025. 
 
-3. Graph your predictions of the human population along with the actual human population over time.
+3. Graph your predictions of the human population along with the actual human population over time.^[Graduate students, you can import the human population data into R using this code: `humans <- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)`]
 
 4. Calculate the growth rate lambda ($\lambda_t = N_t / N_{t-1}$) for each year and for both the predicted human population and the actual human population data. Graph both values of lambda from 2011 to 2025.
 
