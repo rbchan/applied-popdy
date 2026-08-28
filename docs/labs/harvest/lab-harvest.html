@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lecture-logistic-growth – Applied Population Dynamics</title>
+<title>lab-harvest – Applied Population Dynamics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -142,34 +177,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#today-in-apd" id="toc-today-in-apd" class="nav-link" data-scroll-target="#today-in-apd">Today in APD</a></li>
-  </ul></li>
-  <li><a href="#logistic-growth" id="toc-logistic-growth" class="nav-link" data-scroll-target="#logistic-growth">Logistic growth</a>
-  <ul class="collapse">
-  <li><a href="#from-geometric-to-logistic-growth" id="toc-from-geometric-to-logistic-growth" class="nav-link" data-scroll-target="#from-geometric-to-logistic-growth">From Geometric to Logistic Growth</a></li>
-  <li><a href="#density-dependent-growth" id="toc-density-dependent-growth" class="nav-link" data-scroll-target="#density-dependent-growth">Density-dependent growth</a></li>
-  <li><a href="#graphical-depiction" id="toc-graphical-depiction" class="nav-link" data-scroll-target="#graphical-depiction">Graphical depiction</a></li>
-  <li><a href="#growth-rate" id="toc-growth-rate" class="nav-link" data-scroll-target="#growth-rate">Growth rate</a></li>
-  <li><a href="#growth" id="toc-growth" class="nav-link" data-scroll-target="#growth">Growth</a></li>
-  <li><a href="#growth-as-a-function-of-n" id="toc-growth-as-a-function-of-n" class="nav-link" data-scroll-target="#growth-as-a-function-of-n">Growth as a function of <span class="math inline">\(N\)</span></a></li>
-  <li><a href="#what-happens-when-we-change-r_max" id="toc-what-happens-when-we-change-r_max" class="nav-link" data-scroll-target="#what-happens-when-we-change-r_max">What happens when we change <span class="math inline">\(r_{max}\)</span>?</a></li>
-  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
-  </ul></li>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a>
-  <ul class="collapse">
-  <li><a href="#assumptions-of-basic-model" id="toc-assumptions-of-basic-model" class="nav-link" data-scroll-target="#assumptions-of-basic-model">Assumptions of basic model</a></li>
-  <li><a href="#does-logistic-growth-occur-in-nature" id="toc-does-logistic-growth-occur-in-nature" class="nav-link" data-scroll-target="#does-logistic-growth-occur-in-nature">Does logistic growth occur in nature?</a></li>
-  <li><a href="#does-logistic-growth-occur-in-nature-1" id="toc-does-logistic-growth-occur-in-nature-1" class="nav-link" data-scroll-target="#does-logistic-growth-occur-in-nature-1">Does logistic growth occur in nature?</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
-  <ul class="collapse">
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
-  </ul></li>
+  <li><a href="#lab-3-assignment-harvest-models-due-by-friday-500pm" id="toc-lab-3-assignment-harvest-models-due-by-friday-500pm" class="nav-link active" data-scroll-target="#lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture-logistic-growth.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -177,252 +187,104 @@ window.Quarto = {
 
 
 
-<section id="background" class="level1" data-visibility="hidden">
-<h1 data-visibility="hidden">Background</h1>
-<section id="section" class="level2" data-content-align="center" style="font-size: 160%;" data-background-image="figs/turtles.jpg" data-background-opacity="0.2">
-<h2 data-content-align="center" style="font-size: 160%;" data-background-image="figs/turtles.jpg" data-background-opacity="0.2" class="anchored" data-anchor-id="section"></h2>
-<p><br><br><br><br></p>
 <center>
-<p>Logistic Growth</p>
-<p><br></p>
-<div style="font-size: 70%;">
-<p>Applied Population Dynamics<br> WILD 5700/7700</p>
+<section id="lab-3-assignment-harvest-models-due-by-friday-500pm" class="level2">
+<h2 class="anchored" data-anchor-id="lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</h2>
+</section></center>
+<p>Answer each of the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do all the exercises in Excel, but only Exercise I in R. Graduate students should do all exercises in Excel and Exercises I &amp; II (not III) in R.</p>
+<p><strong>Exercise I</strong></p>
+<p>The Excel sheet shows (fake) data on Burmese python abundance in South Florida.</p>
+<ol type="1">
+<li>What growth model best describes these data, geometric or logistic? Hint: calculate <span class="math inline">\(\lambda_t = N_t/N_{t-1}\)</span>.</li>
+<li>What is the growth rate (<span class="math inline">\(r\)</span>)?</li>
+<li>If you determine that the per-capita birth rate (<span class="math inline">\(b\)</span>) is 2.0, what must be the per-capita mortality rate (<span class="math inline">\(d\)</span>)?</li>
+<li>What harvest rate (<span class="math inline">\(h\)</span>) would result in a sustainable yield?</li>
+<li>Use the sustainable harvest rate (<span class="math inline">\(h\)</span>) from part 4 to project the population forward from 2025 to 2036. Sustainable harvest should cause the population to stop growing. To implement sustainable harvest, you will need to compute the number of individuals removed (<span class="math inline">\(H_t\)</span>) each year using the equation <span class="math inline">\(H_t=N_{t}h\)</span> (Note that <span class="math inline">\(H_t\)</span> can be greater than <span class="math inline">\(N_t\)</span> because harvest is assumed to occur at the end of the year, after the population has grown). Create a graph of python abundance from 2017–2036.</li>
+</ol>
+<p>Here’s some R code to get you started on Exercise I:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>years1 <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2036</span>                                  <span class="do">## All years</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nYears1 <span class="ot">&lt;-</span> <span class="fu">length</span>(years1)                            <span class="do">## Number of years</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nYearsWithData <span class="ot">&lt;-</span> <span class="dv">8</span>                                  <span class="do">## nYears with data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nYearsWithoutData <span class="ot">&lt;-</span> nYears1<span class="sc">-</span>nYearsWithData          <span class="do">## nYears without data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pythons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">63</span>, <span class="dv">156</span>, <span class="dv">391</span>, <span class="dv">977</span>, <span class="dv">2441</span>, <span class="dv">6104</span>,  <span class="do">## Python counts</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">rep</span>(<span class="cn">NA</span>, nYears1<span class="sc">-</span>nYearsWithData))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Question 1 hint: you can compute the first lambda like this:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears1<span class="dv">-1</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>lambda[<span class="dv">1</span>] <span class="ot">&lt;-</span> pythons[<span class="dv">2</span>]<span class="sc">/</span>pythons[<span class="dv">1</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## You could use a 'for loop' to compute lambda in each year</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## For question 5, you will want a loop like this:</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> (nYearsWithData<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>nYears1) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="do">## PUT CODE HERE</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</center>
-</section>
-<section id="today-in-apd" class="level2">
-<h2 class="anchored" data-anchor-id="today-in-apd">Today in APD</h2>
-<p><br></p>
-<p>The equation for logistic growth in discrete time.</p>
-<p><br></p>
-<p>The definition of density-dependent growth.</p>
-<p><br></p>
-<p>Basic properties of the model.</p>
-<p><br></p>
-<p>Strange behavior of the (discrete time) model, such as damped oscillations and chaos.</p>
-</section>
-</section>
-<section id="logistic-growth" class="level1" data-visibility="hidden">
-<h1 data-visibility="hidden">Logistic growth</h1>
-<section id="from-geometric-to-logistic-growth" class="level2">
-<h2 class="anchored" data-anchor-id="from-geometric-to-logistic-growth">From Geometric to Logistic Growth</h2>
-<p><strong>Geometric growth</strong></p>
-<p><span class="math display">\[N_{t+1} = N_t + N_tr\]</span></p>
-<p>. . .</p>
-<p><strong>Logistic growth</strong></p>
-<p><span class="math display">\[N_{t+1} = N_t + N_t r_{max}\left(1 - \frac{N_t}{K}\right)\]</span></p>
-<p>. . .</p>
-<p>where</p>
-<div style="font-size: 80%;">
+<p><strong>Exercise II</strong></p>
+<p>Imagine a population of northern bobwhite (<em>Colinus virginianus</em>) that is experiencing logistic growth with <span class="math inline">\(r_\mathrm{max} = 0.32\)</span>, <span class="math inline">\(K = 2000\)</span>, and an initial population size of 100 individuals.</p>
+<ol type="1">
+<li>Project the population for 40 years, and plot abundance over time. Add axis labels as always.</li>
+<li>Compute the number of individuals that <em>could be</em> sustainably harvested each year. Plot abundance on the x-axis and sustainable harvest on the y-axis.</li>
+<li>At what value of abundance (<span class="math inline">\(N\)</span>) would maximum sustainable yield (MSY) occur?</li>
+<li>What is the value of MSY in this case? In other words, what is maximum number of individuals that can be sustainably harvested?</li>
+<li>Using the same values of <span class="math inline">\(r_\mathrm{max}\)</span>, <span class="math inline">\(K\)</span>, and <span class="math inline">\(N_0\)</span>, project the population forward again, but include harvest (<span class="math inline">\(H_t\)</span>) in the model. Choose values of <span class="math inline">\(H_t\)</span> that allow for the greatest number of years at MSY. Hint: You can let harvest be zero in some years.</li>
+</ol>
+<p><strong>Exercise III</strong></p>
+<p>Suppose that annual survival of sitka deer (<em>Odocoileus hemionus sitkensis</em>) decreases as abundance increases according to the equation: <span class="math inline">\(S = \beta_0 - \beta_1 \times N\)</span>.</p>
+<ol type="1">
+<li>Compute survival probability for each value of <span class="math inline">\(N\)</span> provided in the spreadsheet with <span class="math inline">\(\beta_0=0.95\)</span> and <span class="math inline">\(\beta_1=0.003\)</span>. Create a graph with survival probability on the y-axis and abundance on the x-axis.</li>
+<li>A manager is trying to decide how many deer to harvest, and is considering removing anywhere from 10 to 150 individuals from a population of 200. Use the equation above to determine how many deer will remain one year after harvest for each of the harvest options. To accomplish this:</li>
+</ol>
 <ul>
-<li><p><span class="math inline">\(r_{max}\)</span> is the growth rate when <span class="math inline">\(N_t\)</span> is close to 0</p></li>
-<li><p><span class="math inline">\(K\)</span> is the carrying capacity</p></li>
+<li>Compute how many individuals will be alive immediately after harvest (Hint: You just have to subtract <span class="math inline">\(H\)</span> from <span class="math inline">\(N=200\)</span>).</li>
+<li>Compute survival probability for these remaining individuals using the survival equation above</li>
+<li>Compute how many will be alive at the end of the year. In other words, what fraction of the individuals after harvest will survive and be alive next year?</li>
 </ul>
-</div>
-</section>
-<section id="density-dependent-growth" class="level2">
-<h2 class="anchored" data-anchor-id="density-dependent-growth">Density-dependent growth</h2>
-<p><br></p>
-<p>Logistic growth is an example of <strong>density-dependent growth</strong>.</p>
-<p>. . .</p>
-<p><br></p>
-<p><strong>Definition</strong>: Population growth rate <span style="color: red;">is</span> affected by population size (<span class="math inline">\(N\)</span>).</p>
-<p>. . .</p>
-<p><br></p>
-<p><strong>Implications</strong>: Resources are limited and there is a carrying capacity.</p>
-</section>
-<section id="graphical-depiction" class="level2">
-<h2 class="anchored" data-anchor-id="graphical-depiction">Graphical depiction</h2>
-<center>
-<div class="r-stack">
-<div class="fragment fade-out" data-fragment-index="1">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/geom-1.png" class="img-fluid" style="width:90.0%"></p>
-</div>
-<div class="fragment fade-in" data-fragment-index="1">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/geom-logistic-1.png" class="img-fluid" style="width:90.0%"></p>
-</div>
-</div>
-</center>
-</section>
-<section id="growth-rate" class="level2">
-<h2 class="anchored" data-anchor-id="growth-rate">Growth rate</h2>
-<div style="font-size: 70%;">
-<p><span class="math display">\[\lambda_t = N_{t+1}/N_t\]</span></p>
-</div>
-<center>
-<!-- ::: {.r-stack} -->
-<!-- ::: {.fragment .fade-out fragment-index=1} -->
-<p><img src="lecture-logistic-growth_files/figure-revealjs/lr1-1.png" class="img-fluid" style="width:70.0%"> <!-- ::: --></p>
-<div class="fragment">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/lambda-1.png" class="img-fluid" style="width:70.0%"></p>
-</div>
-</center>
-</section>
-<section id="growth" class="level2">
-<h2 class="anchored" data-anchor-id="growth">Growth</h2>
-<div style="font-size: 70%;">
-<p><span class="math display">\[\Delta_t=N_{t+1}-N_t\]</span></p>
-</div>
-<center>
-<!-- ::: {.r-stack} -->
-<!-- ::: {.fragment .fade-out fragment-index=1} -->
-<p><img src="lecture-logistic-growth_files/figure-revealjs/lr2-1.png" class="img-fluid" style="width:70.0%"> <!-- ::: --></p>
-<div class="fragment">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/delta-1.png" class="img-fluid" style="width:70.0%"></p>
-</div>
-</center>
-</section>
-<section id="growth-as-a-function-of-n" class="level2">
-<h2 class="anchored" data-anchor-id="growth-as-a-function-of-n">Growth as a function of <span class="math inline">\(N\)</span></h2>
+<ol start="3" type="1">
+<li>Create a graph with final abundance (<span class="math inline">\(N\)</span>) on the y-axis and harvest (<span class="math inline">\(H\)</span>) of the x-axis.</li>
+<li>Determine how many deer will be alive if no harvest occurs. Are there any levels of harvest that can result in a larger population than the no harvest scenario? If so, how can this be?</li>
+<li>If the manager’s objective is to maximize harvest, while maintaining a herd size greater than it would be without harvest, how many deer should be taken?</li>
+</ol>
+<p><strong>R tips</strong></p>
+<p>Here’s an example of a logistic growth model.</p>
 <div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmax <span class="ot">&lt;-</span> <span class="fl">0.1</span>              <span class="do">## max growth rate</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">200</span>                 <span class="do">## carrying capacity</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2050</span>       <span class="do">## years</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="fu">length</span>(years)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>N1[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    N1[t] <span class="ot">&lt;-</span> N1[t<span class="dv">-1</span>] <span class="sc">+</span> N1[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N1[t<span class="dv">-1</span>]<span class="sc">/</span>K)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Here’s an example of a logistic growth model with harvest</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">0.02</span>                <span class="do">## harvest rate (not the sustainable harvest rate)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>N2[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears<span class="dv">-1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    H[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>h  <span class="do">## harvest</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    N2[t] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>] <span class="sc">+</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N2[t<span class="dv">-1</span>]<span class="sc">/</span>K) <span class="sc">-</span> H[t<span class="dv">-1</span>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(years, N1, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab=</span><span class="st">"Year"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(years, N2, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2000</span>, <span class="dv">200</span>, <span class="fu">c</span>(<span class="st">"Logistic growth"</span>, <span class="st">"Logistic growth with harvest"</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"blue"</span>), <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/delta-N-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<p><img src="lab-harvest_files/figure-html/logistic-harvest-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<!-- <center> -->
-<!--   ![](lecture-logistic-growth_files/figure-revealjs/delta-N-1) -->
-<!-- </center> -->
-</section>
-<section id="what-happens-when-we-change-r_max" class="level2">
-<h2 class="anchored" data-anchor-id="what-happens-when-we-change-r_max">What happens when we change <span class="math inline">\(r_{max}\)</span>?</h2>
-<center>
-<div class="r-stack">
-<div class="fragment fade-out" data-fragment-index="1">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/Nl-1.png" class="img-fluid" style="width:80.0%"></p>
-</div>
-<div class="fragment fade-in-and-out" data-fragment-index="1">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/Nl2-1.png" class="img-fluid" style="width:80.0%"></p>
-</div>
-<div class="fragment fade-in-and-out" data-fragment-index="2">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/Nl3-1.png" class="img-fluid" style="width:80.0%"></p>
-</div>
-<div class="fragment fade-in-and-out" data-fragment-index="3">
-<p><img src="lecture-logistic-growth_files/figure-revealjs/Nl4-1.png" class="img-fluid" style="width:80.0%"></p>
-</div>
-</div>
-</center>
-</section>
-<section id="definitions" class="level2">
-<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
-<p><br></p>
-<!-- ::: {.beamer-block} -->
-<!-- #### Overcompensation -->
-<p><strong>Overcompensation</strong></p>
-<!-- ::: {.beamer-block-content} -->
-<p>Density-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. <!-- ::: --></p>
-<!-- ::: -->
-<p><br></p>
-<p>. . .</p>
-<!-- ::: {.beamer-block} -->
-<section id="chaos" class="level4">
-<h4 class="anchored" data-anchor-id="chaos">Chaos</h4>
-<!-- ::: {.beamer-block-content} -->
-<p>Highly variable deterministic dynamics that are extremely sensitive to small changes in parameters. <!-- ::: --></p>
-<!-- ::: -->
-</section>
-</section>
-</section>
-<section id="assumptions" class="level1" data-visibility="hidden">
-<h1 data-visibility="hidden">Assumptions</h1>
-<section id="assumptions-of-basic-model" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-of-basic-model">Assumptions of basic model</h2>
-<ul>
-<li><p><span class="math inline">\(K\)</span> and <span class="math inline">\(r_{max}\)</span> are constant</p></li>
-<li><p>No sex or age effects or other sources of individual heterogeneity</p></li>
-<li><p>No time lags</p></li>
-<li><p>No stochasticity</p></li>
-</ul>
-</section>
-<section id="does-logistic-growth-occur-in-nature" class="level2">
-<h2 class="anchored" data-anchor-id="does-logistic-growth-occur-in-nature">Does logistic growth occur in nature?</h2>
-<p>Fruit fly (<em>Drosophila melanogaster</em>) in the lab<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<center>
-<img src="figs/logistic-drosophila.png" class="img-fluid">
-</center>
-</section>
-<section id="does-logistic-growth-occur-in-nature-1" class="level2">
-<h2 class="anchored" data-anchor-id="does-logistic-growth-occur-in-nature-1">Does logistic growth occur in nature?</h2>
-<p>Ibex (<em>Capra ibex</em>) in Switzerland<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<center>
-<a href="https://youtu.be/hqqCafpgSVA?si=greGPq4_wLm_BQLI"><img src="figs/logistic-ibex.png" class="img-fluid"></a>
-</center>
-</section>
-</section>
-<section id="summary" class="level1" data-visibility="hidden">
-<h1 data-visibility="hidden">Summary</h1>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1"></h2>
-<p><strong>Summary</strong></p>
-<div class="incremental" style="font-size: 75%;">
-<ul class="incremental">
-<li><p>Logistic growth is a form of density-dependent growth</p></li>
-<li><p>Growth rate (<span class="math inline">\(\lambda_t=N_{t+1}/N_t\)</span>) declines as <span class="math inline">\(N\)</span> approaches <span class="math inline">\(K\)</span></p></li>
-<li><p>Growth (<span class="math inline">\(\Delta_t=N_{t+1}-N_t\)</span>) peaks at <span class="math inline">\(K/2\)</span> (the inflection point)</p></li>
-<li><p>The model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.</p></li>
-<li><p>But it does allow for complex dynamics that resemble patterns seen in nature.</p></li>
-</ul>
-</div>
-<p>. . .</p>
-<p><br></p>
-<p><strong>Assignment</strong></p>
-<center>
-Read pages 32–36 in Conroy and Carroll.
-</center>
 
 
-</section>
-</section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Data from Pearl (1927). Figure from Krebs (2014)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Data from Sæther et al.&nbsp;(2002). Figure from Krebs (2014)<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

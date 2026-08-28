@@ -261,100 +261,100 @@
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "",
     "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+    "title": "Background",
+    "section": "",
+    "text": "The equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "From Geometric to Logistic Growth",
-    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n. . .\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n. . .\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Density-dependent growth",
-    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
+    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n. . .\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n. . .\n\nImplications: Resources are limited and there is a carrying capacity."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Graphical depiction",
     "text": "Graphical depiction"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Growth rate",
     "text": "Growth rate\n\n\\[\\lambda_t = N_{t+1}/N_t\\]"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Growth",
     "text": "Growth\n\n\\[\\Delta_t=N_{t+1}-N_t\\]"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Growth as a function of \\(N\\)",
     "text": "Growth as a function of \\(N\\)"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "What happens when we change \\(r_{max}\\)?",
     "text": "What happens when we change \\(r_{max}\\)?"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Definitions",
-    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n. . .\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Assumptions of basic model",
     "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
+    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
+    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland2"
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "",
-    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
+    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n. . .\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
@@ -723,140 +723,140 @@
   {
     "objectID": "lectures/harvest/lecture-harvest.html#section",
     "href": "lectures/harvest/lecture-harvest.html#section",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "",
     "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#learning-objectives",
     "href": "lectures/harvest/lecture-harvest.html#learning-objectives",
-    "title": "Applied Population Dynamics",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
+    "title": "Background",
+    "section": "",
+    "text": "Sustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
     "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest",
-    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
+    "title": "Background",
+    "section": "",
+    "text": "A sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
     "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Harvest and geometric growth",
     "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
     "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Sustainable harvest and geometric growth",
     "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
     "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Harvest and logistic growth",
     "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
     "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Sustainable harvest and logistic growth",
     "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
     "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Example when K=1000 and rmax=0.1",
     "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
     "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Example when K=1000 and rmax=0.5",
     "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
     "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Is MSY useful in practice?",
     "text": "Is MSY useful in practice?"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#issues",
     "href": "lectures/harvest/lecture-harvest.html#issues",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Issues",
     "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
     "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Additive vs. compensatory mortality",
-    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
+    "text": "Additive vs. compensatory mortality\n\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
     "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Compensatory mortality example",
     "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
     "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Compensatory mortality example",
     "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
     "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Compensatory mortality example",
     "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
     "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Compensatory mortality example",
     "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
     "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Compensatory mortality example",
     "text": "Compensatory mortality example"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
     "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Density-dependent survival example",
     "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#summary",
     "href": "lectures/harvest/lecture-harvest.html#summary",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Summary",
     "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#assignment",
     "href": "lectures/harvest/lecture-harvest.html#assignment",
-    "title": "Applied Population Dynamics",
+    "title": "Background",
     "section": "Assignment",
     "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
   },
@@ -880,5 +880,40 @@
     "title": "Applied Population Dynamics",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nGraduate students, you can import the human population data into R using this code: humans &lt;- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)↩︎"
+  },
+  {
+    "objectID": "labs/harvest/lab-harvest.html",
+    "href": "labs/harvest/lab-harvest.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer each of the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do all the exercises in Excel, but only Exercise I in R. Graduate students should do all exercises in Excel and Exercises I & II (not III) in R.\nExercise I\nThe Excel sheet shows (fake) data on Burmese python abundance in South Florida.\nHere’s some R code to get you started on Exercise I:\nyears1 &lt;- 2017:2036                                  ## All years\nnYears1 &lt;- length(years1)                            ## Number of years\nnYearsWithData &lt;- 8                                  ## nYears with data\nnYearsWithoutData &lt;- nYears1-nYearsWithData          ## nYears without data\npythons &lt;- c(10, 25, 63, 156, 391, 977, 2441, 6104,  ## Python counts\n             rep(NA, nYears1-nYearsWithData))\n\n## Question 1 hint: you can compute the first lambda like this:\nlambda &lt;- rep(NA, nYears1-1)\nlambda[1] &lt;- pythons[2]/pythons[1]\n## You could use a 'for loop' to compute lambda in each year\n\n## For question 5, you will want a loop like this:\nfor(t in (nYearsWithData+1):nYears1) {\n   ## PUT CODE HERE\n}\nExercise II\nImagine a population of northern bobwhite (Colinus virginianus) that is experiencing logistic growth with \\(r_\\mathrm{max} = 0.32\\), \\(K = 2000\\), and an initial population size of 100 individuals.\nExercise III\nSuppose that annual survival of sitka deer (Odocoileus hemionus sitkensis) decreases as abundance increases according to the equation: \\(S = \\beta_0 - \\beta_1 \\times N\\).\nR tips\nHere’s an example of a logistic growth model.\nrmax &lt;- 0.1              ## max growth rate\nK &lt;- 200                 ## carrying capacity\nyears &lt;- 2001:2050       ## years\nnYears &lt;- length(years)\nN1 &lt;- rep(NA, nYears)\nN1[1] &lt;- 100             ## abundance in first year\nfor(t in 2:nYears) {\n    N1[t] &lt;- N1[t-1] + N1[t-1]*rmax*(1 - N1[t-1]/K)\n}\nHere’s an example of a logistic growth model with harvest\nh &lt;- 0.02                ## harvest rate (not the sustainable harvest rate)\nN2 &lt;- rep(NA, nYears)\nN2[1] &lt;- 100             ## abundance in first year\nH &lt;- rep(NA, nYears-1)\nfor(t in 2:nYears) {\n    H[t-1] &lt;- N2[t-1]*h  ## harvest\n    N2[t] &lt;- N2[t-1] + N2[t-1]*rmax*(1 - N2[t-1]/K) - H[t-1]\n}\nplot(years, N1, type=\"l\", xlab=\"Year\", ylab=\"Abundance\")\nlines(years, N2, col=\"blue\", lty=2)\nlegend(2000, 200, c(\"Logistic growth\", \"Logistic growth with harvest\"),\n       col=c(\"black\", \"blue\"), lty=c(1,2))"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html",
+    "href": "lectures/harvest/lecture-harvest.html",
+    "title": "Background",
+    "section": "",
+    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700\n\n\n\n\n\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality.\n\n\n\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#maximum-sustainable-yield",
+    "href": "lectures/harvest/lecture-harvest.html#maximum-sustainable-yield",
+    "title": "Background",
+    "section": "Maximum sustainable yield",
+    "text": "Maximum sustainable yield\n\nMSY is found when \\(N=K/2\\)\nThe maximum yield is \\(H = r_{max}K/4\\)\nThe optimal harvest rate is \\(h = r_{max}/2\\)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html",
+    "title": "Background",
+    "section": "",
+    "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700\n\n\n\n\n\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#footnotes",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#footnotes",
+    "title": "Background",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nData from Pearl (1927). Figure from Krebs (2014)↩︎\nData from Sæther et al. (2002). Figure from Krebs (2014)↩︎"
   }
 ]
