@@ -49,3 +49,7 @@ and an oral presentation.
 
 - [Lab 2 - Geometric and logistic growth](labs/geo-growth/lab-geometric-growth.qmd)
 
+### Week 3 - Harvest models and stochasticity
+
+- [Lecture 5 - Harvest models](lectures/harvest/lecture-harvest.qmd)
+
