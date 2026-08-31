@@ -191,36 +191,35 @@ window.Quarto = {
 <section id="lab-3-assignment-harvest-models-due-by-friday-500pm" class="level2">
 <h2 class="anchored" data-anchor-id="lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</h2>
 </section></center>
-<p>Answer each of the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do all the exercises in Excel, but only Exercise I in R. Graduate students should do all exercises in Excel and Exercises I &amp; II (not III) in R.</p>
+<p>Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R.</p>
+<!-- **Exercise I** -->
+<!-- The Excel sheet shows (fake) data on Burmese python abundance in South Florida. -->
+<!-- 1. What growth model best describes these data, geometric or logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$. -->
+<!-- 2. What is the growth rate ($r$)? -->
+<!-- 3. If you determine that the per-capita birth rate ($b$) is 2.0, what must be the per-capita mortality rate ($d$)? -->
+<!-- 4. What harvest rate ($h$) would result in a sustainable yield? -->
+<!-- 5. Use the sustainable harvest rate ($h$) from part 4 to project the population forward from 2025 to 2036. Sustainable harvest should cause the population to stop growing. To implement sustainable harvest, you will need to compute the number of individuals removed ($H_t$) each year using the equation $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because harvest is assumed to occur at the end of the year, after the population has grown). Create a graph of python abundance from 2017--2036. -->
+<!-- Here's some R code to get you started on Exercise I: -->
+<!-- ```{r} -->
+<!-- #| label: ex1 -->
+<!-- #| fig-show: 'hide' -->
+<!-- #| eval: false -->
+<!-- years1 <- 2017:2036                                  ## All years -->
+<!-- nYears1 <- length(years1)                            ## Number of years -->
+<!-- nYearsWithData <- 8                                  ## nYears with data -->
+<!-- nYearsWithoutData <- nYears1-nYearsWithData          ## nYears without data -->
+<!-- pythons <- c(10, 25, 63, 156, 391, 977, 2441, 6104,  ## Python counts -->
+<!--              rep(NA, nYears1-nYearsWithData)) -->
+<!-- ## Question 1 hint: you can compute the first lambda like this: -->
+<!-- lambda <- rep(NA, nYears1-1) -->
+<!-- lambda[1] <- pythons[2]/pythons[1] -->
+<!-- ## You could use a 'for loop' to compute lambda in each year -->
+<!-- ## For question 5, you will want a loop like this: -->
+<!-- for(t in (nYearsWithData+1):nYears1) { -->
+<!--    ## PUT CODE HERE -->
+<!-- } -->
+<!-- ``` -->
 <p><strong>Exercise I</strong></p>
-<p>The Excel sheet shows (fake) data on Burmese python abundance in South Florida.</p>
-<ol type="1">
-<li>What growth model best describes these data, geometric or logistic? Hint: calculate <span class="math inline">\(\lambda_t = N_t/N_{t-1}\)</span>.</li>
-<li>What is the growth rate (<span class="math inline">\(r\)</span>)?</li>
-<li>If you determine that the per-capita birth rate (<span class="math inline">\(b\)</span>) is 2.0, what must be the per-capita mortality rate (<span class="math inline">\(d\)</span>)?</li>
-<li>What harvest rate (<span class="math inline">\(h\)</span>) would result in a sustainable yield?</li>
-<li>Use the sustainable harvest rate (<span class="math inline">\(h\)</span>) from part 4 to project the population forward from 2025 to 2036. Sustainable harvest should cause the population to stop growing. To implement sustainable harvest, you will need to compute the number of individuals removed (<span class="math inline">\(H_t\)</span>) each year using the equation <span class="math inline">\(H_t=N_{t}h\)</span> (Note that <span class="math inline">\(H_t\)</span> can be greater than <span class="math inline">\(N_t\)</span> because harvest is assumed to occur at the end of the year, after the population has grown). Create a graph of python abundance from 2017–2036.</li>
-</ol>
-<p>Here’s some R code to get you started on Exercise I:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>years1 <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2036</span>                                  <span class="do">## All years</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nYears1 <span class="ot">&lt;-</span> <span class="fu">length</span>(years1)                            <span class="do">## Number of years</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nYearsWithData <span class="ot">&lt;-</span> <span class="dv">8</span>                                  <span class="do">## nYears with data</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nYearsWithoutData <span class="ot">&lt;-</span> nYears1<span class="sc">-</span>nYearsWithData          <span class="do">## nYears without data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pythons <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">63</span>, <span class="dv">156</span>, <span class="dv">391</span>, <span class="dv">977</span>, <span class="dv">2441</span>, <span class="dv">6104</span>,  <span class="do">## Python counts</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">rep</span>(<span class="cn">NA</span>, nYears1<span class="sc">-</span>nYearsWithData))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Question 1 hint: you can compute the first lambda like this:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears1<span class="dv">-1</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>lambda[<span class="dv">1</span>] <span class="ot">&lt;-</span> pythons[<span class="dv">2</span>]<span class="sc">/</span>pythons[<span class="dv">1</span>]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">## You could use a 'for loop' to compute lambda in each year</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="do">## For question 5, you will want a loop like this:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> (nYearsWithData<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>nYears1) {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="do">## PUT CODE HERE</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Exercise II</strong></p>
 <p>Imagine a population of northern bobwhite (<em>Colinus virginianus</em>) that is experiencing logistic growth with <span class="math inline">\(r_\mathrm{max} = 0.32\)</span>, <span class="math inline">\(K = 2000\)</span>, and an initial population size of 100 individuals.</p>
 <ol type="1">
 <li>Project the population for 40 years, and plot abundance over time. Add axis labels as always.</li>
@@ -229,7 +228,7 @@ window.Quarto = {
 <li>What is the value of MSY in this case? In other words, what is maximum number of individuals that can be sustainably harvested?</li>
 <li>Using the same values of <span class="math inline">\(r_\mathrm{max}\)</span>, <span class="math inline">\(K\)</span>, and <span class="math inline">\(N_0\)</span>, project the population forward again, but include harvest (<span class="math inline">\(H_t\)</span>) in the model. Choose values of <span class="math inline">\(H_t\)</span> that allow for the greatest number of years at MSY. Hint: You can let harvest be zero in some years.</li>
 </ol>
-<p><strong>Exercise III</strong></p>
+<p><strong>Exercise II</strong></p>
 <p>Suppose that annual survival of sitka deer (<em>Odocoileus hemionus sitkensis</em>) decreases as abundance increases according to the equation: <span class="math inline">\(S = \beta_0 - \beta_1 \times N\)</span>.</p>
 <ol type="1">
 <li>Compute survival probability for each value of <span class="math inline">\(N\)</span> provided in the spreadsheet with <span class="math inline">\(\beta_0=0.95\)</span> and <span class="math inline">\(\beta_1=0.003\)</span>. Create a graph with survival probability on the y-axis and abundance on the x-axis.</li>
@@ -248,30 +247,30 @@ window.Quarto = {
 <p><strong>R tips</strong></p>
 <p>Here’s an example of a logistic growth model.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rmax <span class="ot">&lt;-</span> <span class="fl">0.1</span>              <span class="do">## max growth rate</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">200</span>                 <span class="do">## carrying capacity</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2050</span>       <span class="do">## years</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="fu">length</span>(years)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>N1[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    N1[t] <span class="ot">&lt;-</span> N1[t<span class="dv">-1</span>] <span class="sc">+</span> N1[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N1[t<span class="dv">-1</span>]<span class="sc">/</span>K)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rmax <span class="ot">&lt;-</span> <span class="fl">0.1</span>              <span class="do">## max growth rate</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">200</span>                 <span class="do">## carrying capacity</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2050</span>       <span class="do">## years</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="fu">length</span>(years)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>N1[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    N1[t] <span class="ot">&lt;-</span> N1[t<span class="dv">-1</span>] <span class="sc">+</span> N1[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N1[t<span class="dv">-1</span>]<span class="sc">/</span>K)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Here’s an example of a logistic growth model with harvest</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">0.02</span>                <span class="do">## harvest rate (not the sustainable harvest rate)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>N2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>N2[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears<span class="dv">-1</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    H[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>h  <span class="do">## harvest</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    N2[t] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>] <span class="sc">+</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N2[t<span class="dv">-1</span>]<span class="sc">/</span>K) <span class="sc">-</span> H[t<span class="dv">-1</span>]</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(years, N1, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab=</span><span class="st">"Year"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(years, N2, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2000</span>, <span class="dv">200</span>, <span class="fu">c</span>(<span class="st">"Logistic growth"</span>, <span class="st">"Logistic growth with harvest"</span>),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"blue"</span>), <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">0.02</span>                <span class="do">## harvest rate (not the sustainable harvest rate)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N2[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>             <span class="do">## abundance in first year</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears<span class="dv">-1</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    H[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>h  <span class="do">## harvest</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    N2[t] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>] <span class="sc">+</span> N2[t<span class="dv">-1</span>]<span class="sc">*</span>rmax<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> N2[t<span class="dv">-1</span>]<span class="sc">/</span>K) <span class="sc">-</span> H[t<span class="dv">-1</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(years, N1, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab=</span><span class="st">"Year"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(years, N2, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2000</span>, <span class="dv">200</span>, <span class="fu">c</span>(<span class="st">"Logistic growth"</span>, <span class="st">"Logistic growth with harvest"</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"blue"</span>), <span class="at">lty=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
