@@ -53,3 +53,5 @@ and an oral presentation.
 
 - [Lecture 5 - Harvest models](lectures/harvest/lecture-harvest.qmd)
 
+- [Lab 3 - Harvest models](labs/harvest/lab-harvest.qmd)
+
