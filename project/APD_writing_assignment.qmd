@@ -3,7 +3,11 @@ format: html
 lang: en
 ---
 
-## WILD 5700/7700 -- Applied Population Dynamics<br>Final Project
+
+<center>
+## WILD 5700/7700 -- Applied Population Dynamics <br> Final Project
+</center>
+
 
 ### Overview
 
@@ -84,15 +88,15 @@ as follows:
 
 ### Timeline
 
-Oct 27: First draft due. This should include the Introduction, Model
+Nov 2: First draft due. This should include the Introduction, Model
 Description, Literature Cited, and the model in Excel or R
 
-Oct 27-Nov 24: Schedule a 10-min meeting with Dr. Chandler to discuss
+Nov 2-Nov 20: Schedule a 10-min meeting with Dr. Chandler to discuss
 your model
 
-Nov 13: Peer review due
+Nov 16: Peer review due
 
-Dec 4: Final paper and model due
+Dec 1: Final paper and model due
 
 ### Population Model
 
