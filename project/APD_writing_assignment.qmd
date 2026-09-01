@@ -1,0 +1,188 @@
+---
+format: html
+lang: en
+---
+
+## WILD 5700/7700 -- Applied Population Dynamics<br>Final Project
+
+### Overview
+
+In this assignment, you will apply knowledge gained in lecture and lab
+to develop a population model for a species of your choosing. You will
+then use the model to project population dynamics under two scenarios:
+one with and one without a management action or environmental change.
+
+You will submit your model and its projections as an Excel file
+(undergrads) or an R script (graduate students). You will also submit a
+2-3 page (single-spaced, 12-point Times New Roman font) paper organized
+as follows:
+
+1.  Introduction
+
+    a.  Describe the species and rationale for focusing on it. Explain
+        why it is important to model this species' population dynamics,
+        and justify your choice of the specific management action or
+        environmental change that you will evaluate. \[2 paragraphs\]
+
+    b.  Summarize the peer-reviewed literature about the species' life
+        history. What do we know about the factors influencing survival,
+        reproduction, and movement? \[2 paragraphs\]
+
+    c.  Cite a minimum of 3 peer-reviewed publications, such as
+        Ornithology, Ecology, and The Journal of Wildlife Management.
+
+2.  Model Description
+
+    a.  Describe the model using words and equations \[1 paragraph\].
+        The model must include:
+
+        i.  Demographic or environmental stochasticity
+
+        ii. Age, stage, or spatial structure
+
+        iii. You do not have to include density-dependence, but if you
+             don't, you must explain your rational for excluding it.
+
+    b.  Explain how your model differs under the two different
+        scenarios. \[1 paragraph\]
+
+    c.  Justify the modeling decisions you made by explaining why you
+        included some sources of variation but not others. \[1
+        paragraph\]
+
+3.  Study Design
+
+    a.  Explain how you would design a study to estimate the parameters
+        of the model. Make sure you mention something about sample size
+        and sampling methods. \[1 paragraph\]
+
+    b.  Describe the estimation methods you would use (e.g., Kaplan-Meir
+        model, Lincoln-Peterson estimator). List the assumptions of the
+        method and describe how well your study design would allow you
+        to meet those assumptions \[1 paragraph\]
+
+    c.  Graduate students must estimate one or more parameters of their
+        model using R. Explain the estimation method you used \[1
+        paragraph\]. If you don't have data, you can make some up. Come
+        see us for details.
+
+4.  Results and Discussion
+
+    a.  Summarize your model projections and discuss how much of an
+        effect the management (or environmental change) had on the
+        population. \[≥1 paragraph and 1 figure\]
+
+    b.  Discuss the strengths and weaknesses of your modeling approach
+        and describe how it could be improved \[1 paragraph\]
+
+5.  Literature Cited (see
+    [here](http://wildlife.org/wp-content/uploads/2018/01/TWS-Journal-Guidelines-2018.pdf)
+    for formatting guidelines). Example:
+
+    a.  Berryman, A. A. 2004. Limiting factors and population
+        regulation. Oikos 105:667-670.
+
+### Timeline
+
+Oct 27: First draft due. This should include the Introduction, Model
+Description, Literature Cited, and the model in Excel or R
+
+Oct 27-Nov 24: Schedule a 10-min meeting with Dr. Chandler to discuss
+your model
+
+Nov 13: Peer review due
+
+Dec 4: Final paper and model due
+
+### Population Model
+
+You will construct a model in Excel or R based on your understanding of
+the species' ecology. For example, you may decide to include demographic
+stochasticity, but not environmental stochasticity based on your
+knowledge of the species, and you could look to the scientific
+literature for parameter estimates.
+
+You must base your model on one of the models we covered in the first
+part of the course, but you are encouraged to fine tune the model to
+include any sources of variation that you think are important. Also, you
+cannot use a model that is overly simplistic such as a simple geometric
+growth model. Your model must include stochasticity as well as one of
+the following: age, stage, or spatial structure. Think hard about
+whether or not you should include density-dependence. You can model
+either abundance or occupancy dynamics.
+
+*Examples*
+
+1.  An age-based population model for wild pigs that includes
+    demographic stochasticity and density-dependence. Predict future
+    dynamics under a status quo scenario and a scenario in which a
+    management action reduces survival of a particular age class.
+
+2.  A metapopulation model for marbled salamanders. Predict dynamics
+    under two future climate scenarios: with and without intense
+    drought.
+
+### Graduate students
+
+Graduate students must estimate at least one parameter of their
+population model using one of the R software packages that we covered
+during the course. For example, you could estimate occupancy using
+'unmarked', abundance using 'Distance', or survival and growth rates
+using 'RMark'.
+
+### Peer Review
+
+You will review two of your classmates' first drafts and make
+suggestions for improvement by adding comments to the documents. This
+will be a "double blind" review in which you do not know the names of
+your reviewers or the names of the authors of the papers you review.
+
+### Grading
+
+The final grade will be determined by the first draft (20%), the peer
+review (10%), the 10-min meeting with Dr. Chandler (10%), and the final
+draft (60%). If you have questions about scientific writing, try to
+follow the styles found in journals such as the Journal of Wildlife
+Management, and feel free to set up a meeting with your TA or me.
+Additional guidance on scientific writing can be found
+[here](https://www.warnell.uga.edu/sites/default/files/inline-files/WarnellWritingGuide.pdf).
+
+The body of your paper must be at least 2 pages long, and no longer than
+3 pages, not including the Literature Cited section.
+
+Feel free to discuss the assignment with your peers, but make sure that
+all the writing and modeling is your own. See the syllabus for
+guidelines about the use of AI.
+
+**Reviewer:
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Manuscript ID: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Total Score (out of 100): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
+
+**Scoring:** For each of the bold categories below, assign a
+whole-number score between 1 and 5 (**5**=Excellent; **4**=Very Good;
+**3**=Good; **2**=Fair; **1**=Needs substantial improvement).
+Qualifications that merit a score of 5 are described in the paper
+description above. Provide comments for each category.
+
+  ----------------------------------------------------------------------------------------------------
+  **Category**                   **Sub-score**   **Weight**    **Weighted   **Notes and additional
+                                                              sub-score**   comments**
+  ----------------------------- --------------- ------------ -------------- --------------------------
+  **Introduction**^1^            *\_\_\_\_\_*      *x 4*      *\_\_\_\_\_*  
+
+  **Model Description**^1^       *\_\_\_\_\_*      *x 4*      *\_\_\_\_\_*  
+
+  **Population Model in Excel    *\_\_\_\_\_*      *x 4*      *\_\_\_\_\_*  
+  or R**^1^                                                                 
+
+  **Study Design**               *\_\_\_\_\_*      *x 3*      *\_\_\_\_\_*  
+
+  **Results and Discussion**     *\_\_\_\_\_*      *x 3*      *\_\_\_\_\_*  
+
+  **Literature Cited**^1^        *\_\_\_\_\_*      *x 1*      *\_\_\_\_\_*  
+
+  **Scientific Writing**^1^      *\_\_\_\_\_*      *x 1*      *\_\_\_\_\_*  
+  ----------------------------------------------------------------------------------------------------
+
+^1^ To be graded during peer-review.
