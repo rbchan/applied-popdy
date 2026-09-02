@@ -139,7 +139,18 @@ using 'RMark'.
 You will review two of your classmates' first drafts and make
 suggestions for improvement by adding comments to the documents. This
 will be a "double blind" review in which you do not know the names of
-your reviewers or the names of the authors of the papers you review.
+your reviewers or the names of the authors of the papers you
+review. To maintain anonymity, name your Word file something like
+"Species-name-draft1.docx". When adding comments to your peers'
+papers, remove your name from the comments by following these steps: 
+
+-  Open your Word document and save your current progress.
+-  Click the **File** tab in the top left corner, then select **Info**.
+-  Click **Check for Issues** and choose **Inspect Document**.
+-  In the Document Inspector window, uncheck everything except **Document Properties and Personal Information**.
+-  Click **Inspect**, then click **Remove All** next to the personal information result.
+-  Click **Close**, **Save** the file again, and **reopen** the document to see the names replaced by "Author".
+
 
 ### Grading
 
