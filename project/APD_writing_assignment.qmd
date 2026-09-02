@@ -14,7 +14,7 @@ lang: en
 
 ### Overview
 
-In this assignment, you will apply knowledge gained in lecture and lab
+For the final project, you will apply knowledge gained in lecture and lab
 to develop a population model for a species of your choosing. You will
 then use the model to project population dynamics under two scenarios:
 one with and one without a management action or environmental change.
@@ -36,7 +36,7 @@ as follows:
         reproduction, and movement? \[2 paragraphs\]
 
     c.  Cite a minimum of 3 peer-reviewed publications, such as
-        Ornithology, Ecology, and The Journal of Wildlife Management. The
+        Ornithology, Ecology, and The Journal of Wildlife Management.
 
 2.  Model Description
 
@@ -50,8 +50,8 @@ as follows:
         iii. You do not have to include density-dependence, but if you
              don't, you must explain your rational for excluding it.
 
-    b.  Explain how your model differs under the two different
-        scenarios. \[1 paragraph\]
+    b.  Explain how your model differs under the two scenarios (e.g.,
+        with and without management). \[1 paragraph\]
 
     c.  Justify the modeling decisions you made by explaining why you
         included some sources of variation but not others. \[1
@@ -82,9 +82,7 @@ as follows:
     b.  Discuss the strengths and weaknesses of your modeling approach
         and describe how it could be improved \[1 paragraph\]
 
-5.  Literature Cited (see
-    [here](http://wildlife.org/wp-content/uploads/2018/01/TWS-Journal-Guidelines-2018.pdf)
-    for formatting guidelines). Example:
+5.  Literature Cited. Use a [consistent format like the one for JWM](https://guides.library.oregonstate.edu/c.php?g=286038&p=3844481). Example:
 
     a.  Berryman, A. A. 2004. Limiting factors and population
         regulation. Oikos 105:667-670.
