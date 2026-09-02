@@ -1,5 +1,8 @@
 ---
-format: html
+format: 
+  html:
+    embed_resources: true
+    minimal: false
 lang: en
 ---
 
@@ -33,16 +36,16 @@ as follows:
         reproduction, and movement? \[2 paragraphs\]
 
     c.  Cite a minimum of 3 peer-reviewed publications, such as
-        Ornithology, Ecology, and The Journal of Wildlife Management.
+        Ornithology, Ecology, and The Journal of Wildlife Management. The
 
 2.  Model Description
 
     a.  Describe the model using words and equations \[1 paragraph\].
         The model must include:
 
-        i.  Demographic or environmental stochasticity
+        i.  Demographic or environmental stochasticity;
 
-        ii. Age, stage, or spatial structure
+        ii. Age, stage, or spatial structure;
 
         iii. You do not have to include density-dependence, but if you
              don't, you must explain your rational for excluding it.
@@ -88,15 +91,14 @@ as follows:
 
 ### Timeline
 
-Nov 2: First draft due. This should include the Introduction, Model
-Description, Literature Cited, and the model in Excel or R
+  -  Nov 2: First draft due. This should include the Introduction, Model Description, Literature Cited, and the model in Excel or R
 
-Nov 2-Nov 20: Schedule a 10-min meeting with Dr. Chandler to discuss
+  -  Nov 2-Nov 20: Schedule a 10-min meeting with Dr. Chandler to discuss
 your model
 
-Nov 16: Peer review due
+  -  Nov 16: Peer review due
 
-Dec 1: Final paper and model due
+  -  Dec 1: Final paper and model due
 
 ### Population Model
 
@@ -158,10 +160,16 @@ Feel free to discuss the assignment with your peers, but make sure that
 all the writing and modeling is your own. See the syllabus for
 guidelines about the use of AI.
 
-**Reviewer:
+
+### Grading rubric
+
+**Reviewer**:
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-Manuscript ID: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-Total Score (out of 100): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
+
+**Manuscript ID**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Total Score (out of 100)**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
 
 **Scoring:** For each of the bold categories below, assign a
 whole-number score between 1 and 5 (**5**=Excellent; **4**=Very Good;

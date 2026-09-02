@@ -10,6 +10,8 @@ website:
         text: Home
       - href: APD-syllabus.qmd
         text: Syllabus
+      - href: project/APD_writing_assignment.qmd
+        text: Final project
 
 format:
   html:
