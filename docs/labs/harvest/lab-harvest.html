@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9b59a28ddcc48f010c2375eb3c9c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-25c9275cf3fc64b1f20139da25f33777.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -181,7 +181,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-3-assignment-harvest-models-due-by-friday-500pm" id="toc-lab-3-assignment-harvest-models-due-by-friday-500pm" class="nav-link active" data-scroll-target="#lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</a></li>
+  <li><a href="#lab-3-assignment-harvest-models-due-by-friday-500pm" id="toc-lab-3-assignment-harvest-models-due-by-friday-500pm" class="nav-link active" data-scroll-target="#lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</a>
+  <ul class="collapse">
+  <li><a href="#exercise-i" id="toc-exercise-i" class="nav-link" data-scroll-target="#exercise-i">Exercise I</a></li>
+  <li><a href="#exercise-ii" id="toc-exercise-ii" class="nav-link" data-scroll-target="#exercise-ii">Exercise II</a></li>
+  <li><a href="#r-tips" id="toc-r-tips" class="nav-link" data-scroll-target="#r-tips">R tips</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -196,34 +201,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="lab-3-assignment-harvest-models-due-by-friday-500pm">Lab 3 Assignment — Harvest Models <br> Due by Friday 5:00pm</h2>
 </section></center>
 <p>Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R.</p>
-<!-- **Exercise I** -->
-<!-- The Excel sheet shows (fake) data on Burmese python abundance in South Florida. -->
-<!-- 1. What growth model best describes these data, geometric or logistic?  Hint: calculate $\lambda_t = N_t/N_{t-1}$. -->
-<!-- 2. What is the growth rate ($r$)? -->
-<!-- 3. If you determine that the per-capita birth rate ($b$) is 2.0, what must be the per-capita mortality rate ($d$)? -->
-<!-- 4. What harvest rate ($h$) would result in a sustainable yield? -->
-<!-- 5. Use the sustainable harvest rate ($h$) from part 4 to project the population forward from 2025 to 2036. Sustainable harvest should cause the population to stop growing. To implement sustainable harvest, you will need to compute the number of individuals removed ($H_t$) each year using the equation $H_t=N_{t}h$ (Note that $H_t$ can be greater than $N_t$ because harvest is assumed to occur at the end of the year, after the population has grown). Create a graph of python abundance from 2017--2036. -->
-<!-- Here's some R code to get you started on Exercise I: -->
-<!-- ```{r} -->
-<!-- #| label: ex1 -->
-<!-- #| fig-show: 'hide' -->
-<!-- #| eval: false -->
-<!-- years1 <- 2017:2036                                  ## All years -->
-<!-- nYears1 <- length(years1)                            ## Number of years -->
-<!-- nYearsWithData <- 8                                  ## nYears with data -->
-<!-- nYearsWithoutData <- nYears1-nYearsWithData          ## nYears without data -->
-<!-- pythons <- c(10, 25, 63, 156, 391, 977, 2441, 6104,  ## Python counts -->
-<!--              rep(NA, nYears1-nYearsWithData)) -->
-<!-- ## Question 1 hint: you can compute the first lambda like this: -->
-<!-- lambda <- rep(NA, nYears1-1) -->
-<!-- lambda[1] <- pythons[2]/pythons[1] -->
-<!-- ## You could use a 'for loop' to compute lambda in each year -->
-<!-- ## For question 5, you will want a loop like this: -->
-<!-- for(t in (nYearsWithData+1):nYears1) { -->
-<!--    ## PUT CODE HERE -->
-<!-- } -->
-<!-- ``` -->
-<p><strong>Exercise I</strong></p>
+<section id="exercise-i" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-i">Exercise I</h3>
 <p>Imagine a population of northern bobwhite (<em>Colinus virginianus</em>) that is experiencing logistic growth with <span class="math inline">\(r_\mathrm{max} = 0.32\)</span>, <span class="math inline">\(K = 2000\)</span>, and an initial population size of 100 individuals.</p>
 <ol type="1">
 <li>Project the population for 40 years, and plot abundance over time. Add axis labels as always.</li>
@@ -232,7 +211,9 @@ window.Quarto = {
 <li>What is the value of MSY in this case? In other words, what is maximum number of individuals that can be sustainably harvested?</li>
 <li>Using the same values of <span class="math inline">\(r_\mathrm{max}\)</span>, <span class="math inline">\(K\)</span>, and <span class="math inline">\(N_0\)</span>, project the population forward again, but include harvest (<span class="math inline">\(H_t\)</span>) in the model. Choose values of <span class="math inline">\(H_t\)</span> that allow for the greatest number of years at MSY. Hint: You can let harvest be zero in some years.</li>
 </ol>
-<p><strong>Exercise II</strong></p>
+</section>
+<section id="exercise-ii" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-ii">Exercise II</h3>
 <p>Suppose that annual survival of sitka deer (<em>Odocoileus hemionus sitkensis</em>) decreases as abundance increases according to the equation: <span class="math inline">\(S = \beta_0 - \beta_1 \times N\)</span>.</p>
 <ol type="1">
 <li>Compute survival probability for each value of <span class="math inline">\(N\)</span> provided in the spreadsheet with <span class="math inline">\(\beta_0=0.95\)</span> and <span class="math inline">\(\beta_1=0.003\)</span>. Create a graph with survival probability on the y-axis and abundance on the x-axis.</li>
@@ -248,7 +229,9 @@ window.Quarto = {
 <li>Determine how many deer will be alive if no harvest occurs. Are there any levels of harvest that can result in a larger population than the “no harvest” scenario? If so, how can this be?</li>
 <li>If the manager’s objective is to maximize harvest, while maintaining a herd size greater than it would be without harvest, how many deer should be taken?</li>
 </ol>
-<p><strong>R tips</strong></p>
+</section>
+<section id="r-tips" class="level3">
+<h3 class="anchored" data-anchor-id="r-tips">R tips</h3>
 <p>Here’s an example of a logistic growth model.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rmax <span class="ot">&lt;-</span> <span class="fl">0.1</span>              <span class="do">## max growth rate</span></span>
@@ -285,6 +268,7 @@ window.Quarto = {
 </div>
 
 
+</section>
 
 
 </main> <!-- /main -->
