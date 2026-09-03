@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "labs/geo-growth/lab-geometric-growth.html",
-    "href": "labs/geo-growth/lab-geometric-growth.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer the following questions by completing the provided Excel template and by replicating your work in R. Undergraduates should do Exercise 1 in R, but not Exercise 2. Graduate students should do both exercises in R. Upload your Excel file and a single R script to ELC. Name the files with your last name followed by your first name.\nExercise 1\nA study was conducted in which a population of 100 Mexican wolves (Canis lupus baileyi) was monitored intensively for 1 year. In that time, 10 pups were born, and 20 of the original 100 individuals died. There was no immigration or emigration.\nExercise 2\nMany people assume that the human population acts differently than most wildlife populations and is increasing at an exponential rate, or close to it. The UN estimated that the human population was approximately 7.02 billion in 2010, and 7.11 billion in 2011.\nMore data about the human population:  https://www.worldometers.info/world-population/  https://ourworldindata.org/world-population-growth\nR tips\nHere’s an example of a geometric growth model.\nr &lt;- 0.1                      # growth rate\nyears &lt;- 2001:2050            # years\nnYears &lt;- length(years)       # number of years\nN &lt;- rep(NA, nYears)          # empty vector\nN[1] &lt;- 100                   # abundance in first year\nfor(t in 2:nYears) {\n    N[t] &lt;- N[t-1] + N[t-1]*r \n}\nplot(years, N, type=\"l\", xlab=\"Year\", ylab=\"Abundance\",\n     main=\"Geometric growth\")"
-  },
-  {
-    "objectID": "labs/geo-growth/lab-geometric-growth.html#footnotes",
-    "href": "labs/geo-growth/lab-geometric-growth.html#footnotes",
-    "title": "Applied Population Dynamics",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nGraduate students, you can import the human population data into R using this code: humans &lt;- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)↩︎"
-  },
-  {
     "objectID": "labs/intro/lab-Excel-R-Basics.html#section",
     "href": "labs/intro/lab-Excel-R-Basics.html#section",
     "title": "Applied Population Dynamics",
@@ -245,6 +231,27 @@
     "text": "Excel sheet to be created"
   },
   {
+    "objectID": "labs/geo-growth/lab-geometric-growth.html",
+    "href": "labs/geo-growth/lab-geometric-growth.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer the following questions by completing the provided Excel template and by replicating your work in R. Undergraduates should do Exercise 1 in R, but not Exercise 2. Graduate students should do both exercises in R. Upload your Excel file and a single R script to ELC. Name the files with your last name followed by your first name.\nExercise 1\nA study was conducted in which a population of 100 Mexican wolves (Canis lupus baileyi) was monitored intensively for 1 year. In that time, 10 pups were born, and 20 of the original 100 individuals died. There was no immigration or emigration.\nExercise 2\nMany people assume that the human population acts differently than most wildlife populations and is increasing at an exponential rate, or close to it. The UN estimated that the human population was approximately 7.02 billion in 2010, and 7.11 billion in 2011.\nMore data about the human population:  https://www.worldometers.info/world-population/  https://ourworldindata.org/world-population-growth\nR tips\nHere’s an example of a geometric growth model.\nr &lt;- 0.1                      # growth rate\nyears &lt;- 2001:2050            # years\nnYears &lt;- length(years)       # number of years\nN &lt;- rep(NA, nYears)          # empty vector\nN[1] &lt;- 100                   # abundance in first year\nfor(t in 2:nYears) {\n    N[t] &lt;- N[t-1] + N[t-1]*r \n}\nplot(years, N, type=\"l\", xlab=\"Year\", ylab=\"Abundance\",\n     main=\"Geometric growth\")"
+  },
+  {
+    "objectID": "labs/geo-growth/lab-geometric-growth.html#footnotes",
+    "href": "labs/geo-growth/lab-geometric-growth.html#footnotes",
+    "title": "Applied Population Dynamics",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nGraduate students, you can import the human population data into R using this code: humans &lt;- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)↩︎"
+  },
+  {
+    "objectID": "APD-syllabus.html",
+    "href": "APD-syllabus.html",
+    "title": "Course Description",
+    "section": "",
+    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\nOffice hours:\nMon 11:00–12:00\n\nMon 2:30–3:30\nThur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
+  },
+  {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
     "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
     "title": "Applied Population Dynamics",
@@ -341,6 +348,230 @@
     "title": "Applied Population Dynamics",
     "section": "",
     "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
+    "href": "lectures/BIDE/lecture-BIDE.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "title": "Applied Population Dynamics",
+    "section": "Today’s class",
+    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "title": "Applied Population Dynamics",
+    "section": "Model validation",
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "title": "Applied Population Dynamics",
+    "section": "Types of models",
+    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "title": "Applied Population Dynamics",
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#section",
+    "href": "lectures/harvest/lecture-harvest.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest",
+    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Harvest and geometric growth",
+    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest and geometric growth",
+    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "title": "Applied Population Dynamics",
+    "section": "Harvest and logistic growth",
+    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest and logistic growth",
+    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "title": "Applied Population Dynamics",
+    "section": "Example when K=1000 and rmax=0.1",
+    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "title": "Applied Population Dynamics",
+    "section": "Example when K=1000 and rmax=0.5",
+    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "title": "Applied Population Dynamics",
+    "section": "Is MSY useful in practice?",
+    "text": "Is MSY useful in practice?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#issues",
+    "href": "lectures/harvest/lecture-harvest.html#issues",
+    "title": "Applied Population Dynamics",
+    "section": "Issues",
+    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "title": "Applied Population Dynamics",
+    "section": "Additive vs. compensatory mortality",
+    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
+    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
+    "title": "Applied Population Dynamics",
+    "section": "Density-dependent survival example",
+    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#summary",
+    "href": "lectures/harvest/lecture-harvest.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
+    "href": "lectures/harvest/lecture-harvest.html#assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
@@ -623,244 +854,6 @@
     "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
-    "href": "lectures/BIDE/lecture-BIDE.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "title": "Applied Population Dynamics",
-    "section": "Today’s class",
-    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "title": "Applied Population Dynamics",
-    "section": "Model validation",
-    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "title": "Applied Population Dynamics",
-    "section": "Types of models",
-    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "title": "Applied Population Dynamics",
-    "section": "Group exercise",
-    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#section",
-    "href": "lectures/harvest/lecture-harvest.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
-    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest",
-    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Harvest and geometric growth",
-    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and geometric growth",
-    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "title": "Applied Population Dynamics",
-    "section": "Harvest and logistic growth",
-    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and logistic growth",
-    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.1",
-    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.5",
-    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "title": "Applied Population Dynamics",
-    "section": "Is MSY useful in practice?",
-    "text": "Is MSY useful in practice?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#issues",
-    "href": "lectures/harvest/lecture-harvest.html#issues",
-    "title": "Applied Population Dynamics",
-    "section": "Issues",
-    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "title": "Applied Population Dynamics",
-    "section": "Additive vs. compensatory mortality",
-    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "title": "Applied Population Dynamics",
-    "section": "Density-dependent survival example",
-    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#summary",
-    "href": "lectures/harvest/lecture-harvest.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
-    "href": "lectures/harvest/lecture-harvest.html#assignment",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
-  },
-  {
-    "objectID": "APD-syllabus.html",
-    "href": "APD-syllabus.html",
-    "title": "Course Description",
-    "section": "",
-    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\nOffice hours:\nMon 11:00–12:00\n\nMon 2:30–3:30\nThur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
-  },
-  {
-    "objectID": "labs/harvest/lab-harvest.html",
-    "href": "labs/harvest/lab-harvest.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Applied Population Dynamics",
@@ -887,5 +880,12 @@
     "title": "Applied Population Dynamics",
     "section": "Course materials",
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models"
+  },
+  {
+    "objectID": "labs/harvest/lab-harvest.html",
+    "href": "labs/harvest/lab-harvest.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R."
   }
 ]

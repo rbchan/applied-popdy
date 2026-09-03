@@ -35,8 +35,9 @@ as follows:
         history. What do we know about the factors influencing survival,
         reproduction, and movement? \[2 paragraphs\]
 
-    c.  Cite a minimum of 3 peer-reviewed publications, such as
-        Ornithology, Ecology, and The Journal of Wildlife Management.
+    c.  Cite a minimum of 3 peer-reviewed publications, from journals
+        such as Ornithology, Ecology, and The Journal of Wildlife
+        Management.
 
 2.  Model Description
 
@@ -172,6 +173,8 @@ guidelines about the use of AI.
 
 ### Grading rubric
 
+This rubric will be used by to grade your final paper. You should also use it for peer-review grading. 
+
 **Reviewer**:
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -180,11 +183,12 @@ guidelines about the use of AI.
 **Total Score (out of 100)**: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 
-**Scoring:** For each of the bold categories below, assign a
+**Scoring:** For each of the categories below, assign a
 whole-number score between 1 and 5 (**5**=Excellent; **4**=Very Good;
 **3**=Good; **2**=Fair; **1**=Needs substantial improvement).
-Qualifications that merit a score of 5 are described in the paper
-description above. Provide comments for each category.
+Scores should be based on the guidelines described above in the
+"Overview" and "Population Model" sections. Provide comments for each
+category. 
 
   ----------------------------------------------------------------------------------------------------
   **Category**                   **Sub-score**   **Weight**    **Weighted   **Notes and additional
