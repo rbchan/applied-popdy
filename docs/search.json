@@ -1027,5 +1027,96 @@
     "title": "Applied Population Dynamics",
     "section": "Course materials",
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#section",
+    "href": "lectures/extinction/lecture-extinction.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Extinction"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#today-in-apd",
+    "href": "lectures/extinction/lecture-extinction.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\nRecent extinctions\n\nTime-to-extinction\n\nExtinction risk\n\nAllee efffects"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction",
+    "href": "lectures/extinction/lecture-extinction.html#extinction",
+    "title": "Applied Population Dynamics",
+    "section": "Extinction",
+    "text": "Extinction\n\nMany believe that humans are causing the 6th mass extinction event\nAt least 1000 species have gone extinct over past 500 years\nExtinction rate unknown, but may be 100-1000 times higher than during the past 25 million years\nAlmost 200 bird species have gone extinct since 1500\nAvian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet\n\n\n\n\n%"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
+    "href": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth example",
+    "text": "Geometric growth example\n%\n\n[width=]{figure/exp1-1}"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk",
+    "href": "lectures/extinction/lecture-extinction.html#extinction-risk",
+    "title": "Applied Population Dynamics",
+    "section": "Extinction risk",
+    "text": "Extinction risk\nIn addition to time to extinction (\\(T_e\\)), we are now interested in extinction risk.\n\nExtinction risk is the * probability * that a species goes extinct in some time period.\n\nFor a stochastic model, extinction risk can be calculated as the proportion of simulations in which the population goes extinct.\n\nCalculating extinction risk requires a specification of the time horizon of interest."
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic growth with stochastic carrying capacity",
+    "text": "Logistic growth with stochastic carrying capacity\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)\n\\]\nwhere\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example-r_max0.3-bark100-sigma2400",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-example-r_max0.3-bark100-sigma2400",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic example, \\(r_{max=0.3\\), \\(\\bar{K}=100\\), \\(\\sigma^2=400\\)}",
+    "text": "Logistic example, \\(r_{max=0.3\\), \\(\\bar{K}=100\\), \\(\\sigma^2=400\\)}"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
+    "href": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
+    "title": "Applied Population Dynamics",
+    "section": "Extinction risk",
+    "text": "Extinction risk\nZero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.\nAssumptions\n\nWe have the correct model\nWe know the parameters with certainty"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example-r_max0.3-bark100-sigma21600",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-example-r_max0.3-bark100-sigma21600",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic example, \\(r_{max=0.3\\), \\(\\bar{K}=100\\), \\(\\sigma^2=1600\\)}",
+    "text": "Logistic example, \\(r_{max=0.3\\), \\(\\bar{K}=100\\), \\(\\sigma^2=1600\\)}"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-1",
+    "href": "lectures/extinction/lecture-extinction.html#allee-effects-1",
+    "title": "Applied Population Dynamics",
+    "section": "Allee effects",
+    "text": "Allee effects\nNormally, population growth rates increase as the population decreases (negative correlation).\nThe Allee effect is the phenomenon of positive correlation between population growth rates and population size.\nMechanisms\n\nFinding a mate becomes difficult\nSocial systems collapse\nInbreeding depression\n…\n\nAllee effects can greatly increase extinction risk for small populations"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-2",
+    "href": "lectures/extinction/lecture-extinction.html#allee-effects-2",
+    "title": "Applied Population Dynamics",
+    "section": "Allee effects",
+    "text": "Allee effects"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#summary",
+    "href": "lectures/extinction/lecture-extinction.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\nHumans have increased extinction rates dramatically.\nModels allow us to predict time to extinction and extinction risk.\nModels can be used to assess effects of management actions on extinction risk."
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#assignment",
+    "href": "lectures/extinction/lecture-extinction.html#assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\nRead pages 27–31 in Conroy and Carroll."
   }
 ]
