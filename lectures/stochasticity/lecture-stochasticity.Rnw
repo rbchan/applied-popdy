@@ -1,0 +1,694 @@
+\documentclass[color=usenames,dvipsnames]{beamer}
+%\documentclass[color=usenames,dvipsnames,handout]{beamer}
+
+%\usepackage[roman]{../pres1}
+\usepackage[sans]{../pres1}
+\usepackage{graphicx}
+\usepackage{bm}
+%\usepackage{changepage}
+
+%\newcommand{\wide}{\column{\dimexpr\paperwidth}} % Must be in columns environment
+
+\mode<handout>{
+  \usetheme{default}
+%  \setbeamercolor{background canvas}{bg=black!5}
+%  \pgfpagesuselayout{4 on 1}[letterpaper,landscape,border shrink=2.5mm]
+%  \pgfpagesuselayout{2 on 1}[letterpaper,border shrink=10mm]
+}
+
+
+
+<<eval=FALSE,include=FALSE>>=
+source("../../rnw2pdf.R")
+rnw2pdf("lecture-stochasticity")
+rnw2pdf("lecture-stochasticity",tangle=TRUE)
+@
+
+\begin{document}
+
+
+\begin{frame}[plain]
+  \begin{center}
+    {\huge Stochasticity} \\
+    \vfill
+    \includegraphics[height=3.8cm,keepaspectratio]{figs/pelagic-cormorants} \hspace{0.1cm}
+    \includegraphics[height=3.8cm,keepaspectratio]{figs/kittiwakes} %\hspace{0.5cm}
+  \end{center}
+\end{frame}
+
+
+
+
+\section{Introduction}
+
+
+\begin{frame}[plain]
+  \frametitle{Learning objectives}
+  \tableofcontents%[currentsection]
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Random variables}
+  \large
+  A random variable is a variable whose value can't be predicted
+  with certainty. \\
+  \pause
+  \vfill
+  Examples
+  \begin{itemize}
+    \item Weather
+    \item Our own behavior
+    \item Population size
+  \end{itemize}
+  \pause
+  \vfill
+  Is the universe random? Or is just too complex to be predicted with certainty? 
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Probability distributions}
+  \large
+  {A random variable ($X$) can be described by a probability distribution. \\}
+%  \pause
+  \vspace{1cm}
+  {There are many types of probability distributions}
+  \begin{itemize}
+    \item Normal (or Gaussian)
+    \item Poisson
+    \item Binomial
+    \item Multinomial
+    \item etc\dots
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Normal (Gaussian) Distribution}
+\[
+  X \sim \mbox{Normal}(\mu=0, \sigma^2=1)
+\]
+<<echo=FALSE,results='hide',eval=TRUE,include=FALSE>>=
+if(!dir.exists("figs/norm"))
+    dir.create("figs/norm")
+pdf("figs/norm/norm0.pdf", width=8, height=6)
+curve(dnorm(x, mean=0, sd=1), -3, 3,
+      xlab="X", yaxt="n", ylab="", cex.lab=1.4)
+dev.off()
+x <- numeric(10)
+set.seed(4549)
+for(i in 1:10) {
+    fl <- paste("figs/norm/norm", i, ".pdf", sep="")
+    pdf(fl, width=8, height=6)
+    curve(dnorm(x, mean=0, sd=1), -3, 3,
+      xlab="X", yaxt="n", ylab="", cex.lab=1.4)
+    x[i] <- rnorm(1, mean=0, sd=1)
+    points(x[1:i], rep(0, i), col="orange", cex=1.5, lwd=2, pch=16)
+    dev.off()
+}
+@
+\vspace{-1cm}
+%\centering
+\begin{center}
+  \includegraphics<1 | handout:0>[width=\textwidth]{figs/norm/norm0} %\\
+  \includegraphics<2 | handout:0>[width=\textwidth]{figs/norm/norm1} %\\
+  \includegraphics<3 | handout:0>[width=\textwidth]{figs/norm/norm2} %\\
+  \includegraphics<4 | handout:0>[width=\textwidth]{figs/norm/norm3} %\\
+  \includegraphics<5 | handout:0>[width=\textwidth]{figs/norm/norm4} %\\
+  \includegraphics<6 | handout:0>[width=\textwidth]{figs/norm/norm5} %\\
+  \includegraphics<7 | handout:0>[width=\textwidth]{figs/norm/norm6} %\\
+  \includegraphics<8 | handout:0>[width=\textwidth]{figs/norm/norm7} %\\
+  \includegraphics<9 | handout:0>[width=\textwidth]{figs/norm/norm8} %\\
+  \includegraphics<10 | handout:0>[width=\textwidth]{figs/norm/norm9} %\\
+  \includegraphics<11->[width=\textwidth]{figs/norm/norm10} %\\
+\end{center}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Normal (Gaussian) distribution}
+  \vspace{-0.7cm}
+  \begin{center}
+<<normals,echo=FALSE,fig.width=8,fig.height=6>>=
+curve(dnorm(x, 0, 0.6), -2, 2, xlab="X", cex.lab=1.4,
+      ylab="Probability density", ylim=c(0, 3), lwd=3)
+curve(dnorm(x, 0, 0.4), -2, 2, col="blue", lwd=3, add=TRUE)
+curve(dnorm(x, 0, 0.2), -2, 2, col="red", lwd=3, add=TRUE)
+legend(-2.1, 3, c(expression(paste(mu, "=0, ", sigma^2, "=0.6")),
+                  expression(paste(mu, "=0, ", sigma^2, "=0.4")),
+                  expression(paste(mu, "=0, ", sigma^2, "=0.2"))),
+       col=c("black", "blue", "red"), lwd=2, cex=0.9)
+@
+  \end{center}
+%\includegraphics[width=\textwidth]{figure/norm1-1}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{A purely stochastic model}
+  \vspace{-3mm}
+  \[
+    N_t \sim \mbox{Normal}(\mu=50, \sigma^2=1)
+  \]
+  \vspace{-8mm}
+<<normpop,include=FALSE,echo=FALSE,fig.width=8,fig.height=6>>=
+x <- rnorm(100, 50)
+plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
+@
+\begin{center}
+%  \includegraphics[width=0.7\textwidth]{stochasticity-normpop}
+  \includegraphics[width=0.9\textwidth]{figure/normpop-1}
+\end{center}
+\note{Amazing that this looks more realistic than a theoretical model}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Two important types of stochasticity}
+  {\bf Environmental stochasticity}
+  \begin{itemize}
+    \item Random variation in demographic rates (such as birth
+      and death rates)
+    \item Caused by unpredictable changes (e.g., in weather, habitat,
+      etc\dots conditions) among years
+    \item[]
+  \end{itemize}
+  \pause
+  {\bf Demographic stochasticity}
+  \begin{itemize}
+    \item Random variation in demographic outcomes (such as the number
+      of births and deaths)
+    \item Occurs even when demographic rates are constant 
+    \item[]
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+% \section{Geometric Growth}
+\section{Environmental stochasticity}
+
+
+
+
+
+% \begin{frame}[fragile]
+%   \frametitle{\large Geometric growth with environmental stochasticity}
+%   \Large
+% \[
+%   N_{t+1} = N_t + N_tr + X_t
+% \] \\
+% %\vspace{12pt}
+% %{\large \centering where \\}
+% %\vspace{-12pt}
+% \[
+%   X_t \sim \mbox{Normal}(0, \sigma_e^2)
+% \]
+% \pause
+% %\vfill
+% % {\tt \R} code:
+% R code
+% <<geo-env,eval=FALSE,size='small'>>=
+% nYears <- 20
+% N <- X <- rep(NA, nYears)  ## Create empty N and X
+% N[1] <- 100                ## Initial value of N
+% r <- 0.1                   ## Growth rate
+% sigma.e <- 10              ## StdDev of enviro variation
+% for(t in 2:nYears) {
+%     X[t-1] <- rnorm(n=1, mean=0, sd=sigma.e)
+%     N[t] <- N[t-1] + N[t-1]*r + X[t-1]
+% }
+% @
+% \end{frame}
+
+
+
+
+
+
+% \begin{frame}[fragile]
+%   \frametitle{Example $N_0=100$, $r=0.1$, $\mu=0$, $\sigma_e^2=100$}
+% <<geo-e,echo=FALSE,include=FALSE,cache=TRUE>>=
+% r <- 0.1
+% sigma.e <- 10
+% T <- 20
+% if(!dir.exists("figs/exp-e"))
+%     dir.create("figs/exp-e")
+% set.seed(350)
+% for(i in 1:10) {
+%     N <- integer(T+1)
+%     N[1] <- 100
+%     fl <- paste("figs/exp-e/exp-e", i, ".pdf", sep="")
+%     for(t in 1:T) {
+%         X.t <- rnorm(1, 0, sigma.e)
+%         N[t+1] <- N[t] + N[t]*r + X.t
+%     }
+%     pdf(fl, width=8, heigh=6)
+%     par(mai=c(0.9,0.9,0.1,0.1))
+%     plot(0:T, N, type="b", xlab="Time", ylab="Population size (N)",
+%          ylim=c(0, 1000), cex.lab=1.4)
+%     plot(function(x) N[1]*(1+r)^x, 0, T+1, add=TRUE)
+%     abline(h=0, col=gray(0.8))
+%     dev.off()
+% }
+% @
+% \vspace{-0.1cm}
+% \begin{center}
+%   \includegraphics<1 | handout:0>[width=\textwidth]{figs/exp-e/exp-e1}
+%   \includegraphics<2 | handout:0>[width=\textwidth]{figs/exp-e/exp-e2}
+%   \includegraphics<3 | handout:0>[width=\textwidth]{figs/exp-e/exp-e3}
+%   \includegraphics<4 | handout:0>[width=\textwidth]{figs/exp-e/exp-e4}
+%   \includegraphics<5 | handout:0>[width=\textwidth]{figs/exp-e/exp-e5}
+%   \includegraphics<6 | handout:0>[width=\textwidth]{figs/exp-e/exp-e6}
+%   \includegraphics<7 | handout:0>[width=\textwidth]{figs/exp-e/exp-e7}
+%   \includegraphics<8 | handout:0>[width=\textwidth]{figs/exp-e/exp-e8}
+%   \includegraphics<9 | handout:0>[width=\textwidth]{figs/exp-e/exp-e9}
+%   \includegraphics<10>[width=\textwidth]{figs/exp-e/exp-e10}
+% \end{center}
+% \end{frame}
+
+
+
+
+
+% \begin{frame}[fragile]
+%   \frametitle{Example $N_0=100$, $r=0.1$, $\mu=0$, $\sigma_e^2=10000$}
+% <<geo-e2,fig.show='hide',echo=FALSE,cache=TRUE>>=
+% r <- 0.1
+% sigma.e <- 100
+% T <- 20
+% if(!dir.exists("figs/exp-e2"))
+%     dir.create("figs/exp-e2")
+% set.seed(540)
+% for(i in 1:10) {
+%     N <- integer(T+1)
+%     N[1] <- 100
+%     fl <- paste("figs/exp-e2/exp-e", i, ".pdf", sep="")
+%     for(t in 1:T) {
+%         X.t <- rnorm(1, 0, sigma.e)
+%         N[t+1] <- max(N[t] + N[t]*r + X.t, 0)
+%     }
+%     pdf(fl, width=8, height=6)
+%     par(mai=c(0.9,0.9,0.1,0.1))
+%     plot(0:T, N, type="b", xlab="Time", ylab="Population size (N)",
+%          ylim=c(0, 1000), cex.lab=1.4)
+%     plot(function(x) N[1]*(1+r)^x, 0, T+1, add=TRUE)
+%     abline(h=0, col=gray(0.8))
+%     dev.off()
+% }
+% @
+% \vspace{-0.1cm}
+% \begin{center}
+%   \includegraphics<1 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e1}
+%   \includegraphics<2 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e2}
+%   \includegraphics<3 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e3}
+%   \includegraphics<4 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e4}
+%   \includegraphics<5 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e5}
+%   \includegraphics<6 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e6}
+%   \includegraphics<7 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e7}
+%   \includegraphics<8 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e8}
+%   \includegraphics<9 | handout:0>[width=\textwidth]{figs/exp-e2/exp-e9}
+%   \includegraphics<10>[width=\textwidth]{figs/exp-e2/exp-e10}
+% \end{center}
+% \end{frame}
+
+
+
+
+
+
+
+\begin{frame}[fragile]
+%  \frametitle{\large Geometric growth with demographic stochasticity}
+  \frametitle{\large Geometric growth with environmental stochasticity}
+  \Large
+\[
+  N_{t+1} = N_t + N_t r_t
+\]
+%\vspace{0.3cm} \pause
+%{\large \centering where \\}
+%\vspace{-12pt}
+\[
+  r_t \sim \mbox{Normal}(\bar{r}, \sigma^2)
+\] 
+%\normalsize
+%{\tt \R} code:
+R code
+<<geo-dem,eval=FALSE,size='small'>>=
+nYears <- 20
+N <- r <- rep(NA, nYears)  ## Create empty N and r
+N[1] <- 100                ## Initial value of N
+r.bar <- 0.5               ## Average growth rate
+sigma <- 0.1               ## StdDev of growth rate
+for(t in 2:nYears) {
+    r[t-1] <- rnorm(n=1, mean=r.bar, sd=sigma)
+    N[t] <- N[t-1] + N[t-1]*r[t-1]
+}
+@
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.01$}
+<<fig.show='hide',echo=FALSE>>=
+r.bar <- 0.1
+sigma.d <- 0.1
+T <- 20
+if(!dir.exists("figs/exp-d"))
+    dir.create("figs/exp-d")
+for(i in 1:10) {
+    N <- integer(T+1)
+    N[1] <- 100
+    fl <- paste("figs/exp-d/exp-d", i, ".pdf", sep="")
+    for(t in 1:T) {
+        r.t <- rnorm(1, r.bar, sigma.d)
+        N[t+1] <- N[t] + N[t]*r.t
+    }
+    pdf(fl, width=8, height=6)
+    par(mai=c(0.9,0.9,0.1,0.1))
+    plot(0:T, N, type="b", xlab="Time", ylab="Population size (N)",
+         ylim=c(0, 1000), cex.lab=1.4)
+    plot(function(x) N[1]*(1+r.bar)^x, 0, T+1, add=TRUE)
+    abline(h=0, col=gray(0.8))
+    dev.off()
+}
+@
+\vspace{-0.3cm}
+\begin{center}
+  \includegraphics<1 | handout:0>[width=\textwidth]{figs/exp-d/exp-d1}
+  \includegraphics<2 | handout:0>[width=\textwidth]{figs/exp-d/exp-d2}
+  \includegraphics<3 | handout:0>[width=\textwidth]{figs/exp-d/exp-d3}
+  \includegraphics<4 | handout:0>[width=\textwidth]{figs/exp-d/exp-d4}
+  \includegraphics<5 | handout:0>[width=\textwidth]{figs/exp-d/exp-d5}
+  \includegraphics<6 | handout:0>[width=\textwidth]{figs/exp-d/exp-d6}
+  \includegraphics<7 | handout:0>[width=\textwidth]{figs/exp-d/exp-d7}
+  \includegraphics<8 | handout:0>[width=\textwidth]{figs/exp-d/exp-d8}
+  \includegraphics<9 | handout:0>[width=\textwidth]{figs/exp-d/exp-d9}
+  \includegraphics<10>[width=\textwidth]{figs/exp-d/exp-d10}
+\end{center}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Example $N_0=100$, $\bar{r}=0.5$, $\sigma^2=0.25$}
+<<fig.show='hide',echo=FALSE>>=
+r.bar <- 0.1
+sigma.d <- 0.5
+T <- 20
+if(!dir.exists("figs/exp-d2"))
+    dir.create("figs/exp-d2")
+for(i in 1:10) {
+    N <- integer(T+1)
+    N[1] <- 100
+    fl <- paste("figs/exp-d2/exp-d", i, ".pdf", sep="")
+    for(t in 1:T) {
+        r.t <- rnorm(1, r.bar, sigma.d)
+        N[t+1] <- N[t] + N[t]*r.t
+    }
+    pdf(fl, width=8, height=6)
+    par(mai=c(0.9,0.9,0.1,0.1))
+    plot(0:T, N, type="b", xlab="Time", ylab="Population size (N)",
+         ylim=c(0, 1000), cex.lab=1.4)
+    plot(function(x) N[1]*(1+r.bar)^x, 0, T+1, add=TRUE)
+    abline(h=0, col=gray(0.8))
+    dev.off()
+}
+@
+\vspace{-0.3cm}
+\begin{center}
+  \includegraphics<1 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d1}
+  \includegraphics<2 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d2}
+  \includegraphics<3 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d3}
+  \includegraphics<4 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d4}
+  \includegraphics<5 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d5}
+  \includegraphics<6 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d6}
+  \includegraphics<7 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d7}
+  \includegraphics<8 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d8}
+  \includegraphics<9 | handout:0>[width=\textwidth]{figs/exp-d2/exp-d9}
+  \includegraphics<10>[width=\textwidth]{figs/exp-d2/exp-d10}
+\end{center}
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}
+  \frametitle{\large Logistic growth with environmental stochasticity}
+  \Large
+  %\centering
+  Imagine the carrying capacity fluctuates randomly from year to year. \\
+\[
+  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
+\]
+%{\large \centering where \\}
+%\vspace{-12pt}
+\[
+  K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
+\]
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Logistic example, $r_{max}=0.2$, $\bar{K}=200$, $\sigma^2=50$}
+<<fig.show='hide',echo=FALSE>>=
+r.max <- 0.3
+K.bar <- 200
+sigma.d <- 50
+T <- 20
+if(!dir.exists("figs/lg-d"))
+    dir.create("figs/lg-d")
+set.seed(4450)
+for(i in 1:10) {
+    N <- Nlr <- integer(T+1)
+    N[1] <- Nlr[1] <- 50 ##200
+    fl <- paste("figs/lg-d/lg-d", i, ".pdf", sep="")
+    for(t in 1:T) {
+        K.t <- rnorm(1, K.bar, sigma.d)
+        N[t+1] <- N[t] + N[t]*r.max*(1 - N[t]/K.t)
+        Nlr[t+1] <- Nlr[t] + Nlr[t]*r.max*(1 - Nlr[t]/K.bar)
+    }
+    pdf(fl, width=8, height=6)
+    par(mai=c(0.9,0.9,0.1,0.1))
+    plot(0:T, N, type="b", xlab="Time", ylab="Population size (N)",
+         ylim=c(0, 300), cex.lab=1.4)
+    lines(0:T, Nlr)
+    abline(h=0, col=gray(0.8))
+    dev.off()
+}
+@
+\vspace{-0.2cm}
+\begin{center}
+  \includegraphics<1 | handout:0>[width=\textwidth]{figs/lg-d/lg-d1}
+  \includegraphics<2 | handout:0>[width=\textwidth]{figs/lg-d/lg-d2}
+  \includegraphics<3 | handout:0>[width=\textwidth]{figs/lg-d/lg-d3}
+  \includegraphics<4 | handout:0>[width=\textwidth]{figs/lg-d/lg-d4}
+  \includegraphics<5 | handout:0>[width=\textwidth]{figs/lg-d/lg-d5}
+  \includegraphics<6 | handout:0>[width=\textwidth]{figs/lg-d/lg-d6}
+  \includegraphics<7 | handout:0>[width=\textwidth]{figs/lg-d/lg-d7}
+  \includegraphics<8 | handout:0>[width=\textwidth]{figs/lg-d/lg-d8}
+  \includegraphics<9 | handout:0>[width=\textwidth]{figs/lg-d/lg-d9}
+  \includegraphics<10>[width=\textwidth]{figs/lg-d/lg-d10}
+\end{center}
+\end{frame}
+
+
+
+
+\section{Demographic stochasticity}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Demographic stochasticity}
+  We can make the BIDE model stochastic by modeling random variation
+  in the number of individuals that are born and die each year (we'll
+  ignore movement):
+  \[
+     N_{t+1} = N_t + B_t - D_t
+  \]
+  \pause
+  \vfill
+  What distributions should we use for $B_t$ and $D_t$? 
+  \pause
+  \[
+    B_t \sim \mathrm{Poisson}(N_t\times b)
+  \]
+  \[
+    D_t \sim \mathrm{Binomial}(N_t, d)
+  \]
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Poisson distribution}
+  The Poisson distribution is useful for data that are non-negative
+  integers. \\
+  \vfill
+  It has a single parameter that describes the expected value of the
+  random outcomes. \\
+  \vfill
+  In stochastic population models, the Poisson distribution can be
+  used to model the number of births ($B_t$) that occur in a time
+  interval. 
+  \vfill
+  \[
+    B_t \sim \mathrm{Poisson}(N_t \times b)
+  \]
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Poisson distributions}
+<<pois,echo=FALSE,fig.width=7,fig.height=5,out.width="0.9\\textwidth",fig.align='center'>>=
+  par(mfrow=c(2,2), mai=c(0.8,0.8,0.2,0.2))
+  X <- 0:50
+  plot(X, dpois(X, 1), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(1)", col="royalblue")
+  plot(X, dpois(X, 10), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(10)", col="royalblue")
+  plot(X, dpois(X, 20), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(20)", col="royalblue")
+  plot(X, dpois(X, 30), type="h", lwd=2, xlab="Births", ylab="Probability",
+       main="Poisson(30)", col="royalblue")
+@   
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Binomial distribution}
+  The binomial distribution is also useful for data that are
+  non-negative integers, but it has an upper bound. \\
+  \vfill
+  In population models, the upper bound is often population size, and
+  we use the model to describe how many individuals die during some
+  time period. \\
+  \[
+    D_t \sim \mathrm{Binomial}(N_t, d)
+  \]
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Binomial distributions}
+<<bin,echo=FALSE,fig.width=7,fig.height=5,out.width="0.9\\textwidth",fig.align='center'>>=
+  par(mfrow=c(2,2), mai=c(0.8,0.8,0.2,0.2))
+  N <- 10
+  X <- 0:N
+  plot(X, dbinom(X, N, 0.1), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.1)", col="royalblue")
+  plot(X, dbinom(X, N, 0.3), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.3)", col="royalblue")
+  plot(X, dbinom(X, N, 0.6), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.6)", col="royalblue")
+  plot(X, dbinom(X, N, 0.9), type="h", lwd=3, xlab="Deaths", ylab="Probability",
+       main="Binomial(10, 0.9)", col="royalblue")
+@   
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Demographic stochasticity}
+  Poisson-Binomial birth-death model. %\\
+  \small
+  \begin{gather*}
+    N_{t+1} = N_t + B_t - D_t \\
+    B_t \sim \mathrm{Poisson}(N_t \times b) \\
+    D_t \sim \mathrm{Binomial}(N_t, d)
+  \end{gather*}
+<<pois-bin,fig.width=7,fig.height=5,out.width="0.7\\textwidth",fig.align='center',echo=FALSE>>=
+par(mai=c(0.9,0.9,0.2,0.2))  
+b <- 0.15  ## Birth rate
+d <- 0.2   ## Mortality rate
+nYears <- 50
+N2 <- rep(NA, nYears)  ## Empty vector for population size 
+B <- rep(NA, nYears-1)   ## Random variable for nBirths
+D <- rep(NA, nYears-1)   ## Random variable for nDeaths
+N2[1] <- 100           ## Initial population size
+for(t in 2:nYears) {
+    B[t-1] <- rpois(n=1, lambda=N2[t-1]*b)
+    D[t-1] <- rbinom(n=1, size=N2[t-1], prob=d)
+    N2[t] <- N2[t-1] + B[t-1] - D[t-1]
+}
+plot(1:nYears, N2, xlab="Time", ylab="Abundance", type="l")
+## lines(1:(nYears-1), B)
+@ 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Summary}
+  \Large
+  Purely deterministic models are too rigid. \\
+  \vfill
+  Purely stochastic models don't describe population processes. \\
+  \vfill
+  The goal is to develop mechanistic models that represent 
+  our biological understanding while allowing for uncertainty. \\
+\end{frame}
+
+
+%\begin{frame}
+%  \frametitle{Assignment}
+%  \Large
+%   Read pages 19--22 in Conroy and Carroll
+%\end{frame}
+
+
+
+
+
+% quasi-equilibrium
+
+%% \subsection{Birth-death process}
+
+
+%% \begin{frame}
+%%   \frametitle{Birth-death process}
+%%   What does it mean for $r$ to be random?
+%% \end{frame}
+
+
+\end{document}
+
+

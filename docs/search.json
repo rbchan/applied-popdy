@@ -462,6 +462,167 @@
     "text": "Assignment\n\n\nRead pages 15–19 in Conroy and Carroll.\n\nBe prepared for a quiz."
   },
   {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Stochastic Population Models"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\n\nRandom variables\n\nEnvironmental stochasticity\n\nDemographic stochasticity"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "title": "Applied Population Dynamics",
+    "section": "Random variables",
+    "text": "Random variables\n\nA random variable is a variable whose value can’t be predicted with certainty.\n\n\nExamples\n\nWeather\nOur own behavior\nPopulation size\n\n\n\n\n\n\nIs the universe random? Or is just too complex to be predicted with certainty?"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA random variable (\\(X\\)) can be described by a probability distribution.\n\nThere are many types of probability distributions, including:\n\nNormal (or Gaussian)\nPoisson\nBinomial\nMultinomial"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) Distribution",
+    "text": "Normal (Gaussian) Distribution\n\n\\[\n  X \\sim \\mbox{Normal}(\\mu=0, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) distribution",
+    "text": "Normal (Gaussian) distribution"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "title": "Applied Population Dynamics",
+    "section": "A purely stochastic model",
+    "text": "A purely stochastic model\n\n\\[\n  N_t \\sim \\mbox{Normal}(\\mu=50, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Two important types of stochasticity",
+    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates)\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths)\nOccurs even when demographic rates are constant"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  N_{t+1} = N_t + N_t r_t\n\\]\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}, \\sigma^2)\n\\]\n\nR code\n\nnYears &lt;- 20\nN &lt;- r &lt;- rep(NA, nYears)  ## Create empty N and r\nN[1] &lt;- 100                ## Initial value of N\nr.bar &lt;- 0.5               ## Average growth rate\nsigma &lt;- 0.1               ## StdDev of growth rate\nfor(t in 2:nYears) {\n    r[t-1] &lt;- rnorm(n=1, mean=r.bar, sd=sigma)\n    N[t] &lt;- N[t-1] + N[t-1]*r[t-1]\n}"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.01)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.25)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic growth with environmental stochasticity",
+    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)\n\\]\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic example with environmental stochasticity",
+    "text": "Logistic example with environmental stochasticity\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}=200, \\sigma^2=50)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nWe can make the BIDE model stochastic by modeling random variation in the number of individuals that are born and die each year (we’ll ignore movement):\n\\[\n   N_{t+1} = N_t + B_t - D_t\n\\]\n\n\nWhat distributions should we use for \\(B_t\\) and \\(D_t\\)?\n\n\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t\\times b)\n\\] \\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distribution",
+    "text": "Poisson distribution\n\nThe Poisson distribution is useful for data that are non-negative integers.\n\nIt has a single parameter that describes the expected value of the random outcomes.\n\n\nIn stochastic population models, the Poisson distribution can be used to model the number of births (\\(B_t\\)) that occur in a time interval.\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distributions",
+    "text": "Poisson distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distribution",
+    "text": "Binomial distribution\nThe binomial distribution is also useful for data that are non-negative integers, but it has an upper bound.\n\n\nIn population models, the upper bound is often population size, and we use the model to describe how many individuals die during some time period.\n\n\\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distributions",
+    "text": "Binomial distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nPoisson-Binomial birth-death model.\n\\[\n\\begin{gather*}\n  N_{t+1} = N_t + B_t - D_t \\\\\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b) \\\\\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nPurely deterministic models are too rigid.\n\nPurely stochastic models don’t describe population processes.\n\nThe goal is to develop mechanistic models that represent our biological understanding while allowing for uncertainty."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
+    "href": "schedule.html#week-1---introduction-and-the-bide-model",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
+    "href": "schedule.html#week-2---geometric-and-logistic-growth",
+    "title": "Course Schedule",
+    "section": "Week 2 - Geometric and logistic growth",
+    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+  },
+  {
     "objectID": "lectures/intro/lecture-intro.html#section",
     "href": "lectures/intro/lecture-intro.html#section",
     "title": "Applied Population Dynamics",
@@ -600,27 +761,6 @@
     "title": "Applied Population Dynamics",
     "section": "Assignment",
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
-    "href": "schedule.html#week-1---introduction-and-the-bide-model",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
-    "href": "schedule.html#week-2---geometric-and-logistic-growth",
-    "title": "Course Schedule",
-    "section": "Week 2 - Geometric and logistic growth",
-    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
   },
   {
     "objectID": "lectures/BIDE/lecture-BIDE.html#section",
