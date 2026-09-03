@@ -3,8 +3,9 @@
 format:
   revealjs:
     theme: default
-    pagetitle: 'Dog'
+    pagetitle: 'Extinction'
     slide-number: true
+    css: ../../custom.css
 lang: en
 ---
 
@@ -53,20 +54,18 @@ Allee efffects
 
 ## Extinction
   
-* Many believe that humans are causing the 6th mass extinction event
-* At least 1000 species have gone extinct over past 500 years
-* Extinction rate unknown, but may be 100-1000 times higher than during the past 25 million years
-* Almost 200 bird species have gone extinct since 1500
-* Avian extinctions in GA: passenger pigeon, Bachman's warbler, ivory-billed woodpecker, Carolina parakeet
+::: {.incremental style='font-size: 80%;'}
+* Humans are causing the 6th mass extinction event.
+* At least 1000 species have gone extinct over past 500 years.
+* Extinction rate unknown, but may be 100-1000 times higher than during the past 25 million years.
+* Almost 200 bird species have gone extinct since 1500.
+* Avian extinctions in GA: passenger pigeon, Bachman's warbler, ivory-billed woodpecker, Carolina parakeet.
+:::
   
 <center>
 ![](figs/bird-radiation.jpg)
 
-<br> 
-
-% \url{
-%    http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/
-%  } <br>
+<!-- http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/ -->
 
 [Hawaiian Bird Extinctions](https://vimeo.com/42592260)
 </center>
@@ -106,11 +105,12 @@ Allee efffects
 
 
 
-# Deterministic Models
+# Deterministic Models {visibility="hidden"}
 
 
 ## Deterministic models
   
+::: {style='font-size: 80%;'}
 For a model with no random variation, *time to extinction* can be calculated easily. 
 
 <br>
@@ -124,6 +124,7 @@ Time to quasi-extinction ($T_e$) is the time it takes for a population to reach 
 <br>
    
 Threshold usually based on genetic considerations, Allee effects, ...
+:::
 
 
 
@@ -135,10 +136,11 @@ Threshold usually based on genetic considerations, Allee effects, ...
 
 ```{r}
 #| label: exp1
-#| include: false
+#| include: true
 #| echo: false
-#| fig.width: 8
-#| fig.height: 6
+#| fig-width: 8
+#| fig-height: 6
+#| fig-align: center
 T <- 50
 N <- integer(T+1)
 N[1] <- 50
@@ -154,8 +156,6 @@ Te <- (0:T)[which.max(N<2)]
 text(Te-1, 20, paste("Time to quasi-extinction Te =", Te-1))
 arrows(Te-1, 19, Te-1, 3, length=0.1)
 ```
-%</center>
-[width=\textwidth]{figure/exp1-1}
 
 
 
@@ -165,19 +165,21 @@ arrows(Te-1, 19, Te-1, 3, length=0.1)
 
 ## Extinction risk
   
-In addition to time to extinction ($T_e$), we are now interested in *extinction risk*. 
+::: {style='font-size: 80%;'}
+For stochastic models, we are interested in *extinction risk*. 
 
 <br>
   
-Extinction risk is the * probability * that a species goes extinct in some time period. 
+Extinction risk is the *probability* that a species goes extinct in some time period. 
 
 <br>
    
-For a stochastic model, extinction risk can be calculated as the proportion of simulations in which the population goes extinct. 
+Extinction risk can be calculated as the proportion of simulations in which the population goes extinct. 
   
 <br>
 
 Calculating extinction risk requires a specification of the time horizon of interest.
+:::
 
 
 
@@ -204,14 +206,23 @@ $$
 
 
 
-## Logistic example, $r_{max=0.3$, $\bar{K}=100$, $\sigma^2=400$}
+## Logistic example
+
+::: {style='font-size: 60%;'}
+$$
+  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\
+  K_t \sim \mbox{Normal}(\bar{K}=100, \sigma^2=400)
+$$
+:::
+
 
 ```{r}
+#| label: logistic
 #| fig.show: 'hide'
 #| include: false
 #| echo: false
-#| fig.width: 8
-#| fig.height: 6
+#| fig-width: 8
+#| fig-height: 6
 r.max <- 0.3
 K.bar <- 100
 sigma.d <- 20
@@ -251,6 +262,43 @@ for(i in 1:nSim) {
 }
 ```
 
+
+<center>
+::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+  ![](lecture-extinction_files/figure-revealjs/logistic-1){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=1}
+  ![](lecture-extinction_files/figure-revealjs/logistic-2){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=2}
+  ![](lecture-extinction_files/figure-revealjs/logistic-3){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=3}
+  ![](lecture-extinction_files/figure-revealjs/logistic-4){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=4}
+  ![](lecture-extinction_files/figure-revealjs/logistic-5){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=5}
+  ![](lecture-extinction_files/figure-revealjs/logistic-6){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=6}
+  ![](lecture-extinction_files/figure-revealjs/logistic-7){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=7}
+  ![](lecture-extinction_files/figure-revealjs/logistic-8){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=8}
+  ![](lecture-extinction_files/figure-revealjs/logistic-9){width="60%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=9}
+  ![](lecture-extinction_files/figure-revealjs/logistic-10){width="60%"}
+:::
+:::
+</center>
+
+
 <!-- <center> -->
 <!--   <1 | handout:0>[width=\textwidth]{figs/lg-d/lg-d1} -->
 <!--   <2 | handout:0>[width=\textwidth]{figs/lg-d/lg-d2} -->
@@ -281,10 +329,19 @@ Assumptions
   
 
 
-## Logistic example, $r_{max=0.3$, $\bar{K}=100$, $\sigma^2=1600$}
+## Logistic example
+
+::: {style='font-size: 60%;'}
+$$
+  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\
+  K_t \sim \mbox{Normal}(\bar{K}=100, \sigma^2=1600)
+$$
+:::
+
 
 ```{r}
-#| fig.show: 'hide'
+#| label: logistic2
+#| include: false
 #| echo: false
 r.max <- 0.3
 K.bar <- 100
@@ -299,7 +356,7 @@ N[1,] <- Nlr[1,] <- 25
 Te <- integer(nSim)
 Tes <- NULL
 for(i in 1:nSim) {
-    fl <- paste("figs/lg-d/lg2-d", i, ".pdf", sep="")
+    ## fl <- paste("figs/lg-d/lg2-d", i, ".pdf", sep="")
     for(t in 1:T) {
         K.t <- rnorm(1, K.bar, sigma.d)
         N[t+1,i] <- N[t,i] + N[t,i]*r.max*(1 - N[t,i]/K.t)
@@ -312,7 +369,7 @@ for(i in 1:nSim) {
         Tes <- which(Te>0)
     }
     if(i < 11 || i==nSim) {
-        pdf(fl, width=8, heigh=6)
+        ## pdf(fl, width=8, heigh=6)
         par(mai=c(0.9,0.9,0.3,0.3))
         mn <- ifelse(i==nSim, "17 extinctions in 100 simulations", "")
         matplot(0:T, N, type="l", xlab="Time", ylab="Population size (N)", main=mn,
@@ -320,10 +377,46 @@ for(i in 1:nSim) {
         lines(0:T, Nlr[,1], col="blue", lwd=3)
         abline(h=0, col="red", lwd=2)
         points(Te[Tes], rep(0, length(Tes)), pch=16, col="orange", cex=1.5)
-        dev.off()
+        ## dev.off()
     }
 }
 ```
+
+
+<center>
+::: {.r-stack}
+::: {.fragment .fade-out fragment-index=1}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-1){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=1}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-2){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=2}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-3){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=3}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-4){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=4}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-5){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=5}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-6){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=6}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-7){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=7}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-8){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=8}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-9){width="90%"}
+:::
+::: {.fragment .fade-in-then-out fragment-index=9}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-10){width="90%"}
+:::
+:::
+</center>
 
 <!-- <center> -->
 <!--   <1 | handout:0>[width=\textwidth]{figs/lg-d/lg2-d1} -->
@@ -345,26 +438,40 @@ for(i in 1:nSim) {
 
 ## Allee effects
 
+::: {style='font-size: 80%;'}
 Normally, population growth rates increase as the population decreases (negative correlation).
+
+<br>
   
-  
+::: {.fragment}
 The Allee effect is the phenomenon of positive correlation between population growth rates and population size.
+:::
   
+<br>
+
+::: {.fragment}
 Mechanisms
   
 * Finding a mate becomes difficult
 * Social systems collapse
 * Inbreeding depression
 * ...
+:::
   
-  
-  
-Allee effects can greatly increase extinction risk for small populations
+<center>
+::: {.fragment style="color: SeaGreen;"}
+**Allee effects can greatly increase extinction risk for small populations**
+:::
+</center>
+
+:::
 
 
 
 
 ## Allee effects
+
+<br>
 
 ```{r}
 #| label: allee
@@ -411,14 +518,15 @@ Models allow us to predict time to extinction and extinction risk.
 Models can be used to assess effects of management actions on extinction risk. 
 
 
+::: {.fragment}
+<br>
 
-
-
-## Assignment
+**Assignment**
   
   
 Read pages 27--31 in Conroy and Carroll.
 
+:::
 
 
 

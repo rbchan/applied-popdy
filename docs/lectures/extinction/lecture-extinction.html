@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>Applied Population Dynamics – Dog</title>
+  <title>Applied Population Dynamics – Extinction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../custom.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -140,6 +141,7 @@
 </section>
 <section id="today-in-apd" class="slide level2">
 <h2>Today in APD</h2>
+<p><br></p>
 <p>Recent extinctions</p>
 <p><br></p>
 <p>Time-to-extinction</p>
@@ -150,35 +152,76 @@
 </section>
 <section id="extinction" class="slide level2">
 <h2>Extinction</h2>
+<div style="font-size: 80%;">
 <ul>
-<li>Many believe that humans are causing the 6th mass extinction event</li>
-<li>At least 1000 species have gone extinct over past 500 years</li>
-<li>Extinction rate unknown, but may be 100-1000 times higher than during the past 25 million years</li>
-<li>Almost 200 bird species have gone extinct since 1500</li>
-<li>Avian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet</li>
+<li class="fragment">Humans are causing the 6th mass extinction event.</li>
+<li class="fragment">At least 1000 species have gone extinct over past 500 years.</li>
+<li class="fragment">Extinction rate unknown, but may be 100-1000 times higher than during the past 25 million years.</li>
+<li class="fragment">Almost 200 bird species have gone extinct since 1500.</li>
+<li class="fragment">Avian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet.</li>
 </ul>
+</div>
 <center>
 <p><img data-src="figs/bird-radiation.jpg"></p>
+<!-- http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/ -->
+<a href="https://vimeo.com/42592260">Hawaiian Bird Extinctions</a>
+</center>
+<!-- \begin{comment} -->
+<!--   ##  -->
+<!-- BBC series -- Extinction: The Facts -->
+<!-- % {https://www.bbc.co.uk/programmes/p08rg347} % overview -->
+<!--   \url{ -->
+<!--     https://www.bbc.co.uk/programmes/p08qy8lr % brief overview -->
+<!--   } -->
+<!--   \url{ -->
+<!--     https://www.bbc.co.uk/programmes/p08qym98 % vortex -->
+<!--   } -->
+<!--   \url{ -->
+<!--     https://www.bbc.co.uk/programmes/p08qy8lz % last white rhino -->
+<!--   } -->
+<!--   \url{ -->
+<!--     https://www.bbc.co.uk/programmes/p08qym6s % giraffe -->
+<!--   } -->
+<!-- Hawaii -->
+<!--   \url{ -->
+<!--     https://vimeo.com/42592260 %  -->
+<!--   } -->
+<!--   \url{ -->
+<!--     https://youtu.be/J0UlrJeW8n8 % Hawaii birds -->
+<!--   } -->
+<!-- \end{comment} -->
+</section></section>
+<section>
+
+<section id="deterministic-models-1" class="slide level2">
+<h2>Deterministic models</h2>
+<div style="font-size: 80%;">
+<p>For a model with no random variation, <em>time to extinction</em> can be calculated easily.</p>
 <p><br></p>
-<p>% </p>
-</center></section>
+<p>But how should we define extinction?</p>
+<p><br></p>
+<p>Time to quasi-extinction (<span class="math inline">\(T_e\)</span>) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.</p>
+<p><br></p>
+<p>Threshold usually based on genetic considerations, Allee effects, …</p>
+</div>
+</section>
 <section id="geometric-growth-example" class="slide level2">
 <h2>Geometric growth example</h2>
-%
 
-<p>[width=]{figure/exp1-1}</p>
-</section></section>
+<img data-src="lecture-extinction_files/figure-revealjs/exp1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section></section>
 <section>
 
 <section id="extinction-risk" class="slide level2">
 <h2>Extinction risk</h2>
-<p>In addition to time to extinction (<span class="math inline">\(T_e\)</span>), we are now interested in <em>extinction risk</em>.</p>
+<div style="font-size: 80%;">
+<p>For stochastic models, we are interested in <em>extinction risk</em>.</p>
 <p><br></p>
-<p>Extinction risk is the * probability * that a species goes extinct in some time period.</p>
+<p>Extinction risk is the <em>probability</em> that a species goes extinct in some time period.</p>
 <p><br></p>
-<p>For a stochastic model, extinction risk can be calculated as the proportion of simulations in which the population goes extinct.</p>
+<p>Extinction risk can be calculated as the proportion of simulations in which the population goes extinct.</p>
 <p><br></p>
 <p>Calculating extinction risk requires a specification of the time horizon of interest.</p>
+</div>
 </section>
 <section id="logistic-growth-with-stochastic-carrying-capacity" class="slide level2">
 <h2>Logistic growth with stochastic carrying capacity</h2>
@@ -190,8 +233,48 @@
   K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
 \]</span></p>
 </section>
-<section id="logistic-example-r_max0.3-bark100-sigma2400" class="slide level2">
-<h2>Logistic example, <span class="math inline">\(r_{max=0.3\)</span>, <span class="math inline">\(\bar{K}=100\)</span>, <span class="math inline">\(\sigma^2=400\)</span>}</h2>
+<section id="logistic-example" class="slide level2">
+<h2>Logistic example</h2>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\
+  K_t \sim \mbox{Normal}(\bar{K}=100, \sigma^2=400)
+\]</span></p>
+</div>
+<center>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-1.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="1">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-2.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-3.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-4.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-5.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-6.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="6">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-7.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="7">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-8.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="8">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-9.png" style="width:60.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="9">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic-10.png" style="width:60.0%"></p>
+</div>
+</div>
+</center>
 <!-- <center> -->
 <!--   <1 | handout:0>[width=\textwidth]{figs/lg-d/lg-d1} -->
 <!--   <2 | handout:0>[width=\textwidth]{figs/lg-d/lg-d2} -->
@@ -214,8 +297,48 @@
 <li>We know the parameters with certainty</li>
 </ul>
 </section>
-<section id="logistic-example-r_max0.3-bark100-sigma21600" class="slide level2">
-<h2>Logistic example, <span class="math inline">\(r_{max=0.3\)</span>, <span class="math inline">\(\bar{K}=100\)</span>, <span class="math inline">\(\sigma^2=1600\)</span>}</h2>
+<section id="logistic-example-1" class="slide level2">
+<h2>Logistic example</h2>
+<div style="font-size: 60%;">
+<p><span class="math display">\[
+  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\
+  K_t \sim \mbox{Normal}(\bar{K}=100, \sigma^2=1600)
+\]</span></p>
+</div>
+<center>
+<div class="r-stack">
+<div class="fragment fade-out" data-fragment-index="1">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-1.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="1">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-2.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-3.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-4.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="4">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-5.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="5">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-6.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="6">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-7.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="7">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-8.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="8">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-9.png" style="width:90.0%"></p>
+</div>
+<div class="fragment fade-in-then-out" data-fragment-index="9">
+<p><img data-src="lecture-extinction_files/figure-revealjs/logistic2-10.png" style="width:90.0%"></p>
+</div>
+</div>
+</center>
 <!-- <center> -->
 <!--   <1 | handout:0>[width=\textwidth]{figs/lg-d/lg2-d1} -->
 <!--   <2 | handout:0>[width=\textwidth]{figs/lg-d/lg2-d2} -->
@@ -233,8 +356,14 @@
 
 <section id="allee-effects-1" class="slide level2">
 <h2>Allee effects</h2>
+<div style="font-size: 80%;">
 <p>Normally, population growth rates increase as the population decreases (negative correlation).</p>
+<p><br></p>
+<div class="fragment">
 <p>The Allee effect is the phenomenon of positive correlation between population growth rates and population size.</p>
+</div>
+<p><br></p>
+<div class="fragment">
 <p>Mechanisms</p>
 <ul>
 <li>Finding a mate becomes difficult</li>
@@ -242,10 +371,17 @@
 <li>Inbreeding depression</li>
 <li>…</li>
 </ul>
-<p>Allee effects can greatly increase extinction risk for small populations</p>
+</div>
+<center>
+<div class="fragment" style="color: SeaGreen;">
+<p><strong>Allee effects can greatly increase extinction risk for small populations</strong></p>
+</div>
+</center>
+</div>
 </section>
 <section id="allee-effects-2" class="slide level2">
 <h2>Allee effects</h2>
+<p><br></p>
 
 <!-- %<center> -->
 <!--   ::: columns -->
@@ -259,10 +395,11 @@
 <p>Humans have increased extinction rates dramatically.</p>
 <p>Models allow us to predict time to extinction and extinction risk.</p>
 <p>Models can be used to assess effects of management actions on extinction risk.</p>
-</section>
-<section id="assignment" class="slide level2">
-<h2>Assignment</h2>
+<div class="fragment">
+<p><br></p>
+<p><strong>Assignment</strong></p>
 <p>Read pages 27–31 in Conroy and Carroll.</p>
+</div>
 
 
 </section></section>
