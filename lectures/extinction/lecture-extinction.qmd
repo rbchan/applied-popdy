@@ -53,22 +53,23 @@ Allee efffects
 
 
 ## Extinction
-  
+
 ::: {.incremental style='font-size: 80%;'}
+
+<center>
+[![](figs/bird-radiation.jpg)](https://vimeo.com/42592260)
+<!-- [Hawaiian Bird Extinctions](https://vimeo.com/42592260) -->
+<!-- http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/ -->
+</center>
+
+
 * Humans are causing the 6th mass extinction event.
 * At least 1000 species have gone extinct over past 500 years.
-* Extinction rate unknown, but may be 100-1000 times higher than during the past 25 million years.
+* Extinction rate appears to be 100-1000 times higher than during the past 25 million years before humans.
 * Almost 200 bird species have gone extinct since 1500.
 * Avian extinctions in GA: passenger pigeon, Bachman's warbler, ivory-billed woodpecker, Carolina parakeet.
 :::
   
-<center>
-![](figs/bird-radiation.jpg)
-
-<!-- http://www.discovery.com/tv-shows/racing-extinction/the-song-of-the-last-kauai-oo-bird/ -->
-
-[Hawaiian Bird Extinctions](https://vimeo.com/42592260)
-</center>
 
 
 
@@ -108,10 +109,10 @@ Allee efffects
 # Deterministic Models {visibility="hidden"}
 
 
-## Deterministic models
+## Time to extinction *T~e~*
   
 ::: {style='font-size: 80%;'}
-For a model with no random variation, *time to extinction* can be calculated easily. 
+For a deterministic model, *time to extinction* can be calculated easily. 
 
 <br>
    
@@ -119,11 +120,11 @@ But how should we define extinction?
 
 <br>
    
-Time to quasi-extinction ($T_e$) is the time it takes for a population to reach an extinction threshold beyond which it is doomed. 
+**Time to quasi-extinction** ($T_e$) is the time it takes for a population to reach an extinction threshold beyond which it is doomed. 
 
 <br>
    
-Threshold usually based on genetic considerations, Allee effects, ...
+Threshold is usually based on genetic considerations, Allee effects, ...
 :::
 
 
@@ -147,7 +148,7 @@ N[1] <- 50
 for(t in 1:T) {
     N[t+1] <- N[t] + N[t]*-0.1
 }
-plot(0:T, N, type="b", col="orange", pch=16,
+plot(0:T, N, type="l", col="black", pch=16,
 ##     xlab="Time", ylab="Superb owl population size", cex.lab=1.3)
      xlab="Time", ylab="Population size", cex.lab=1.3)
 abline(h=2, col="red", lwd=2)
@@ -218,11 +219,10 @@ $$
 
 ```{r}
 #| label: logistic
-#| fig.show: 'hide'
 #| include: false
 #| echo: false
-#| fig-width: 8
-#| fig-height: 6
+## #| fig-width: 8
+## #| fig-height: 6
 r.max <- 0.3
 K.bar <- 100
 sigma.d <- 20
@@ -266,34 +266,34 @@ for(i in 1:nSim) {
 <center>
 ::: {.r-stack}
 ::: {.fragment .fade-out fragment-index=1}
-  ![](lecture-extinction_files/figure-revealjs/logistic-1){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-1){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=1}
-  ![](lecture-extinction_files/figure-revealjs/logistic-2){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-2){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=2}
-  ![](lecture-extinction_files/figure-revealjs/logistic-3){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-3){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=3}
-  ![](lecture-extinction_files/figure-revealjs/logistic-4){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-4){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=4}
-  ![](lecture-extinction_files/figure-revealjs/logistic-5){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-5){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=5}
-  ![](lecture-extinction_files/figure-revealjs/logistic-6){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-6){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=6}
-  ![](lecture-extinction_files/figure-revealjs/logistic-7){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-7){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=7}
-  ![](lecture-extinction_files/figure-revealjs/logistic-8){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-8){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=8}
-  ![](lecture-extinction_files/figure-revealjs/logistic-9){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-9){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=9}
-  ![](lecture-extinction_files/figure-revealjs/logistic-10){width="60%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic-10){width="90%"}
 :::
 :::
 </center>
@@ -321,11 +321,15 @@ for(i in 1:nSim) {
 ## Extinction risk
 
 Zero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.
-  
-Assumptions
+
+<br>
+
+::: {.fragment}
+Assumptions:
   
 * We have the correct model
 * We know the parameters with certainty
+:::
   
 
 
@@ -413,7 +417,7 @@ for(i in 1:nSim) {
   ![](lecture-extinction_files/figure-revealjs/logistic2-9){width="90%"}
 :::
 ::: {.fragment .fade-in-then-out fragment-index=9}
-  ![](lecture-extinction_files/figure-revealjs/logistic2-10){width="90%"}
+  ![](lecture-extinction_files/figure-revealjs/logistic2-11){width="90%"}
 :::
 :::
 </center>
@@ -450,12 +454,11 @@ The Allee effect is the phenomenon of positive correlation between population gr
 <br>
 
 ::: {.fragment}
-Mechanisms
+Possible mechanisms:
   
 * Finding a mate becomes difficult
 * Social systems collapse
 * Inbreeding depression
-* ...
 :::
   
 <center>
@@ -510,12 +513,18 @@ plot(N, #ifelse(N>20, beta0+beta1.1*N, 0 + 0.004*N),
 
 
 ## Summary
-  
+
+
 Humans have increased extinction rates dramatically. 
 
-Models allow us to predict time to extinction and extinction risk. 
+<br>
+
+Models let us predict time-to-extinction and extinction risk. 
+
+<br>
 
 Models can be used to assess effects of management actions on extinction risk. 
+
 
 
 ::: {.fragment}

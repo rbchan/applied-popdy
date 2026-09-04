@@ -732,14 +732,14 @@
     "href": "lectures/extinction/lecture-extinction.html#extinction",
     "title": "Applied Population Dynamics",
     "section": "Extinction",
-    "text": "Extinction\n\n\nHumans are causing the 6th mass extinction event.\nAt least 1000 species have gone extinct over past 500 years.\nExtinction rate unknown, but may be 100-1000 times higher than during the past 25 million years.\nAlmost 200 bird species have gone extinct since 1500.\nAvian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet.\n\n\n\n\n\nHawaiian Bird Extinctions"
+    "text": "Extinction\n\n\n  \n\n\nHumans are causing the 6th mass extinction event.\nAt least 1000 species have gone extinct over past 500 years.\nExtinction rate appears to be 100-1000 times higher than during the past 25 million years before humans.\nAlmost 200 bird species have gone extinct since 1500.\nAvian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet."
   },
   {
-    "objectID": "lectures/extinction/lecture-extinction.html#deterministic-models-1",
-    "href": "lectures/extinction/lecture-extinction.html#deterministic-models-1",
+    "objectID": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
+    "href": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
     "title": "Applied Population Dynamics",
-    "section": "Deterministic models",
-    "text": "Deterministic models\n\nFor a model with no random variation, time to extinction can be calculated easily.\n\nBut how should we define extinction?\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\nThreshold usually based on genetic considerations, Allee effects, …"
+    "section": "Time to extinction Te",
+    "text": "Time to extinction Te\n\nFor a deterministic model, time to extinction can be calculated easily.\n\nBut how should we define extinction?\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\nThreshold is usually based on genetic considerations, Allee effects, …"
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
@@ -774,7 +774,7 @@
     "href": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
     "title": "Applied Population Dynamics",
     "section": "Extinction risk",
-    "text": "Extinction risk\nZero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.\nAssumptions\n\nWe have the correct model\nWe know the parameters with certainty"
+    "text": "Extinction risk\nZero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.\n\n\nAssumptions:\n\nWe have the correct model\nWe know the parameters with certainty"
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#logistic-example-1",
@@ -788,7 +788,7 @@
     "href": "lectures/extinction/lecture-extinction.html#allee-effects-1",
     "title": "Applied Population Dynamics",
     "section": "Allee effects",
-    "text": "Allee effects\n\nNormally, population growth rates increase as the population decreases (negative correlation).\n\n\nThe Allee effect is the phenomenon of positive correlation between population growth rates and population size.\n\n\n\nMechanisms\n\nFinding a mate becomes difficult\nSocial systems collapse\nInbreeding depression\n…\n\n\n\n\nAllee effects can greatly increase extinction risk for small populations"
+    "text": "Allee effects\n\nNormally, population growth rates increase as the population decreases (negative correlation).\n\n\nThe Allee effect is the phenomenon of positive correlation between population growth rates and population size.\n\n\n\nPossible mechanisms:\n\nFinding a mate becomes difficult\nSocial systems collapse\nInbreeding depression\n\n\n\n\nAllee effects can greatly increase extinction risk for small populations"
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-2",
@@ -802,7 +802,7 @@
     "href": "lectures/extinction/lecture-extinction.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\nHumans have increased extinction rates dramatically.\nModels allow us to predict time to extinction and extinction risk.\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
+    "text": "Summary\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
