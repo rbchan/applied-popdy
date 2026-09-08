@@ -3,7 +3,7 @@
 format:
   revealjs:
     theme: default
-    pagetitle: 'Dog'
+    pagetitle: 'Stochastic Population Models'
     slide-number: true
     css: ../../custom.css
 lang: en
@@ -238,16 +238,16 @@ plot(x, type="o", xlab="Time", ylab="Population size (N)", cex.lab=1.4)
 ::: {style='font-size: 90%;'}
 **Environmental stochasticity**
   
-  * Random variation in demographic rates (such as birth and death rates)
-  * Caused by unpredictable changes (e.g., in weather, habitat, ... conditions) among years
+  * Random variation in demographic rates (such as birth and death rates).
+  * Caused by unpredictable changes (e.g., in weather, habitat, ... conditions) among years.
 
 <br>
 
 ::: {.fragment}
 **Demographic stochasticity**
   
-  * Random variation in demographic outcomes (such as the number of births and deaths)
-  * Occurs even when demographic rates are constant 
+  * Random variation in demographic outcomes (such as the number of births and deaths).
+  * Occurs even when demographic rates are constant.
 :::
 :::
 
@@ -453,15 +453,10 @@ Imagine the carrying capacity fluctuates randomly.
 <br>
 
 $$
-  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
-$$
-
-
-::: {.fragment}
-$$
+  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\
   K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
 $$
-:::
+
 
 
 

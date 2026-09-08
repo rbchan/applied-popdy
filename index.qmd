@@ -15,7 +15,7 @@ species interactions, and stochastic models for structured
 populations. Sampling design and analytical methods for estimating
 abundance and demographic parameters. Application of population models
 to harvest management and conversation of small
-populations. Integrative student project required.  
+populations. Integrative student project required.
 
 ## Course Objectives and Learning Outcomes
 
@@ -55,3 +55,6 @@ and an oral presentation.
 
 - [Lab 3 - Harvest models](labs/harvest/lab-harvest.qmd)
 
+### Week 4 - Stochastic population models and extinction risk
+
+- [Lecture 6 - Stochastic population models](lectures/stochasticity/lecture-stochasticity.qmd)

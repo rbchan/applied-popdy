@@ -627,7 +627,7 @@
     "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
     "title": "Applied Population Dynamics",
     "section": "Two important types of stochasticity",
-    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates)\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths)\nOccurs even when demographic rates are constant"
+    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates).\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths).\nOccurs even when demographic rates are constant."
   },
   {
     "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
@@ -655,7 +655,7 @@
     "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
     "title": "Applied Population Dynamics",
     "section": "Logistic growth with environmental stochasticity",
-    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)\n\\]\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
+    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
   },
   {
     "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
@@ -1110,7 +1110,7 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models"
   },
   {
     "objectID": "labs/harvest/lab-harvest.html",

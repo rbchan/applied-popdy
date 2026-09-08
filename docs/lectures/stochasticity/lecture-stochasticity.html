@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>Applied Population Dynamics – Dog</title>
+  <title>Applied Population Dynamics – Stochastic Population Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -312,15 +312,15 @@
 <div style="font-size: 90%;">
 <p><strong>Environmental stochasticity</strong></p>
 <ul>
-<li>Random variation in demographic rates (such as birth and death rates)</li>
-<li>Caused by unpredictable changes (e.g., in weather, habitat, … conditions) among years</li>
+<li>Random variation in demographic rates (such as birth and death rates).</li>
+<li>Caused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.</li>
 </ul>
 <p><br></p>
 <div class="fragment">
 <p><strong>Demographic stochasticity</strong></p>
 <ul>
-<li>Random variation in demographic outcomes (such as the number of births and deaths)</li>
-<li>Occurs even when demographic rates are constant</li>
+<li>Random variation in demographic outcomes (such as the number of births and deaths).</li>
+<li>Occurs even when demographic rates are constant.</li>
 </ul>
 </div>
 </div>
@@ -440,13 +440,9 @@
 <p>Imagine the carrying capacity fluctuates randomly.</p>
 <p><br></p>
 <p><span class="math display">\[
-  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)
-\]</span></p>
-<div class="fragment">
-<p><span class="math display">\[
+  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\
   K_t \sim \mbox{Normal}(\bar{K}, \sigma^2)
 \]</span></p>
-</div>
 </section>
 <section id="logistic-example-with-environmental-stochasticity" class="slide level2">
 <h2>Logistic example with environmental stochasticity</h2>
