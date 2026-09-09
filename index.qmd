@@ -58,3 +58,5 @@ and an oral presentation.
 ### Week 4 - Stochastic population models and extinction risk
 
 - [Lecture 6 - Stochastic population models](lectures/stochasticity/lecture-stochasticity.qmd)
+
+- [Lecture 7 - Extinction risk](lectures/extinction/lecture-extinction.qmd)

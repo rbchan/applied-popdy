@@ -109,22 +109,28 @@ Allee efffects
 # Deterministic Models {visibility="hidden"}
 
 
-## Time to extinction *T~e~*
+## Time to extinction (*T~e~*)
   
 ::: {style='font-size: 80%;'}
 For a deterministic model, *time to extinction* can be calculated easily. 
 
 <br>
    
+::: {.fragment}
 But how should we define extinction?
+:::
 
 <br>
    
+::: {.fragment}
 **Time to quasi-extinction** ($T_e$) is the time it takes for a population to reach an extinction threshold beyond which it is doomed. 
+:::
 
 <br>
    
+::: {.fragment}
 Threshold is usually based on genetic considerations, Allee effects, ...
+:::
 :::
 
 
@@ -171,15 +177,21 @@ For stochastic models, we are interested in *extinction risk*.
 
 <br>
   
+::: {.fragment}
 Extinction risk is the *probability* that a species goes extinct in some time period. 
+:::
 
 <br>
    
+::: {.fragment}
 Extinction risk can be calculated as the proportion of simulations in which the population goes extinct. 
+:::
   
 <br>
 
+::: {.fragment}
 Calculating extinction risk requires a specification of the time horizon of interest.
+:::
 :::
 
 
@@ -514,6 +526,7 @@ plot(N, #ifelse(N>20, beta0+beta1.1*N, 0 + 0.004*N),
 
 ## Summary
 
+<br>
 
 Humans have increased extinction rates dramatically. 
 

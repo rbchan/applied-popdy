@@ -738,8 +738,8 @@
     "objectID": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
     "href": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
     "title": "Applied Population Dynamics",
-    "section": "Time to extinction Te",
-    "text": "Time to extinction Te\n\nFor a deterministic model, time to extinction can be calculated easily.\n\nBut how should we define extinction?\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\nThreshold is usually based on genetic considerations, Allee effects, …"
+    "section": "Time to extinction (Te)",
+    "text": "Time to extinction (Te)\n\nFor a deterministic model, time to extinction can be calculated easily.\n\n\nBut how should we define extinction?\n\n\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\n\n\nThreshold is usually based on genetic considerations, Allee effects, …"
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
@@ -753,7 +753,7 @@
     "href": "lectures/extinction/lecture-extinction.html#extinction-risk",
     "title": "Applied Population Dynamics",
     "section": "Extinction risk",
-    "text": "Extinction risk\n\nFor stochastic models, we are interested in extinction risk.\n\nExtinction risk is the probability that a species goes extinct in some time period.\n\nExtinction risk can be calculated as the proportion of simulations in which the population goes extinct.\n\nCalculating extinction risk requires a specification of the time horizon of interest."
+    "text": "Extinction risk\n\nFor stochastic models, we are interested in extinction risk.\n\n\nExtinction risk is the probability that a species goes extinct in some time period.\n\n\n\nExtinction risk can be calculated as the proportion of simulations in which the population goes extinct.\n\n\n\nCalculating extinction risk requires a specification of the time horizon of interest."
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
@@ -802,7 +802,7 @@
     "href": "lectures/extinction/lecture-extinction.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
+    "text": "Summary\n\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
@@ -1110,7 +1110,7 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk"
   },
   {
     "objectID": "labs/harvest/lab-harvest.html",
