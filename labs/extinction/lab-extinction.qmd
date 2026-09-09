@@ -23,6 +23,7 @@ Answer each of the following questions and upload your completed Excel file and 
 
 ![We will use three distributions: Normal, Binomial, and Poisson. The latter two are only used in Exercise II. Note: You can think of the "number of variables" as the number of columns of random variables, and the "number of random numbers" as the number of cells in each column.](figs/Excel-RNG-3.png){#fig-rng3 width="60%" .lightbox}
 
+<br>
 
 
 ### Exercise I
@@ -33,6 +34,7 @@ C.  Conduct 10 simulations over a 30 year time period, and force the population 
 D.  What is the average $T_e$ based on these 10 simulations?
 E.  What is extinction risk at year 15?
 
+<br>
 
 ### Exercise II
 
@@ -55,11 +57,12 @@ B.  Do you think this population will reach a stochastic equilibrium? Why or why
 C.  Can population size ever be less than zero under this model?  Why or why not?
 D.  Do another simulation, but this time make the mortality rate ($d$) density-dependent according to the model $d_t = 0.2 + 0.001\times N_t$. Will this population reach a stochastic equilibrium? If so, at what value of abundance does the equilibrium point occur?
 
+<br>
 
 
 ### Example R code
 
-Geometric growth with environmental stochasticity. 
+#### Geometric growth with environmental stochasticity. 
 
 ```{r echo=-1}
 #| label: geom-stoch
@@ -84,7 +87,7 @@ plot(1:nYears, N1, xlab="Time", ylab="Abundance", type="l")
 ```
 
 
-Poisson-Binomial birth-death model. 
+#### Poisson-Binomial birth-death model. 
 
 
 ```{r}

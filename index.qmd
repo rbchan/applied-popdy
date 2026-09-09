@@ -60,3 +60,5 @@ and an oral presentation.
 - [Lecture 6 - Stochastic population models](lectures/stochasticity/lecture-stochasticity.qmd)
 
 - [Lecture 7 - Extinction risk](lectures/extinction/lecture-extinction.qmd)
+
+- [Lab 4 - Stochasticity and extinction](labs/extinction/lab-extinction.qmd)
