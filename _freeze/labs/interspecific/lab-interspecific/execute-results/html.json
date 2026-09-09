@@ -1,0 +1,17 @@
+{
+  "hash": "ea69a9866b235bf7dce8c7ba7cfa3389",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nformat: html\nlang: en\n---\n\n## Lab 6 Assignment --- Models of Interspecific Interactions <br> Due by 5:00pm on Friday\n\n\nAnswer each of the following questions and upload your Excel file and\nR script to ELC. Be sure to show your calculations. Undergraduates\nonly have to do Exercise I in R.\n\n\n\n\n### Exercise I \n\nYou are studying the dynamics of jaguar (*Panthera onca*) and Baird's\ntapir (*Tapirus bairdii*) in Costa Rica's Corcavodo National Park. After\nyears of research, you obtain the following parameter estimates, which\nyou would like to use in a Lotka-Volterra model: $r^{prey}=0.05$,\n$k^{pred}=0.0005$, $b^{pred}=0.001$, and $d^{pred}=0.45$.  \n\n(A)  What predator population size corresponds to prey equilibrium? What prey population size corresponds to predator equilibrium?\n(B)  Project the populations 100 years following an initial prey population size of $N_0^{prey}=500$ and an initial predator population size of $N_0^{pred}=100$. Plot the projections.\n(C)  Clearly, these populations have not reached a stable equilibrium, so what is the interpretation of the equilibrium values from part (a)? What happens if you set the initial population sizes to the equilibrium values?\n\n\n![](jaguar_killing_tapir.jpg){width=\"85%\"}\n\n<br>\n\n### Exercise II\n\nThe Canada warbler (*Cardellina canadensis*) and the hooded\nwarbler (*Stetophaga citrina*) are two species of\nNeotropical-Nearctic migratory birds that appear to compete for the\nsame resources where their ranges meet in the southern Appalachian\nMountains. Assume their dynamics follow the Lotka-Volterra competition\nmodel with parameters $r^{A}=0.2$, $r^{B}=0.3$,\n$K^{A}=250$, $K^{B}=200$, $\\alpha^{A}=0.1$, and \n$\\alpha^{B}=0.1$.\n\n(A)  Plot 25 years of dynamics following initial conditions of  $N_0^A = 200$ and $N_0^B=50$.\n(B)  What are the 2 equilibrium values for these species?\n(C)  Do these conditions describe stable coexistence, competitive exclusion, or unstable equilibrium?\n(D)  What is the minimum value of $\\alpha^B$ that would result in competitive exclusion of species A? (Hint: Use the equilibrium equations to solve for $\\alpha^B$). Plot 25 years of dynamics under this scenario. Use the same initial abundance values as before. \n\n\n![](cawa-howa.PNG)\n\n<br>\n\n### R example\n\n\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nnYears <- 5000\nr.prey <- 0.01\nk.pred <- 0.00001\nb.pred <- 0.00001\nd.pred <- 0.01\nN.prey <- rep(NA, nYears)\nN.pred <- rep(NA, nYears)\nN.prey[1] <- 1000\nN.pred[1] <- 300\nfor(t in 2:nYears) {\n    N.prey[t] <- N.prey[t-1] + N.prey[t-1]*(r.prey-k.pred*N.pred[t-1])\n    N.pred[t] <- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)\n}\nplot(1:nYears, N.prey, type=\"l\", col=\"black\", ylim=c(0, 3500),\n     xlab=\"Year\", ylab=\"Abundance\")\nlines(1:nYears, N.pred, type=\"l\", col=\"blue\")\nlegend(1, 3500, c(\"Prey\", \"Predator\"), lty=1, col=c(\"black\", \"blue\"))\n```\n\n::: {.cell-output-display}\n![](lab-interspecific_files/figure-html/pred-prey-1.png){fig-align='center' width=75%}\n:::\n:::\n\n",
+    "supporting": [
+      "lab-interspecific_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
