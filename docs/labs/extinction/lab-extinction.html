@@ -239,16 +239,18 @@ Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. T
 </figcaption>
 </figure>
 </div>
+<p><br></p>
 </section>
 <section id="exercise-i" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-i">Exercise I</h3>
 <ol type="A">
 <li>Suppose a population is growing geometrically with <span class="math inline">\(r=-0.2\)</span> and <span class="math inline">\(N_0=500\)</span>. There is no random variation, and quasi-extinction occurs when <span class="math inline">\(N\)</span> falls below 20 individuals. What is the time to quasi-extinction (<span class="math inline">\(T_e\)</span>)? In other words, how long will it take for the population to fall below 20 individuals?</li>
 <li>Now imagine that there is no demographic stochasticity, but environmental stochasticity occurs with <span class="math inline">\(r_t \sim \mathrm{Normal}(\mathrm{mean}=-0.2, \mathrm{SD}=0.05)\)</span>. Generate the random values of <span class="math inline">\(r_t\)</span> that will be used in the 10 simulations in the next step.</li>
-<li>Conduct 10 simulations over a 30 year time period, and force the population size to zero after it falls below the threshold. This can be done by multiplying the geometric growth equation by a “test statement”, like this: <code>=(EQUATION)*(CELL&gt;20)</code>, where <code>EQUATION</code> should be replaced with the population growth equation and <code>CELL</code> should be replaced with the cell reference for abundance at the previous time step. Plot the projections.</li>
+<li>Conduct 10 simulations over a 30 year time period, and force the population size to zero after it falls below the threshold. This can be done by multiplying the geometric growth equation by a “test statement”, like this: <code>=(EQUATION)*(CELL&gt;20)</code>, where <code>EQUATION</code> should be replaced with the population growth equation and <code>CELL</code> should be replaced with the cell reference for abundance at the previous time step. Plot the projections (including the one without stochasticity).</li>
 <li>What is the average <span class="math inline">\(T_e\)</span> based on these 10 simulations?</li>
 <li>What is extinction risk at year 15?</li>
 </ol>
+<p><br></p>
 </section>
 <section id="exercise-ii" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-ii">Exercise II</h3>
@@ -261,14 +263,15 @@ Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. T
 \]</span></p>
 <ol type="A">
 <li>Beginning with <span class="math inline">\(N_0=300\)</span>, conduct one simulation over 5 years, in which <span class="math inline">\(b=0.3\)</span> and <span class="math inline">\(d=0.2\)</span>. Plot the simulated values of abundance over time. Hint: You have to randomly generate <span class="math inline">\(B_t\)</span> and <span class="math inline">\(D_t\)</span> before you can compute <span class="math inline">\(N_{t+1}\)</span>, one year at a time. When simulating <span class="math inline">\(D_t\)</span> from the binomial distribution, the “number of trials” is the population size.</li>
-<li>Do you think this population will reach a stochastic equilibrium? Why or why not? (A stochastic equilibrium occurs when a population fluctuates around a long-term average).</li>
-<li>Can population size ever be less than zero under this model? Why or why not?</li>
+<li>Do you think this population will reach a stochastic equilibrium? Why or why not? (A stochastic equilibrium occurs when a population fluctuates around a long-term average). <!-- C.  Can population size ever be less than zero under this model?  Why or why not? --></li>
 <li>Do another simulation, but this time make the mortality rate (<span class="math inline">\(d\)</span>) density-dependent according to the model <span class="math inline">\(d_t = 0.2 + 0.001\times N_t\)</span>. Will this population reach a stochastic equilibrium? If so, at what value of abundance does the equilibrium point occur?</li>
 </ol>
+<p><br></p>
 </section>
 <section id="example-r-code" class="level3">
 <h3 class="anchored" data-anchor-id="example-r-code">Example R code</h3>
-<p>Geometric growth with environmental stochasticity.</p>
+<section id="geometric-growth-with-environmental-stochasticity." class="level4">
+<h4 class="anchored" data-anchor-id="geometric-growth-with-environmental-stochasticity.">Geometric growth with environmental stochasticity.</h4>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rbar <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
@@ -293,7 +296,9 @@ Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. T
 </div>
 </div>
 </div>
-<p>Poisson-Binomial birth-death model.</p>
+</section>
+<section id="poisson-binomial-birth-death-model." class="level4">
+<h4 class="anchored" data-anchor-id="poisson-binomial-birth-death-model.">Poisson-Binomial birth-death model.</h4>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.15</span>  <span class="do">## Birth rate</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fl">0.2</span>   <span class="do">## Mortality rate</span></span>
@@ -318,6 +323,7 @@ Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. T
 </div>
 
 
+</section>
 </section>
 
 
