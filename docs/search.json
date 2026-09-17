@@ -28,473 +28,340 @@
     "text": "Answer each of the following questions and upload your completed Excel file and R script to ELC by 5:00pm on Friday. Be sure to show your calculations. Undergrads only need to do the second exercise in R, not the first."
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "objectID": "lectures/interspecific/lecture-interspecific.html#section",
+    "href": "lectures/interspecific/lecture-interspecific.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700"
+    "text": "Models of interspecific interactions\n\nPredator-prey dynamics and competition"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "objectID": "lectures/interspecific/lecture-interspecific.html#introduction-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#introduction-1",
+    "title": "Applied Population Dynamics",
+    "section": "Introduction",
+    "text": "Introduction\n\nLotka and Volterra developed models for both predator-prey dynamics and competitive interactions.\n\nAs usual, these models were developed as continuous-time models.\n\nWe will focus on discrete-time versions (\\(t = 1, 2, \\ldots\\)).\n\nWe will ignore potential extensions with stochasticity, age structure, spatial structure, etc…"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
+    "href": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
+    "title": "Applied Population Dynamics",
+    "section": "How should predator-prey dynamics operate?",
+    "text": "How should predator-prey dynamics operate?"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
+    "href": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
+    "title": "Applied Population Dynamics",
+    "section": "Lynx-hare cycles",
+    "text": "Lynx-hare cycles"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
+    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
+    "title": "Applied Population Dynamics",
+    "section": "Lotka-Volterra predator-prey model",
+    "text": "Lotka-Volterra predator-prey model\n\nModel for prey \\[\n  N^{prey}_{t+1} = N^{prey}_t + N^{prey}_t (r^{prey} - k^{pred} N^{pred}_t)\n\\]\nModel for predator \\[\n  N^{pred}_{t+1} = N^{pred}_t + N^{pred}_t (b^{pred}N^{prey}_t - d^{pred})\n\\]\n\nModel is based on geometric growth\n\\(r^{prey}\\): growth rate of the prey in the absence of predators\n\\(k^{pred}\\): kill rate\n\\(b^{pred}\\): effect of prey on predator birth rate\n\\(d^{pred}\\): predator mortality rate"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium",
+    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium",
+    "title": "Applied Population Dynamics",
+    "section": "Equilibrium",
+    "text": "Equilibrium\nEquilibrium for prey occurs when: \\[\n  N^{pred} = \\frac{r^{prey}}{k^{pred}}\n\\]\n\nEquilibrium for predators occurs when \\[\n  N^{prey} = \\frac{d^{pred}}{b^{pred}}\n\\]\n\n\nHowever, it is rare that both equilibrium conditions will be met at the same time, and so the populations will cycle."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
+    "href": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
+    "title": "Applied Population Dynamics",
+    "section": "Model predicts population cycles",
+    "text": "Model predicts population cycles"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
+    "href": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
+    "title": "Applied Population Dynamics",
+    "section": "Isle Royale wolves and moose",
+    "text": "Isle Royale wolves and moose\n\n   \nIsle Royal Website"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#haffakers-lab-experiments",
+    "href": "lectures/interspecific/lecture-interspecific.html#haffakers-lab-experiments",
+    "title": "Applied Population Dynamics",
+    "section": "Haffaker’s Lab Experiments",
+    "text": "Haffaker’s Lab Experiments"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#competition-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#competition-1",
+    "title": "Applied Population Dynamics",
+    "section": "Competition",
+    "text": "Competition\n\n\n\n\nDavid Bygott"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
+    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
+    "title": "Applied Population Dynamics",
+    "section": "Lotka-Volterra competition model",
+    "text": "Lotka-Volterra competition model\nModel for species A \\[\n  N^A_{t+1} = N^A_t + r^A N^A_t(K^A - N^A_t - \\alpha^B N^B_t) / K^A\n\\]\nModel for species B \\[\n  N^B_{t+1} = N^B_t + r^B N^B_t(K^B - N^B_t - \\alpha^A N^A_t) / K^B\n\\]\n\nModel based on logistic growth\nThe \\(\\alpha\\) parameters are competition coefficients determining how strongly each species affects the other"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
+    "title": "Applied Population Dynamics",
+    "section": "Equilibrium",
+    "text": "Equilibrium\nEquilibrium for species A \\[\n  N^A = \\frac{K^A - \\alpha^B K^B}{1 - \\alpha^A \\alpha^B}\n\\]\nEquilibrium for species B \\[\n  N^B = \\frac{K^B - \\alpha^A K^A}{1 - \\alpha^A \\alpha^B}\n\\]"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#three-possible-outcomes",
+    "href": "lectures/interspecific/lecture-interspecific.html#three-possible-outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Three possible outcomes",
+    "text": "Three possible outcomes\n\nOutcomes depend on the sign of the numerators:\n\nStable coexistence\nCompetitive exclusion\nUnstable equilibrium\n\n\nCompetitive exclusion principle Two species with the same niche cannot coexist on the same limiting resource."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes",
+    "href": "lectures/interspecific/lecture-interspecific.html#outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Outcomes",
+    "text": "Outcomes"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
+    "href": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
+    "title": "Applied Population Dynamics",
+    "section": "Don’t forget about intraspecific competition",
+    "text": "Don’t forget about intraspecific competition"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#summary",
+    "href": "lectures/interspecific/lecture-interspecific.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nPredator-prey model is extension of geometric growth\n\nPredators and prey limit each other’s growth potential\n\n\nCompetition model is extension of logistic growth\n\nCompetitors influence each other’s density-dependent regulation process\n\n\n\nThese models could be extended to include:\n\n\nMore species\nStochasticity\nAge structure\nHarvest\nSpatial structure\nAdditional forms of density dependence"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#section",
+    "href": "lectures/harvest/lecture-harvest.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
     "title": "Applied Population Dynamics",
     "section": "Today in APD",
-    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
     "title": "Applied Population Dynamics",
-    "section": "From Geometric to Logistic Growth",
-    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+    "section": "Sustainable harvest",
+    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
     "title": "Applied Population Dynamics",
-    "section": "Density-dependent growth",
-    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
+    "section": "Harvest and geometric growth",
+    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
     "title": "Applied Population Dynamics",
-    "section": "Graphical depiction",
-    "text": "Graphical depiction"
+    "section": "Sustainable harvest and geometric growth",
+    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
     "title": "Applied Population Dynamics",
-    "section": "Growth rate",
-    "text": "Growth rate\n\n\\[\\lambda_t = N_{t+1}/N_t\\]"
+    "section": "Harvest and logistic growth",
+    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
     "title": "Applied Population Dynamics",
-    "section": "Growth",
-    "text": "Growth\n\n\\[\\Delta_t=N_{t+1}-N_t\\]"
+    "section": "Sustainable harvest and logistic growth",
+    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
     "title": "Applied Population Dynamics",
-    "section": "Growth as a function of \\(N\\)",
-    "text": "Growth as a function of \\(N\\)"
+    "section": "Example when K=1000 and rmax=0.1",
+    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
     "title": "Applied Population Dynamics",
-    "section": "What happens when we change \\(r_{max}\\)?",
-    "text": "What happens when we change \\(r_{max}\\)?"
+    "section": "Example when K=1000 and rmax=0.5",
+    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
     "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+    "section": "Is MSY useful in practice?",
+    "text": "Is MSY useful in practice?"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "objectID": "lectures/harvest/lecture-harvest.html#issues",
+    "href": "lectures/harvest/lecture-harvest.html#issues",
     "title": "Applied Population Dynamics",
-    "section": "Assumptions of basic model",
-    "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
+    "section": "Issues",
+    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
     "title": "Applied Population Dynamics",
-    "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
+    "section": "Additive vs. compensatory mortality",
+    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
     "title": "Applied Population Dynamics",
-    "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
     "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
     "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
     "title": "Applied Population Dynamics",
-    "section": "Today’s learning objectives",
-    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
     "title": "Applied Population Dynamics",
-    "section": "What is Population Dynamics?",
-    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
+    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
     "title": "Applied Population Dynamics",
-    "section": "Fundamental Question",
-    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
+    "section": "Density-dependent survival example",
+    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "objectID": "lectures/harvest/lecture-harvest.html#summary",
+    "href": "lectures/harvest/lecture-harvest.html#summary",
     "title": "Applied Population Dynamics",
-    "section": "Reverend Thomas Malthus, 1766–1834",
-    "text": "Reverend Thomas Malthus, 1766–1834"
+    "section": "Summary",
+    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
   },
   {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
-    "title": "Applied Population Dynamics",
-    "section": "Relevance To Wildlife Biology and Management",
-    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\n“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”\n\n\n\n“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
-    "title": "Applied Population Dynamics",
-    "section": "Aldo Leopold, Game Management 1946",
-    "text": "Aldo Leopold, Game Management 1946\n\n\n\n“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ‘ideal’ environment, would increase at this rate:”\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n \n \n \n \n\n\n \n \n \n \n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n2nd year\n(16/2)14=112\n16\n128\n\n\n \n \n \n \n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n2nd year\n(16/2)14=112\n16\n128\n\n\n3rd year\n(128/2)14=896\n128\n1024\n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\n“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "So What Is Geometric Growth?",
-    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\nOr, for one time step:\n\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#example",
-    "title": "Applied Population Dynamics",
-    "section": "Example",
-    "text": "Example\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n10240"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
-    "title": "Applied Population Dynamics",
-    "section": "Three Possible Outcomes",
-    "text": "Three Possible Outcomes\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\\(-1 \\leq r &lt; 0\\)  population goes extinct\n\n\n\\(r = 0\\)  population is at equilibrium\n\n\n\\(r &gt; 0\\)  population grows to \\(\\infty\\)"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
-    "title": "Applied Population Dynamics",
-    "section": "From BIDE To Geometric Growth",
-    "text": "From BIDE To Geometric Growth\n\nStep 1: Ignore immigration and emigration\n\\[ N_{t+1} = N_t + B_t - D_t \\]\n\nStep 2: Divide both sides by \\(N_{t}\\).\n\\[ \\frac{N_{t+1}}{N_t} = \\frac{N_t + B_t - D_t}{N_t}\\]\n\n\nStep 3: Write in terms of birth and death rates, with \\(r=b-d\\).\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r %\\\\\n%                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\n\n\nStep 4: Multiply through by \\(N_t\\) to get the solution:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe finite rate of increase is defined as: \\(\\lambda = N_{t+1}/N_t\\), which for geometric growth is equivalent to \\(\\lambda = 1+r\\)."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Density Independent Growth",
-    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\) or \\(\\lambda\\)) is not affected by population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
-    "title": "Applied Population Dynamics",
-    "section": "Model Assumptions",
-    "text": "Model Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation is geographically closed.\n\nNo immigration\nNo emigration\n\n\n\n\n\nReproduction occurs seasonally (for geometric growth).\n\n\n\n\nConstant birth rate (\\(b\\)) and death rate (\\(d\\)).\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\n\n\n\n\nNo stochasticity.\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
-    "title": "Applied Population Dynamics",
-    "section": "Can We Apply The Model To Real Data?",
-    "text": "Can We Apply The Model To Real Data?\n\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\n\nPossibly for describing some populations during short time periods.\nAnd as foundation for more realistic models."
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
-    "title": "Applied Population Dynamics",
-    "section": "Looking Ahead",
-    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\n\nOur world in data"
-  },
-  {
-    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
-    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
+    "href": "lectures/harvest/lecture-harvest.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\n\n\nRead pages 15–19 in Conroy and Carroll.\n\nBe prepared for a quiz."
+    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#section",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
+    "href": "lectures/BIDE/lecture-BIDE.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Stochastic Population Models"
+    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
     "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\n\n\nRandom variables\n\nEnvironmental stochasticity\n\nDemographic stochasticity"
+    "section": "Today’s class",
+    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
     "title": "Applied Population Dynamics",
-    "section": "Random variables",
-    "text": "Random variables\n\nA random variable is a variable whose value can’t be predicted with certainty.\n\n\nExamples\n\nWeather\nOur own behavior\nPopulation size\n\n\n\n\n\n\nIs the universe random? Or is just too complex to be predicted with certainty?"
+    "section": "Definitions",
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
     "title": "Applied Population Dynamics",
-    "section": "Probability distributions",
-    "text": "Probability distributions\nA random variable (\\(X\\)) can be described by a probability distribution.\n\nThere are many types of probability distributions, including:\n\nNormal (or Gaussian)\nPoisson\nBinomial\nMultinomial"
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
     "title": "Applied Population Dynamics",
-    "section": "Normal (Gaussian) Distribution",
-    "text": "Normal (Gaussian) Distribution\n\n\\[\n  X \\sim \\mbox{Normal}(\\mu=0, \\sigma^2=1)\n\\]"
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
     "title": "Applied Population Dynamics",
-    "section": "Normal (Gaussian) distribution",
-    "text": "Normal (Gaussian) distribution"
+    "section": "Model validation",
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
     "title": "Applied Population Dynamics",
-    "section": "A purely stochastic model",
-    "text": "A purely stochastic model\n\n\\[\n  N_t \\sim \\mbox{Normal}(\\mu=50, \\sigma^2=1)\n\\]"
+    "section": "Types of models",
+    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
     "title": "Applied Population Dynamics",
-    "section": "Two important types of stochasticity",
-    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates).\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths).\nOccurs even when demographic rates are constant."
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
     "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  N_{t+1} = N_t + N_t r_t\n\\]\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}, \\sigma^2)\n\\]\n\nR code\n\nnYears &lt;- 20\nN &lt;- r &lt;- rep(NA, nYears)  ## Create empty N and r\nN[1] &lt;- 100                ## Initial value of N\nr.bar &lt;- 0.5               ## Average growth rate\nsigma &lt;- 0.1               ## StdDev of growth rate\nfor(t in 2:nYears) {\n    r[t-1] &lt;- rnorm(n=1, mean=r.bar, sd=sigma)\n    N[t] &lt;- N[t-1] + N[t-1]*r[t-1]\n}"
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
     "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.01)\n\\]"
+    "section": "The BIDE model",
+    "text": "The BIDE model"
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
     "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.25)\n\\]"
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
   },
   {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
     "title": "Applied Population Dynamics",
-    "section": "Logistic growth with environmental stochasticity",
-    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic example with environmental stochasticity",
-    "text": "Logistic example with environmental stochasticity\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}=200, \\sigma^2=50)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
-    "title": "Applied Population Dynamics",
-    "section": "Demographic stochasticity",
-    "text": "Demographic stochasticity\n\nWe can make the BIDE model stochastic by modeling random variation in the number of individuals that are born and die each year (we’ll ignore movement):\n\\[\n   N_{t+1} = N_t + B_t - D_t\n\\]\n\n\nWhat distributions should we use for \\(B_t\\) and \\(D_t\\)?\n\n\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t\\times b)\n\\] \\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
-    "title": "Applied Population Dynamics",
-    "section": "Poisson distribution",
-    "text": "Poisson distribution\n\nThe Poisson distribution is useful for data that are non-negative integers.\n\nIt has a single parameter that describes the expected value of the random outcomes.\n\n\nIn stochastic population models, the Poisson distribution can be used to model the number of births (\\(B_t\\)) that occur in a time interval.\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
-    "title": "Applied Population Dynamics",
-    "section": "Poisson distributions",
-    "text": "Poisson distributions"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
-    "title": "Applied Population Dynamics",
-    "section": "Binomial distribution",
-    "text": "Binomial distribution\nThe binomial distribution is also useful for data that are non-negative integers, but it has an upper bound.\n\n\nIn population models, the upper bound is often population size, and we use the model to describe how many individuals die during some time period.\n\n\\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
-    "title": "Applied Population Dynamics",
-    "section": "Binomial distributions",
-    "text": "Binomial distributions"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
-    "title": "Applied Population Dynamics",
-    "section": "Demographic stochasticity",
-    "text": "Demographic stochasticity\n\nPoisson-Binomial birth-death model.\n\\[\n\\begin{gather*}\n  N_{t+1} = N_t + B_t - D_t \\\\\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b) \\\\\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\end{gather*}\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#summary",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\nPurely deterministic models are too rigid.\n\nPurely stochastic models don’t describe population processes.\n\nThe goal is to develop mechanistic models that represent our biological understanding while allowing for uncertainty."
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#section",
-    "href": "lectures/extinction/lecture-extinction.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Extinction"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#today-in-apd",
-    "href": "lectures/extinction/lecture-extinction.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\n\nRecent extinctions\n\nTime-to-extinction\n\nExtinction risk\n\nAllee efffects"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#extinction",
-    "href": "lectures/extinction/lecture-extinction.html#extinction",
-    "title": "Applied Population Dynamics",
-    "section": "Extinction",
-    "text": "Extinction\n\n\n  \n\n\nHumans are causing the 6th mass extinction event.\nAt least 1000 species have gone extinct over past 500 years.\nExtinction rate appears to be 100-1000 times higher than during the past 25 million years before humans.\nAlmost 200 bird species have gone extinct since 1500.\nAvian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet."
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
-    "href": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
-    "title": "Applied Population Dynamics",
-    "section": "Time to extinction (Te)",
-    "text": "Time to extinction (Te)\n\nFor a deterministic model, time to extinction can be calculated easily.\n\n\nBut how should we define extinction?\n\n\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\n\n\nThreshold is usually based on genetic considerations, Allee effects, …"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
-    "href": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
-    "title": "Applied Population Dynamics",
-    "section": "Geometric growth example",
-    "text": "Geometric growth example"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk",
-    "href": "lectures/extinction/lecture-extinction.html#extinction-risk",
-    "title": "Applied Population Dynamics",
-    "section": "Extinction risk",
-    "text": "Extinction risk\n\nFor stochastic models, we are interested in extinction risk.\n\n\nExtinction risk is the probability that a species goes extinct in some time period.\n\n\n\nExtinction risk can be calculated as the proportion of simulations in which the population goes extinct.\n\n\n\nCalculating extinction risk requires a specification of the time horizon of interest."
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
-    "href": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic growth with stochastic carrying capacity",
-    "text": "Logistic growth with stochastic carrying capacity\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)\n\\]\nwhere\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example",
-    "href": "lectures/extinction/lecture-extinction.html#logistic-example",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic example",
-    "text": "Logistic example\n\n\\[\n  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}=100, \\sigma^2=400)\n\\]"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
-    "href": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
-    "title": "Applied Population Dynamics",
-    "section": "Extinction risk",
-    "text": "Extinction risk\nZero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.\n\n\nAssumptions:\n\nWe have the correct model\nWe know the parameters with certainty"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example-1",
-    "href": "lectures/extinction/lecture-extinction.html#logistic-example-1",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic example",
-    "text": "Logistic example\n\n\\[\n  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}=100, \\sigma^2=1600)\n\\]"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-1",
-    "href": "lectures/extinction/lecture-extinction.html#allee-effects-1",
-    "title": "Applied Population Dynamics",
-    "section": "Allee effects",
-    "text": "Allee effects\n\nNormally, population growth rates increase as the population decreases (negative correlation).\n\n\nThe Allee effect is the phenomenon of positive correlation between population growth rates and population size.\n\n\n\nPossible mechanisms:\n\nFinding a mate becomes difficult\nSocial systems collapse\nInbreeding depression\n\n\n\n\nAllee effects can greatly increase extinction risk for small populations"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-2",
-    "href": "lectures/extinction/lecture-extinction.html#allee-effects-2",
-    "title": "Applied Population Dynamics",
-    "section": "Allee effects",
-    "text": "Allee effects"
-  },
-  {
-    "objectID": "lectures/extinction/lecture-extinction.html#summary",
-    "href": "lectures/extinction/lecture-extinction.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
-    "href": "schedule.html#week-1---introduction-and-the-bide-model",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
-  },
-  {
-    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
-    "href": "schedule.html#week-2---geometric-and-logistic-growth",
-    "title": "Course Schedule",
-    "section": "Week 2 - Geometric and logistic growth",
-    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+    "section": "Assignment",
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
   },
   {
     "objectID": "lectures/intro/lecture-intro.html#section",
@@ -637,228 +504,473 @@
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
-    "href": "lectures/BIDE/lecture-BIDE.html#section",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-1---introduction-and-the-bide-model",
+    "href": "schedule.html#week-1---introduction-and-the-bide-model",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Lecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1"
+  },
+  {
+    "objectID": "schedule.html#week-2---geometric-and-logistic-growth",
+    "href": "schedule.html#week-2---geometric-and-logistic-growth",
+    "title": "Course Schedule",
+    "section": "Week 2 - Geometric and logistic growth",
+    "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
+  },
+  {
+    "objectID": "lectures/extinction/lecture-extinction.html#section",
+    "href": "lectures/extinction/lecture-extinction.html#section",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
+    "text": "Extinction"
   },
   {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "title": "Applied Population Dynamics",
-    "section": "Today’s class",
-    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "title": "Applied Population Dynamics",
-    "section": "Model validation",
-    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "title": "Applied Population Dynamics",
-    "section": "Types of models",
-    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "title": "Applied Population Dynamics",
-    "section": "Group exercise",
-    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#section",
-    "href": "lectures/harvest/lecture-harvest.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
-    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "objectID": "lectures/extinction/lecture-extinction.html#today-in-apd",
+    "href": "lectures/extinction/lecture-extinction.html#today-in-apd",
     "title": "Applied Population Dynamics",
     "section": "Today in APD",
-    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
+    "text": "Today in APD\n\nRecent extinctions\n\nTime-to-extinction\n\nExtinction risk\n\nAllee efffects"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction",
+    "href": "lectures/extinction/lecture-extinction.html#extinction",
     "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest",
-    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
+    "section": "Extinction",
+    "text": "Extinction\n\n\n  \n\n\nHumans are causing the 6th mass extinction event.\nAt least 1000 species have gone extinct over past 500 years.\nExtinction rate appears to be 100-1000 times higher than during the past 25 million years before humans.\nAlmost 200 bird species have gone extinct since 1500.\nAvian extinctions in GA: passenger pigeon, Bachman’s warbler, ivory-billed woodpecker, Carolina parakeet."
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "objectID": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
+    "href": "lectures/extinction/lecture-extinction.html#time-to-extinction-te",
     "title": "Applied Population Dynamics",
-    "section": "Harvest and geometric growth",
-    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
+    "section": "Time to extinction (Te)",
+    "text": "Time to extinction (Te)\n\nFor a deterministic model, time to extinction can be calculated easily.\n\n\nBut how should we define extinction?\n\n\n\nTime to quasi-extinction (\\(T_e\\)) is the time it takes for a population to reach an extinction threshold beyond which it is doomed.\n\n\n\nThreshold is usually based on genetic considerations, Allee effects, …"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "objectID": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
+    "href": "lectures/extinction/lecture-extinction.html#geometric-growth-example",
     "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and geometric growth",
-    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
+    "section": "Geometric growth example",
+    "text": "Geometric growth example"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk",
+    "href": "lectures/extinction/lecture-extinction.html#extinction-risk",
     "title": "Applied Population Dynamics",
-    "section": "Harvest and logistic growth",
-    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
+    "section": "Extinction risk",
+    "text": "Extinction risk\n\nFor stochastic models, we are interested in extinction risk.\n\n\nExtinction risk is the probability that a species goes extinct in some time period.\n\n\n\nExtinction risk can be calculated as the proportion of simulations in which the population goes extinct.\n\n\n\nCalculating extinction risk requires a specification of the time horizon of interest."
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-growth-with-stochastic-carrying-capacity",
     "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and logistic growth",
-    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
+    "section": "Logistic growth with stochastic carrying capacity",
+    "text": "Logistic growth with stochastic carrying capacity\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t)\n\\]\nwhere\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-example",
     "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.1",
-    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+    "section": "Logistic example",
+    "text": "Logistic example\n\n\\[\n  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}=100, \\sigma^2=400)\n\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "objectID": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
+    "href": "lectures/extinction/lecture-extinction.html#extinction-risk-1",
     "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.5",
-    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+    "section": "Extinction risk",
+    "text": "Extinction risk\nZero extinctions in 100 simulations, hence extinction risk is (approximately) zero over the 20 year time horizon.\n\n\nAssumptions:\n\nWe have the correct model\nWe know the parameters with certainty"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "objectID": "lectures/extinction/lecture-extinction.html#logistic-example-1",
+    "href": "lectures/extinction/lecture-extinction.html#logistic-example-1",
     "title": "Applied Population Dynamics",
-    "section": "Is MSY useful in practice?",
-    "text": "Is MSY useful in practice?"
+    "section": "Logistic example",
+    "text": "Logistic example\n\n\\[\n  N_{t+1} = N_t + N_t 0.3(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}=100, \\sigma^2=1600)\n\\]"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#issues",
-    "href": "lectures/harvest/lecture-harvest.html#issues",
+    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-1",
+    "href": "lectures/extinction/lecture-extinction.html#allee-effects-1",
     "title": "Applied Population Dynamics",
-    "section": "Issues",
-    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
+    "section": "Allee effects",
+    "text": "Allee effects\n\nNormally, population growth rates increase as the population decreases (negative correlation).\n\n\nThe Allee effect is the phenomenon of positive correlation between population growth rates and population size.\n\n\n\nPossible mechanisms:\n\nFinding a mate becomes difficult\nSocial systems collapse\nInbreeding depression\n\n\n\n\nAllee effects can greatly increase extinction risk for small populations"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "objectID": "lectures/extinction/lecture-extinction.html#allee-effects-2",
+    "href": "lectures/extinction/lecture-extinction.html#allee-effects-2",
     "title": "Applied Population Dynamics",
-    "section": "Additive vs. compensatory mortality",
-    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
+    "section": "Allee effects",
+    "text": "Allee effects"
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "title": "Applied Population Dynamics",
-    "section": "Density-dependent survival example",
-    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#summary",
-    "href": "lectures/harvest/lecture-harvest.html#summary",
+    "objectID": "lectures/extinction/lecture-extinction.html#summary",
+    "href": "lectures/extinction/lecture-extinction.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
+    "text": "Summary\n\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
   },
   {
-    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
-    "href": "lectures/harvest/lecture-harvest.html#assignment",
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Stochastic Population Models"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\n\nRandom variables\n\nEnvironmental stochasticity\n\nDemographic stochasticity"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "title": "Applied Population Dynamics",
+    "section": "Random variables",
+    "text": "Random variables\n\nA random variable is a variable whose value can’t be predicted with certainty.\n\n\nExamples\n\nWeather\nOur own behavior\nPopulation size\n\n\n\n\n\n\nIs the universe random? Or is just too complex to be predicted with certainty?"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA random variable (\\(X\\)) can be described by a probability distribution.\n\nThere are many types of probability distributions, including:\n\nNormal (or Gaussian)\nPoisson\nBinomial\nMultinomial"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) Distribution",
+    "text": "Normal (Gaussian) Distribution\n\n\\[\n  X \\sim \\mbox{Normal}(\\mu=0, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) distribution",
+    "text": "Normal (Gaussian) distribution"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "title": "Applied Population Dynamics",
+    "section": "A purely stochastic model",
+    "text": "A purely stochastic model\n\n\\[\n  N_t \\sim \\mbox{Normal}(\\mu=50, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Two important types of stochasticity",
+    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates).\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths).\nOccurs even when demographic rates are constant."
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  N_{t+1} = N_t + N_t r_t\n\\]\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}, \\sigma^2)\n\\]\n\nR code\n\nnYears &lt;- 20\nN &lt;- r &lt;- rep(NA, nYears)  ## Create empty N and r\nN[1] &lt;- 100                ## Initial value of N\nr.bar &lt;- 0.5               ## Average growth rate\nsigma &lt;- 0.1               ## StdDev of growth rate\nfor(t in 2:nYears) {\n    r[t-1] &lt;- rnorm(n=1, mean=r.bar, sd=sigma)\n    N[t] &lt;- N[t-1] + N[t-1]*r[t-1]\n}"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.01)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.25)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic growth with environmental stochasticity",
+    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic example with environmental stochasticity",
+    "text": "Logistic example with environmental stochasticity\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}=200, \\sigma^2=50)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nWe can make the BIDE model stochastic by modeling random variation in the number of individuals that are born and die each year (we’ll ignore movement):\n\\[\n   N_{t+1} = N_t + B_t - D_t\n\\]\n\n\nWhat distributions should we use for \\(B_t\\) and \\(D_t\\)?\n\n\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t\\times b)\n\\] \\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distribution",
+    "text": "Poisson distribution\n\nThe Poisson distribution is useful for data that are non-negative integers.\n\nIt has a single parameter that describes the expected value of the random outcomes.\n\n\nIn stochastic population models, the Poisson distribution can be used to model the number of births (\\(B_t\\)) that occur in a time interval.\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distributions",
+    "text": "Poisson distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distribution",
+    "text": "Binomial distribution\nThe binomial distribution is also useful for data that are non-negative integers, but it has an upper bound.\n\n\nIn population models, the upper bound is often population size, and we use the model to describe how many individuals die during some time period.\n\n\\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distributions",
+    "text": "Binomial distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nPoisson-Binomial birth-death model.\n\\[\n\\begin{gather*}\n  N_{t+1} = N_t + B_t - D_t \\\\\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b) \\\\\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nPurely deterministic models are too rigid.\n\nPurely stochastic models don’t describe population processes.\n\nThe goal is to develop mechanistic models that represent our biological understanding while allowing for uncertainty."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Geometric and Exponential Growth\n\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#todays-learning-objectives",
+    "title": "Applied Population Dynamics",
+    "section": "Today’s learning objectives",
+    "text": "Today’s learning objectives\nThe equations for geometric and exponential growth.\n\nThe relationship between geometric growth and the BIDE model.\n\nThe difference between continuous and discrete time models of population growth.\n\nThe definition of density independent population growth."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#what-is-population-dynamics",
+    "title": "Applied Population Dynamics",
+    "section": "What is Population Dynamics?",
+    "text": "What is Population Dynamics?\nThe study of spatial and temporal variation in population size and structure."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#fundamental-question",
+    "title": "Applied Population Dynamics",
+    "section": "Fundamental Question",
+    "text": "Fundamental Question\n\nHow does abundance go from \\(N_t\\) to \\(N_{t+1}\\)?\n\n\nAnswer: The BIDE Model\n\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\nB=Births, I=Immigrations, D=Deaths, E=Emigrations\n\n\n\n\nGeometric growth is a simplification of BIDE.\n\n\n\nExponential growth is a continuous time version of geometric growth."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#reverend-thomas-malthus-17661834",
+    "title": "Applied Population Dynamics",
+    "section": "Reverend Thomas Malthus, 1766–1834",
+    "text": "Reverend Thomas Malthus, 1766–1834"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#relevance-to-wildlife-biology-and-management",
+    "title": "Applied Population Dynamics",
+    "section": "Relevance To Wildlife Biology and Management",
+    "text": "Relevance To Wildlife Biology and Management\n\nCharles Darwin Origin of Species\n\n“There is no exception to the rule that every organic being increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair.”\n\n\n\n“Hence, as more individuals are produced than can possibly survive, there must in every case be a struggle for existence…”"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#aldo-leopold-game-management-1946",
+    "title": "Applied Population Dynamics",
+    "section": "Aldo Leopold, Game Management 1946",
+    "text": "Aldo Leopold, Game Management 1946\n\n\n\n“Every wild species has certain fixed habits which govern the reproductive process, and determine its maximum rate. Thus one pair of quail, if entirely unmolested in an ‘ideal’ environment, would increase at this rate:”\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n \n \n \n \n\n\n \n \n \n \n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n2nd year\n(16/2)14=112\n16\n128\n\n\n \n \n \n \n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\nAt End of\nYoung\nAdults\nTotal\n\n\n\n\n1st year\n14\n2\n16\n\n\n2nd year\n(16/2)14=112\n16\n128\n\n\n3rd year\n(128/2)14=896\n128\n1024\n\n\n \n \n \n \n\n\n\n\n\n\n\n\n\n“The maximum rate of increase is of course never attained in nature. Part of it never takes place, part of it is absorbed by natural enemies, and part of it absorbed by hunters.”"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#so-what-is-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "So What Is Geometric Growth?",
+    "text": "So What Is Geometric Growth?\n\nFor an arbitrary time step (\\(t\\)):\n\\[N_t = N_0(1+r)^t\\]\nOr, for one time step:\n\n\\[N_{t+1} = N_t + N_tr\\]\n\n\\(r\\) = discrete-time version of intrinsic rate of increase"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#example",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#example",
+    "title": "Applied Population Dynamics",
+    "section": "Example",
+    "text": "Example\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n\n\n\n\n\n\n\n\n\nTime\nPopulation size (\\(N\\))\n\n\n\n\n0\n10\n\n\n1\n20\n\n\n2\n40\n\n\n3\n80\n\n\n4\n160\n\n\n5\n320\n\n\n6\n640\n\n\n7\n1280\n\n\n8\n2560\n\n\n9\n5120\n\n\n10\n10240"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#three-possible-outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Three Possible Outcomes",
+    "text": "Three Possible Outcomes\n\n\\[N_{t+1} = N_t + N_t r\\]\n\n\n\n\n\\(-1 \\leq r &lt; 0\\)  population goes extinct\n\n\n\\(r = 0\\)  population is at equilibrium\n\n\n\\(r &gt; 0\\)  population grows to \\(\\infty\\)"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\n\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\n\n\n\\(N_t\\)\n=\nAbundance at year \\(t\\)\n\n\n\\(B\\)\n=\nBirths\n\n\n\\(I\\)\n=\nImmigrations\n\n\n\\(D\\)\n=\nDeaths\n\n\n\\(E\\)\n=\nEmigrations"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#from-bide-to-geometric-growth-1",
+    "title": "Applied Population Dynamics",
+    "section": "From BIDE To Geometric Growth",
+    "text": "From BIDE To Geometric Growth\n\nStep 1: Ignore immigration and emigration\n\\[ N_{t+1} = N_t + B_t - D_t \\]\n\nStep 2: Divide both sides by \\(N_{t}\\).\n\\[ \\frac{N_{t+1}}{N_t} = \\frac{N_t + B_t - D_t}{N_t}\\]\n\n\nStep 3: Write in terms of birth and death rates, with \\(r=b-d\\).\n\\[\n\\begin{aligned}\n\\frac{N_{t+1}}{N_{t}} \\quad  &= \\quad  1 + b - d \\\\\n                      \\quad  &= \\quad  1 + r %\\\\\n%                      \\quad  &= \\quad  \\lambda\n\\end{aligned}\n\\]\n\n\nStep 4: Multiply through by \\(N_t\\) to get the solution:\n\\[N_{t+1} = N_t + N_tr\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe finite rate of increase is defined as: \\(\\lambda = N_{t+1}/N_t\\), which for geometric growth is equivalent to \\(\\lambda = 1+r\\)."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#density-independent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density Independent Growth",
+    "text": "Density Independent Growth\n\nGeometric and exponential growth are examples of density independent growth.\n\nDefinition: Population growth rate (\\(r\\) or \\(\\lambda\\)) is not affected by population size (\\(N\\)).\n\nImplications: Resources are unlimited and there is no carrying capacity!"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#model-assumptions",
+    "title": "Applied Population Dynamics",
+    "section": "Model Assumptions",
+    "text": "Model Assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation is geographically closed.\n\nNo immigration\nNo emigration\n\n\n\n\n\nReproduction occurs seasonally (for geometric growth).\n\n\n\n\nConstant birth rate (\\(b\\)) and death rate (\\(d\\)).\n\nNo genetic variation among individuals\nNo age- or stage-structure\nNo time lags\n\n\n\n\n\nNo stochasticity.\n\nNo random variation in birth or death\nNo random variation in environmental conditions"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#can-we-apply-the-model-to-real-data",
+    "title": "Applied Population Dynamics",
+    "section": "Can We Apply The Model To Real Data?",
+    "text": "Can We Apply The Model To Real Data?\n\n\nAll models are wrong, but some are useful. (George Box)\n\nIs exponential growth a useful model?\n\n\nPossibly for describing some populations during short time periods.\nAnd as foundation for more realistic models."
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#looking-ahead",
+    "title": "Applied Population Dynamics",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nIs the human population exhibiting exponential growth?\n\n\nOur world in data"
+  },
+  {
+    "objectID": "lectures/exp-growth/lecture-exp-growth.html#assignment",
+    "href": "lectures/exp-growth/lecture-exp-growth.html#assignment",
     "title": "Applied Population Dynamics",
     "section": "Assignment",
-    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
+    "text": "Assignment\n\n\nRead pages 15–19 in Conroy and Carroll.\n\nBe prepared for a quiz."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "title": "Applied Population Dynamics",
+    "section": "From Geometric to Logistic Growth",
+    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density-dependent growth",
+    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "title": "Applied Population Dynamics",
+    "section": "Graphical depiction",
+    "text": "Graphical depiction"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
+    "title": "Applied Population Dynamics",
+    "section": "Growth rate",
+    "text": "Growth rate\n\n\\[\\lambda_t = N_{t+1}/N_t\\]"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
+    "title": "Applied Population Dynamics",
+    "section": "Growth",
+    "text": "Growth\n\n\\[\\Delta_t=N_{t+1}-N_t\\]"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
+    "title": "Applied Population Dynamics",
+    "section": "Growth as a function of \\(N\\)",
+    "text": "Growth as a function of \\(N\\)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "title": "Applied Population Dynamics",
+    "section": "What happens when we change \\(r_{max}\\)?",
+    "text": "What happens when we change \\(r_{max}\\)?"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "title": "Applied Population Dynamics",
+    "section": "Assumptions of basic model",
+    "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
   },
   {
     "objectID": "APD-syllabus.html",
