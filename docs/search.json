@@ -81,7 +81,7 @@
     "href": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
     "title": "Applied Population Dynamics",
     "section": "Isle Royale wolves and moose",
-    "text": "Isle Royale wolves and moose\n\n   \nIsle Royal Website"
+    "text": "Isle Royale wolves and moose\n\n   \nIsle Royale Website"
   },
   {
     "objectID": "lectures/interspecific/lecture-interspecific.html#haffakers-lab-experiments",
@@ -112,15 +112,15 @@
     "text": "Equilibrium\nEquilibrium for species A \\[\n  N^A = \\frac{K^A - \\alpha^B K^B}{1 - \\alpha^A \\alpha^B}\n\\]\nEquilibrium for species B \\[\n  N^B = \\frac{K^B - \\alpha^A K^A}{1 - \\alpha^A \\alpha^B}\n\\]"
   },
   {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#three-possible-outcomes",
-    "href": "lectures/interspecific/lecture-interspecific.html#three-possible-outcomes",
-    "title": "Applied Population Dynamics",
-    "section": "Three possible outcomes",
-    "text": "Three possible outcomes\n\nOutcomes depend on the sign of the numerators:\n\nStable coexistence\nCompetitive exclusion\nUnstable equilibrium\n\n\nCompetitive exclusion principle Two species with the same niche cannot coexist on the same limiting resource."
-  },
-  {
     "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes",
     "href": "lectures/interspecific/lecture-interspecific.html#outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Outcomes",
+    "text": "Outcomes\n\nThree posssible outcomes:\n\nStable coexistence\nCompetitive exclusion\nUnstable equilibrium\n\n\nCompetitive exclusion principle Two species with the same niche cannot coexist on the same limiting resource."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
     "title": "Applied Population Dynamics",
     "section": "Outcomes",
     "text": "Outcomes"

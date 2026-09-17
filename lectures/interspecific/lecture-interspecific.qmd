@@ -165,7 +165,7 @@ legend(0, 250, c("Prey", "Predator"), lty=1, ##pch=16,
 <!-- %  https://youtu.be/Ju3er3xIl7E -->
 <!-- % } -->
 
-[Isle Royal Website](https://isleroyalewolf.org/)
+[Isle Royale Website](https://isleroyalewolf.org/)
 </center>
 
 
@@ -225,15 +225,15 @@ $$
 $$
 
 
-## Three possible outcomes
+## Outcomes
 
 <br>
   
-**Outcomes depend on the sign of the numerators:**
+Three posssible outcomes:
 
-- Stable coexistence
-- Competitive exclusion
-- Unstable equilibrium
+1. Stable coexistence
+2. Competitive exclusion
+3. Unstable equilibrium
   
 ::: {.fragment}
 **Competitive exclusion principle**
@@ -253,7 +253,8 @@ Two species with the same niche cannot coexist on the same limiting resource.
 #| fig-height: 7
 #| fig-width: 7
 #| out-width: "40%"
-#| output-location: "column"
+#| include: false
+## #| output-location: "column"
 T <- 75
 N.A <- integer(T+1)
 N.B <- integer(T+1)
@@ -296,7 +297,12 @@ plot(0:T, N.A, xlab="Time", ylab="Population size", type="b", col="cyan4",
 lines(0:T, N.B, type="b", col="red", pch=16)
 legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red"))
 ```
+<br>
 
+<center>
+![](lecture-interspecific_files/figure-revealjs/compex-1){height="500"}
+![](lecture-interspecific_files/figure-revealjs/compex-2){height="500"}
+</center>
 
 
 
