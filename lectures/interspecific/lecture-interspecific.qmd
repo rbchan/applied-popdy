@@ -162,7 +162,18 @@ legend(0, 250, c("Prey", "Predator"), lty=1, ##pch=16,
 ## Isle Royale wolves and moose
 
 <center>
-[![](figs/Fig01_wolfmoosechronology){width="90%"}](http://www.youtube.com/watch?v=PdwnfPurXcs)
+
+::: {.r-stack}
+
+::: {.fragment .fade-out fragment-index=1}
+[![](figs/wolf-moose-2010){width="90%"}](http://www.youtube.com/watch?v=PdwnfPurXcs)
+:::
+::: {.fragment .fade-in fragment-index=1}
+[![](figs/wolf-moose-2018){width="100%"}](http://www.youtube.com/watch?v=PdwnfPurXcs)
+:::
+
+:::
+
 <!-- %  Attack video: \url{ -->
 <!-- %  https://youtu.be/Ju3er3xIl7E -->
 <!-- % } -->
