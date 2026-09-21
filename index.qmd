@@ -62,3 +62,7 @@ and an oral presentation.
 - [Lecture 7 - Extinction risk](lectures/extinction/lecture-extinction.qmd)
 
 - [Lab 4 - Stochasticity and extinction](labs/extinction/lab-extinction.qmd)
+
+### Week 5 - Model of interspecific interactions
+
+

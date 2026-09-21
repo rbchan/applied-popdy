@@ -160,7 +160,9 @@
 <section id="how-should-predator-prey-dynamics-operate" class="slide level2">
 <h2><span style="font-size: 80%;">How should predator-prey dynamics operate?</span></h2>
 <p><br></p>
+<div class="fragment">
 <p><img data-src="figs/Canada_lynx_portrait_by_Michael_Zahra.jpg" height="400"> <img data-src="figs/Snowshoe_Hare,_Shirleys_Bay.jpg" height="400"></p>
+</div>
 </section>
 <section id="lynx-hare-cycles" class="slide level2">
 <h2>Lynx-hare cycles</h2>
@@ -227,13 +229,9 @@
 <section id="competition-1" class="slide level2">
 <h2>Competition</h2>
 <center>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figs/hyena_lion.jpg"></p>
-<figcaption>David Bygott</figcaption>
-</figure>
-</div>
+<img data-src="figs/hyena_lion.jpg">
 </center>
+<!-- [David Bygott]{style="font-size: 50%; color: Gray; text-align: right;"} -->
 </section>
 <section id="lotka-volterra-competition-model" class="slide level2">
 <h2>Lotka-Volterra competition model</h2>
@@ -243,10 +241,12 @@
 <p>Model for species B <span class="math display">\[
   N^B_{t+1} = N^B_t + r^B N^B_t(K^B - N^B_t - \alpha^A N^A_t) / K^B
 \]</span></p>
+<div style="font-size: 80%;">
 <ul>
 <li>Model based on logistic growth</li>
 <li>The <span class="math inline">\(\alpha\)</span> parameters are competition coefficients determining how strongly each species affects the other</li>
 </ul>
+</div>
 </section>
 <section id="equilibrium-1" class="slide level2">
 <h2>Equilibrium</h2>
@@ -298,16 +298,20 @@
 </div>
 <div class="fragment">
 <p>These models could be extended to include:</p>
-<div style="font-size: 75%;">
+<div class="columns">
+<div class="column" style="width:40%;">
 <ul>
 <li>More species</li>
 <li>Stochasticity</li>
 <li>Age structure</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<ul>
 <li>Harvest</li>
 <li>Spatial structure</li>
 <li>Additional forms of density dependence</li>
 </ul>
-</div>
+</div></div>
 </div>
 </div>
 

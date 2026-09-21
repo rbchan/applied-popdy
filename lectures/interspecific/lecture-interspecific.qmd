@@ -59,8 +59,10 @@ We will ignore potential extensions with stochasticity, age structure, spatial s
 
 <br>
 
+::: {.fragment}
 ![](figs/Canada_lynx_portrait_by_Michael_Zahra.jpg){height="400"}
 ![](figs/Snowshoe_Hare,_Shirleys_Bay.jpg){height="400"}
+:::
 
 
 
@@ -187,9 +189,10 @@ legend(0, 250, c("Prey", "Predator"), lty=1, ##pch=16,
 ## Competition
 
 <center>
-![David Bygott](figs/hyena_lion.jpg)
+![](figs/hyena_lion.jpg)
+</center>
 
- </center>
+<!-- [David Bygott]{style="font-size: 50%; color: Gray; text-align: right;"} -->
 
 
 ## Lotka-Volterra competition model
@@ -204,10 +207,13 @@ $$
   N^B_{t+1} = N^B_t + r^B N^B_t(K^B - N^B_t - \alpha^A N^A_t) / K^B
 $$  
   
+
+::: {style='font-size: 80%;'}
   
 - Model based on logistic growth
 - The $\alpha$ parameters are competition coefficients determining how strongly each species affects the other
   
+:::
 
 
 
@@ -291,11 +297,11 @@ for(t in 1:T) {
     N.A[t+1] <- N.A[t] + r.A*N.A[t]*(K.A - N.A[t] - alpha.B*N.B[t])/K.A
     N.B[t+1] <- N.B[t] + r.B*N.B[t]*(K.B - N.B[t] - alpha.A*N.A[t])/K.B
 }
-plot(0:T, N.A, xlab="Time", ylab="Population size", type="b", col="cyan4",
+plot(0:T, N.A, xlab="Time", ylab="Population size", type="l", col="cyan4",
      main="Stable coexistence", cex.lab=1.5, cex.main=2,
      pch=16, ylim=c(0, 200))
-lines(0:T, N.B, type="b", col="red", pch=16)
-legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red"))
+lines(0:T, N.B, type="l", col="red", pch=16)
+legend(0, 200, c("Species A", "Species B"), lty=1, col=c("cyan4", "red"))
 ```
 <br>
 
@@ -332,17 +338,24 @@ Competition model is extension of logistic growth
 ::: {.fragment}
 These models could be extended to include:
 
-::: {style='font-size: 75%;'}
+::: {.columns}
+
+::: {.column width="40%"}
 - More species
 - Stochasticity
 - Age structure
+:::
+
+::: {.column width="60%"}
 - Harvest
 - Spatial structure
 - Additional forms of density dependence
 :::
 
 :::
-    
+:::
+
+
 :::
 
 
