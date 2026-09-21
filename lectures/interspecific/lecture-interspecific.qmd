@@ -278,8 +278,8 @@ for(t in 1:T) {
 }
 plot(0:T, N.A, xlab="Time", ylab="Population size", type="l", col="cyan4",
      main="Competitive exclusion", cex.lab=1.5, cex.main=2,
-     pch=16, ylim=c(0, 200))
-lines(0:T, N.B, type="l", col="red", pch=16)
+     ylim=c(0, 200))
+lines(0:T, N.B, type="l", col="red")
 legend(0, 200, c("Species A", "Species B"), lty=1, col=c("cyan4", "red"))
 
 T <- 75
@@ -299,8 +299,8 @@ for(t in 1:T) {
 }
 plot(0:T, N.A, xlab="Time", ylab="Population size", type="l", col="cyan4",
      main="Stable coexistence", cex.lab=1.5, cex.main=2,
-     pch=16, ylim=c(0, 200))
-lines(0:T, N.B, type="l", col="red", pch=16)
+     ylim=c(0, 200))
+lines(0:T, N.B, type="l", col="red")
 legend(0, 200, c("Species A", "Species B"), lty=1, col=c("cyan4", "red"))
 ```
 <br>
@@ -357,5 +357,4 @@ These models could be extended to include:
 
 
 :::
-
 
