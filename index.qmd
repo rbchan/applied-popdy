@@ -65,4 +65,5 @@ and an oral presentation.
 
 ### Week 5 - Model of interspecific interactions
 
+- [Lecture 8 - Competition and predation](lectures/interspecific/lecture-interspecific.qmd)
 

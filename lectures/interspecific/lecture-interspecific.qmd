@@ -173,7 +173,7 @@ legend(0, 250, c("Prey", "Predator"), lty=1, ##pch=16,
 
 
 
-## Haffaker's Lab Experiments
+## Huffaker's Lab Experiments
 
 <br>
 
@@ -276,11 +276,11 @@ for(t in 1:T) {
     N.A[t+1] <- N.A[t] + r.A*N.A[t]*(K.A - N.A[t] - alpha.B*N.B[t])/K.A
     N.B[t+1] <- N.B[t] + r.B*N.B[t]*(K.B - N.B[t] - alpha.A*N.A[t])/K.B
 }
-plot(0:T, N.A, xlab="Time", ylab="Population size", type="b", col="cyan4",
+plot(0:T, N.A, xlab="Time", ylab="Population size", type="l", col="cyan4",
      main="Competitive exclusion", cex.lab=1.5, cex.main=2,
      pch=16, ylim=c(0, 200))
-lines(0:T, N.B, type="b", col="red", pch=16)
-legend(0, 200, c("Species A", "Species B"), lty=1, pch=16, col=c("cyan4", "red"))
+lines(0:T, N.B, type="l", col="red", pch=16)
+legend(0, 200, c("Species A", "Species B"), lty=1, col=c("cyan4", "red"))
 
 T <- 75
 N.A <- integer(T+1)
@@ -328,7 +328,7 @@ legend(0, 200, c("Species A", "Species B"), lty=1, col=c("cyan4", "red"))
 Predator-prey model is extension of geometric growth
     
 - Predators and prey limit each other's growth potential
-    
+
 ::: {.fragment}
 Competition model is extension of logistic growth
     
