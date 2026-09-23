@@ -63,7 +63,12 @@ and an oral presentation.
 
 - [Lab 4 - Stochasticity and extinction](labs/extinction/lab-extinction.qmd)
 
-### Week 5 - Model of interspecific interactions
+### Week 5 - Exam
+
+- Exam and field lab
+
+### Week 6 - Model of interspecific interactions
 
 - [Lecture 8 - Competition and predation](lectures/interspecific/lecture-interspecific.qmd)
 
+- [Lab 6 - Competition and predation](labs/interspecific/lab-interspecific.qmd)
