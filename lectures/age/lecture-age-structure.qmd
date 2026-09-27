@@ -18,41 +18,65 @@ lang: en
 <center>
 
 **Age-structured and stage-structured <br> population models**
-    
-![](figs/AMRE-HY-male.PNG){height="2.7cm"}
-![](figs/AMRE-SY-male.jpg){height="2.7cm"}
-![](figs/AMRE-ASY-M.jpg){height="2.7cm"}
+
+<br>
+
+![](figs/AMRE-HY-male.PNG){height="7cm"}
+![](figs/AMRE-SY-male.jpg){height="7cm"}
+![](figs/AMRE-ASY-M.jpg){height="7cm"}
 
 </center>
 
 
 
 
-# Introduction
-
-
 ## Motivation
 
+<br>
+
+::: {style='font-size: 90%;'}
 Birth and death rates usually depend on age.
 
+<br>
+
+::: {.fragment}
 Growth rates will differ between populations with different age
 structures.
+:::
 
+<br>
+
+::: {.fragment}
 Some age classes contribute more to population growth than others.
+:::
 
+<br>
+
+::: {.fragment}
 These facts have important management implications.
+:::
 
-  
+:::
+
+
 
 ## Human mortality risk
-  
-![](figs/Mortality_by_age.png)
+
+<center>
+
+![](figs/Mortality_by_age.png){height="15cm"}
+
+</center>
 
 
 
 ## Human age distributions
 
-**Declining populations have relatively more old individuals than growing populations**
+::: {style='font-size: 70%;'}
+**Declining populations have relatively more old individuals than growing populations.**
+:::
+
+<br>
 
 <center>
 ![](figs/AgeStructures.png)
@@ -61,54 +85,94 @@ These facts have important management implications.
 
 ## Three age class example
 
+::: {style='font-size: 50%;'}
+
 Abundance of age class $i$ in year $t$ is denoted by $n_{i,t}$.
 
+<br>
+
+::: {.fragment}
 The model for $n_{i,t+1}$ depends on: 
-  
+
 - Age class survival $s_{i}$, and
 - Age class fecundity $f_{i}$
 - Fecundity is the birth rate ($b_i$) multiplied by survival
   * In pre-reproductive surveys, $f_i = b_i \times s_0$
   * In post-reproductive surveys, $f_i = b_i \times s_i$
-    
+:::
+
+:::
+
+```{mermaid}
+%%| label: "age-diagram"
+%%| fig-align: "center"
+%%| fig-width: 5
+flowchart LR
+  n1(("$$n_{1,t}$$"))
+  n2(("$$n_{2,t}$$"))
+  n3(("$$n_{3,t}$$"))
+  n1 --> n2
+  n2 --> n3
+  n2 --> n1
+  n3 --> n1
+```
 
 ## How does this population grow?
   
-<center>
-::: center
-   Age class  Equation
-  ----------- ----------------------------------------------------------------------------
-       1      $n_{1,t+1} = n_{1,t} \times f_1 + n_{2,t} \times f_2 + n_{3,t} \times f_3$
-              $n_{2,t+1} = n_{1,t} \times s_{1}$
-              $n_{3,t+1} = n_{2,t} \times s_{2}$
-:::
-</center>
-  
+::: {style='font-size: 80%;'}
+
+  Age class |  Equation
+  -------------- | ---------------------------------------------------
+       1   |   $n_{1,t+1} = n_{1,t} \times f_1 + n_{2,t} \times f_2 + n_{3,t} \times f_3$
+       2   |   $n_{2,t+1} = n_{1,t} \times s_{1}$
+       3   |   $n_{3,t+1} = n_{2,t} \times s_{2}$
+
+
+<br>
+
+::: {.fragment}
 According to this particular age-structured model, all animals die
 after spending one time interval in the third age class.
+:::
+
+<br>
   
+::: {.fragment}
 In stage-structured models, animals can stay in a class for
 more than one time interval. 
+:::
+
+:::
 
 
-## Age-class abundance and age distribution
-  
+
+## [Age-class abundance and age distribution]{style="font-size: 90%;"}
+
+::: {style='font-size: 80%;'}
+
 - Suppose initial abundance in the 3 age classes is:
   * $n_{1,1} = 50$ (Age class 1, juveniles)
   * $n_{2,1} = 40$ (Age class 2, subadults)
   * $n_{3,1} = 10$ (Age class 3, adults)
   * $N_1$ = 100
-      
+
+::: {.fragment}
 - This implies an initial age distribution of:
-       
+
   * $c_{1,1} = n_{1,1}/N_1 = 0.5$
   * $c_{2,1} = n_{2,1}/N_1 = 0.4$
   * $c_{3,1} = n_{3,1}/N_1 = 0.1$
-      
-  
-  
-**An age distribution describes the proportion of individuals in each age class**
+:::
 
+::: {.fragment}
+
+<center>
+**An age distribution describes the proportion of individuals in each age class**
+</center>
+
+:::
+
+:::
 
 
 ## Age distribution
@@ -117,8 +181,8 @@ more than one time interval.
 #| label: struc1
 #| include: true
 #| echo: false
-#| fig-width: 6
-#| fig-height: 6
+#| fig-width: 8
+#| fig-height: 7
 #| out-width: '85%'
 #| fig-align: 'center'
 barplot(c(0.5, 0.4, 0.1), cex.lab=1.3, cex.names=1.3, cex.main=1.3,
@@ -134,7 +198,11 @@ barplot(c(0.5, 0.4, 0.1), cex.lab=1.3, cex.names=1.3, cex.main=1.3,
 <center> 
 Let's choose values of $s_i$ and $f_i$
 </center>
-  
+
+<br>
+
+::: {style='font-size: 80%;'}
+
   ----------- ------------------------- ---------------------- ----------------
    Age class   Initial population size   Survival probability   Fecundity rate
                       $n_{i,1}$                 $s_i$               $f_i$
@@ -143,19 +211,20 @@ Let's choose values of $s_i$ and $f_i$
        3                 10                      0.0                 1.7
   ----------- ------------------------- ---------------------- ----------------
 
+:::
 
 
 
-## Population size, $n_{i,t$}
+## Population size, *n~i,t~*
 
 ```{r}
 #| label: proj1
 #| include: true
 #| echo: false
 #| results: 'hide'
-#| fig-width: 7
-#| fig-height: 6
-#| out-width: "80%"
+#| fig-width: 9
+#| fig-height: 7
+#| out-width: "100%"
 #| fig-align: "center"
 T <- 30
 N <- matrix(NA, 3, T+1)
@@ -173,24 +242,19 @@ legend(20, 60, c("Age class 1", "Age class 2", "Age class 3"),
        col=c("black", "orange", "purple"), pch=16, lty=1:3)
 ```
 
-<!-- <center> -->
-<!--   [width=0.85\textwidth]{figure/proj1-1} -->
-<!-- </center> -->
 
 
 
 
-
-
-## Growth rates, $\lambda_{i,t=n_{i,t}/n_{i,t-1}$}
+## Growth rates, *lambda~i,t~=n~i,t~/n~i,t-1~*
 
 ```{r}
 #| label: lambda1
 #| echo: false
 #| include: true
-#| fig-width: 7
-#| fig-height: 6
-#| out-width: "80%"
+#| fig-width: 9
+#| fig-height: 7
+#| out-width: "90%"
 #| fig-align: "center"
 lambda <- N[,2:(T+1)] / N[,1:T]
 matplot(t(lambda), type="o", pch=16,
@@ -201,23 +265,19 @@ legend(20, 2.4, c("Age class 1", "Age class 2", "Age class 3"),
        col=c("black", "orange", "purple"), pch=16, lty=1:3)
 ```
 
-<!-- <center> -->
-<!--   [width=0.85\textwidth]{figure/lambda1-1} -->
-<!-- </center> -->
 
 
 
 
-
-## Age distribution, $c_{i,t=n_{i,t}/N_t$}
+## Age distribution, *c~i,t~=n~i,t~/N~t~*
 
 ```{r}
 #| label: prop1
 #| echo: false
 #| include: true
-#| fig-width: 7
-#| fig-height: 6
-#| out-width: "80%"
+#| fig-width: 9
+#| fig-height: 7
+#| out-width: "100%"
 #| fig-align: "center"
 Nt <- colSums(N)
 C <- sweep(N, 2, Nt, "/")
@@ -229,25 +289,38 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
        col=c("black", "orange", "purple"), pch=16, lty=1:3)
 ```
 
-<!-- <center> -->
-<!--   [width=0.85\textwidth]{figure/prop1-1} -->
-<!-- </center> -->
-
 
 
 ## Important things to note
   
+::: {style='font-size: 80%;'}
 Age distribution converges to a **stable age distribution** when survival and fecundity rates are constant.
-  
-  
+
+<br>
+
+::: {.fragment}
 Stable age distribution is the proportion of individuals in each age class when the population converges.
+:::
   
+<br>
+
+::: {.fragment}
 Growth rates of each age class differ at first, but converge once the stable age distribution is reached.
+:::
   
+<br>
+
+::: {.fragment}
 Asymptotic growth rate is $\lambda$ (without subscript).
-  
-  
+:::
+
+<br>
+
+::: {.fragment}
 Growth rate at the stable age distribution is the same for all age classes, and it is geometric!
+:::
+
+:::
 
 
 # Matrix Models
@@ -259,13 +332,13 @@ Matrix models aren't actually *new* models.
   
 They are the same models we have been talking about.
   
-  
-But, they make it much easier to compute important quantities like $\lambda$ and {\it reproductive value}.
+But, they make it much easier to compute important quantities like $\lambda$ and *reproductive value*.
 
 
 
 ## Matrix models vs life tables
 
+::: {style='font-size: 80%;'}
 ::: {.columns}
 ::: {.column width="50%"}
 **Matrix models**
@@ -273,7 +346,8 @@ But, they make it much easier to compute important quantities like $\lambda$ and
 - Age is discrete
 - Age class is denoted by $i$
 - Each age class can have its own vital rates
-      
+:::
+
 ::: {.column width="50%"}
 **Life tables**
       
@@ -281,6 +355,7 @@ But, they make it much easier to compute important quantities like $\lambda$ and
 - Actual age is denoted by $x$
 - Each age can have its own vital rates
 
+:::
 :::
 :::
 
@@ -292,6 +367,7 @@ But, they make it much easier to compute important quantities like $\lambda$ and
 
 ## What is a matrix?
 
+::: {style='font-size: 80%;'}
 **Definition**: A matrix is a rectangular array of numbers
   
 - Usually denoted by an uppercase, bold letter
@@ -308,12 +384,14 @@ $$
       a_{3,1} & a_{3,2} & a_{3,3} & a_{3,4}
     \end{bmatrix}
 $$
+:::
 
 
 
 
 ## Leslie matrix
   
+::: {style='font-size: 80%;'}
 **What is it?**
   
 - Square matrix 
@@ -334,15 +412,17 @@ $$
     \end{bmatrix}
 $$
 </center>
+:::
 
 
 
 ## How do we use a Leslie matrix?
   
+::: {style='font-size: 80%;'}
 These two expressions are equivalent:
 
    Age class  Equation
-  ----------- --------------------------------------------------------------------------------
+  -------------- -------------------------------------------------------
        1      $n_{1,t+1} = n_{1,t} \times f_{1} + n_{2,t} \times f_{2} + n_{3,t} \times f_3$
        2      $n_{2,t+1} = n_{1,t} \times s_{1}$
        3      $n_{3,t+1} = n_{2,t} \times s_{2}$
@@ -351,10 +431,12 @@ AND
 
 $${\bf n}_{t+1} = {\bf A}\times {\bf n}_{t}$$
 
+:::
 
 
 ## Matrix multiplication
-  
+
+<br>
 
 $$
     \begin{bmatrix}
@@ -381,27 +463,27 @@ $$
 
 
 
-## Matrix multiplication and Leslie matrix
+## [Matrix multiplication and Leslie matrix]{style="font-size: 90%;"}
   
 $$
     \begin{bmatrix}
-      n_{1,t+1} <br>
-      n_{2,t+1} <br>
-      n_{3,t+1} <br>
+      n_{1,t+1} \\
+      n_{2,t+1} \\
+      n_{3,t+1} \\
       n_{4,t+1}
     \end{bmatrix}
     =
     \begin{bmatrix}
-      f_1 & f_2 & f_3 & f_4 <br>
-      s_1 & 0 & 0 & 0 <br>
-      0 & s_2 & 0 & 0 <br>
+      f_1 & f_2 & f_3 & f_4 \\
+      s_1 & 0 & 0 & 0 \\
+      0 & s_2 & 0 & 0 \\
       0 & 0 & s_3 & 0
     \end{bmatrix}
     \times
     \begin{bmatrix}
-      n_{1,t} <br>
-      n_{2,t} <br>
-      n_{3,t} <br>
+      n_{1,t} \\
+      n_{2,t} \\
+      n_{3,t} \\
       n_{4,t}
     \end{bmatrix}
 $$
@@ -417,24 +499,28 @@ $$
 
 ## Reproductive Value
 
+::: {style='font-size: 80%;'}
 **Definition**: The extent to which an individual in age class $i$ will contribute to the ancestry of future generations.
 
 $$
     v_i = \sum_{j=i}^{I}\left(\prod_{h=i}^{j-1}s_h\right)f_j\lambda^{i-j-1}
 $$
   
-Post-reproductive individuals have reproductive values of zero. <br>
+::: {.fragment}
+Post-reproductive individuals have reproductive values of zero.
+:::
   
+::: {.fragment}
 Depending on survival and fecundity rates, a first-year individual could have a higher or lower reproductive value than a second-year individual. 
+:::
+
+:::
 
 
 
 
+## [Reproductive value for previous example]{style="font-size: 80%;"}
 
-
-## Reproductive value for previous example
-
-%  <center>
 ```{r}
 #| label: rv
 #| include: true
@@ -449,13 +535,12 @@ box()
 
 
 
-
-
 ## Other important quantities
 
+::: {style='font-size: 80%;'}
 **Net reproductive rate**
 
-The expected number of individuals produced by an individual over  its lifetime:
+The expected number of individuals produced by an individual over its lifetime:
 
 $$
     R_0 = \sum_{i=1}^I \left(\prod_{j=1}^{i-1} s_j\right)f_i
@@ -464,25 +549,26 @@ $$
   
 **Generation time**
 
-The time required for a population to increase by a factor of
-$R_0$. 
+The time required for a population to increase by a factor of $R_0$.
 
 $$
   T = \frac{\log(R_0)}{\log(\lambda)}
 $$
+:::
 
 
 
 
-## Other properties of the Leslie matrix^[This is for graduate students only]
+## Other properties of the Leslie matrix
+
 
 The dominant eigenvalue of ${\bf A}$ is the growth rate $\lambda$.
-  
-The right eigenvector is the {\bf stable age distribution}.
-  
-The left eigenvector is the {\bf reproductive value}.
 
+The right eigenvector is the **stable age distribution**.
 
+The left eigenvector is the **reproductive value**.
+
+<!-- ^[This is for graduate students only] -->
 
 
 # Stage-structured models
@@ -491,227 +577,89 @@ The left eigenvector is the {\bf reproductive value}.
 
 ## Stage-structured population models
   
-%  
-%  * Age isn't always the best way to think about population structure. <br>
-  % * <2->
+::: {style='font-size: 80%;'}
+Age isn't always the best way to think about population structure.
+
+::: {.fragment}
+For some populations, it is much more useful to think about size structure or even spatial structure.
+:::
+
+::: {.fragment}
+These "stage-structured" models differ from age-structured models in that individuals can remain in a stage class (with probability $1-p_i$) for multiple time periods.
+:::
+
+:::
+
+
+  <!-- \tikzstyle{level 1} = [circle, draw, text width=0.5cm, minimum size=1.5cm, -->
+  <!-- node distance=3cm, text centered, fill=blue!10] -->
+  <!-- <center> -->
+  <!--  \uncover<4>{ -->
+  <!--  \begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}] \footnotesize % -->
+  <!--     \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$}; -->
+  <!--     \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$}; -->
+  <!--     \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$}; -->
+  <!--     \draw[->,thick]  (n1) to node[above] {$s_1$} (n2); -->
+  <!--     \draw[->,thick] (n2) to node[above] {$p_2s_2$} (n3); -->
+  <!--     \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1); -->
+  <!--     \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1); -->
+  <!--     \draw[->,thick] (n2) to [loop below] node[below] {$(1-p_2)s_2$} (n2); -->
+  <!--     \draw[->,thick] (n3) to [loop below] node[below] {$s_3$} (n3); -->
+  <!--  \end{tikzpicture} -->
+  <!--  } -->
+  <!-- </center> -->
+
+
+
+
+
+
+## Stage-structured population models
   
+::: {.fragment}
+In stage-structured models, individuals transition from one stage to the next with probability $p_i$.
+
+::: {.fragment}
+We can add these transition probabilities to our projection matrix like this:
+
+$$
+{\bf A} =
+  \begin{bmatrix}
+    f_1 & f_2 & f_3 \\
+    s_1 & s_2(1-p_2) & 0 \\
+    0 & s_2 p_2 & s_3
+  \end{bmatrix}
+$$
+:::
+
+
+::: {.fragment}
+This example allows for individual to remain in stages 2 and 3 for  more than one time period.
+:::
+
+:::
+
+
+## Summary
+
+::: {style='font-size: 80%;'}
+
+Vital rates ($s$ and $f$) are usually age-specific.
+
+::: {.fragment}
+Population growth will depend on age distribution.
+:::
   
-  For some populations, it is much more useful to think about size
-      structure or even spatial structure. <br>
-      % * <3->
-  
-  
-  These ``stage-structured'' models differ from age-structured models
-  in that individuals can remain in a stage class (with
-  probability $1-p_i$) for multiple time periods. <br>
-%  
-%  
-  \tikzstyle{level 1} = [circle, draw, text width=0.5cm, minimum size=1.5cm,
-  node distance=3cm, text centered, fill=blue!10]
-  <center>
-   \uncover<4>{
-   \begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}] \footnotesize %
-      \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$};
-      \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$};
-      \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$};
-      \draw[->,thick]  (n1) to node[above] {$s_1$} (n2);
-      \draw[->,thick] (n2) to node[above] {$p_2s_2$} (n3);
-      \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1);
-      \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1);
-      \draw[->,thick] (n2) to [loop below] node[below] {$(1-p_2)s_2$} (n2);
-      \draw[->,thick] (n3) to [loop below] node[below] {$s_3$} (n3);
-   \end{tikzpicture}
-   }
-  </center>
-
-
-
-
-
-
-
-%\begin{comment}
-
-  ## Stage-structured population models
-  
-  {In stage-structured models, individuals transition from one
-    stage to the next with probability $p_i$. \par
-    
-    
-    We can add these
-    transition probabilities to our projection matrix like this:}
-  
-  %% 
-  %% <center>
-  %%   \[
-  %%   {\bf A} =
-  %%   \begin{bmatrix}
-  %%     f_1 & f_2 & f_3 & f_4 <br>
-  %%     s_1 & s_2(1-p_2) & 0 & 0 <br>
-  %%     0 & s_2 p_2 & s_3(1-p_3) & 0 <br>
-  %%     0 & 0 & s_3p_3 & s_4
-  %%   \end{bmatrix}
-  %%   \]
-  %% </center>
-  <center>
-    
-    \[
-    {\bf A} =
-    \begin{bmatrix}
-      f_1 & f_2 & f_3 <br>
-      s_1 & s_2(1-p_2) & 0 <br>
-      0 & s_2 p_2 & s_3
-    \end{bmatrix}
-    \]
-  </center>
-
-
-This example allows for individual to remain in stages 2 and 3 for 
-more than one time period.
-
-%\end{comment}
-
-
-
-
-
-
-
-
-  ## Summary
-%  [<+->]
-%  * Vital rates ($s$ and $f$) are usually age-specific. <br>
-  
-  
-  % * Population growth will depend on age distribution. <br>
-  
-  
-  % * If vital rates are constant, population will reach stable
-  age distribution with constant growth rate $\lambda$. <br>
-  
-  
-  % * Reproductive value indicates which age class contributes the
-  most to population growth. <br>
-  
-  
-  % * Matrix models are a convenient method used to work with
-  age-structured populations. <br>
-%  
-
-
-
-
-
-\begin{comment}
-
-# Sensitivity analysis
-
-
-
-  ## Sensitivity analysis
-  {\bf Questions}
-  
-    * How will $\lambda$ change if we change $b$ or $d$?
-  
-
-
-
-
-
-
-%\begin{comment}
-# Life Tables
-
-
-
-  ## Scenario
-  
-  
-    * Age ($x$) begins at 0, ends at $k$
-    * The age class ($i$) begins at 1, and ends at $s=k-1$
-  
-  <center>
-    [width=0.6\textwidth]{figs/age-class-diagram}
-  </center>
-  
-  
-    * Individuals either advance to the next age class or die
-    * An age class is not necessarily a 1 year time period
-    * Each age class has its own vital rates
-    * We usually only care about females
-  
-
-
-
-
-
-  ## Life Tables
-  {\bf Assumptions}
-  [(1)]
-    * Birth-pulse model
-      
-        * Individuals give birth on day they enter new age class
-      
-    * Postbreeding census
-  
-
-
-
-
-
-
-  ## Life Tables
-  <center>
-    \begin{tabular}{cccccc}
-      \hline
-      Age ($x$) & Age class ($i$) & $b_x$ & $s_i$ & $l_x$         & $F_i$       <br>
-      \hline
-      0         &                 & 0     &          & 1.0          & <br>
-      1         & 1               & 0.8   & 0.7      & $s_1$=0.7 & $b_1s_1$ <br>
-      2         & 2               &       & 0.7      & $s_1s_2$=   & <br>
-      \hline
-    \end{tabular}
-  </center>
-  
-    * [] $b_x$ is the average number of offspring produced by an
-      individual of age $x$
-    * [] $l_x$ is the probability of surviving from age 0 to age $x$
-  
-
-
-
-
-
-
-
-\note{Euler-Lotka equation: After stable age distribution is attained,
-the population grows at a constant rate that is given by the solution
-of the E-L equation. }
-
-
-
-
-
-
-
-%% 
-%%   ## Life tables in reverse
-%%   \note{On the assumption that the population is (1) at a stable age
-%%     distribution and (2) stationary (i.e. $\lambda$=1, it may be
-%%     possible to use the standing age distribution to calculate
-%%     age-specific survival rates}
-%%   \note{In general, it is not possible to use age frequency data alone
-%%     to both estimate age-specific survival and to test the assumptions
-%%     of age stability and stationarity.}
-
-%% 
-
-
-
-
-\end{comment}
-
-
-
-
-
+::: {.fragment}
+If vital rates are constant, population will reach stable age distribution with constant growth rate $\lambda$.
+:::
+
+::: {.fragment}
+Reproductive value indicates which age class contributes the most to population growth.
+:::
+
+::: {.fragment}
+Matrix models are a convenient method used to work with age-structured populations.
+:::
+
+:::
