@@ -72,3 +72,7 @@ and an oral presentation.
 - [Lecture 8 - Competition and predation](lectures/interspecific/lecture-interspecific.qmd)
 
 - [Lab 6 - Competition and predation](labs/interspecific/lab-interspecific.qmd)
+
+### Week 7 - Age and stage-structured models
+
+- [Lecture 9 - Age and stage structure](lectures/age/lecture-age-structure.qmd)

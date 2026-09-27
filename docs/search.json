@@ -333,7 +333,7 @@
     "href": "lectures/age/lecture-age-structure.html#three-age-class-example",
     "title": "Applied Population Dynamics",
     "section": "Three age class example",
-    "text": "Three age class example\n\nAbundance of age class \\(i\\) in year \\(t\\) is denoted by \\(n_{i,t}\\).\n\n\nThe model for \\(n_{i,t+1}\\) depends on:\n\nAge class survival \\(s_{i}\\), and\nAge class fecundity \\(f_{i}\\)\nFecundity is the birth rate (\\(b_i\\)) multiplied by survival\n\nIn pre-reproductive surveys, \\(f_i = b_i \\times s_0\\)\nIn post-reproductive surveys, \\(f_i = b_i \\times s_i\\)\n\n\n\n\n\n\n\n\nflowchart LR\n  n1((\"$$n_{1,t}$$\"))\n  n2((\"$$n_{2,t}$$\"))\n  n3((\"$$n_{3,t}$$\"))\n  n1 --&gt; n2\n  n2 --&gt; n3\n  n2 --&gt; n1\n  n3 --&gt; n1"
+    "text": "Three age class example\n\nAbundance of age class \\(i\\) in year \\(t\\) is denoted by \\(n_{i,t}\\).\n\n\nThe model for \\(n_{i,t+1}\\) depends on:\n\nAge class survival \\(s_{i}\\), and\nAge class fecundity \\(f_{i}\\)\nFecundity is the birth rate (\\(b_i\\)) multiplied by survival\n\nIn pre-reproductive surveys, \\(f_i = b_i \\times s_0\\)\nIn post-reproductive surveys, \\(f_i = b_i \\times s_i\\)\n\n\n\n\n\n\n\n\n\n---\nconfig:\n  flowchart:\n    nodeSpacing: 50\n    rankSpacing: 50\n    padding: 15\n  theme: forest\n  layout: elk\n  elk:\n    nodePlacementStrategy: LINEAR_SEGMENTS\n    nodePlacementAlignment: NONE\n---\nflowchart LR\n  n1((\"$$n_{1,t}$$\")) --&gt; n2((\"$$n_{2,t}$$\")) --&gt; n3((\"$$n_{3,t}$$\"))\n  n2 --&gt; n1\n  n3 --&gt; n1"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#how-does-this-population-grow",
@@ -396,7 +396,7 @@
     "href": "lectures/age/lecture-age-structure.html#matrix-models-1",
     "title": "Applied Population Dynamics",
     "section": "Matrix models",
-    "text": "Matrix models\nMatrix models aren’t actually new models.\nThey are the same models we have been talking about.\nBut, they make it much easier to compute important quantities like \\(\\lambda\\) and reproductive value."
+    "text": "Matrix models\nMatrix models aren’t actually new models.\n\nThey are the same models we have been talking about.\n\n\nBut, they make it much easier to compute important quantities like \\(\\lambda\\) and reproductive value."
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#matrix-models-vs-life-tables",
@@ -424,7 +424,7 @@
     "href": "lectures/age/lecture-age-structure.html#how-do-we-use-a-leslie-matrix",
     "title": "Applied Population Dynamics",
     "section": "How do we use a Leslie matrix?",
-    "text": "How do we use a Leslie matrix?\n\nThese two expressions are equivalent:\n\n\n\nAge class Equ\nation\n\n\n\n\n1 $n_\n{1,t+1} = n_{1,t} f_{1} + n_{2,t} f_{2} + n_{3,t} f_3$\n\n\n2 $n_\n{2,t+1} = n_{1,t} s_{1}$\n\n\n3 $n_\n{3,t+1} = n_{2,t} s_{2}$\n\n\n\nAND\n\\[{\\bf n}_{t+1} = {\\bf A}\\times {\\bf n}_{t}\\]"
+    "text": "How do we use a Leslie matrix?\n\nThese two expressions are equivalent:\n\n\n\n\n\n\n\nAge class\nEquation\n\n\n\n\n1\n\\(n_{1,t+1} = n_{1,t} \\times f_{1} + n_{2,t} \\times f_{2} + n_{3,t} \\times f_3\\)\n\n\n2\n\\(n_{2,t+1} = n_{1,t} \\times s_{1}\\)\n\n\n3\n\\(n_{3,t+1} = n_{2,t} \\times s_{2}\\)\n\n\n\nAND\n\\[{\\bf n}_{t+1} = {\\bf A}\\times {\\bf n}_{t}\\]"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#matrix-multiplication",
@@ -445,7 +445,7 @@
     "href": "lectures/age/lecture-age-structure.html#reproductive-value-1",
     "title": "Applied Population Dynamics",
     "section": "Reproductive Value",
-    "text": "Reproductive Value\n\nDefinition: The extent to which an individual in age class \\(i\\) will contribute to the ancestry of future generations.\n\\[\n    v_i = \\sum_{j=i}^{I}\\left(\\prod_{h=i}^{j-1}s_h\\right)f_j\\lambda^{i-j-1}\n\\]\n\nPost-reproductive individuals have reproductive values of zero.\n\n\nDepending on survival and fecundity rates, a first-year individual could have a higher or lower reproductive value than a second-year individual."
+    "text": "Reproductive Value\n\nDefinition: The extent to which an individual in age class \\(i\\) will contribute to the ancestry of future generations.\n\\[\n    v_i = \\sum_{j=i}^{I}\\left(\\prod_{h=i}^{j-1}s_h\\right)f_j\\lambda^{i-j-1}\n\\]\n\n\nPost-reproductive individuals have reproductive values of zero.\n\n\n\nDepending on survival and fecundity rates, a first-year individual could have a higher or lower reproductive value than a second-year individual."
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#reproductive-value-for-previous-example",
@@ -459,21 +459,21 @@
     "href": "lectures/age/lecture-age-structure.html#other-important-quantities",
     "title": "Applied Population Dynamics",
     "section": "Other important quantities",
-    "text": "Other important quantities\n\nNet reproductive rate\nThe expected number of individuals produced by an individual over its lifetime:\n\\[\n    R_0 = \\sum_{i=1}^I \\left(\\prod_{j=1}^{i-1} s_j\\right)f_i\n\\]\nGeneration time\nThe time required for a population to increase by a factor of \\(R_0\\).\n\\[\n  T = \\frac{\\log(R_0)}{\\log(\\lambda)}\n\\]"
+    "text": "Other important quantities\n\nNet reproductive rate\nThe expected number of individuals produced by an individual over its lifetime:\n\\[\n    R_0 = \\sum_{i=1}^I \\left(\\prod_{j=1}^{i-1} s_j\\right)f_i\n\\]\n\nGeneration time\nThe time required for a population to increase by a factor of \\(R_0\\).\n\\[\n  T = \\frac{\\log(R_0)}{\\log(\\lambda)}\n\\]"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#other-properties-of-the-leslie-matrix",
     "href": "lectures/age/lecture-age-structure.html#other-properties-of-the-leslie-matrix",
     "title": "Applied Population Dynamics",
     "section": "Other properties of the Leslie matrix",
-    "text": "Other properties of the Leslie matrix\nThe dominant eigenvalue of \\({\\bf A}\\) is the growth rate \\(\\lambda\\).\nThe right eigenvector is the stable age distribution.\nThe left eigenvector is the reproductive value."
+    "text": "Other properties of the Leslie matrix\nThe dominant eigenvalue of \\({\\bf A}\\) is the growth rate \\(\\lambda\\).\n\nThe right eigenvector gives the stable age distribution.\n\nThe left eigenvector gives the reproductive value."
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#stage-structured-population-models",
     "href": "lectures/age/lecture-age-structure.html#stage-structured-population-models",
     "title": "Applied Population Dynamics",
     "section": "Stage-structured population models",
-    "text": "Stage-structured population models\n\nAge isn’t always the best way to think about population structure.\n\nFor some populations, it is much more useful to think about size structure or even spatial structure.\n\n\nThese “stage-structured” models differ from age-structured models in that individuals can remain in a stage class (with probability \\(1-p_i\\)) for multiple time periods."
+    "text": "Stage-structured population models\n\nAge isn’t always the best way to think about population structure.\n\nFor some populations, it is much more useful to think about size structure or even spatial structure.\n\n\nThese “stage-structured” models differ from age-structured models in that individuals can remain in a stage class (with probability \\(1-p_i\\)) for multiple time periods.\n\n\n\n\n\n\n\n---\nconfig:\n  theme: default\n  look: classic\n  layout: dagre\n---\nflowchart LR\n  n1((\"$$n_{1,t}$$\"))-- \"$$s_1p_1$$\" --&gt; n2((\"$$n_{2,t}$$\"))-- \"$$s_2p_2$$\" --&gt; n3((\"$$n_{3,t}$$\"))\n  n2 --&gt; n2"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#stage-structured-population-models-1",
@@ -487,7 +487,7 @@
     "href": "lectures/age/lecture-age-structure.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\n\nVital rates (\\(s\\) and \\(f\\)) are usually age-specific.\n\nPopulation growth will depend on age distribution.\n\n\nIf vital rates are constant, population will reach stable age distribution with constant growth rate \\(\\lambda\\).\n\n\nReproductive value indicates which age class contributes the most to population growth.\n\n\nMatrix models are a convenient method used to work with age-structured populations."
+    "text": "Summary\n\nVital rates (\\(s\\) and \\(f\\)) are usually age-specific.\n\n\nPopulation growth will depend on age distribution.\n\n\n\nIf vital rates are constant, population will reach stable age distribution with constant growth rate \\(\\lambda\\).\n\n\n\nReproductive value indicates which age class contributes the most to population growth.\n\n\n\nMatrix models are a convenient method used to work with age-structured populations."
   },
   {
     "objectID": "lectures/harvest/lecture-harvest.html#section",
@@ -1201,7 +1201,7 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure"
   },
   {
     "objectID": "labs/harvest/lab-harvest.html",

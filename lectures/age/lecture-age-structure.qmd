@@ -85,7 +85,7 @@ These facts have important management implications.
 
 ## Three age class example
 
-::: {style='font-size: 50%;'}
+::: {style='font-size: 70%;'}
 
 Abundance of age class $i$ in year $t$ is denoted by $n_{i,t}$.
 
@@ -103,19 +103,29 @@ The model for $n_{i,t+1}$ depends on:
 
 :::
 
+::: {.fragment}
 ```{mermaid}
 %%| label: "age-diagram"
 %%| fig-align: "center"
 %%| fig-width: 5
+---
+config:
+  flowchart:
+    nodeSpacing: 50
+    rankSpacing: 50
+    padding: 15
+  theme: forest
+  layout: elk
+  elk:
+    nodePlacementStrategy: LINEAR_SEGMENTS
+    nodePlacementAlignment: NONE
+---
 flowchart LR
-  n1(("$$n_{1,t}$$"))
-  n2(("$$n_{2,t}$$"))
-  n3(("$$n_{3,t}$$"))
-  n1 --> n2
-  n2 --> n3
+  n1(("$$n_{1,t}$$")) --> n2(("$$n_{2,t}$$")) --> n3(("$$n_{3,t}$$"))
   n2 --> n1
   n3 --> n1
 ```
+:::
 
 ## How does this population grow?
   
@@ -181,9 +191,9 @@ more than one time interval.
 #| label: struc1
 #| include: true
 #| echo: false
-#| fig-width: 8
+#| fig-width: 9
 #| fig-height: 7
-#| out-width: '85%'
+#| out-width: '95%'
 #| fig-align: 'center'
 barplot(c(0.5, 0.4, 0.1), cex.lab=1.3, cex.names=1.3, cex.main=1.3,
         names=c("Juveniles", "Subadults", "Adults"),
@@ -293,7 +303,7 @@ legend(20, 1, c("Age class 1", "Age class 2", "Age class 3"),
 
 ## Important things to note
   
-::: {style='font-size: 80%;'}
+::: {style='font-size: 75%;'}
 Age distribution converges to a **stable age distribution** when survival and fecundity rates are constant.
 
 <br>
@@ -329,16 +339,22 @@ Growth rate at the stable age distribution is the same for all age classes, and 
 ## Matrix models
   
 Matrix models aren't actually *new* models.
-  
+
+<br>
+
 They are the same models we have been talking about.
   
+<br>
+
+::: {.fragment}
 But, they make it much easier to compute important quantities like $\lambda$ and *reproductive value*.
+:::
 
 
 
 ## Matrix models vs life tables
 
-::: {style='font-size: 80%;'}
+::: {style='font-size: 75%;'}
 ::: {.columns}
 ::: {.column width="50%"}
 **Matrix models**
@@ -360,7 +376,7 @@ But, they make it much easier to compute important quantities like $\lambda$ and
 :::
 
 <center>
-![](figs/age-class-diagram){width="90%"}
+![](figs/age-class-diagram){width="70%"}
 </center>
 
 
@@ -421,11 +437,11 @@ $$
 ::: {style='font-size: 80%;'}
 These two expressions are equivalent:
 
-   Age class  Equation
-  -------------- -------------------------------------------------------
-       1      $n_{1,t+1} = n_{1,t} \times f_{1} + n_{2,t} \times f_{2} + n_{3,t} \times f_3$
-       2      $n_{2,t+1} = n_{1,t} \times s_{1}$
-       3      $n_{3,t+1} = n_{2,t} \times s_{2}$
+   Age class | Equation
+  -------------- | -------------------------------------------------------
+       1  |    $n_{1,t+1} = n_{1,t} \times f_{1} + n_{2,t} \times f_{2} + n_{3,t} \times f_3$
+       2  |    $n_{2,t+1} = n_{1,t} \times s_{1}$
+       3  |    $n_{3,t+1} = n_{2,t} \times s_{2}$
 
 AND
 
@@ -505,11 +521,15 @@ $$
 $$
     v_i = \sum_{j=i}^{I}\left(\prod_{h=i}^{j-1}s_h\right)f_j\lambda^{i-j-1}
 $$
-  
+
+<br>
+
 ::: {.fragment}
 Post-reproductive individuals have reproductive values of zero.
 :::
   
+<br>
+
 ::: {.fragment}
 Depending on survival and fecundity rates, a first-year individual could have a higher or lower reproductive value than a second-year individual. 
 :::
@@ -525,6 +545,10 @@ Depending on survival and fecundity rates, a first-year individual could have a 
 #| label: rv
 #| include: true
 #| echo: false
+#| fig-width: 9
+#| fig-height: 7
+#| out-width: "90%"
+#| fig-align: center
 V <- eigen(t(A))$vectors[,1]
 rv <- as.numeric(V/V[1])
 barplot(rv, names=c("Age class 1", "Age class 2", "Age class 3"),
@@ -547,6 +571,7 @@ $$
 $$
   
   
+::: {.fragment}
 **Generation time**
 
 The time required for a population to increase by a factor of $R_0$.
@@ -554,6 +579,8 @@ The time required for a population to increase by a factor of $R_0$.
 $$
   T = \frac{\log(R_0)}{\log(\lambda)}
 $$
+:::
+
 :::
 
 
@@ -564,11 +591,15 @@ $$
 
 The dominant eigenvalue of ${\bf A}$ is the growth rate $\lambda$.
 
-The right eigenvector is the **stable age distribution**.
+<br>
 
-The left eigenvector is the **reproductive value**.
+The right eigenvector gives the **stable age distribution**.
 
-<!-- ^[This is for graduate students only] -->
+<br>
+
+The left eigenvector gives the **reproductive value**.
+
+
 
 
 # Stage-structured models
@@ -591,23 +622,22 @@ These "stage-structured" models differ from age-structured models in that indivi
 :::
 
 
-  <!-- \tikzstyle{level 1} = [circle, draw, text width=0.5cm, minimum size=1.5cm, -->
-  <!-- node distance=3cm, text centered, fill=blue!10] -->
-  <!-- <center> -->
-  <!--  \uncover<4>{ -->
-  <!--  \begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}] \footnotesize % -->
-  <!--     \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$}; -->
-  <!--     \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$}; -->
-  <!--     \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$}; -->
-  <!--     \draw[->,thick]  (n1) to node[above] {$s_1$} (n2); -->
-  <!--     \draw[->,thick] (n2) to node[above] {$p_2s_2$} (n3); -->
-  <!--     \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1); -->
-  <!--     \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1); -->
-  <!--     \draw[->,thick] (n2) to [loop below] node[below] {$(1-p_2)s_2$} (n2); -->
-  <!--     \draw[->,thick] (n3) to [loop below] node[below] {$s_3$} (n3); -->
-  <!--  \end{tikzpicture} -->
-  <!--  } -->
-  <!-- </center> -->
+::: {.fragment}
+```{mermaid}
+%%| label: "stage-diagram"
+%%| fig-align: "center"
+---
+config:
+  theme: default
+  look: classic
+  layout: dagre
+---
+flowchart LR
+  n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" --> n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" --> n3(("$$n_{3,t}$$"))
+  n2 --> n2
+```
+:::
+
 
 
 
@@ -646,17 +676,25 @@ This example allows for individual to remain in stages 2 and 3 for  more than on
 
 Vital rates ($s$ and $f$) are usually age-specific.
 
+<br>
+
 ::: {.fragment}
 Population growth will depend on age distribution.
 :::
   
+<br>
+
 ::: {.fragment}
 If vital rates are constant, population will reach stable age distribution with constant growth rate $\lambda$.
 :::
 
+<br>
+
 ::: {.fragment}
 Reproductive value indicates which age class contributes the most to population growth.
 :::
+
+<br>
 
 ::: {.fragment}
 Matrix models are a convenient method used to work with age-structured populations.

@@ -178,7 +178,7 @@
 </section>
 <section id="three-age-class-example" class="slide level2">
 <h2>Three age class example</h2>
-<div style="font-size: 50%;">
+<div style="font-size: 70%;">
 <p>Abundance of age class <span class="math inline">\(i\)</span> in year <span class="math inline">\(t\)</span> is denoted by <span class="math inline">\(n_{i,t}\)</span>.</p>
 <p><br></p>
 <div class="fragment">
@@ -194,19 +194,29 @@
 </ul>
 </div>
 </div>
+<div class="fragment">
 <div class="cell" data-reveal="true" data-fig-width="5" data-layout-align="center">
 <div class="cell-output-display">
 <div id="age-diagram">
 <div>
-<pre class="mermaid mermaid-js" data-label="age-diagram">flowchart LR
-  n1(("$$n_{1,t}$$"))
-  n2(("$$n_{2,t}$$"))
-  n3(("$$n_{3,t}$$"))
-  n1 --&gt; n2
-  n2 --&gt; n3
+<pre class="mermaid mermaid-js" data-label="age-diagram">---
+config:
+  flowchart:
+    nodeSpacing: 50
+    rankSpacing: 50
+    padding: 15
+  theme: forest
+  layout: elk
+  elk:
+    nodePlacementStrategy: LINEAR_SEGMENTS
+    nodePlacementAlignment: NONE
+---
+flowchart LR
+  n1(("$$n_{1,t}$$")) --&gt; n2(("$$n_{2,t}$$")) --&gt; n3(("$$n_{3,t}$$"))
   n2 --&gt; n1
   n3 --&gt; n1
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -283,7 +293,7 @@
 <section id="age-distribution" class="slide level2">
 <h2>Age distribution</h2>
 
-<img data-src="lecture-age-structure_files/figure-revealjs/struc1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:85.0%"></section>
+<img data-src="lecture-age-structure_files/figure-revealjs/struc1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"></section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
 <center>
@@ -341,7 +351,7 @@ Let’s choose values of <span class="math inline">\(s_i\)</span> and <span clas
 <img data-src="lecture-age-structure_files/figure-revealjs/prop1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="important-things-to-note" class="slide level2">
 <h2>Important things to note</h2>
-<div style="font-size: 80%;">
+<div style="font-size: 75%;">
 <p>Age distribution converges to a <strong>stable age distribution</strong> when survival and fecundity rates are constant.</p>
 <p><br></p>
 <div class="fragment">
@@ -369,12 +379,16 @@ Let’s choose values of <span class="math inline">\(s_i\)</span> and <span clas
 <section id="matrix-models-1" class="slide level2">
 <h2>Matrix models</h2>
 <p>Matrix models aren’t actually <em>new</em> models.</p>
+<p><br></p>
 <p>They are the same models we have been talking about.</p>
+<p><br></p>
+<div class="fragment">
 <p>But, they make it much easier to compute important quantities like <span class="math inline">\(\lambda\)</span> and <em>reproductive value</em>.</p>
+</div>
 </section>
 <section id="matrix-models-vs-life-tables" class="slide level2">
 <h2>Matrix models vs life tables</h2>
-<div style="font-size: 80%;">
+<div style="font-size: 75%;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Matrix models</strong></p>
@@ -393,7 +407,7 @@ Let’s choose values of <span class="math inline">\(s_i\)</span> and <span clas
 </div></div>
 </div>
 <center>
-<img data-src="figs/age-class-diagram.png" style="width:90.0%">
+<img data-src="figs/age-class-diagram.png" style="width:70.0%">
 </center>
 </section>
 <section id="what-is-a-matrix" class="slide level2">
@@ -444,24 +458,28 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <div style="font-size: 80%;">
 <p>These two expressions are equivalent:</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">Age class Equ</th>
-<th style="text-align: left;">ation</th>
+<th>Age class</th>
+<th>Equation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">1 $n_</td>
-<td style="text-align: left;">{1,t+1} = n_{1,t} f_{1} + n_{2,t} f_{2} + n_{3,t} f_3$</td>
+<td>1</td>
+<td><span class="math inline">\(n_{1,t+1} = n_{1,t} \times f_{1} + n_{2,t} \times f_{2} + n_{3,t} \times f_3\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">2 $n_</td>
-<td style="text-align: left;">{2,t+1} = n_{1,t} s_{1}$</td>
+<td>2</td>
+<td><span class="math inline">\(n_{2,t+1} = n_{1,t} \times s_{1}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">3 $n_</td>
-<td style="text-align: left;">{3,t+1} = n_{2,t} s_{2}$</td>
+<td>3</td>
+<td><span class="math inline">\(n_{3,t+1} = n_{2,t} \times s_{2}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -532,9 +550,11 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <p><span class="math display">\[
     v_i = \sum_{j=i}^{I}\left(\prod_{h=i}^{j-1}s_h\right)f_j\lambda^{i-j-1}
 \]</span></p>
+<p><br></p>
 <div class="fragment">
 <p>Post-reproductive individuals have reproductive values of zero.</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>Depending on survival and fecundity rates, a first-year individual could have a higher or lower reproductive value than a second-year individual.</p>
 </div>
@@ -543,7 +563,7 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <section id="reproductive-value-for-previous-example" class="slide level2">
 <h2><span style="font-size: 80%;">Reproductive value for previous example</span></h2>
 
-<img data-src="lecture-age-structure_files/figure-revealjs/rv-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture-age-structure_files/figure-revealjs/rv-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="other-important-quantities" class="slide level2">
 <h2>Other important quantities</h2>
 <div style="font-size: 80%;">
@@ -552,19 +572,22 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <p><span class="math display">\[
     R_0 = \sum_{i=1}^I \left(\prod_{j=1}^{i-1} s_j\right)f_i
 \]</span></p>
+<div class="fragment">
 <p><strong>Generation time</strong></p>
 <p>The time required for a population to increase by a factor of <span class="math inline">\(R_0\)</span>.</p>
 <p><span class="math display">\[
   T = \frac{\log(R_0)}{\log(\lambda)}
 \]</span></p>
 </div>
+</div>
 </section>
 <section id="other-properties-of-the-leslie-matrix" class="slide level2">
 <h2>Other properties of the Leslie matrix</h2>
 <p>The dominant eigenvalue of <span class="math inline">\({\bf A}\)</span> is the growth rate <span class="math inline">\(\lambda\)</span>.</p>
-<p>The right eigenvector is the <strong>stable age distribution</strong>.</p>
-<p>The left eigenvector is the <strong>reproductive value</strong>.</p>
-<!-- ^[This is for graduate students only] -->
+<p><br></p>
+<p>The right eigenvector gives the <strong>stable age distribution</strong>.</p>
+<p><br></p>
+<p>The left eigenvector gives the <strong>reproductive value</strong>.</p>
 </section></section>
 <section>
 <section id="stage-structured-models" class="title-slide slide level1 center">
@@ -582,7 +605,26 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <p>These “stage-structured” models differ from age-structured models in that individuals can remain in a stage class (with probability <span class="math inline">\(1-p_i\)</span>) for multiple time periods.</p>
 </div>
 </div>
-<p><!-- \tikzstyle{level 1} = [circle, draw, text width=0.5cm, minimum size=1.5cm, --> <!-- node distance=3cm, text centered, fill=blue!10] --> <!-- <center> --> <!--  \uncover<4>{ --> <!--  \begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}] \footnotesize % --> <!--     \node [level 1] (n1) [yshift=-5mm] {$n_{1,t}$}; --> <!--     \node [level 1, right of=n1] (n2) [yshift=0mm] {$n_{2,t}$}; --> <!--     \node [level 1, right of=n2] (n3) [yshift=0mm] {$n_{3,t}$}; --> <!--     \draw[->,thick]  (n1) to node[above] {$s_1$} (n2); --> <!--     \draw[->,thick] (n2) to node[above] {$p_2s_2$} (n3); --> <!--     \draw[->,thick] (n2) to [bend right=40] node[above] {$f_2$} (n1); --> <!--     \draw[->,thick] (n3) to [bend right=60] node[above] {$f_3$} (n1); --> <!--     \draw[->,thick] (n2) to [loop below] node[below] {$(1-p_2)s_2$} (n2); --> <!--     \draw[->,thick] (n3) to [loop below] node[below] {$s_3$} (n3); --> <!--  \end{tikzpicture} --> <!--  } --> <!-- </center> --></p>
+<div class="fragment">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="stage-diagram">
+<div>
+<pre class="mermaid mermaid-js" data-label="stage-diagram">---
+config:
+  theme: default
+  look: classic
+  layout: dagre
+---
+flowchart LR
+  n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" --&gt; n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" --&gt; n3(("$$n_{3,t}$$"))
+  n2 --&gt; n2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="stage-structured-population-models-1" class="slide level2">
 <h2>Stage-structured population models</h2>
@@ -608,15 +650,19 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 <h2>Summary</h2>
 <div style="font-size: 80%;">
 <p>Vital rates (<span class="math inline">\(s\)</span> and <span class="math inline">\(f\)</span>) are usually age-specific.</p>
+<p><br></p>
 <div class="fragment">
 <p>Population growth will depend on age distribution.</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>If vital rates are constant, population will reach stable age distribution with constant growth rate <span class="math inline">\(\lambda\)</span>.</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>Reproductive value indicates which age class contributes the most to population growth.</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>Matrix models are a convenient method used to work with age-structured populations.</p>
 </div>
