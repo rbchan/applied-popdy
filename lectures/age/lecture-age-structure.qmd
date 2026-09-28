@@ -89,8 +89,6 @@ These facts have important management implications.
 
 Abundance of age class $i$ in year $t$ is denoted by $n_{i,t}$.
 
-<br>
-
 ::: {.fragment}
 The model for $n_{i,t+1}$ depends on: 
 
@@ -104,6 +102,12 @@ The model for $n_{i,t+1}$ depends on:
 :::
 
 ::: {.fragment}
+
+<center>
+![](figs/age-diagram.png){width="50%"}
+</center>
+
+
 ```{mermaid}
 %%| label: "age-diagram"
 %%| fig-align: "center"
@@ -623,20 +627,67 @@ These "stage-structured" models differ from age-structured models in that indivi
 
 
 ::: {.fragment}
-```{mermaid}
-%%| label: "stage-diagram"
-%%| fig-align: "center"
----
-config:
-  theme: default
-  look: classic
-  layout: dagre
----
-flowchart LR
-  n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" --> n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" --> n3(("$$n_{3,t}$$"))
-  n2 --> n2
+
+<center>
+![](figs/stage-diagram.png){width="70%"}
+</center>
+
+```{dot}
+//| label: "stage-diagram"
+//| fig-align: "center"
+//| fig-width: 7
+//| out-width: "80%"
+//| include: false
+digraph age_structured_model {
+    rankdir=LR;
+    node [shape=circle, style=filled, fillcolor=lightblue, fontname="Helvetica", fontsize=12];
+    edge [fontname="Helvetica", fontsize=10];
+
+    // Define age classes (stages/compartments)
+    Age1 [label="Age 1\n(N₁)", fillcolor="#a8d5ba"];
+    Age2 [label="Age 2\n(N₂)", fillcolor="#f1c40f"];
+    Age3 [label="Age 3\n(N₃)", fillcolor="#e74c3c", fontcolor=white];
+
+    // Sinks / Dead state (optional, for clarity on mortality)
+    // Dead [label="Mortality", shape=point, style=invis];
+
+    // Transitions (Aging / Survival)
+    Age1 -> Age2 [label="σ₁ (Survival)"];
+    Age2 -> Age3 [label="σ₂ (Survival)"];
+
+    // Mortality / Outflows (Optional visual cues)
+    // Age1 -> Dead [label="μ₁"];
+    // Age2 -> Dead [label="μ₂"];
+    // Age3 -> Dead [label="μ₃"];
+
+    // Reproduction / Births (looping back to Age 1)
+    Age2 -> Age1 [label="F₂ (Fecundity)", color=purple, fontcolor=purple, constraint=false];
+    Age3 -> Age1 [label="F₃ (Fecundity)", color=purple, fontcolor=purple, constraint=false];
+    
+    // Self-loop for Age 3 if they stay in the final class (e.g., plus-group)
+    Age3 -> Age3 [label="σ₃ (Retain)", tailport=ne, headport=nw];
+}
+
 ```
 :::
+
+
+
+<!-- ::: {.fragment} -->
+<!-- ```{mermaid} -->
+<!-- %%| label: "stage-diagram" -->
+<!-- %%| fig-align: "center" -->
+<!-- --- -->
+<!-- config: -->
+<!--   theme: default -->
+<!--   look: classic -->
+<!--   layout: dagre -->
+<!-- --- -->
+<!-- flowchart LR -->
+<!--   n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" -\-> n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" -\-> n3(("$$n_{3,t}$$")) -->
+<!--   n2 -\-> n2 -->
+<!-- ``` -->
+<!-- ::: -->
 
 
 

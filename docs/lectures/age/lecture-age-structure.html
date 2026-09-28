@@ -180,7 +180,6 @@
 <h2>Three age class example</h2>
 <div style="font-size: 70%;">
 <p>Abundance of age class <span class="math inline">\(i\)</span> in year <span class="math inline">\(t\)</span> is denoted by <span class="math inline">\(n_{i,t}\)</span>.</p>
-<p><br></p>
 <div class="fragment">
 <p>The model for <span class="math inline">\(n_{i,t+1}\)</span> depends on:</p>
 <ul>
@@ -195,6 +194,9 @@
 </div>
 </div>
 <div class="fragment">
+<center>
+<img data-src="figs/age-diagram.png" style="width:50.0%">
+</center>
 <div class="cell" data-reveal="true" data-fig-width="5" data-layout-align="center">
 <div class="cell-output-display">
 <div id="age-diagram">
@@ -606,25 +608,25 @@ Example of a <span class="math inline">\(3 \times 4\)</span> matrix:
 </div>
 </div>
 <div class="fragment">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div id="stage-diagram">
-<div>
-<pre class="mermaid mermaid-js" data-label="stage-diagram">---
-config:
-  theme: default
-  look: classic
-  layout: dagre
----
-flowchart LR
-  n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" --&gt; n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" --&gt; n3(("$$n_{3,t}$$"))
-  n2 --&gt; n2
-</pre>
+<center>
+<img data-src="figs/stage-diagram.png" style="width:70.0%">
+</center>
 </div>
-</div>
-</div>
-</div>
-</div>
+<!-- ::: {.fragment} -->
+<!-- ```{mermaid} -->
+<!-- %%| label: "stage-diagram" -->
+<!-- %%| fig-align: "center" -->
+<!-- --- -->
+<!-- config: -->
+<!--   theme: default -->
+<!--   look: classic -->
+<!--   layout: dagre -->
+<!-- --- -->
+<!-- flowchart LR -->
+<!--   n1(("$$n_{1,t}$$"))-- "$$s_1p_1$$" -\-> n2(("$$n_{2,t}$$"))-- "$$s_2p_2$$" -\-> n3(("$$n_{3,t}$$")) -->
+<!--   n2 -\-> n2 -->
+<!-- ``` -->
+<!-- ::: -->
 </section>
 <section id="stage-structured-population-models-1" class="slide level2">
 <h2>Stage-structured population models</h2>
