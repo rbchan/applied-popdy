@@ -76,10 +76,14 @@ These facts have important management implications.
 **Declining populations have relatively more old individuals than growing populations.**
 :::
 
-<br>
-
 <center>
+
 ![](figs/AgeStructures.png)
+
+::: {.fragment}
+[Human population data (Our World in Data)](https://ourworldindata.org/age-structure)
+:::
+
 </center>
 
 
@@ -230,7 +234,8 @@ Let's choose values of $s_i$ and $f_i$
 
 
 
-## Population size, *n~i,t~*
+<!-- ## Population size, *n~i,t~* -->
+## Population size
 
 ```{r}
 #| label: proj1
@@ -261,7 +266,9 @@ legend(20, 60, c("Age class 1", "Age class 2", "Age class 3"),
 
 
 
-## Growth rates, *lambda~i,t~=n~i,t~/n~i,t-1~*
+<!-- ## Growth rates, *lambda~i,t~=n~i,t~/n~i,t-1~* -->
+## Growth rates
+
 
 ```{r}
 #| label: lambda1
@@ -284,7 +291,8 @@ legend(20, 2.4, c("Age class 1", "Age class 2", "Age class 3"),
 
 
 
-## Age distribution, *c~i,t~=n~i,t~/N~t~*
+<!-- ## Age distribution, *c~i,t~=n~i,t~/N~t~* -->
+## Age distribution
 
 ```{r}
 #| label: prop1
@@ -593,6 +601,7 @@ $$
 
 ## Other properties of the Leslie matrix
 
+<br>
 
 The dominant eigenvalue of ${\bf A}$ is the growth rate $\lambda$.
 
