@@ -112,6 +112,7 @@ The model for $n_{i,t+1}$ depends on:
 %%| label: "age-diagram"
 %%| fig-align: "center"
 %%| fig-width: 5
+%%| include: false
 ---
 config:
   flowchart:

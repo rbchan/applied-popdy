@@ -122,9 +122,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -197,31 +194,6 @@
 <center>
 <img data-src="figs/age-diagram.png" style="width:50.0%">
 </center>
-<div class="cell" data-reveal="true" data-fig-width="5" data-layout-align="center">
-<div class="cell-output-display">
-<div id="age-diagram">
-<div>
-<pre class="mermaid mermaid-js" data-label="age-diagram">---
-config:
-  flowchart:
-    nodeSpacing: 50
-    rankSpacing: 50
-    padding: 15
-  theme: forest
-  layout: elk
-  elk:
-    nodePlacementStrategy: LINEAR_SEGMENTS
-    nodePlacementAlignment: NONE
----
-flowchart LR
-  n1(("$$n_{1,t}$$")) --&gt; n2(("$$n_{2,t}$$")) --&gt; n3(("$$n_{3,t}$$"))
-  n2 --&gt; n1
-  n3 --&gt; n1
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="how-does-this-population-grow" class="slide level2">

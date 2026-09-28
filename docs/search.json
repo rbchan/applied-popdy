@@ -333,7 +333,7 @@
     "href": "lectures/age/lecture-age-structure.html#three-age-class-example",
     "title": "Applied Population Dynamics",
     "section": "Three age class example",
-    "text": "Three age class example\n\nAbundance of age class \\(i\\) in year \\(t\\) is denoted by \\(n_{i,t}\\).\n\nThe model for \\(n_{i,t+1}\\) depends on:\n\nAge class survival \\(s_{i}\\), and\nAge class fecundity \\(f_{i}\\)\nFecundity is the birth rate (\\(b_i\\)) multiplied by survival\n\nIn pre-reproductive surveys, \\(f_i = b_i \\times s_0\\)\nIn post-reproductive surveys, \\(f_i = b_i \\times s_i\\)\n\n\n\n\n\n\n\n\n\n\n\n\n---\nconfig:\n  flowchart:\n    nodeSpacing: 50\n    rankSpacing: 50\n    padding: 15\n  theme: forest\n  layout: elk\n  elk:\n    nodePlacementStrategy: LINEAR_SEGMENTS\n    nodePlacementAlignment: NONE\n---\nflowchart LR\n  n1((\"$$n_{1,t}$$\")) --&gt; n2((\"$$n_{2,t}$$\")) --&gt; n3((\"$$n_{3,t}$$\"))\n  n2 --&gt; n1\n  n3 --&gt; n1"
+    "text": "Three age class example\n\nAbundance of age class \\(i\\) in year \\(t\\) is denoted by \\(n_{i,t}\\).\n\nThe model for \\(n_{i,t+1}\\) depends on:\n\nAge class survival \\(s_{i}\\), and\nAge class fecundity \\(f_{i}\\)\nFecundity is the birth rate (\\(b_i\\)) multiplied by survival\n\nIn pre-reproductive surveys, \\(f_i = b_i \\times s_0\\)\nIn post-reproductive surveys, \\(f_i = b_i \\times s_i\\)"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#how-does-this-population-grow",
