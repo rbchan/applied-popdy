@@ -76,3 +76,5 @@ and an oral presentation.
 ### Week 7 - Age and stage-structured models
 
 - [Lecture 9 - Age and stage structure](lectures/age/lecture-age-structure.qmd)
+
+- [Lab 7 - Age-structured populations](labs/age/lab-age-structure.qmd)
