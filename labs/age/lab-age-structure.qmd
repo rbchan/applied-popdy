@@ -38,15 +38,26 @@ For each projection, use a population size of 200 individuals, and put all indiv
 (b)  If you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?
 (c)  Graduate students only: Compute reproductive value using the `eigen` function.
 
+```{r}
+#| label: tbl-example
+#| tbl-cap: "Leslie matrix"
+#| echo: false
+library(knitr)
+L <- matrix(c(1.6, 1.5, 0.25, 0,
+              0.8,  0,  0, 0, 
+              0,  0.5,  0, 0,
+              0,    0,  0.25, 0), nrow=4, byrow=TRUE)
+kable(L)
+```
 
-|    |    |     |        |
-| --- | --- | ---- | --- |
-| 1.6 | 1.5 | 0.25 | 0 |
-| 0.8 | 0   | 0    | 0 |
-| 0   | 0.5 | 0    | 0 |
-| 0   | 0   | 0.25 | 0 |
+<!-- |    |    |     |        | -->
+<!-- | --- | --- | ---- | --- | -->
+<!-- | 1.6 | 1.5 | 0.25 | 0 | -->
+<!-- | 0.8 | 0   | 0    | 0 | -->
+<!-- | 0   | 0.5 | 0    | 0 | -->
+<!-- | 0   | 0   | 0.25 | 0 | -->
 
-: Leslie Matrix {tbl-colwidths="[10,10,10,10]"}
+<!-- : Leslie Matrix {tbl-colwidths="[10,10,10,10]"} -->
 
 
 ### Age-structured models in R
