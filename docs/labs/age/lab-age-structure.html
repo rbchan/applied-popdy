@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lab-extinction – Applied Population Dynamics</title>
+<title>lab-age-structure – Applied Population Dynamics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,9 +76,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3a9b59a28ddcc48f010c2375eb3c9c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -184,12 +181,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-4-assignment-stochasticity-and-extinction" id="toc-lab-4-assignment-stochasticity-and-extinction" class="nav-link active" data-scroll-target="#lab-4-assignment-stochasticity-and-extinction">Lab 4 Assignment — Stochasticity and Extinction</a>
+  <li><a href="#lab-7-assignment-age-structured-models-due-by-500pm-on-friday" id="toc-lab-7-assignment-age-structured-models-due-by-500pm-on-friday" class="nav-link active" data-scroll-target="#lab-7-assignment-age-structured-models-due-by-500pm-on-friday">Lab 7 Assignment — Age-structured Models <br> Due by 5:00pm on Friday</a>
   <ul class="collapse">
-  <li><a href="#random-numbers-in-excel" id="toc-random-numbers-in-excel" class="nav-link" data-scroll-target="#random-numbers-in-excel">Random Numbers in Excel</a></li>
   <li><a href="#exercise-i" id="toc-exercise-i" class="nav-link" data-scroll-target="#exercise-i">Exercise I</a></li>
   <li><a href="#exercise-ii" id="toc-exercise-ii" class="nav-link" data-scroll-target="#exercise-ii">Exercise II</a></li>
-  <li><a href="#example-r-code" id="toc-example-r-code" class="nav-link" data-scroll-target="#example-r-code">Example R code</a></li>
+  <li><a href="#age-structured-models-in-r" id="toc-age-structured-models-in-r" class="nav-link" data-scroll-target="#age-structured-models-in-r">Age-structured models in R</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -200,132 +196,213 @@ window.Quarto = {
 
 
 
-<center>
-<section id="lab-4-assignment-stochasticity-and-extinction" class="level2">
-<h2 class="anchored" data-anchor-id="lab-4-assignment-stochasticity-and-extinction">Lab 4 Assignment — Stochasticity and Extinction</h2>
-</section></center>
-<p>Answer each of the following questions and upload your completed Excel file and R script to ELC by 5:00pm on Friday. Be sure to show your calculations. Undergrads only need to do the <em>second</em> exercise in R, not the first.</p>
-<section id="random-numbers-in-excel" class="level3">
-<h3 class="anchored" data-anchor-id="random-numbers-in-excel">Random Numbers in Excel</h3>
-<div id="fig-rng" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/Excel-RNG.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: To generate random numbers in Excel, you must load the “Analysis Toolpak” add-in by clicking File > Options > Add-Ins > Analysis Toolpak. Then hit “Go” (not “OK”) and select “Analysis Tookpak” again."><img src="figs/Excel-RNG.png" class="img-fluid figure-img" style="width:60.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: To generate random numbers in Excel, you must load the “Analysis Toolpak” add-in by clicking <code>File &gt; Options &gt; Add-Ins &gt; Analysis Toolpak</code>. Then hit “Go” (not “OK”) and select “Analysis Tookpak” again.
-</figcaption>
-</figure>
-</div>
-<p><br></p>
-<div id="fig-rng2" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rng2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/Excel-RNG-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Once the Analysis ToolPak is installed, you can generate random numbers by clicking the “Data Analysis” button in the “Data” tab."><img src="figs/Excel-RNG-2.png" class="img-fluid figure-img" style="width:60.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rng2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Once the Analysis ToolPak is installed, you can generate random numbers by clicking the “Data Analysis” button in the “Data” tab.
-</figcaption>
-</figure>
-</div>
-<p><br></p>
-<div id="fig-rng3" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rng3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figs/Excel-RNG-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. The latter two are only used in Exercise II. Note: You can think of the “number of variables” as the number of columns of random variables, and the “number of random numbers” as the number of cells in each column."><img src="figs/Excel-RNG-3.png" class="img-fluid figure-img" style="width:60.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rng3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. The latter two are only used in Exercise II. Note: You can think of the “number of variables” as the number of columns of random variables, and the “number of random numbers” as the number of cells in each column.
-</figcaption>
-</figure>
-</div>
-<p><br></p>
-</section>
+<section id="lab-7-assignment-age-structured-models-due-by-500pm-on-friday" class="level2">
+<h2 class="anchored" data-anchor-id="lab-7-assignment-age-structured-models-due-by-500pm-on-friday">Lab 7 Assignment — Age-structured Models <br> Due by 5:00pm on Friday</h2>
+<p>Answer each of the following questions and upload your Excel file and R script (graduate students only) to ELC. Be sure to show your calculations. Undergraduates do not have to do either exercise in R. However, undergraduates can get 20 bonus points for doing the entire lab in Excel and R.</p>
 <section id="exercise-i" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-i">Exercise I</h3>
-<ol type="A">
-<li>Suppose a population is growing geometrically with <span class="math inline">\(r=-0.2\)</span> and <span class="math inline">\(N_0=500\)</span>. There is no random variation, and quasi-extinction occurs when <span class="math inline">\(N\)</span> falls below 20 individuals. What is the time to quasi-extinction (<span class="math inline">\(T_e\)</span>)? In other words, how long will it take for the population to fall below 20 individuals?</li>
-<li>Now imagine that there is no demographic stochasticity, but environmental stochasticity occurs with <span class="math inline">\(r_t \sim \mathrm{Normal}(\mathrm{mean}=-0.2, \mathrm{SD}=0.05)\)</span>. Generate the random values of <span class="math inline">\(r_t\)</span> that will be used in the 10 simulations in the next step.</li>
-<li>Conduct 10 simulations over a 30 year time period, and force the population size to zero after it falls below the threshold. This can be done by multiplying the geometric growth equation by a “test statement”, like this: <code>=(EQUATION)*(CELL&gt;20)</code>, where <code>EQUATION</code> should be replaced with the population growth equation and <code>CELL</code> should be replaced with the cell reference for abundance at the previous time step. Plot the projections (including the one without stochasticity).</li>
-<li>What is the average <span class="math inline">\(T_e\)</span> based on these 10 simulations?</li>
-<li>What is extinction risk at year 15?</li>
+<p>Imagine a population with 4 age classes. The fecundities are <span class="math inline">\(f_1=0\)</span>, <span class="math inline">\(f_2=1.0\)</span>, <span class="math inline">\(f_3=1.5\)</span>, and <span class="math inline">\(f_4=1.2\)</span>. The survival probabilities are <span class="math inline">\(s_1=0.8\)</span>, <span class="math inline">\(s_2=0.5\)</span>, <span class="math inline">\(s_3=0.25\)</span>, and <span class="math inline">\(s_4=0.0\)</span>. The initial population sizes are <span class="math inline">\(n_{1,1}=45\)</span>, <span class="math inline">\(n_{2,1}=18\)</span>, <span class="math inline">\(n_{3,1}=11\)</span>, <span class="math inline">\(n_{4,1}=4\)</span>.</p>
+<ol type="a">
+<li>Create a Leslie matrix with the vital rates provided above.</li>
+<li>Project the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the <code>\%*\%</code> operator. See the end of this document for guidance.)</li>
+<li>Create another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting “Format axis”. Choose the logarithmic axis option with base=10.</li>
+<li>Calculate and plot the age-specific growth rates: <span class="math inline">\(\lambda_{i,t}\)</span>. What is the asymptotic growth rate (<span class="math inline">\(\lambda\)</span>), rounded to 3 decimals places?</li>
+<li>What is the stable age distribution?</li>
+<li>Graduate students only: Compute asymptotic <span class="math inline">\(\lambda\)</span> and the stable age distribution using the function in R.</li>
 </ol>
-<p><br></p>
 </section>
 <section id="exercise-ii" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-ii">Exercise II</h3>
-<p>Assume that a population is geographically closed such that there is no immigration or emigration. The number of individuals born is a Poisson random variable: <span class="math display">\[
-  B_t \sim \mathrm{Poisson}(N_t \times b)
-\]</span> and the number that die each year is a binomial random variable: <span class="math display">\[
-  D_t \sim \mathrm{Binomial}(N_t, d)
-\]</span> Abundance is just the number that were alive plus the number that were born, minus the number that died: <span class="math display">\[
-  N_{t+1} = N_t + B_t - D_t
-\]</span></p>
-<ol type="A">
-<li>Beginning with <span class="math inline">\(N_0=300\)</span>, conduct one simulation over 5 years, in which <span class="math inline">\(b=0.3\)</span> and <span class="math inline">\(d=0.2\)</span>. Plot the simulated values of abundance over time. Hint: You have to randomly generate <span class="math inline">\(B_t\)</span> and <span class="math inline">\(D_t\)</span> before you can compute <span class="math inline">\(N_{t+1}\)</span>, one year at a time. When simulating <span class="math inline">\(D_t\)</span> from the binomial distribution, the “number of trials” is the population size.</li>
-<li>Do you think this population will reach a stochastic equilibrium? Why or why not? (A stochastic equilibrium occurs when a population fluctuates around a long-term average). <!-- C.  Can population size ever be less than zero under this model?  Why or why not? --></li>
-<li>Do another simulation, but this time make the mortality rate (<span class="math inline">\(d\)</span>) density-dependent according to the model <span class="math inline">\(d_t = 0.2 + 0.001\times N_t\)</span>. Will this population reach a stochastic equilibrium? If so, at what value of abundance does the equilibrium point occur?</li>
+<p>Reproductive value (RV) can be used to identify the age class that contributes the most to population growth. The inoculate method is a way of computing RV by doing one projection for each of the age classes.</p>
+<p>For each projection, use a population size of 200 individuals, and put all individuals in one of the four age classes. For example, one projection will have <span class="math inline">\(n_{1,1}=200\)</span>, <span class="math inline">\(n_{2,1}=0\)</span>, <span class="math inline">\(n_{3,1}=0\)</span>, <span class="math inline">\(n_{4,1}=0\)</span>. The next projection will have all 200 individuals in the next age class, and so on. For each projection, record the total population size after 50 time steps. Reproductive value is calculated by dividing each projection’s total population size (<span class="math inline">\(N_t\)</span>) at <span class="math inline">\(t=50\)</span> by the total population size from the first projection. (As a result, RV will always be 1 for the first age class when using this method).</p>
+<ol type="a">
+<li>Given the following Leslie matrix, calculate the RV of each age class using the inoculate method.</li>
+<li>If you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?</li>
+<li>Graduate students only: Compute reproductive value using the <code>eigen</code> function.</li>
 </ol>
-<p><br></p>
+<table class="caption-top table">
+<caption>Leslie Matrix</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>1.6</td>
+<td>1.5</td>
+<td>0.25</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0.8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0.5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0.25</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="example-r-code" class="level3">
-<h3 class="anchored" data-anchor-id="example-r-code">Example R code</h3>
-<section id="geometric-growth-with-environmental-stochasticity." class="level4">
-<h4 class="anchored" data-anchor-id="geometric-growth-with-environmental-stochasticity.">Geometric growth with environmental stochasticity.</h4>
+<section id="age-structured-models-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="age-structured-models-in-r">Age-structured models in R</h3>
+<p>This is an example of an age-structured model with 3 age classes. It is just an example – the parameter values are different than the ones in the assignment above.</p>
+<p>First, create the projection matrix.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">1.5</span>, <span class="fl">0.5</span>,  <span class="do">## The fecundities</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.5</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,  <span class="do">## The first value is s1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.0</span>, <span class="fl">0.9</span>, <span class="fl">0.0</span>), <span class="do">## The second value is s2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow=</span><span class="dv">3</span>, <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]  0.0  1.5  0.5
+[2,]  0.5  0.0  0.0
+[3,]  0.0  0.9  0.0</code></pre>
+</div>
+</div>
+<p>Set values of initial abundance and prepare to project over 50 years.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="fu">length</span>(years)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, nYears, <span class="dv">3</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>n[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">25</span>)    <span class="do">## Initial abundance</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Do the projection.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  n[t,] <span class="ot">&lt;-</span> A <span class="sc">%*%</span> n[t<span class="dv">-1</span>,]   <span class="do">## Matrix multiplication</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Visualize it.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rbar <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>extinctionThreshold <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Repeat the next steps 10 times to do 10 simulations</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Or, do a 'nested for loop' and save each simulation (harder)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>N1 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)  <span class="do">## Population size </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>N1[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">50</span>            <span class="do">## Initial population size</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears<span class="dv">-1</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    r[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">mean=</span>rbar, <span class="at">sd=</span>sigma) <span class="co"># Growth rate from normal distribution</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    N1[t] <span class="ot">&lt;-</span> (N1[t<span class="dv">-1</span>] <span class="sc">+</span> N1[t<span class="dv">-1</span>]<span class="sc">*</span>r[t<span class="dv">-1</span>])<span class="sc">*</span>(N1[t<span class="dv">-1</span>]<span class="sc">&gt;</span>extinctionThreshold)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span>nYears, N1, <span class="at">xlab=</span><span class="st">"Time"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>, <span class="at">type=</span><span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years, n, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">xlab=</span><span class="st">"Time"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">35</span>, <span class="dv">100</span>, <span class="fu">c</span>(<span class="st">"Age class 1"</span>, <span class="st">"Age class 2"</span>, <span class="st">"Age class 3"</span>), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="lab-extinction_files/figure-html/geom-stoch-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+<p><img src="lab-age-structure_files/figure-html/ex1-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="poisson-binomial-birth-death-model." class="level4">
-<h4 class="anchored" data-anchor-id="poisson-binomial-birth-death-model.">Poisson-Binomial birth-death model.</h4>
+<p>Compute the age distribution and take a look.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fl">0.15</span>  <span class="do">## Birth rate</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fl">0.2</span>   <span class="do">## Mortality rate</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nYears <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>N2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)  <span class="do">## Empty vector for population size </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)   <span class="do">## Random variable for nBirths</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, nYears)   <span class="do">## Random variable for nDeaths</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>N2[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">100</span>           <span class="do">## Initial population size</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nYears) {</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    B[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">lambda=</span>N2[t<span class="dv">-1</span>]<span class="sc">*</span>b)      <span class="co"># Poisson births</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    D[t<span class="dv">-1</span>] <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">size=</span>N2[t<span class="dv">-1</span>], <span class="at">prob=</span>d) <span class="co"># Binomial deaths</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    N2[t] <span class="ot">&lt;-</span> N2[t<span class="dv">-1</span>] <span class="sc">+</span> B[t<span class="dv">-1</span>] <span class="sc">-</span> D[t<span class="dv">-1</span>]</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span>nYears, N2, <span class="at">xlab=</span><span class="st">"Time"</span>, <span class="at">ylab=</span><span class="st">"Abundance"</span>, <span class="at">type=</span><span class="st">"l"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(n) <span class="do">## Total abundance each year</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> n<span class="sc">/</span>N        <span class="do">## This works because of R's recycling rules</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years, c, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">xlab=</span><span class="st">"Time"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">"Proportion in each age class"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">35</span>, <span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"Age class 1"</span>, <span class="st">"Age class 2"</span>, <span class="st">"Age class 3"</span>), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="lab-extinction_files/figure-html/pois-bin-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="lab-age-structure_files/figure-html/ex1-AD-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Grab the stable age distribution from the final year.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SAD.proj <span class="ot">&lt;-</span> c[nYears,]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SAD.proj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.508639 0.257221 0.234140</code></pre>
+</div>
+</div>
+<p>Now compute the annual growth rates for each age class and plot them.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lambda.it <span class="ot">&lt;-</span> n[<span class="sc">-</span><span class="dv">1</span>,]<span class="sc">/</span>n[<span class="sc">-</span>nYears,] <span class="do">## Divide each row by the row before it</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years[<span class="sc">-</span><span class="dv">1</span>], <span class="do">## There are nYears-1 *intervals* between years</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        lambda.it, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">xlab=</span><span class="st">"Time"</span>, <span class="at">ylab=</span><span class="st">"Growth rates"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"grey"</span>) <span class="do">## Horizontal line</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">35</span>, <span class="fl">1.8</span>, <span class="fu">c</span>(<span class="st">"Age class 1"</span>, <span class="st">"Age class 2"</span>, <span class="st">"Age class 3"</span>), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab-age-structure_files/figure-html/ex1-lam_it-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Find asymptotic <span class="math inline">\(\lambda\)</span> from the last time interval.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lambda.it[nYears<span class="dv">-1</span>,] <span class="do">## These should all be the same</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9887199 0.9887199 0.9887199</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lambda.proj <span class="ot">&lt;-</span> lambda.it[nYears<span class="dv">-1</span>,<span class="dv">1</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>lambda.proj <span class="do">## Asymptotic growth rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9887199</code></pre>
+</div>
+</div>
+<p>Now we will use eigenanalysis to compute the growth rate, stable age distribution, and reproductive value.</p>
+<p>First compute <span class="math inline">\(\lambda\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>eA <span class="ot">&lt;-</span> <span class="fu">eigen</span>(A)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>values[<span class="dv">1</span>])  <span class="do">## Dominant eigenvalue is the </span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>lambda                      <span class="do">## asymptotic growth rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9887199</code></pre>
+</div>
+</div>
+<p>Make sure it’s the same growth rate that we found earlier.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lambda.proj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9887199</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lambda</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9887199</code></pre>
+</div>
+</div>
+<p>Now find the stable age distribution.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>SADu <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>vectors[,<span class="dv">1</span>])  <span class="do">## Right eigenvector is stable age dist</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>SAD <span class="ot">&lt;-</span> SADu<span class="sc">/</span><span class="fu">sum</span>(SADu)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>SAD</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.508639 0.257221 0.234140</code></pre>
+</div>
+</div>
+<p>Check to make sure that the stable age distribution computed using eigenanalysis is equal to that calculated from the projection.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>SAD</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.508639 0.257221 0.234140</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>SAD.proj</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.508639 0.257221 0.234140</code></pre>
+</div>
+</div>
+<p>Now compute the reproductive value (RV) of each age class.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>eAT <span class="ot">&lt;-</span> <span class="fu">eigen</span>(<span class="fu">t</span>(A))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>RVu <span class="ot">&lt;-</span> <span class="fu">Re</span>(eAT<span class="sc">$</span>vectors[,<span class="dv">1</span>]) <span class="do">## Left eigenvector gives the RVs</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>RV <span class="ot">&lt;-</span> RVu<span class="sc">/</span>RVu[<span class="dv">1</span>]           <span class="do">## Standard to divide by first RV</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>RV</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.0000000 1.9774397 0.5057044</code></pre>
+</div>
+</div>
 
 
 </section>
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -729,38 +806,6 @@ Figure&nbsp;3: We will use three distributions: Normal, Binomial, and Poisson. T
   });
   </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
