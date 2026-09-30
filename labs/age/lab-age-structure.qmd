@@ -21,7 +21,7 @@ $s_1=0.8$, $s_2=0.5$, $s_3=0.25$, and $s_4=0.0$. The initial
 population sizes are $n_{1,1}=45$, $n_{2,1}=18$, $n_{3,1}=11$, $n_{4,1}=4$.
 
 (a)  Create a Leslie matrix with the vital rates provided above.
-(b)  Project the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the `\%*\%` operator. See the end of this document for guidance.)
+(b)  Project the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the `%*%` operator. See the end of this document for guidance.)
 (c)  Create another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting "Format axis". Choose the logarithmic axis option with base=10.
 (d)  Calculate and plot the age-specific growth rates: $\lambda_{i,t}$. What is the asymptotic growth rate ($\lambda$), rounded to 3 decimals places?
 (e) What is the stable age distribution?
