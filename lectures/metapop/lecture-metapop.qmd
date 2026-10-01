@@ -15,12 +15,16 @@ lang: en
 ## {content-align="center" style="font-size: 160%;"}
 
 
-**Metapopulation models**
-    
 <center>
 
-![](figs/frit.jpg){height=4.2cm}
-![](figs/frit2.jpg){height=4.2cm}
+**Metapopulation models**
+
+![](figs/frit.jpg){height=9cm}
+![](figs/frit2.jpg){height=9cm}
+
+::: {style='font-size: 70%;'}
+Applied Population Dynamics (WILD 5700/7700)
+:::
 
 </center>
 
@@ -28,27 +32,37 @@ lang: en
 
 ## Metapopulations
   
+<br>
+
 <center> 
+::: {style='font-size: 110%;'}
 A **metapopulation** is a population of subpopulations linked by dispersal.
+:::
 </center>
   
-  
+<br>
+
+
+::: {.fragment}
 **Properties**
   
 - Subpopulations occur in discrete habitat patches.
 - The landscape "matrix" is not suitable for reproduction.
+:::
   
 
 
 ## Motivation
   
 ::: {.columns}
-::: {.column width='50%'}
+::: {.column width='70%'}
+::: {style='font-size: 80%;'}
 - Many populations are fragmented.
 - Metapopulation models can be used to forecast dynamics of fragmented populations.
 - Models can be used to identify critical habitat patches or locations for establishing new subpopulations.
 :::
-::: {.column width='50%'}
+:::
+::: {.column width='30%'}
 ![](figs/ping-ding.jpg)
 
 ![](figs/fragmentation.jpg)
@@ -67,14 +81,18 @@ A **metapopulation** is a population of subpopulations linked by dispersal.
 ## Origins
 
 ::: {.columns}
-::: {.column width='50%'}
+::: {.column width='40%'}
 Richard Levins <br>
-![](figs/levins.jpg)
+![](figs/levins.jpg){height="5cm"}
 :::
-::: {.column width='50%'}
+::: {.column width='60%'}
+::: {style='font-size: 80%;'}
 First metapopulation models were parameterized in terms of the *proportion of patches occupied*.
-      
+
+<br>
+
 Modern models are formulated in terms of patch-specific *site occupancy* or *abundance*.
+:::
 
 :::
 :::
@@ -87,13 +105,13 @@ Modern models are formulated in terms of patch-specific *site occupancy* or *abu
 
 ## Abundance formulation
   
+::: {style='font-size: 80%;'}
 A simple case with only three subpopulations
+
 $$
     N_t = n_{1,t} + n_{2,t} + n_{3,t}
 $$
 
-
-## Abundance and movement
 
 <!-- \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm, -->
 <!--     node distance=4cm, text centered, fill=blue!10] -->
@@ -146,29 +164,53 @@ flowchart LR
 
 <center>
 
-![](figs/metapop-flow)
+![](figs/metapop-flow){width='45%'}
 
 The movement probabilities ($\pi_{i,j}$) indicate the proportion of individuals moving from patch $i$ to patch $j$. 
 
 </center>
 
+:::
 
 
 ## Abundance models
 
-**Building the metapopulation model for the first subpopulation.**
+::: {style='font-size: 90%;'}
+Building the metapopulation model for the first subpopulation.
   
+::: {.r-stack}
+
+::: {.fragment .fade-out fragment-index=1}
 $$
-  n_{1,t+1} = n_{1,t}\lambda_1 \uncover<2->{\color{Blue}{(1 - \pi_{1,2} - \pi_{1,3})} +}
-    \uncover<3->{\color{Red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
+  n_{1,t+1} = n_{1,t}\lambda_1
 $$
+:::
+::: {.fragment .fade-in-then-out fragment-index=1}
+$$
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} 
+$$
+:::
+::: {.fragment .fade-in-then-out fragment-index=2}
+$$
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} +
+    {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
+$$
+:::
+ 
+:::
+:::
+
   
-  
-Three components
+Three components:
 
 1. Geometric growth
-2. \color{Blue}{1 minus emigration rates, Pr(not emigrating)}
-3. \color{Red}{Immigration from subpopulations 2 and 3}
+
+::: {.fragment .fade-in fragment-index=1}
+2. [1 minus emigration rates, Pr(not emigrating)]{style="color: blue;"}
+:::
+::: {.fragment .fade-in fragment-index=2}
+3. [Immigration from subpopulations 2 and 3]{style="color: red;"}
+:::
   
 
 
