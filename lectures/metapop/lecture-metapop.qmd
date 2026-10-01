@@ -203,13 +203,13 @@ $$
   
 Three components:
 
-1. Geometric growth
+1.  Geometric growth
 
 ::: {.fragment .fade-in fragment-index=1}
-2. [1 minus emigration rates, Pr(not emigrating)]{style="color: blue;"}
+2.  [1 minus emigration rates, Pr(not emigrating)]{style="color: blue;"}
 :::
 ::: {.fragment .fade-in fragment-index=2}
-3. [Immigration from subpopulations 2 and 3]{style="color: red;"}
+3.  [Immigration from subpopulations 2 and 3]{style="color: red;"}
 :::
   
 
