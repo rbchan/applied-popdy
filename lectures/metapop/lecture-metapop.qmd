@@ -19,10 +19,12 @@ lang: en
 
 **Metapopulation models**
 
-![](figs/frit.jpg){height=9cm}
-![](figs/frit2.jpg){height=9cm}
+<br>
 
-::: {style='font-size: 70%;'}
+![](figs/frit.jpg){height=8cm}
+![](figs/frit2.jpg){height=8cm}
+
+::: {style='font-size: 50%;'}
 Applied Population Dynamics (WILD 5700/7700)
 :::
 
@@ -54,44 +56,57 @@ A **metapopulation** is a population of subpopulations linked by dispersal.
 
 ## Motivation
   
-::: {.columns}
-::: {.column width='70%'}
 ::: {style='font-size: 80%;'}
+
+::: {.columns}
+::: {.column width='55%'}
+
 - Many populations are fragmented.
+
+<br>
+
+::: {.fragment}
 - Metapopulation models can be used to forecast dynamics of fragmented populations.
+:::
+
+<br>
+
+::: {.fragment}
 - Models can be used to identify critical habitat patches or locations for establishing new subpopulations.
 :::
-:::
-::: {.column width='30%'}
-![](figs/ping-ding.jpg)
 
-![](figs/fragmentation.jpg)
-:::
 :::
 
+::: {.column width='45%'}
+![](figs/ping-ding.jpg){width=8cm}
 
+<br>
 
+![](figs/fragmentation.jpg){width=8cm}
+:::
+:::
 
-
-
-
+:::
 
 
 
 ## Origins
 
 ::: {.columns}
-::: {.column width='40%'}
+::: {.column width='35%'}
 Richard Levins <br>
-![](figs/levins.jpg){height="5cm"}
+![](figs/levins.jpg){height="6cm"}
 :::
-::: {.column width='60%'}
-::: {style='font-size: 80%;'}
-First metapopulation models were parameterized in terms of the *proportion of patches occupied*.
+::: {.column width='65%'}
+::: {style='font-size: 90%;'}
+First metapopulation models were parameterized in terms of the **proportion of patches occupied**.
 
 <br>
+<br>
 
-Modern models are formulated in terms of patch-specific *site occupancy* or *abundance*.
+::: {.fragment}
+Modern models are formulated in terms of patch-specific **site occupancy** or **abundance**.
+:::
 :::
 
 :::
@@ -111,27 +126,6 @@ A simple case with only three subpopulations
 $$
     N_t = n_{1,t} + n_{2,t} + n_{3,t}
 $$
-
-
-<!-- \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm, -->
-<!--     node distance=4cm, text centered, fill=blue!10] -->
-<!--     <center> -->
-<!--       \begin{tikzpicture} -->
-<!--         \node [level 1] (n1) [xshift=-20mm] {$n_{1,t}$}; -->
-<!--         \node [level 1, below of=n1] (n2) [xshift=30mm] {$n_{2,t}$}; -->
-<!--         \node [level 1, right of=n1] (n3) [xshift=20mm] [xshift=0mm] {$n_{3,t}$}; -->
-<!--         \draw[->,thick] (n1) to [bend right=15] node[left] {$\pi_{1,2}$} (n2); -->
-<!--         \draw[->,thick] (n2) to [bend right=15] node[right] {$\pi_{2,1}$} (n1); -->
-<!--         \draw[->,thick] (n1) to [bend right=15] node[above] {$\pi_{1,3}$} (n3); -->
-<!--         \draw[->,thick] (n3) to [bend right=15] node[above] {$\pi_{3,1}$} (n1); -->
-<!--         \draw[->,thick] (n2) to [bend right=15] node[right] {$\pi_{2,3}$} (n3); -->
-<!--         \draw[->,thick] (n3) to [bend right=15] node[left] {$\pi_{3,2}$} (n2); -->
-<!--         % \draw[->,thick] (n2) to node[above] {$s_2$} (n3); -->
-<!--         % \draw[->,thick] (n2) to [bend right=40] node[above] {$s_2 -->
-<!--         % \times b_2$} (n1); \draw[->,thick] (n3) to [bend right=60] -->
-<!--         % node[above] {$s_3 \times b_3$} (n1); -->
-<!--       \end{tikzpicture} -->
-<!--     </center> -->
 
 
 ```{mermaid}
@@ -182,18 +176,17 @@ Building the metapopulation model for the first subpopulation.
 
 ::: {.fragment .fade-out fragment-index=1}
 $$
-  n_{1,t+1} = n_{1,t}\lambda_1
+  n_{1,t+1} = n_{1,t}\lambda_1 \phantom{\color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} + {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}}
 $$
 :::
 ::: {.fragment .fade-in-then-out fragment-index=1}
 $$
-  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} 
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} \phantom{+ {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}} 
 $$
 :::
 ::: {.fragment .fade-in-then-out fragment-index=2}
 $$
-  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} +
-    {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} + {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
 $$
 :::
  
@@ -214,42 +207,64 @@ Three components:
   
 
 
-## Movement
+## What influences movement?
 
-**What influences the movement probabilities?**
+<br>
+
+::: {style='font-size: 90%;'}
+Movement probabilities ($\pi_{i,j}$) can be influenced by many factors:
   
-  
+::: {.incremental}
+
 - Habitat quality in the patch of origin
 - Habitat quality in the landscape between origin and destination patches
 - Habitat quality in the destination patch
 - Distance between patches
   
+:::
+:::
+
 
 
 ## Sources, sinks, and traps
 
+::: {style='font-size: 80%;'}
 **Source**
 
 A patch with $\lambda>1$ in the absence of immigration. Sources tend to be net exporters of individuals.
-  
+
+<br>
+
+::: {.fragment}
 **Sink**
 
 A patch with $\lambda<1$ in the absence of immigration. Sinks would go extinct in the absence of immigration.
+:::
   
+<br>
+
+::: {.fragment}
 **Ecological trap**
 
 A sink that animals incorrectly perceive as a high quality source.
+:::
+:::
 
 
 
 ## Density and habitat quality
 
+::: {style='font-size: 80%;'}
 Can we identify sources, sinks, and traps by estimating patch-specific density (at one point in time)?
-  
-  
-![width=0.9\textwidth](figs/vanhorne_1983)
+:::
 
+<center>
+![](figs/vanhorne_1983.PNG){width='80%'}
+</center>
+
+::: {.fragment}
 **Assignment**: Read this paper and be prepared to discuss it.
+:::
 
 
 
@@ -258,18 +273,27 @@ Can we identify sources, sinks, and traps by estimating patch-specific density (
 
 
 ## Occupancy models
-  
+
+<br>
+
+::: {style='font-size: 90%;'}
 **Emphasis on stochastic patch-level dynamics**
 
+::: {.incremental}
 - What is the probability that a patch will be occupied?
 - What is the probability that an empty patch will be colonized?
 - What is the probability that a subpopulation will go locally extinct?
 - What is the probability that the entire metapopulation will go extinct?
+:::
+
+:::
+
   
 
 
 ## Definitions
 
+::: {style='font-size: 80%;'}
 **Occurrence** ($O_{i,t}$)
 
 Indicates if patch $i$ occupied at time $t$
@@ -292,6 +316,7 @@ The probability that an occupied patch at time $t$ becomes unoccupied at time $t
 **Metapopulation extinction risk**
 
 The probability that all subpopulation will go extinct.
+:::
 
 
 
@@ -302,9 +327,12 @@ The probability that all subpopulation will go extinct.
 
 ```{r}
 #| label: metapop1
-#| include: false
+#| include: true
 #| echo: false
 #| results: 'hide'
+#| fig-width: 9
+#| fig-heigth: 7
+#| out-width: '100%'
 set.seed(1)#(388730)
 N <- 10
 T <- 5
@@ -317,9 +345,6 @@ for(t in 2:T) {
     z2[,t] <- rbinom(N, 1, z2[,t-1]*1 + (1-z2[,t-1])*0.8)
     z3[,t] <- rbinom(N, 1, z3[,t-1]*.2 + (1-z3[,t-1])*0.8)
 }
-if(!dir.exists("figs")) dir.create("figs")
-if(!dir.exists("figs/ex1")) dir.create("figs/ex1")
-pdf("figs/ex1/ex1-1.pdf", width=8, height=6)
 par(mai=c(0.02,0.02,0.02,0.02), mfrow=c(4, 6))
 plot(0, 0, type="n", ann=FALSE, axes=FALSE)
 plot(0, 0, type="n", ann=FALSE, axes=FALSE)
@@ -368,11 +393,7 @@ symbols(X, circles=rep(0.5,nrow(X)), bg=ifelse(z3[,4]==TRUE, "cyan", "white"),
         xlim=c(0, 10), ylim=c(0, 10), inches=FALSE, xaxt="n", yaxt="n", ann=FALSE)
 symbols(X, circles=rep(0.5,nrow(X)), bg=ifelse(z3[,5]==TRUE, "cyan", "white"),
         xlim=c(0, 10), ylim=c(0, 10), inches=FALSE, xaxt="n", yaxt="n", ann=FALSE)
-dev.off()
 ```
-
-![](figs/ex1/ex1-1)
-
 
 
 ## Example
@@ -411,28 +432,34 @@ $$
 $$
 
   
-$O_{i,t}$=1 if patch $i$ is occupied at time $t$ <br>
-$O_{i,t}$=0 if patch $i$ is unoccupied at time $t$ <br>
-$\psi_{i,t}$ is probability that patch $i$ will be occupied at time $t$ <br>
-$\varepsilon$ is local extinction probability <br>
-$\gamma$ is colonization probability
+::: {style='font-size: 80%;'}
+- $O_{i,t}$=1 if patch $i$ is occupied at time $t$ <br>
+- $O_{i,t}$=0 if patch $i$ is unoccupied at time $t$ <br>
+- $\psi_{i,t}$ is probability that patch $i$ will be occupied at time $t$ <br>
+- $\varepsilon$ is local extinction probability <br>
+- $\gamma$ is colonization probability
+:::
 
 
 
-## Assumptions of basic non-spatial model
+## [Assumptions of basic non-spatial model]{style="font-size: 90%;"}
   
+::: {.incremental}
+
 - Abundance doesn't matter
 - Patch quality is constant
 - Colonization and local extinction probabilities are constant
 - Landscape matrix doesn't matter
   
+:::
+
 
 
 ## Spatial models
 
 <center>
-![](figs/metapop-e.jpg)
-![](figs/metapop-ee.jpg)
+![](figs/metapop-e.jpg){height=14cm}
+![](figs/metapop-ee.jpg){height=14cm}
 </center>
 
 
@@ -440,26 +467,35 @@ $\gamma$ is colonization probability
   
 **All else equal...**
 
+::: {style='font-size: 80%;'}
 - An unoccupied site should have a higher chance of being colonized if it is close to an occupied site than if it is isolated. 
+
+::: {.fragment}
 - Similarly, isolated sites should have a higher extinction probability than connected sites (rescue effect).
+:::
+
+::: {.fragment}
 - Connectivity is determined by:
   * Dispersal ability
   * Spatial configuration of sites
   * Landscape resistance to movement
+:::
+:::
       
 
 
 # Case study
 
 
-## Case study
+## 
+
 ::: {.columns}
 ::: {.column width='50%'}
-  ![](figs/Altar.jpg)
+![](figs/Altar.jpg)
 :::
 ::: {.column width='50%'}
- [width=\textwidth](figs/lich.jpg) <br>
- [width=\textwidth](figs/Carpenter.jpg)
+![](figs/lich.jpg) <br>
+![](figs/Carpenter.jpg)
 :::
 :::
 
@@ -473,23 +509,29 @@ $\gamma$ is colonization probability
 
 ## Results
 
-![](figs/colMap-animation2.gif){width="50%" fig-align="center"}
+![](../intro/figs/colMap-animation2.gif){width="50%" fig-align="center"}
 
 
 
 ## Results
 
 <center>
-![]{figs/proj-ext2}
+![](figs/proj-ext2)
 </center>
 
 
 ## Summary
 
+<br>
+
 Metapopulation models are widely used to describe the dynamics of fragmented populations.
+
+<br>
   
 Model can be formulated in terms of patch-level abundance or occupancy.
   
+<br>
+
 Modern models are stochastic and spatially explicit.
 
 

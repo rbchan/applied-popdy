@@ -134,8 +134,9 @@
 <h2></h2>
 <center>
 <p><strong>Metapopulation models</strong></p>
-<p><img data-src="figs/frit.jpg" style="height:9cm"> <img data-src="figs/frit2.jpg" style="height:9cm"></p>
-<div style="font-size: 70%;">
+<p><br></p>
+<p><img data-src="figs/frit.jpg" style="height:8cm"> <img data-src="figs/frit2.jpg" style="height:8cm"></p>
+<div style="font-size: 50%;">
 <p>Applied Population Dynamics (WILD 5700/7700)</p>
 </div>
 </center>
@@ -159,30 +160,43 @@
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
 <div style="font-size: 80%;">
+<div class="columns">
+<div class="column" style="width:55%;">
 <ul>
 <li>Many populations are fragmented.</li>
+</ul>
+<p><br></p>
+<div class="fragment">
+<ul>
 <li>Metapopulation models can be used to forecast dynamics of fragmented populations.</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment">
+<ul>
 <li>Models can be used to identify critical habitat patches or locations for establishing new subpopulations.</li>
 </ul>
 </div>
-</div><div class="column" style="width:30%;">
-<p><img data-src="figs/ping-ding.jpg"></p>
-<p><img data-src="figs/fragmentation.jpg"></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="figs/ping-ding.jpg" style="width:8cm"></p>
+<p><br></p>
+<p><img data-src="figs/fragmentation.jpg" style="width:8cm"></p>
 </div></div>
+</div>
 </section>
 <section id="origins" class="slide level2">
 <h2>Origins</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<p>Richard Levins <br> <img data-src="figs/levins.jpg" style="height:5cm"></p>
-</div><div class="column" style="width:60%;">
-<div style="font-size: 80%;">
-<p>First metapopulation models were parameterized in terms of the <em>proportion of patches occupied</em>.</p>
-<p><br></p>
-<p>Modern models are formulated in terms of patch-specific <em>site occupancy</em> or <em>abundance</em>.</p>
+<div class="column" style="width:35%;">
+<p>Richard Levins <br> <img data-src="figs/levins.jpg" style="height:6cm"></p>
+</div><div class="column" style="width:65%;">
+<div style="font-size: 90%;">
+<p>First metapopulation models were parameterized in terms of the <strong>proportion of patches occupied</strong>.</p>
+<p><br> <br></p>
+<div class="fragment">
+<p>Modern models are formulated in terms of patch-specific <strong>site occupancy</strong> or <strong>abundance</strong>.</p>
+</div>
 </div>
 </div></div>
 </section></section>
@@ -198,25 +212,6 @@
 <p><span class="math display">\[
     N_t = n_{1,t} + n_{2,t} + n_{3,t}
 \]</span></p>
-<!-- \tikzstyle{level 1} = [circle, draw, text width=1cm, minimum size=2cm, -->
-<!--     node distance=4cm, text centered, fill=blue!10] -->
-<!--     <center> -->
-<!--       \begin{tikzpicture} -->
-<!--         \node [level 1] (n1) [xshift=-20mm] {$n_{1,t}$}; -->
-<!--         \node [level 1, below of=n1] (n2) [xshift=30mm] {$n_{2,t}$}; -->
-<!--         \node [level 1, right of=n1] (n3) [xshift=20mm] [xshift=0mm] {$n_{3,t}$}; -->
-<!--         \draw[->,thick] (n1) to [bend right=15] node[left] {$\pi_{1,2}$} (n2); -->
-<!--         \draw[->,thick] (n2) to [bend right=15] node[right] {$\pi_{2,1}$} (n1); -->
-<!--         \draw[->,thick] (n1) to [bend right=15] node[above] {$\pi_{1,3}$} (n3); -->
-<!--         \draw[->,thick] (n3) to [bend right=15] node[above] {$\pi_{3,1}$} (n1); -->
-<!--         \draw[->,thick] (n2) to [bend right=15] node[right] {$\pi_{2,3}$} (n3); -->
-<!--         \draw[->,thick] (n3) to [bend right=15] node[left] {$\pi_{3,2}$} (n2); -->
-<!--         % \draw[->,thick] (n2) to node[above] {$s_2$} (n3); -->
-<!--         % \draw[->,thick] (n2) to [bend right=40] node[above] {$s_2 -->
-<!--         % \times b_2$} (n1); \draw[->,thick] (n3) to [bend right=60] -->
-<!--         % node[above] {$s_3 \times b_3$} (n1); -->
-<!--       \end{tikzpicture} -->
-<!--     </center> -->
 <center>
 <p><img data-src="figs/metapop-flow.png" style="width:45.0%"></p>
 <p>The movement probabilities (<span class="math inline">\(\pi_{i,j}\)</span>) indicate the proportion of individuals moving from patch <span class="math inline">\(i\)</span> to patch <span class="math inline">\(j\)</span>.</p>
@@ -230,18 +225,17 @@
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
 <p><span class="math display">\[
-  n_{1,t+1} = n_{1,t}\lambda_1
+  n_{1,t+1} = n_{1,t}\lambda_1 \phantom{\color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} + {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}}
 \]</span></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="1">
 <p><span class="math display">\[
-  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})}
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} \phantom{+ {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}}
 \]</span></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="2">
 <p><span class="math display">\[
-  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} +
-    {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
+  n_{1,t+1} = n_{1,t}\lambda_1 \color{blue}{(1 - \pi_{1,2} - \pi_{1,3})} + {\color{red}{n_{2,t}\lambda_2 (\pi_{2,1}) + n_{3,t}\lambda_3 (\pi_{3,1})}}
 \]</span></p>
 </div>
 </div>
@@ -261,30 +255,47 @@
 </ol>
 </div>
 </section>
-<section id="movement" class="slide level2">
-<h2>Movement</h2>
-<p><strong>What influences the movement probabilities?</strong></p>
+<section id="what-influences-movement" class="slide level2">
+<h2>What influences movement?</h2>
+<p><br></p>
+<div style="font-size: 90%;">
+<p>Movement probabilities (<span class="math inline">\(\pi_{i,j}\)</span>) can be influenced by many factors:</p>
 <ul>
-<li>Habitat quality in the patch of origin</li>
-<li>Habitat quality in the landscape between origin and destination patches</li>
-<li>Habitat quality in the destination patch</li>
-<li>Distance between patches</li>
+<li class="fragment">Habitat quality in the patch of origin</li>
+<li class="fragment">Habitat quality in the landscape between origin and destination patches</li>
+<li class="fragment">Habitat quality in the destination patch</li>
+<li class="fragment">Distance between patches</li>
 </ul>
+</div>
 </section>
 <section id="sources-sinks-and-traps" class="slide level2">
 <h2>Sources, sinks, and traps</h2>
+<div style="font-size: 80%;">
 <p><strong>Source</strong></p>
 <p>A patch with <span class="math inline">\(\lambda&gt;1\)</span> in the absence of immigration. Sources tend to be net exporters of individuals.</p>
+<p><br></p>
+<div class="fragment">
 <p><strong>Sink</strong></p>
 <p>A patch with <span class="math inline">\(\lambda&lt;1\)</span> in the absence of immigration. Sinks would go extinct in the absence of immigration.</p>
+</div>
+<p><br></p>
+<div class="fragment">
 <p><strong>Ecological trap</strong></p>
 <p>A sink that animals incorrectly perceive as a high quality source.</p>
+</div>
+</div>
 </section>
 <section id="density-and-habitat-quality" class="slide level2">
 <h2>Density and habitat quality</h2>
+<div style="font-size: 80%;">
 <p>Can we identify sources, sinks, and traps by estimating patch-specific density (at one point in time)?</p>
-
-<img data-src="figs/vanhorne_1983.png" class="r-stretch quarto-figure-center"><p class="caption">width=0.9</p><p><strong>Assignment</strong>: Read this paper and be prepared to discuss it.</p>
+</div>
+<center>
+<img data-src="figs/vanhorne_1983.PNG" style="width:80.0%">
+</center>
+<div class="fragment">
+<p><strong>Assignment</strong>: Read this paper and be prepared to discuss it.</p>
+</div>
 </section></section>
 <section>
 <section id="occupancy-models" class="title-slide slide level1 center">
@@ -293,16 +304,20 @@
 </section>
 <section id="occupancy-models-1" class="slide level2">
 <h2>Occupancy models</h2>
+<p><br></p>
+<div style="font-size: 90%;">
 <p><strong>Emphasis on stochastic patch-level dynamics</strong></p>
 <ul>
-<li>What is the probability that a patch will be occupied?</li>
-<li>What is the probability that an empty patch will be colonized?</li>
-<li>What is the probability that a subpopulation will go locally extinct?</li>
-<li>What is the probability that the entire metapopulation will go extinct?</li>
+<li class="fragment">What is the probability that a patch will be occupied?</li>
+<li class="fragment">What is the probability that an empty patch will be colonized?</li>
+<li class="fragment">What is the probability that a subpopulation will go locally extinct?</li>
+<li class="fragment">What is the probability that the entire metapopulation will go extinct?</li>
 </ul>
+</div>
 </section>
 <section id="definitions" class="slide level2">
 <h2>Definitions</h2>
+<div style="font-size: 80%;">
 <p><strong>Occurrence</strong> (<span class="math inline">\(O_{i,t}\)</span>)</p>
 <p>Indicates if patch <span class="math inline">\(i\)</span> occupied at time <span class="math inline">\(t\)</span></p>
 <p><strong>Occurrence probability</strong> (psi=<span class="math inline">\(\psi_{i,t}\)</span>)</p>
@@ -313,11 +328,12 @@
 <p>The probability that an occupied patch at time <span class="math inline">\(t\)</span> becomes unoccupied at time <span class="math inline">\(t+1\)</span>.</p>
 <p><strong>Metapopulation extinction risk</strong></p>
 <p>The probability that all subpopulation will go extinct.</p>
+</div>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
 
-<img data-src="figs/ex1/ex1-1.png" class="r-stretch"></section>
+<img data-src="lecture-metapop_files/figure-revealjs/metapop1-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
 
@@ -328,29 +344,45 @@
     \psi_{i,t+1} = O_{i,t}(1-\varepsilon) + (1-O_{i,t})\gamma \\
     O_{i,t+1} \sim \mbox{Bernoulli}(\psi_{i,t+1})
 \]</span></p>
-<p><span class="math inline">\(O_{i,t}\)</span>=1 if patch <span class="math inline">\(i\)</span> is occupied at time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(O_{i,t}\)</span>=0 if patch <span class="math inline">\(i\)</span> is unoccupied at time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(\psi_{i,t}\)</span> is probability that patch <span class="math inline">\(i\)</span> will be occupied at time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(\varepsilon\)</span> is local extinction probability <br> <span class="math inline">\(\gamma\)</span> is colonization probability</p>
+<div style="font-size: 80%;">
+<ul>
+<li><span class="math inline">\(O_{i,t}\)</span>=1 if patch <span class="math inline">\(i\)</span> is occupied at time <span class="math inline">\(t\)</span> <br></li>
+<li><span class="math inline">\(O_{i,t}\)</span>=0 if patch <span class="math inline">\(i\)</span> is unoccupied at time <span class="math inline">\(t\)</span> <br></li>
+<li><span class="math inline">\(\psi_{i,t}\)</span> is probability that patch <span class="math inline">\(i\)</span> will be occupied at time <span class="math inline">\(t\)</span> <br></li>
+<li><span class="math inline">\(\varepsilon\)</span> is local extinction probability <br></li>
+<li><span class="math inline">\(\gamma\)</span> is colonization probability</li>
+</ul>
+</div>
 </section>
 <section id="assumptions-of-basic-non-spatial-model" class="slide level2">
-<h2>Assumptions of basic non-spatial model</h2>
+<h2><span style="font-size: 90%;">Assumptions of basic non-spatial model</span></h2>
 <ul>
-<li>Abundance doesn’t matter</li>
-<li>Patch quality is constant</li>
-<li>Colonization and local extinction probabilities are constant</li>
-<li>Landscape matrix doesn’t matter</li>
+<li class="fragment">Abundance doesn’t matter</li>
+<li class="fragment">Patch quality is constant</li>
+<li class="fragment">Colonization and local extinction probabilities are constant</li>
+<li class="fragment">Landscape matrix doesn’t matter</li>
 </ul>
 </section>
 <section id="spatial-models" class="slide level2">
 <h2>Spatial models</h2>
 <center>
-<img data-src="figs/metapop-e.jpg"> <img data-src="figs/metapop-ee.jpg">
+<img data-src="figs/metapop-e.jpg" style="height:14cm"> <img data-src="figs/metapop-ee.jpg" style="height:14cm">
 </center>
 </section>
 <section id="spatial-models-1" class="slide level2">
 <h2>Spatial models</h2>
 <p><strong>All else equal…</strong></p>
+<div style="font-size: 80%;">
 <ul>
 <li>An unoccupied site should have a higher chance of being colonized if it is close to an occupied site than if it is isolated.</li>
+</ul>
+<div class="fragment">
+<ul>
 <li>Similarly, isolated sites should have a higher extinction probability than connected sites (rescue effect).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>Connectivity is determined by:
 <ul>
 <li>Dispersal ability</li>
@@ -358,19 +390,21 @@
 <li>Landscape resistance to movement</li>
 </ul></li>
 </ul>
+</div>
+</div>
 </section></section>
 <section>
 <section id="case-study" class="title-slide slide level1 center">
 <h1>Case study</h1>
 
 </section>
-<section id="case-study-1" class="slide level2">
-<h2>Case study</h2>
+<section id="section-1" class="slide level2">
+<h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="figs/Altar.jpg"></p>
 </div><div class="column" style="width:50%;">
-<p><a href="figs/lich.jpg">width=</a> <br> <a href="figs/Carpenter.jpg">width=</a></p>
+<p><img data-src="figs/lich.jpg"> <br> <img data-src="figs/Carpenter.jpg"></p>
 </div></div>
 </section>
 <section id="results" class="slide level2">
@@ -380,17 +414,20 @@
 <section id="results-1" class="slide level2">
 <h2>Results</h2>
 
-<img data-src="figs/colMap-animation2.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+<img data-src="../intro/figs/colMap-animation2.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
 <section id="results-2" class="slide level2">
 <h2>Results</h2>
 <center>
-![]{figs/proj-ext2}
+<img data-src="figs/proj-ext2.png">
 </center>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p><br></p>
 <p>Metapopulation models are widely used to describe the dynamics of fragmented populations.</p>
+<p><br></p>
 <p>Model can be formulated in terms of patch-level abundance or occupancy.</p>
+<p><br></p>
 <p>Modern models are stochastic and spatially explicit.</p>
 
 
