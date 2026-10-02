@@ -60,7 +60,7 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations"
   },
   {
     "objectID": "schedule.html",
@@ -620,7 +620,7 @@
     "href": "lectures/metapop/lecture-metapop.html#metapopulations",
     "title": "Applied Population Dynamics",
     "section": "Metapopulations",
-    "text": "Metapopulations\n\n\n\nA metapopulation is a population of subpopulations linked by dispersal.\n\n\n\n\nProperties\n\nSubpopulations occur in discrete habitat patches.\nThe landscape “matrix” is not suitable for reproduction."
+    "text": "Metapopulations\n\n\n\nA metapopulation is a population of subpopulations linked by dispersal.\n\n\n\n\n\nProperties\n\nSubpopulations occur in discrete habitat patches.\nThe landscape “matrix” is not suitable for reproduction."
   },
   {
     "objectID": "lectures/metapop/lecture-metapop.html#motivation",
@@ -683,7 +683,7 @@
     "href": "lectures/metapop/lecture-metapop.html#definitions",
     "title": "Applied Population Dynamics",
     "section": "Definitions",
-    "text": "Definitions\n\nOccurrence (\\(O_{i,t}\\))\nIndicates if patch \\(i\\) occupied at time \\(t\\)\nOccurrence probability (psi=\\(\\psi_{i,t}\\))\nProbability that site \\(i\\) is occupied at time. \\(t\\)\nColonization probability (gamma=\\(\\gamma\\))\nThe probability that an unoccupied patch at time \\(t\\) becomes occupied at time \\(t+1\\).\nLocal extinction probability (epsilon=\\(\\varepsilon\\))\nThe probability that an occupied patch at time \\(t\\) becomes unoccupied at time \\(t+1\\).\nMetapopulation extinction risk\nThe probability that all subpopulation will go extinct."
+    "text": "Definitions\n\nOccurrence (\\(O_{i,t}\\)): Indicates if patch \\(i\\) occupied at time \\(t\\)\n\n\nOccurrence probability (psi=\\(\\psi_{i,t}\\)): Probability that site \\(i\\) is occupied at time \\(t\\)\n\n\n\nColonization probability (gamma=\\(\\gamma\\)): Probability that an unoccupied patch at time \\(t\\) becomes occupied at time \\(t+1\\).\n\n\n\nLocal extinction probability (epsilon=\\(\\varepsilon\\)): Probability that an occupied patch at time \\(t\\) becomes unoccupied at time \\(t+1\\).\n\n\n\nMetapopulation extinction risk: Probability that all subpopulation will go extinct."
   },
   {
     "objectID": "lectures/metapop/lecture-metapop.html#example",

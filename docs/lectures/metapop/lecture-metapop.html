@@ -150,12 +150,14 @@
 </div>
 </center>
 <p><br></p>
+<div style="font-size: 90%;">
 <div class="fragment">
 <p><strong>Properties</strong></p>
 <ul>
 <li>Subpopulations occur in discrete habitat patches.</li>
 <li>The landscape “matrix” is not suitable for reproduction.</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="motivation" class="slide level2">
@@ -189,7 +191,7 @@
 <h2>Origins</h2>
 <div class="columns">
 <div class="column" style="width:35%;">
-<p>Richard Levins <br> <img data-src="figs/levins.jpg" style="height:6cm"></p>
+<p>Richard Levins <br> <img data-src="figs/levins.jpg" style="height:7cm"></p>
 </div><div class="column" style="width:65%;">
 <div style="font-size: 90%;">
 <p>First metapopulation models were parameterized in terms of the <strong>proportion of patches occupied</strong>.</p>
@@ -213,7 +215,7 @@
     N_t = n_{1,t} + n_{2,t} + n_{3,t}
 \]</span></p>
 <center>
-<p><img data-src="figs/metapop-flow.png" style="width:45.0%"></p>
+<p><img data-src="figs/metapop-flow.png" style="width:40.0%"></p>
 <p>The movement probabilities (<span class="math inline">\(\pi_{i,j}\)</span>) indicate the proportion of individuals moving from patch <span class="math inline">\(i\)</span> to patch <span class="math inline">\(j\)</span>.</p>
 </center>
 </div>
@@ -317,17 +319,24 @@
 </section>
 <section id="definitions" class="slide level2">
 <h2>Definitions</h2>
-<div style="font-size: 80%;">
-<p><strong>Occurrence</strong> (<span class="math inline">\(O_{i,t}\)</span>)</p>
-<p>Indicates if patch <span class="math inline">\(i\)</span> occupied at time <span class="math inline">\(t\)</span></p>
-<p><strong>Occurrence probability</strong> (psi=<span class="math inline">\(\psi_{i,t}\)</span>)</p>
-<p>Probability that site <span class="math inline">\(i\)</span> is occupied at time. <span class="math inline">\(t\)</span></p>
-<p><strong>Colonization probability</strong> (gamma=<span class="math inline">\(\gamma\)</span>)</p>
-<p>The probability that an unoccupied patch at time <span class="math inline">\(t\)</span> becomes occupied at time <span class="math inline">\(t+1\)</span>.</p>
-<p><strong>Local extinction probability</strong> (epsilon=<span class="math inline">\(\varepsilon\)</span>)</p>
-<p>The probability that an occupied patch at time <span class="math inline">\(t\)</span> becomes unoccupied at time <span class="math inline">\(t+1\)</span>.</p>
-<p><strong>Metapopulation extinction risk</strong></p>
-<p>The probability that all subpopulation will go extinct.</p>
+<div style="font-size: 77%;">
+<p><strong>Occurrence</strong> (<span class="math inline">\(O_{i,t}\)</span>): Indicates if patch <span class="math inline">\(i\)</span> occupied at time <span class="math inline">\(t\)</span></p>
+<p><br></p>
+<div class="fragment">
+<p><strong>Occurrence probability</strong> (psi=<span class="math inline">\(\psi_{i,t}\)</span>): Probability that site <span class="math inline">\(i\)</span> is occupied at time <span class="math inline">\(t\)</span></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Colonization probability</strong> (gamma=<span class="math inline">\(\gamma\)</span>): Probability that an unoccupied patch at time <span class="math inline">\(t\)</span> becomes occupied at time <span class="math inline">\(t+1\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Local extinction probability</strong> (epsilon=<span class="math inline">\(\varepsilon\)</span>): Probability that an occupied patch at time <span class="math inline">\(t\)</span> becomes unoccupied at time <span class="math inline">\(t+1\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><strong>Metapopulation extinction risk</strong>: Probability that all subpopulation will go extinct.</p>
+</div>
 </div>
 </section>
 <section id="example" class="slide level2">
@@ -337,7 +346,7 @@
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
 
-<img data-src="lecture-metapop_files/figure-revealjs/ex2-1.png" class="quarto-figure quarto-figure-left r-stretch" style="width:95.0%"></section>
+<img data-src="lecture-metapop_files/figure-revealjs/ex2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%"></section>
 <section id="the-model" class="slide level2">
 <h2>The model</h2>
 <p><span class="math display">\[
@@ -366,12 +375,12 @@
 <section id="spatial-models" class="slide level2">
 <h2>Spatial models</h2>
 <center>
-<img data-src="figs/metapop-e.jpg" style="height:14cm"> <img data-src="figs/metapop-ee.jpg" style="height:14cm">
+<img data-src="figs/metapop-e.jpg" style="height:13cm"> <img data-src="figs/metapop-ee.jpg" style="height:13cm">
 </center>
 </section>
 <section id="spatial-models-1" class="slide level2">
 <h2>Spatial models</h2>
-<p><strong>All else equal…</strong></p>
+<p>All else equal…</p>
 <div style="font-size: 80%;">
 <ul>
 <li>An unoccupied site should have a higher chance of being colonized if it is close to an occupied site than if it is isolated.</li>
@@ -401,9 +410,11 @@
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
 <p><img data-src="figs/Altar.jpg"></p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
 <p><img data-src="figs/lich.jpg"> <br> <img data-src="figs/Carpenter.jpg"></p>
 </div></div>
 </section>
@@ -418,7 +429,7 @@
 <section id="results-2" class="slide level2">
 <h2>Results</h2>
 <center>
-<img data-src="figs/proj-ext2.png">
+<img data-src="figs/proj-ext2.png" style="height:15cm">
 </center>
 </section>
 <section id="summary" class="slide level2">
