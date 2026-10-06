@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "labs/interspecific/lab-interspecific.html",
-    "href": "labs/interspecific/lab-interspecific.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nYou are studying the dynamics of jaguar (Panthera onca) and Baird’s tapir (Tapirus bairdii) in Costa Rica’s Corcavodo National Park. After years of research, you obtain the following parameter estimates, which you would like to use in a Lotka-Volterra model: \\(r^{prey}=0.05\\), \\(k^{pred}=0.0005\\), \\(b^{pred}=0.001\\), and \\(d^{pred}=0.45\\).\n\nWhat predator population size corresponds to prey equilibrium? What prey population size corresponds to predator equilibrium?\nProject the populations 100 years following an initial prey population size of \\(N_0^{prey}=500\\) and an initial predator population size of \\(N_0^{pred}=100\\). Plot the projections.\nClearly, these populations have not reached a stable equilibrium, so what is the interpretation of the equilibrium values from part (a)? What happens if you set the initial population sizes to the equilibrium values?\n\n\n\n\n\n\nThe Canada warbler (Cardellina canadensis) and the hooded warbler (Stetophaga citrina) are two species of Neotropical-Nearctic migratory birds that appear to compete for the same resources where their ranges meet in the southern Appalachian Mountains. Assume their dynamics follow the Lotka-Volterra competition model with parameters \\(r^{A}=0.2\\), \\(r^{B}=0.3\\), \\(K^{A}=250\\), \\(K^{B}=200\\), \\(\\alpha^{A}=0.1\\), and \\(\\alpha^{B}=0.1\\).\n\nPlot 25 years of dynamics following initial conditions of \\(N_0^A = 200\\) and \\(N_0^B=50\\).\nWhat are the 2 equilibrium values for these species?\nDo these conditions describe stable coexistence, competitive exclusion, or unstable equilibrium?\nWhat is the minimum value of \\(\\alpha^B\\) that would result in competitive exclusion of species A? (Hint: Use the equilibrium equations to solve for \\(\\alpha^B\\)). Plot 25 years of dynamics under this scenario. Use the same initial abundance values as before.\n\n\n\n\n\n\n\nnYears &lt;- 5000\nr.prey &lt;- 0.01\nk.pred &lt;- 0.00001\nb.pred &lt;- 0.00001\nd.pred &lt;- 0.01\nN.prey &lt;- rep(NA, nYears)\nN.pred &lt;- rep(NA, nYears)\nN.prey[1] &lt;- 1000\nN.pred[1] &lt;- 300\nfor(t in 2:nYears) {\n    N.prey[t] &lt;- N.prey[t-1] + N.prey[t-1]*(r.prey-k.pred*N.pred[t-1])\n    N.pred[t] &lt;- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)\n}\nplot(1:nYears, N.prey, type=\"l\", col=\"black\", ylim=c(0, 3500),\n     xlab=\"Year\", ylab=\"Abundance\")\nlines(1:nYears, N.pred, type=\"l\", col=\"blue\")\nlegend(1, 3500, c(\"Prey\", \"Predator\"), lty=1, col=c(\"black\", \"blue\"))"
-  },
-  {
-    "objectID": "labs/interspecific/lab-interspecific.html#lab-6-assignment-models-of-interspecific-interactions-due-by-500pm-on-friday",
-    "href": "labs/interspecific/lab-interspecific.html#lab-6-assignment-models-of-interspecific-interactions-due-by-500pm-on-friday",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nYou are studying the dynamics of jaguar (Panthera onca) and Baird’s tapir (Tapirus bairdii) in Costa Rica’s Corcavodo National Park. After years of research, you obtain the following parameter estimates, which you would like to use in a Lotka-Volterra model: \\(r^{prey}=0.05\\), \\(k^{pred}=0.0005\\), \\(b^{pred}=0.001\\), and \\(d^{pred}=0.45\\).\n\nWhat predator population size corresponds to prey equilibrium? What prey population size corresponds to predator equilibrium?\nProject the populations 100 years following an initial prey population size of \\(N_0^{prey}=500\\) and an initial predator population size of \\(N_0^{pred}=100\\). Plot the projections.\nClearly, these populations have not reached a stable equilibrium, so what is the interpretation of the equilibrium values from part (a)? What happens if you set the initial population sizes to the equilibrium values?\n\n\n\n\n\n\nThe Canada warbler (Cardellina canadensis) and the hooded warbler (Stetophaga citrina) are two species of Neotropical-Nearctic migratory birds that appear to compete for the same resources where their ranges meet in the southern Appalachian Mountains. Assume their dynamics follow the Lotka-Volterra competition model with parameters \\(r^{A}=0.2\\), \\(r^{B}=0.3\\), \\(K^{A}=250\\), \\(K^{B}=200\\), \\(\\alpha^{A}=0.1\\), and \\(\\alpha^{B}=0.1\\).\n\nPlot 25 years of dynamics following initial conditions of \\(N_0^A = 200\\) and \\(N_0^B=50\\).\nWhat are the 2 equilibrium values for these species?\nDo these conditions describe stable coexistence, competitive exclusion, or unstable equilibrium?\nWhat is the minimum value of \\(\\alpha^B\\) that would result in competitive exclusion of species A? (Hint: Use the equilibrium equations to solve for \\(\\alpha^B\\)). Plot 25 years of dynamics under this scenario. Use the same initial abundance values as before.\n\n\n\n\n\n\n\nnYears &lt;- 5000\nr.prey &lt;- 0.01\nk.pred &lt;- 0.00001\nb.pred &lt;- 0.00001\nd.pred &lt;- 0.01\nN.prey &lt;- rep(NA, nYears)\nN.pred &lt;- rep(NA, nYears)\nN.prey[1] &lt;- 1000\nN.pred[1] &lt;- 300\nfor(t in 2:nYears) {\n    N.prey[t] &lt;- N.prey[t-1] + N.prey[t-1]*(r.prey-k.pred*N.pred[t-1])\n    N.pred[t] &lt;- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)\n}\nplot(1:nYears, N.prey, type=\"l\", col=\"black\", ylim=c(0, 3500),\n     xlab=\"Year\", ylab=\"Abundance\")\nlines(1:nYears, N.pred, type=\"l\", col=\"blue\")\nlegend(1, 3500, c(\"Prey\", \"Predator\"), lty=1, col=c(\"black\", \"blue\"))"
-  },
-  {
-    "objectID": "labs/age/lab-age-structure.html",
-    "href": "labs/age/lab-age-structure.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer each of the following questions and upload your Excel file and R script (graduate students only) to ELC. Be sure to show your calculations. Undergraduates do not have to do either exercise in R. However, undergraduates can get 20 bonus points for doing the entire lab in Excel and R.\n\n\nImagine a population with 4 age classes. The fecundities are \\(f_1=0\\), \\(f_2=1.0\\), \\(f_3=1.5\\), and \\(f_4=1.2\\). The survival probabilities are \\(s_1=0.8\\), \\(s_2=0.5\\), \\(s_3=0.25\\), and \\(s_4=0.0\\). The initial population sizes are \\(n_{1,1}=45\\), \\(n_{2,1}=18\\), \\(n_{3,1}=11\\), \\(n_{4,1}=4\\).\n\nCreate a Leslie matrix with the vital rates provided above.\nProject the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the %*% operator. See the end of this document for guidance.)\nCreate another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting “Format axis”. Choose the logarithmic axis option with base=10.\nCalculate and plot the age-specific growth rates: \\(\\lambda_{i,t}\\). What is the asymptotic growth rate (\\(\\lambda\\)), rounded to 3 decimals places?\nWhat is the stable age distribution?\nGraduate students only: Compute asymptotic \\(\\lambda\\) and the stable age distribution using the function in R.\n\n\n\n\nReproductive value (RV) can be used to identify the age class that contributes the most to population growth. The inoculate method is a way of computing RV by doing one projection for each of the age classes.\nFor each projection, use a population size of 200 individuals, and put all individuals in one of the four age classes. For example, one projection will have \\(n_{1,1}=200\\), \\(n_{2,1}=0\\), \\(n_{3,1}=0\\), \\(n_{4,1}=0\\). The next projection will have all 200 individuals in the next age class, and so on. For each projection, record the total population size after 50 time steps. Reproductive value is calculated by dividing each projection’s total population size (\\(N_t\\)) at \\(t=50\\) by the total population size from the first projection. (As a result, RV will always be 1 for the first age class when using this method).\n\nGiven the following Leslie matrix, calculate the RV of each age class using the inoculate method.\nIf you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?\nGraduate students only: Compute reproductive value using the eigen function.\n\n\n\n\n\nTable 1: Leslie matrix\n\n\n\n\n\n\n1.6\n1.5\n0.25\n0\n\n\n0.8\n0.0\n0.00\n0\n\n\n0.0\n0.5\n0.00\n0\n\n\n0.0\n0.0\n0.25\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of an age-structured model with 3 age classes. It is just an example – the parameter values are different than the ones in the assignment above.\nFirst, create the projection matrix.\n\nA &lt;- matrix(c(0.0, 1.5, 0.5,  ## The fecundities\n              0.5, 0.0, 0.0,  ## The first value is s1\n              0.0, 0.9, 0.0), ## The second value is s2\n            nrow=3, ncol=3, byrow=TRUE)\nA\n\n     [,1] [,2] [,3]\n[1,]  0.0  1.5  0.5\n[2,]  0.5  0.0  0.0\n[3,]  0.0  0.9  0.0\n\n\nSet values of initial abundance and prepare to project over 50 years.\n\nyears &lt;- 1:50\nnYears &lt;- length(years)\nn &lt;- matrix(NA, nYears, 3)\nn[1,] &lt;- c(100, 50, 25)    ## Initial abundance\n\nDo the projection.\n\nfor(t in 2:nYears) {\n  n[t,] &lt;- A %*% n[t-1,]   ## Matrix multiplication\n}\n\nVisualize it.\n\nmatplot(years, n, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Abundance\")\nlegend(35, 100, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nCompute the age distribution and take a look.\n\nN &lt;- rowSums(n) ## Total abundance each year\nc &lt;- n/N        ## This works because of R's recycling rules\nmatplot(years, c, type=\"l\", pch=16, ylim=c(0, 1), xlab=\"Time\",\n        ylab=\"Proportion in each age class\")\nlegend(35, 1, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nGrab the stable age distribution from the final year.\n\nSAD.proj &lt;- c[nYears,]\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the annual growth rates for each age class and plot them.\n\nlambda.it &lt;- n[-1,]/n[-nYears,] ## Divide each row by the row before it\nmatplot(years[-1], ## There are nYears-1 *intervals* between years\n        lambda.it, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Growth rates\")\nabline(h=1, lty=2, col=\"grey\") ## Horizontal line\nlegend(35, 1.8, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nFind asymptotic \\(\\lambda\\) from the last time interval.\n\nlambda.it[nYears-1,] ## These should all be the same\n\n[1] 0.9887199 0.9887199 0.9887199\n\nlambda.proj &lt;- lambda.it[nYears-1,1]\nlambda.proj ## Asymptotic growth rate\n\n[1] 0.9887199\n\n\nNow we will use eigenanalysis to compute the growth rate, stable age distribution, and reproductive value.\nFirst compute \\(\\lambda\\).\n\neA &lt;- eigen(A)\nlambda &lt;- Re(eA$values[1])  ## Dominant eigenvalue is the \nlambda                      ## asymptotic growth rate\n\n[1] 0.9887199\n\n\nMake sure it’s the same growth rate that we found earlier.\n\nlambda.proj\n\n[1] 0.9887199\n\nlambda\n\n[1] 0.9887199\n\n\nNow find the stable age distribution.\n\nSADu &lt;- Re(eA$vectors[,1])  ## Right eigenvector is stable age dist\nSAD &lt;- SADu/sum(SADu)\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\n\nCheck to make sure that the stable age distribution computed using eigenanalysis is equal to that calculated from the projection.\n\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the reproductive value (RV) of each age class.\n\neAT &lt;- eigen(t(A))\nRVu &lt;- Re(eAT$vectors[,1]) ## Left eigenvector gives the RVs\nRV &lt;- RVu/RVu[1]           ## Standard to divide by first RV\nRV\n\n[1] 1.0000000 1.9774397 0.5057044"
-  },
-  {
-    "objectID": "labs/age/lab-age-structure.html#lab-7-assignment-age-structured-models-due-by-500pm-on-friday",
-    "href": "labs/age/lab-age-structure.html#lab-7-assignment-age-structured-models-due-by-500pm-on-friday",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer each of the following questions and upload your Excel file and R script (graduate students only) to ELC. Be sure to show your calculations. Undergraduates do not have to do either exercise in R. However, undergraduates can get 20 bonus points for doing the entire lab in Excel and R.\n\n\nImagine a population with 4 age classes. The fecundities are \\(f_1=0\\), \\(f_2=1.0\\), \\(f_3=1.5\\), and \\(f_4=1.2\\). The survival probabilities are \\(s_1=0.8\\), \\(s_2=0.5\\), \\(s_3=0.25\\), and \\(s_4=0.0\\). The initial population sizes are \\(n_{1,1}=45\\), \\(n_{2,1}=18\\), \\(n_{3,1}=11\\), \\(n_{4,1}=4\\).\n\nCreate a Leslie matrix with the vital rates provided above.\nProject the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the %*% operator. See the end of this document for guidance.)\nCreate another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting “Format axis”. Choose the logarithmic axis option with base=10.\nCalculate and plot the age-specific growth rates: \\(\\lambda_{i,t}\\). What is the asymptotic growth rate (\\(\\lambda\\)), rounded to 3 decimals places?\nWhat is the stable age distribution?\nGraduate students only: Compute asymptotic \\(\\lambda\\) and the stable age distribution using the function in R.\n\n\n\n\nReproductive value (RV) can be used to identify the age class that contributes the most to population growth. The inoculate method is a way of computing RV by doing one projection for each of the age classes.\nFor each projection, use a population size of 200 individuals, and put all individuals in one of the four age classes. For example, one projection will have \\(n_{1,1}=200\\), \\(n_{2,1}=0\\), \\(n_{3,1}=0\\), \\(n_{4,1}=0\\). The next projection will have all 200 individuals in the next age class, and so on. For each projection, record the total population size after 50 time steps. Reproductive value is calculated by dividing each projection’s total population size (\\(N_t\\)) at \\(t=50\\) by the total population size from the first projection. (As a result, RV will always be 1 for the first age class when using this method).\n\nGiven the following Leslie matrix, calculate the RV of each age class using the inoculate method.\nIf you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?\nGraduate students only: Compute reproductive value using the eigen function.\n\n\n\n\n\nTable 1: Leslie matrix\n\n\n\n\n\n\n1.6\n1.5\n0.25\n0\n\n\n0.8\n0.0\n0.00\n0\n\n\n0.0\n0.5\n0.00\n0\n\n\n0.0\n0.0\n0.25\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of an age-structured model with 3 age classes. It is just an example – the parameter values are different than the ones in the assignment above.\nFirst, create the projection matrix.\n\nA &lt;- matrix(c(0.0, 1.5, 0.5,  ## The fecundities\n              0.5, 0.0, 0.0,  ## The first value is s1\n              0.0, 0.9, 0.0), ## The second value is s2\n            nrow=3, ncol=3, byrow=TRUE)\nA\n\n     [,1] [,2] [,3]\n[1,]  0.0  1.5  0.5\n[2,]  0.5  0.0  0.0\n[3,]  0.0  0.9  0.0\n\n\nSet values of initial abundance and prepare to project over 50 years.\n\nyears &lt;- 1:50\nnYears &lt;- length(years)\nn &lt;- matrix(NA, nYears, 3)\nn[1,] &lt;- c(100, 50, 25)    ## Initial abundance\n\nDo the projection.\n\nfor(t in 2:nYears) {\n  n[t,] &lt;- A %*% n[t-1,]   ## Matrix multiplication\n}\n\nVisualize it.\n\nmatplot(years, n, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Abundance\")\nlegend(35, 100, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nCompute the age distribution and take a look.\n\nN &lt;- rowSums(n) ## Total abundance each year\nc &lt;- n/N        ## This works because of R's recycling rules\nmatplot(years, c, type=\"l\", pch=16, ylim=c(0, 1), xlab=\"Time\",\n        ylab=\"Proportion in each age class\")\nlegend(35, 1, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nGrab the stable age distribution from the final year.\n\nSAD.proj &lt;- c[nYears,]\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the annual growth rates for each age class and plot them.\n\nlambda.it &lt;- n[-1,]/n[-nYears,] ## Divide each row by the row before it\nmatplot(years[-1], ## There are nYears-1 *intervals* between years\n        lambda.it, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Growth rates\")\nabline(h=1, lty=2, col=\"grey\") ## Horizontal line\nlegend(35, 1.8, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nFind asymptotic \\(\\lambda\\) from the last time interval.\n\nlambda.it[nYears-1,] ## These should all be the same\n\n[1] 0.9887199 0.9887199 0.9887199\n\nlambda.proj &lt;- lambda.it[nYears-1,1]\nlambda.proj ## Asymptotic growth rate\n\n[1] 0.9887199\n\n\nNow we will use eigenanalysis to compute the growth rate, stable age distribution, and reproductive value.\nFirst compute \\(\\lambda\\).\n\neA &lt;- eigen(A)\nlambda &lt;- Re(eA$values[1])  ## Dominant eigenvalue is the \nlambda                      ## asymptotic growth rate\n\n[1] 0.9887199\n\n\nMake sure it’s the same growth rate that we found earlier.\n\nlambda.proj\n\n[1] 0.9887199\n\nlambda\n\n[1] 0.9887199\n\n\nNow find the stable age distribution.\n\nSADu &lt;- Re(eA$vectors[,1])  ## Right eigenvector is stable age dist\nSAD &lt;- SADu/sum(SADu)\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\n\nCheck to make sure that the stable age distribution computed using eigenanalysis is equal to that calculated from the projection.\n\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the reproductive value (RV) of each age class.\n\neAT &lt;- eigen(t(A))\nRVu &lt;- Re(eAT$vectors[,1]) ## Left eigenvector gives the RVs\nRV &lt;- RVu/RVu[1]           ## Standard to divide by first RV\nRV\n\n[1] 1.0000000 1.9774397 0.5057044"
-  },
-  {
-    "objectID": "labs/harvest/lab-harvest.html",
-    "href": "labs/harvest/lab-harvest.html",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Applied Population Dynamics",
@@ -63,6 +28,265 @@
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations"
   },
   {
+    "objectID": "labs/extinction/lab-extinction.html",
+    "href": "labs/extinction/lab-extinction.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer each of the following questions and upload your completed Excel file and R script to ELC by 5:00pm on Friday. Be sure to show your calculations. Undergrads only need to do the second exercise in R, not the first."
+  },
+  {
+    "objectID": "labs/harvest/lab-harvest.html",
+    "href": "labs/harvest/lab-harvest.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer the following questions and upload your completed Excel file and R script to ELC. Be sure to show your calculations. Undergraduates need to do both exercises in Excel, but only Exercise I in R. Graduate students should do both exercises in Excel and R."
+  },
+  {
+    "objectID": "labs/interspecific/lab-interspecific.html",
+    "href": "labs/interspecific/lab-interspecific.html",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nYou are studying the dynamics of jaguar (Panthera onca) and Baird’s tapir (Tapirus bairdii) in Costa Rica’s Corcavodo National Park. After years of research, you obtain the following parameter estimates, which you would like to use in a Lotka-Volterra model: \\(r^{prey}=0.05\\), \\(k^{pred}=0.0005\\), \\(b^{pred}=0.001\\), and \\(d^{pred}=0.45\\).\n\nWhat predator population size corresponds to prey equilibrium? What prey population size corresponds to predator equilibrium?\nProject the populations 100 years following an initial prey population size of \\(N_0^{prey}=500\\) and an initial predator population size of \\(N_0^{pred}=100\\). Plot the projections.\nClearly, these populations have not reached a stable equilibrium, so what is the interpretation of the equilibrium values from part (a)? What happens if you set the initial population sizes to the equilibrium values?\n\n\n\n\n\n\nThe Canada warbler (Cardellina canadensis) and the hooded warbler (Stetophaga citrina) are two species of Neotropical-Nearctic migratory birds that appear to compete for the same resources where their ranges meet in the southern Appalachian Mountains. Assume their dynamics follow the Lotka-Volterra competition model with parameters \\(r^{A}=0.2\\), \\(r^{B}=0.3\\), \\(K^{A}=250\\), \\(K^{B}=200\\), \\(\\alpha^{A}=0.1\\), and \\(\\alpha^{B}=0.1\\).\n\nPlot 25 years of dynamics following initial conditions of \\(N_0^A = 200\\) and \\(N_0^B=50\\).\nWhat are the 2 equilibrium values for these species?\nDo these conditions describe stable coexistence, competitive exclusion, or unstable equilibrium?\nWhat is the minimum value of \\(\\alpha^B\\) that would result in competitive exclusion of species A? (Hint: Use the equilibrium equations to solve for \\(\\alpha^B\\)). Plot 25 years of dynamics under this scenario. Use the same initial abundance values as before.\n\n\n\n\n\n\n\nnYears &lt;- 5000\nr.prey &lt;- 0.01\nk.pred &lt;- 0.00001\nb.pred &lt;- 0.00001\nd.pred &lt;- 0.01\nN.prey &lt;- rep(NA, nYears)\nN.pred &lt;- rep(NA, nYears)\nN.prey[1] &lt;- 1000\nN.pred[1] &lt;- 300\nfor(t in 2:nYears) {\n    N.prey[t] &lt;- N.prey[t-1] + N.prey[t-1]*(r.prey-k.pred*N.pred[t-1])\n    N.pred[t] &lt;- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)\n}\nplot(1:nYears, N.prey, type=\"l\", col=\"black\", ylim=c(0, 3500),\n     xlab=\"Year\", ylab=\"Abundance\")\nlines(1:nYears, N.pred, type=\"l\", col=\"blue\")\nlegend(1, 3500, c(\"Prey\", \"Predator\"), lty=1, col=c(\"black\", \"blue\"))"
+  },
+  {
+    "objectID": "labs/interspecific/lab-interspecific.html#lab-6-assignment-models-of-interspecific-interactions-due-by-500pm-on-friday",
+    "href": "labs/interspecific/lab-interspecific.html#lab-6-assignment-models-of-interspecific-interactions-due-by-500pm-on-friday",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nYou are studying the dynamics of jaguar (Panthera onca) and Baird’s tapir (Tapirus bairdii) in Costa Rica’s Corcavodo National Park. After years of research, you obtain the following parameter estimates, which you would like to use in a Lotka-Volterra model: \\(r^{prey}=0.05\\), \\(k^{pred}=0.0005\\), \\(b^{pred}=0.001\\), and \\(d^{pred}=0.45\\).\n\nWhat predator population size corresponds to prey equilibrium? What prey population size corresponds to predator equilibrium?\nProject the populations 100 years following an initial prey population size of \\(N_0^{prey}=500\\) and an initial predator population size of \\(N_0^{pred}=100\\). Plot the projections.\nClearly, these populations have not reached a stable equilibrium, so what is the interpretation of the equilibrium values from part (a)? What happens if you set the initial population sizes to the equilibrium values?\n\n\n\n\n\n\nThe Canada warbler (Cardellina canadensis) and the hooded warbler (Stetophaga citrina) are two species of Neotropical-Nearctic migratory birds that appear to compete for the same resources where their ranges meet in the southern Appalachian Mountains. Assume their dynamics follow the Lotka-Volterra competition model with parameters \\(r^{A}=0.2\\), \\(r^{B}=0.3\\), \\(K^{A}=250\\), \\(K^{B}=200\\), \\(\\alpha^{A}=0.1\\), and \\(\\alpha^{B}=0.1\\).\n\nPlot 25 years of dynamics following initial conditions of \\(N_0^A = 200\\) and \\(N_0^B=50\\).\nWhat are the 2 equilibrium values for these species?\nDo these conditions describe stable coexistence, competitive exclusion, or unstable equilibrium?\nWhat is the minimum value of \\(\\alpha^B\\) that would result in competitive exclusion of species A? (Hint: Use the equilibrium equations to solve for \\(\\alpha^B\\)). Plot 25 years of dynamics under this scenario. Use the same initial abundance values as before.\n\n\n\n\n\n\n\nnYears &lt;- 5000\nr.prey &lt;- 0.01\nk.pred &lt;- 0.00001\nb.pred &lt;- 0.00001\nd.pred &lt;- 0.01\nN.prey &lt;- rep(NA, nYears)\nN.pred &lt;- rep(NA, nYears)\nN.prey[1] &lt;- 1000\nN.pred[1] &lt;- 300\nfor(t in 2:nYears) {\n    N.prey[t] &lt;- N.prey[t-1] + N.prey[t-1]*(r.prey-k.pred*N.pred[t-1])\n    N.pred[t] &lt;- N.pred[t-1] + N.pred[t-1]*(b.pred*N.prey[t-1] - d.pred)\n}\nplot(1:nYears, N.prey, type=\"l\", col=\"black\", ylim=c(0, 3500),\n     xlab=\"Year\", ylab=\"Abundance\")\nlines(1:nYears, N.pred, type=\"l\", col=\"blue\")\nlegend(1, 3500, c(\"Prey\", \"Predator\"), lty=1, col=c(\"black\", \"blue\"))"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#section",
+    "href": "labs/intro/lab-Excel-R-Basics.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Applied Population Dynamics\nLab 1 – Excel and R Basics"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-column-b",
+    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-column-b",
+    "title": "Applied Population Dynamics",
+    "section": "Referencing – Column B",
+    "text": "Referencing – Column B"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-row-3",
+    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-row-3",
+    "title": "Applied Population Dynamics",
+    "section": "Referencing – Row 3",
+    "text": "Referencing – Row 3"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-cell-b3",
+    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-cell-b3",
+    "title": "Applied Population Dynamics",
+    "section": "Referencing – Cell B3",
+    "text": "Referencing – Cell B3"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#create-sequence-using-auto-fill",
+    "href": "labs/intro/lab-Excel-R-Basics.html#create-sequence-using-auto-fill",
+    "title": "Applied Population Dynamics",
+    "section": "Create Sequence Using Auto-fill",
+    "text": "Create Sequence Using Auto-fill\n\n\n\n\n\n\n\nTo use auto-fill: begin a sequence, highlight the cells, and then drag the box at the bottom-right of the last cell."
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references",
+    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references",
+    "title": "Applied Population Dynamics",
+    "section": "Relative Cell References",
+    "text": "Relative Cell References"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-1",
+    "title": "Applied Population Dynamics",
+    "section": "Relative Cell References",
+    "text": "Relative Cell References"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
+    "title": "Applied Population Dynamics",
+    "section": "Relative Cell References",
+    "text": "Relative Cell References\n\n\n\n\n\n\nValues of reference will change when using auto-fill"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references",
+    "href": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references",
+    "title": "Applied Population Dynamics",
+    "section": "Absolute Cell References",
+    "text": "Absolute Cell References"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references-1",
+    "title": "Applied Population Dynamics",
+    "section": "Absolute Cell References",
+    "text": "Absolute Cell References\n\n\n\n\n\n\nDollar sign “locks” a reference so that auto-fill won’t change it"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#partial-cell-references",
+    "href": "labs/intro/lab-Excel-R-Basics.html#partial-cell-references",
+    "title": "Applied Population Dynamics",
+    "section": "Partial Cell References",
+    "text": "Partial Cell References"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#equations-1",
+    "title": "Applied Population Dynamics",
+    "section": "Equations",
+    "text": "Equations"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#equations-2",
+    "title": "Applied Population Dynamics",
+    "section": "Equations",
+    "text": "Equations\n\n\n\n\n\n\nEquations also have to begin with the equals sign (=)"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-3",
+    "href": "labs/intro/lab-Excel-R-Basics.html#equations-3",
+    "title": "Applied Population Dynamics",
+    "section": "Equations",
+    "text": "Equations"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-4",
+    "href": "labs/intro/lab-Excel-R-Basics.html#equations-4",
+    "title": "Applied Population Dynamics",
+    "section": "Equations",
+    "text": "Equations"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#formulas",
+    "href": "labs/intro/lab-Excel-R-Basics.html#formulas",
+    "title": "Applied Population Dynamics",
+    "section": "Formulas",
+    "text": "Formulas"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-1",
+    "title": "Applied Population Dynamics",
+    "section": "Graphics",
+    "text": "Graphics"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-2",
+    "title": "Applied Population Dynamics",
+    "section": "Graphics",
+    "text": "Graphics"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-3",
+    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-3",
+    "title": "Applied Population Dynamics",
+    "section": "Graphics",
+    "text": "Graphics\n\n\n\n\n\n\nAdd a line for males"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize",
+    "href": "labs/intro/lab-Excel-R-Basics.html#customize",
+    "title": "Applied Population Dynamics",
+    "section": "Customize",
+    "text": "Customize\n\n\n\n\n\n\nAdd legend"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#customize-1",
+    "title": "Applied Population Dynamics",
+    "section": "Customize",
+    "text": "Customize\n\n\n\n\n\n\nAdd axis labels"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#customize-2",
+    "title": "Applied Population Dynamics",
+    "section": "Customize",
+    "text": "Customize\n\n\n\n\n\n\nChange line color"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
+    "href": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
+    "title": "Applied Population Dynamics",
+    "section": "R – Software for statistical computing",
+    "text": "R – Software for statistical computing\n\nR can be downloaded here: https://www.r-project.org/\n\nYou can use the graphical user interface that comes with R, or you can run R through a system like ESS+emacs or RStudio (https://posit.co/download/rstudio-desktop/)\n\n\nMost people use RStudio these days"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio",
+    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio",
+    "title": "Applied Population Dynamics",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio-1",
+    "title": "Applied Population Dynamics",
+    "section": "RStudio",
+    "text": "RStudio\nTo create a new script, click: File &gt; New File &gt; R Script\n\n\n\n\n\nSave your script using: File &gt; Save As"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio-2",
+    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio-2",
+    "title": "Applied Population Dynamics",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#reproducing-the-excel-exercise",
+    "href": "labs/intro/lab-Excel-R-Basics.html#reproducing-the-excel-exercise",
+    "title": "Applied Population Dynamics",
+    "section": "Reproducing the Excel exercise",
+    "text": "Reproducing the Excel exercise\n\nCreate an object called year to hold the sequence of years.1\n\nyear &lt;- 1950:1961 # A vector of integers\nyear              # Type the name of an object to see its values\n\n [1] 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961\n\n\n\nNote that you can use seq to create sequences in a more general way. The c function combines two or more vectors.\n\nupdown &lt;- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))\nupdown            # Two sequences, combined\n\n [1]  20  40  60  80 100 100  80  60  40  20\n\n\n\n\nUse the length function to determine the number of values in a vector.\n\nnYears &lt;- length(year)\nnYears\n\n[1] 12\n\n\n\n\nEverything in the boxes is R code that you can copy and paste into your script in RStudio. Everything below the boxes is R output."
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
+    "href": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
+    "title": "Applied Population Dynamics",
+    "section": "A simple population model",
+    "text": "A simple population model\n\nCreate an empty vector to store the data on females. Set female abundance to 100 in the first year.\n\nfemales &lt;- rep(NA, nYears)\nfemales[1] &lt;- 100\n\n\n\nUse a “for loop” to compute female abundance in subsequent years.\n\nfor(t in 2:nYears) {\n    females[t] &lt;- females[t-1] + females[t-1]*0.01\n}\n\n\n\n\n\nWe will use “for loops” for almost every population model that we implement in R"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model-1",
+    "href": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "A simple population model",
+    "text": "A simple population model\n\n\n\nGenerate the data on males using a single line of code.\n\nmales &lt;- females*0.8\n\n\n\n\nPut the objects in a data.frame\n\nmodel1 &lt;- data.frame(year, females, males)\nmodel1\n\n   year  females    males\n1  1950 100.0000 80.00000\n2  1951 101.0000 80.80000\n3  1952 102.0100 81.60800\n4  1953 103.0301 82.42408\n5  1954 104.0604 83.24832\n6  1955 105.1010 84.08080\n7  1956 106.1520 84.92161\n8  1957 107.2135 85.77083\n9  1958 108.2857 86.62854\n10 1959 109.3685 87.49482\n11 1960 110.4622 88.36977\n12 1961 111.5668 89.25347"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-4",
+    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-4",
+    "title": "Applied Population Dynamics",
+    "section": "Graphics",
+    "text": "Graphics\n\nplot(females ~ year, data=model1, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(males ~ year, data=model1, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"),\n       lty=1, pch=16)"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-5",
+    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-5",
+    "title": "Applied Population Dynamics",
+    "section": "Graphics",
+    "text": "Graphics\n\nAnother way to do the same thing, without putting objects in a data.frame:\n\nplot(x=year, y=females, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(x=year, y=males, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"), lty=1, pch=16)"
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#assignment",
+    "href": "labs/intro/lab-Excel-R-Basics.html#assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\n\nCreate an Excel file and name it “Yourlastname_Yourfirstname”.\nCreate the sheet shown on the next page using the techniques covered in this lab.\n\nUse auto-fill to create the first two columns.\nFor the “Adults” column, use the equation shown for cells C3 through C22. Note: For cell C2, you can directly enter the value “10”.\n\nCopy “Sheet1” to a new sheet and change the color and thickness of the lines. You can pick any colors and thicknesses you want.\nReplicate steps 1–3 using a “for loop” in a self-contained R script. Note that you will need code to create both graphs—the original one and the one with the new line color and thickness.\n\nHint: You can make the juveniles data using seq and c, like we did with the updown example earlier.\n\nUpload the Excel workbook (with both sheets) and the R script to ELC by 5:00pm on Friday.1\n\n\nAlways clear your RStudio workspace and rerun the R script before uploading to ELC."
+  },
+  {
+    "objectID": "labs/intro/lab-Excel-R-Basics.html#excel-sheet-to-be-created",
+    "href": "labs/intro/lab-Excel-R-Basics.html#excel-sheet-to-be-created",
+    "title": "Applied Population Dynamics",
+    "section": "Excel sheet to be created",
+    "text": "Excel sheet to be created"
+  },
+  {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Course Schedule",
@@ -82,300 +306,6 @@
     "title": "Course Schedule",
     "section": "Week 2 - Geometric and logistic growth",
     "text": "Week 2 - Geometric and logistic growth\n\nLecture 3"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#section",
-    "href": "lectures/interspecific/lecture-interspecific.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Models of interspecific interactions\n\nPredator-prey dynamics and competition"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#introduction-1",
-    "href": "lectures/interspecific/lecture-interspecific.html#introduction-1",
-    "title": "Applied Population Dynamics",
-    "section": "Introduction",
-    "text": "Introduction\n\nLotka and Volterra developed models for both predator-prey dynamics and competitive interactions.\n\nAs usual, these models were developed as continuous-time models.\n\nWe will focus on discrete-time versions (\\(t = 1, 2, \\ldots\\)).\n\nWe will ignore potential extensions with stochasticity, age structure, spatial structure, etc…"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
-    "href": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
-    "title": "Applied Population Dynamics",
-    "section": "How should predator-prey dynamics operate?",
-    "text": "How should predator-prey dynamics operate?"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
-    "href": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
-    "title": "Applied Population Dynamics",
-    "section": "Lynx-hare cycles",
-    "text": "Lynx-hare cycles"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
-    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
-    "title": "Applied Population Dynamics",
-    "section": "Lotka-Volterra predator-prey model",
-    "text": "Lotka-Volterra predator-prey model\n\nModel for prey \\[\n  N^{prey}_{t+1} = N^{prey}_t + N^{prey}_t (r^{prey} - k^{pred} N^{pred}_t)\n\\]\nModel for predator \\[\n  N^{pred}_{t+1} = N^{pred}_t + N^{pred}_t (b^{pred}N^{prey}_t - d^{pred})\n\\]\n\nModel is based on geometric growth\n\\(r^{prey}\\): growth rate of the prey in the absence of predators\n\\(k^{pred}\\): kill rate\n\\(b^{pred}\\): effect of prey on predator birth rate\n\\(d^{pred}\\): predator mortality rate"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium",
-    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium",
-    "title": "Applied Population Dynamics",
-    "section": "Equilibrium",
-    "text": "Equilibrium\nEquilibrium for prey occurs when: \\[\n  N^{pred} = \\frac{r^{prey}}{k^{pred}}\n\\]\n\nEquilibrium for predators occurs when \\[\n  N^{prey} = \\frac{d^{pred}}{b^{pred}}\n\\]\n\n\nHowever, it is rare that both equilibrium conditions will be met at the same time, and so the populations will cycle."
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
-    "href": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
-    "title": "Applied Population Dynamics",
-    "section": "Model predicts population cycles",
-    "text": "Model predicts population cycles"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
-    "href": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
-    "title": "Applied Population Dynamics",
-    "section": "Isle Royale wolves and moose",
-    "text": "Isle Royale wolves and moose\n\n\n\n\n\n\n\n\n\n\n\n\nIsle Royale Website"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#huffakers-lab-experiments",
-    "href": "lectures/interspecific/lecture-interspecific.html#huffakers-lab-experiments",
-    "title": "Applied Population Dynamics",
-    "section": "Huffaker’s Lab Experiments",
-    "text": "Huffaker’s Lab Experiments"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#competition-1",
-    "href": "lectures/interspecific/lecture-interspecific.html#competition-1",
-    "title": "Applied Population Dynamics",
-    "section": "Competition",
-    "text": "Competition"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
-    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
-    "title": "Applied Population Dynamics",
-    "section": "Lotka-Volterra competition model",
-    "text": "Lotka-Volterra competition model\nModel for species A \\[\n  N^A_{t+1} = N^A_t + r^A N^A_t(K^A - N^A_t - \\alpha^B N^B_t) / K^A\n\\]\nModel for species B \\[\n  N^B_{t+1} = N^B_t + r^B N^B_t(K^B - N^B_t - \\alpha^A N^A_t) / K^B\n\\]\n\n\nModel based on logistic growth\nThe \\(\\alpha\\) parameters are competition coefficients determining how strongly each species affects the other"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
-    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
-    "title": "Applied Population Dynamics",
-    "section": "Equilibrium",
-    "text": "Equilibrium\nEquilibrium for species A \\[\n  N^A = \\frac{K^A - \\alpha^B K^B}{1 - \\alpha^A \\alpha^B}\n\\]\nEquilibrium for species B \\[\n  N^B = \\frac{K^B - \\alpha^A K^A}{1 - \\alpha^A \\alpha^B}\n\\]"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes",
-    "href": "lectures/interspecific/lecture-interspecific.html#outcomes",
-    "title": "Applied Population Dynamics",
-    "section": "Outcomes",
-    "text": "Outcomes\n\nThree posssible outcomes:\n\nStable coexistence\nCompetitive exclusion\nUnstable equilibrium\n\n\nCompetitive exclusion principle Two species with the same niche cannot coexist on the same limiting resource."
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
-    "href": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
-    "title": "Applied Population Dynamics",
-    "section": "Outcomes",
-    "text": "Outcomes"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
-    "href": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
-    "title": "Applied Population Dynamics",
-    "section": "Don’t forget about intraspecific competition",
-    "text": "Don’t forget about intraspecific competition"
-  },
-  {
-    "objectID": "lectures/interspecific/lecture-interspecific.html#summary",
-    "href": "lectures/interspecific/lecture-interspecific.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\nPredator-prey model is extension of geometric growth\n\nPredators and prey limit each other’s growth potential\n\n\nCompetition model is extension of logistic growth\n\nCompetitors influence each other’s density-dependent regulation process\n\n\n\nThese models could be extended to include:\n\n\n\nMore species\nStochasticity\nAge structure\n\n\n\nHarvest\nSpatial structure\nAdditional forms of density dependence"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
-    "title": "Applied Population Dynamics",
-    "section": "From Geometric to Logistic Growth",
-    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Density-dependent growth",
-    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
-    "title": "Applied Population Dynamics",
-    "section": "Graphical depiction",
-    "text": "Graphical depiction"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
-    "title": "Applied Population Dynamics",
-    "section": "Growth rate",
-    "text": "Growth rate\n\n\\[\\lambda_t = N_{t+1}/N_t\\]"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
-    "title": "Applied Population Dynamics",
-    "section": "Growth",
-    "text": "Growth\n\n\\[\\Delta_t=N_{t+1}-N_t\\]"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
-    "title": "Applied Population Dynamics",
-    "section": "Growth as a function of \\(N\\)",
-    "text": "Growth as a function of \\(N\\)"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
-    "title": "Applied Population Dynamics",
-    "section": "What happens when we change \\(r_{max}\\)?",
-    "text": "What happens when we change \\(r_{max}\\)?"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
-    "title": "Applied Population Dynamics",
-    "section": "Assumptions of basic model",
-    "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
-    "title": "Applied Population Dynamics",
-    "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
-    "title": "Applied Population Dynamics",
-    "section": "Does logistic growth occur in nature?",
-    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
-  },
-  {
-    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
-    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
-    "href": "lectures/BIDE/lecture-BIDE.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
-    "title": "Applied Population Dynamics",
-    "section": "Today’s class",
-    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
-    "title": "Applied Population Dynamics",
-    "section": "Models and science",
-    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
-    "title": "Applied Population Dynamics",
-    "section": "Model validation",
-    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
-    "title": "Applied Population Dynamics",
-    "section": "Types of models",
-    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
-    "title": "Applied Population Dynamics",
-    "section": "The BIDE model",
-    "text": "The BIDE model"
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
-    "title": "Applied Population Dynamics",
-    "section": "Group exercise",
-    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
-  },
-  {
-    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
   },
   {
     "objectID": "lectures/extinction/lecture-extinction.html#section",
@@ -467,433 +397,6 @@
     "title": "Applied Population Dynamics",
     "section": "Summary",
     "text": "Summary\n\nHumans have increased extinction rates dramatically.\n\nModels let us predict time-to-extinction and extinction risk.\n\nModels can be used to assess effects of management actions on extinction risk.\n\n\nAssignment\nRead pages 27–31 in Conroy and Carroll."
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#section",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Stochastic Population Models"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\n\n\nRandom variables\n\nEnvironmental stochasticity\n\nDemographic stochasticity"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
-    "title": "Applied Population Dynamics",
-    "section": "Random variables",
-    "text": "Random variables\n\nA random variable is a variable whose value can’t be predicted with certainty.\n\n\nExamples\n\nWeather\nOur own behavior\nPopulation size\n\n\n\n\n\n\nIs the universe random? Or is just too complex to be predicted with certainty?"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
-    "title": "Applied Population Dynamics",
-    "section": "Probability distributions",
-    "text": "Probability distributions\nA random variable (\\(X\\)) can be described by a probability distribution.\n\nThere are many types of probability distributions, including:\n\nNormal (or Gaussian)\nPoisson\nBinomial\nMultinomial"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
-    "title": "Applied Population Dynamics",
-    "section": "Normal (Gaussian) Distribution",
-    "text": "Normal (Gaussian) Distribution\n\n\\[\n  X \\sim \\mbox{Normal}(\\mu=0, \\sigma^2=1)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
-    "title": "Applied Population Dynamics",
-    "section": "Normal (Gaussian) distribution",
-    "text": "Normal (Gaussian) distribution"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
-    "title": "Applied Population Dynamics",
-    "section": "A purely stochastic model",
-    "text": "A purely stochastic model\n\n\\[\n  N_t \\sim \\mbox{Normal}(\\mu=50, \\sigma^2=1)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
-    "title": "Applied Population Dynamics",
-    "section": "Two important types of stochasticity",
-    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates).\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths).\nOccurs even when demographic rates are constant."
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
-    "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  N_{t+1} = N_t + N_t r_t\n\\]\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}, \\sigma^2)\n\\]\n\nR code\n\nnYears &lt;- 20\nN &lt;- r &lt;- rep(NA, nYears)  ## Create empty N and r\nN[1] &lt;- 100                ## Initial value of N\nr.bar &lt;- 0.5               ## Average growth rate\nsigma &lt;- 0.1               ## StdDev of growth rate\nfor(t in 2:nYears) {\n    r[t-1] &lt;- rnorm(n=1, mean=r.bar, sd=sigma)\n    N[t] &lt;- N[t-1] + N[t-1]*r[t-1]\n}"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
-    "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.01)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
-    "title": "Applied Population Dynamics",
-    "section": "Geometric growth with env. stochasticity",
-    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.25)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic growth with environmental stochasticity",
-    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
-    "title": "Applied Population Dynamics",
-    "section": "Logistic example with environmental stochasticity",
-    "text": "Logistic example with environmental stochasticity\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}=200, \\sigma^2=50)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
-    "title": "Applied Population Dynamics",
-    "section": "Demographic stochasticity",
-    "text": "Demographic stochasticity\n\nWe can make the BIDE model stochastic by modeling random variation in the number of individuals that are born and die each year (we’ll ignore movement):\n\\[\n   N_{t+1} = N_t + B_t - D_t\n\\]\n\n\nWhat distributions should we use for \\(B_t\\) and \\(D_t\\)?\n\n\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t\\times b)\n\\] \\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
-    "title": "Applied Population Dynamics",
-    "section": "Poisson distribution",
-    "text": "Poisson distribution\n\nThe Poisson distribution is useful for data that are non-negative integers.\n\nIt has a single parameter that describes the expected value of the random outcomes.\n\n\nIn stochastic population models, the Poisson distribution can be used to model the number of births (\\(B_t\\)) that occur in a time interval.\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
-    "title": "Applied Population Dynamics",
-    "section": "Poisson distributions",
-    "text": "Poisson distributions"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
-    "title": "Applied Population Dynamics",
-    "section": "Binomial distribution",
-    "text": "Binomial distribution\nThe binomial distribution is also useful for data that are non-negative integers, but it has an upper bound.\n\n\nIn population models, the upper bound is often population size, and we use the model to describe how many individuals die during some time period.\n\n\\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
-    "title": "Applied Population Dynamics",
-    "section": "Binomial distributions",
-    "text": "Binomial distributions"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
-    "title": "Applied Population Dynamics",
-    "section": "Demographic stochasticity",
-    "text": "Demographic stochasticity\n\nPoisson-Binomial birth-death model.\n\\[\n\\begin{gather*}\n  N_{t+1} = N_t + B_t - D_t \\\\\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b) \\\\\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\end{gather*}\n\\]"
-  },
-  {
-    "objectID": "lectures/stochasticity/lecture-stochasticity.html#summary",
-    "href": "lectures/stochasticity/lecture-stochasticity.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\nPurely deterministic models are too rigid.\n\nPurely stochastic models don’t describe population processes.\n\nThe goal is to develop mechanistic models that represent our biological understanding while allowing for uncertainty."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#section",
-    "href": "lectures/metapop/lecture-metapop.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Metapopulation models\n\n \n\nApplied Population Dynamics (WILD 5700/7700)"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#metapopulations",
-    "href": "lectures/metapop/lecture-metapop.html#metapopulations",
-    "title": "Applied Population Dynamics",
-    "section": "Metapopulations",
-    "text": "Metapopulations\n\n\n\nA metapopulation is a population of subpopulations linked by dispersal.\n\n\n\n\n\nProperties\n\nSubpopulations occur in discrete habitat patches.\nThe landscape “matrix” is not suitable for reproduction."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#motivation",
-    "href": "lectures/metapop/lecture-metapop.html#motivation",
-    "title": "Applied Population Dynamics",
-    "section": "Motivation",
-    "text": "Motivation\n\n\n\n\nMany populations are fragmented.\n\n\n\n\nMetapopulation models can be used to forecast dynamics of fragmented populations.\n\n\n\n\n\nModels can be used to identify critical habitat patches or locations for establishing new subpopulations."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#origins",
-    "href": "lectures/metapop/lecture-metapop.html#origins",
-    "title": "Applied Population Dynamics",
-    "section": "Origins",
-    "text": "Origins\n\n\nRichard Levins  \n\n\nFirst metapopulation models were parameterized in terms of the proportion of patches occupied.\n \n\nModern models are formulated in terms of patch-specific site occupancy or abundance."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#abundance-formulation",
-    "href": "lectures/metapop/lecture-metapop.html#abundance-formulation",
-    "title": "Applied Population Dynamics",
-    "section": "Abundance formulation",
-    "text": "Abundance formulation\n\nA simple case with only three subpopulations\n\\[\n    N_t = n_{1,t} + n_{2,t} + n_{3,t}\n\\]\n\n\nThe movement probabilities (\\(\\pi_{i,j}\\)) indicate the proportion of individuals moving from patch \\(i\\) to patch \\(j\\)."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#abundance-models-1",
-    "href": "lectures/metapop/lecture-metapop.html#abundance-models-1",
-    "title": "Applied Population Dynamics",
-    "section": "Abundance models",
-    "text": "Abundance models\n\nBuilding the metapopulation model for the first subpopulation.\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\phantom{\\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} + {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}}\n\\]\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} \\phantom{+ {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}}\n\\]\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} + {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}\n\\]\n\n\n\nThree components:\n\nGeometric growth\n\n\n\n1 minus emigration rates, Pr(not emigrating)\n\n\n\n\nImmigration from subpopulations 2 and 3"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#what-influences-movement",
-    "href": "lectures/metapop/lecture-metapop.html#what-influences-movement",
-    "title": "Applied Population Dynamics",
-    "section": "What influences movement?",
-    "text": "What influences movement?\n\n\nMovement probabilities (\\(\\pi_{i,j}\\)) can be influenced by many factors:\n\nHabitat quality in the patch of origin\nHabitat quality in the landscape between origin and destination patches\nHabitat quality in the destination patch\nDistance between patches"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#sources-sinks-and-traps",
-    "href": "lectures/metapop/lecture-metapop.html#sources-sinks-and-traps",
-    "title": "Applied Population Dynamics",
-    "section": "Sources, sinks, and traps",
-    "text": "Sources, sinks, and traps\n\nSource\nA patch with \\(\\lambda&gt;1\\) in the absence of immigration. Sources tend to be net exporters of individuals.\n\n\nSink\nA patch with \\(\\lambda&lt;1\\) in the absence of immigration. Sinks would go extinct in the absence of immigration.\n\n\n\nEcological trap\nA sink that animals incorrectly perceive as a high quality source."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#density-and-habitat-quality",
-    "href": "lectures/metapop/lecture-metapop.html#density-and-habitat-quality",
-    "title": "Applied Population Dynamics",
-    "section": "Density and habitat quality",
-    "text": "Density and habitat quality\n\nCan we identify sources, sinks, and traps by estimating patch-specific density (at one point in time)?\n\n\n\n\n\nAssignment: Read this paper and be prepared to discuss it."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#occupancy-models-1",
-    "href": "lectures/metapop/lecture-metapop.html#occupancy-models-1",
-    "title": "Applied Population Dynamics",
-    "section": "Occupancy models",
-    "text": "Occupancy models\n\n\nEmphasis on stochastic patch-level dynamics\n\nWhat is the probability that a patch will be occupied?\nWhat is the probability that an empty patch will be colonized?\nWhat is the probability that a subpopulation will go locally extinct?\nWhat is the probability that the entire metapopulation will go extinct?"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#definitions",
-    "href": "lectures/metapop/lecture-metapop.html#definitions",
-    "title": "Applied Population Dynamics",
-    "section": "Definitions",
-    "text": "Definitions\n\nOccurrence (\\(O_{i,t}\\)): Indicates if patch \\(i\\) occupied at time \\(t\\)\n\n\nOccurrence probability (psi=\\(\\psi_{i,t}\\)): Probability that site \\(i\\) is occupied at time \\(t\\)\n\n\n\nColonization probability (gamma=\\(\\gamma\\)): Probability that an unoccupied patch at time \\(t\\) becomes occupied at time \\(t+1\\).\n\n\n\nLocal extinction probability (epsilon=\\(\\varepsilon\\)): Probability that an occupied patch at time \\(t\\) becomes unoccupied at time \\(t+1\\).\n\n\n\nMetapopulation extinction risk: Probability that all subpopulation will go extinct."
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#example",
-    "href": "lectures/metapop/lecture-metapop.html#example",
-    "title": "Applied Population Dynamics",
-    "section": "Example",
-    "text": "Example"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#example-1",
-    "href": "lectures/metapop/lecture-metapop.html#example-1",
-    "title": "Applied Population Dynamics",
-    "section": "Example",
-    "text": "Example"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#the-model",
-    "href": "lectures/metapop/lecture-metapop.html#the-model",
-    "title": "Applied Population Dynamics",
-    "section": "The model",
-    "text": "The model\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\n\n\n\\(O_{i,t}\\)=1 if patch \\(i\\) is occupied at time \\(t\\) \n\\(O_{i,t}\\)=0 if patch \\(i\\) is unoccupied at time \\(t\\) \n\\(\\psi_{i,t}\\) is probability that patch \\(i\\) will be occupied at time \\(t\\) \n\\(\\varepsilon\\) is local extinction probability \n\\(\\gamma\\) is colonization probability"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#assumptions-of-basic-non-spatial-model",
-    "href": "lectures/metapop/lecture-metapop.html#assumptions-of-basic-non-spatial-model",
-    "title": "Applied Population Dynamics",
-    "section": "Assumptions of basic non-spatial model",
-    "text": "Assumptions of basic non-spatial model\n\nAbundance doesn’t matter\nPatch quality is constant\nColonization and local extinction probabilities are constant\nLandscape matrix doesn’t matter"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#spatial-models",
-    "href": "lectures/metapop/lecture-metapop.html#spatial-models",
-    "title": "Applied Population Dynamics",
-    "section": "Spatial models",
-    "text": "Spatial models"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#spatial-models-1",
-    "href": "lectures/metapop/lecture-metapop.html#spatial-models-1",
-    "title": "Applied Population Dynamics",
-    "section": "Spatial models",
-    "text": "Spatial models\nAll else equal…\n\n\nAn unoccupied site should have a higher chance of being colonized if it is close to an occupied site than if it is isolated.\n\n\n\nSimilarly, isolated sites should have a higher extinction probability than connected sites (rescue effect).\n\n\n\n\nConnectivity is determined by:\n\nDispersal ability\nSpatial configuration of sites\nLandscape resistance to movement"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#results",
-    "href": "lectures/metapop/lecture-metapop.html#results",
-    "title": "Applied Population Dynamics",
-    "section": "Results",
-    "text": "Results"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#results-1",
-    "href": "lectures/metapop/lecture-metapop.html#results-1",
-    "title": "Applied Population Dynamics",
-    "section": "Results",
-    "text": "Results"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#results-2",
-    "href": "lectures/metapop/lecture-metapop.html#results-2",
-    "title": "Applied Population Dynamics",
-    "section": "Results",
-    "text": "Results"
-  },
-  {
-    "objectID": "lectures/metapop/lecture-metapop.html#summary",
-    "href": "lectures/metapop/lecture-metapop.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\nMetapopulation models are widely used to describe the dynamics of fragmented populations.\n\nModel can be formulated in terms of patch-level abundance or occupancy.\n\nModern models are stochastic and spatially explicit."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#section",
-    "href": "lectures/harvest/lecture-harvest.html#section",
-    "title": "Applied Population Dynamics",
-    "section": "",
-    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
-    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
-    "title": "Applied Population Dynamics",
-    "section": "Today in APD",
-    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest",
-    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Harvest and geometric growth",
-    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and geometric growth",
-    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
-    "title": "Applied Population Dynamics",
-    "section": "Harvest and logistic growth",
-    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
-    "title": "Applied Population Dynamics",
-    "section": "Sustainable harvest and logistic growth",
-    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
-    "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.1",
-    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
-    "title": "Applied Population Dynamics",
-    "section": "Example when K=1000 and rmax=0.5",
-    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
-    "title": "Applied Population Dynamics",
-    "section": "Is MSY useful in practice?",
-    "text": "Is MSY useful in practice?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#issues",
-    "href": "lectures/harvest/lecture-harvest.html#issues",
-    "title": "Applied Population Dynamics",
-    "section": "Issues",
-    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
-    "title": "Applied Population Dynamics",
-    "section": "Additive vs. compensatory mortality",
-    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
-    "title": "Applied Population Dynamics",
-    "section": "Compensatory mortality example",
-    "text": "Compensatory mortality example"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
-    "title": "Applied Population Dynamics",
-    "section": "Density-dependent survival example",
-    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#summary",
-    "href": "lectures/harvest/lecture-harvest.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
-  },
-  {
-    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
-    "href": "lectures/harvest/lecture-harvest.html#assignment",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
   },
   {
     "objectID": "lectures/age/lecture-age-structure.html#section",
@@ -1083,6 +586,265 @@
     "title": "Applied Population Dynamics",
     "section": "Summary",
     "text": "Summary\n\nVital rates (\\(s\\) and \\(f\\)) are usually age-specific.\n\n\nPopulation growth will depend on age distribution.\n\n\n\nIf vital rates are constant, population will reach stable age distribution with constant growth rate \\(\\lambda\\).\n\n\n\nReproductive value indicates which age class contributes the most to population growth.\n\n\n\nMatrix models are a convenient method used to work with age-structured populations."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#section",
+    "href": "lectures/metapop/lecture-metapop.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Metapopulation models\n\n \n\nApplied Population Dynamics (WILD 5700/7700)"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#metapopulations",
+    "href": "lectures/metapop/lecture-metapop.html#metapopulations",
+    "title": "Applied Population Dynamics",
+    "section": "Metapopulations",
+    "text": "Metapopulations\n\n\n\nA metapopulation is a population of subpopulations linked by dispersal.\n\n\n\n\n\nProperties\n\nSubpopulations occur in discrete habitat patches.\nThe landscape “matrix” is not suitable for reproduction."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#motivation",
+    "href": "lectures/metapop/lecture-metapop.html#motivation",
+    "title": "Applied Population Dynamics",
+    "section": "Motivation",
+    "text": "Motivation\n\n\n\n\nMany populations are fragmented.\n\n\n\n\nMetapopulation models can be used to forecast dynamics of fragmented populations.\n\n\n\n\n\nModels can be used to identify critical habitat patches or locations for establishing new subpopulations."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#origins",
+    "href": "lectures/metapop/lecture-metapop.html#origins",
+    "title": "Applied Population Dynamics",
+    "section": "Origins",
+    "text": "Origins\n\n\nRichard Levins  \n\n\nFirst metapopulation models were parameterized in terms of the proportion of patches occupied.\n \n\nModern models are formulated in terms of patch-specific site occupancy or abundance."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#abundance-formulation",
+    "href": "lectures/metapop/lecture-metapop.html#abundance-formulation",
+    "title": "Applied Population Dynamics",
+    "section": "Abundance formulation",
+    "text": "Abundance formulation\n\nA simple case with only three subpopulations\n\\[\n    N_t = n_{1,t} + n_{2,t} + n_{3,t}\n\\]\n\n\nThe movement probabilities (\\(\\pi_{i,j}\\)) indicate the proportion of individuals moving from patch \\(i\\) to patch \\(j\\)."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#abundance-models-1",
+    "href": "lectures/metapop/lecture-metapop.html#abundance-models-1",
+    "title": "Applied Population Dynamics",
+    "section": "Abundance models",
+    "text": "Abundance models\n\nBuilding the metapopulation model for the first subpopulation.\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\phantom{\\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} + {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}}\n\\]\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} \\phantom{+ {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}}\n\\]\n\n\n\\[\n  n_{1,t+1} = n_{1,t}\\lambda_1 \\color{blue}{(1 - \\pi_{1,2} - \\pi_{1,3})} + {\\color{red}{n_{2,t}\\lambda_2 (\\pi_{2,1}) + n_{3,t}\\lambda_3 (\\pi_{3,1})}}\n\\]\n\n\n\nThree components:\n\nGeometric growth\n\n\n\n1 minus emigration rates, Pr(not emigrating)\n\n\n\n\nImmigration from subpopulations 2 and 3"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#what-influences-movement",
+    "href": "lectures/metapop/lecture-metapop.html#what-influences-movement",
+    "title": "Applied Population Dynamics",
+    "section": "What influences movement?",
+    "text": "What influences movement?\n\n\nMovement probabilities (\\(\\pi_{i,j}\\)) can be influenced by many factors:\n\nHabitat quality in the patch of origin\nHabitat quality in the landscape between origin and destination patches\nHabitat quality in the destination patch\nDistance between patches"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#sources-sinks-and-traps",
+    "href": "lectures/metapop/lecture-metapop.html#sources-sinks-and-traps",
+    "title": "Applied Population Dynamics",
+    "section": "Sources, sinks, and traps",
+    "text": "Sources, sinks, and traps\n\nSource\nA patch with \\(\\lambda&gt;1\\) in the absence of immigration. Sources tend to be net exporters of individuals.\n\n\nSink\nA patch with \\(\\lambda&lt;1\\) in the absence of immigration. Sinks would go extinct in the absence of immigration.\n\n\n\nEcological trap\nA sink that animals incorrectly perceive as a high quality source."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#density-and-habitat-quality",
+    "href": "lectures/metapop/lecture-metapop.html#density-and-habitat-quality",
+    "title": "Applied Population Dynamics",
+    "section": "Density and habitat quality",
+    "text": "Density and habitat quality\n\nCan we identify sources, sinks, and traps by estimating patch-specific density (at one point in time)?\n\n\n\n\n\nAssignment: Read this paper and be prepared to discuss it."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#occupancy-models-1",
+    "href": "lectures/metapop/lecture-metapop.html#occupancy-models-1",
+    "title": "Applied Population Dynamics",
+    "section": "Occupancy models",
+    "text": "Occupancy models\n\n\nEmphasis on stochastic patch-level dynamics\n\nWhat is the probability that a patch will be occupied?\nWhat is the probability that an empty patch will be colonized?\nWhat is the probability that a subpopulation will go locally extinct?\nWhat is the probability that the entire metapopulation will go extinct?"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#definitions",
+    "href": "lectures/metapop/lecture-metapop.html#definitions",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\nOccurrence (\\(O_{i,t}\\)): Indicates if patch \\(i\\) occupied at time \\(t\\)\n\n\nOccurrence probability (psi=\\(\\psi_{i,t}\\)): Probability that site \\(i\\) is occupied at time \\(t\\)\n\n\n\nColonization probability (gamma=\\(\\gamma\\)): Probability that an unoccupied patch at time \\(t\\) becomes occupied at time \\(t+1\\).\n\n\n\nLocal extinction probability (epsilon=\\(\\varepsilon\\)): Probability that an occupied patch at time \\(t\\) becomes unoccupied at time \\(t+1\\).\n\n\n\nMetapopulation extinction risk: Probability that all subpopulation will go extinct."
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#example",
+    "href": "lectures/metapop/lecture-metapop.html#example",
+    "title": "Applied Population Dynamics",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#example-1",
+    "href": "lectures/metapop/lecture-metapop.html#example-1",
+    "title": "Applied Population Dynamics",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#the-model",
+    "href": "lectures/metapop/lecture-metapop.html#the-model",
+    "title": "Applied Population Dynamics",
+    "section": "The model",
+    "text": "The model\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\n\n\n\\(O_{i,t}\\)=1 if patch \\(i\\) is occupied at time \\(t\\) \n\\(O_{i,t}\\)=0 if patch \\(i\\) is unoccupied at time \\(t\\) \n\\(\\psi_{i,t}\\) is probability that patch \\(i\\) will be occupied at time \\(t\\) \n\\(\\varepsilon\\) is local extinction probability \n\\(\\gamma\\) is colonization probability"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#assumptions-of-basic-non-spatial-model",
+    "href": "lectures/metapop/lecture-metapop.html#assumptions-of-basic-non-spatial-model",
+    "title": "Applied Population Dynamics",
+    "section": "Assumptions of basic non-spatial model",
+    "text": "Assumptions of basic non-spatial model\n\nAbundance doesn’t matter\nPatch quality is constant\nColonization and local extinction probabilities are constant\nLandscape matrix doesn’t matter"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#spatial-models",
+    "href": "lectures/metapop/lecture-metapop.html#spatial-models",
+    "title": "Applied Population Dynamics",
+    "section": "Spatial models",
+    "text": "Spatial models"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#spatial-models-1",
+    "href": "lectures/metapop/lecture-metapop.html#spatial-models-1",
+    "title": "Applied Population Dynamics",
+    "section": "Spatial models",
+    "text": "Spatial models\nAll else equal…\n\n\nAn unoccupied site should have a higher chance of being colonized if it is close to an occupied site than if it is isolated.\n\n\n\nSimilarly, isolated sites should have a higher extinction probability than connected sites (rescue effect).\n\n\n\n\nConnectivity is determined by:\n\nDispersal ability\nSpatial configuration of sites\nLandscape resistance to movement"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#results",
+    "href": "lectures/metapop/lecture-metapop.html#results",
+    "title": "Applied Population Dynamics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#results-1",
+    "href": "lectures/metapop/lecture-metapop.html#results-1",
+    "title": "Applied Population Dynamics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#results-2",
+    "href": "lectures/metapop/lecture-metapop.html#results-2",
+    "title": "Applied Population Dynamics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "lectures/metapop/lecture-metapop.html#summary",
+    "href": "lectures/metapop/lecture-metapop.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nMetapopulation models are widely used to describe the dynamics of fragmented populations.\n\nModel can be formulated in terms of patch-level abundance or occupancy.\n\nModern models are stochastic and spatially explicit."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#section",
+    "href": "lectures/interspecific/lecture-interspecific.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Models of interspecific interactions\n\nPredator-prey dynamics and competition"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#introduction-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#introduction-1",
+    "title": "Applied Population Dynamics",
+    "section": "Introduction",
+    "text": "Introduction\n\nLotka and Volterra developed models for both predator-prey dynamics and competitive interactions.\n\nAs usual, these models were developed as continuous-time models.\n\nWe will focus on discrete-time versions (\\(t = 1, 2, \\ldots\\)).\n\nWe will ignore potential extensions with stochasticity, age structure, spatial structure, etc…"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
+    "href": "lectures/interspecific/lecture-interspecific.html#how-should-predator-prey-dynamics-operate",
+    "title": "Applied Population Dynamics",
+    "section": "How should predator-prey dynamics operate?",
+    "text": "How should predator-prey dynamics operate?"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
+    "href": "lectures/interspecific/lecture-interspecific.html#lynx-hare-cycles",
+    "title": "Applied Population Dynamics",
+    "section": "Lynx-hare cycles",
+    "text": "Lynx-hare cycles"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
+    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-predator-prey-model",
+    "title": "Applied Population Dynamics",
+    "section": "Lotka-Volterra predator-prey model",
+    "text": "Lotka-Volterra predator-prey model\n\nModel for prey \\[\n  N^{prey}_{t+1} = N^{prey}_t + N^{prey}_t (r^{prey} - k^{pred} N^{pred}_t)\n\\]\nModel for predator \\[\n  N^{pred}_{t+1} = N^{pred}_t + N^{pred}_t (b^{pred}N^{prey}_t - d^{pred})\n\\]\n\nModel is based on geometric growth\n\\(r^{prey}\\): growth rate of the prey in the absence of predators\n\\(k^{pred}\\): kill rate\n\\(b^{pred}\\): effect of prey on predator birth rate\n\\(d^{pred}\\): predator mortality rate"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium",
+    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium",
+    "title": "Applied Population Dynamics",
+    "section": "Equilibrium",
+    "text": "Equilibrium\nEquilibrium for prey occurs when: \\[\n  N^{pred} = \\frac{r^{prey}}{k^{pred}}\n\\]\n\nEquilibrium for predators occurs when \\[\n  N^{prey} = \\frac{d^{pred}}{b^{pred}}\n\\]\n\n\nHowever, it is rare that both equilibrium conditions will be met at the same time, and so the populations will cycle."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
+    "href": "lectures/interspecific/lecture-interspecific.html#model-predicts-population-cycles",
+    "title": "Applied Population Dynamics",
+    "section": "Model predicts population cycles",
+    "text": "Model predicts population cycles"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
+    "href": "lectures/interspecific/lecture-interspecific.html#isle-royale-wolves-and-moose",
+    "title": "Applied Population Dynamics",
+    "section": "Isle Royale wolves and moose",
+    "text": "Isle Royale wolves and moose\n\n\n\n\n\n\n\n\n\n\n\n\nIsle Royale Website"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#huffakers-lab-experiments",
+    "href": "lectures/interspecific/lecture-interspecific.html#huffakers-lab-experiments",
+    "title": "Applied Population Dynamics",
+    "section": "Huffaker’s Lab Experiments",
+    "text": "Huffaker’s Lab Experiments"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#competition-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#competition-1",
+    "title": "Applied Population Dynamics",
+    "section": "Competition",
+    "text": "Competition"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
+    "href": "lectures/interspecific/lecture-interspecific.html#lotka-volterra-competition-model",
+    "title": "Applied Population Dynamics",
+    "section": "Lotka-Volterra competition model",
+    "text": "Lotka-Volterra competition model\nModel for species A \\[\n  N^A_{t+1} = N^A_t + r^A N^A_t(K^A - N^A_t - \\alpha^B N^B_t) / K^A\n\\]\nModel for species B \\[\n  N^B_{t+1} = N^B_t + r^B N^B_t(K^B - N^B_t - \\alpha^A N^A_t) / K^B\n\\]\n\n\nModel based on logistic growth\nThe \\(\\alpha\\) parameters are competition coefficients determining how strongly each species affects the other"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#equilibrium-1",
+    "title": "Applied Population Dynamics",
+    "section": "Equilibrium",
+    "text": "Equilibrium\nEquilibrium for species A \\[\n  N^A = \\frac{K^A - \\alpha^B K^B}{1 - \\alpha^A \\alpha^B}\n\\]\nEquilibrium for species B \\[\n  N^B = \\frac{K^B - \\alpha^A K^A}{1 - \\alpha^A \\alpha^B}\n\\]"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes",
+    "href": "lectures/interspecific/lecture-interspecific.html#outcomes",
+    "title": "Applied Population Dynamics",
+    "section": "Outcomes",
+    "text": "Outcomes\n\nThree posssible outcomes:\n\nStable coexistence\nCompetitive exclusion\nUnstable equilibrium\n\n\nCompetitive exclusion principle Two species with the same niche cannot coexist on the same limiting resource."
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
+    "href": "lectures/interspecific/lecture-interspecific.html#outcomes-1",
+    "title": "Applied Population Dynamics",
+    "section": "Outcomes",
+    "text": "Outcomes"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
+    "href": "lectures/interspecific/lecture-interspecific.html#dont-forget-about-intraspecific-competition",
+    "title": "Applied Population Dynamics",
+    "section": "Don’t forget about intraspecific competition",
+    "text": "Don’t forget about intraspecific competition"
+  },
+  {
+    "objectID": "lectures/interspecific/lecture-interspecific.html#summary",
+    "href": "lectures/interspecific/lecture-interspecific.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nPredator-prey model is extension of geometric growth\n\nPredators and prey limit each other’s growth potential\n\n\nCompetition model is extension of logistic growth\n\nCompetitors influence each other’s density-dependent regulation process\n\n\n\nThese models could be extended to include:\n\n\n\nMore species\nStochasticity\nAge structure\n\n\n\nHarvest\nSpatial structure\nAdditional forms of density dependence"
   },
   {
     "objectID": "lectures/exp-growth/lecture-exp-growth.html#section",
@@ -1344,11 +1106,466 @@
     "text": "Assignment\n\n\n\n\nRead Chapters 1 and 2 of Conroy and Carroll\nComplete the introductory survey “quiz” found here."
   },
   {
-    "objectID": "APD-syllabus.html",
-    "href": "APD-syllabus.html",
-    "title": "Course Description",
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section",
+    "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\n\nOffice hours:\nMon 11:00–12:00\n\nFri 11:00–12:00 | Thur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
+    "text": "Logistic Growth\n\n\nApplied Population Dynamics WILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\nThe equation for logistic growth in discrete time.\n\nThe definition of density-dependent growth.\n\nBasic properties of the model.\n\nStrange behavior of the (discrete time) model, such as damped oscillations and chaos."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#from-geometric-to-logistic-growth",
+    "title": "Applied Population Dynamics",
+    "section": "From Geometric to Logistic Growth",
+    "text": "From Geometric to Logistic Growth\nGeometric growth\n\\[N_{t+1} = N_t + N_tr\\]\n\nLogistic growth\n\\[N_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K}\\right)\\]\n\n\nwhere\n\n\n\\(r_{max}\\) is the growth rate when \\(N_t\\) is close to 0\n\\(K\\) is the carrying capacity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#density-dependent-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Density-dependent growth",
+    "text": "Density-dependent growth\n\nLogistic growth is an example of density-dependent growth.\n\n\nDefinition: Population growth rate is affected by population size (\\(N\\)).\n\n\n\nImplications: Resources are limited and there is a carrying capacity."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#graphical-depiction",
+    "title": "Applied Population Dynamics",
+    "section": "Graphical depiction",
+    "text": "Graphical depiction"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-rate",
+    "title": "Applied Population Dynamics",
+    "section": "Growth rate",
+    "text": "Growth rate\n\n\\[\\lambda_t = N_{t+1}/N_t\\]"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth",
+    "title": "Applied Population Dynamics",
+    "section": "Growth",
+    "text": "Growth\n\n\\[\\Delta_t=N_{t+1}-N_t\\]"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#growth-as-a-function-of-n",
+    "title": "Applied Population Dynamics",
+    "section": "Growth as a function of \\(N\\)",
+    "text": "Growth as a function of \\(N\\)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#what-happens-when-we-change-r_max",
+    "title": "Applied Population Dynamics",
+    "section": "What happens when we change \\(r_{max}\\)?",
+    "text": "What happens when we change \\(r_{max}\\)?"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#definitions",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\n\n\nOvercompensation\n\nDensity-dependent response in which populations over- or under-shoot carrying capacity rather than approach it gradually. \n\n\n\n\nChaos\n\nHighly variable deterministic dynamics that are extremely sensitive to small changes in parameters."
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#assumptions-of-basic-model",
+    "title": "Applied Population Dynamics",
+    "section": "Assumptions of basic model",
+    "text": "Assumptions of basic model\n\n\\(K\\) and \\(r_{max}\\) are constant\nNo sex or age effects or other sources of individual heterogeneity\nNo time lags\nNo stochasticity"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nFruit fly (Drosophila melanogaster) in the lab1\n\n\n\nData from Pearl (1927). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#does-logistic-growth-occur-in-nature-1",
+    "title": "Applied Population Dynamics",
+    "section": "Does logistic growth occur in nature?",
+    "text": "Does logistic growth occur in nature?\nIbex (Capra ibex) in Switzerland1\n\n\n\nData from Sæther et al. (2002). Figure from Krebs (2014)"
+  },
+  {
+    "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
+    "href": "lectures/logistic-growth/lecture-logistic-growth.html#section-1",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Summary\n\n\nLogistic growth is a form of density-dependent growth\nGrowth rate (\\(\\lambda_t=N_{t+1}/N_t\\)) declines as \\(N\\) approaches \\(K\\)\nGrowth (\\(\\Delta_t=N_{t+1}-N_t\\)) peaks at \\(K/2\\) (the inflection point)\nThe model doesn’t include birth, mortality, and movement processes, but it can be derived from density-dependent birth and death rates.\nBut it does allow for complex dynamics that resemble patterns seen in nature.\n\n\n\n\nAssignment\n\nRead pages 32–36 in Conroy and Carroll."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#section",
+    "href": "lectures/harvest/lecture-harvest.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Harvest Models\n\n\n\n\nApplied Population Dynamics WILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "href": "lectures/harvest/lecture-harvest.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\nSustainable harvest and geometric growth.\n\nSustainable harvest and logistic growth.\n\nDefinition of maximum sustainable yield (MSY).\n\nLimitations of MSY.\n\nAdditive vs compensatory mortality."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest",
+    "text": "Sustainable harvest\n\nA sustainable (and large) harvest is a common objective in game management.\n\n\nSustainable harvest: A harvest that is balanced by population growth such that \\(N_{t+1} = N_t\\)."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Harvest and geometric growth",
+    "text": "Harvest and geometric growth\n\n\n\\[\n  N_{t+1} = N_t + N_t r\n\\]\n\n\n\\[\n  N_{t+1} = N_t + N_t r - \\color{red}{H_t}\n\\]\n\n\n\n\nwhere \\(\\color{red}{H_t}\\) is the number of animals harvested at the end of year \\(t\\).\n\n\n\nWhat value of \\(H_t\\) achieves equilibrium (i.e., \\(N_{t+1} = N_t\\))?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-geometric-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest and geometric growth",
+    "text": "Sustainable harvest and geometric growth\nA sustainable harvest in this context is: \\[\n  H_t = N_t r\n\\]\n\n\nConsequently, the sustainbale harvest rate (\\(h\\)) is:\n\\[\n  \\begin{align*}\n    h &= \\frac{H_t}{N_t} \\\\\n    h &= r \\\\\n  \\end{align*}\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "href": "lectures/harvest/lecture-harvest.html#harvest-and-logistic-growth-1",
+    "title": "Applied Population Dynamics",
+    "section": "Harvest and logistic growth",
+    "text": "Harvest and logistic growth\n\\[\nN_{t+1} = N_t + N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right) - \\color{red}{H_t}\n\\]\n\n\nWhat value of \\(\\color{red}{H_t}\\) achieves equilibrium?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "href": "lectures/harvest/lecture-harvest.html#sustainable-harvest-and-logistic-growth",
+    "title": "Applied Population Dynamics",
+    "section": "Sustainable harvest and logistic growth",
+    "text": "Sustainable harvest and logistic growth\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]\n\n\nIn this case, the sustainable harvest rate (\\(h\\)) depends on population size:\n\\[\n  \\begin{align*}\n    h_t &= \\frac{H_t}{N_t} \\\\\n    h_t &= r_{max}\\left(1 - \\frac{N_t}{K} \\right) \\\\\n  \\end{align*}\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.1",
+    "title": "Applied Population Dynamics",
+    "section": "Example when K=1000 and rmax=0.1",
+    "text": "Example when K=1000 and rmax=0.1\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "href": "lectures/harvest/lecture-harvest.html#example-when-k1000-and-rmax0.5",
+    "title": "Applied Population Dynamics",
+    "section": "Example when K=1000 and rmax=0.5",
+    "text": "Example when K=1000 and rmax=0.5\n\\[\n    H_t = N_t r_{max}\\left(1 - \\frac{N_t}{K} \\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "href": "lectures/harvest/lecture-harvest.html#is-msy-useful-in-practice",
+    "title": "Applied Population Dynamics",
+    "section": "Is MSY useful in practice?",
+    "text": "Is MSY useful in practice?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#issues",
+    "href": "lectures/harvest/lecture-harvest.html#issues",
+    "title": "Applied Population Dynamics",
+    "section": "Issues",
+    "text": "Issues\n\nLarkin, P.A. 1977. An epitaph for the concept of maximum sustained yield. Transactions of the American Fisheries Society 106: 1-11.\n\n\nSame assumptions as logistic growth model\n\nK is constant\nNo age/sex/individual variation\nNo stochasticity\n\n\n\n\n\nEcosystem impacts of reducing a population to half its carrying capacity?\n\n\n\n\nEvolutionary consequences?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "href": "lectures/harvest/lecture-harvest.html#additive-vs.-compensatory-mortality",
+    "title": "Applied Population Dynamics",
+    "section": "Additive vs. compensatory mortality",
+    "text": "Additive vs. compensatory mortality\n\n\nOne possible mechanism giving rise to logistic growth is density-dependence in survival.\nFor example, if population size is reduced, survival of the remaining individuals might increase.\nIf harvest is compensated for by improved survival, harvest is a form of compensatory mortality.\nHowever, if harvest is not compensated for by improved survival, harvest is a form of additive mortality.\n\n\n\n\nIf harvest mortality is additive, extra caution is needed to ensure that harvest doesn’t cause long-term population declines."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\nSuppose a population of 100 white-tailed deer is subjected to harvest.\n\nHarvest takes place prior to any natural mortality.\n\nNatural mortality occurs in a density dependent fashion, such that survival probability (\\(S\\)) declines as \\(N\\) increases.\n\n\nLet’s assume: \\[S = 0.8 - 0.005 \\times N\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-1",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-2",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\n\n\\[S = 0.8 - 0.005 \\times N\\]\n\nSuppose 20 individuals are harvested from the initial population of 100 individuals.\n\nHow many individuals will remain at the end of the year?\n\nHow many would have remained at the end of the year if no hunting had occurred?"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-3",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example\nThe overall survival rate (\\(\\bar{S}\\)) is product of survival throughout the hunting season (\\(1-h\\)) and survial after the hunting season.\n\\[\n  \\bar{S} = (1-h)(\\beta_0 - \\beta_1 (N - Nh))\n\\]"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "href": "lectures/harvest/lecture-harvest.html#compensatory-mortality-example-4",
+    "title": "Applied Population Dynamics",
+    "section": "Compensatory mortality example",
+    "text": "Compensatory mortality example"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
+    "href": "lectures/harvest/lecture-harvest.html#density-dependent-survival-example",
+    "title": "Applied Population Dynamics",
+    "section": "Density-dependent survival example",
+    "text": "Density-dependent survival example\n Mule deer fawn survival (From Bartman et al. 1992)"
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#summary",
+    "href": "lectures/harvest/lecture-harvest.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nIf growth is geometric, sustainable harvest occurs when \\(h=r\\).\nIf growth is logisitic, maximum sustainable yield occurs at \\(N=K/2\\).\nIf survival is density-dependent, harvest mortality can be compensated for by increased survival of remaining individuals (up to a point).\nIf mortality is additive, extra caution is needed because harvest is adding to natural mortality without any compensation.\nManagers need to know if harvest mortality is additive or compensatory when setting harvest regulations."
+  },
+  {
+    "objectID": "lectures/harvest/lecture-harvest.html#assignment",
+    "href": "lectures/harvest/lecture-harvest.html#assignment",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\n\nRead pages 22–25 in Conroy and Carroll"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#section",
+    "href": "lectures/BIDE/lecture-BIDE.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "The BIDE Model\n\nApplied Population Dynamics\nWILD 5700/7700"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "href": "lectures/BIDE/lecture-BIDE.html#todays-class",
+    "title": "Applied Population Dynamics",
+    "section": "Today’s class",
+    "text": "Today’s class\n\n\n\nA few definitions\nModeling 101\nThe BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#definitions-1",
+    "title": "Applied Population Dynamics",
+    "section": "Definitions",
+    "text": "Definitions\n\nPopulation dynamics: The study of spatial and temporal variation in population size and structure\n\n\nPopulation: Individuals of the same species occuring in the same geographic region\n\n\n\nPopulation size and structure\n\nSize: Abundance\nStructure: Distribution of individuals among age groups, sexes, habitat patches, etc…"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nA model is an abstraction of reality that describes the relationship between two or more variables.\n\nModels help us…\n\nDescribe complex natural systems in a manageable way\nFormalize and evaluate hypotheses\nPredict future outcomes\n…all while accounting for uncertainty"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#models-and-science-1",
+    "title": "Applied Population Dynamics",
+    "section": "Models and science",
+    "text": "Models and science\nBut don’t models require assumptions?\n\nYes. We have to simplify, so we have to make assumptions. We do this all the time.\n\n, for example when deciding how long it will take you to get to class.\n\n\n\n\n “All models are wrong, but some are useful.” G.E.P. Box (1987)"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "href": "lectures/BIDE/lecture-BIDE.html#model-validation",
+    "title": "Applied Population Dynamics",
+    "section": "Model validation",
+    "text": "Model validation\n\nPutting the model to the test\n\n\n\nHow well does it predict?\nWill your results hold up in court?\nCan your results be replicated/reproduced?"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "href": "lectures/BIDE/lecture-BIDE.html#types-of-models",
+    "title": "Applied Population Dynamics",
+    "section": "Types of models",
+    "text": "Types of models\n\nConceptual\nPhysical\nGraphical\nMathematical\nStatistical"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\]\n\\(N_t\\): population size (state variable) at time \\(t\\)\n\\(B_t\\): births\n\\(I_t\\): immigrants\n\\(D_t\\): deaths\n\\(E_t\\): emigrants"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model\n\\[N_{t+1} = N_t + B_t + I_t - D_t - E_t\\] As written, this model implies the following:\n\n\\(B\\), \\(I\\), \\(D\\), and \\(E\\) are not rates, they are the number of events at time \\(t\\).\nThe model is deterministic, not stochastic\nTime is discrete, not continuous\n\n\nIn reality, things are more complicated, and interest lies in understanding the factors influencing each process."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "href": "lectures/BIDE/lecture-BIDE.html#the-bide-model-2",
+    "title": "Applied Population Dynamics",
+    "section": "The BIDE model",
+    "text": "The BIDE model"
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "href": "lectures/BIDE/lecture-BIDE.html#group-exercise",
+    "title": "Applied Population Dynamics",
+    "section": "Group exercise",
+    "text": "Group exercise\n\n\nSplit into groups of 4–6 students.\n Come up with a list of at least 5 factors that influence the four demographic variables: B, I, D, and E.\n\nBe prepared to explain which demographic variables are influenced by each factor."
+  },
+  {
+    "objectID": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "href": "lectures/BIDE/lecture-BIDE.html#assignment-1",
+    "title": "Applied Population Dynamics",
+    "section": "Assignment",
+    "text": "Assignment\n\nRead the first 3 pages of Chapter 3 in Conroy and Carroll.\n\nExpect a quiz next time we meet."
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Stochastic Population Models"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#today-in-apd",
+    "title": "Applied Population Dynamics",
+    "section": "Today in APD",
+    "text": "Today in APD\n\n\nRandom variables\n\nEnvironmental stochasticity\n\nDemographic stochasticity"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#random-variables",
+    "title": "Applied Population Dynamics",
+    "section": "Random variables",
+    "text": "Random variables\n\nA random variable is a variable whose value can’t be predicted with certainty.\n\n\nExamples\n\nWeather\nOur own behavior\nPopulation size\n\n\n\n\n\n\nIs the universe random? Or is just too complex to be predicted with certainty?"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#probability-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nA random variable (\\(X\\)) can be described by a probability distribution.\n\nThere are many types of probability distributions, including:\n\nNormal (or Gaussian)\nPoisson\nBinomial\nMultinomial"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) Distribution",
+    "text": "Normal (Gaussian) Distribution\n\n\\[\n  X \\sim \\mbox{Normal}(\\mu=0, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#normal-gaussian-distribution-1",
+    "title": "Applied Population Dynamics",
+    "section": "Normal (Gaussian) distribution",
+    "text": "Normal (Gaussian) distribution"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#a-purely-stochastic-model",
+    "title": "Applied Population Dynamics",
+    "section": "A purely stochastic model",
+    "text": "A purely stochastic model\n\n\\[\n  N_t \\sim \\mbox{Normal}(\\mu=50, \\sigma^2=1)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#two-important-types-of-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Two important types of stochasticity",
+    "text": "Two important types of stochasticity\n\nEnvironmental stochasticity\n\nRandom variation in demographic rates (such as birth and death rates).\nCaused by unpredictable changes (e.g., in weather, habitat, … conditions) among years.\n\n\n\nDemographic stochasticity\n\nRandom variation in demographic outcomes (such as the number of births and deaths).\nOccurs even when demographic rates are constant."
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  N_{t+1} = N_t + N_t r_t\n\\]\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}, \\sigma^2)\n\\]\n\nR code\n\nnYears &lt;- 20\nN &lt;- r &lt;- rep(NA, nYears)  ## Create empty N and r\nN[1] &lt;- 100                ## Initial value of N\nr.bar &lt;- 0.5               ## Average growth rate\nsigma &lt;- 0.1               ## StdDev of growth rate\nfor(t in 2:nYears) {\n    r[t-1] &lt;- rnorm(n=1, mean=r.bar, sd=sigma)\n    N[t] &lt;- N[t-1] + N[t-1]*r[t-1]\n}"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.01)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#geometric-growth-with-env.-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Geometric growth with env. stochasticity",
+    "text": "Geometric growth with env. stochasticity\n\n\\[\n  r_t \\sim \\mbox{Normal}(\\bar{r}=0.1, \\sigma^2=0.25)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-growth-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic growth with environmental stochasticity",
+    "text": "Logistic growth with environmental stochasticity\n\nImagine the carrying capacity fluctuates randomly.\n\n\\[\n  N_{t+1} = N_t + N_tr_{max}(1 - N_t/K_t) \\\\\n  K_t \\sim \\mbox{Normal}(\\bar{K}, \\sigma^2)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#logistic-example-with-environmental-stochasticity",
+    "title": "Applied Population Dynamics",
+    "section": "Logistic example with environmental stochasticity",
+    "text": "Logistic example with environmental stochasticity\n\n\\[\n  K_t \\sim \\mbox{Normal}(\\bar{K}=200, \\sigma^2=50)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-1",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nWe can make the BIDE model stochastic by modeling random variation in the number of individuals that are born and die each year (we’ll ignore movement):\n\\[\n   N_{t+1} = N_t + B_t - D_t\n\\]\n\n\nWhat distributions should we use for \\(B_t\\) and \\(D_t\\)?\n\n\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t\\times b)\n\\] \\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distribution",
+    "text": "Poisson distribution\n\nThe Poisson distribution is useful for data that are non-negative integers.\n\nIt has a single parameter that describes the expected value of the random outcomes.\n\n\nIn stochastic population models, the Poisson distribution can be used to model the number of births (\\(B_t\\)) that occur in a time interval.\n\\[\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#poisson-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Poisson distributions",
+    "text": "Poisson distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distribution",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distribution",
+    "text": "Binomial distribution\nThe binomial distribution is also useful for data that are non-negative integers, but it has an upper bound.\n\n\nIn population models, the upper bound is often population size, and we use the model to describe how many individuals die during some time period.\n\n\\[\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#binomial-distributions",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial distributions",
+    "text": "Binomial distributions"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#demographic-stochasticity-2",
+    "title": "Applied Population Dynamics",
+    "section": "Demographic stochasticity",
+    "text": "Demographic stochasticity\n\nPoisson-Binomial birth-death model.\n\\[\n\\begin{gather*}\n  N_{t+1} = N_t + B_t - D_t \\\\\n  B_t \\sim \\mathrm{Poisson}(N_t \\times b) \\\\\n  D_t \\sim \\mathrm{Binomial}(N_t, d)\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "href": "lectures/stochasticity/lecture-stochasticity.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nPurely deterministic models are too rigid.\n\nPurely stochastic models don’t describe population processes.\n\nThe goal is to develop mechanistic models that represent our biological understanding while allowing for uncertainty."
   },
   {
     "objectID": "labs/geo-growth/lab-geometric-growth.html",
@@ -1365,241 +1582,38 @@
     "text": "Footnotes\n\n\nGraduate students, you can import the human population data into R using this code: humans &lt;- c(7.02, 7.11, 7.20, 7.29, 7.38, 7.47, 7.56, 7.65, 7.73, 7.81, 7.89, 7.95, 8.02, 8.09, 8.16, 8.23)↩︎"
   },
   {
-    "objectID": "labs/extinction/lab-extinction.html",
-    "href": "labs/extinction/lab-extinction.html",
+    "objectID": "labs/metapop/lab-metapop.html",
+    "href": "labs/metapop/lab-metapop.html",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Answer each of the following questions and upload your completed Excel file and R script to ELC by 5:00pm on Friday. Be sure to show your calculations. Undergrads only need to do the second exercise in R, not the first."
+    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nImagine a metapopulation consisting of 16 sites. In the first year (\\(t=0\\)), the first 2 sites are occupied and the other 14 are not.\n\nProject the metapopulation forward 40 years using a stochastic non-spatial model with colonization (\\(\\gamma\\)) equal to 0.3 and local extinction (\\(\\epsilon\\)) equal to 0.2.\nHint: to simulate whether a site is occupied or not in a given year, you must first compute occupancy probability (\\(\\psi\\)) and then generate the binary presence/absence value using a Bernoulli distribution. The best way to generate a Bernoulli random variable in Excel is to use the IF and RAND functions, not the Bernoulli random number generator. Your formula should look something like =IF(RAND()&lt;CELL, 1, 0) with CELL replaced by an actual cell containing the occupancy probability (\\(\\psi\\)). It will be much faster to drag these equations across cells for all years and sites, than it would be using the Bernoulli random number generator.\nAdditional information: In short, the RAND function draws a random number between 0 and 1. The IF function returns a 1 if this value is less than occupancy probability (\\(\\psi\\)), or it returns a 0 if the random number is greater than \\(\\psi\\). This is doing the same thing as using the Bernoulli distribution to draw a random number.\nMake a graph of the proportion of sites occupied (PrO) on the y-axis, and time on the x-axis.\n\n\n\n\nYou have been hired by the Charles Darwin Research Center on the Galapagos Islands. Your job is to assess a metapopulation of a species of special concern – the Magnificent Frigatebird.\n\nHistorical (fake) data showed that 2 populations of frigatebirds were isolated for 40 years.\n\nProject each population forward 40 years using the basic geometric growth model (not the metapopulation model) with \\(\\lambda_1=1.05\\) and \\(\\lambda_2=0.95\\).\nNext, imagine the 2 populations were actually connected in a small metapopulation. Use the abundance-based metapopulation model (including immigration and emigration) to project these connected subpopulations forward 40 years. Calculate the final growth rates for each population.\nCalculate the final growth rate (\\(N_{t+1}/N_t\\)) for each population, in each of the two scenarios above.\nMake a graph of abundance vs. time for the isolated and connected populations.\nIs site 2 a source or a sink? With this in mind, briefly describe the patterns you see in the graph and discuss the effects (positive and negative) of linking the two populations via dispersal if your goal was to sustain frigatebirds.\n\n\n\n\nHere is an example of how to simulate occupancy data. First, define the parameters and create an empty matrix to store the binary presence/absence data.\n\nnSites &lt;- 10\nnYears &lt;- 12\ngamma &lt;- 0.2    ## Colonization probability\nepsilon &lt;- 0.25 ## Local extinction probability\n\nLet’s assume that we know that the first 8 sites were occupied in year 1. In practice, we would have to estimate initial occupancy.\n\nO &lt;- psi &lt;- matrix(NA, nYears, nSites)\nO[1,] &lt;- c(rep(1, 8), 0, 0)\n\nIn subsequent years, occupancy is determined by colonization and extinction. We can simulate data using the rbinom function. When you set the size argument to 1, rbinom generates random numbers from a Bernoulli distribution.\n\nfor(t in 2:nYears) {\n    psi.t &lt;- O[t-1,]*(1-epsilon) + (1-O[t-1,])*gamma\n    O[t,] &lt;- rbinom(nSites, size=1, prob=psi.t)\n}\n\nTake a look at the binary occupancy data.\n\nO\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1    1    1    1    1    1    1    1    0     0\n [2,]    0    1    1    0    1    1    0    0    0     0\n [3,]    0    1    1    0    0    0    0    0    0     1\n [4,]    0    1    0    0    0    0    0    0    1     1\n [5,]    0    0    0    0    0    1    0    0    1     1\n [6,]    0    1    0    0    0    1    0    0    1     1\n [7,]    0    1    0    0    0    1    0    0    0     1\n [8,]    1    1    0    0    0    1    1    1    0     0\n [9,]    1    0    0    0    1    0    1    1    0     0\n[10,]    1    1    0    0    1    1    1    0    0     0\n[11,]    1    1    0    0    1    1    1    0    0     0\n[12,]    1    1    0    0    0    1    1    0    0     0\n\n\nCompute the number of sites occupied each year.\n\nnOccupied &lt;- rowSums(O)\nnOccupied\n\n [1] 8 4 3 3 3 4 3 5 4 5 5 4\n\n\nCompute the proportion of sites occupied (PrO) each year.\n\nPrO &lt;- nOccupied / nSites\nPrO\n\n [1] 0.8 0.4 0.3 0.3 0.3 0.4 0.3 0.5 0.4 0.5 0.5 0.4\n\n\nGraph it.\n\nplot(1:nYears, PrO, type=\"b\", xlab=\"Time\", ylab=\"Proportion of sites occupied\",\n     ylim=c(0, 1))\n\n\n\n\n\n\n\n\n\n\n\nSuppose we have a metapopulation with 3 subpopulations characterized by growth rates of \\(\\lambda_1=0.98\\), \\(\\lambda_2=1\\), and \\(\\lambda_3=1.02\\). The transition probability matrix is:\n\n\n\n\n\n\\[\n\\begin{bmatrix}\n  0.9 & 0.0 & 0.1 \\\\\n  0.2 & 0.7 & 0.1 \\\\\n  0.1 & 0.0 & 0.9\n\\end{bmatrix}\n\\]\nDefine parameters in R.\n\nlambda &lt;- c(0.98, 1, 1.02)\npi &lt;- matrix(c(\n    0.9, 0.0, 0.1,\n    0.2, 0.7, 0.1,\n    0.1, 0.0, 0.9), nrow=3, ncol=3, byrow=TRUE)\nnPatches &lt;- 3\nnYears &lt;- 50\n\nSet the initial population sizes to 100, 110, and 120.\n\nn &lt;- matrix(NA, nYears, nPatches)\nn[1,] &lt;- c(100, 110, 120)\n\nProject the metapopulation forward.\n\nfor(t in 2:nYears) {\n    n[t,1] &lt;- n[t-1,1]*lambda[1]*(1-pi[1,2]-pi[1,3]) +\n        n[t-1,2]*lambda[2]*pi[2,1] + n[t-1,3]*lambda[3]*pi[3,1]\n    n[t,2] &lt;- n[t-1,2]*lambda[2]*(1-pi[2,1]-pi[2,3]) +\n        n[t-1,1]*lambda[1]*pi[1,2] + n[t-1,3]*lambda[3]*pi[3,2]\n    n[t,3] &lt;- n[t-1,3]*lambda[3]*(1-pi[3,1]-pi[3,2]) +\n        n[t-1,1]*lambda[1]*pi[1,3] + n[t-1,2]*lambda[2]*pi[2,3]\n}\n\nDo the same projection, but use matrix multiplication.\n\nfor(t in 2:nYears) {\n    n[t,] &lt;- t(pi) %*% (n[t-1,]*lambda)\n    ## Same as:\n    ## n[t,] &lt;- t(pi) %*% diag(lambda) %*% n[t-1,]\n}\n\nCalculate the growth rates.\n\nlambda.it &lt;- n[-1,] / n[-nYears,]\n## Same as:\n## lambda.it &lt;- n[2:nYears,] / n[1:(nYears-1),]\n\nVisualize changes in abundance over time.\n\nmatplot(n, type=\"l\", xlab=\"Time\", ylab=\"Abundance\",\n        ylim=c(0, 220), lwd=2)\nlegend(x=1, y=220,\n       c(\"Subpopulation 1\", \"Subpopulation 2\", \"Subpopulation 3\"),\n       lty=1:3, col=1:3)\n\n\n\n\n\n\n\n\nVisualize changes in growth rates over time.\n\nmatplot(lambda.it, type=\"l\", xlab=\"Time\", ylab=\"Growth rate\",\n        ylim=c(0.7, 1.23), lwd=2)\nlegend(x=5, y=1.23,\n       c(\"Subpopulation 1\", \"Subpopulation 2\", \"Subpopulation 3\"),\n       lty=1:3, col=1:3)\nabline(h=1, col=\"grey\", lty=1)"
   },
   {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#section",
-    "href": "labs/intro/lab-Excel-R-Basics.html#section",
+    "objectID": "labs/metapop/lab-metapop.html#lab-8-assignment-metapopulation-models-due-by-500pm-on-friday",
+    "href": "labs/metapop/lab-metapop.html#lab-8-assignment-metapopulation-models-due-by-500pm-on-friday",
     "title": "Applied Population Dynamics",
     "section": "",
-    "text": "Applied Population Dynamics\nLab 1 – Excel and R Basics"
+    "text": "Answer each of the following questions and upload your Excel file and R script to ELC. Be sure to show your calculations. Undergraduates only have to do Exercise I in R.\n\n\nImagine a metapopulation consisting of 16 sites. In the first year (\\(t=0\\)), the first 2 sites are occupied and the other 14 are not.\n\nProject the metapopulation forward 40 years using a stochastic non-spatial model with colonization (\\(\\gamma\\)) equal to 0.3 and local extinction (\\(\\epsilon\\)) equal to 0.2.\nHint: to simulate whether a site is occupied or not in a given year, you must first compute occupancy probability (\\(\\psi\\)) and then generate the binary presence/absence value using a Bernoulli distribution. The best way to generate a Bernoulli random variable in Excel is to use the IF and RAND functions, not the Bernoulli random number generator. Your formula should look something like =IF(RAND()&lt;CELL, 1, 0) with CELL replaced by an actual cell containing the occupancy probability (\\(\\psi\\)). It will be much faster to drag these equations across cells for all years and sites, than it would be using the Bernoulli random number generator.\nAdditional information: In short, the RAND function draws a random number between 0 and 1. The IF function returns a 1 if this value is less than occupancy probability (\\(\\psi\\)), or it returns a 0 if the random number is greater than \\(\\psi\\). This is doing the same thing as using the Bernoulli distribution to draw a random number.\nMake a graph of the proportion of sites occupied (PrO) on the y-axis, and time on the x-axis.\n\n\n\n\nYou have been hired by the Charles Darwin Research Center on the Galapagos Islands. Your job is to assess a metapopulation of a species of special concern – the Magnificent Frigatebird.\n\nHistorical (fake) data showed that 2 populations of frigatebirds were isolated for 40 years.\n\nProject each population forward 40 years using the basic geometric growth model (not the metapopulation model) with \\(\\lambda_1=1.05\\) and \\(\\lambda_2=0.95\\).\nNext, imagine the 2 populations were actually connected in a small metapopulation. Use the abundance-based metapopulation model (including immigration and emigration) to project these connected subpopulations forward 40 years. Calculate the final growth rates for each population.\nCalculate the final growth rate (\\(N_{t+1}/N_t\\)) for each population, in each of the two scenarios above.\nMake a graph of abundance vs. time for the isolated and connected populations.\nIs site 2 a source or a sink? With this in mind, briefly describe the patterns you see in the graph and discuss the effects (positive and negative) of linking the two populations via dispersal if your goal was to sustain frigatebirds.\n\n\n\n\nHere is an example of how to simulate occupancy data. First, define the parameters and create an empty matrix to store the binary presence/absence data.\n\nnSites &lt;- 10\nnYears &lt;- 12\ngamma &lt;- 0.2    ## Colonization probability\nepsilon &lt;- 0.25 ## Local extinction probability\n\nLet’s assume that we know that the first 8 sites were occupied in year 1. In practice, we would have to estimate initial occupancy.\n\nO &lt;- psi &lt;- matrix(NA, nYears, nSites)\nO[1,] &lt;- c(rep(1, 8), 0, 0)\n\nIn subsequent years, occupancy is determined by colonization and extinction. We can simulate data using the rbinom function. When you set the size argument to 1, rbinom generates random numbers from a Bernoulli distribution.\n\nfor(t in 2:nYears) {\n    psi.t &lt;- O[t-1,]*(1-epsilon) + (1-O[t-1,])*gamma\n    O[t,] &lt;- rbinom(nSites, size=1, prob=psi.t)\n}\n\nTake a look at the binary occupancy data.\n\nO\n\n      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]\n [1,]    1    1    1    1    1    1    1    1    0     0\n [2,]    0    1    1    0    1    1    0    0    0     0\n [3,]    0    1    1    0    0    0    0    0    0     1\n [4,]    0    1    0    0    0    0    0    0    1     1\n [5,]    0    0    0    0    0    1    0    0    1     1\n [6,]    0    1    0    0    0    1    0    0    1     1\n [7,]    0    1    0    0    0    1    0    0    0     1\n [8,]    1    1    0    0    0    1    1    1    0     0\n [9,]    1    0    0    0    1    0    1    1    0     0\n[10,]    1    1    0    0    1    1    1    0    0     0\n[11,]    1    1    0    0    1    1    1    0    0     0\n[12,]    1    1    0    0    0    1    1    0    0     0\n\n\nCompute the number of sites occupied each year.\n\nnOccupied &lt;- rowSums(O)\nnOccupied\n\n [1] 8 4 3 3 3 4 3 5 4 5 5 4\n\n\nCompute the proportion of sites occupied (PrO) each year.\n\nPrO &lt;- nOccupied / nSites\nPrO\n\n [1] 0.8 0.4 0.3 0.3 0.3 0.4 0.3 0.5 0.4 0.5 0.5 0.4\n\n\nGraph it.\n\nplot(1:nYears, PrO, type=\"b\", xlab=\"Time\", ylab=\"Proportion of sites occupied\",\n     ylim=c(0, 1))\n\n\n\n\n\n\n\n\n\n\n\nSuppose we have a metapopulation with 3 subpopulations characterized by growth rates of \\(\\lambda_1=0.98\\), \\(\\lambda_2=1\\), and \\(\\lambda_3=1.02\\). The transition probability matrix is:\n\n\n\n\n\n\\[\n\\begin{bmatrix}\n  0.9 & 0.0 & 0.1 \\\\\n  0.2 & 0.7 & 0.1 \\\\\n  0.1 & 0.0 & 0.9\n\\end{bmatrix}\n\\]\nDefine parameters in R.\n\nlambda &lt;- c(0.98, 1, 1.02)\npi &lt;- matrix(c(\n    0.9, 0.0, 0.1,\n    0.2, 0.7, 0.1,\n    0.1, 0.0, 0.9), nrow=3, ncol=3, byrow=TRUE)\nnPatches &lt;- 3\nnYears &lt;- 50\n\nSet the initial population sizes to 100, 110, and 120.\n\nn &lt;- matrix(NA, nYears, nPatches)\nn[1,] &lt;- c(100, 110, 120)\n\nProject the metapopulation forward.\n\nfor(t in 2:nYears) {\n    n[t,1] &lt;- n[t-1,1]*lambda[1]*(1-pi[1,2]-pi[1,3]) +\n        n[t-1,2]*lambda[2]*pi[2,1] + n[t-1,3]*lambda[3]*pi[3,1]\n    n[t,2] &lt;- n[t-1,2]*lambda[2]*(1-pi[2,1]-pi[2,3]) +\n        n[t-1,1]*lambda[1]*pi[1,2] + n[t-1,3]*lambda[3]*pi[3,2]\n    n[t,3] &lt;- n[t-1,3]*lambda[3]*(1-pi[3,1]-pi[3,2]) +\n        n[t-1,1]*lambda[1]*pi[1,3] + n[t-1,2]*lambda[2]*pi[2,3]\n}\n\nDo the same projection, but use matrix multiplication.\n\nfor(t in 2:nYears) {\n    n[t,] &lt;- t(pi) %*% (n[t-1,]*lambda)\n    ## Same as:\n    ## n[t,] &lt;- t(pi) %*% diag(lambda) %*% n[t-1,]\n}\n\nCalculate the growth rates.\n\nlambda.it &lt;- n[-1,] / n[-nYears,]\n## Same as:\n## lambda.it &lt;- n[2:nYears,] / n[1:(nYears-1),]\n\nVisualize changes in abundance over time.\n\nmatplot(n, type=\"l\", xlab=\"Time\", ylab=\"Abundance\",\n        ylim=c(0, 220), lwd=2)\nlegend(x=1, y=220,\n       c(\"Subpopulation 1\", \"Subpopulation 2\", \"Subpopulation 3\"),\n       lty=1:3, col=1:3)\n\n\n\n\n\n\n\n\nVisualize changes in growth rates over time.\n\nmatplot(lambda.it, type=\"l\", xlab=\"Time\", ylab=\"Growth rate\",\n        ylim=c(0.7, 1.23), lwd=2)\nlegend(x=5, y=1.23,\n       c(\"Subpopulation 1\", \"Subpopulation 2\", \"Subpopulation 3\"),\n       lty=1:3, col=1:3)\nabline(h=1, col=\"grey\", lty=1)"
   },
   {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-column-b",
-    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-column-b",
+    "objectID": "labs/age/lab-age-structure.html",
+    "href": "labs/age/lab-age-structure.html",
     "title": "Applied Population Dynamics",
-    "section": "Referencing – Column B",
-    "text": "Referencing – Column B"
+    "section": "",
+    "text": "Answer each of the following questions and upload your Excel file and R script (graduate students only) to ELC. Be sure to show your calculations. Undergraduates do not have to do either exercise in R. However, undergraduates can get 20 bonus points for doing the entire lab in Excel and R.\n\n\nImagine a population with 4 age classes. The fecundities are \\(f_1=0\\), \\(f_2=1.0\\), \\(f_3=1.5\\), and \\(f_4=1.2\\). The survival probabilities are \\(s_1=0.8\\), \\(s_2=0.5\\), \\(s_3=0.25\\), and \\(s_4=0.0\\). The initial population sizes are \\(n_{1,1}=45\\), \\(n_{2,1}=18\\), \\(n_{3,1}=11\\), \\(n_{4,1}=4\\).\n\nCreate a Leslie matrix with the vital rates provided above.\nProject the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the %*% operator. See the end of this document for guidance.)\nCreate another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting “Format axis”. Choose the logarithmic axis option with base=10.\nCalculate and plot the age-specific growth rates: \\(\\lambda_{i,t}\\). What is the asymptotic growth rate (\\(\\lambda\\)), rounded to 3 decimals places?\nWhat is the stable age distribution?\nGraduate students only: Compute asymptotic \\(\\lambda\\) and the stable age distribution using the function in R.\n\n\n\n\nReproductive value (RV) can be used to identify the age class that contributes the most to population growth. The inoculate method is a way of computing RV by doing one projection for each of the age classes.\nFor each projection, use a population size of 200 individuals, and put all individuals in one of the four age classes. For example, one projection will have \\(n_{1,1}=200\\), \\(n_{2,1}=0\\), \\(n_{3,1}=0\\), \\(n_{4,1}=0\\). The next projection will have all 200 individuals in the next age class, and so on. For each projection, record the total population size after 50 time steps. Reproductive value is calculated by dividing each projection’s total population size (\\(N_t\\)) at \\(t=50\\) by the total population size from the first projection. (As a result, RV will always be 1 for the first age class when using this method).\n\nGiven the following Leslie matrix, calculate the RV of each age class using the inoculate method.\nIf you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?\nGraduate students only: Compute reproductive value using the eigen function.\n\n\n\n\n\nTable 1: Leslie matrix\n\n\n\n\n\n\n1.6\n1.5\n0.25\n0\n\n\n0.8\n0.0\n0.00\n0\n\n\n0.0\n0.5\n0.00\n0\n\n\n0.0\n0.0\n0.25\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of an age-structured model with 3 age classes. It is just an example – the parameter values are different than the ones in the assignment above.\nFirst, create the projection matrix.\n\nA &lt;- matrix(c(0.0, 1.5, 0.5,  ## The fecundities\n              0.5, 0.0, 0.0,  ## The first value is s1\n              0.0, 0.9, 0.0), ## The second value is s2\n            nrow=3, ncol=3, byrow=TRUE)\nA\n\n     [,1] [,2] [,3]\n[1,]  0.0  1.5  0.5\n[2,]  0.5  0.0  0.0\n[3,]  0.0  0.9  0.0\n\n\nSet values of initial abundance and prepare to project over 50 years.\n\nyears &lt;- 1:50\nnYears &lt;- length(years)\nn &lt;- matrix(NA, nYears, 3)\nn[1,] &lt;- c(100, 50, 25)    ## Initial abundance\n\nDo the projection.\n\nfor(t in 2:nYears) {\n  n[t,] &lt;- A %*% n[t-1,]   ## Matrix multiplication\n}\n\nVisualize it.\n\nmatplot(years, n, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Abundance\")\nlegend(35, 100, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nCompute the age distribution and take a look.\n\nN &lt;- rowSums(n) ## Total abundance each year\nc &lt;- n/N        ## This works because of R's recycling rules\nmatplot(years, c, type=\"l\", pch=16, ylim=c(0, 1), xlab=\"Time\",\n        ylab=\"Proportion in each age class\")\nlegend(35, 1, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nGrab the stable age distribution from the final year.\n\nSAD.proj &lt;- c[nYears,]\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the annual growth rates for each age class and plot them.\n\nlambda.it &lt;- n[-1,]/n[-nYears,] ## Divide each row by the row before it\nmatplot(years[-1], ## There are nYears-1 *intervals* between years\n        lambda.it, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Growth rates\")\nabline(h=1, lty=2, col=\"grey\") ## Horizontal line\nlegend(35, 1.8, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nFind asymptotic \\(\\lambda\\) from the last time interval.\n\nlambda.it[nYears-1,] ## These should all be the same\n\n[1] 0.9887199 0.9887199 0.9887199\n\nlambda.proj &lt;- lambda.it[nYears-1,1]\nlambda.proj ## Asymptotic growth rate\n\n[1] 0.9887199\n\n\nNow we will use eigenanalysis to compute the growth rate, stable age distribution, and reproductive value.\nFirst compute \\(\\lambda\\).\n\neA &lt;- eigen(A)\nlambda &lt;- Re(eA$values[1])  ## Dominant eigenvalue is the \nlambda                      ## asymptotic growth rate\n\n[1] 0.9887199\n\n\nMake sure it’s the same growth rate that we found earlier.\n\nlambda.proj\n\n[1] 0.9887199\n\nlambda\n\n[1] 0.9887199\n\n\nNow find the stable age distribution.\n\nSADu &lt;- Re(eA$vectors[,1])  ## Right eigenvector is stable age dist\nSAD &lt;- SADu/sum(SADu)\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\n\nCheck to make sure that the stable age distribution computed using eigenanalysis is equal to that calculated from the projection.\n\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the reproductive value (RV) of each age class.\n\neAT &lt;- eigen(t(A))\nRVu &lt;- Re(eAT$vectors[,1]) ## Left eigenvector gives the RVs\nRV &lt;- RVu/RVu[1]           ## Standard to divide by first RV\nRV\n\n[1] 1.0000000 1.9774397 0.5057044"
   },
   {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-row-3",
-    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-row-3",
+    "objectID": "labs/age/lab-age-structure.html#lab-7-assignment-age-structured-models-due-by-500pm-on-friday",
+    "href": "labs/age/lab-age-structure.html#lab-7-assignment-age-structured-models-due-by-500pm-on-friday",
     "title": "Applied Population Dynamics",
-    "section": "Referencing – Row 3",
-    "text": "Referencing – Row 3"
+    "section": "",
+    "text": "Answer each of the following questions and upload your Excel file and R script (graduate students only) to ELC. Be sure to show your calculations. Undergraduates do not have to do either exercise in R. However, undergraduates can get 20 bonus points for doing the entire lab in Excel and R.\n\n\nImagine a population with 4 age classes. The fecundities are \\(f_1=0\\), \\(f_2=1.0\\), \\(f_3=1.5\\), and \\(f_4=1.2\\). The survival probabilities are \\(s_1=0.8\\), \\(s_2=0.5\\), \\(s_3=0.25\\), and \\(s_4=0.0\\). The initial population sizes are \\(n_{1,1}=45\\), \\(n_{2,1}=18\\), \\(n_{3,1}=11\\), \\(n_{4,1}=4\\).\n\nCreate a Leslie matrix with the vital rates provided above.\nProject the population forward 25 years and plot abundance for each age class and for the total population size. (Graduate students only: Do the projection using matrix multiplication in R with the %*% operator. See the end of this document for guidance.)\nCreate another plot of abundance for each age class, but use the logarithmic scale for the y-axis. This can be done by right-clicking on the y-axis and selecting “Format axis”. Choose the logarithmic axis option with base=10.\nCalculate and plot the age-specific growth rates: \\(\\lambda_{i,t}\\). What is the asymptotic growth rate (\\(\\lambda\\)), rounded to 3 decimals places?\nWhat is the stable age distribution?\nGraduate students only: Compute asymptotic \\(\\lambda\\) and the stable age distribution using the function in R.\n\n\n\n\nReproductive value (RV) can be used to identify the age class that contributes the most to population growth. The inoculate method is a way of computing RV by doing one projection for each of the age classes.\nFor each projection, use a population size of 200 individuals, and put all individuals in one of the four age classes. For example, one projection will have \\(n_{1,1}=200\\), \\(n_{2,1}=0\\), \\(n_{3,1}=0\\), \\(n_{4,1}=0\\). The next projection will have all 200 individuals in the next age class, and so on. For each projection, record the total population size after 50 time steps. Reproductive value is calculated by dividing each projection’s total population size (\\(N_t\\)) at \\(t=50\\) by the total population size from the first projection. (As a result, RV will always be 1 for the first age class when using this method).\n\nGiven the following Leslie matrix, calculate the RV of each age class using the inoculate method.\nIf you were charged with reintroducing this species back into the wild, and you could only reintroduce one age class, which one would you release to maximize population growth? Why is reproductive value so high for this age class?\nGraduate students only: Compute reproductive value using the eigen function.\n\n\n\n\n\nTable 1: Leslie matrix\n\n\n\n\n\n\n1.6\n1.5\n0.25\n0\n\n\n0.8\n0.0\n0.00\n0\n\n\n0.0\n0.5\n0.00\n0\n\n\n0.0\n0.0\n0.25\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is an example of an age-structured model with 3 age classes. It is just an example – the parameter values are different than the ones in the assignment above.\nFirst, create the projection matrix.\n\nA &lt;- matrix(c(0.0, 1.5, 0.5,  ## The fecundities\n              0.5, 0.0, 0.0,  ## The first value is s1\n              0.0, 0.9, 0.0), ## The second value is s2\n            nrow=3, ncol=3, byrow=TRUE)\nA\n\n     [,1] [,2] [,3]\n[1,]  0.0  1.5  0.5\n[2,]  0.5  0.0  0.0\n[3,]  0.0  0.9  0.0\n\n\nSet values of initial abundance and prepare to project over 50 years.\n\nyears &lt;- 1:50\nnYears &lt;- length(years)\nn &lt;- matrix(NA, nYears, 3)\nn[1,] &lt;- c(100, 50, 25)    ## Initial abundance\n\nDo the projection.\n\nfor(t in 2:nYears) {\n  n[t,] &lt;- A %*% n[t-1,]   ## Matrix multiplication\n}\n\nVisualize it.\n\nmatplot(years, n, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Abundance\")\nlegend(35, 100, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nCompute the age distribution and take a look.\n\nN &lt;- rowSums(n) ## Total abundance each year\nc &lt;- n/N        ## This works because of R's recycling rules\nmatplot(years, c, type=\"l\", pch=16, ylim=c(0, 1), xlab=\"Time\",\n        ylab=\"Proportion in each age class\")\nlegend(35, 1, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nGrab the stable age distribution from the final year.\n\nSAD.proj &lt;- c[nYears,]\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the annual growth rates for each age class and plot them.\n\nlambda.it &lt;- n[-1,]/n[-nYears,] ## Divide each row by the row before it\nmatplot(years[-1], ## There are nYears-1 *intervals* between years\n        lambda.it, type=\"l\", pch=16, xlab=\"Time\", ylab=\"Growth rates\")\nabline(h=1, lty=2, col=\"grey\") ## Horizontal line\nlegend(35, 1.8, c(\"Age class 1\", \"Age class 2\", \"Age class 3\"), col=1:3, lty=1:3)\n\n\n\n\n\n\n\n\nFind asymptotic \\(\\lambda\\) from the last time interval.\n\nlambda.it[nYears-1,] ## These should all be the same\n\n[1] 0.9887199 0.9887199 0.9887199\n\nlambda.proj &lt;- lambda.it[nYears-1,1]\nlambda.proj ## Asymptotic growth rate\n\n[1] 0.9887199\n\n\nNow we will use eigenanalysis to compute the growth rate, stable age distribution, and reproductive value.\nFirst compute \\(\\lambda\\).\n\neA &lt;- eigen(A)\nlambda &lt;- Re(eA$values[1])  ## Dominant eigenvalue is the \nlambda                      ## asymptotic growth rate\n\n[1] 0.9887199\n\n\nMake sure it’s the same growth rate that we found earlier.\n\nlambda.proj\n\n[1] 0.9887199\n\nlambda\n\n[1] 0.9887199\n\n\nNow find the stable age distribution.\n\nSADu &lt;- Re(eA$vectors[,1])  ## Right eigenvector is stable age dist\nSAD &lt;- SADu/sum(SADu)\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\n\nCheck to make sure that the stable age distribution computed using eigenanalysis is equal to that calculated from the projection.\n\nSAD\n\n[1] 0.508639 0.257221 0.234140\n\nSAD.proj\n\n[1] 0.508639 0.257221 0.234140\n\n\nNow compute the reproductive value (RV) of each age class.\n\neAT &lt;- eigen(t(A))\nRVu &lt;- Re(eAT$vectors[,1]) ## Left eigenvector gives the RVs\nRV &lt;- RVu/RVu[1]           ## Standard to divide by first RV\nRV\n\n[1] 1.0000000 1.9774397 0.5057044"
   },
   {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#referencing-cell-b3",
-    "href": "labs/intro/lab-Excel-R-Basics.html#referencing-cell-b3",
-    "title": "Applied Population Dynamics",
-    "section": "Referencing – Cell B3",
-    "text": "Referencing – Cell B3"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#create-sequence-using-auto-fill",
-    "href": "labs/intro/lab-Excel-R-Basics.html#create-sequence-using-auto-fill",
-    "title": "Applied Population Dynamics",
-    "section": "Create Sequence Using Auto-fill",
-    "text": "Create Sequence Using Auto-fill\n\n\n\n\n\n\n\nTo use auto-fill: begin a sequence, highlight the cells, and then drag the box at the bottom-right of the last cell."
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references",
-    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references",
-    "title": "Applied Population Dynamics",
-    "section": "Relative Cell References",
-    "text": "Relative Cell References"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-1",
-    "title": "Applied Population Dynamics",
-    "section": "Relative Cell References",
-    "text": "Relative Cell References"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
-    "href": "labs/intro/lab-Excel-R-Basics.html#relative-cell-references-2",
-    "title": "Applied Population Dynamics",
-    "section": "Relative Cell References",
-    "text": "Relative Cell References\n\n\n\n\n\n\nValues of reference will change when using auto-fill"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references",
-    "href": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references",
-    "title": "Applied Population Dynamics",
-    "section": "Absolute Cell References",
-    "text": "Absolute Cell References"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#absolute-cell-references-1",
-    "title": "Applied Population Dynamics",
-    "section": "Absolute Cell References",
-    "text": "Absolute Cell References\n\n\n\n\n\n\nDollar sign “locks” a reference so that auto-fill won’t change it"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#partial-cell-references",
-    "href": "labs/intro/lab-Excel-R-Basics.html#partial-cell-references",
-    "title": "Applied Population Dynamics",
-    "section": "Partial Cell References",
-    "text": "Partial Cell References"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#equations-1",
-    "title": "Applied Population Dynamics",
-    "section": "Equations",
-    "text": "Equations"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-2",
-    "href": "labs/intro/lab-Excel-R-Basics.html#equations-2",
-    "title": "Applied Population Dynamics",
-    "section": "Equations",
-    "text": "Equations\n\n\n\n\n\n\nEquations also have to begin with the equals sign (=)"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-3",
-    "href": "labs/intro/lab-Excel-R-Basics.html#equations-3",
-    "title": "Applied Population Dynamics",
-    "section": "Equations",
-    "text": "Equations"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#equations-4",
-    "href": "labs/intro/lab-Excel-R-Basics.html#equations-4",
-    "title": "Applied Population Dynamics",
-    "section": "Equations",
-    "text": "Equations"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#formulas",
-    "href": "labs/intro/lab-Excel-R-Basics.html#formulas",
-    "title": "Applied Population Dynamics",
-    "section": "Formulas",
-    "text": "Formulas"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-1",
-    "title": "Applied Population Dynamics",
-    "section": "Graphics",
-    "text": "Graphics"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-2",
-    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-2",
-    "title": "Applied Population Dynamics",
-    "section": "Graphics",
-    "text": "Graphics"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-3",
-    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-3",
-    "title": "Applied Population Dynamics",
-    "section": "Graphics",
-    "text": "Graphics\n\n\n\n\n\n\nAdd a line for males"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize",
-    "href": "labs/intro/lab-Excel-R-Basics.html#customize",
-    "title": "Applied Population Dynamics",
-    "section": "Customize",
-    "text": "Customize\n\n\n\n\n\n\nAdd legend"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#customize-1",
-    "title": "Applied Population Dynamics",
-    "section": "Customize",
-    "text": "Customize\n\n\n\n\n\n\nAdd axis labels"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#customize-2",
-    "href": "labs/intro/lab-Excel-R-Basics.html#customize-2",
-    "title": "Applied Population Dynamics",
-    "section": "Customize",
-    "text": "Customize\n\n\n\n\n\n\nChange line color"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
-    "href": "labs/intro/lab-Excel-R-Basics.html#r-software-for-statistical-computing",
-    "title": "Applied Population Dynamics",
-    "section": "R – Software for statistical computing",
-    "text": "R – Software for statistical computing\n\nR can be downloaded here: https://www.r-project.org/\n\nYou can use the graphical user interface that comes with R, or you can run R through a system like ESS+emacs or RStudio (https://posit.co/download/rstudio-desktop/)\n\n\nMost people use RStudio these days"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio",
-    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio",
-    "title": "Applied Population Dynamics",
-    "section": "RStudio",
-    "text": "RStudio"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio-1",
-    "title": "Applied Population Dynamics",
-    "section": "RStudio",
-    "text": "RStudio\nTo create a new script, click: File &gt; New File &gt; R Script\n\n\n\n\n\nSave your script using: File &gt; Save As"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#rstudio-2",
-    "href": "labs/intro/lab-Excel-R-Basics.html#rstudio-2",
-    "title": "Applied Population Dynamics",
-    "section": "RStudio",
-    "text": "RStudio"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#reproducing-the-excel-exercise",
-    "href": "labs/intro/lab-Excel-R-Basics.html#reproducing-the-excel-exercise",
-    "title": "Applied Population Dynamics",
-    "section": "Reproducing the Excel exercise",
-    "text": "Reproducing the Excel exercise\n\nCreate an object called year to hold the sequence of years.1\n\nyear &lt;- 1950:1961 # A vector of integers\nyear              # Type the name of an object to see its values\n\n [1] 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961\n\n\n\nNote that you can use seq to create sequences in a more general way. The c function combines two or more vectors.\n\nupdown &lt;- c(seq(from=20, to=100, by=20), seq(from=100, to=20, by=-20))\nupdown            # Two sequences, combined\n\n [1]  20  40  60  80 100 100  80  60  40  20\n\n\n\n\nUse the length function to determine the number of values in a vector.\n\nnYears &lt;- length(year)\nnYears\n\n[1] 12\n\n\n\n\nEverything in the boxes is R code that you can copy and paste into your script in RStudio. Everything below the boxes is R output."
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
-    "href": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model",
-    "title": "Applied Population Dynamics",
-    "section": "A simple population model",
-    "text": "A simple population model\n\nCreate an empty vector to store the data on females. Set female abundance to 100 in the first year.\n\nfemales &lt;- rep(NA, nYears)\nfemales[1] &lt;- 100\n\n\n\nUse a “for loop” to compute female abundance in subsequent years.\n\nfor(t in 2:nYears) {\n    females[t] &lt;- females[t-1] + females[t-1]*0.01\n}\n\n\n\n\n\nWe will use “for loops” for almost every population model that we implement in R"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model-1",
-    "href": "labs/intro/lab-Excel-R-Basics.html#a-simple-population-model-1",
-    "title": "Applied Population Dynamics",
-    "section": "A simple population model",
-    "text": "A simple population model\n\n\n\nGenerate the data on males using a single line of code.\n\nmales &lt;- females*0.8\n\n\n\n\nPut the objects in a data.frame\n\nmodel1 &lt;- data.frame(year, females, males)\nmodel1\n\n   year  females    males\n1  1950 100.0000 80.00000\n2  1951 101.0000 80.80000\n3  1952 102.0100 81.60800\n4  1953 103.0301 82.42408\n5  1954 104.0604 83.24832\n6  1955 105.1010 84.08080\n7  1956 106.1520 84.92161\n8  1957 107.2135 85.77083\n9  1958 108.2857 86.62854\n10 1959 109.3685 87.49482\n11 1960 110.4622 88.36977\n12 1961 111.5668 89.25347"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-4",
-    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-4",
-    "title": "Applied Population Dynamics",
-    "section": "Graphics",
-    "text": "Graphics\n\nplot(females ~ year, data=model1, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(males ~ year, data=model1, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"),\n       lty=1, pch=16)"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#graphics-5",
-    "href": "labs/intro/lab-Excel-R-Basics.html#graphics-5",
-    "title": "Applied Population Dynamics",
-    "section": "Graphics",
-    "text": "Graphics\n\nAnother way to do the same thing, without putting objects in a data.frame:\n\nplot(x=year, y=females, type=\"o\", xlab=\"Year\", ylab=\"Abundance\",\n     lwd=2, pch=16, ylim=c(0, 120))\nlines(x=year, y=males, type=\"o\", col=\"blue\", lwd=2, pch=16)\nlegend(x=1950, y=40, legend=c(\"Females\", \"Males\"), col=c(\"black\", \"blue\"), lty=1, pch=16)"
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#assignment",
-    "href": "labs/intro/lab-Excel-R-Basics.html#assignment",
-    "title": "Applied Population Dynamics",
-    "section": "Assignment",
-    "text": "Assignment\n\n\nCreate an Excel file and name it “Yourlastname_Yourfirstname”.\nCreate the sheet shown on the next page using the techniques covered in this lab.\n\nUse auto-fill to create the first two columns.\nFor the “Adults” column, use the equation shown for cells C3 through C22. Note: For cell C2, you can directly enter the value “10”.\n\nCopy “Sheet1” to a new sheet and change the color and thickness of the lines. You can pick any colors and thicknesses you want.\nReplicate steps 1–3 using a “for loop” in a self-contained R script. Note that you will need code to create both graphs—the original one and the one with the new line color and thickness.\n\nHint: You can make the juveniles data using seq and c, like we did with the updown example earlier.\n\nUpload the Excel workbook (with both sheets) and the R script to ELC by 5:00pm on Friday.1\n\n\nAlways clear your RStudio workspace and rerun the R script before uploading to ELC."
-  },
-  {
-    "objectID": "labs/intro/lab-Excel-R-Basics.html#excel-sheet-to-be-created",
-    "href": "labs/intro/lab-Excel-R-Basics.html#excel-sheet-to-be-created",
-    "title": "Applied Population Dynamics",
-    "section": "Excel sheet to be created",
-    "text": "Excel sheet to be created"
+    "objectID": "APD-syllabus.html",
+    "href": "APD-syllabus.html",
+    "title": "Course Description",
+    "section": "",
+    "text": "Applied Population Dynamics\n\nWILD 5700/5700L, 7700/7700L, Fall 2025\nLecture: Mon, Wed 9:55–10:50 AM; Room 1-304\nLab: Wed 2:55–5:35; Room 4-517\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstructor\n\nTeaching Assistants\n\n\n\n\nDr. Richard Chandler\n\nUrvi Gupta\nKatherine Araúz-Ponce\n\n\n\nOffice room:\n3-407\n\n3-402\n3-402\n\n\n\nEmail:\nrchandler@warnell.uga.edu\n\nurvi.gupta@uga.edu\narauzponce@uga.edu\n\n\n\nOffice hours:\nMon 11:00–12:00\n\nFri 11:00–12:00 | Thur 11:00–12:00\n\n\n\nor by appointment\n\n\n\n\n\n\n\n\nCourse Description\nFoundations of population dynamics from an applied perspective. Exponential and logistic population growth, life tables, species interactions, and stochastic models for structured populations. Sampling design and analytical methods for estimating abundance and demographic parameters. Application of population models to harvest management and conversation of small populations. Integrative student project required.\n\n\nCourse Objectives and Learning Outcomes\nThis course will present the theory necessary for understanding wildlife population dynamics, and it will explain how to use theory and data to inform management and conservation efforts. By the end of the course, students will be able to: (1) Develop models to forecast the impacts of environmental change and management actions on wildlife populations; (2) Design field studies to collect data on wildlife demographics; (3) Use statistical software to analyze data on wildlife populations; (4) Review scientific literature to support modeling decisions; (5) Present modeling results in a short scientific paper and an oral presentation.\n\n\nTips for Success\n\nTake notes on printed handouts\nDon’t bring laptops or tablets to lecture\nReview notes before each lecture\nKeep up with assigned readings\nFinish lab assignments during lab\nAsk questions during lecture and lab.\nStart the final project early.\nVisit with the TAs and me during office hours.\n\n\n\nGrading\n\n\n\n\n\nQuantity\nGrade percentage\\(^*\\)\n\n\n\n\nQuizzes\n10\n10%\n\n\nLab assignments\n14\n35%\n\n\nFinal paper\\(^{**}\\)\n1\n20%\n\n\nExams\n3\n30%\n\n\nClass participation\n\n5%\n\n\n\n\n\\(^*\\)Late assignments will be penalized 3 points/day, up to a maximum of 50 points off.\n\\(^{**}\\)Graduate students will analyze a real dataset and summarize the results in their final paper.\nA = 93–100, A- = 90–92, B+ = 87–89, B = 83–86, B- = 80–82,\nC+ = 77–79, C = 73–76, C-= 70–72, D = 60–69, F = \\(&lt;\\)60.\n\n\n\nTextbook\nConroy, M.J. and J.P. Carroll. 2009. Quantitative Conservation of Vertebrates. Wiley-Blackwell. Digital copies are available for free through the UGA library.\n\n\nPrerequisites\n\n\n\n\n\n\n\nUndergrads:\n(MATH 1113 or MATH 1113E) and (FANR 3200 or FANR 3200W or ECOL 3500-3500L or ECOL 3505H-3505L)\n\n\nGrads:\nFANR 6750-6750D or BIOS 7010 or BIOS 7010E\n\n\n\n\n\nAcademic Honesty\nUGA Student Honor code: “I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.” A Culture of Honesty, the University’s policy and procedures for handling cases of suspected dishonesty, can be found at https://honesty.uga.edu/. You are responsible for informing yourself about the university’s standards before performing any academic work. Lack of knowledge of the academic honesty policy is not a reasonable explanation for a violation. Please ask if you have questions related to course assignments and the academic honesty policy. Any form of possible academic dishonesty will be reported to the UGA Office of the Vice President for Instruction.\n\n\nFormat and Attendance\nLectures and labs will be in-person. Attendance will not be recorded, but it will be impossible to succeed in the class if you don’t participate in lectures and labs. Quizzes will be taken during lectures.\n\n\nCell Phones and Laptops\nCell phones are not allowed during class unless explicit permission is granted. Laptop computers are discouraged during lecture, but you should bring laptops to labs.\n\n\nUGA Well-Being Resources\nUGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community. Anyone needing assistance is encouraged to contact Student Care & Outreach (SCO) in the Division of Student Affairs at 706-542-8479 or visit sco.uga.edu. Student Care & Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.\nUGA provides both clinical and non-clinical options to support student well-being and mental health, any time, any place. Whether on campus, or studying from home or abroad, UGA Well-being Resources are here to help.\nUniversity Health Center: healthcenter.uga.edu\nCounseling and Psychiatric Services: caps.uga.edu or 24/7 crisis support at 706-542-2273\nHealth Promotion/ Fontaine Center: healthpromotion.uga.edu\nAccessibility and Testing: accessibility.uga.edu\nAdditional information, including free digital well-being resources, can be accessed through the UGA app or by visiting https://well-being.uga.edu.\n\n\nAcademic Coaching\nFor assistance with time management, test and performance anxiety, notetaking, motivation, text comprehension, test preparation, and other barriers to success at UGA, visit the Office of Academic Enhancement.\n\n\nAccommodations for Disabilities\nIf you require a disability-required accommodation, it is essential that you register with the Disability Resource Center (https://drc.uga.edu; 706-542-8719) and notify me of your eligibility for reasonable accommodations. We can then plan how best to coordinate your accommodations. Please note that accommodations cannot be provided retroactively.\n\n\nGenerative AI\nArtificial intelligence (AI) tools, like chatGPT, are generally not allowed in this course. All work submitted must be your own, and it must make use of the concepts and tools that we covered in class, rather than content generated by AI. The only acceptable use of AI is editing, as opposed to creation. If you would like to use AI to edit your writing or your code, you must disclose (1) the prompts provided to AI, (2) your original text or code, and (3) your final text or code. Prompts and output can be disclosed by copying and pasting screenshots into assignment documents. Failure to disclose this information will be considered a violation of the UGA Student Honor Code.\n\n\nTentative Course Outline\n\n\n\n\n\n\n\n\n\nDate\nLecture\nLab\n\n\n\n\nPART I – Models\n\n\nAug 17\nIntroduction\n\n\n\nAug 19\nBIDE model\nExcel and R basics\n\n\nAug 24\nExponential and geometric growth\n\n\n\nAug 26\nLogistic growth\nGeometric and logistic growth\n\n\nAug 31\nHarvest models\n\n\n\nSept 2\nStochasticity\nHarvest models\n\n\nSept 7\nLabor Day – no lecture\n\n\n\nSept 9\nExtinction risk\nExtinction risk\n\n\nSept 14\nExtinction risk\n\n\n\nSept 16\nExam I\nData collection\n\n\nSept 21\nCompetition and predation\n\n\n\nSept 23\nCompetition and predation\nCompetition and predation\n\n\nSept 28\nAge structure\n\n\n\nSept 30\nStage structure\nAge/stage structure\n\n\nOct 5\nSource-sink dynamics\n\n\n\nOct 7\nMetapopulations\nMetapopulations\n\n\nOct 12\nPopulation viability analysis\n\n\n\nOct 14\nSensitivity analysis\nPopulation viability analysis\n\n\nPART II – Estimation\n\n\nOct 19\nStudy design\n\n\n\nOct 21\nExam II\nData collection\n\n\nOct 26\nOccupancy models\n\n\n\nOct 28\nOccupancy models\nOccupancy models\n\n\nNov 2\nDistance sampling\nDue: First draft\n\n\nNov 4\nDistance sampling\nDistance sampling\n\n\nNov 9\nMark-recapture: closed populations\n\n\n\nNov 11\nMark-recapture: closed populations\nMark-recapture I\n\n\nNov 16\nMark-recapture: open populations\nDue: peer review\n\n\nNov 18\nMark-recapture: open populations\nMark-recapture II\n\n\nNov 23\nThanksgiving Break\nThanksgiving Break\n\n\nNov 25\nThanksgiving Break\nThanksgiving Break\n\n\nNov 30\nSurvival analysis\n\n\n\nDec 2\nReading day\nNo lab\n\n\nDec 9\nFinal exam (8:00-11:00am)\nRoom 1-304\n\n\n\n\nThe course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary."
   }
 ]
