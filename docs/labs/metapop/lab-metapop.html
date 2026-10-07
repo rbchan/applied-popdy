@@ -221,8 +221,8 @@ window.Quarto = {
 <p>You have been hired by the Charles Darwin Research Center on the Galapagos Islands. Your job is to assess a metapopulation of a species of special concern – the Magnificent Frigatebird.</p>
 <p>Historical (fake) data showed that 2 populations of frigatebirds were isolated for 40 years.</p>
 <ol type="a">
-<li>Project each population forward 40 years using the basic geometric growth model (not the metapopulation model) with <span class="math inline">\(\lambda_1=1.05\)</span> and <span class="math inline">\(\lambda_2=0.95\)</span>.</li>
-<li>Next, imagine the 2 populations were actually connected in a small metapopulation. Use the abundance-based metapopulation model (including immigration and emigration) to project these connected subpopulations forward 40 years. Calculate the final growth rates for each population.</li>
+<li>Project the two isolated populations forward 40 years using the basic geometric growth model (not the metapopulation model) with <span class="math inline">\(\lambda_1=1.05\)</span> and <span class="math inline">\(\lambda_2=0.95\)</span>.</li>
+<li>Next, imagine the 2 populations were actually connected in a small metapopulation. Use the abundance-based metapopulation model (including immigration and emigration) to project these two connected subpopulations forward 40 years.</li>
 <li>Calculate the final growth rate (<span class="math inline">\(N_{t+1}/N_t\)</span>) for each population, in each of the two scenarios above.</li>
 <li>Make a graph of abundance vs.&nbsp;time for the isolated and connected populations.</li>
 <li>Is site 2 a source or a sink? With this in mind, briefly describe the patterns you see in the graph and discuss the effects (positive and negative) of linking the two populations via dispersal if your goal was to sustain frigatebirds.</li>
@@ -255,17 +255,17 @@ window.Quarto = {
 <div class="cell-output cell-output-stdout">
 <pre><code>      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
  [1,]    1    1    1    1    1    1    1    1    0     0
- [2,]    0    1    1    0    1    1    1    1    0     0
- [3,]    0    1    1    0    1    1    1    1    0     0
- [4,]    0    0    1    0    1    1    1    1    0     0
- [5,]    1    0    1    1    1    0    1    1    0     0
- [6,]    1    0    1    1    1    0    0    1    0     0
- [7,]    1    0    1    1    0    1    0    0    0     1
- [8,]    1    0    0    1    0    1    1    0    0     1
- [9,]    1    0    1    1    0    1    0    0    1     1
-[10,]    0    0    1    1    1    1    0    0    1     0
-[11,]    0    0    1    1    1    1    0    1    1     0
-[12,]    0    0    1    1    1    1    0    1    1     1</code></pre>
+ [2,]    1    0    0    0    1    1    1    1    0     0
+ [3,]    1    1    0    0    0    1    1    0    1     1
+ [4,]    0    1    1    0    0    0    0    1    0     0
+ [5,]    0    0    1    1    0    0    0    1    1     0
+ [6,]    0    0    1    0    0    0    0    1    1     0
+ [7,]    1    1    1    0    0    1    0    0    0     0
+ [8,]    1    1    1    0    0    1    0    1    0     0
+ [9,]    0    1    1    0    1    1    0    1    1     0
+[10,]    0    1    1    0    0    1    0    1    1     0
+[11,]    0    0    1    0    0    1    0    1    1     0
+[12,]    1    0    1    0    0    1    0    0    1     0</code></pre>
 </div>
 </div>
 <p>Compute the number of sites occupied each year.</p>
@@ -273,7 +273,7 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nOccupied <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(O)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nOccupied</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 8 6 6 5 6 5 5 5 6 5 6 7</code></pre>
+<pre><code> [1] 8 5 6 3 4 3 4 5 6 5 4 4</code></pre>
 </div>
 </div>
 <p>Compute the proportion of sites occupied (PrO) each year.</p>
@@ -281,7 +281,7 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>PrO <span class="ot">&lt;-</span> nOccupied <span class="sc">/</span> nSites</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>PrO</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.8 0.6 0.6 0.5 0.6 0.5 0.5 0.5 0.6 0.5 0.6 0.7</code></pre>
+<pre><code> [1] 0.8 0.5 0.6 0.3 0.4 0.3 0.4 0.5 0.6 0.5 0.4 0.4</code></pre>
 </div>
 </div>
 <p>Graph it.</p>
