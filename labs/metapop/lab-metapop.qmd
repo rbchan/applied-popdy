@@ -25,11 +25,14 @@ Imagine a metapopulation consisting of 16 sites. In the first year
 
 ### Exercise II: Abundance-based metapopulation models
 
+
+![](figs/frigatebird.jpg)
+
+
 You have been hired by the Charles Darwin Research Center on the
 Galapagos Islands. Your job is to assess a metapopulation of a species
 of special concern -- the Magnificent Frigatebird.
 
-![](figs/frigatebird.jpg)
 
 Historical (fake) data showed that 2 populations of frigatebirds were
 isolated for 40 years.

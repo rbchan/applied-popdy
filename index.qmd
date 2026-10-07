@@ -82,3 +82,5 @@ and an oral presentation.
 ### Week 8 - Metapopulations
 
 - [Lecture 10 - Metapopulations](lectures/metapop/lecture-metapop.qmd)
+
+- [Lab 8 - Metapopulations](labs/metapop/lab-metapop.qmd)
