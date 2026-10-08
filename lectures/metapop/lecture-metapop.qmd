@@ -3,7 +3,7 @@
 format:
   revealjs:
     theme: default
-    pagetitle: 'Dog'
+    pagetitle: 'Metapopulations'
     slide-number: true
 lang: en
 ---
