@@ -253,7 +253,6 @@
 <li class="fragment">Return to step 4</li>
 </ol>
 </div>
-<p><br></p>
 <div class="fragment">
 <center>
 <strong>Very similar to adaptive management</strong>
@@ -305,12 +304,12 @@
 <h2>Products of PVA</h2>
 <p><br></p>
 <center>
-<img data-src="figs/costben2.png" style="width:70.0%">
+<img data-src="figs/costben2.png" style="width:65.0%">
 </center>
 </section>
 <section id="central-georgia-black-bears" class="slide level2">
 <h2>Central Georgia black bears</h2>
-<div style="font-size: 75%;">
+<div style="font-size: 70%;">
 <p>Smallest and most isolated bear population in GA.</p>
 <p>Little information about the effects of harvest on population viability.</p>
 <p>Five years of genetic capture-recapture data were used to estimate abundance and develop population models.</p>
@@ -325,7 +324,7 @@
 <section id="central-georgia-black-bears-1" class="slide level2">
 <h2>Central Georgia black bears</h2>
 <center>
-<img data-src="figs/ga-bears-recruitment.png">
+<img data-src="figs/ga-bears-recruitment.png" style="width:70.0%">
 </center>
 </section>
 <section id="central-georgia-black-bears-2" class="slide level2">
@@ -412,7 +411,13 @@
 <p>A problem with sensitivities is that it is hard to compare values for parameters on different scales, such as survival and fecundity. For this reason, it can be better to report “elasticities” instead.</p>
 <div class="fragment">
 <p><strong>Elasticity</strong>: the proportional change in <span class="math inline">\(\lambda\)</span> caused by proportional changes in vital rates.</p>
-<p>Easier interpretation because: * Standardized units * Values sum to 1</p>
+</div>
+<div class="fragment">
+<p>Easier interpretation because:</p>
+<ul>
+<li>Standardized units</li>
+<li>Values sum to 1</li>
+</ul>
 </div>
 <div class="fragment">
 <p><strong>Examples</strong></p>
@@ -434,6 +439,8 @@
 <span id="cb1-4"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
 <span id="cb1-5"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p><br></p>
+<div class="fragment">
 <p>We can use eigenanalysis to compute <span class="math inline">\(\lambda\)</span>, stable age distribution, reproductive value, sensitivities, and elasticities.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>eA <span class="ot">&lt;-</span> <span class="fu">eigen</span>(A)</span>
@@ -446,6 +453,7 @@
 <span id="cb4-2"><a></a>w <span class="ot">&lt;-</span> w<span class="sc">/</span><span class="fu">sum</span>(w)                    <span class="do">## Stable age distribution</span></span>
 <span id="cb4-3"><a></a></span>
 <span id="cb4-4"><a></a>v <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(<span class="fu">t</span>(A))<span class="sc">$</span>vectors[,<span class="dv">1</span>]) <span class="do">## Reproductive value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 </div>
 </section>

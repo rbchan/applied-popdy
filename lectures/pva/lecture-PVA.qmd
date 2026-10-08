@@ -18,7 +18,7 @@ lang: en
 <center>
 
 **Population viability analysis <br> and sensitivity analysis**
-    
+
 ![](figs/Fenders_blue.jpg){height=10cm}
 ![](figs/Urocyon_littoralis.jpg){height=10cm}
 
@@ -87,7 +87,6 @@ Now routine part of species assessments and recovery plans.
 7. Return to step 4
 :::
 
-<br>
 
 ::: {.fragment}
 <center>
@@ -137,7 +136,7 @@ Now routine part of species assessments and recovery plans.
 <br>
 
 <center>
-![](figs/costben2){width='70%'}
+![](figs/costben2){width='65%'}
 </center>
 
 
@@ -145,7 +144,7 @@ Now routine part of species assessments and recovery plans.
 
 ## Central Georgia black bears
 
-::: {style='font-size: 75%;'}
+::: {style='font-size: 70%;'}
 Smallest and most isolated bear population in GA.
   
 Little information about the effects of harvest on population viability.
@@ -169,7 +168,7 @@ Hooker et al. (2020, JWM)
 ## Central Georgia black bears
   
 <center>
-![](figs/ga-bears-recruitment)
+![](figs/ga-bears-recruitment){width='70%'}
 </center>
 
 
@@ -253,10 +252,14 @@ A problem with sensitivities is that it is hard to compare values for parameters
   
 ::: {.fragment}
 **Elasticity**: the proportional change in $\lambda$ caused by proportional changes in vital rates.
-  
+:::
+
+::: {.fragment}
 Easier interpretation because:
-* Standardized units
-* Values sum to 1
+
+- Standardized units
+- Values sum to 1
+
 :::
    
    
@@ -287,6 +290,9 @@ A <- matrix(c(
     0.0, 0.0, 0.8, 0.5), nrow=4, byrow=TRUE)
 ```
 
+<br>
+
+::: {.fragment}
 We can use eigenanalysis to compute $\lambda$, stable age
 distribution, reproductive value, sensitivities, and elasticities.
 
@@ -302,6 +308,8 @@ w <- w/sum(w)                    ## Stable age distribution
 
 v <- Re(eigen(t(A))$vectors[,1]) ## Reproductive value
 ```
+:::
+
 :::
 
 

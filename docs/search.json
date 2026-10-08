@@ -1579,7 +1579,7 @@
     "href": "lectures/pva/lecture-PVA.html#steps-of-pva",
     "title": "Applied Population Dynamics",
     "section": "Steps of PVA",
-    "text": "Steps of PVA\n\n\nDevelop objectives\nDevelop a set of competing models\nDesign a study to collect necessary data\nFit models to data and select the best model(s)\nUse model(s) to identify best management options\nImplement management option, monitor the consequences, and refine models\nReturn to step 4\n\n\n\n\n\nVery similar to adaptive management"
+    "text": "Steps of PVA\n\n\nDevelop objectives\nDevelop a set of competing models\nDesign a study to collect necessary data\nFit models to data and select the best model(s)\nUse model(s) to identify best management options\nImplement management option, monitor the consequences, and refine models\nReturn to step 4\n\n\n\n\nVery similar to adaptive management"
   },
   {
     "objectID": "lectures/pva/lecture-PVA.html#types-of-pva",
@@ -1635,14 +1635,14 @@
     "href": "lectures/pva/lecture-PVA.html#elasticity",
     "title": "Applied Population Dynamics",
     "section": "Elasticity",
-    "text": "Elasticity\n\nA problem with sensitivities is that it is hard to compare values for parameters on different scales, such as survival and fecundity. For this reason, it can be better to report “elasticities” instead.\n\nElasticity: the proportional change in \\(\\lambda\\) caused by proportional changes in vital rates.\nEasier interpretation because: * Standardized units * Values sum to 1\n\n\nExamples\n\n“A 1% increase in \\(f_1\\) increases \\(\\lambda\\) by 0.01%.”\n“A 1% increase in \\(s_1\\) increases \\(\\lambda\\) by 0.05%.”"
+    "text": "Elasticity\n\nA problem with sensitivities is that it is hard to compare values for parameters on different scales, such as survival and fecundity. For this reason, it can be better to report “elasticities” instead.\n\nElasticity: the proportional change in \\(\\lambda\\) caused by proportional changes in vital rates.\n\n\nEasier interpretation because:\n\nStandardized units\nValues sum to 1\n\n\n\nExamples\n\n“A 1% increase in \\(f_1\\) increases \\(\\lambda\\) by 0.01%.”\n“A 1% increase in \\(s_1\\) increases \\(\\lambda\\) by 0.05%.”"
   },
   {
     "objectID": "lectures/pva/lecture-PVA.html#r-code-for-sensitivity-analysis",
     "href": "lectures/pva/lecture-PVA.html#r-code-for-sensitivity-analysis",
     "title": "Applied Population Dynamics",
     "section": "R code for sensitivity analysis",
-    "text": "R code for sensitivity analysis\n\nSuppose we have the following stage-structured projection matrix:\n\nA &lt;- matrix(c(\n    0.2, 0.8, 1.0, 0.9,\n    0.4, 0.0, 0.0, 0.0,\n    0.0, 0.6, 0.0, 0.0,\n    0.0, 0.0, 0.8, 0.5), nrow=4, byrow=TRUE)\n\nWe can use eigenanalysis to compute \\(\\lambda\\), stable age distribution, reproductive value, sensitivities, and elasticities.\n\neA &lt;- eigen(A)\nlam &lt;- Re(eA$values[1])\nlam                              ## Asymtotic growth rate\n\n[1] 1.034908\n\nw &lt;- Re(eA$vectors[,1])\nw &lt;- w/sum(w)                    ## Stable age distribution\n\nv &lt;- Re(eigen(t(A))$vectors[,1]) ## Reproductive value"
+    "text": "R code for sensitivity analysis\n\nSuppose we have the following stage-structured projection matrix:\n\nA &lt;- matrix(c(\n    0.2, 0.8, 1.0, 0.9,\n    0.4, 0.0, 0.0, 0.0,\n    0.0, 0.6, 0.0, 0.0,\n    0.0, 0.0, 0.8, 0.5), nrow=4, byrow=TRUE)\n\n\n\nWe can use eigenanalysis to compute \\(\\lambda\\), stable age distribution, reproductive value, sensitivities, and elasticities.\n\neA &lt;- eigen(A)\nlam &lt;- Re(eA$values[1])\nlam                              ## Asymtotic growth rate\n\n[1] 1.034908\n\nw &lt;- Re(eA$vectors[,1])\nw &lt;- w/sum(w)                    ## Stable age distribution\n\nv &lt;- Re(eigen(t(A))$vectors[,1]) ## Reproductive value"
   },
   {
     "objectID": "lectures/pva/lecture-PVA.html#r-code-for-sensitivity-analysis-1",
