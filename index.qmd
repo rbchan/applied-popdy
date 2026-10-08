@@ -84,3 +84,7 @@ and an oral presentation.
 - [Lecture 10 - Metapopulations](lectures/metapop/lecture-metapop.qmd)
 
 - [Lab 8 - Metapopulations](labs/metapop/lab-metapop.qmd)
+
+### Week 9 - PVA and sensitivity analysis
+
+- [Lecture 11 - PVA and sensitivity analysis](lectures/pva/lecture-PVA.qmd)

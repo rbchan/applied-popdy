@@ -29,35 +29,41 @@ lang: en
 
 ## What is PVA?
   
+<br>
+
 **Population Viability Analysis**
   
 > "The use of quantitative methods to predict the likely future status of a population or collection of populations of conservation concern."
 
+::: {style='font-size: 80%; text-align: right; color: grey;'}
 Morris and Doak (2002)
+:::
 
 
 
 
-## History
+## History {background-image="figs/Grizzly_Denali.jpg"}
 
 First used by Shaffer (1983) to estimate the **minimum viable population** size in Yellowstone National Park
 
-<center>
-![](figs/Grizzly_Denali)
-</center>
-  
+<!-- <center> -->
+<!-- ![](figs/Grizzly_Denali.jpg) -->
+<!-- </center> -->
+
+<br><br><br><br><br><br><br><br>
   
 Now routine part of species assessments and recovery plans.
 
 
 
 
-# Uses
+# Uses {visibility="hidden"}
 
 
 
 ## Uses of PVA
 
+::: {.incremental style='font-size: 80%;'}
 * Assessing the extinction risk of a single population
 * Comparing relative risks of two or more populations
 * Analyzing and synthesizing monitoring data
@@ -66,10 +72,12 @@ Now routine part of species assessments and recovery plans.
 * Determining how many individuals to release to establish a new population
 * Setting limits on the harvest or "take" from a population that are compatible with its continued existence
 * Determining how many (and which) populations are needed to achieve a desired overall likelihood of species persistence
+:::
   
 
 ## Steps of PVA
 
+::: {.incremental style='font-size: 90%;'}
 1. Develop objectives
 2. Develop a set of competing models
 3. Design a study to collect necessary data
@@ -77,42 +85,59 @@ Now routine part of species assessments and recovery plans.
 5. Use model(s) to identify best management options
 6. Implement management option, monitor the consequences, and refine models
 7. Return to step 4
-  
+:::
 
+<br>
+
+::: {.fragment}
 <center>
 **Very similar to adaptive management**
 </center>
+:::
 
 
 
 
 ## Types of PVA
   
+::: {style='font-size: 75%;'}
 - Count-based PVA
     * This is the cheapest, but least-informative method
       
+::: {.fragment}
 - Demographic PVA
     * Requires estimates of vital rates
     * Useful for identifying key demographic parameters
+:::
       
+::: {.fragment}
 - Metapopulation viability analysis
     * Useful in reserve design
+:::
       
+::: {.fragment}
 - Spatially-explicit, individual-based PVA
     * Most realistic, but hardest to parameterize
+:::
       
 
 
+::: {.fragment}
 <center>
 **All methods require clear definition of time horizon and acceptable level of extinction risk**
 </center>
+:::
+
+:::
 
 
 
 ## Products of PVA
 
+<br>
+
 <center>
-![](figs/costben2)
+![](figs/costben2){width='70%'}
 </center>
 
 
@@ -120,17 +145,22 @@ Now routine part of species assessments and recovery plans.
 
 ## Central Georgia black bears
 
+::: {style='font-size: 75%;'}
 Smallest and most isolated bear population in GA.
   
 Little information about the effects of harvest on population viability.
   
 Five years of genetic capture-recapture data were used to estimate abundance and develop population models.
+:::
   
-![](figs/ga-bears-studyarea){height=3.5cm}
-![](figs/ga-bears-density){height=3.5cm}
+<center>
+![](figs/ga-bears-studyarea){height=9cm}
+![](figs/ga-bears-density){height=9cm}
+</center>
   
+::: {style='font-size: 60%; text-align: right; color: grey;'}
 Hooker et al. (2020, JWM)
-
+:::
 
 
 
@@ -138,15 +168,26 @@ Hooker et al. (2020, JWM)
 
 ## Central Georgia black bears
   
+<center>
 ![](figs/ga-bears-recruitment)
+</center>
 
 
 
 ## Central Georgia black bears
 
-![](figs/ga-bears-status-quo)
-![](figs/ga-bears-10)
-![](figs/ga-bears-20)
+<center>
+![](figs/ga-bears-status-quo){width='50%'}
+
+::: {.fragment}
+![](figs/ga-bears-10){width='50%'}
+:::
+
+::: {.fragment}
+![](figs/ga-bears-20){width='50%'}
+:::
+
+</center>
 
 
 
@@ -157,29 +198,41 @@ Hooker et al. (2020, JWM)
 
 ## Sensitivity analysis
 
+::: {style='font-size: 75%;'}
 A sensitivity analysis seeks to understand the degree to which $\lambda$ is sensitive to changes in a vital rate, while holding all other rates constant.
   
   
-Usually applied to age- or stage-based population models. \par
+::: {.fragment}
+Usually applied to age- or stage-based population models.
+:::
   
   
-The sensitivity of $\lambda$ to a change in a population parameter $\theta$ (e.g., survival or fecundity), is:
+::: {.fragment}
+The sensitivity of $\lambda$ to a change in a population parameter $\theta$ (e.g., survival or fecundity), is (loosely):
+<!-- $$ -->
+<!--     \text{sensitivity}_{i,j} = \frac{\partial \lambda}{\partial \theta_{i,j}} -->
+<!-- $$ -->
 $$
-    \text{sensitivity} = { \lim\limits_{\Delta \theta \to 0}}\; \frac{\Delta \lambda}{\Delta \theta}
+    \text{sensitivity} = {\small \lim\limits_{\Delta \theta \to 0}}\; \frac{\Delta \lambda}{\Delta \theta}
 $$
+:::
   
   
+::: {.fragment}
 **Sensitivities allow us to make statements such as:**
 
 > "Increasing subadult fecundity by a small amount increases $\lambda$ by 0.01, whereas increasing adult fecundity by the same amount increases $\lambda$ by 0.02. Therefore, population growth is more sensitive to changes in adult fecundity."
+:::
 
 
+:::
 
 
 
 ## Sensitivity example
   
-  
+::: {style='font-size: 80%;'}
+
   Parameter                                $\Delta \theta$   $\Delta \lambda$   Sensitivity
   --------------------------------------- ----------------- ------------------ -------------
   Fecundity of first age class ($f_1$)          0.05              0.010            0.20
@@ -187,34 +240,46 @@ $$
   Survival of first age class ($s_1$)           0.05              0.040            0.80
   Survival of second age class ($s_2$)          0.05              0.030            0.60
 
+:::
 
 
-  ## Elasticity
+
+## Elasticity
+
+::: {style='font-size: 80%;'}
 
 A problem with sensitivities is that it is hard to compare values for parameters on different scales, such as survival and fecundity. For this reason, it can be better to report "elasticities" instead.
   
   
+::: {.fragment}
 **Elasticity**: the proportional change in $\lambda$ caused by proportional changes in vital rates.
   
 Easier interpretation because:
 * Standardized units
 * Values sum to 1
+:::
    
    
+::: {.fragment}
 **Examples**
   
 * "A 1% increase in $f_1$ increases $\lambda$ by 0.01%."
 * "A 1% increase in $s_1$ increases $\lambda$ by 0.05%."
+:::
+
+:::
   
 
 
 
 ## R code for sensitivity analysis
 
+::: {style='font-size: 70%;'}
 Suppose we have the following stage-structured projection matrix:
 
 ```{r}
 #| label: A
+#| echo: true
 A <- matrix(c(
     0.2, 0.8, 1.0, 0.9,
     0.4, 0.0, 0.0, 0.0,
@@ -227,6 +292,7 @@ distribution, reproductive value, sensitivities, and elasticities.
 
 ```{r}
 #| label: eigen
+#| echo: true
 eA <- eigen(A)
 lam <- Re(eA$values[1])
 lam                              ## Asymtotic growth rate
@@ -236,25 +302,33 @@ w <- w/sum(w)                    ## Stable age distribution
 
 v <- Re(eigen(t(A))$vectors[,1]) ## Reproductive value
 ```
+:::
 
 
 ## R code for sensitivity analysis
 
+::: {style='font-size: 80%;'}
 The sensitivities are given by $z_{ij}=\frac{v_i w_j}{{\bf v}{\bf w}}$
 ```{r}
 #| label: sen
+#| echo: true
 z <- outer(v,w)/c(v%*%w)
 z ## Sensitivites
 ```
 
+<br>
 
+::: {.fragment}
 The elasticities are given by $e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}$
 ```{r}
 #| label: el
-#| size: 'scriptsize'
+#| echo: true
 e <- A*z/lam
 e  ## Elasticities
 ```
+:::
+
+:::
 
 
 
@@ -263,6 +337,7 @@ e  ## Elasticities
 
 ## Summary
 
+::: {style='font-size: 80%;'}
 PVA covers almost all methods for predicting how populations will respond to future scenarios.
   
 The most common use is to assess how different conservation strategies will affect extinction risk.
@@ -272,10 +347,13 @@ Sensitivity analysis is a component of PVA that can guide conservation planning.
 * Sensitivity measures the change in $\lambda$ given an absolute change in a parameter.
 * Elasticity measures the proportional change in $\lambda$ given a proportional change in a parameter.
   
+:::
 
 ## Summary
 
-**Problems with PVA*
+::: {style='font-size: 80%;'}
+
+**Problems with PVA**
 
 Most PVAs are "*essentially games played with guesses.*" (Caughley, G. 1994. Conservation Biology).
   
@@ -283,9 +361,13 @@ Many PVA's don't include multiple models corresponding to different hypotheses, 
   
 Some software encourages this.
   
+::: {.fragment}
 **Solutions**
 
 Collect better data! We need more demographic research, conducted in an adaptive management framework.
   
 When data are limited (and they always are), decrease the time horizon and acknowledge uncertainty in decision process.
+:::
+
+:::
 

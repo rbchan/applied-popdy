@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>Applied Population Dynamics – PVA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,16 +16,10 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -33,8 +27,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -145,99 +205,140 @@
 </section>
 <section id="what-is-pva" class="slide level2">
 <h2>What is PVA?</h2>
+<p><br></p>
 <p><strong>Population Viability Analysis</strong></p>
 <blockquote>
-<p>The use of quantitative methods to predict the likely future status of a population or collection of populations of conservation concern.</p>
+<p>“The use of quantitative methods to predict the likely future status of a population or collection of populations of conservation concern.”</p>
 </blockquote>
+<div style="font-size: 80%; text-align: right; color: grey;">
 <p>Morris and Doak (2002)</p>
+</div>
 </section>
-<section id="history" class="slide level2">
+<section id="history" class="slide level2" data-background-image="figs/Grizzly_Denali.jpg">
 <h2>History</h2>
 <p>First used by Shaffer (1983) to estimate the <strong>minimum viable population</strong> size in Yellowstone National Park</p>
-<center>
-<img data-src="figs/Grizzly_Denali.png">
-</center>
+<!-- <center> -->
+<!-- ![](figs/Grizzly_Denali.jpg) -->
+<!-- </center> -->
+<p><br><br><br><br><br><br><br><br></p>
 <p>Now routine part of species assessments and recovery plans.</p>
 </section></section>
 <section>
-<section id="uses" class="title-slide slide level1 center">
-<h1>Uses</h1>
 
-</section>
-<section id="uses-of-pva-from-morris-and-doak-2002" class="slide level2">
-<h2>Uses of PVA (from Morris and Doak (2002))</h2>
+<section id="uses-of-pva" class="slide level2">
+<h2>Uses of PVA</h2>
+<div style="font-size: 80%;">
 <ul>
-<li>Assessing the extinction risk of a single population</li>
-<li>Comparing relative risks of two or more populations</li>
-<li>Analyzing and synthesizing monitoring data</li>
-<li>Identifying key life stages or demographic processes as management targets (sensitivity analysis)</li>
-<li>Determining how large a reserve needs to be to achieve a desired level of protection from extinction</li>
-<li>Determining how many individuals to release to establish a new population</li>
-<li>Setting limits on the harvest or “take” from a population that are compatible with its continued existence</li>
-<li>Determining how many (and which) populations are needed to achieve a desired overall likelihood of species persistence</li>
+<li class="fragment">Assessing the extinction risk of a single population</li>
+<li class="fragment">Comparing relative risks of two or more populations</li>
+<li class="fragment">Analyzing and synthesizing monitoring data</li>
+<li class="fragment">Identifying key life stages or demographic processes as management targets (sensitivity analysis)</li>
+<li class="fragment">Determining how large a reserve needs to be to achieve a desired level of protection from extinction</li>
+<li class="fragment">Determining how many individuals to release to establish a new population</li>
+<li class="fragment">Setting limits on the harvest or “take” from a population that are compatible with its continued existence</li>
+<li class="fragment">Determining how many (and which) populations are needed to achieve a desired overall likelihood of species persistence</li>
 </ul>
+</div>
 </section>
 <section id="steps-of-pva" class="slide level2">
 <h2>Steps of PVA</h2>
+<div style="font-size: 90%;">
 <ol type="1">
-<li>Develop objectives</li>
-<li>Develop a set of competing models</li>
-<li>Design a study to collect necessary data</li>
-<li>Fit models to data and select the best model(s)</li>
-<li>Use model(s) to identify best management options</li>
-<li>Implement management option, monitor the consequences, and refine models</li>
-<li>Return to step 4</li>
+<li class="fragment">Develop objectives</li>
+<li class="fragment">Develop a set of competing models</li>
+<li class="fragment">Design a study to collect necessary data</li>
+<li class="fragment">Fit models to data and select the best model(s)</li>
+<li class="fragment">Use model(s) to identify best management options</li>
+<li class="fragment">Implement management option, monitor the consequences, and refine models</li>
+<li class="fragment">Return to step 4</li>
 </ol>
+</div>
+<p><br></p>
+<div class="fragment">
 <center>
 <strong>Very similar to adaptive management</strong>
 </center>
+</div>
 </section>
 <section id="types-of-pva" class="slide level2">
 <h2>Types of PVA</h2>
+<div style="font-size: 75%;">
 <ul>
 <li>Count-based PVA
 <ul>
 <li>This is the cheapest, but least-informative method</li>
 </ul></li>
+</ul>
+<div class="fragment">
+<ul>
 <li>Demographic PVA
 <ul>
 <li>Requires estimates of vital rates</li>
 <li>Useful for identifying key demographic parameters</li>
 </ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>Metapopulation viability analysis
 <ul>
 <li>Useful in reserve design</li>
 </ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>Spatially-explicit, individual-based PVA
 <ul>
 <li>Most realistic, but hardest to parameterize</li>
 </ul></li>
 </ul>
+</div>
+<div class="fragment">
 <center>
 <strong>All methods require clear definition of time horizon and acceptable level of extinction risk</strong>
 </center>
+</div>
+</div>
 </section>
 <section id="products-of-pva" class="slide level2">
 <h2>Products of PVA</h2>
+<p><br></p>
 <center>
-<img data-src="figs/costben2.png">
+<img data-src="figs/costben2.png" style="width:70.0%">
 </center>
 </section>
 <section id="central-georgia-black-bears" class="slide level2">
 <h2>Central Georgia black bears</h2>
+<div style="font-size: 75%;">
 <p>Smallest and most isolated bear population in GA.</p>
 <p>Little information about the effects of harvest on population viability.</p>
 <p>Five years of genetic capture-recapture data were used to estimate abundance and develop population models.</p>
-<p><img data-src="figs/ga-bears-studyarea.png" style="height:3.5cm"> <img data-src="figs/ga-bears-density.png" style="height:3.5cm"></p>
+</div>
+<center>
+<img data-src="figs/ga-bears-studyarea.png" style="height:9cm"> <img data-src="figs/ga-bears-density.png" style="height:9cm">
+</center>
+<div style="font-size: 60%; text-align: right; color: grey;">
 <p>Hooker et al.&nbsp;(2020, JWM)</p>
+</div>
 </section>
 <section id="central-georgia-black-bears-1" class="slide level2">
 <h2>Central Georgia black bears</h2>
-
-<img data-src="figs/ga-bears-recruitment.png" class="r-stretch"></section>
+<center>
+<img data-src="figs/ga-bears-recruitment.png">
+</center>
+</section>
 <section id="central-georgia-black-bears-2" class="slide level2">
 <h2>Central Georgia black bears</h2>
-<p><img data-src="figs/ga-bears-status-quo.png"> <img data-src="figs/ga-bears-10.png"> <img data-src="figs/ga-bears-20.png"></p>
+<center>
+<p><img data-src="figs/ga-bears-status-quo.png" style="width:50.0%"></p>
+<div class="fragment">
+<p><img data-src="figs/ga-bears-10.png" style="width:50.0%"></p>
+</div>
+<div class="fragment">
+<p><img data-src="figs/ga-bears-20.png" style="width:50.0%"></p>
+</div>
+</center>
 </section></section>
 <section>
 <section id="sensitivity-analysis" class="title-slide slide level1 center">
@@ -246,18 +347,27 @@
 </section>
 <section id="sensitivity-analysis-1" class="slide level2">
 <h2>Sensitivity analysis</h2>
+<div style="font-size: 75%;">
 <p>A sensitivity analysis seeks to understand the degree to which <span class="math inline">\(\lambda\)</span> is sensitive to changes in a vital rate, while holding all other rates constant.</p>
-Usually applied to age- or stage-based population models.
-<p>The sensitivity of <span class="math inline">\(\lambda\)</span> to a change in a population parameter <span class="math inline">\(\theta\)</span> (e.g., survival or fecundity), is: <span class="math display">\[
-    \text{sensitivity} = { \lim\limits_{\Delta \theta \to 0}}\; \frac{\Delta \lambda}{\Delta \theta}
+<div class="fragment">
+<p>Usually applied to age- or stage-based population models.</p>
+</div>
+<div class="fragment">
+<p>The sensitivity of <span class="math inline">\(\lambda\)</span> to a change in a population parameter <span class="math inline">\(\theta\)</span> (e.g., survival or fecundity), is (loosely): <!-- $$ --> <!--     \text{sensitivity}_{i,j} = \frac{\partial \lambda}{\partial \theta_{i,j}} --> <!-- $$ --> <span class="math display">\[
+    \text{sensitivity} = {\small \lim\limits_{\Delta \theta \to 0}}\; \frac{\Delta \lambda}{\Delta \theta}
 \]</span></p>
+</div>
+<div class="fragment">
 <p><strong>Sensitivities allow us to make statements such as:</strong></p>
 <blockquote>
 <p>“Increasing subadult fecundity by a small amount increases <span class="math inline">\(\lambda\)</span> by 0.01, whereas increasing adult fecundity by the same amount increases <span class="math inline">\(\lambda\)</span> by 0.02. Therefore, population growth is more sensitive to changes in adult fecundity.”</p>
 </blockquote>
+</div>
+</div>
 </section>
 <section id="sensitivity-example" class="slide level2">
 <h2>Sensitivity example</h2>
+<div style="font-size: 80%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -294,30 +404,58 @@ Usually applied to age- or stage-based population models.
 </tr>
 </tbody>
 </table>
-<p>## Elasticity</p>
+</div>
+</section>
+<section id="elasticity" class="slide level2">
+<h2>Elasticity</h2>
+<div style="font-size: 80%;">
 <p>A problem with sensitivities is that it is hard to compare values for parameters on different scales, such as survival and fecundity. For this reason, it can be better to report “elasticities” instead.</p>
+<div class="fragment">
 <p><strong>Elasticity</strong>: the proportional change in <span class="math inline">\(\lambda\)</span> caused by proportional changes in vital rates.</p>
 <p>Easier interpretation because: * Standardized units * Values sum to 1</p>
+</div>
+<div class="fragment">
 <p><strong>Examples</strong></p>
 <ul>
 <li>“A 1% increase in <span class="math inline">\(f_1\)</span> increases <span class="math inline">\(\lambda\)</span> by 0.01%.”</li>
 <li>“A 1% increase in <span class="math inline">\(s_1\)</span> increases <span class="math inline">\(\lambda\)</span> by 0.05%.”</li>
 </ul>
+</div>
+</div>
 </section>
 <section id="r-code-for-sensitivity-analysis" class="slide level2">
 <h2>R code for sensitivity analysis</h2>
+<div style="font-size: 70%;">
 <p>Suppose we have the following stage-structured projection matrix:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb1-2"><a></a>    <span class="fl">0.2</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>, <span class="fl">0.9</span>,</span>
+<span id="cb1-3"><a></a>    <span class="fl">0.4</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
+<span id="cb1-4"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
+<span id="cb1-5"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>We can use eigenanalysis to compute <span class="math inline">\(\lambda\)</span>, stable age distribution, reproductive value, sensitivities, and elasticities.</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>eA <span class="ot">&lt;-</span> <span class="fu">eigen</span>(A)</span>
+<span id="cb2-2"><a></a>lam <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>values[<span class="dv">1</span>])</span>
+<span id="cb2-3"><a></a>lam                              <span class="do">## Asymtotic growth rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.034908</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>w <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>vectors[,<span class="dv">1</span>])</span>
+<span id="cb4-2"><a></a>w <span class="ot">&lt;-</span> w<span class="sc">/</span><span class="fu">sum</span>(w)                    <span class="do">## Stable age distribution</span></span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>v <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(<span class="fu">t</span>(A))<span class="sc">$</span>vectors[,<span class="dv">1</span>]) <span class="do">## Reproductive value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
 <section id="r-code-for-sensitivity-analysis-1" class="slide level2">
 <h2>R code for sensitivity analysis</h2>
+<div style="font-size: 80%;">
 <p>The sensitivities are given by <span class="math inline">\(z_{ij}=\frac{v_i w_j}{{\bf v}{\bf w}}\)</span></p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>z <span class="ot">&lt;-</span> <span class="fu">outer</span>(v,w)<span class="sc">/</span><span class="fu">c</span>(v<span class="sc">%*%</span>w)</span>
+<span id="cb5-2"><a></a>z <span class="do">## Sensitivites</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]      [,2]       [,3]      [,4]
 [1,] 0.3473925 0.1342698 0.07784447 0.1164229
@@ -326,8 +464,12 @@ Usually applied to age- or stage-based population models.
 [4,] 0.5844985 0.2259131 0.13097572 0.1958851</code></pre>
 </div>
 </div>
+<p><br></p>
+<div class="fragment">
 <p>The elasticities are given by <span class="math inline">\(e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}\)</span></p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>e <span class="ot">&lt;-</span> A<span class="sc">*</span>z<span class="sc">/</span>lam</span>
+<span id="cb7-2"><a></a>e  <span class="do">## Elasticities</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           [,1]      [,2]      [,3]       [,4]
 [1,] 0.06713492 0.1037926 0.0752187 0.10124623
@@ -336,11 +478,14 @@ Usually applied to age- or stage-based population models.
 [4,] 0.00000000 0.0000000 0.1012462 0.09463883</code></pre>
 </div>
 </div>
+</div>
+</div>
 </section></section>
 <section>
 
 <section id="summary-1" class="slide level2">
 <h2>Summary</h2>
+<div style="font-size: 80%;">
 <p>PVA covers almost all methods for predicting how populations will respond to future scenarios.</p>
 <p>The most common use is to assess how different conservation strategies will affect extinction risk.</p>
 <p>Sensitivity analysis is a component of PVA that can guide conservation planning.</p>
@@ -348,16 +493,21 @@ Usually applied to age- or stage-based population models.
 <li>Sensitivity measures the change in <span class="math inline">\(\lambda\)</span> given an absolute change in a parameter.</li>
 <li>Elasticity measures the proportional change in <span class="math inline">\(\lambda\)</span> given a proportional change in a parameter.</li>
 </ul>
+</div>
 </section>
 <section id="summary-2" class="slide level2">
 <h2>Summary</h2>
-<p>**Problems with PVA*</p>
+<div style="font-size: 80%;">
+<p><strong>Problems with PVA</strong></p>
 <p>Most PVAs are “<em>essentially games played with guesses.</em>” (Caughley, G. 1994. Conservation Biology).</p>
 <p>Many PVA’s don’t include multiple models corresponding to different hypotheses, and population parameters are often not estimated from data.</p>
 <p>Some software encourages this.</p>
+<div class="fragment">
 <p><strong>Solutions</strong></p>
 <p>Collect better data! We need more demographic research, conducted in an adaptive management framework.</p>
 <p>When data are limited (and they always are), decrease the time horizon and acknowledge uncertainty in decision process.</p>
+</div>
+</div>
 
 
 </section></section>
