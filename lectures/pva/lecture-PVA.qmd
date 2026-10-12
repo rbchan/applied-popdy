@@ -55,6 +55,16 @@ First used by Shaffer (1983) to estimate the **minimum viable population** size 
 Now routine part of species assessments and recovery plans.
 
 
+## Grizzly recovery in Yellowstone
+
+<br>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lH9DXUhb3L4?si=-KhK4V2m4fKXr0sX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+
+<!-- [60 minutes coverage](https://youtu.be/lH9DXUhb3L4?si=3aF-KuJF7lQ38PSC) -->
 
 
 # Uses {visibility="hidden"}
