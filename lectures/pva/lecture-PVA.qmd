@@ -44,7 +44,7 @@ Morris and Doak (2002)
 
 ## History {background-image="figs/Grizzly_Denali.jpg"}
 
-First used by Shaffer (1983) to estimate the **minimum viable population** size in Yellowstone National Park
+First used by Shaffer (1983) to estimate the **minimum viable population** size in Yellowstone National Park.
 
 <!-- <center> -->
 <!-- ![](figs/Grizzly_Denali.jpg) -->
@@ -64,14 +64,14 @@ Now routine part of species assessments and recovery plans.
 ## Uses of PVA
 
 ::: {.incremental style='font-size: 80%;'}
-* Assessing the extinction risk of a single population
-* Comparing relative risks of two or more populations
-* Analyzing and synthesizing monitoring data
-* Identifying key life stages or demographic processes as management targets (sensitivity analysis)
-* Determining how large a reserve needs to be to achieve a desired level of protection from extinction
-* Determining how many individuals to release to establish a new population
-* Setting limits on the harvest or "take" from a population that are compatible with its continued existence
-* Determining how many (and which) populations are needed to achieve a desired overall likelihood of species persistence
+* Assessing the extinction risk of a single population.
+* Comparing relative risks of two or more populations.
+* Analyzing and synthesizing monitoring data.
+* Identifying key life stages or demographic processes as management targets (sensitivity analysis).
+* Determining how large a reserve needs to be to achieve a desired level of protection from extinction.
+* Determining how many individuals to release to establish a new population.
+* Setting limits on the harvest or "take" from a population that are compatible with its continued existence.
+* Determining how many (and which) populations are needed to achieve a desired overall likelihood of species persistence.
 :::
   
 
@@ -97,7 +97,7 @@ Now routine part of species assessments and recovery plans.
 
 
 
-## Types of PVA
+## [Types of PVA]{style="font-size: 90%"}
   
 ::: {style='font-size: 75%;'}
 - Count-based PVA
@@ -119,15 +119,14 @@ Now routine part of species assessments and recovery plans.
     * Most realistic, but hardest to parameterize
 :::
       
-
+:::
 
 ::: {.fragment}
 <center>
-**All methods require clear definition of time horizon and acceptable level of extinction risk**
+**All methods require clear definition of time horizon.**
 </center>
 :::
 
-:::
 
 
 
@@ -142,19 +141,19 @@ Now routine part of species assessments and recovery plans.
 
 
 
-## Central Georgia black bears
+## [Central Georgia black bears]{style="font-size: 80%"}
 
 ::: {style='font-size: 70%;'}
 Smallest and most isolated bear population in GA.
   
 Little information about the effects of harvest on population viability.
   
-Five years of genetic capture-recapture data were used to estimate abundance and develop population models.
+Five years of genetic capture-recapture data.
 :::
   
 <center>
-![](figs/ga-bears-studyarea){height=9cm}
-![](figs/ga-bears-density){height=9cm}
+![](figs/ga-bears-studyarea){height=10cm}
+![](figs/ga-bears-density){height=10cm}
 </center>
   
 ::: {style='font-size: 60%; text-align: right; color: grey;'}
@@ -165,7 +164,7 @@ Hooker et al. (2020, JWM)
 
 
 
-## Central Georgia black bears
+## [Central Georgia black bears]{style="font-size: 80%"}
   
 <center>
 ![](figs/ga-bears-recruitment){width='70%'}
@@ -173,17 +172,17 @@ Hooker et al. (2020, JWM)
 
 
 
-## Central Georgia black bears
+## [Central Georgia black bears]{style="font-size: 80%"}
 
 <center>
-![](figs/ga-bears-status-quo){width='50%'}
+![](figs/ga-bears-status-quo){width='55%'}
 
 ::: {.fragment}
-![](figs/ga-bears-10){width='50%'}
+![](figs/ga-bears-10){width='55%'}
 :::
 
 ::: {.fragment}
-![](figs/ga-bears-20){width='50%'}
+![](figs/ga-bears-20){width='55%'}
 :::
 
 </center>
