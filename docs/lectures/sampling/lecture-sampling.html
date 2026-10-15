@@ -140,21 +140,16 @@
 </section>
 <section id="model-parameters" class="slide level2">
 <h2>Model parameters</h2>
-<p><strong>Key concepts</strong></p>
 <ul>
-<li>All models include parameters (e.g., <span class="math inline">\(N\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>, etc).</li>
+<li>All models include parameters (e.g., <span class="math inline">\(N\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>…)</li>
 </ul>
-<div class="fragment">
 <ul>
-<li>Parameters are almost never known. Why?</li>
-</ul>
-</div>
-<div class="fragment">
+<li class="fragment">Parameters are almost never known. Why?
 <ul>
-<li>We usually have to sample</li>
-<li>Animals are hard to detect</li>
+<li class="fragment">We usually have to sample</li>
+<li class="fragment">Animals are hard to detect</li>
+</ul></li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>Good sampling designs yield accurate estimates of unknown parameters.</li>
@@ -163,16 +158,54 @@
 </section>
 <section id="parameters-estimates-and-statistics" class="slide level2">
 <h2>Parameters, estimates, and statistics</h2>
-<p><strong>Parameter</strong> A characteristic of a population.</p>
+<div style="font-size: 80%;">
+<p><br> <strong>Parameter</strong>: A characteristic of a population.</p>
+<p><br></p>
 <div class="fragment">
-<p><strong>Statistic</strong> A characteristic of a dataset (often used to estimate a parameter).</p>
+<p><strong>Statistic</strong>: A characteristic of a dataset (often used to estimate a parameter).</p>
 </div>
-<p>———————— | ———————- | —————– | Population parameter | Parameter estimate ———————— | ———————- | —————– Population size | <span class="math inline">\(N_t\)</span> | <span class="math inline">\(\hat{N}_t\)</span> Growth rate | <span class="math inline">\(r\)</span> | <span class="math inline">\(\hat{r}\)</span> Occurrence probability | <span class="math inline">\(\psi\)</span> | <span class="math inline">\(\hat{\psi}\)</span> ———————— | ———————- | —————–</p>
+<p><br></p>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 33%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Population parameter</th>
+<th style="text-align: center;">Parameter estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Population size</td>
+<td style="text-align: center;"><span class="math inline">\(N_t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{N}_t\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Growth rate</td>
+<td style="text-align: center;"><span class="math inline">\(r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{r}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Occurrence probability</td>
+<td style="text-align: center;"><span class="math inline">\(\psi\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\hat{\psi}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="how-do-you-get-accurate-estimates" class="slide level2">
 <h2>How do you get accurate estimates?</h2>
 <p><strong>Properties of a good design:</strong></p>
-<div style="font-size: 70%;">
+<div style="font-size: 80%;">
+<div class="columns">
+<div class="column" style="width:55%;">
 <ol type="1">
 <li>Clearly defined objective, in terms of:
 <ul>
@@ -181,62 +214,81 @@
 <li>Criteria for reliability (e.g., precision)</li>
 <li>Practical constraints (e.g., costs)</li>
 </ul></li>
-<li>Replication</li>
-<li>Randomization</li>
-<li>Controls (when conducting an experiment)</li>
 </ol>
+</div><div class="column" style="width:45%;">
+<ol start="2" type="1">
+<li class="fragment">Replication</li>
+<li class="fragment">Randomization</li>
+<li class="fragment">Controls (in experiments)</li>
+</ol>
+</div></div>
+<div class="fragment">
 <p><strong>Bad objective</strong>: “Quantify the abundance of tigers in India”</p>
+</div>
+<div class="fragment">
 <p><strong>Better objective</strong>: “Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $&lt;$25% for under $50,000.”</p>
+</div>
 </div>
 </section>
 <section id="defining-the-population" class="slide level2">
 <h2>Defining the population</h2>
-<p><strong>Target population</strong> The population of interest. Should be defined in terms of time and space.</p>
-<p><strong>Sampled population</strong> The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.).</p>
+<div style="font-size: 80%;">
+<p><br></p>
+<p><strong>Target population</strong> <br> The population of interest. Should be defined in terms of time and space.</p>
+<p><br></p>
+<div class="fragment">
+<p><strong>Sampled population</strong> <br> The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.).</p>
+</div>
+</div>
 </section>
 <section id="accuracy-has-two-components" class="slide level2">
 <h2>Accuracy has two components</h2>
+<div style="font-size: 80%;">
 <ol type="1">
-<li><strong>Bias</strong>: The difference between the average estimate and the true parameter</li>
+<li><strong>Bias</strong>: The difference between the average estimate and the true parameter.</li>
 <li><strong>Variance</strong>: The variability of the estimates.</li>
 </ol>
+</div>
 <center>
 <img data-src="figs/bulls-eye.jpg" style="width:60.0%">
 </center>
 </section>
 <section id="how-do-we-reduce-variance" class="slide level2">
 <h2>How do we reduce variance?</h2>
-<p><br></p>
-<div class="fragment">
-<div class="r-fit-text">
+<p><br><br><br></p>
+<center>
+<div class="fragment" style="font-size: 270%; color: Royalblue;">
 <p>Huge sample size</p>
 </div>
-</div>
+</center>
 </section>
 <section id="effect-of-sample-size" class="slide level2">
 <h2>Effect of sample size</h2>
 <div style="font-size: 80%;">
-<p>Suppose we want to estimate the height of students on campus, and we have enough resources to repeat a survey many times. <br></p>
+<p>Suppose we want to estimate the height of white oaks on campus, and we have enough resources to repeat a survey many times. <br></p>
 <p>Each point below is an estimate. <br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-sampling_files/figure-revealjs/N-.gif" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="lecture-sampling_files/figure-revealjs/N-.gif" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The standard deviation of the sampling distribution is called the standard error (SE)</p>
+<center>
+The standard deviation of the sampling distribution is called the<br>standard error (SE)
+</center>
 </div>
 </section>
 <section id="how-do-we-reduce-bias" class="slide level2">
 <h2>How do we reduce bias?</h2>
-<div class="fragment">
-<div class="r-fit-text">
+<p><br><br><br></p>
+<center>
+<div class="fragment" style="font-size: 270%; color: Royalblue;">
 <p>Randomization</p>
 </div>
-</div>
+</center>
 </section>
 <section id="standard-sampling-designs" class="slide level2">
 <h2>Standard sampling designs</h2>
@@ -246,9 +298,9 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>All sample units have the same inclusion probability</li>
-<li>Easiest and most reliable method</li>
-<li>But not always cost effective</li>
+<li>All sample units have the same inclusion probability.</li>
+<li>Easiest and most reliable method.</li>
+<li>But not always cost effective.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="figs/designC.png"></p>
@@ -263,9 +315,9 @@
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>Useful when study area is characterized by several homogeneous regions</li>
-<li>Regions with higher variability should be sampled more intensively than regions with low variability</li>
-<li>Often more cost effective than simple random sampling</li>
+<li>Useful when study area is characterized by several homogeneous regions.</li>
+<li>Regions with higher variability should be sampled more intensively than regions with low variability.</li>
+<li>Often more cost effective than simple random sampling.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="figs/designD.png"></p>
@@ -281,8 +333,8 @@
 <div class="column" style="width:60%;">
 <ul>
 <li>Sample units are selected according to a regular, ordered scheme with the first unit being sampled randomly.</li>
-<li>Easy to implement in the field</li>
-<li>Potentially dangerous because sample unit spacing could coincide with natural spacing of environmental features</li>
+<li>Easy to implement in the field.</li>
+<li>Potentially dangerous because sample unit spacing could coincide with natural spacing of environmental features.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="figs/designE.png"></p>
@@ -292,13 +344,13 @@
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <p><br></p>
-<p>We have to estimate model parameters</p>
+<p>We have to estimate model parameters.</p>
 <p><br></p>
-<p>Reliable estimates require good sampling design</p>
+<p>Reliable estimates require good sampling design.</p>
 <p><br></p>
-<p>Replication reduces variance</p>
+<p>Replication reduces variance.</p>
 <p><br></p>
-<p>Randomization reduces bias</p>
+<p>Randomization reduces bias.</p>
 
 
 </section></section>

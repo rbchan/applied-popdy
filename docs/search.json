@@ -1460,35 +1460,35 @@
     "href": "lectures/sampling/lecture-sampling.html#model-parameters",
     "title": "Applied Population Dynamics",
     "section": "Model parameters",
-    "text": "Model parameters\nKey concepts\n\nAll models include parameters (e.g., \\(N\\), \\(r\\), \\(K\\), etc).\n\n\n\nParameters are almost never known. Why?\n\n\n\n\nWe usually have to sample\nAnimals are hard to detect\n\n\n\n\nGood sampling designs yield accurate estimates of unknown parameters."
+    "text": "Model parameters\n\nAll models include parameters (e.g., \\(N\\), \\(r\\), \\(K\\)…)\n\n\nParameters are almost never known. Why?\n\nWe usually have to sample\nAnimals are hard to detect\n\n\n\n\nGood sampling designs yield accurate estimates of unknown parameters."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#parameters-estimates-and-statistics",
     "href": "lectures/sampling/lecture-sampling.html#parameters-estimates-and-statistics",
     "title": "Applied Population Dynamics",
     "section": "Parameters, estimates, and statistics",
-    "text": "Parameters, estimates, and statistics\nParameter A characteristic of a population.\n\nStatistic A characteristic of a dataset (often used to estimate a parameter).\n\n———————— | ———————- | —————– | Population parameter | Parameter estimate ———————— | ———————- | —————– Population size | \\(N_t\\) | \\(\\hat{N}_t\\) Growth rate | \\(r\\) | \\(\\hat{r}\\) Occurrence probability | \\(\\psi\\) | \\(\\hat{\\psi}\\) ———————— | ———————- | —————–"
+    "text": "Parameters, estimates, and statistics\n\n Parameter: A characteristic of a population.\n\n\nStatistic: A characteristic of a dataset (often used to estimate a parameter).\n\n\n\n\n\n\n\n\n\n\n\n\nPopulation parameter\nParameter estimate\n\n\n\n\nPopulation size\n\\(N_t\\)\n\\(\\hat{N}_t\\)\n\n\nGrowth rate\n\\(r\\)\n\\(\\hat{r}\\)\n\n\nOccurrence probability\n\\(\\psi\\)\n\\(\\hat{\\psi}\\)"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#how-do-you-get-accurate-estimates",
     "href": "lectures/sampling/lecture-sampling.html#how-do-you-get-accurate-estimates",
     "title": "Applied Population Dynamics",
     "section": "How do you get accurate estimates?",
-    "text": "How do you get accurate estimates?\nProperties of a good design:\n\n\nClearly defined objective, in terms of:\n\nParameter(s) that will be estimated\nPopulation of interest\nCriteria for reliability (e.g., precision)\nPractical constraints (e.g., costs)\n\nReplication\nRandomization\nControls (when conducting an experiment)\n\nBad objective: “Quantify the abundance of tigers in India”\nBetter objective: “Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $&lt;$25% for under $50,000.”"
+    "text": "How do you get accurate estimates?\nProperties of a good design:\n\n\n\n\nClearly defined objective, in terms of:\n\nParameter(s) that will be estimated\nPopulation of interest\nCriteria for reliability (e.g., precision)\nPractical constraints (e.g., costs)\n\n\n\n\nReplication\nRandomization\nControls (in experiments)\n\n\n\nBad objective: “Quantify the abundance of tigers in India”\n\n\nBetter objective: “Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $&lt;$25% for under $50,000.”"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#defining-the-population",
     "href": "lectures/sampling/lecture-sampling.html#defining-the-population",
     "title": "Applied Population Dynamics",
     "section": "Defining the population",
-    "text": "Defining the population\nTarget population The population of interest. Should be defined in terms of time and space.\nSampled population The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.)."
+    "text": "Defining the population\n\n\nTarget population  The population of interest. Should be defined in terms of time and space.\n\n\nSampled population  The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.)."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#accuracy-has-two-components",
     "href": "lectures/sampling/lecture-sampling.html#accuracy-has-two-components",
     "title": "Applied Population Dynamics",
     "section": "Accuracy has two components",
-    "text": "Accuracy has two components\n\nBias: The difference between the average estimate and the true parameter\nVariance: The variability of the estimates."
+    "text": "Accuracy has two components\n\n\nBias: The difference between the average estimate and the true parameter.\nVariance: The variability of the estimates."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#how-do-we-reduce-variance",
@@ -1502,42 +1502,42 @@
     "href": "lectures/sampling/lecture-sampling.html#effect-of-sample-size",
     "title": "Applied Population Dynamics",
     "section": "Effect of sample size",
-    "text": "Effect of sample size\n\nSuppose we want to estimate the height of students on campus, and we have enough resources to repeat a survey many times. \nEach point below is an estimate. \n\n\n\n\n\n\n\n\n\nThe standard deviation of the sampling distribution is called the standard error (SE)"
+    "text": "Effect of sample size\n\nSuppose we want to estimate the height of white oaks on campus, and we have enough resources to repeat a survey many times. \nEach point below is an estimate. \n\n\n\n\n\n\n\n\n\n\nThe standard deviation of the sampling distribution is called thestandard error (SE)"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#how-do-we-reduce-bias",
     "href": "lectures/sampling/lecture-sampling.html#how-do-we-reduce-bias",
     "title": "Applied Population Dynamics",
     "section": "How do we reduce bias?",
-    "text": "How do we reduce bias?\n\n\nRandomization"
+    "text": "How do we reduce bias?\n\n\n\nRandomization"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#standard-sampling-designs",
     "href": "lectures/sampling/lecture-sampling.html#standard-sampling-designs",
     "title": "Applied Population Dynamics",
     "section": "Standard sampling designs",
-    "text": "Standard sampling designs\n\nSimple random sampling\n\n\n\n\nAll sample units have the same inclusion probability\nEasiest and most reliable method\nBut not always cost effective"
+    "text": "Standard sampling designs\n\nSimple random sampling\n\n\n\n\nAll sample units have the same inclusion probability.\nEasiest and most reliable method.\nBut not always cost effective."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#standard-sampling-designs-1",
     "href": "lectures/sampling/lecture-sampling.html#standard-sampling-designs-1",
     "title": "Applied Population Dynamics",
     "section": "Standard sampling designs",
-    "text": "Standard sampling designs\n\nStratified random sampling\n\n\n\n\nUseful when study area is characterized by several homogeneous regions\nRegions with higher variability should be sampled more intensively than regions with low variability\nOften more cost effective than simple random sampling"
+    "text": "Standard sampling designs\n\nStratified random sampling\n\n\n\n\nUseful when study area is characterized by several homogeneous regions.\nRegions with higher variability should be sampled more intensively than regions with low variability.\nOften more cost effective than simple random sampling."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#standard-sampling-designs-2",
     "href": "lectures/sampling/lecture-sampling.html#standard-sampling-designs-2",
     "title": "Applied Population Dynamics",
     "section": "Standard sampling designs",
-    "text": "Standard sampling designs\n\nSystematic sampling\n\n\n\n\nSample units are selected according to a regular, ordered scheme with the first unit being sampled randomly.\nEasy to implement in the field\nPotentially dangerous because sample unit spacing could coincide with natural spacing of environmental features"
+    "text": "Standard sampling designs\n\nSystematic sampling\n\n\n\n\nSample units are selected according to a regular, ordered scheme with the first unit being sampled randomly.\nEasy to implement in the field.\nPotentially dangerous because sample unit spacing could coincide with natural spacing of environmental features."
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#summary",
     "href": "lectures/sampling/lecture-sampling.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\n\nWe have to estimate model parameters\n\nReliable estimates require good sampling design\n\nReplication reduces variance\n\nRandomization reduces bias"
+    "text": "Summary\n\nWe have to estimate model parameters.\n\nReliable estimates require good sampling design.\n\nReplication reduces variance.\n\nRandomization reduces bias."
   },
   {
     "objectID": "lectures/logistic-growth/lecture-logistic-growth.html#section",
@@ -1831,6 +1831,6 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis\n\n\n\nWeek 10 - Sampling\n\nLecture 12 – Sampling"
   }
 ]

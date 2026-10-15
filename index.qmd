@@ -88,3 +88,7 @@ and an oral presentation.
 ### Week 9 - PVA and sensitivity analysis
 
 - [Lecture 11 - PVA and sensitivity analysis](lectures/pva/lecture-PVA.qmd)
+
+### Week 10 - Sampling
+
+- [Lecture 12 -- Sampling](lectures/sampling/lecture-sampling.qmd)

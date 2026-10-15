@@ -1,6 +1,8 @@
 /.quarto/
 **/*.quarto_ipynb
 _site/
+lectures/*_cache/
+lectures/*_files/
 
 
 ## Latex

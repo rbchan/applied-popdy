@@ -33,18 +33,13 @@ lang: en
 
 
 ## Model parameters
-  
-**Key concepts**
 
-- All models include parameters (e.g., $N$, $r$, $K$, etc\dots).
+- All models include parameters (e.g., $N$, $r$, $K$...)
 
-::: {.fragment}
+::: {.incremental}
 - Parameters are almost never known. Why?
-:::
-
-::: {.fragment}
-  * We usually have to sample
-  * Animals are hard to detect
+    * We usually have to sample
+    * Animals are hard to detect
 :::
 
 ::: {.fragment}
@@ -54,23 +49,31 @@ lang: en
 
 
 ## Parameters, estimates, and statistics
-  
-**Parameter**
+
+
+::: {style='font-size: 80%;'}
+<br>
+**Parameter**: 
 A characteristic of a population.
   
+<br>
+
 ::: {.fragment}
-**Statistic**
+**Statistic**:
 A characteristic of a dataset (often used to estimate a parameter).
 :::
 
+<br>
 
-  ------------------------ | ---------------------- | -----------------
-                         | Population parameter | Parameter estimate
-  ------------------------ | ---------------------- | -----------------
-  Population size          | $N_t$      | $\hat{N}_t$
-  Growth rate              | $r$        | $\hat{r}$
-  Occurrence probability   | $\psi$     | $\hat{\psi}$
-  ------------------------ | ---------------------- | -----------------
+::: {.fragment}
+|                        | Population parameter | Parameter estimate |
+|:------------------------|:----------------------:|:--------------------:|
+| Population size          | $N_t$                  | $\hat{N}_t$  |
+| Growth rate              | $r$                    | $\hat{r}$    |
+| Occurrence probability   | $\psi$                 | $\hat{\psi}$ |
+:::
+:::
+
 
 
 ## How do you get accurate estimates?
@@ -78,20 +81,35 @@ A characteristic of a dataset (often used to estimate a parameter).
 
 **Properties of a good design:**
 
-::: {style='font-size: 70%;'}
+::: {style='font-size: 80%;'}
+
+::: {.columns}
+
+::: {.column width="55%"}
 1. Clearly defined objective, in terms of:
     * Parameter(s) that will be estimated
     * Population of interest
     * Criteria for reliability (e.g., precision)
     * Practical constraints (e.g., costs) 
+:::
+
+::: {.column width="45%"}
+::: {.incremental}
 2. Replication
 3. Randomization
-4. Controls (when conducting an experiment)
+4. Controls (in experiments)
+:::
+:::
+
+:::
   
-  
+::: {.fragment}
 **Bad objective**: "Quantify the abundance of tigers in India"
+:::
   
+::: {.fragment}
 **Better objective**: "Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $<$25\% for under \$50,000."
+:::
 :::
 
 
@@ -99,19 +117,29 @@ A characteristic of a dataset (often used to estimate a parameter).
 
 
 ## Defining the population
-  
-**Target population**
+
+::: {style='font-size: 80%;'}
+<br>
+
+**Target population** <br>
 The population of interest. Should be defined in terms of time and space.
   
-**Sampled population**
+<br>
+
+::: {.fragment}
+**Sampled population** <br>
 The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.).
+:::
+:::
 
 
 
 ## Accuracy has two components
 
-1. **Bias**: The difference between the average estimate and the true parameter
+::: {style='font-size: 80%;'}
+1. **Bias**: The difference between the average estimate and the true parameter.
 2. **Variance**: The variability of the estimates.
+:::
   
   
 <center>
@@ -122,13 +150,15 @@ The sampled portion of the population of interest, usually defined in terms of t
 
 ## How do we reduce variance?
 
-<br>
+<br><br><br>
 
-::: {.fragment}
-::: {.r-fit-text}
-  Huge sample size
+<center>
+
+::: {.fragment style="font-size: 270%; color: Royalblue;"}
+Huge sample size
 :::
-:::
+
+</center>
 
 
 
@@ -137,7 +167,7 @@ The sampled portion of the population of interest, usually defined in terms of t
 ## Effect of sample size
 
 ::: {style='font-size: 80%;'}
-Suppose we want to estimate the height of students on campus, and we
+Suppose we want to estimate the height of white oaks on campus, and we
 have enough resources to repeat a survey many times. <br>
   
 Each point below is an estimate. <br>
@@ -148,9 +178,10 @@ Each point below is an estimate. <br>
 #| echo: false
 #| eval: true
 #| cache: true
-#| out-width: '70%'
+#| out-width: '60%'
 #| fig-align: 'center'
 #| fig-show: 'animate'
+#| interval: 0.1
 height <- 5.5
 heightSD <- 0.5
 nSim <- 100
@@ -160,7 +191,7 @@ for(i in 1:nSim) {
     x1[i] <- mean(rnorm(10, height, heightSD))
     x2[i] <- mean(rnorm(100, height, heightSD))
 }
-for(i in 1:nSim) {
+for(i in seq(1, nSim, 2)) {
     par(mfrow=c(1,2), mai=c(0.9, 0.2, 0.4, 0.2))
     plot(0, type="n", frame=FALSE, yaxt="n",
          xlim=c(5, 6), ylim=c(0, 7),
@@ -169,7 +200,7 @@ for(i in 1:nSim) {
          main="Sample size of 10")
     abline(v=height, lty=3)
     points(x1[1:i], rep(0, i), cex=2.5, col="blue")
-    if(i==nSim)
+    if(i>(nSim-10))
         hist(x1, freq=FALSE, add=TRUE, border="blue", lwd=2)
     plot(0, type="n", frame=FALSE, yaxt="n",
          xlim=c(5, 6), ylim=c(0, 7),
@@ -178,13 +209,17 @@ for(i in 1:nSim) {
          main="Sample size of 100")
     abline(v=height, lty=3)
     points(x2[1:i], rep(0, i), cex=2.5)
-    if(i==nSim)
+    if(i>(nSim-10))
         hist(x2, freq=FALSE, add=TRUE)
     ## dev.off()
 }
 ```
 
-The standard deviation of the sampling distribution is called the standard error (SE)
+<center>
+The standard deviation of the sampling distribution is called the<br>standard error (SE)
+</center>
+
+
 :::
 
 
@@ -192,13 +227,15 @@ The standard deviation of the sampling distribution is called the standard error
 
 
 ## How do we reduce bias?
-  
 
-::: {.fragment}
-::: {.r-fit-text}
+<br><br><br>
+
+
+<center>
+::: {.fragment style="font-size: 270%; color: Royalblue;"}
 Randomization
 :::
-:::
+</center>
 
 
 
@@ -214,9 +251,9 @@ Randomization
 ::: {style='font-size: 80%;'}
 ::: {.columns}
 ::: {.column width='60%'}
-- All sample units have the same inclusion probability
-- Easiest and most reliable method
-- But not always cost effective
+- All sample units have the same inclusion probability.
+- Easiest and most reliable method.
+- But not always cost effective.
 :::
 ::: {.column width='40%'}
 ![](figs/designC.png)
@@ -234,9 +271,9 @@ Randomization
 ::: {style='font-size: 80%;'}
 ::: {.columns}
 ::: {.column width='60%'}
-- Useful when study area is characterized by several homogeneous regions
-- Regions with higher variability should be sampled more intensively than regions with low variability
-- Often more cost effective than simple random sampling
+- Useful when study area is characterized by several homogeneous regions.
+- Regions with higher variability should be sampled more intensively than regions with low variability.
+- Often more cost effective than simple random sampling.
 :::
 ::: {.column width='40%'}
 ![](figs/designD.png)
@@ -257,8 +294,8 @@ Randomization
 ::: {.columns}
 ::: {.column width='60%'}
 - Sample units are selected according to a regular, ordered scheme with the first unit being sampled randomly.
-- Easy to implement in the field
-- Potentially dangerous because sample unit spacing could coincide with natural spacing of environmental features
+- Easy to implement in the field.
+- Potentially dangerous because sample unit spacing could coincide with natural spacing of environmental features.
 :::
 ::: {.column width='40%'}
 ![](figs/designE.png)
@@ -271,19 +308,19 @@ Randomization
 
 <br>
 
-We have to estimate model parameters
+We have to estimate model parameters.
 
 <br>
 
-Reliable estimates require good sampling design
+Reliable estimates require good sampling design.
 
 <br>
 
-Replication reduces variance
+Replication reduces variance.
 
 <br>
 
-Randomization reduces bias
+Randomization reduces bias.
   
 
 
