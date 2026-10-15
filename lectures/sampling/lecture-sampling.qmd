@@ -1,0 +1,448 @@
+---
+## title: "Converted Presentation"
+format:
+  revealjs:
+    theme: default
+    pagetitle: 'Sampling'
+    slide-number: true
+lang: en
+---
+
+
+
+
+
+# Introduction {visibility="hidden"}
+
+## {content-align="center" style="font-size: 160%;"}
+
+
+<center>
+
+**Sampling and Estimation**
+    
+    
+![](figs/map.jpg){height="10cm"}
+![](figs/bulls-eye.jpg){height="10cm"}
+
+</center>
+
+
+
+
+
+## Model parameters
+  
+**Key concepts**
+
+- All models include parameters (e.g., $N$, $r$, $K$, etc\dots).
+::: {.fragment}
+- Parameters are almost never known. Why?
+:::
+::: {.fragment}
+    * We usually have to sample
+    * Animals are hard to detect
+:::
+::: {.fragment}
+- Good sampling designs yield accurate estimates of unknown parameters.
+:::
+  
+
+
+## Parameters, estimates, and statistics
+  
+**Parameter**
+A characteristic of a population.
+  
+::: {.fragment}
+**Statistic**
+A characteristic of a dataset (often used to estimate a parameter).
+:::
+
+
+                          | Population parameter   | Parameter estimate
+------------------------  | -------------------    | -----------------
+Population size           | $N_t$      | $\hat{N}_t$
+Growth rate               | $r$        | $\hat{r}$
+Occurrence probability    | $\psi$     | $\hat{\psi}$
+
+
+## How do you get accurate estimates?
+  
+
+** Properties of a good design:**
+
+1. Clearly defined objective, in terms of:
+    * Parameter(s) that will be estimated
+    * Population of interest
+    * Criteria for reliability (e.g., precision)
+    * Practical constraints (e.g., costs)
+      
+2. Replication
+3. Randomization
+4. Controls (when conducting an experiment)
+  
+  
+**Bad objective**: "Quantify the abundance of tigers in India"
+  
+**Better objective**: "Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $<$25\% for under \$50,000."
+
+
+
+
+
+## Defining the population
+  
+**Target population**
+The population of interest. Should be defined in terms of time and space.
+  
+**Sampled population**
+The sampled portion of the population of interest, usually defined in terms of the sample units (such as plots, quadrats, etc.).
+
+
+
+## Accuracy
+
+**Accuracy has two components:**
+    
+1. **Bias**: The difference between the average estimate and the true parameter
+2. **Variance**: The variability of the estimates.
+  
+  
+  
+![](figs/bulls-eye.jpg)
+
+
+
+## How do we reduce variance?
+  
+<center>
+  Huge sample size
+</center>
+
+
+
+## Effect of sample size
+
+Suppose we want to estimate the height of students on campus, and we
+have enough resources to repeat a survey many times. <br>
+  
+Each point below is an estimate. <br>
+  
+```{r}
+#| label: mkdir
+#| include: false
+## Should use knitr for this business 
+if(!dir.exists("figs"))
+    dir.create("figs")
+if(!dir.exists("figs/sample-size"))
+    dir.create("figs/sample-size")
+```
+
+```{r}
+#| label: N
+#| include: false
+#| echo: false
+#| eval: true
+#| cache: true
+height <- 5.5
+heightSD <- 0.5
+nSim <- 100
+x1 <- x2 <- numeric(nSim)
+set.seed(343)
+for(i in 1:nSim) {
+    x1[i] <- mean(rnorm(10, height, heightSD))
+    x2[i] <- mean(rnorm(100, height, heightSD))
+}
+for(i in 1:nSim) {
+    fn <- paste("figs/sample-size/f", i, ".pdf", sep="")
+    pdf(fn, width=12, height=6)
+    par(mfrow=c(1,2), mai=c(0.9, 0.2, 0.4, 0.2))
+    plot(0, type="n", frame=FALSE, yaxt="n",
+         xlim=c(5, 6), ylim=c(0, 7),
+         xlab="Height", ylab="",
+         cex.lab=2.5, cex.main=2.5, cex.axis=2,
+         main="Sample size of 10")
+    abline(v=height, lty=3)
+    points(x1[1:i], rep(0, i), cex=2.5, col="blue")
+    if(i==nSim)
+        hist(x1, freq=FALSE, add=TRUE, border="blue", lwd=2)
+    plot(0, type="n", frame=FALSE, yaxt="n",
+         xlim=c(5, 6), ylim=c(0, 7),
+         xlab="Height", ylab="",
+         cex.lab=2.5, cex.main=2.5, cex.axis=2,
+         main="Sample size of 100")
+    abline(v=height, lty=3)
+    points(x2[1:i], rep(0, i), cex=2.5)
+    if(i==nSim)
+        hist(x2, freq=FALSE, add=TRUE)
+    dev.off()
+}
+```
+%
+<center>
+  <1 | handout:0>[width=\textwidth]{figs/sample-size/f1}
+  <2 | handout:0>[width=\textwidth]{figs/sample-size/f2}
+  <3 | handout:0>[width=\textwidth]{figs/sample-size/f3}
+  <4 | handout:0>[width=\textwidth]{figs/sample-size/f4}
+  <5 | handout:0>[width=\textwidth]{figs/sample-size/f5}
+  <6 | handout:0>[width=\textwidth]{figs/sample-size/f6}
+  <7 | handout:0>[width=\textwidth]{figs/sample-size/f7}
+  <8 | handout:0>[width=\textwidth]{figs/sample-size/f8}
+  <9 | handout:0>[width=\textwidth]{figs/sample-size/f9}
+  <10->[width=\textwidth]{figs/sample-size/f100} \par
+%  
+  
+ % 
+  \uncover<11>{The standard deviation of the sampling distribution is
+    called the standard error (SE)}
+</center>
+
+
+
+
+
+
+
+
+  ## How do we reduce bias?
+  
+  <center>
+    \Huge Randomization
+  </center>
+
+
+
+
+
+
+
+
+
+
+
+% 
+%   ## How do we get an unbiased estimator?
+%   [(1)]
+%     * Design-based approaches
+%       
+%         * Random sampling
+%         * Stratified random sampling
+%         * Cluster sampling
+%         * etc\dots
+%       
+%     * Model-based approaches
+%   
+% 
+
+
+
+
+
+%% 
+%%   ## Standard sampling designs
+%% %  
+%% %  [<+->]
+%% %    * <1-> Simple random sampling
+%%   
+%%   {\bf Simple random sampling}
+%%   
+%%     * All sample units have the same inclusion probability
+%%     * Easiest and most reliable method
+%%     * But not always cost effective
+%%   
+%% %    * <2-> Stratified random sampling
+%%   
+%%   {\bf Stratified random sampling}
+%%   
+%%     * Useful when the study area is characterized by several
+%%       homogeneous regions
+%%     * Regions with higher variability should be sampled more
+%%         intensively than regions with low variability
+%%     * Often more cost effective than simple random sampling
+%%   
+%% %    * <3-> Systematic sampling
+%%     
+%%   {\bf Systematic sampling}
+%%   
+%%     * Could involve sampling on a regular grid
+%%     * Dangerous if grid corresponds to environmental patterns
+%%   
+%% 
+
+
+
+
+
+  ## Standard sampling designs
+  
+  { \bf  \color{RoyalBlue}{Simple random sampling} \par}
+  
+  ::: columns
+    
+    ::: {.column width='50%'}
+      [<+->]
+        * All sample units have the same inclusion probability
+        * Easiest and most reliable method
+        * But not always cost effective
+      
+    :::
+    ::: {.column width='50%'}
+      [width=\textwidth]{figs/designC}
+    :::
+  :::
+
+
+
+%% 
+%%   ## Standard sampling designs
+%%   
+%%   {\bf Stratified random sampling}
+%%   
+%%     * Useful when the study area is characterized by several
+%%       homegeneous regions
+%%     * Regions with higher variability should be sampled more
+%%       intensively than regions with low variability
+%%     * Often more cost effective than simple random sampling
+%%    
+%% 
+
+
+
+  ## Standard sampling designs
+  
+  { \bf  \color{RoyalBlue}{Stratified random sampling} \par}
+  
+  ::: columns
+    
+    ::: {.column width='50%'}
+      [<+->]
+        * Useful when study area is characterized by several
+          homogeneous regions
+        * Regions with higher variability should be sampled more
+          intensively than regions with low variability
+        * Often more cost effective than simple random sampling
+      
+    :::
+    ::: {.column width='50%'}
+      [width=\textwidth]{figs/designD}
+    :::
+  :::
+
+
+
+
+%% 
+%%   ## Standard sampling designs
+%%   
+%%   {\bf Systematic sampling}
+%%   
+%%     * Could involve sampling on a regular grid
+%%     * Dangerous if grid corresponds to environmental patterns
+%%   
+%% 
+
+
+
+
+  ## Standard sampling designs
+  
+  { \bf  \color{RoyalBlue}{Systematic sampling} \par}
+  
+  ::: columns
+    
+    ::: {.column width='50%'}
+      [<+->]
+        * Sample units are selected according to a regular,
+          ordered scheme with the first unit being sampled randomly.
+        * Easy to implement in the field
+        * Potentially dangerous because sample unit spacing could
+          coincide with natural spacing of environmental features
+      
+    :::
+    ::: {.column width='50%'}
+      [width=\textwidth]{figs/designE}
+    :::
+  :::
+
+
+
+
+
+
+
+%% 
+%%    ## Yellow-rumped Warblers at Whitehall
+%%    <center>
+%%      [width=0.7\textwidth]{figs/Whitehall}
+%%    </center>
+%% 
+
+
+% 
+%   ## White-tailed deer in South Florida
+%   {\bf Objective:} Determine the impacts of hydrology, hunting, and
+%   predation on white-tailed deer abundance and trends. \par
+%   
+%     * The study area is the red rectangle
+%     * Water depth increases from west to east
+%     * No hunting allowed in FPNWR
+%     * Panthers potentially everywhere
+%     * You have a \$500,000 budget
+%   
+%   
+%   {\bf Question:} How would you design this study?
+% %  
+%    <center>
+%      [width=0.7\textwidth]{figs/FL-deer-study}}
+%    </center>
+% 
+
+
+
+
+  ## Summary
+  
+  {\bf Main points}
+  
+    * We have to estimate model parameters
+    * Reliable estimates require good sampling design
+    * Replication reduces variance
+    * Randomization reduces bias
+  
+
+
+
+
+
+
+
+%
+%  ## Golden-winged warblers in Costa Rica
+%  [width=\textwidth]{figs/Costa-Rica}
+%
+
+
+
+
+
+
+
+
+
+
+%# Detection probability
+
+
+
+%
+%  ## Detection probability
+
+%
+
+
+
+
+
+
+
