@@ -108,7 +108,7 @@ A characteristic of a dataset (often used to estimate a parameter).
 :::
   
 ::: {.fragment}
-**Better objective**: "Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $<$25\% for under \$50,000."
+**Better objective**: "Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation <25\% for under \$50,000."
 :::
 :::
 
@@ -170,6 +170,7 @@ Huge sample size
 Suppose we want to estimate the height of white oaks on campus, and we
 have enough resources to repeat a survey many times. <br>
   
+::: {.fragment}
 Each point below is an estimate. <br>
   
 
@@ -214,10 +215,13 @@ for(i in seq(1, nSim, 2)) {
     ## dev.off()
 }
 ```
+:::
 
+::: {.fragment}
 <center>
 The standard deviation of the sampling distribution is called the<br>standard error (SE)
 </center>
+:::
 
 
 :::

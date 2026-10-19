@@ -1474,7 +1474,7 @@
     "href": "lectures/sampling/lecture-sampling.html#how-do-you-get-accurate-estimates",
     "title": "Applied Population Dynamics",
     "section": "How do you get accurate estimates?",
-    "text": "How do you get accurate estimates?\nProperties of a good design:\n\n\n\n\nClearly defined objective, in terms of:\n\nParameter(s) that will be estimated\nPopulation of interest\nCriteria for reliability (e.g., precision)\nPractical constraints (e.g., costs)\n\n\n\n\nReplication\nRandomization\nControls (in experiments)\n\n\n\nBad objective: “Quantify the abundance of tigers in India”\n\n\nBetter objective: “Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation $&lt;$25% for under $50,000.”"
+    "text": "How do you get accurate estimates?\nProperties of a good design:\n\n\n\n\nClearly defined objective, in terms of:\n\nParameter(s) that will be estimated\nPopulation of interest\nCriteria for reliability (e.g., precision)\nPractical constraints (e.g., costs)\n\n\n\n\nReplication\nRandomization\nControls (in experiments)\n\n\n\nBad objective: “Quantify the abundance of tigers in India”\n\n\nBetter objective: “Obtain an unbiased estimate of tiger density on the Corbett Tiger Reserve during July 2009, with a coefficient of variation &lt;25% for under $50,000.”"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#defining-the-population",
@@ -1502,7 +1502,7 @@
     "href": "lectures/sampling/lecture-sampling.html#effect-of-sample-size",
     "title": "Applied Population Dynamics",
     "section": "Effect of sample size",
-    "text": "Effect of sample size\n\nSuppose we want to estimate the height of white oaks on campus, and we have enough resources to repeat a survey many times. \nEach point below is an estimate. \n\n\n\n\n\n\n\n\n\n\nThe standard deviation of the sampling distribution is called thestandard error (SE)"
+    "text": "Effect of sample size\n\nSuppose we want to estimate the height of white oaks on campus, and we have enough resources to repeat a survey many times. \n\nEach point below is an estimate. \n\n\n\n\n\n\n\n\n\n\n\n\nThe standard deviation of the sampling distribution is called thestandard error (SE)"
   },
   {
     "objectID": "lectures/sampling/lecture-sampling.html#how-do-we-reduce-bias",
