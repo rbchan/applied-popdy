@@ -655,27 +655,27 @@
     "href": "lectures/occupancy/lecture-occupancy.html#motivation",
     "title": "Applied Population Dynamics",
     "section": "Motivation",
-    "text": "Motivation\n\nOccupancy models were developed to estimate metapopulation parameters when {detection probability} (\\(p\\)) is \\(&lt;1\\).\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\nParameters of metapopulation model:\n\n\\(\\psi\\) – Probability that a site is occupied\n\\(\\gamma\\) – Probability that an unoccupied site becomes colonized\n\\(\\varepsilon\\) – Probability that an occupied site goes extinct\n\\(p\\) – Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)"
+    "text": "Motivation\n\nOccupancy models were developed to estimate metapopulation parameters when detection probability (\\(p\\)) is \\(&lt;1\\).\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\nMetapopulation parameters:\n\n\\(\\psi\\) – Probability that a site is occupied\n\\(\\gamma\\) – Probability that an unoccupied site becomes colonized\n\\(\\varepsilon\\) – Probability that an occupied site goes extinct\n\\(p\\) – Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#detection-probability",
     "href": "lectures/occupancy/lecture-occupancy.html#detection-probability",
     "title": "Applied Population Dynamics",
     "section": "Detection probability",
-    "text": "Detection probability\nIf \\(p&lt;1\\), we might incorrectly conclude that a site is unoccupied if we don’t detect any individuals\n\n\nConsequences:\n\nWe will underestimate the state variable: The proportion of sites occupied\nWe might make incorrect conclusions about habitat relationships"
+    "text": "Detection probability\n\n\nIf \\(p&lt;1\\), we might incorrectly conclude that a site is unoccupied if we don’t detect any individuals\n\n\nConsequences:\n\nWe will underestimate the state variable: The proportion of sites occupied\nWe might make incorrect conclusions about habitat relationships"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#single-season-models-1",
     "href": "lectures/occupancy/lecture-occupancy.html#single-season-models-1",
     "title": "Applied Population Dynamics",
     "section": "Single-season models",
-    "text": "Single-season models\nScenario\n\nNo interest in colonization or extinction events\nInstead, we directly estimate \\(\\psi\\) during one season\nUseful for assessing snapshot of habitat relationships or for modeling a species’ distribution\nWe assume population closure: A site’s occupancy state does not change during the survey period (season)\nDefinitions of site and season are very important"
+    "text": "Single-season models\n\n\nScenario\n\nNo interest in colonization or extinction events\nInstead, we directly estimate \\(\\psi\\) during one season\nUseful for assessing snapshot of habitat relationships or for modeling a species’ distribution\nWe assume population closure: A site’s occupancy state does not change during the survey period (season)\nDefinitions of site and season are very important"
   },
   {
-    "objectID": "lectures/occupancy/lecture-occupancy.html#how-many-potholes-are-occupied-by-mallards",
-    "href": "lectures/occupancy/lecture-occupancy.html#how-many-potholes-are-occupied-by-mallards",
+    "objectID": "lectures/occupancy/lecture-occupancy.html#section-1",
+    "href": "lectures/occupancy/lecture-occupancy.html#section-1",
     "title": "Applied Population Dynamics",
-    "section": "How many potholes are occupied by mallards?",
+    "section": "",
     "text": "How many potholes are occupied by mallards?"
   },
   {
@@ -683,7 +683,7 @@
     "href": "lectures/occupancy/lecture-occupancy.html#single-season-model",
     "title": "Applied Population Dynamics",
     "section": "Single-season model",
-    "text": "Single-season model\nModel for the occurrence state \\[\n  O_{i} \\sim \\mbox{Bernoulli}(\\psi)\n\\]\nModel for the data \\[\n  y_{ij} \\sim \\mbox{Bernoulli}(O_i \\times p)\n\\]\nWe need to estimate \\(\\psi\\) (occurrence probability) and \\(p\\) (detection probability)"
+    "text": "Single-season model\n\n\nModel for the occurrence state \\[\n  O_{i} \\sim \\mbox{Bernoulli}(\\psi)\n\\]\n\nModel for the data \\[\n  y_{ij} \\sim \\mbox{Bernoulli}(O_i \\times p)\n\\]\n\n\n\n\n\nWe need to estimate \\(\\psi\\) (occurrence probability) and \\(p\\) (detection probability)"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#design",
@@ -693,39 +693,39 @@
     "text": "Design\nTo estimate \\(\\psi\\) and \\(p\\), we should use a good study design:\n\nWe need multiple sites\nSites should be randomly selected\nWe must have multiple sampling occasions at (a subset of) the sites"
   },
   {
-    "objectID": "lectures/occupancy/lecture-occupancy.html#data-y_ij-low-detection-probability",
-    "href": "lectures/occupancy/lecture-occupancy.html#data-y_ij-low-detection-probability",
+    "objectID": "lectures/occupancy/lecture-occupancy.html#data-yij-low-detection-probability",
+    "href": "lectures/occupancy/lecture-occupancy.html#data-yij-low-detection-probability",
     "title": "Applied Population Dynamics",
-    "section": "Data \\(y_{ij\\) – low detection probability}",
-    "text": "Data \\(y_{ij\\) – low detection probability}\n10 sites and 3 sampling occasions\n\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n0\n0\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n0\n0\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n0\n1\n\n\nSite 7\n1\n0\n0\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n0\n\n\nSite 10\n0\n0\n0"
+    "section": "Data yij – low detection probability",
+    "text": "Data yij – low detection probability\n\n\n\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n0\n0\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n0\n0\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n0\n1\n\n\nSite 7\n1\n0\n0\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n0\n\n\nSite 10\n0\n0\n0"
   },
   {
-    "objectID": "lectures/occupancy/lecture-occupancy.html#data-y_ij-high-detection-probability",
-    "href": "lectures/occupancy/lecture-occupancy.html#data-y_ij-high-detection-probability",
+    "objectID": "lectures/occupancy/lecture-occupancy.html#data-yij-high-detection-probability",
+    "href": "lectures/occupancy/lecture-occupancy.html#data-yij-high-detection-probability",
     "title": "Applied Population Dynamics",
-    "section": "Data \\(y_{ij}\\) – high detection probability",
-    "text": "Data \\(y_{ij}\\) – high detection probability\n10 sites and 3 sampling occasions\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n1\n1\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n1\n1\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n0\n1\n\n\nSite 7\n1\n1\n1\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n1\n\n\nSite 10\n0\n0\n0"
+    "section": "Data yij – high detection probability",
+    "text": "Data yij – high detection probability\n\n\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n1\n1\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n1\n1\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n0\n1\n\n\nSite 7\n1\n1\n1\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n1\n\n\nSite 10\n0\n0\n0"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#how-do-we-estimate-psi-and-p",
     "href": "lectures/occupancy/lecture-occupancy.html#how-do-we-estimate-psi-and-p",
     "title": "Applied Population Dynamics",
     "section": "How do we estimate \\(\\psi\\) and \\(p\\)?",
-    "text": "How do we estimate \\(\\psi\\) and \\(p\\)?\n\n\nMaximum likelihood\n\nThis method tries to find the most “likely” values of \\(\\psi\\) and \\(p\\), given the data\nIt can also be used to estimate standard errors (SEs) and confidence intervals (CIs)\n\n\n\n\nSoftware\nProgram PRESENCE, Program MARK, R package unmarked \n\nShiny app"
+    "text": "How do we estimate \\(\\psi\\) and \\(p\\)?\n\n\n\nMaximum likelihood\n\nThis method tries to find the most “likely” values of \\(\\psi\\) and \\(p\\), given the data\nIt can also be used to estimate standard errors (SEs) and confidence intervals (CIs)\n\n\n\nShiny app\n\n\n\n\n\n\nSoftware: Program PRESENCE, Program MARK, R package unmarked"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#estimates",
     "href": "lectures/occupancy/lecture-occupancy.html#estimates",
     "title": "Applied Population Dynamics",
     "section": "Estimates",
-    "text": "Estimates\n10 sites and 3 sampling occasions\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n0\n0\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n1\n0\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n1\n1\n\n\nSite 7\n1\n0\n0\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n0\n\n\nSite 10\n0\n0\n0\n\n\n\nNaive occupancy = 5/10 = 0.50  Estimated occupancy = \\(\\hat{\\psi} = 0.61 \\pm 0.22\\)  Estimated detection = \\(\\hat{p} = 0.44 \\pm 0.16\\)"
+    "text": "Estimates\n\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\nSite 1\n0\n0\n1\n\n\nSite 2\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n\nSite 4\n1\n1\n0\n\n\nSite 5\n0\n0\n0\n\n\nSite 6\n1\n1\n1\n\n\nSite 7\n1\n0\n0\n\n\nSite 8\n0\n0\n0\n\n\nSite 9\n0\n1\n0\n\n\nSite 10\n0\n0\n0\n\n\n\n\n\nNaive occupancy = 5/10 = 0.50  Estimated occupancy = \\(\\hat{\\psi} = 0.61 \\pm 0.22\\)  Estimated detection = \\(\\hat{p} = 0.44 \\pm 0.16\\)"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#overall-detection-probability",
     "href": "lectures/occupancy/lecture-occupancy.html#overall-detection-probability",
     "title": "Applied Population Dynamics",
     "section": "Overall detection probability",
-    "text": "Overall detection probability\nIf you sample a site \\(K\\) times, the overall detection probability (\\(\\bar{p}\\)) is:}\n\\[\n  \\bar{p} = 1 - (1-p)^K\n\\]\n\\(\\bar{p}\\) is detection probability after \\(K\\) sampling occasions  \\(p\\) is detection probability on a single occasion  \\(K\\) is the number of sampling occasions (e.g., visits to a site)"
+    "text": "Overall detection probability\n\nIf you sample a site \\(K\\) times, how do you calculate overall detection probability (\\(\\bar{p}\\))?\n\n\\[\n  \\bar{p} = 1 - (1-p)^K\n\\]\n\\(\\bar{p}\\) is detection probability after \\(K\\) sampling occasions  \\(p\\) is detection probability on a single occasion  \\(K\\) is the number of sampling occasions (e.g., visits to a site)"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#assumptions",
@@ -739,14 +739,14 @@
     "href": "lectures/occupancy/lecture-occupancy.html#covariates",
     "title": "Applied Population Dynamics",
     "section": "Covariates",
-    "text": "Covariates\nThe value of \\(\\psi\\) or \\(p\\) may depend on other variables, e.g. habitat, weather, observer abilities \nHow do we accommodate covariates? \nThe key is to think of detection probability as a function. A common choice is the logit-linear model:\n\\[\n  \\mbox{logit}(\\psi_i) = \\beta_0 + \\beta_1\\mbox{ELEV}_i\n\\]"
+    "text": "Covariates\nThe value of \\(\\psi\\) or \\(p\\) may depend on other variables, e.g. habitat, weather, observer abilities.\n\n\nCovariate effects can be accounted for by treating detection probability as a function.\n\n\n\nA common choice is the logit-linear model: \\[\n  \\mbox{logit}(\\psi_i) = \\beta_0 + \\beta_1\\mbox{ELEV}_i\n\\]"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#covariates-1",
     "href": "lectures/occupancy/lecture-occupancy.html#covariates-1",
     "title": "Applied Population Dynamics",
     "section": "Covariates",
-    "text": "Covariates"
+    "text": "Covariates\n\n\nShiny app"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#multi-season-models-1",
@@ -760,14 +760,14 @@
     "href": "lectures/occupancy/lecture-occupancy.html#data-format",
     "title": "Applied Population Dynamics",
     "section": "Data format",
-    "text": "Data format\n5 sites, 2 seasons, and 3 sampling occasions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeason 1\n\nSeason 2\n\n\n\n\n2-4\nOccasion 1\nOccasion 2\nOccasion 3\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\nSite 1\n0\n0\n1\n\n1\n0\n0\n\n\nSite 2\n0\n0\n0\n\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n1\n0\n0\n\n\nSite 4\n1\n1\n1\n\n0\n0\n0\n\n\nSite 5\n0\n0\n0\n\n1\n1\n0"
+    "text": "Data format\n5 sites, 2 seasons, and 3 sampling occasions:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeason 1\n\nSeason 2\n\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\nSite 1\n0\n0\n1\n\n1\n0\n0\n\n\nSite 2\n0\n0\n0\n\n0\n0\n0\n\n\nSite 3\n0\n0\n0\n\n1\n0\n0\n\n\nSite 4\n1\n1\n1\n\n0\n0\n0\n\n\nSite 5\n0\n0\n0\n\n1\n1\n0"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#summary",
     "href": "lectures/occupancy/lecture-occupancy.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\nOccupancy models let us estimate metapopulation parameters when detection is imperfect.\nThere are no individual-level data or parameters.\nThese methods are often easy to implement over large areas and so are used in monitoring programs.\nDefinition of site and season are very important considerations.\nModels can be used in other contexts, such as when a site is a human, and we are interested in proportion of people with some disease."
+    "text": "Summary\n\n\nOccupancy models let us estimate metapopulation parameters when detection is imperfect.\n\nThere are no individual-level data or parameters.\n\n\nThese methods are often easy to implement over large areas and so are used in monitoring programs.\n\n\nDefinition of site and season are very important considerations.\n\n\nModels can be used in other contexts, such as when a site is a human, and we are interested in proportion of people with some disease."
   },
   {
     "objectID": "lectures/metapop/lecture-metapop.html#section",
@@ -1705,7 +1705,7 @@
     "href": "index.html#course-materials",
     "title": "Applied Population Dynamics",
     "section": "Course materials",
-    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis\n\n\n\nWeek 10 - Sampling\n\nLecture 12 – Sampling"
+    "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis\n\n\n\nWeek 10 - Sampling\n\nLecture 12 – Sampling\n\n\n\nWeek 11 - Occupancy models\n\nLecture 13 – Occupancy"
   },
   {
     "objectID": "labs/geo-growth/lab-geometric-growth.html",

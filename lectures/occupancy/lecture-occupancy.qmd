@@ -23,8 +23,8 @@ lang: en
 
 <br>
     
-![](figs/book.jpg){height="12cm"}
-![](figs/marbled_salamander.jpg){height="12cm"}
+![](figs/book.jpg){height="11cm"}
+![](figs/marbled_salamander.jpg){height="11cm"}
 
 
 </center>
@@ -34,7 +34,7 @@ lang: en
 ## Motivation
 
 ::: {style='font-size: 80%;'}
-Occupancy models were developed to estimate metapopulation parameters when {detection probability} ($p$) is $<1$.
+Occupancy models were developed to estimate metapopulation parameters when **detection probability** ($p$) is $<1$.
 
 $$
     \psi_{i,t+1} = O_{i,t}(1-\varepsilon) + (1-O_{i,t})\gamma \\
@@ -42,7 +42,7 @@ $$
 $$
   
   
-Parameters of metapopulation model:
+Metapopulation parameters:
 
 - $\psi$ -- Probability that a site is occupied
 - $\gamma$ -- Probability that an unoccupied site becomes colonized
@@ -55,7 +55,10 @@ Parameters of metapopulation model:
 
 
 ## Detection probability
-  
+
+<br>
+
+::: {style='font-size: 95%;'}
 If $p<1$, we might incorrectly conclude that a site is unoccupied if we don't detect any individuals
 
 <br>
@@ -63,8 +66,9 @@ If $p<1$, we might incorrectly conclude that a site is unoccupied if we don't de
 ::: {.fragment}
 Consequences:
 
-- We will underestimate the state variable: The proportion of sites occupied
-- We might make incorrect conclusions about habitat relationships
+1. We will underestimate the state variable: The proportion of sites occupied
+2. We might make incorrect conclusions about habitat relationships
+:::
 :::
   
 
@@ -79,25 +83,41 @@ Consequences:
 
 
 ## Single-season models
-  
+
+<br>
+
+::: {style='font-size: 90%;'}
 Scenario
   
+::: {.incremental}
+
 - No interest in colonization or extinction events
 - Instead, we directly estimate $\psi$ during one season
 - Useful for assessing snapshot of habitat relationships or for modeling a species' distribution
-- We assume [population closure]{style="color: red;"}: A site's occupancy state does not change during the survey period (season)
+- We assume **population closure**: A site's occupancy state does not change during the survey period (season)
 - Definitions of site and season are very important
   
+:::
+
+:::
 
 
 
 
 
-##  How many potholes are occupied by mallards?
+##  {background-image="figs/Prairie_Pothole_Wetlands.jpg"}
+
+<br><br><br><br>
 
 <center>
-![](figs/Prairie_Pothole_Wetlands.jpg)
+::: {style="font-size: 130%; color: white;"}
+**How many potholes are occupied by mallards?**
+:::
 </center>
+
+<!-- <center> -->
+<!-- ![](figs/Prairie_Pothole_Wetlands.jpg){height="12cm"} -->
+<!-- </center> -->
 
 
 
@@ -106,20 +126,31 @@ Scenario
 
 
 ## Single-season model
-  
+
+<br>
+
+::: {style='font-size: 90%;'}
 Model for the occurrence state
 $$
   O_{i} \sim \mbox{Bernoulli}(\psi)
 $$
 
 
+::: {.fragment}
 Model for the data
 $$
   y_{ij} \sim \mbox{Bernoulli}(O_i \times p)
 $$
-  
-  
+:::
+:::
+
+<br>
+
+::: {.fragment}
+<center>
 We need to estimate $\psi$ (occurrence probability) and $p$ (detection probability)
+</center>
+:::
 
 
 
@@ -140,10 +171,11 @@ To estimate $\psi$ and $p$, we should use a good study design:
 
 
 
-## Data $y_{ij$ -- low detection probability}
+## Data *y~ij~* -- low detection probability
 
-10 sites and 3 sampling occasions
+<!-- 10 sites and 3 sampling occasions -->
   
+::: {style='font-size: 70%;'}
 <center>
 
              Occasion 1   Occasion 2   Occasion 3
@@ -160,6 +192,7 @@ To estimate $\psi$ and $p$, we should use a good study design:
   Site 10        0            0            0
 
 </center>
+:::
 
 
 
@@ -167,10 +200,11 @@ To estimate $\psi$ and $p$, we should use a good study design:
 
 
 
-## Data $y_{ij}$ -- high detection probability
+## Data *y~ij~* -- high detection probability
 
-10 sites and 3 sampling occasions
+<!-- 10 sites and 3 sampling occasions -->
   
+::: {style='font-size: 70%;'}
              Occasion 1   Occasion 2   Occasion 3
   --------- ------------ ------------ ------------
   Site 1         1            1            1
@@ -183,6 +217,7 @@ To estimate $\psi$ and $p$, we should use a good study design:
   Site 8         0            0            0
   Site 9         0            1            1
   Site 10        0            0            0
+:::
 
 
 
@@ -191,27 +226,32 @@ To estimate $\psi$ and $p$, we should use a good study design:
 
 ## How do we estimate $\psi$ and $p$?
   
+::: {style='font-size: 85%;'}
 ::: {.columns}
-::: {.column width='50%'}
+::: {.column width='60%'}
 
 Maximum likelihood
       
 - This method tries to find the most "likely" values of $\psi$ and $p$, given the data
 - It can also be used to estimate standard errors (SEs) and confidence intervals (CIs)
-      
+
+::: {.fragment}
+<center>
+[**Shiny app**](https://richard-chandler.shinyapps.io/occupancy/)
+</center>
 :::
-::: {.column width='50%'}
+
+:::
+::: {.column width='40%'}
 ![](figs/mlePandPsi.jpg)
 :::
 :::
-  
-Software
 
-Program `PRESENCE`, Program `MARK`, `R` package `unmarked` <br>
+::: {.fragment}
+Software: Program `PRESENCE`, Program `MARK`, `R` package `unmarked`
+:::
   
-<center>
-[Shiny app](https://richard-chandler.shinyapps.io/occupancy/)
-</center>
+:::
 
 
 
@@ -220,8 +260,7 @@ Program `PRESENCE`, Program `MARK`, `R` package `unmarked` <br>
 
 ## Estimates
 
-10 sites and 3 sampling occasions
-  
+::: {style='font-size: 55%;'}
              Occasion 1   Occasion 2   Occasion 3
   --------- ------------ ------------ ------------
   Site 1         0            0            1
@@ -235,20 +274,24 @@ Program `PRESENCE`, Program `MARK`, `R` package `unmarked` <br>
   Site 9         0            1            0
   Site 10        0            0            0
 
+:::
 
+::: {style='font-size: 80%;'}
 Naive occupancy = 5/10 = 0.50 <br>
 Estimated occupancy = $\hat{\psi} = 0.61 \pm 0.22$ <br>
 Estimated detection = $\hat{p} = 0.44 \pm 0.16$ <br>
-
-
+:::
 
 
 
 
 ## Overall detection probability
-  
-If you sample a site $K$ times, the overall detection probability ($\bar{p}$) is:}
 
+<br>
+
+If you sample a site $K$ times, how do you calculate overall detection probability ($\bar{p}$)?
+
+::: {.fragment}
 $$
   \bar{p} = 1 - (1-p)^K
 $$
@@ -257,6 +300,7 @@ $$
 $\bar{p}$ is detection probability after $K$ sampling occasions <br>
 $p$ is detection probability on a single occasion <br>
 $K$ is the number of sampling occasions (e.g., visits to a site)
+:::
 
 
 
@@ -274,15 +318,22 @@ $K$ is the number of sampling occasions (e.g., visits to a site)
 
 ## Covariates
   
-The value of $\psi$ or $p$ may depend on other variables, e.g. habitat, weather, observer abilities <br>
-  
-How do we accommodate covariates? <br>
-  
-The key is to think of detection probability as a function. A common choice is the logit-linear model:
+The value of $\psi$ or $p$ may depend on other variables, e.g. habitat, weather, observer abilities. 
 
+<br>
+  
+::: {.fragment}
+Covariate effects can be accounted for by treating detection probability as a function. 
+:::
+
+<br>
+
+::: {.fragment}
+A common choice is the logit-linear model:
 $$
   \mbox{logit}(\psi_i) = \beta_0 + \beta_1\mbox{ELEV}_i
 $$
+:::
 
 
 
@@ -293,6 +344,7 @@ $$
 #| label: cov1
 #| echo: false
 #| results: 'hide'
+#| fig-align: 'center'
 par(mfrow=c(1,2), mai=c(0.9,0.9,0.2,0.2))
 plot(function(x,beta0=-2,beta1=0.01) plogis(beta0 + beta1*x), 0, 1000,
      xlab="Elevation (m)", ylab="Occurrence probability", ylim=c(0,1),
@@ -303,6 +355,9 @@ plot(function(x,beta0=4,beta1=-0.1) plogis(beta0 + beta1*x), 30, 90,
 ```
 
 
+<center>
+[**Shiny app**](https://richard-chandler.shinyapps.io/occupancy/)
+</center>
 
 
 # Multi-season models
@@ -323,12 +378,14 @@ $$
 
 ## Data format
 
-5 sites, 2 seasons, and 3 sampling occasions
+5 sites, 2 seasons, and 3 sampling occasions:
+
+::: {style='font-size: 50%;'}
 
 +--------+--------------------------------------+---+--------------------------------------+
 |        | Season 1                             |   | Season 2                             |
 +:=======+:==========:+:==========:+:==========:+:=:+:==========:+:==========:+:==========:+
-| 2-4    | Occasion 1 | Occasion 2 | Occasion 3 |   | Occasion 1 | Occasion 2 | Occasion 3 |
+|        | Occasion 1 | Occasion 2 | Occasion 3 |   | Occasion 1 | Occasion 2 | Occasion 3 |
 +--------+------------+------------+------------+---+------------+------------+------------+
 | Site 1 | 0          | 0          | 1          |   | 1          | 0          | 0          |
 +--------+------------+------------+------------+---+------------+------------+------------+
@@ -341,23 +398,34 @@ $$
 | Site 5 | 0          | 0          | 0          |   | 1          | 1          | 0          |
 +--------+------------+------------+------------+---+------------+------------+------------+
 
+:::
+
 
 
 
 
 ## Summary
   
+<br>
+  
+::: {style='font-size: 95%;'}
 Occupancy models let us estimate metapopulation parameters when detection is imperfect. 
-  
-  
+
+::: {.fragment}
 There are no individual-level data or parameters.
+:::
   
-  
+::: {.fragment}
 These methods are often easy to implement over large areas and so are used in monitoring programs. 
+:::
   
-  
+::: {.fragment}
 Definition of site and season are very important considerations. 
+:::
   
-  
+::: {.fragment}
 Models can be used in other contexts, such as when a site is a human, and we are interested in proportion of people with some disease. 
+:::
+
+:::
 

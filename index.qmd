@@ -92,3 +92,7 @@ and an oral presentation.
 ### Week 10 - Sampling
 
 - [Lecture 12 -- Sampling](lectures/sampling/lecture-sampling.qmd)
+
+### Week 11 - Occupancy models
+
+- [Lecture 13 -- Occupancy](lectures/occupancy/lecture-occupancy.qmd)

@@ -135,18 +135,18 @@
 <center>
 <p><strong>Occupancy Estimation and Modeling</strong></p>
 <p><br></p>
-<p><img data-src="figs/book.jpg" style="height:12cm"> <img data-src="figs/marbled_salamander.jpg" style="height:12cm"></p>
+<p><img data-src="figs/book.jpg" style="height:11cm"> <img data-src="figs/marbled_salamander.jpg" style="height:11cm"></p>
 </center>
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
 <div style="font-size: 80%;">
-<p>Occupancy models were developed to estimate metapopulation parameters when {detection probability} (<span class="math inline">\(p\)</span>) is <span class="math inline">\(&lt;1\)</span>.</p>
+<p>Occupancy models were developed to estimate metapopulation parameters when <strong>detection probability</strong> (<span class="math inline">\(p\)</span>) is <span class="math inline">\(&lt;1\)</span>.</p>
 <p><span class="math display">\[
     \psi_{i,t+1} = O_{i,t}(1-\varepsilon) + (1-O_{i,t})\gamma \\
     O_{i,t+1} \sim \mbox{Bernoulli}(\psi_{i,t+1})
 \]</span></p>
-<p>Parameters of metapopulation model:</p>
+<p>Metapopulation parameters:</p>
 <ul>
 <li><span class="math inline">\(\psi\)</span> – Probability that a site is occupied</li>
 <li><span class="math inline">\(\gamma\)</span> – Probability that an unoccupied site becomes colonized</li>
@@ -157,44 +157,66 @@
 </section>
 <section id="detection-probability" class="slide level2">
 <h2>Detection probability</h2>
+<p><br></p>
+<div style="font-size: 95%;">
 <p>If <span class="math inline">\(p&lt;1\)</span>, we might incorrectly conclude that a site is unoccupied if we don’t detect any individuals</p>
 <p><br></p>
 <div class="fragment">
 <p>Consequences:</p>
-<ul>
+<ol type="1">
 <li>We will underestimate the state variable: The proportion of sites occupied</li>
 <li>We might make incorrect conclusions about habitat relationships</li>
-</ul>
+</ol>
+</div>
 </div>
 </section></section>
 <section>
 
 <section id="single-season-models-1" class="slide level2">
 <h2>Single-season models</h2>
+<p><br></p>
+<div style="font-size: 90%;">
 <p>Scenario</p>
 <ul>
-<li>No interest in colonization or extinction events</li>
-<li>Instead, we directly estimate <span class="math inline">\(\psi\)</span> during one season</li>
-<li>Useful for assessing snapshot of habitat relationships or for modeling a species’ distribution</li>
-<li>We assume <span style="color: red;">population closure</span>: A site’s occupancy state does not change during the survey period (season)</li>
-<li>Definitions of site and season are very important</li>
+<li class="fragment">No interest in colonization or extinction events</li>
+<li class="fragment">Instead, we directly estimate <span class="math inline">\(\psi\)</span> during one season</li>
+<li class="fragment">Useful for assessing snapshot of habitat relationships or for modeling a species’ distribution</li>
+<li class="fragment">We assume <strong>population closure</strong>: A site’s occupancy state does not change during the survey period (season)</li>
+<li class="fragment">Definitions of site and season are very important</li>
 </ul>
+</div>
 </section>
-<section id="how-many-potholes-are-occupied-by-mallards" class="slide level2">
-<h2>How many potholes are occupied by mallards?</h2>
+<section id="section-1" class="slide level2" data-background-image="figs/Prairie_Pothole_Wetlands.jpg">
+<h2></h2>
+<p><br><br><br><br></p>
 <center>
-<img data-src="figs/Prairie_Pothole_Wetlands.jpg">
+<div style="font-size: 130%; color: white;">
+<p><strong>How many potholes are occupied by mallards?</strong></p>
+</div>
 </center>
+<!-- <center> -->
+<!-- ![](figs/Prairie_Pothole_Wetlands.jpg){height="12cm"} -->
+<!-- </center> -->
 </section>
 <section id="single-season-model" class="slide level2">
 <h2>Single-season model</h2>
+<p><br></p>
+<div style="font-size: 90%;">
 <p>Model for the occurrence state <span class="math display">\[
   O_{i} \sim \mbox{Bernoulli}(\psi)
 \]</span></p>
+<div class="fragment">
 <p>Model for the data <span class="math display">\[
   y_{ij} \sim \mbox{Bernoulli}(O_i \times p)
 \]</span></p>
-<p>We need to estimate <span class="math inline">\(\psi\)</span> (occurrence probability) and <span class="math inline">\(p\)</span> (detection probability)</p>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<center>
+We need to estimate <span class="math inline">\(\psi\)</span> (occurrence probability) and <span class="math inline">\(p\)</span> (detection probability)
+</center>
+</div>
 </section>
 <section id="design" class="slide level2">
 <h2>Design</h2>
@@ -205,9 +227,10 @@
 <li>We must have multiple sampling occasions at (a subset of) the sites</li>
 </ul>
 </section>
-<section id="data-y_ij-low-detection-probability" class="slide level2">
-<h2>Data <span class="math inline">\(y_{ij\)</span> – low detection probability}</h2>
-<p>10 sites and 3 sampling occasions</p>
+<section id="data-yij-low-detection-probability" class="slide level2">
+<h2>Data <em>y<sub>ij</sub></em> – low detection probability</h2>
+<!-- 10 sites and 3 sampling occasions -->
+<div style="font-size: 70%;">
 <center>
 <table class="caption-top">
 <thead>
@@ -282,10 +305,12 @@
 </tbody>
 </table>
 </center>
+</div>
 </section>
-<section id="data-y_ij-high-detection-probability" class="slide level2">
-<h2>Data <span class="math inline">\(y_{ij}\)</span> – high detection probability</h2>
-<p>10 sites and 3 sampling occasions</p>
+<section id="data-yij-high-detection-probability" class="slide level2">
+<h2>Data <em>y<sub>ij</sub></em> – high detection probability</h2>
+<!-- 10 sites and 3 sampling occasions -->
+<div style="font-size: 70%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -358,28 +383,34 @@
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="how-do-we-estimate-psi-and-p" class="slide level2">
 <h2>How do we estimate <span class="math inline">\(\psi\)</span> and <span class="math inline">\(p\)</span>?</h2>
+<div style="font-size: 85%;">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>Maximum likelihood</p>
 <ul>
 <li>This method tries to find the most “likely” values of <span class="math inline">\(\psi\)</span> and <span class="math inline">\(p\)</span>, given the data</li>
 <li>It can also be used to estimate standard errors (SEs) and confidence intervals (CIs)</li>
 </ul>
-</div><div class="column" style="width:50%;">
+<div class="fragment">
+<center>
+<a href="https://richard-chandler.shinyapps.io/occupancy/"><strong>Shiny app</strong></a>
+</center>
+</div>
+</div><div class="column" style="width:40%;">
 <p><img data-src="figs/mlePandPsi.jpg"></p>
 </div></div>
-<p>Software</p>
-<p>Program <code>PRESENCE</code>, Program <code>MARK</code>, <code>R</code> package <code>unmarked</code> <br></p>
-<center>
-<a href="https://richard-chandler.shinyapps.io/occupancy/">Shiny app</a>
-</center>
+<div class="fragment">
+<p>Software: Program <code>PRESENCE</code>, Program <code>MARK</code>, <code>R</code> package <code>unmarked</code></p>
+</div>
+</div>
 </section>
 <section id="estimates" class="slide level2">
 <h2>Estimates</h2>
-<p>10 sites and 3 sampling occasions</p>
+<div style="font-size: 55%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -452,15 +483,21 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div style="font-size: 80%;">
 <p>Naive occupancy = 5/10 = 0.50 <br> Estimated occupancy = <span class="math inline">\(\hat{\psi} = 0.61 \pm 0.22\)</span> <br> Estimated detection = <span class="math inline">\(\hat{p} = 0.44 \pm 0.16\)</span> <br></p>
+</div>
 </section>
 <section id="overall-detection-probability" class="slide level2">
 <h2>Overall detection probability</h2>
-<p>If you sample a site <span class="math inline">\(K\)</span> times, the overall detection probability (<span class="math inline">\(\bar{p}\)</span>) is:}</p>
+<p><br></p>
+<p>If you sample a site <span class="math inline">\(K\)</span> times, how do you calculate overall detection probability (<span class="math inline">\(\bar{p}\)</span>)?</p>
+<div class="fragment">
 <p><span class="math display">\[
   \bar{p} = 1 - (1-p)^K
 \]</span></p>
 <p><span class="math inline">\(\bar{p}\)</span> is detection probability after <span class="math inline">\(K\)</span> sampling occasions <br> <span class="math inline">\(p\)</span> is detection probability on a single occasion <br> <span class="math inline">\(K\)</span> is the number of sampling occasions (e.g., visits to a site)</p>
+</div>
 </section>
 <section id="assumptions" class="slide level2">
 <h2>Assumptions</h2>
@@ -473,17 +510,25 @@
 </section>
 <section id="covariates" class="slide level2">
 <h2>Covariates</h2>
-<p>The value of <span class="math inline">\(\psi\)</span> or <span class="math inline">\(p\)</span> may depend on other variables, e.g.&nbsp;habitat, weather, observer abilities <br></p>
-<p>How do we accommodate covariates? <br></p>
-<p>The key is to think of detection probability as a function. A common choice is the logit-linear model:</p>
-<p><span class="math display">\[
+<p>The value of <span class="math inline">\(\psi\)</span> or <span class="math inline">\(p\)</span> may depend on other variables, e.g.&nbsp;habitat, weather, observer abilities.</p>
+<p><br></p>
+<div class="fragment">
+<p>Covariate effects can be accounted for by treating detection probability as a function.</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>A common choice is the logit-linear model: <span class="math display">\[
   \mbox{logit}(\psi_i) = \beta_0 + \beta_1\mbox{ELEV}_i
 \]</span></p>
+</div>
 </section>
 <section id="covariates-1" class="slide level2">
 <h2>Covariates</h2>
 
-<img data-src="lecture-occupancy_files/figure-revealjs/cov1-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="lecture-occupancy_files/figure-revealjs/cov1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><center>
+<a href="https://richard-chandler.shinyapps.io/occupancy/"><strong>Shiny app</strong></a>
+</center>
+</section></section>
 <section>
 <section id="multi-season-models" class="title-slide slide level1 center">
 <h1>Multi-season models</h1>
@@ -500,7 +545,8 @@
 </section>
 <section id="data-format" class="slide level2">
 <h2>Data format</h2>
-<p>5 sites, 2 seasons, and 3 sampling occasions</p>
+<p>5 sites, 2 seasons, and 3 sampling occasions:</p>
+<div style="font-size: 50%;">
 <table class="caption-top" style="width:94%;">
 <colgroup>
 <col style="width: 9%">
@@ -522,7 +568,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2-4</td>
+<td style="text-align: left;"></td>
 <td style="text-align: center;">Occasion 1</td>
 <td style="text-align: center;">Occasion 2</td>
 <td style="text-align: center;">Occasion 3</td>
@@ -583,14 +629,26 @@
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p><br></p>
+<div style="font-size: 95%;">
 <p>Occupancy models let us estimate metapopulation parameters when detection is imperfect.</p>
+<div class="fragment">
 <p>There are no individual-level data or parameters.</p>
+</div>
+<div class="fragment">
 <p>These methods are often easy to implement over large areas and so are used in monitoring programs.</p>
+</div>
+<div class="fragment">
 <p>Definition of site and season are very important considerations.</p>
+</div>
+<div class="fragment">
 <p>Models can be used in other contexts, such as when a site is a human, and we are interested in proportion of people with some disease.</p>
+</div>
+</div>
 
 
 </section></section>
