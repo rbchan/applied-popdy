@@ -146,6 +146,7 @@
     \psi_{i,t+1} = O_{i,t}(1-\varepsilon) + (1-O_{i,t})\gamma \\
     O_{i,t+1} \sim \mbox{Bernoulli}(\psi_{i,t+1})
 \]</span></p>
+<div class="fragment">
 <p>Metapopulation parameters:</p>
 <ul>
 <li><span class="math inline">\(\psi\)</span> – Probability that a site is occupied</li>
@@ -153,6 +154,7 @@
 <li><span class="math inline">\(\varepsilon\)</span> – Probability that an occupied site goes extinct</li>
 <li><span class="math inline">\(p\)</span> – Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="detection-probability" class="slide level2">
@@ -397,7 +399,9 @@ We need to estimate <span class="math inline">\(\psi\)</span> (occurrence probab
 </ul>
 <div class="fragment">
 <center>
-<a href="https://richard-chandler.shinyapps.io/occupancy/"><strong>Shiny app</strong></a>
+<div style="font-size: 130%;">
+<p><a href="https://rbchan-occupancy.share.connect.posit.cloud/"><strong>Shiny app</strong></a></p>
+</div>
 </center>
 </div>
 </div><div class="column" style="width:40%;">
@@ -502,10 +506,10 @@ We need to estimate <span class="math inline">\(\psi\)</span> (occurrence probab
 <section id="assumptions" class="slide level2">
 <h2>Assumptions</h2>
 <ul>
-<li>Population closure: Occurrence state does not change during sampling</li>
-<li>Occurrence probability is the same for all sites, unless we account for <em>covariates</em></li>
-<li>Detection probability is the same for all sites and sampling occasions, unless we account for covariates</li>
-<li>Statistical independence</li>
+<li class="fragment">Population closure: Occurrence state does not change during sampling</li>
+<li class="fragment">Occurrence probability is the same for all sites, unless we account for <em>covariates</em></li>
+<li class="fragment">Detection probability is the same for all sites and sampling occasions, unless we account for covariates</li>
+<li class="fragment">Statistical independence</li>
 </ul>
 </section>
 <section id="covariates" class="slide level2">
@@ -525,8 +529,10 @@ We need to estimate <span class="math inline">\(\psi\)</span> (occurrence probab
 <section id="covariates-1" class="slide level2">
 <h2>Covariates</h2>
 
-<img data-src="lecture-occupancy_files/figure-revealjs/cov1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><center>
-<a href="https://richard-chandler.shinyapps.io/occupancy/"><strong>Shiny app</strong></a>
+<img data-src="lecture-occupancy_files/figure-revealjs/cov1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><center>
+<div style="font-size: 120%;">
+<p><a href="https://richard-chandler.shinyapps.io/occupancy/"><strong>Shiny app</strong></a></p>
+</div>
 </center>
 </section></section>
 <section>

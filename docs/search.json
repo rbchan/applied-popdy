@@ -655,7 +655,7 @@
     "href": "lectures/occupancy/lecture-occupancy.html#motivation",
     "title": "Applied Population Dynamics",
     "section": "Motivation",
-    "text": "Motivation\n\nOccupancy models were developed to estimate metapopulation parameters when detection probability (\\(p\\)) is \\(&lt;1\\).\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\nMetapopulation parameters:\n\n\\(\\psi\\) – Probability that a site is occupied\n\\(\\gamma\\) – Probability that an unoccupied site becomes colonized\n\\(\\varepsilon\\) – Probability that an occupied site goes extinct\n\\(p\\) – Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)"
+    "text": "Motivation\n\nOccupancy models were developed to estimate metapopulation parameters when detection probability (\\(p\\)) is \\(&lt;1\\).\n\\[\n    \\psi_{i,t+1} = O_{i,t}(1-\\varepsilon) + (1-O_{i,t})\\gamma \\\\\n    O_{i,t+1} \\sim \\mbox{Bernoulli}(\\psi_{i,t+1})\n\\]\n\nMetapopulation parameters:\n\n\\(\\psi\\) – Probability that a site is occupied\n\\(\\gamma\\) – Probability that an unoccupied site becomes colonized\n\\(\\varepsilon\\) – Probability that an occupied site goes extinct\n\\(p\\) – Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#detection-probability",
@@ -711,7 +711,7 @@
     "href": "lectures/occupancy/lecture-occupancy.html#how-do-we-estimate-psi-and-p",
     "title": "Applied Population Dynamics",
     "section": "How do we estimate \\(\\psi\\) and \\(p\\)?",
-    "text": "How do we estimate \\(\\psi\\) and \\(p\\)?\n\n\n\nMaximum likelihood\n\nThis method tries to find the most “likely” values of \\(\\psi\\) and \\(p\\), given the data\nIt can also be used to estimate standard errors (SEs) and confidence intervals (CIs)\n\n\n\nShiny app\n\n\n\n\n\n\nSoftware: Program PRESENCE, Program MARK, R package unmarked"
+    "text": "How do we estimate \\(\\psi\\) and \\(p\\)?\n\n\n\nMaximum likelihood\n\nThis method tries to find the most “likely” values of \\(\\psi\\) and \\(p\\), given the data\nIt can also be used to estimate standard errors (SEs) and confidence intervals (CIs)\n\n\n\n\nShiny app\n\n\n\n\n\n\n\nSoftware: Program PRESENCE, Program MARK, R package unmarked"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#estimates",
@@ -746,7 +746,7 @@
     "href": "lectures/occupancy/lecture-occupancy.html#covariates-1",
     "title": "Applied Population Dynamics",
     "section": "Covariates",
-    "text": "Covariates\n\n\nShiny app"
+    "text": "Covariates\n\n\n\nShiny app"
   },
   {
     "objectID": "lectures/occupancy/lecture-occupancy.html#multi-season-models-1",

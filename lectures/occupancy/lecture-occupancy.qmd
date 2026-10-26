@@ -42,12 +42,15 @@ $$
 $$
   
   
+::: {.fragment}
 Metapopulation parameters:
 
 - $\psi$ -- Probability that a site is occupied
 - $\gamma$ -- Probability that an unoccupied site becomes colonized
 - $\varepsilon$ -- Probability that an occupied site goes extinct
 - $p$ -- Probability of detecting at least one individual at a site that is occupied (on a single sampling occasion)
+:::
+
 :::
   
 
@@ -237,7 +240,9 @@ Maximum likelihood
 
 ::: {.fragment}
 <center>
-[**Shiny app**](https://richard-chandler.shinyapps.io/occupancy/)
+::: {style='font-size: 130%;'}
+[**Shiny app**](https://rbchan-occupancy.share.connect.posit.cloud/)
+:::
 </center>
 :::
 
@@ -308,11 +313,15 @@ $K$ is the number of sampling occasions (e.g., visits to a site)
 
 ## Assumptions
   
+::: {.incremental}
+
 - Population closure: Occurrence state does not change during sampling
 - Occurrence probability is the same for all sites, unless we account for *covariates*
 - Detection probability is the same for all sites and sampling occasions, unless we account for covariates
 - Statistical independence
   
+:::
+
 
 
 
@@ -344,6 +353,9 @@ $$
 #| label: cov1
 #| echo: false
 #| results: 'hide'
+#| fig-height: 7
+#| fig-width: 15
+#| out-width: '100%'
 #| fig-align: 'center'
 par(mfrow=c(1,2), mai=c(0.9,0.9,0.2,0.2))
 plot(function(x,beta0=-2,beta1=0.01) plogis(beta0 + beta1*x), 0, 1000,
@@ -356,7 +368,9 @@ plot(function(x,beta0=4,beta1=-0.1) plogis(beta0 + beta1*x), 30, 90,
 
 
 <center>
+::: {style='font-size: 120%;'}
 [**Shiny app**](https://richard-chandler.shinyapps.io/occupancy/)
+:::
 </center>
 
 
