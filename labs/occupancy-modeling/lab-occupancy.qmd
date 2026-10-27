@@ -138,7 +138,7 @@ detNullOccHab <- occu(~1 ~habitatIndex, umf)
 ```
 
 The summary indicates that habitat effect is positive, indicating that
-occupancy probability increases as the index increases.  
+occupancy probability increases as the index increases.
 
 ```{r}
 #| label: summaryOccHab
