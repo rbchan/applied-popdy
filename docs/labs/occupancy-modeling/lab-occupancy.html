@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>lab-occupancy – Applied Population Dynamics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3a9b59a28ddcc48f010c2375eb3c9c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Applied Population Dynamics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../APD-syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/APD_writing_assignment.html"> 
+<span class="menu-text">Final project</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lab-9-assignment-occupancy-models-in-r-due-by-500pm-on-friday" id="toc-lab-9-assignment-occupancy-models-in-r-due-by-500pm-on-friday" class="nav-link active" data-scroll-target="#lab-9-assignment-occupancy-models-in-r-due-by-500pm-on-friday">Lab 9 Assignment — Occupancy Models in R <br> Due by 5:00pm on Friday</a>
+  <ul class="collapse">
+  <li><a href="#preliminaries-occupancy-models-using-the-r-package-unmarked" id="toc-preliminaries-occupancy-models-using-the-r-package-unmarked" class="nav-link" data-scroll-target="#preliminaries-occupancy-models-using-the-r-package-unmarked">Preliminaries: Occupancy models using the R package ‘unmarked’</a></li>
+  <li><a href="#exercise-i-single-season-models" id="toc-exercise-i-single-season-models" class="nav-link" data-scroll-target="#exercise-i-single-season-models">Exercise I: Single-season models</a></li>
+  <li><a href="#exercise-ii-multi-season-model" id="toc-exercise-ii-multi-season-model" class="nav-link" data-scroll-target="#exercise-ii-multi-season-model">Exercise II: Multi-season model</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="lab-9-assignment-occupancy-models-in-r-due-by-500pm-on-friday" class="level2">
+<h2 class="anchored" data-anchor-id="lab-9-assignment-occupancy-models-in-r-due-by-500pm-on-friday">Lab 9 Assignment — Occupancy Models in R <br> Due by 5:00pm on Friday</h2>
+<p>Answer each of the following questions, and submit your answers by uploading a single <span style="color: red;">WORD</span> file to ELC. Unlike previous labs, copy and paste code and results from R to the WORD file. You should also copy and paste entire screenshots to show the relevant output. If you know how to use RMarkdown or Quarto, please do so.</p>
+<section id="preliminaries-occupancy-models-using-the-r-package-unmarked" class="level3">
+<h3 class="anchored" data-anchor-id="preliminaries-occupancy-models-using-the-r-package-unmarked">Preliminaries: Occupancy models using the R package ‘unmarked’</h3>
+<p>Occupancy models can be fit using the ‘unmarked’ package in R. To install ‘unmarked’, issue this R command:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"unmarked"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Once it’s installed, you need to load it:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(unmarked)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="getting-data-into-r" class="level4">
+<h4 class="anchored" data-anchor-id="getting-data-into-r">Getting Data into R</h4>
+<p>Now we’re ready to import the data. For exercise I, you will import the file named <br> <code>quail-data-for-R.csv</code>. For exercise II, you will import the file <code>dipnet-data-for-R.csv</code>. Before you import those files, here is some general guidance on importing data, followed by occupancy modeling examples.</p>
+<p>The easiest way to import data into R is to save the data as a <code>.csv</code> file, which has been done for you already, and put it in your working directory. The working directory is the location on your computer where R will look for files by default. To find out where the working directory is, do this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/richard-chandler/courses/applied-popdy/labs/occupancy-modeling"</code></pre>
+</div>
+</div>
+<p>If this is the location where you put your data, then you are ready to import. Otherwise, you need to change your working directory to the location where your data files are located. You can change your working directory using the <code>setwd</code> command or using the drop-down menu options (<code>Session &gt; Set Working Directory</code>).</p>
+<p>Once your working directory is correctly specified, you can import the data using this command:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exampleData <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"example-data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Let’s look at a summary:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(exampleData)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Site       season1visit1 season1visit2   season2visit1 season2visit2   habitatIndex  
+ Min.   : 1.00   Min.   :0.0   Min.   :0.000   Min.   :0.0   Min.   :0.00   Min.   :1.040  
+ 1st Qu.:10.75   1st Qu.:0.0   1st Qu.:0.000   1st Qu.:0.0   1st Qu.:0.00   1st Qu.:1.885  
+ Median :20.50   Median :0.0   Median :0.000   Median :0.0   Median :0.00   Median :2.805  
+ Mean   :20.50   Mean   :0.4   Mean   :0.325   Mean   :0.3   Mean   :0.25   Mean   :2.912  
+ 3rd Qu.:30.25   3rd Qu.:1.0   3rd Qu.:1.000   3rd Qu.:1.0   3rd Qu.:0.25   3rd Qu.:3.835  
+ Max.   :40.00   Max.   :1.0   Max.   :1.000   Max.   :1.0   Max.   :1.00   Max.   :4.740  </code></pre>
+</div>
+</div>
+<p>Columns 2-5 have the occupancy data. The sixth column has a site-specific covariate. Before we can run a single-season occupancy model, we have to format the data.</p>
+</section>
+<section id="example-formatting-data-for-single-season-analysis-in-unmarked" class="level4">
+<h4 class="anchored" data-anchor-id="example-formatting-data-for-single-season-analysis-in-unmarked">Example: Formatting data for single-season analysis in ‘unmarked’</h4>
+<p>The example dataset is from a study with 2 seasons, but we’ll begin by pretending that it is from a single season with 4 surveys at each site.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First, extract columns 2-4 with the occupancy data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>occData <span class="ot">&lt;-</span> exampleData[,<span class="fu">c</span>(<span class="st">"season1visit1"</span>, <span class="st">"season1visit2"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"season2visit1"</span>, <span class="st">"season2visit2"</span>)]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Next, extract the column with the site covariate.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## It must be formatted as a data.frame</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>habIndex <span class="ot">&lt;-</span> exampleData[,<span class="st">"habitatIndex"</span>,drop<span class="ot">=</span><span class="cn">FALSE</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Finally, put the pieces together</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>umf <span class="ot">&lt;-</span> <span class="fu">unmarkedFrameOccu</span>(<span class="at">y=</span>occData, <span class="at">siteCovs=</span>habIndex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now that we have the data formatted, we should summarize it again to make sure everything looks good:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(umf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>unmarkedFrame Object
+
+40 sites
+Maximum number of observations per site: 4 
+Mean number of observations per site: 4 
+Sites with at least one detection: 22 
+
+Tabulation of y observations:
+  0   1 
+109  51 
+
+Site-level covariates:
+  habitatIndex  
+ Min.   :1.040  
+ 1st Qu.:1.885  
+ Median :2.805  
+ Mean   :2.912  
+ 3rd Qu.:3.835  
+ Max.   :4.740  </code></pre>
+</div>
+</div>
+<p>All is well. Let’s fit some models.</p>
+</section>
+<section id="example-fitting-single-season-occupancy-models" class="level4">
+<h4 class="anchored" data-anchor-id="example-fitting-single-season-occupancy-models">Example: Fitting single-season occupancy models</h4>
+<p>Model fitting is the process of fitting a model to the data. In other words, it is the process of estimating the parameters of a model using a dataset.</p>
+<p>We will fit two models using the <code>occu</code> function. In the first model, there are no covariates, meaning that occupancy probability (<span class="math inline">\(\psi\)</span>) and detection probability (<span class="math inline">\(p\)</span>) are constant. We will call this the null model:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nullModel <span class="ot">&lt;-</span> <span class="fu">occu</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span><span class="dv">1</span>, umf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The line of code above fits the single-season model to the data. The first argument is a formula describing the model that you want to fit. If the formula is <code>~1 ~1</code>, then there are no covariates. If there are covariates, the detection probability covariates go after the first <code>~</code> and the occupancy covariates go after the second <code>~</code>. We will add covariates later. First, let’s summarize the results:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nullModel)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+occu(formula = ~1 ~ 1, data = umf)
+
+Occupancy (logit-scale):
+ Estimate    SE     z P(&gt;|z|)
+     0.29 0.338 0.858   0.391
+
+Detection (logit-scale):
+ Estimate    SE     z P(&gt;|z|)
+     0.23 0.235 0.977   0.328
+
+AIC: 177.2621 
+Number of sites: 40</code></pre>
+</div>
+</div>
+<p>Notice that the parameters are estimated on the logit-scale. To get estimates on the probability scale, we need to back-transform them. If there are no covariates, we can back-transform like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Occupancy estimate - Pr(site is occupied)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModel, <span class="at">type=</span><span class="st">"state"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Occupancy estimate(s)
+
+ Estimate     SE LinComb (Intercept)
+    0.572 0.0827    0.29           1
+
+Transformation: logistic </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Detection probability estimate</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModel, <span class="at">type=</span><span class="st">"det"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Detection estimate(s)
+
+ Estimate     SE LinComb (Intercept)
+    0.557 0.0581    0.23           1
+
+Transformation: logistic </code></pre>
+</div>
+</div>
+<p>We conclude that the probability that a site is occupied is 0.572. The probability that the species is detected (on a single visit), if the site is occupied, is 0.557. These two estimates are similar, but that is just a coincidence.</p>
+<p>Let’s now assess the possibility that occupancy probability depends on the habitat index. We can fit such a model like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>detNullOccHab <span class="ot">&lt;-</span> <span class="fu">occu</span>(<span class="sc">~</span><span class="dv">1</span> <span class="sc">~</span>habitatIndex, umf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The summary indicates that habitat effect is positive, indicating that occupancy probability increases as the index increases.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(detNullOccHab)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+occu(formula = ~1 ~ habitatIndex, data = umf)
+
+Occupancy (logit-scale):
+             Estimate    SE     z P(&gt;|z|)
+(Intercept)    -1.768 1.017 -1.74  0.0820
+habitatIndex    0.723 0.348  2.08  0.0378
+
+Detection (logit-scale):
+ Estimate    SE     z P(&gt;|z|)
+     0.23 0.235 0.979   0.327
+
+AIC: 174.192 
+Number of sites: 40</code></pre>
+</div>
+</div>
+<p>To visualize the habitat effect, we need to predict occupancy at several values of the habitat index, which ranged in value from approximately 1–5. We can create a sequence of values and put it into a data frame for prediction like this:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>predData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">habitatIndex=</span><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">5</span>, <span class="at">length.out=</span><span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, let’s do the prediction:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>predOcc <span class="ot">&lt;-</span> <span class="fu">predict</span>(detNullOccHab, <span class="at">newdata=</span>predData, <span class="at">type=</span><span class="st">"state"</span>, <span class="at">append=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>predOcc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Predicted         SE      lower     upper habitatIndex
+1  0.2601584 0.13530441 0.08144029 0.5824030     1.000000
+2  0.3265380 0.12675690 0.13544954 0.6000900     1.444444
+3  0.4006819 0.11216471 0.21113434 0.6254747     1.888889
+4  0.4796701 0.09729524 0.30039695 0.6643364     2.333333
+5  0.5596880 0.09008114 0.38307019 0.7223861     2.777778
+6  0.6367200 0.09342213 0.44264168 0.7945805     3.222222
+7  0.7073227 0.10152150 0.48032215 0.8633721     3.666667
+8  0.7691782 0.10736889 0.50459780 0.9159817     4.111111
+9  0.8212643 0.10774837 0.52155057 0.9509032     4.555556
+10 0.8636800 0.10262384 0.53440045 0.9722013     5.000000</code></pre>
+</div>
+</div>
+<p>The “Predicted” values are the estimates of occupancy for each value of “habitatIndex”. Standard errors and 95% confidence intervals are also returned. Here’s how to visualize the predictions with the confidence intervals:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Predicted <span class="sc">~</span> habitatIndex, <span class="at">data=</span>predOcc, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Habitat index"</span>, <span class="at">ylab=</span><span class="st">"Occupancy"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(lower <span class="sc">~</span> habitatIndex, <span class="at">data=</span>predOcc, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(upper <span class="sc">~</span> habitatIndex, <span class="at">data=</span>predOcc, <span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lab-occupancy_files/figure-html/plotOcc-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-fitting-multi-season-occupancy-models" class="level4">
+<h4 class="anchored" data-anchor-id="example-fitting-multi-season-occupancy-models">Example: Fitting multi-season occupancy models</h4>
+<p>We will use different functions to format the data and fit the multi-season occupancy models. Instead of using <code>unmarkedFrameOccu</code>, we will use <code>unmarkedMultFrame</code>. The number of seasons must be specified using the <code>numPrimary</code> argument.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>umfMS <span class="ot">&lt;-</span> <span class="fu">unmarkedMultFrame</span>(<span class="at">y=</span>occData, <span class="at">numPrimary=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Let’s take a look.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(umfMS)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>unmarkedFrame Object
+
+40 sites
+Maximum number of observations per site: 4 
+Mean number of observations per site: 4 
+Number of primary survey periods: 2 
+Number of secondary survey periods: 2 
+Sites with at least one detection: 22 
+
+Tabulation of y observations:
+  0   1 
+109  51 </code></pre>
+</div>
+</div>
+<p>Model fitting is done using the <code>colext</code> function instead of the <code>occu</code> function. Notice that the formulas have spaces between them, unlike before.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>nullModelMS <span class="ot">&lt;-</span> <span class="fu">colext</span>(<span class="sc">~</span><span class="dv">1</span>, <span class="sc">~</span><span class="dv">1</span>, <span class="sc">~</span><span class="dv">1</span>, <span class="sc">~</span><span class="dv">1</span>, umfMS)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Here are the results:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nullModelMS)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+colext(psiformula = ~1, gammaformula = ~1, epsilonformula = ~1, 
+    pformula = ~1, data = umfMS)
+
+Initial (logit-scale):
+ Estimate    SE     z P(&gt;|z|)
+    0.207 0.401 0.516   0.606
+
+Colonization (logit-scale):
+ Estimate   SE    z P(&gt;|z|)
+    -2.78 2.31 -1.2   0.229
+
+Extinction (logit-scale):
+ Estimate    SE     z P(&gt;|z|)
+    -1.35 0.829 -1.63   0.103
+
+Detection (logit-scale):
+ Estimate    SE    z P(&gt;|z|)
+    0.521 0.339 1.54   0.124
+
+AIC: 178.8779 
+Number of sites: 40</code></pre>
+</div>
+</div>
+<p>We can back-transform and predict as before, but should be one of: “psi”, “col”, “ext”, or “det”.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModelMS, <span class="at">type=</span><span class="st">"psi"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Initial estimate(s)
+
+ Estimate     SE LinComb (Intercept)
+    0.552 0.0992   0.207           1
+
+Transformation: logistic </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModelMS, <span class="at">type=</span><span class="st">"col"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Colonization estimate(s)
+
+ Estimate    SE LinComb (Intercept)
+   0.0586 0.127   -2.78           1
+
+Transformation: logistic </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModelMS, <span class="at">type=</span><span class="st">"ext"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Extinction estimate(s)
+
+ Estimate    SE LinComb (Intercept)
+    0.206 0.135   -1.35           1
+
+Transformation: logistic </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">backTransform</span>(nullModelMS, <span class="at">type=</span><span class="st">"det"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Backtransformed linear combination(s) of Detection estimate(s)
+
+ Estimate     SE LinComb (Intercept)
+    0.627 0.0793   0.521           1
+
+Transformation: logistic </code></pre>
+</div>
+</div>
+<p>The occupancy estimate is associated with the first season.</p>
+</section>
+</section>
+<section id="exercise-i-single-season-models" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-i-single-season-models">Exercise I: Single-season models</h3>
+<p>Suppose we are interested in estimating occupancy of bobwhite quail (<em>Colinus virginianus</em>) in abandoned ag fields. We randomly select 50 sites and survey them 4 times each in May. The resulting data indicate whether at least one quail was detected at each site on each visit.</p>
+<p>In addition, you think there is a possibility that vegetation height affects both occupancy and detection probability so you measure average vegetation height at each site. Vegetation height will be the covariate used in the analysis.</p>
+<p>Import the file <code>quail-data-for-R.csv</code>.</p>
+<ol type="a">
+<li>Fit the single-season null model using the <code>occu</code> function. Report the estimates and standard errors for psi (<span class="math inline">\(\psi\)</span>) and <span class="math inline">\(p\)</span> (on the probability scale). Interpret these estimates (ie, what are the definitions of <span class="math inline">\(\psi\)</span> and <span class="math inline">\(p\)</span> in this context?).</li>
+<li>Now run another model using <code>veght</code> as a predictor variable (covariate) for <strong>both</strong> occupancy and detection probability.</li>
+<li>Is this model better than the first, based on AIC? The lower the AIC, the better the model’s predictive performance.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> AIC favors models that explain a lot of variation in the data using a small number of parameters.</li>
+<li>Use the model to create a graph of the relationship between occurrence probability and vegetation height. Do this using the <code>predict</code> function as described above. Add the graph to your Word document.</li>
+</ol>
+</section>
+<section id="exercise-ii-multi-season-model" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-ii-multi-season-model">Exercise II: Multi-season model</h3>
+<p>Use the southern two-lined salamander (<em>Eurycea cirrigera</em>) data from the past few years to do the following. Note: I pooled the data from the 5 swipes of each team.</p>
+<p>Begin by importing the file <code>dipnet-data-for-R.csv</code>.</p>
+<ol type="a">
+<li>Use the <code>colext</code> function to fit the null multi-season occupancy model. Report the estimates and standard errors for psi (<span class="math inline">\(\psi\)</span>), gamma (<span class="math inline">\(\gamma\)</span>), epsilon (<span class="math inline">\(\epsilon\)</span>), and <span class="math inline">\(p\)</span> on the probability scale. Report these values in a table in your Word document.</li>
+<li>Provide clear interpretations of the estimates.</li>
+<li>Based on these estimates, is there any reason to believe that occupancy has decreased over these years? Explain.</li>
+<li>How certain are you of these conclusions? Answer by describing how well you think our study design met the assumptions of the multi-season occupancy model.</li>
+</ol>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>AIC = <span class="math inline">\(-2\times \mathrm{log(likelihood)} + 2\times \mathrm{nParameters}\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
