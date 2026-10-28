@@ -352,7 +352,6 @@ $$
 ```{r}
 #| label: cov1
 #| echo: false
-#| results: 'hide'
 #| fig-height: 7
 #| fig-width: 15
 #| out-width: '100%'
