@@ -374,6 +374,37 @@ plot(function(x,beta0=4,beta1=-0.1) plogis(beta0 + beta1*x), 30, 90,
 </center>
 
 
+
+## [Example]{style="color: white;"} {background-image="figs/Adult_Crotalus_adamanteus.jpg"}
+
+
+<!-- ## Example {background-image="figs/Eastern_Indigo.jpg"} -->
+## Example
+
+::: {.columns}
+
+::: {.column width="70%"}
+![](figs/Bauder-et-al-2017-fig2.png)
+:::
+
+::: {.column width="30%"}
+<br>
+![](figs/Eastern_Indigo.jpg)
+![](figs/Adult_Crotalus_adamanteus.jpg)
+:::
+
+:::
+
+::: {style='font-size: 50%; color: grey;'}
+Bauder et al. 2017
+:::
+
+
+
+
+
+
+
 # Multi-season models
 
 
