@@ -1,8 +1,8 @@
 /.quarto/
 **/*.quarto_ipynb
 _site/
-**/*_files/
-**/*_cache/
+lectures/**/*_files/
+lectures/**/*_cache/
 
 ## Latex
 *.aux
@@ -14,5 +14,4 @@ _site/
 *.toc
 *.pdf
 
-cache/
 auto/
