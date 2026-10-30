@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>Applied Population Dynamics – Distance Sampling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,10 +16,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -28,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -200,16 +206,18 @@
 </section>
 <section id="design" class="slide level2">
 <h2>Design</h2>
+<div style="font-size: 80%;">
 <ul>
 <li>Randomly place line transects or points throughout the study area</li>
 <li>Record the distance to each animal detected</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Line transects <img data-src="figs/Fig9-7.png"></p>
+<p>Line transects <img data-src="figs/fig9-7.jpg"></p>
 </div><div class="column" style="width:50%;">
-<p>Point transects <img data-src="figs/Fig9-9.png"></p>
+<p>Point transects <img data-src="figs/fig9-9.jpg"></p>
 </div></div>
+</div>
 </section></section>
 <section>
 <section id="line-transects" class="title-slide slide level1 center">
@@ -218,8 +226,15 @@
 </section>
 <section id="line-transects-1" class="slide level2">
 <h2>Line transects</h2>
-
-<img data-src="figs/Fig9-1.png" class="r-stretch"><p>In line transect sampling, it is common to record the radial distance and bearing, rather than the perpendicular distance. However, the analysis must be conducted on the perpendicular distance data.</p>
+<div style="font-size: 80%;">
+<center>
+<img data-src="figs/fig9-1.jpg" style="width:50.0%">
+</center>
+<p>In line transect sampling, it is common to record the radial distance and bearing, rather than the perpendicular distance.</p>
+<div class="fragment">
+<p>However, the analysis must be conducted on the perpendicular distance data.</p>
+</div>
+</div>
 </section>
 <section id="real-design" class="slide level2">
 <h2>Real design</h2>
@@ -280,27 +295,26 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </div></div>
 </section>
 <section id="estimating-average-detection-probability" class="slide level2">
-<h2><span style="font-size: 80%;">Estimating average detection probability</span></h2>
-<div style="font-size: 80%;">
-<ul>
-<li>Fit a detection function, <span class="math inline">\(\mathrm{g}(x)\)</span>, to the data
-<ul>
-<li>Assume <span class="math inline">\(\mathrm{g}(0) = 1\)</span></li>
-</ul></li>
-</ul>
+<h2><span style="font-size: 75%;">Estimating average detection probability</span></h2>
+<div style="font-size: 70%;">
+<p>Fit a detection function, <span class="math inline">\(\mathrm{g}(x)\)</span>, to the data <!-- * Assume $\mathrm{g}(0) = 1$ --></p>
 <div class="fragment">
-<ul>
-<li>Assume individuals are “uniformly” distributed with respect to the transect (valid under random sampling): <span class="math inline">\(p(x) = 1/B\)</span> where <span class="math inline">\(B\)</span> is the transect half-width.</li>
-</ul>
+<p>Assume individuals are “uniformly” distributed with respect to the transect (valid under random sampling): <span class="math inline">\(p(x) = 1/B\)</span> where <span class="math inline">\(B\)</span> is the transect half-width.</p>
 </div>
 <div class="fragment">
-<ul>
-<li><span class="math inline">\(\bar{p}\)</span> is then the average detection function, weighted by <span class="math inline">\(p(x)\)</span>.</li>
-</ul>
+<p><span class="math inline">\(\bar{p}\)</span> is then the average detection function, weighted by <span class="math inline">\(p(x)\)</span>.</p>
 <p><span class="math display">\[\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x\]</span>.</p>
 </div>
 <div class="fragment">
-<p><img data-src="figs/detfuns.png"></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture-distance-sampling_files/figure-revealjs/detfuns-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -337,6 +351,7 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<p><br></p>
 <div class="r-fit-text">
 <p><a href="https://richard-chandler.shinyapps.io/distance-sampling/">Shiny App</a></p>
 </div>
@@ -363,39 +378,49 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </section>
 <section id="point-transects-1" class="slide level2">
 <h2>Point transects</h2>
-
-<img data-src="figs/fig9-8.png" class="r-stretch"></section>
+<center>
+<img data-src="figs/fig9-8.jpg" style="width:80.0%">
+</center>
+</section>
 <section id="differences-between-point-vs-line-transects" class="slide level2">
 <h2><span style="font-size: 80%;">Differences between point vs line transects</span></h2>
+<p><br></p>
+<div style="font-size: 80%;">
 <p>We still use the same type of detection function (half-normal, hazard, etc…).</p>
+<p><br></p>
 <div class="fragment">
 <p>We don’t expect a “flat” histogram of distances when <span class="math inline">\(\bar{p}=1\)</span>. Why?</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p>More individuals occur far from the observer than close to the observer because area increases with distance.</p>
+</div>
 </div>
 </section>
 <section id="point-transects-2" class="slide level2">
 <h2>Point Transects</h2>
 <p>When average detection probability is 1, the histogram of distances will look like this because there is more area (and hence more individuals) far from the point.</p>
-
-<img data-src="figs/detfun5.png" class="r-stretch"></section>
+<center>
+<img data-src="figs/detfun5.png" style="width:40.0%">
+</center>
+</section>
 <section id="point-transects-3" class="slide level2">
 <h2>Point Transects</h2>
-<center>
 <p>If average detection probability is less than 1, the histogram will increase and then decline.</p>
-<img data-src="figs/detfun6.png">
+<center>
+<img data-src="figs/detfun6.png" style="width:40.0%">
 </center>
 </section>
 <section id="point-transects-4" class="slide level2">
 <h2>Point Transects</h2>
-<center>
 <p>The fitted curve will look like this</p>
-<img data-src="figs/detfun7.png">
+<center>
+<img data-src="figs/detfun7.png" style="width:40.0%">
 </center>
 </section>
 <section id="assignment" class="slide level2">
 <h2>Assignment</h2>
+<p><br><br></p>
 <center>
 Read Chapter 10 – Capture-Mark-Recapture
 </center>
@@ -619,6 +644,44 @@ Read Chapter 10 – Capture-Mark-Recapture
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

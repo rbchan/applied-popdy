@@ -98,3 +98,7 @@ and an oral presentation.
 - [Lecture 13 -- Occupancy](lectures/occupancy/lecture-occupancy.qmd)
 
 - [Lab 9 - Occupancy models](labs/occupancy-modeling/lab-occupancy.qmd)
+
+### Week 12 - Distance sampling
+
+- [Lecture 14 -- Distance sampling](lectures/distance/lecture-distance-sampling.qmd)

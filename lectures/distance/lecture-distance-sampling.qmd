@@ -106,34 +106,44 @@ Advantages of distance sampling:
 
 
 ## Design
-  
+
+::: {style="font-size: 80%;"}
+
 - Randomly place line transects or points throughout the study area
 - Record the distance to each animal detected
   
 ::: {.columns}
 ::: {.column width='50%'}
 Line transects
-![](figs/Fig9-7)
+![](figs/fig9-7.jpg)
 :::
 ::: {.column width='50%'}
 Point transects
-![](figs/Fig9-9)
+![](figs/fig9-9.jpg)
 :::
 :::
 
-
+:::
 
 
 # Line transects
 
 
 ## Line transects
-  
-![](figs/Fig9-1)
 
-In line transect sampling, it is common to record the radial distance and bearing, rather than the perpendicular distance. However, the analysis must be conducted on the perpendicular distance data.
+::: {style="font-size: 80%;"}
 
+<center>
+![](figs/fig9-1.jpg){width="50%"}
+</center>
 
+In line transect sampling, it is common to record the radial distance and bearing, rather than the perpendicular distance. 
+
+::: {.fragment}
+However, the analysis must be conducted on the perpendicular distance data.
+:::
+
+:::
 
 
 ## Real design
@@ -182,24 +192,42 @@ $n$			| 4.4
 
 
 
-## [Estimating average detection probability]{style="font-size: 80%;"}
+## [Estimating average detection probability]{style="font-size: 75%;"}
     
-::: {style='font-size: 80%;'}
-- Fit a detection function, $\mathrm{g}(x)$, to the data
-    * Assume $\mathrm{g}(0) = 1$
+::: {style='font-size: 70%;'}
+Fit a detection function, $\mathrm{g}(x)$, to the data
+    <!-- * Assume $\mathrm{g}(0) = 1$ -->
 
 ::: {.fragment}
-- Assume individuals are "uniformly" distributed with respect to the transect (valid under random sampling): $p(x) = 1/B$ where $B$ is the transect half-width.
+Assume individuals are "uniformly" distributed with respect to the transect (valid under random sampling): $p(x) = 1/B$ where $B$ is the transect half-width.
 :::
 
 ::: {.fragment}
-- $\bar{p}$ is then the average detection function, weighted by $p(x)$. 
+$\bar{p}$ is then the average detection function, weighted by $p(x)$. 
 
 $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 :::
-    
+
+
 ::: {.fragment}
-![](figs/detfuns)
+```{r}
+#| label: detfuns
+#| echo: false
+#| fig-width: 20
+#| fig-height: 7
+#| out-width: '70%'
+#| fig-align: 'center'
+par(mfrow=c(1,3), mai=c(0.7, 0.7, 0.3, 0.1))
+plot(function(x, sigma=20) exp(-x^2/(2*sigma^2)), 0, 100, cex.lab=2,
+     cex.axis=2, main="Half-normal", cex.main=2,
+     xlab="distance (x)", ylab="Detection probability")
+plot(function(x, sigma=20) exp(-x/sigma), 0, 100, cex.lab=2,
+     cex.axis=2, main="Negative exponential", cex.main=2,
+     xlab="distance (x)", ylab="Detection probability")
+plot(function(x, sigma=20, scale=10) 1 - exp(-(x/sigma)^-scale), 0, 100,
+     cex.axis=2, main="Hazard-rate", cex.main=2,
+     cex.lab=2, xlab="distance (x)", ylab="Detection probability")
+```
 :::
 :::
 
@@ -253,10 +281,10 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 
 ## 
 
+<br>
+
 ::: {.r-fit-text}
-
 [Shiny App](https://richard-chandler.shinyapps.io/distance-sampling/)
-
 :::
 
 
@@ -291,55 +319,69 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 
 ## Point transects
 
-![](figs/fig9-8)
+<center>
+![](figs/fig9-8.jpg){width="80%"}
+</center>
 
 
 
 ## [Differences between point vs line transects]{style="font-size: 80%;"}
-  
+
+<br>
+
+::: {style="font-size: 80%;"}
+
 We still use the same type of detection function (half-normal, hazard, etc...).
+
+<br>
   
 ::: {.fragment}
 We don't expect a "flat" histogram of distances when $\bar{p}=1$. Why?
 :::
   
+<br>
+
 ::: {.fragment}
 More individuals occur far from the observer than close to the observer because area increases with distance.
 :::
 
-
+:::
 
 ## Point Transects
   
 When average detection probability is 1, the histogram of distances will look like this because there is more area (and hence more individuals) far from the point.
 
-![](figs/detfun5)
+<center>
+![](figs/detfun5){width="40%"}
+</center>
 
 
 ## Point Transects
 
-<center>
 If average detection probability is less than 1, the histogram will increase and then decline. 
 
-![](figs/detfun6)
+<center>
+![](figs/detfun6){width="40%"}
 </center>
 
 
 
 ## Point Transects
 
-<center>
 The fitted curve will look like this
 
-![](figs/detfun7)
+<center>
+![](figs/detfun7){width="40%"}
 </center>
 
 
 
 ## Assignment
-  
+
+<br><br>
+
 <center>
-    Read Chapter 10 -- Capture-Mark-Recapture
+Read Chapter 10 -- Capture-Mark-Recapture
 </center>
 
 

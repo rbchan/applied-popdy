@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>Applied Population Dynamics – PVA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,10 +16,16 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -94,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -442,26 +448,26 @@
 <div style="font-size: 70%;">
 <p>Suppose we have the following stage-structured projection matrix:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
-<span id="cb1-2"><a></a>    <span class="fl">0.2</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>, <span class="fl">0.9</span>,</span>
-<span id="cb1-3"><a></a>    <span class="fl">0.4</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
-<span id="cb1-4"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
-<span id="cb1-5"><a></a>    <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(</span>
+<span id="cb1-2"><a aria-label="2"></a>    <span class="fl">0.2</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>, <span class="fl">0.9</span>,</span>
+<span id="cb1-3"><a aria-label="3"></a>    <span class="fl">0.4</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
+<span id="cb1-4"><a aria-label="4"></a>    <span class="fl">0.0</span>, <span class="fl">0.6</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>,</span>
+<span id="cb1-5"><a aria-label="5"></a>    <span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.8</span>, <span class="fl">0.5</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">byrow=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <div class="fragment">
 <p>We can use eigenanalysis to compute <span class="math inline">\(\lambda\)</span>, stable age distribution, reproductive value, sensitivities, and elasticities.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>eA <span class="ot">&lt;-</span> <span class="fu">eigen</span>(A)</span>
-<span id="cb2-2"><a></a>lam <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>values[<span class="dv">1</span>])</span>
-<span id="cb2-3"><a></a>lam                              <span class="do">## Asymtotic growth rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>eA <span class="ot">&lt;-</span> <span class="fu">eigen</span>(A)</span>
+<span id="cb2-2"><a aria-label="2"></a>lam <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>values[<span class="dv">1</span>])</span>
+<span id="cb2-3"><a aria-label="3"></a>lam                              <span class="do">## Asymtotic growth rate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.034908</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>w <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>vectors[,<span class="dv">1</span>])</span>
-<span id="cb4-2"><a></a>w <span class="ot">&lt;-</span> w<span class="sc">/</span><span class="fu">sum</span>(w)                    <span class="do">## Stable age distribution</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>v <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(<span class="fu">t</span>(A))<span class="sc">$</span>vectors[,<span class="dv">1</span>]) <span class="do">## Reproductive value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>w <span class="ot">&lt;-</span> <span class="fu">Re</span>(eA<span class="sc">$</span>vectors[,<span class="dv">1</span>])</span>
+<span id="cb4-2"><a aria-label="2"></a>w <span class="ot">&lt;-</span> w<span class="sc">/</span><span class="fu">sum</span>(w)                    <span class="do">## Stable age distribution</span></span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a>v <span class="ot">&lt;-</span> <span class="fu">Re</span>(<span class="fu">eigen</span>(<span class="fu">t</span>(A))<span class="sc">$</span>vectors[,<span class="dv">1</span>]) <span class="do">## Reproductive value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -471,8 +477,8 @@
 <div style="font-size: 80%;">
 <p>The sensitivities are given by <span class="math inline">\(z_{ij}=\frac{v_i w_j}{{\bf v}{\bf w}}\)</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>z <span class="ot">&lt;-</span> <span class="fu">outer</span>(v,w)<span class="sc">/</span><span class="fu">c</span>(v<span class="sc">%*%</span>w)</span>
-<span id="cb5-2"><a></a>z <span class="do">## Sensitivites</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>z <span class="ot">&lt;-</span> <span class="fu">outer</span>(v,w)<span class="sc">/</span><span class="fu">c</span>(v<span class="sc">%*%</span>w)</span>
+<span id="cb5-2"><a aria-label="2"></a>z <span class="do">## Sensitivites</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          [,1]      [,2]       [,3]      [,4]
 [1,] 0.3473925 0.1342698 0.07784447 0.1164229
@@ -485,8 +491,8 @@
 <div class="fragment">
 <p>The elasticities are given by <span class="math inline">\(e_{ij}=\frac{a_{ij}z_{ij}}{\lambda}\)</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>e <span class="ot">&lt;-</span> A<span class="sc">*</span>z<span class="sc">/</span>lam</span>
-<span id="cb7-2"><a></a>e  <span class="do">## Elasticities</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>e <span class="ot">&lt;-</span> A<span class="sc">*</span>z<span class="sc">/</span>lam</span>
+<span id="cb7-2"><a aria-label="2"></a>e  <span class="do">## Elasticities</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           [,1]      [,2]      [,3]       [,4]
 [1,] 0.06713492 0.1037926 0.0752187 0.10124623
