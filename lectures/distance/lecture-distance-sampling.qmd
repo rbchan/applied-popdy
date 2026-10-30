@@ -21,11 +21,10 @@ lang: en
 
 
 **Distance sampling**
+
     
-<br>
-    
-![]{figs/book1} 
-![]{figs/book2}
+![](figs/book1){height="13cm"}
+![](figs/book2){height="13cm"}
 
 </center>
 
@@ -33,6 +32,7 @@ lang: en
 
 ## Estimating abundance
   
+::: {style='font-size: 90%;'}
 Abundance estimation is often accomplished using this equation:
 $$
     \hat{N} = \frac{n}{\hat{p}}
@@ -40,10 +40,14 @@ $$
   
 - $N$ is abundance (population size)
 - $n$ is the number of individuals detected
-- $\hat{p}$ is an estimate of detection probability: The probability
-      of detecting an individual
-  
+- $\hat{p}$ is an estimate of detection probability: The probability of detecting an *individual*
+:::
+
+::: {.fragment}
+<center>
 **Most methods differ in how they estimate $p$**
+</center>
+:::
 
 
 
@@ -54,35 +58,50 @@ $$
 
 ## Estimating abundance
   
-Challenges
+Challenges:
   
+::: {.incremental}
+
 - Detection probability is rarely constant
 - It is a function of:
     * Age
     * Sex
     * Habitat
-    * Distance
+    * **Distance**
     
+:::
+
 
 
 
 ## Distance Sampling
 
   
-Basic idea
+::: {style='font-size: 75%;'}
+Basic idea:
   
 - $p_i$ is the probability of detecting individual $i$ at distance $x_i$.
-- Since every individual in the population has a different detection probability, we replace $p$ with the *average* detection probability: $\bar{p}$
+
+::: {.fragment}
+- Since every individual in the population has a different detection probability, we replace $p$ with the *average* detection probability ($\bar{p}$)
+:::
+
+::: {.fragment}
 - The equation is now:
+
 $$
       \hat{N} = \frac{n}{\hat{\bar{p}}}
 $$
+:::
   
-Advantages of distance sampling
+::: {.fragment}
+Advantages of distance sampling:
     
 - Population size can be estimated from a single survey
 - Explicit link between population size and density
+:::
     
+:::
 
 
 
@@ -119,14 +138,15 @@ In line transect sampling, it is common to record the radial distance and bearin
 
 ## Real design
   
-  
+<center> 
 Mongolian gazelle (*Procapra gutturosa*)
+</center> 
   
 ::: {.columns}
-::: {.column width='50%'}
-![](figs/Kirk)
+::: {.column width='55%'}
+![](figs/Kirk.jpg)
 :::
-::: {.column width='50%'}
+::: {.column width='45%'}
 ![](figs/Book_of_antelopes_(1894)_Gazella_gutturosa)
 :::
 :::
@@ -141,15 +161,15 @@ Mongolian gazelle (*Procapra gutturosa*)
 ::: {.column width='50%'}
       
 
-Animal | Distance ($x$)
------- | -------------
-1 | 4.4 \\
-2 | 25.3 \\
-3 | 41.8 \\
-4 | 3.1 \\
-5 | 78.5 \\
-\vdots \\
-$n$ | 4.4 \\
+Animal		| Distance	($x$)
+------		| -------------
+1			| 4.4		
+2			| 25.3		
+3			| 41.8		
+4			| 3.1		
+5			| 78.5		
+$\vdots$	| $\vdots$
+$n$			| 4.4		
 
 :::
 ::: {.column width='50%'}
@@ -162,114 +182,82 @@ $n$ | 4.4 \\
 
 
 
-## Estimating average detection probability
+## [Estimating average detection probability]{style="font-size: 80%;"}
     
+::: {style='font-size: 80%;'}
 - Fit a detection function, $\mathrm{g}(x)$, to the data
     * Assume $\mathrm{g}(0) = 1$
+
+::: {.fragment}
 - Assume individuals are "uniformly" distributed with respect to the transect (valid under random sampling): $p(x) = 1/B$ where $B$ is the transect half-width.
+:::
+
+::: {.fragment}
 - $\bar{p}$ is then the average detection function, weighted by $p(x)$. 
 
 $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
+:::
     
+::: {.fragment}
 ![](figs/detfuns)
+:::
+:::
 
 
 
 
-## Computing average detection probability
+## [Computing average detection probability]{style="font-size: 80%;"}
 
 <center>
-![](figs/detfun0-0)
+
+::: {.r-stack}
+
+::: {.fragment .fade-out fragment-index=1}
+![](figs/detfun0-0){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=1}
+![](figs/detfun0-1){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=2}
+![](figs/detfun0-2){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=3}
+![](figs/detfun0-3){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=4}
+![](figs/detfun1){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=5}
+![](figs/detfun2){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=6}
+![](figs/detfun3){height="13cm"}
+:::
+
+::: {.fragment .fade-in-then-out fragment-index=7}
+![](figs/detfun4){height="13cm"}
+:::
+
+:::
+
+
 </center>
 
 
 
+## 
 
+::: {.r-fit-text}
 
-## Computing average detection probability
-
-<center>
-![](figs/detfun0-1)
-</center>
-
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun0-2)
-</center>
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun0-3)
-</center>
-
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun1)
-</center>
-
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun2)
-</center>
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun3)
-</center>
-
-
-
-
-
-
-## Computing average detection probability
-
-<center>
-![](figs/detfun4)
-</center>
-
-
-
-
-
-## Shiny App
-
-  
 [Shiny App](https://richard-chandler.shinyapps.io/distance-sampling/)
 
-
-
-
-
-
+:::
 
 
 
@@ -277,6 +265,9 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 
 ## Assumptions
   
+::: {style='font-size: 90%;'}
+::: {.incremental}
+
 1. Animals on the line are detected with certainty (i.e., $p=1$ when distance=0).
 2. Animals do not move during the survey
 3. Distance is measured accurately
@@ -284,6 +275,9 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
     * This ensures that individuals will be uniformly distributed with respect to the transect
 5. Detections (of individuals or groups) are independent of one another
   
+:::
+:::
+
 
 
 
@@ -295,21 +289,23 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 # Point transects
 
 
-
-
 ## Point transects
 
 ![](figs/fig9-8)
 
 
 
-## Differences between point vs line transects
+## [Differences between point vs line transects]{style="font-size: 80%;"}
   
 We still use the same type of detection function (half-normal, hazard, etc...).
   
-{We don't expect a "flat" histogram of distances when $\bar{p}=1$. Why? <br>}
+::: {.fragment}
+We don't expect a "flat" histogram of distances when $\bar{p}=1$. Why?
+:::
   
+::: {.fragment}
 More individuals occur far from the observer than close to the observer because area increases with distance.
+:::
 
 
 
