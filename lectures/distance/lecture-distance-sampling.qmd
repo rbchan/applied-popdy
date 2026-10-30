@@ -1,0 +1,355 @@
+---
+## title: "Converted Presentation"
+format:
+  revealjs:
+    theme: default
+    pagetitle: 'Distance Sampling'
+    slide-number: true
+    echo: false
+lang: en
+---
+
+
+
+
+# Introduction {visibility="hidden"}
+
+## {content-align="center" style="font-size: 160%;"}
+
+
+<center>
+
+
+**Distance sampling**
+    
+<br>
+    
+![]{figs/book1} 
+![]{figs/book2}
+
+</center>
+
+
+
+## Estimating abundance
+  
+Abundance estimation is often accomplished using this equation:
+$$
+    \hat{N} = \frac{n}{\hat{p}}
+$$
+  
+- $N$ is abundance (population size)
+- $n$ is the number of individuals detected
+- $\hat{p}$ is an estimate of detection probability: The probability
+      of detecting an individual
+  
+**Most methods differ in how they estimate $p$**
+
+
+
+
+
+
+
+
+## Estimating abundance
+  
+Challenges
+  
+- Detection probability is rarely constant
+- It is a function of:
+    * Age
+    * Sex
+    * Habitat
+    * Distance
+    
+
+
+
+## Distance Sampling
+
+  
+Basic idea
+  
+- $p_i$ is the probability of detecting individual $i$ at distance $x_i$.
+- Since every individual in the population has a different detection probability, we replace $p$ with the *average* detection probability: $\bar{p}$
+- The equation is now:
+$$
+      \hat{N} = \frac{n}{\hat{\bar{p}}}
+$$
+  
+Advantages of distance sampling
+    
+- Population size can be estimated from a single survey
+- Explicit link between population size and density
+    
+
+
+
+## Design
+  
+- Randomly place line transects or points throughout the study area
+- Record the distance to each animal detected
+  
+::: {.columns}
+::: {.column width='50%'}
+Line transects
+![](figs/Fig9-7)
+:::
+::: {.column width='50%'}
+Point transects
+![](figs/Fig9-9)
+:::
+:::
+
+
+
+
+# Line transects
+
+
+## Line transects
+  
+![](figs/Fig9-1)
+
+In line transect sampling, it is common to record the radial distance and bearing, rather than the perpendicular distance. However, the analysis must be conducted on the perpendicular distance data.
+
+
+
+
+## Real design
+  
+  
+Mongolian gazelle (*Procapra gutturosa*)
+  
+::: {.columns}
+::: {.column width='50%'}
+![](figs/Kirk)
+:::
+::: {.column width='50%'}
+![](figs/Book_of_antelopes_(1894)_Gazella_gutturosa)
+:::
+:::
+
+
+
+
+
+## Line transects
+
+::: {.columns}
+::: {.column width='50%'}
+      
+
+Animal | Distance ($x$)
+------ | -------------
+1 | 4.4 \\
+2 | 25.3 \\
+3 | 41.8 \\
+4 | 3.1 \\
+5 | 78.5 \\
+\vdots \\
+$n$ | 4.4 \\
+
+:::
+::: {.column width='50%'}
+![](figs/example1)
+:::
+:::
+
+
+
+
+
+
+## Estimating average detection probability
+    
+- Fit a detection function, $\mathrm{g}(x)$, to the data
+    * Assume $\mathrm{g}(0) = 1$
+- Assume individuals are "uniformly" distributed with respect to the transect (valid under random sampling): $p(x) = 1/B$ where $B$ is the transect half-width.
+- $\bar{p}$ is then the average detection function, weighted by $p(x)$. 
+
+$$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
+    
+![](figs/detfuns)
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun0-0)
+</center>
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun0-1)
+</center>
+
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun0-2)
+</center>
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun0-3)
+</center>
+
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun1)
+</center>
+
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun2)
+</center>
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun3)
+</center>
+
+
+
+
+
+
+## Computing average detection probability
+
+<center>
+![](figs/detfun4)
+</center>
+
+
+
+
+
+## Shiny App
+
+  
+[Shiny App](https://richard-chandler.shinyapps.io/distance-sampling/)
+
+
+
+
+
+
+
+
+
+
+
+## Assumptions
+  
+1. Animals on the line are detected with certainty (i.e., $p=1$ when distance=0).
+2. Animals do not move during the survey
+3. Distance is measured accurately
+4. Transect lines are placed randomly with respect to the animals
+    * This ensures that individuals will be uniformly distributed with respect to the transect
+5. Detections (of individuals or groups) are independent of one another
+  
+
+
+
+
+
+
+
+
+# Point transects
+
+
+
+
+## Point transects
+
+![](figs/fig9-8)
+
+
+
+## Differences between point vs line transects
+  
+We still use the same type of detection function (half-normal, hazard, etc...).
+  
+{We don't expect a "flat" histogram of distances when $\bar{p}=1$. Why? <br>}
+  
+More individuals occur far from the observer than close to the observer because area increases with distance.
+
+
+
+## Point Transects
+  
+When average detection probability is 1, the histogram of distances will look like this because there is more area (and hence more individuals) far from the point.
+
+![](figs/detfun5)
+
+
+## Point Transects
+
+<center>
+If average detection probability is less than 1, the histogram will increase and then decline. 
+
+![](figs/detfun6)
+</center>
+
+
+
+## Point Transects
+
+<center>
+The fitted curve will look like this
+
+![](figs/detfun7)
+</center>
+
+
+
+## Assignment
+  
+<center>
+    Read Chapter 10 -- Capture-Mark-Recapture
+</center>
+
+
+
+
+
+
+
+
