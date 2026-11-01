@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>Applied Population Dynamics – Distance Sampling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,16 +16,10 @@
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -34,7 +28,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../custom.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -154,11 +149,12 @@
 <li><span class="math inline">\(n\)</span> is the number of individuals detected</li>
 <li><span class="math inline">\(\hat{p}\)</span> is an estimate of detection probability: The probability of detecting an <em>individual</em></li>
 </ul>
-</div>
+<p><br></p>
 <div class="fragment">
 <center>
 <strong>Most methods differ in how they estimate <span class="math inline">\(p\)</span></strong>
 </center>
+</div>
 </div>
 </section>
 <section id="estimating-abundance-1" class="slide level2">
@@ -252,6 +248,7 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 <h2>Line transects</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div style="font-size: 90%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -290,6 +287,7 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </tr>
 </tbody>
 </table>
+</div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figs/example1.png"></p>
 </div></div>
@@ -303,14 +301,16 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </div>
 <div class="fragment">
 <p><span class="math inline">\(\bar{p}\)</span> is then the average detection function, weighted by <span class="math inline">\(p(x)\)</span>.</p>
+<div style="font-size: 85%;">
 <p><span class="math display">\[\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x\]</span>.</p>
+</div>
 </div>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="lecture-distance-sampling_files/figure-revealjs/detfuns-1.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+<p><img data-src="lecture-distance-sampling_files/figure-revealjs/detfuns-1.png" class="quarto-figure quarto-figure-center" style="width:95.0%"></p>
 </figure>
 </div>
 </div>
@@ -323,28 +323,28 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 <center>
 <div class="r-stack">
 <div class="fragment fade-out" data-fragment-index="1">
-<p><img data-src="figs/detfun0-0.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun0-0.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="1">
-<p><img data-src="figs/detfun0-1.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun0-1.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="2">
-<p><img data-src="figs/detfun0-2.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun0-2.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="3">
-<p><img data-src="figs/detfun0-3.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun0-3.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="4">
-<p><img data-src="figs/detfun1.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun1.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="5">
-<p><img data-src="figs/detfun2.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun2.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="6">
-<p><img data-src="figs/detfun3.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun3.png" style="height:14cm"></p>
 </div>
 <div class="fragment fade-in-then-out" data-fragment-index="7">
-<p><img data-src="figs/detfun4.png" style="height:13cm"></p>
+<p><img data-src="figs/detfun4.png" style="height:14cm"></p>
 </div>
 </div>
 </center>
@@ -353,7 +353,7 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 <h2></h2>
 <p><br></p>
 <div class="r-fit-text">
-<p><a href="https://richard-chandler.shinyapps.io/distance-sampling/">Shiny App</a></p>
+<p><a href="https://rbchan-distance-sampling.share.connect.posit.cloud/">Shiny App</a></p>
 </div>
 </section>
 <section id="assumptions" class="slide level2">
@@ -399,24 +399,26 @@ Mongolian gazelle (<em>Procapra gutturosa</em>)
 </section>
 <section id="point-transects-2" class="slide level2">
 <h2>Point Transects</h2>
-<p>When average detection probability is 1, the histogram of distances will look like this because there is more area (and hence more individuals) far from the point.</p>
+<div style="font-size: 90%;">
+<p>When average detection probability is 1, the histogram of detected distances will increase with area because there are more individuals far from the point.</p>
+</div>
 <center>
-<img data-src="figs/detfun5.png" style="width:40.0%">
+<img data-src="figs/detfun5.png" style="width:45.0%">
 </center>
 </section>
 <section id="point-transects-3" class="slide level2">
 <h2>Point Transects</h2>
+<div style="font-size: 90%;">
 <p>If average detection probability is less than 1, the histogram will increase and then decline.</p>
+</div>
 <center>
-<img data-src="figs/detfun6.png" style="width:40.0%">
+<img data-src="figs/detfun6.png" style="width:45.0%">
 </center>
-</section>
-<section id="point-transects-4" class="slide level2">
-<h2>Point Transects</h2>
-<p>The fitted curve will look like this</p>
-<center>
-<img data-src="figs/detfun7.png" style="width:40.0%">
-</center>
+<!-- ## Point Transects -->
+<!-- The fitted curve will look like this -->
+<!-- <center> -->
+<!-- ![](figs/detfun7){width="40%"} -->
+<!-- </center> -->
 </section>
 <section id="assignment" class="slide level2">
 <h2>Assignment</h2>

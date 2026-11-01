@@ -3,6 +3,7 @@
 format:
   revealjs:
     theme: default
+    css: ../../custom.css
     pagetitle: 'Distance Sampling'
     slide-number: true
     echo: false
@@ -41,12 +42,15 @@ $$
 - $N$ is abundance (population size)
 - $n$ is the number of individuals detected
 - $\hat{p}$ is an estimate of detection probability: The probability of detecting an *individual*
-:::
+
+<br>
 
 ::: {.fragment}
 <center>
 **Most methods differ in how they estimate $p$**
 </center>
+:::
+
 :::
 
 
@@ -171,6 +175,7 @@ Mongolian gazelle (*Procapra gutturosa*)
 ::: {.column width='50%'}
       
 
+::: {style='font-size: 90%;'}
 Animal		| Distance	($x$)
 ------		| -------------
 1			| 4.4		
@@ -180,6 +185,7 @@ Animal		| Distance	($x$)
 5			| 78.5		
 $\vdots$	| $\vdots$
 $n$			| 4.4		
+:::
 
 :::
 ::: {.column width='50%'}
@@ -205,7 +211,9 @@ Assume individuals are "uniformly" distributed with respect to the transect (val
 ::: {.fragment}
 $\bar{p}$ is then the average detection function, weighted by $p(x)$. 
 
+::: {style='font-size: 85%;'}
 $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
+:::
 :::
 
 
@@ -213,11 +221,11 @@ $$\bar{p} = \int_0^B g(x)p(x) \mathrm{d} x$$.
 ```{r}
 #| label: detfuns
 #| echo: false
-#| fig-width: 20
-#| fig-height: 7
-#| out-width: '70%'
+#| fig-width: 15
+#| fig-height: 4.5
+#| out-width: '95%'
 #| fig-align: 'center'
-par(mfrow=c(1,3), mai=c(0.7, 0.7, 0.3, 0.1))
+par(mfrow=c(1,3), mai=c(0.6, 0.6, 0.2, 0.1))
 plot(function(x, sigma=20) exp(-x^2/(2*sigma^2)), 0, 100, cex.lab=2,
      cex.axis=2, main="Half-normal", cex.main=2,
      xlab="distance (x)", ylab="Detection probability")
@@ -241,35 +249,35 @@ plot(function(x, sigma=20, scale=10) 1 - exp(-(x/sigma)^-scale), 0, 100,
 ::: {.r-stack}
 
 ::: {.fragment .fade-out fragment-index=1}
-![](figs/detfun0-0){height="13cm"}
+![](figs/detfun0-0){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=1}
-![](figs/detfun0-1){height="13cm"}
+![](figs/detfun0-1){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=2}
-![](figs/detfun0-2){height="13cm"}
+![](figs/detfun0-2){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=3}
-![](figs/detfun0-3){height="13cm"}
+![](figs/detfun0-3){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=4}
-![](figs/detfun1){height="13cm"}
+![](figs/detfun1){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=5}
-![](figs/detfun2){height="13cm"}
+![](figs/detfun2){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=6}
-![](figs/detfun3){height="13cm"}
+![](figs/detfun3){height="14cm"}
 :::
 
 ::: {.fragment .fade-in-then-out fragment-index=7}
-![](figs/detfun4){height="13cm"}
+![](figs/detfun4){height="14cm"}
 :::
 
 :::
@@ -284,7 +292,7 @@ plot(function(x, sigma=20, scale=10) 1 - exp(-(x/sigma)^-scale), 0, 100,
 <br>
 
 ::: {.r-fit-text}
-[Shiny App](https://richard-chandler.shinyapps.io/distance-sampling/)
+[Shiny App](https://rbchan-distance-sampling.share.connect.posit.cloud/)
 :::
 
 
@@ -349,30 +357,34 @@ More individuals occur far from the observer than close to the observer because 
 
 ## Point Transects
   
-When average detection probability is 1, the histogram of distances will look like this because there is more area (and hence more individuals) far from the point.
+::: {style='font-size: 90%;'}
+When average detection probability is 1, the histogram of detected distances will increase with area because there are more individuals far from the point.
+:::
 
 <center>
-![](figs/detfun5){width="40%"}
+![](figs/detfun5){width="45%"}
 </center>
 
 
 ## Point Transects
 
+::: {style='font-size: 90%;'}
 If average detection probability is less than 1, the histogram will increase and then decline. 
+:::
 
 <center>
-![](figs/detfun6){width="40%"}
+![](figs/detfun6){width="45%"}
 </center>
 
 
 
-## Point Transects
+<!-- ## Point Transects -->
 
-The fitted curve will look like this
+<!-- The fitted curve will look like this -->
 
-<center>
-![](figs/detfun7){width="40%"}
-</center>
+<!-- <center> -->
+<!-- ![](figs/detfun7){width="40%"} -->
+<!-- </center> -->
 
 
 
