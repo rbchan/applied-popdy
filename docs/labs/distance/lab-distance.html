@@ -231,13 +231,13 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()       <span class="do">## Location on your computer where R will look for files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/home/rchandler/courses/applied-popdy/labs/distance"</code></pre>
+<pre><code>[1] "/home/richard-chandler/courses/applied-popdy/labs/distance"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>()  <span class="do">## You should see 'ExampleData.txt' here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "auto"                   "ExampleData.txt"        "figure"                
-[4] "lab-distance-R.aux"     "lab-distance-R.log"     "lab-distance-R.pdf"    
-[7] "lab-distance-R.Rnw"     "lab-distance.qmd"       "lab-distance.rmarkdown"</code></pre>
+<pre><code>[1] "ExampleData.txt"        "figure"                 "lab-distance_files"    
+[4] "lab-distance-R.pdf"     "lab-distance-R.Rnw"     "lab-distance.qmd"      
+[7] "lab-distance.rmarkdown"</code></pre>
 </div>
 </div>
 <p>If you need to change your working directory, you can use the dropdown menu options (<code>Session &gt; Set Working Directory</code>), or using the <code>setwd</code> command.</p>
@@ -268,9 +268,8 @@ window.Quarto = {
 </div>
 <p>The distance sampling model can be fitted to the data using the <code>ds</code> function. The <code>key</code> argument specifies the detection function. You could switch from the half-normal to the hazard-rate function using: <code>key="hr"</code>. When you run the hazard-rate model, you will get estimates of two parameters, not just sigma (<span class="math inline">\(\sigma\)</span>). The <code>truncation</code> argument indicates that we didn’t record data beyond 250 m (0.25 km).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>exampleData2, <span class="at">key=</span><span class="st">"hn"</span>,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">transect=</span><span class="st">"line"</span>, <span class="at">truncation=</span><span class="dv">250</span><span class="sc">/</span><span class="dv">1000</span>,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">adjustment=</span><span class="cn">NULL</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.hn <span class="ot">&lt;-</span> <span class="fu">ds</span>(<span class="at">data=</span>exampleData2, <span class="at">key=</span><span class="st">"hn"</span>, <span class="at">transect=</span><span class="st">"line"</span>,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">truncation=</span><span class="dv">250</span><span class="sc">/</span><span class="dv">1000</span>, <span class="at">adjustment=</span><span class="cn">NULL</span>, <span class="at">quiet=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once you have fitted the model, you can obtain the parameter estimates using the following command:</p>
 <div class="cell">

@@ -97,9 +97,8 @@ The distance sampling model can be fitted to the data using the `ds` function. T
 #| label: model-hn
 #| results: "hide"
 #| message: false
-model.hn <- ds(data=exampleData2, key="hn",
-               transect="line", truncation=250/1000,
-               adjustment=NULL, quiet=TRUE)
+model.hn <- ds(data=exampleData2, key="hn", transect="line",
+               truncation=250/1000, adjustment=NULL, quiet=TRUE)
 ```
 
 
