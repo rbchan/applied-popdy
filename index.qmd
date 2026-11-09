@@ -106,3 +106,7 @@ and an oral presentation.
 - [Lab 11 - Distance sampling](labs/distance/lab-distance.qmd)
 
 
+### Week 13 - Capture-mark recapture
+
+- [Lecture 15 -- Capture-mark-recapture for closed populations](lectures/cap-recapI/lecture-mark-recap-closedpop.qmd)
+

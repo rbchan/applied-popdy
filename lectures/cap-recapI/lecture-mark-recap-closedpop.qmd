@@ -12,8 +12,6 @@ lang: en
 
 
 
-
-
 # Introduction {visibility="hidden"}
 
 ## {content-align="center" style="font-size: 160%;"}
@@ -23,8 +21,8 @@ lang: en
 
 **Capture-mark-recapture methods for abundance estimation**
     
-![](figs/SBNT.jpg){height="8cm"}
-![](figs/Novisuccinea_chittenangoensis_4.png){height="8cm"}
+![](figs/SBNT.jpg){height="9cm"}
+![](figs/Novisuccinea_chittenangoensis_4.png){height="9cm"}
 
 </center>
 
@@ -55,7 +53,7 @@ $$
 
 <br>
 
-::: {style='font-size: 80%;'}
+::: {style='font-size: 85%;'}
 Estimating $p$
     
 ::: {.incremental}
@@ -164,7 +162,7 @@ $$
 
 ## Lincoln-Peterson Assumptions
 
-::: {style='font-size: 80%;'}
+::: {style='font-size: 85%;'}
 <br>
 
 - Population closure
@@ -193,14 +191,25 @@ $$
 ::: {style='font-size: 90%;'}
 Using more than 2 sampling occasions has many advantages, including the ability to account for:
 
+::: {.fragment}
 - Temporal variation
+:::
+
+::: {.fragment}
 - Behavioral effects
     * Trap happiness
     * Trap shyness
+:::
+
+::: {.fragment}
 - Individual heterogeneity
+:::
+
+::: {.fragment}
 - Combinations of the above
 :::
-  
+:::
+
 
 
 ## Common models
