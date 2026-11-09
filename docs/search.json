@@ -1838,14 +1838,14 @@
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#overview",
     "title": "Applied Population Dynamics",
     "section": "Overview",
-    "text": "Overview\n\nEstimating \\(p\\)\n\nSet traps in a study area and mark each captured individual\nRepeat the trapping on \\(K\\) occasions\nOn each occasion, mark new individuals and record recaptures\nIf capture probability is high…\n\nYou will detect most of the population on the first occasion\nMost of the captures on subsequent occasions will be recaptures\n\nAnd vice versa"
+    "text": "Overview\n\n\nEstimating \\(p\\)\n\nSet traps in a study area and mark each captured individual\nRepeat the trapping on \\(K\\) occasions\nOn each occasion, mark new individuals and record recaptures\nIf capture probability is high…\n\nYou will detect most of the population on the first occasion\nMost of the captures on subsequent occasions will be recaptures\n\nAnd vice versa"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#encounter-histories",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#encounter-histories",
     "title": "Applied Population Dynamics",
     "section": "Encounter histories",
-    "text": "Encounter histories\n\n\n\\(n=5\\) individuals captured over 3 sampling occasions\n\n\n\n\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\n\nAnimal 1\n0\n0\n1\n\n\nAnimal 2\n1\n1\n0\n\n\nAnimal 3\n1\n1\n1\n\n\nAnimal 4\n1\n0\n0\n\n\nAnimal 5\n0\n1\n0\n\n\n\n\nThese data tell us about \\(p\\) and hence \\(N\\). Estimation is usually acheived using maximum likelihood methods."
+    "text": "Encounter histories\n\n\n\\(n=5\\) individuals captured over 3 sampling occasions\n\n\n\n\nIndividual\nOccasion 1\nOccasion 2\nOccasion 3\n\n\n\n\n1\n0\n0\n1\n\n\n2\n1\n1\n0\n\n\n3\n1\n1\n1\n\n\n4\n1\n0\n0\n\n\n5\n0\n1\n0\n\n\n\n\nThese data tell us about \\(p\\) and hence \\(N\\). Estimation is usually acheived using maximum likelihood methods."
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#lincoln-peterson-method",
@@ -1866,42 +1866,42 @@
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#lincoln-peterson-abundance-estimator",
     "title": "Applied Population Dynamics",
     "section": "Lincoln-Peterson Abundance Estimator",
-    "text": "Lincoln-Peterson Abundance Estimator\n\nHow can we use \\(n_1\\), \\(n_2\\), and \\(m_2\\) to estimate \\(N\\)?\n\n\\[\n    \\frac{n_1}{N} = \\frac{m_2}{n_2}\n\\]\n\n\nAnd so…\n\\[\n    \\hat{N} = \\frac{n_1n_2}{m_2}\n\\]"
+    "text": "Lincoln-Peterson Abundance Estimator\n\n\nHow can we use \\(n_1\\), \\(n_2\\), and \\(m_2\\) to estimate \\(N\\)?\n\n\\[\n    \\frac{n_1}{N} = \\frac{m_2}{n_2}\n\\]\n\n\nAnd so…\n\\[\n    \\hat{N} = \\frac{n_1n_2}{m_2}\n\\]"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#lincoln-peterson-assumptions",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#lincoln-peterson-assumptions",
     "title": "Applied Population Dynamics",
     "section": "Lincoln-Peterson Assumptions",
-    "text": "Lincoln-Peterson Assumptions\n\n\nPopulation closure\n\nNo births\nNo deaths\nNo immigration or emigration\n\nAll individuals are assumed to have the same capture probability\nNo tag loss or mis-identification"
+    "text": "Lincoln-Peterson Assumptions\n\n\n\nPopulation closure\n\nNo births\nNo deaths\nNo immigration or emigration\n\n\n\n\nAll individuals are assumed to have the same capture probability\n\n\n\n\nNo tag loss or mis-identification"
   },
   {
-    "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#k-sample-cmr",
-    "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#k-sample-cmr",
+    "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#k-sample-cmr-1",
+    "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#k-sample-cmr-1",
     "title": "Applied Population Dynamics",
     "section": "K-sample CMR",
-    "text": "K-sample CMR\nUsing more than 2 sampling occasions has many advantages, including the ability to account for:\n\nTemporal variation\nBehavioral effects\n\nTrap happiness\nTrap shyness\n\nIndividual heterogeneity\nCombinations of the above"
+    "text": "K-sample CMR\n\nUsing more than 2 sampling occasions has many advantages, including the ability to account for:\n\nTemporal variation\nBehavioral effects\n\nTrap happiness\nTrap shyness\n\nIndividual heterogeneity\nCombinations of the above"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#common-models",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#common-models",
     "title": "Applied Population Dynamics",
     "section": "Common models",
-    "text": "Common models\n\n\n\n\n\n\n\n\nModel\nDescription\n\n\n\n\n\\(M_0\\)\nThe most basic model in which \\(p\\) and \\(c\\) are constant\n\n\n\\(M_t\\)\n\\(p\\) differs among sampling occasions and \\(p_t=c_t\\).\n\n\n\\(M_b\\)\nBehavioral response model in which \\(p\\) and \\(c\\) differ. Can describe trap happiness or trap shiness.\n\n\n\\(M_{tb}\\)\nA combination of models \\(M_t\\) and \\(M_b\\).\n\n\n\nwhere\n\\(p =\\) capture probability  \\(p_t =\\) capture probability on occasion \\(t\\)  \\(c =\\) recapture probability"
+    "text": "Common models\n\n\n\n\n\n\n\n\nModel\nDescription\n\n\n\n\n\\(M_0\\)\nThe most basic model in which \\(p\\) and \\(c\\) are constant\n\n\n\\(M_t\\)\n\\(p\\) differs among sampling occasions and \\(p_t=c_t\\).\n\n\n\\(M_b\\)\nBehavioral response model in which \\(p\\) and \\(c\\) differ. Can describe trap happiness or trap shiness.\n\n\n\\(M_{tb}\\)\nA combination of models \\(M_t\\) and \\(M_b\\).\n\n\n\n\nwhere\n\\(p =\\) capture probability  \\(p_t =\\) capture probability on occasion \\(t\\)  \\(c =\\) recapture probability"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#removal-sampling-1",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#removal-sampling-1",
     "title": "Applied Population Dynamics",
     "section": "Removal sampling",
-    "text": "Removal sampling\n \n\nVideo"
+    "text": "Removal sampling\n\n \n\nVideo"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#removal-sampling-2",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#removal-sampling-2",
     "title": "Applied Population Dynamics",
     "section": "Removal sampling",
-    "text": "Removal sampling\n\nSuppose you conduct several electrofishing passes on a single stream section, and you remove individuals on each pass.\nEventually you should deplete the population.\nThe number of captures you would expect on each pass:\n\n\n\n\nPass\nExpected captures\n\n\n\n\n1\n\\(pN\\)\n\n\n2\n\\(p(1-p)N\\)\n\n\n3\n\\(p(1-p)^2N\\)\n\n\n4\n\\(p(1-p)^3N\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\nK\n\\(p(1-p)^{K-1}N\\)"
+    "text": "Removal sampling\n\nSuppose you conduct several electrofishing passes on a single stream section, and you remove individuals on each pass.\n\nEventually you should deplete the population.\n\n\nThe number of captures you would expect on each pass:\n\n\n\n\n\n\n\n\nPass\nExpected captures\n\n\n\n\n1\n\\(pN\\)\n\n\n2\n\\(p(1-p)N\\)\n\n\n3\n\\(p(1-p)^2N\\)\n\n\n4\n\\(p(1-p)^3N\\)\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\nK\n\\(p(1-p)^{K-1}N\\)"
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#example",
@@ -1911,18 +1911,18 @@
     "text": "Example\n\nThe rate at which the population is depleted tells us about \\(p\\), and therefore how many individuals we missed."
   },
   {
-    "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#summary",
-    "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#summary",
-    "title": "Applied Population Dynamics",
-    "section": "Summary",
-    "text": "Summary\nKey points\n\nCapture-recapture methods use information about recapture rates to estimate capture probability and abundance\nMore advanced methods can be used to estimate density and vital rates\nModern field methods use camera traps or DNA sampling techniques to collect non-invasive capture-recapture data"
-  },
-  {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#estimating-density",
     "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#estimating-density",
     "title": "Applied Population Dynamics",
     "section": "Estimating density",
     "text": "Estimating density\n\nLingering questions\n\nHow do we convert abundance to density?\nWhat is the area surveyed?\nHow do we model spatio-temporal variation in density?"
+  },
+  {
+    "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#summary",
+    "href": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\nCapture-recapture methods use information about recapture rates to estimate capture probability and abundance.\n\n\nModern methods use camera traps or DNA sampling techniques to collect non-invasive capture-recapture data and estimate density and vital rates."
   },
   {
     "objectID": "lectures/cap-recapI/lecture-mark-recap-closedpop.html#assignment",

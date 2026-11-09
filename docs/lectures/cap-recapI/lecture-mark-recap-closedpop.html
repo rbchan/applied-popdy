@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>Applied Population Dynamics – Distance Sampling</title>
+  <title>Applied Population Dynamics – Mark-recapture for abundance estimation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -157,18 +157,19 @@
 </section>
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
+<p><br></p>
 <div style="font-size: 80%;">
 <p>Estimating <span class="math inline">\(p\)</span></p>
 <ul>
-<li>Set traps in a study area and mark each captured individual</li>
-<li>Repeat the trapping on <span class="math inline">\(K\)</span> occasions</li>
-<li>On each occasion, mark new individuals and record recaptures</li>
-<li>If capture probability is high…
+<li class="fragment">Set traps in a study area and mark each captured individual</li>
+<li class="fragment">Repeat the trapping on <span class="math inline">\(K\)</span> occasions</li>
+<li class="fragment">On each occasion, mark new individuals and record recaptures</li>
+<li class="fragment">If capture probability is high…
 <ul>
-<li>You will detect most of the population on the first occasion</li>
-<li>Most of the captures on subsequent occasions will be recaptures</li>
+<li class="fragment">You will detect most of the population on the first occasion</li>
+<li class="fragment">Most of the captures on subsequent occasions will be recaptures</li>
 </ul></li>
-<li>And vice versa</li>
+<li class="fragment">And vice versa</li>
 </ul>
 </div>
 </section>
@@ -181,39 +182,39 @@
 <table class="caption-top">
 <thead>
 <tr class="header">
+<th>Individual</th>
 <th>Occasion 1</th>
 <th>Occasion 2</th>
 <th>Occasion 3</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Animal 1</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td>Animal 2</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td>Animal 3</td>
+<td>3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 </tr>
 <tr class="even">
-<td>Animal 4</td>
+<td>4</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td>Animal 5</td>
+<td>5</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -234,7 +235,7 @@
 <div style="font-size: 80%;">
 <p>The original method was first used by Pierre-Simon LaPlace to estimate the human population in France. <br></p>
 <center>
-<img data-src="figs/Laplace.jpg" style="width:8cm"> <img data-src="figs/Frederick_Charles_Lincoln.jpg" style="width:8cm">
+<img data-src="figs/Laplace.jpg" style="height:9cm"> <img data-src="figs/Frederick_Charles_Lincoln.jpg" style="height:9cm">
 </center>
 <p>Later it was used by Lincoln (shown above) and Peterson to estimate fish and wildlife populations.</p>
 </div>
@@ -255,21 +256,24 @@
 <section id="lincoln-peterson-abundance-estimator" class="slide level2">
 <h2>Lincoln-Peterson Abundance Estimator</h2>
 <p><br></p>
-<p>How can we use <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, and <span class="math inline">\(m_2\)</span> to estimate <span class="math inline">\(N\)</span>?</p>
 <div style="font-size: 80%;">
+<p>How can we use <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, and <span class="math inline">\(m_2\)</span> to estimate <span class="math inline">\(N\)</span>?</p>
+<div class="fragment">
 <p><span class="math display">\[
     \frac{n_1}{N} = \frac{m_2}{n_2}
 \]</span></p>
 </div>
-<div style="font-size: 80%;">
+<div class="fragment">
 <p>And so…</p>
 <p><span class="math display">\[
     \hat{N} = \frac{n_1n_2}{m_2}
 \]</span></p>
 </div>
+</div>
 </section>
 <section id="lincoln-peterson-assumptions" class="slide level2">
 <h2>Lincoln-Peterson Assumptions</h2>
+<div style="font-size: 80%;">
 <p><br></p>
 <ul>
 <li>Population closure
@@ -278,17 +282,27 @@
 <li>No deaths</li>
 <li>No immigration or emigration</li>
 </ul></li>
+</ul>
+<div class="fragment">
+<ul>
 <li>All individuals are assumed to have the same capture probability</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>No tag loss or mis-identification</li>
 </ul>
+</div>
+</div>
 </section></section>
 <section>
-<section id="k-sampler-cmr" class="title-slide slide level1 center">
-<h1><span class="math inline">\(K\)</span>-sampler CMR</h1>
+<section id="k-sample-cmr" class="title-slide slide level1 center">
+<h1><span class="math inline">\(K\)</span>-sample CMR</h1>
 
 </section>
-<section id="k-sample-cmr" class="slide level2">
+<section id="k-sample-cmr-1" class="slide level2">
 <h2><em>K</em>-sample CMR</h2>
+<div style="font-size: 90%;">
 <p>Using more than 2 sampling occasions has many advantages, including the ability to account for:</p>
 <ul>
 <li>Temporal variation</li>
@@ -300,14 +314,15 @@
 <li>Individual heterogeneity</li>
 <li>Combinations of the above</li>
 </ul>
+</div>
 </section>
 <section id="common-models" class="slide level2">
 <h2>Common models</h2>
 <div style="font-size: 80%;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
+<col style="width: 18%">
+<col style="width: 81%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -334,6 +349,7 @@
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>where</p>
 <p><span class="math inline">\(p =\)</span> capture probability <br> <span class="math inline">\(p_t =\)</span> capture probability on occasion <span class="math inline">\(t\)</span> <br> <span class="math inline">\(c =\)</span> recapture probability</p>
 </div>
@@ -345,6 +361,7 @@
 </section>
 <section id="removal-sampling-1" class="slide level2">
 <h2>Removal sampling</h2>
+<p><br></p>
 <p><img data-src="figs/electrofishing.jpg" style="height:8cm"> <img data-src="figs/brook_trout.jpg" style="height:8cm"></p>
 <center>
 <a href="https://youtu.be/W3lcHdFyzrQ">Video</a>
@@ -354,8 +371,15 @@
 <h2>Removal sampling</h2>
 <div style="font-size: 80%;">
 <p>Suppose you conduct several electrofishing passes on a single stream section, and you remove individuals on each pass.</p>
+<div class="fragment" data-fragment-index="1">
 <p>Eventually you should deplete the population.</p>
+</div>
+<div class="fragment" data-fragment-index="2">
 <p>The number of captures you would expect on each pass:</p>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<div style="font-size: 65%;">
 <center>
 <table class="caption-top">
 <thead>
@@ -393,6 +417,7 @@
 </table>
 </center>
 </div>
+</div>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
@@ -401,15 +426,6 @@
 </div>
 
 <img data-src="lecture-mark-recap-closedpop_files/figure-revealjs/rem-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:99.0%"></section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<p><strong>Key points</strong></p>
-<ul>
-<li><p>Capture-recapture methods use information about recapture rates to estimate capture probability and abundance</p></li>
-<li><p>More advanced methods can be used to estimate density and vital rates</p></li>
-<li><p>Modern field methods use camera traps or DNA sampling techniques to collect non-invasive capture-recapture data</p></li>
-</ul>
-</section>
 <section id="estimating-density" class="slide level2">
 <h2>Estimating density</h2>
 <div style="font-size: 80%;">
@@ -424,11 +440,20 @@
 <img data-src="figs/scrbook.png" style="height:8cm">
 </center>
 </section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p><br></p>
+<p>Capture-recapture methods use information about recapture rates to estimate capture probability and abundance.</p>
+<p><br></p>
+<div class="fragment">
+<p>Modern methods use camera traps or DNA sampling techniques to collect non-invasive capture-recapture data and estimate density and vital rates.</p>
+</div>
+</section>
 <section id="assignment" class="slide level2">
 <h2>Assignment</h2>
 <p><br><br><br><br></p>
 <center>
-<div style="font-size: 150%;">
+<div style="font-size: 140%;">
 <p>Read Chapter 11</p>
 </div>
 </center>
