@@ -128,10 +128,7 @@ Three release years followed by 3 years of recoveries:
 +-----------------+-----------+-----------+-----------+
 :::
 </center>
-:::
-  
-  
-::: {.fragment}
+
 :::
   
 
@@ -470,6 +467,10 @@ Example with 2 primary periods and 3 secondary periods:
 Each of these three methods is widely used in practice. The best option depends on the objectives.
 :::
 
+<br><br><br>
+
+::: {style='font-size: 50%; color: gray;'}
 $^1$ Apparent survival
+:::
 
 

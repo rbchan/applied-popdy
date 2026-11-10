@@ -110,3 +110,5 @@ and an oral presentation.
 
 - [Lecture 15 -- Capture-mark-recapture for closed populations](lectures/cap-recapI/lecture-mark-recap-closedpop.qmd)
 
+- [Lecture 16 -- Capture-mark-recapture for open populations](lectures/cap-recapII/lecture-mark-recap-openpop.qmd)
+
