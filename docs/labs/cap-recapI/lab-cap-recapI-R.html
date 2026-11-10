@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9b59a28ddcc48f010c2375eb3c9c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-25c9275cf3fc64b1f20139da25f33777.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -181,7 +181,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday" id="toc-lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday" class="nav-link active" data-scroll-target="#lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday">Lab 12 – Estimating abundance with closed-population capture-mark-recapture data <br> Due by 5:00pm on Friday</a>
+  <li><a href="#lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday" id="toc-lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday" class="nav-link active" data-scroll-target="#lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday">Lab 12 – Estimating abundance with closed-population capture-mark-recapture data <br><br> Due by 5:00pm on Friday</a>
   <ul class="collapse">
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#example-analysis-in-r" id="toc-example-analysis-in-r" class="nav-link" data-scroll-target="#example-analysis-in-r">Example analysis in R</a></li>
@@ -196,25 +196,22 @@ window.Quarto = {
 
 
 <section id="lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday" class="level2">
-<h2 class="anchored" data-anchor-id="lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday">Lab 12 – Estimating abundance with closed-population capture-mark-recapture data <br> Due by 5:00pm on Friday</h2>
+<h2 class="anchored" data-anchor-id="lab-12-estimating-abundance-with-closed-population-capture-mark-recapture-data-due-by-500pm-on-friday">Lab 12 – Estimating abundance with closed-population capture-mark-recapture data <br><br> Due by 5:00pm on Friday</h2>
 <p>The purpose of this lab is to learn how to estimate abundance using mark-recapture data from surveys of closed populations. A closed population does not experience recruitment, mortality, immigration or emigration. The closure assumption is usually only valid over very short time periods. We will learn how to work with data from open populations later.</p>
-<p>Work through the problems below, put your code and your answers in a Word file, and then upload it to ELC. Name the file something like “Chandler-lab.docx”. Feel free to use R Markdown if you wish.</p>
+<p>Work through the problems below, put your <strong>code and your answers</strong> in a Word file, and then upload it to ELC. Feel free to use R Markdown or Quarto if you wish.</p>
 <section id="assignment" class="level3">
 <h3 class="anchored" data-anchor-id="assignment">Assignment</h3>
 <section id="exercise-i-lincoln-peterson-estimation" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-i-lincoln-peterson-estimation">Exercise I: Lincoln-Peterson estimation</h4>
-<ol type="1">
-<li>Suppose you capture, mark, and release 100 largemouth bass (<em>Micropterus salmoides</em>) at Lake Herrick. The next day, you return and capture 50 individuals, 25 of which were marked on the first occasion. What is the Lincoln-Peterson estimate of abundance (<span class="math inline">\(N\)</span>)? Do the calculations in R and show your work.</li>
-</ol>
+<p>Suppose you capture, mark, and release 100 largemouth bass (<em>Micropterus salmoides</em>) at Lake Herrick. The next day, you return and capture 50 individuals, 25 of which were marked on the first occasion. What is the Lincoln-Peterson estimate of abundance (<span class="math inline">\(N\)</span>)? Do the calculations in R and show your work.</p>
 </section>
 <section id="exercise-ii-closed-population-models-in-r" class="level4">
 <h4 class="anchored" data-anchor-id="exercise-ii-closed-population-models-in-r">Exercise II: Closed-population models in R</h4>
 <ul>
-<li>Use the R package “Rcapture” to fit the four mark-recapture models described in Table~<span class="math inline">\(\ref{tab:Otis}\)</span> to the stinkpot (<em>Sternotherus odoratus</em>) data found in the file <code>CH-SO-Andy07.inp</code>. These data were collected using baited “hoop traps” at Andy’s Pond in 2007. Software instructions are in the next section.</li>
-<li>Summarize your results by creating a table in which each row is a model, and include the following columns: model description, the estimates of <span class="math inline">\(N\)</span> (abundance), the standard errors of <span class="math inline">\(N\)</span> (SE), and the AICc values.</li>
-<li>Use model <span class="math inline">\(M_t\)</span> to make a graph of capture probability (<span class="math inline">\(p_t\)</span>) at each time point. You can do this in either Excel or R.</li>
-<li>The model with the lowest AICc is considered the best in the set of models. Which model has the lowest AICc? Do your results suggest that there was a behavioral (i.e., a trap-happy or trap-shy) response? Explain.</li>
-<li>Why do you think model <span class="math inline">\(M_0\)</span> is the worst model in the set? Look at the capture histories when answering this question.</li>
+<li>Use the R package “Rcapture” to fit mark-recapture models, including those shown the table below, to the stinkpot (<em>Sternotherus odoratus</em>) data found in the file <code>CH-SO-Andy07.inp</code>. These data were collected using baited “hoop traps” at Andy’s Pond in 2007. Software instructions are in the next section.</li>
+<li>The model with the lowest AIC is considered the best in the set of models. Which model has the lowest AIC? Do your results suggest that there was a behavioral (i.e., a trap-happy or trap-shy) response? Explain.</li>
+<li>Why do you think the best model was superior to <span class="math inline">\(M_0\)</span>? Look at the capture histories when answering this question.</li>
+<li>Report the parameter estimates from the best model. Include the standard error for the abundance estimate.</li>
 </ul>
 <table class="caption-top table">
 <colgroup>
@@ -246,13 +243,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>{}</p>
+<p><strong>Parameter definitions</strong></p>
 <ul>
 <li><span class="math inline">\(p\)</span> – capture probability. The probability of capturing an individual on a single occasion</li>
 <li><span class="math inline">\(p_t\)</span> – capture probability on occasion <span class="math inline">\(t\)</span></li>
 <li><span class="math inline">\(c\)</span> – recapture probability. The probability of capturing an individual that has been captured previously.</li>
-<li><span class="math inline">\(n\)</span> – the number of individuals captured % * <span class="math inline">\(f_0\)</span> – the number of individual not captured</li>
-<li><span class="math inline">\(N\)</span> – abundance. The number of individuals in the population. %<span class="math inline">\(N=n+f_0\)</span>.</li>
+<li><span class="math inline">\(n\)</span> – the number of individuals captured</li>
+<li><span class="math inline">\(N\)</span> – abundance. The number of individuals in the population.</li>
 </ul>
 <p><img src="figs/Stinkpot.jpg" class="img-fluid"></p>
 </section>
@@ -267,7 +264,7 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rcapture)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The example bear data are formatted for program MARK, but we can import them using <code>read.table</code>. The only trick is to tell R that the capture histories should be treated as a character string, rather than as a numeric variable. The <code>colClasses</code> arguments let’s us do that.</p>
+<p>The example data are formatted for program MARK, but we can import them using <code>read.table</code>. The only trick is to tell R that the capture histories should be treated as a character string, rather than as a numeric variable. The <code>colClasses</code> arguments let’s us do that.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>capture.histories <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"CH-example.inp"</span>, <span class="at">sep=</span><span class="st">" "</span>,</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                                <span class="at">colClasses=</span><span class="fu">c</span>(<span class="st">"character"</span>, <span class="st">"character"</span>),</span>
@@ -298,28 +295,28 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ch.mat <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(capture.histories<span class="sc">$</span>ch,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                   <span class="cf">function</span>(x) <span class="fu">as.integer</span>(<span class="fu">strsplit</span>(x, <span class="st">""</span>)[[<span class="dv">1</span>]])))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(ch.mat) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">paste0</span>(<span class="st">"Bear"</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(capture.histories)),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(ch.mat) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">paste0</span>(<span class="st">"Animal"</span>, <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(capture.histories)),</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste0</span>(<span class="st">"Time"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now the capture histories look like this:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ch.mat</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       Time1 Time2 Time3 Time4 Time5 Time6
-Bear1      1     0     1     0     0     1
-Bear2      1     0     0     0     0     1
-Bear3      1     0     0     0     0     1
-Bear4      0     1     0     0     0     0
-Bear5      1     0     1     0     0     0
-Bear6      0     1     0     0     0     1
-Bear7      0     0     1     0     0     0
-Bear8      0     0     1     0     1     1
-Bear9      0     0     0     1     0     0
-Bear10     0     0     1     0     0     1
-Bear11     0     0     1     0     0     0
-Bear12     0     0     0     0     1     0
-Bear13     0     0     0     0     1     0
-Bear14     0     0     0     1     0     1</code></pre>
+<pre><code>         Time1 Time2 Time3 Time4 Time5 Time6
+Animal1      1     0     1     0     0     1
+Animal2      1     0     0     0     0     1
+Animal3      1     0     0     0     0     1
+Animal4      0     1     0     0     0     0
+Animal5      1     0     1     0     0     0
+Animal6      0     1     0     0     0     1
+Animal7      0     0     1     0     0     0
+Animal8      0     0     1     0     1     1
+Animal9      0     0     0     1     0     0
+Animal10     0     0     1     0     0     1
+Animal11     0     0     1     0     0     0
+Animal12     0     0     0     0     1     0
+Animal13     0     0     0     0     1     0
+Animal14     0     0     0     1     0     1</code></pre>
 </div>
 </div>
 <p>We will use the <code>closedp</code> function to fit the closed population models. This returns abundance estimates, standard errors (stderr), and AIC values.</p>
@@ -370,21 +367,13 @@ estimate: 17.404 0.23 0.115 0.345 0.115 0.172 0.402</code></pre>
 estimate: 17.151 0.246 0.217</code></pre>
 </div>
 </div>
-<p>We can get more information about a specific model using the function <code>closedpCI.t</code>:</p>
+<p>We can get standard errors (<code>stderr</code>) for abundance estimates using the function <code>closedpCI.t</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Mt <span class="ot">&lt;-</span> <span class="fu">closedpCI.t</span>(ch.mat, <span class="at">m=</span><span class="st">"Mt"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Mt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Mt<span class="sc">$</span>results <span class="co"># Abundance and standard error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Number of captured units: 14 
-
-Poisson estimation and model fit:
-   abundance stderr deviance df    AIC    BIC infoFit
-Mt      17.4    2.8   22.692 56 60.533 65.007      OK
-
-Multinomial estimation, 95% profile likelihood confidence interval:
-   abundance infCL supCL     infoCI
-Mt      16.4    14  25.2 warning #5</code></pre>
+<pre><code>   abundance   stderr deviance df      AIC      BIC infoFit
+Mt  17.40413 2.846915 22.69221 56 60.53333 65.00673       0</code></pre>
 </div>
 </div>
 
