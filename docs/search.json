@@ -2259,5 +2259,124 @@
     "title": "Applied Population Dynamics",
     "section": "Course materials",
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis\n\n\n\nWeek 10 - Sampling\n\nLecture 12 – Sampling\n\n\n\nWeek 11 - Occupancy models\n\nLecture 13 – Occupancy\nLab 10 - Occupancy models\n\n\n\nWeek 12 - Distance sampling\n\nLecture 14 – Distance sampling\nLab 11 - Distance sampling\n\n\n\nWeek 13 - Capture-mark recapture\n\nLecture 15 – Capture-mark-recapture for closed populations"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#section",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Mark-recapture methods for estimating survival and recruitment"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#accounting-for-imperfect-detection",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#accounting-for-imperfect-detection",
+    "title": "Applied Population Dynamics",
+    "section": "Accounting for imperfect detection",
+    "text": "Accounting for imperfect detection\nSuppose we mark and release \\(R\\) individuals, and then recapture \\(m\\) of them on the second occasion.\nHow do we estimate survival probability?\nIf capture probability (\\(p\\)) was 1, we could use: \\[\n  \\hat{S} = \\frac{m}{R}\n\\]\nBut when \\(p&lt;1\\), \\(m\\) is some fraction of the number actually alive (\\(M\\)), so we have to estimate \\(p\\) and \\(M\\) to estimate \\(S\\):\n\n\n\\[\n  \\hat{S} = \\frac{\\hat{M}}{R}\n\\]\n\n   where\n\n\\[\n  \\hat{M} = \\frac{m}{\\hat{p}}\n\\]"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-1",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-1",
+    "title": "Applied Population Dynamics",
+    "section": "Tag recovery models",
+    "text": "Tag recovery models\nPurpose\nEstimate survival from recovered tags \n\n \n\nBenefit\nBecause hunters are just about everywhere, we don’t have to worry about animals leaving “the study area” and we can estimate actual survival."
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-2",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-2",
+    "title": "Applied Population Dynamics",
+    "section": "Tag recovery models",
+    "text": "Tag recovery models\nDesign\n\nAnimals are marked and released\nHunters or anglers report tags from harvested individuals\nDesirable to have at least 5 releases\n\nData\nThree release years followed by 3 years of recoveries:\n\n\n\n\n\n\n\n\n\n\nNumber released\nPeriod recovered\n\n\n\n\n2-4\n1\n2\n3\n\n\n\\(R_1\\)\n\\(m_{1,1}\\)\n\\(m_{1,2}\\)\n\\(m_{1,3}\\)\n\n\n\\(R_2\\)\n\n\\(m_{2,2}\\)\n\\(m_{2,3}\\)\n\n\n\\(R_3\\)\n\n\n\\(m_{3,3}\\)\n\n\n\n\nParameters\n\nSurvival (\\(S\\))\nRecovery rate (\\(f\\))"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-3",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-3",
+    "title": "Applied Population Dynamics",
+    "section": "Tag recovery models",
+    "text": "Tag recovery models\nExpected values\n\n\n\n\n\n\n\n\n\n\n\nPeriod released\nNumber released\nPeriod recovered\n\n\n\n\n3-5\n\n1\n2\n3\n\n\n1\n\\(R_1\\)\n\\(R_1f_1\\)\n\\(R_1S_1f_2\\)\n\\(R_1S_1S_2f_3\\)\n\n\n2\n\\(R_2\\)\n\n\\(R_2f_2\\)\n\\(R_2S_2f_3\\)\n\n\n3\n\\(R_3\\)\n\n\n\\(R_3f_3\\)\n\n\n\n\nSoftware programs like “MARK” (and “RMark” in R) find the most likely values of \\(S\\) and \\(f\\), given the data."
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-4",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-4",
+    "title": "Applied Population Dynamics",
+    "section": "Tag recovery models",
+    "text": "Tag recovery models\nAssumptions\n\nSample is representative of population\nNo tag loss, mis-identification, etc\nAll animals have common survival and recovery rates\nFates are independent\n\nExtensions\n\nAge-specific models\nGrouping variables\nTime variables\nHabitat variables"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cormack-jolly-seber-cjs-model",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cormack-jolly-seber-cjs-model",
+    "title": "Applied Population Dynamics",
+    "section": "Cormack-Jolly-Seber (CJS) model",
+    "text": "Cormack-Jolly-Seber (CJS) model\nPurpose\nEstimate survival and capture probability from capture-recapture data\nDesign\nA random sample of animals is marked and followed over many periods (usually years)\nNotes\n\nWhen permanent emigration is possible, we can’t be sure if an animal died or left study area\nSo, we often have to estimate “apparent survival” (\\(\\Phi\\)) instead of actual survival (\\(S\\))\nApparent survival is the probability that an individual survives and does not permanently emigrate out of the study area"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories",
+    "title": "Applied Population Dynamics",
+    "section": "CJS capture histories",
+    "text": "CJS capture histories\nIn CJS studies, we ignore the leading zeros in the capture histories because we aren’t interested in how animals enter the sample.\nAll we care about is survival, so we “condition” on first encounter.\n\n\n\n\nar 1 Year\n2 Year\n3\n\n\n\n\n\nAnimal 1\n1\n0\n0\n\n\nAnimal 2\n\n1\n0\n\n\nAnimal 3\n\n\n1\n\n\nAnimal 4\n1\n1\n1\n\n\nAnimal 5\n\n1\n1"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories-1",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories-1",
+    "title": "Applied Population Dynamics",
+    "section": "CJS capture histories",
+    "text": "CJS capture histories\nEstimation is accomplished by finding the values of \\(p\\) and \\(\\Phi\\) that best align the expected values with the observed capture histories.\n\n\n\n\npture history Ex\npected values\n\n\n\n\n111\n\\(\\Phi_1p_2\\Phi_2p_3\\)\n\n\n110\n\\(\\Phi_1p_2(1-\\Phi_2p_3)\\)\n\n\n101\n\\(\\Phi_1(1-p_2)\\Phi_2p_3\\)\n\n\n100\n\\((1-\\Phi_1)+\\Phi_1(1-p_2)(1-\\Phi_2p_3)\\)\n\n\ncenter&gt;"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-model-1",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "CJS model",
+    "text": "CJS model\nAssumptions\n\nSame as tag-recovery, plus\nInstantaneous recapture and release of animals\nHomogeneity of capture and survival probabilities for marked animals\nAll emigration is permanent\n\nModel can be extended to accommodate variation due to…\n\nAge\nSex\nHabitat\nGeographical regions"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-js-model",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-js-model",
+    "title": "Applied Population Dynamics",
+    "section": "Jolly-Seber (JS) model",
+    "text": "Jolly-Seber (JS) model\nPurpose\nEstimate survival, recruitment, abundance, and capture probability from capture-recapture data\nDesign\nRandomly sample the population during every period and mark all newly captured unmarked animals\nExamples\n\nConstant-effort mist-netting\nLong-term small mammal trapping"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#recruitment-in-the-jolly-seber-model",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#recruitment-in-the-jolly-seber-model",
+    "title": "Applied Population Dynamics",
+    "section": "Recruitment in the Jolly-Seber model",
+    "text": "Recruitment in the Jolly-Seber model\nRecruitment in JS models is defined as the per-capita rate at which new individual enter the population.\nIf immigration is not possible, recruitment is equivalent to fecundity.\nNote that in other applications, recruitment is defined as the product of the birth rate and the probability of surviving to maturity."
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#js-capture-histories",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#js-capture-histories",
+    "title": "Applied Population Dynamics",
+    "section": "JS capture histories",
+    "text": "JS capture histories\nWe no longer “condition” on first encounter – Instead, we use all the data.\nThe leading zeros provide information about when individuals are recruited into the population\n\n\n\n\nar 1 Year\n2 Year\n3\n\n\n\n\n\nAnimal 1\n1\n0\n0\n\n\nAnimal 2\n0\n1\n0\n\n\nAnimal 3\n0\n1\n1\n\n\nAnimal 4\n1\n1\n1\n\n\nAnimal 5\n0\n1\n1"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-model",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-model",
+    "title": "Applied Population Dynamics",
+    "section": "Jolly-Seber model",
+    "text": "Jolly-Seber model\nAssumptions\n\nAll the assumptions of CJS model, plus\nEvery animal — marked or unmarked — has the same probability of capture\n\nThe standard JS model doesn’t work very well, but it is extremely powerful when combined with the robust design."
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-1",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-1",
+    "title": "Applied Population Dynamics",
+    "section": "Robust design",
+    "text": "Robust design\nPurpose\nRelax assumptions and increase precision by collecting more data\nKey concept\nWe now have two types of sampling periods:\n\nPrimary sampling periods} between which the population is assumed to be demographically open\nSecondary sampling periods over which the population is assumed closed\nThe replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters."
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-capture-histories",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-capture-histories",
+    "title": "Applied Population Dynamics",
+    "section": "Robust design capture histories",
+    "text": "Robust design capture histories\n\nExample with 2 primary periods and 3 secondary periods \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrimary period 1\n\nPrimary period 2\n\n\n\n\n2-4\nDay 1\nDay 2\nDay 3\n\nDay 1\nDay 2\nDay 3\n\n\nAnimal 1\n0\n0\n1\n\n1\n0\n0\n\n\nAnimal 2\n1\n0\n1\n\n1\n1\n1\n\n\nAnimal 3\n0\n0\n0\n\n1\n0\n0\n\n\nAnimal 4\n1\n1\n1\n\n0\n0\n0\n\n\nAnimal 5\n0\n0\n0\n\n1\n1\n0\n\n\n\n:::"
+  },
+  {
+    "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#summary",
+    "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#summary",
+    "title": "Applied Population Dynamics",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nthod Da\nta Su\nrvival Re\ncruitment Ab\nundance\n\n\n\n\nTag recovery\nRecoveries\nYes\nNo\nNo\n\n\nCJS\nMark-recap\nYes[^1]\nNo\nNo\n\n\nJS\nMark-recap\nYes\\(^1\\)\nYes\nYes\n\n\n\nEach of these three methods is widely used in practice. The best option depends on the objectives."
   }
 ]
