@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lab-cap-recapi-r – Applied Population Dynamics</title>
+<title>lab-cap-recapi – Applied Population Dynamics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9b59a28ddcc48f010c2375eb3c9c6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-25c9275cf3fc64b1f20139da25f33777.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -237,12 +237,9 @@ window.Quarto = {
 <td><span class="math inline">\(M_b\)</span></td>
 <td>Behavioral response model in which <span class="math inline">\(p\)</span> and <span class="math inline">\(c\)</span> differ. Can describe trap happiness or trap shiness.</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(M_{tb}\)</span></td>
-<td>A combination of models <span class="math inline">\(M_t\)</span> and <span class="math inline">\(M_b\)</span>.</td>
-</tr>
 </tbody>
 </table>
+<!-- $M_{tb}$ | A combination of models $M_t$ and $M_b$. -->
 <p><strong>Parameter definitions</strong></p>
 <ul>
 <li><span class="math inline">\(p\)</span> – capture probability. The probability of capturing an individual on a single occasion</li>
@@ -319,7 +316,7 @@ Animal13     0     0     0     0     1     0
 Animal14     0     0     0     1     0     1</code></pre>
 </div>
 </div>
-<p>We will use the <code>closedp</code> function to fit the closed population models. This returns abundance estimates, standard errors (stderr), and AIC values.</p>
+<p>We will use the <code>closedp</code> function to fit the closed population models. This returns abundance estimates, standard errors (stderr), and AIC values. You can ignore the models that we didn’t cover in class. Focus primarily on <code>M0</code>, <code>Mt</code>, and <code>Mb</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mods <span class="ot">&lt;-</span> <span class="fu">closedp</span>(ch.mat)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mods</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

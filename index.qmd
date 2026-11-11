@@ -112,3 +112,4 @@ and an oral presentation.
 
 - [Lecture 16 -- Capture-mark-recapture for open populations](lectures/cap-recapII/lecture-mark-recap-openpop.qmd)
 
+- [Lab 12 - Mark-recapture for closed populations](labs/cap-recapI/lab-cap-recapI.qmd)

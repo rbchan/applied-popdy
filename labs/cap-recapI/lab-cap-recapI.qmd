@@ -5,7 +5,6 @@ lang: en
 ---
 
 
-
 ## Lab 12 -- Estimating abundance with closed-population capture-mark-recapture data <br><br> Due by 5:00pm on Friday
 
 
@@ -35,7 +34,10 @@ Model | Description
 $M_0$ | The most basic model in which $p$ and $c$ are constant
 $M_t$ | $p$ differs among sampling occasions and $p_t=c_t$.
 $M_b$ | Behavioral response model in which $p$ and $c$ differ. Can describe trap happiness or trap shiness.
-$M_{tb}$ | A combination of models $M_t$ and $M_b$.
+
+
+
+<!-- $M_{tb}$ | A combination of models $M_t$ and $M_b$. -->
 
 
 **Parameter definitions**
@@ -114,7 +116,7 @@ Now the capture histories look like this:
 ch.mat
 ```
 
-We will use the `closedp` function to fit the closed population models. This returns abundance estimates, standard errors (stderr), and AIC values. 
+We will use the `closedp` function to fit the closed population models. This returns abundance estimates, standard errors (stderr), and AIC values. You can ignore the models that we didn't cover in class. Focus primarily on `M0`, `Mt`, and `Mb`. 
 
 ```{r}
 #| label: M0
