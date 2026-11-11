@@ -22,8 +22,8 @@ lang: en
 
 **Mark-recapture methods for estimating survival and recruitment**
 
-![height=3cm,keepaspectratio](figs/hammerhead.jpg){height="8cm"}
-![height=3cm,keepaspectratio](figs/dolphins.jpg){height="8cm"}
+![height=3cm,keepaspectratio](figs/hammerhead.jpg){height="8.5cm"}
+![height=3cm,keepaspectratio](figs/dolphins.jpg){height="8.5cm"}
 
 </center>
 
@@ -81,7 +81,7 @@ $$
 ::: {style='font-size: 80%;'}
 **Purpose**
 
-Estimate survival from recovered tags <br>
+Estimate survival from recovered tags.
   
 <center>
 ![](figs/metal-bands.jpg)
@@ -219,23 +219,25 @@ Software programs like "MARK" (and "RMark" and "Rcapture" in R) find the most li
 
 ## Cormack-Jolly-Seber (CJS) model
 
-::: {style='font-size: 80%;'}
+::: {style='font-size: 75%;'}
 **Purpose**
 
-Estimate survival and capture probability from capture-recapture data
+Estimate survival and capture probability from capture-recapture data.
   
   
 ::: {.fragment}
 **Design**
 
-A random sample of animals is marked and followed over many periods (usually years)
+A random sample of animals is marked and followed over many periods (eg, years).
 :::
-  
+
+<br>
+
 ::: {.fragment}
 **Notes**
 
 * When permanent emigration is possible, we can't be sure if an animal died or left study area
-* So, we often have to estimate "apparent survival" ($\Phi$) instead of actual survival ($S$)
+* So we often have to estimate *apparent survival* ($\Phi$) instead of actual survival ($S$)
 * Apparent survival is the probability that an individual survives and does not permanently emigrate out of the study area
 :::
 
@@ -245,11 +247,13 @@ A random sample of animals is marked and followed over many periods (usually yea
 
 ## CJS capture histories
 
-::: {style='font-size: 90%;'}
+::: {style='font-size: 85%;'}
 
 In CJS studies, we ignore the leading zeros in the capture histories because we aren't interested in how animals enter the sample.
   
 All we care about is survival, so we "condition" on first encounter.
+
+<br>
   
              Year 1   Year 2   Year 3
   ---------- -------- -------- --------
@@ -315,13 +319,13 @@ Estimation is accomplished by finding the values of $p$ and $\Phi$ that best ali
 ::: {style='font-size: 90%;'}
 **Purpose**
 
-Estimate survival, recruitment, abundance, and capture probability from capture-recapture data
+Estimate survival, recruitment, abundance, and capture probability from capture-recapture data.
   
   
 ::: {.fragment}
 **Design**
 
-Randomly sample the population during every period and mark all newly captured unmarked animals
+Randomly sample the population during every period and mark all newly captured unmarked animals.
 :::
   
   
@@ -407,8 +411,8 @@ Relax assumptions and increase precision by collecting more data.
 
 We now have two types of sampling periods:
 
-- *Primary sampling periods* between which the population is assumed to be demographically open
-- *Secondary sampling periods* over which the population  is assumed closed
+- *Primary sampling periods*: the population is assumed to be open
+- *Secondary sampling periods*:the population is assumed to be closed
 :::
   
 <br>
@@ -456,6 +460,7 @@ Example with 2 primary periods and 3 secondary periods:
 
 ## Summary
 
+<br>
 
 ::: {style='font-size: 80%;'}
   Method         Data         Survival   Recruitment   Abundance
@@ -463,13 +468,15 @@ Example with 2 primary periods and 3 secondary periods:
   Tag recovery   Recoveries   Yes        No            No
   CJS            Mark-recap   Yes$^1$    No            No
   JS             Mark-recap   Yes$^1$    Yes           Yes
-  
+
+<br>
+
 Each of these three methods is widely used in practice. The best option depends on the objectives.
 :::
 
-<br><br><br>
+<br>
 
-::: {style='font-size: 50%; color: gray;'}
+::: {style='font-size: 70%; color: gray;'}
 $^1$ Apparent survival
 :::
 

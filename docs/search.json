@@ -1544,7 +1544,7 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-1",
     "title": "Applied Population Dynamics",
     "section": "Tag recovery models",
-    "text": "Tag recovery models\n\nPurpose\nEstimate survival from recovered tags \n\n \n\n\nBenefit\nBecause hunters are just about everywhere, we don’t have to worry about animals leaving “the study area” and we can estimate actual survival."
+    "text": "Tag recovery models\n\nPurpose\nEstimate survival from recovered tags.\n\n \n\n\nBenefit\nBecause hunters are just about everywhere, we don’t have to worry about animals leaving “the study area” and we can estimate actual survival."
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#tag-recovery-models-2",
@@ -1572,14 +1572,14 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cormack-jolly-seber-cjs-model",
     "title": "Applied Population Dynamics",
     "section": "Cormack-Jolly-Seber (CJS) model",
-    "text": "Cormack-Jolly-Seber (CJS) model\n\nPurpose\nEstimate survival and capture probability from capture-recapture data\n\nDesign\nA random sample of animals is marked and followed over many periods (usually years)\n\n\nNotes\n\nWhen permanent emigration is possible, we can’t be sure if an animal died or left study area\nSo, we often have to estimate “apparent survival” (\\(\\Phi\\)) instead of actual survival (\\(S\\))\nApparent survival is the probability that an individual survives and does not permanently emigrate out of the study area"
+    "text": "Cormack-Jolly-Seber (CJS) model\n\nPurpose\nEstimate survival and capture probability from capture-recapture data.\n\nDesign\nA random sample of animals is marked and followed over many periods (eg, years).\n\n\n\nNotes\n\nWhen permanent emigration is possible, we can’t be sure if an animal died or left study area\nSo we often have to estimate apparent survival (\\(\\Phi\\)) instead of actual survival (\\(S\\))\nApparent survival is the probability that an individual survives and does not permanently emigrate out of the study area"
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories",
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories",
     "title": "Applied Population Dynamics",
     "section": "CJS capture histories",
-    "text": "CJS capture histories\n\nIn CJS studies, we ignore the leading zeros in the capture histories because we aren’t interested in how animals enter the sample.\nAll we care about is survival, so we “condition” on first encounter.\n\n\n\n\nYear 1\nYear 2\nYear 3\n\n\n\n\nAnimal 1\n1\n0\n0\n\n\nAnimal 2\n\n1\n0\n\n\nAnimal 3\n\n\n1\n\n\nAnimal 4\n1\n1\n1\n\n\nAnimal 5\n\n1\n1"
+    "text": "CJS capture histories\n\nIn CJS studies, we ignore the leading zeros in the capture histories because we aren’t interested in how animals enter the sample.\nAll we care about is survival, so we “condition” on first encounter.\n\n\n\n\n\nYear 1\nYear 2\nYear 3\n\n\n\n\nAnimal 1\n1\n0\n0\n\n\nAnimal 2\n\n1\n0\n\n\nAnimal 3\n\n\n1\n\n\nAnimal 4\n1\n1\n1\n\n\nAnimal 5\n\n1\n1"
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#cjs-capture-histories-1",
@@ -1600,7 +1600,7 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-js-model",
     "title": "Applied Population Dynamics",
     "section": "Jolly-Seber (JS) model",
-    "text": "Jolly-Seber (JS) model\n\nPurpose\nEstimate survival, recruitment, abundance, and capture probability from capture-recapture data\n\nDesign\nRandomly sample the population during every period and mark all newly captured unmarked animals\n\n\nExamples\n\nConstant-effort mist-netting\nLong-term small mammal trapping"
+    "text": "Jolly-Seber (JS) model\n\nPurpose\nEstimate survival, recruitment, abundance, and capture probability from capture-recapture data.\n\nDesign\nRandomly sample the population during every period and mark all newly captured unmarked animals.\n\n\nExamples\n\nConstant-effort mist-netting\nLong-term small mammal trapping"
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#recruitment-in-the-jolly-seber-model",
@@ -1628,7 +1628,7 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-1",
     "title": "Applied Population Dynamics",
     "section": "Robust design",
-    "text": "Robust design\n\nPurpose\nRelax assumptions and increase precision by collecting more data.\n\n\nKey concept\nWe now have two types of sampling periods:\n\nPrimary sampling periods between which the population is assumed to be demographically open\nSecondary sampling periods over which the population is assumed closed\n\n\n\n\n\nThe replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters."
+    "text": "Robust design\n\nPurpose\nRelax assumptions and increase precision by collecting more data.\n\n\nKey concept\nWe now have two types of sampling periods:\n\nPrimary sampling periods: the population is assumed to be open\nSecondary sampling periods:the population is assumed to be closed\n\n\n\n\n\nThe replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters."
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-capture-histories",
@@ -1642,7 +1642,7 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#summary",
     "title": "Applied Population Dynamics",
     "section": "Summary",
-    "text": "Summary\n\n\n\n\nMethod\nData\nSurvival\nRecruitment\nAbundance\n\n\n\n\nTag recovery\nRecoveries\nYes\nNo\nNo\n\n\nCJS\nMark-recap\nYes\\(^1\\)\nNo\nNo\n\n\nJS\nMark-recap\nYes\\(^1\\)\nYes\nYes\n\n\n\nEach of these three methods is widely used in practice. The best option depends on the objectives.\n\n\n\n\\(^1\\) Apparent survival"
+    "text": "Summary\n\n\n\n\n\nMethod\nData\nSurvival\nRecruitment\nAbundance\n\n\n\n\nTag recovery\nRecoveries\nYes\nNo\nNo\n\n\nCJS\nMark-recap\nYes\\(^1\\)\nNo\nNo\n\n\nJS\nMark-recap\nYes\\(^1\\)\nYes\nYes\n\n\n\n\nEach of these three methods is widely used in practice. The best option depends on the objectives.\n\n\n\n\\(^1\\) Apparent survival"
   },
   {
     "objectID": "lectures/pva/lecture-PVA.html#section",

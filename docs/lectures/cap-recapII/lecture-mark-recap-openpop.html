@@ -135,7 +135,7 @@
 <h2></h2>
 <center>
 <p><strong>Mark-recapture methods for estimating survival and recruitment</strong></p>
-<p><img data-src="figs/hammerhead.jpg" style="height:8cm" alt="height=3cm,keepaspectratio"> <img data-src="figs/dolphins.jpg" style="height:8cm" alt="height=3cm,keepaspectratio"></p>
+<p><img data-src="figs/hammerhead.jpg" style="height:8.5cm" alt="height=3cm,keepaspectratio"> <img data-src="figs/dolphins.jpg" style="height:8.5cm" alt="height=3cm,keepaspectratio"></p>
 </center>
 </section>
 <section id="accounting-for-imperfect-detection" class="slide level2">
@@ -177,7 +177,7 @@
 <h2>Tag recovery models</h2>
 <div style="font-size: 80%;">
 <p><strong>Purpose</strong></p>
-<p>Estimate survival from recovered tags <br></p>
+<p>Estimate survival from recovered tags.</p>
 <center>
 <img data-src="figs/metal-bands.jpg"> <img data-src="figs/duck-hunter.jpg">
 </center>
@@ -349,18 +349,19 @@ Software programs like “MARK” (and “RMark” and “Rcapture” in R) find
 </section>
 <section id="cormack-jolly-seber-cjs-model" class="slide level2">
 <h2>Cormack-Jolly-Seber (CJS) model</h2>
-<div style="font-size: 80%;">
+<div style="font-size: 75%;">
 <p><strong>Purpose</strong></p>
-<p>Estimate survival and capture probability from capture-recapture data</p>
+<p>Estimate survival and capture probability from capture-recapture data.</p>
 <div class="fragment">
 <p><strong>Design</strong></p>
-<p>A random sample of animals is marked and followed over many periods (usually years)</p>
+<p>A random sample of animals is marked and followed over many periods (eg, years).</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <p><strong>Notes</strong></p>
 <ul>
 <li>When permanent emigration is possible, we can’t be sure if an animal died or left study area</li>
-<li>So, we often have to estimate “apparent survival” (<span class="math inline">\(\Phi\)</span>) instead of actual survival (<span class="math inline">\(S\)</span>)</li>
+<li>So we often have to estimate <em>apparent survival</em> (<span class="math inline">\(\Phi\)</span>) instead of actual survival (<span class="math inline">\(S\)</span>)</li>
 <li>Apparent survival is the probability that an individual survives and does not permanently emigrate out of the study area</li>
 </ul>
 </div>
@@ -368,9 +369,10 @@ Software programs like “MARK” (and “RMark” and “Rcapture” in R) find
 </section>
 <section id="cjs-capture-histories" class="slide level2">
 <h2>CJS capture histories</h2>
-<div style="font-size: 90%;">
+<div style="font-size: 85%;">
 <p>In CJS studies, we ignore the leading zeros in the capture histories because we aren’t interested in how animals enter the sample.</p>
 <p>All we care about is survival, so we “condition” on first encounter.</p>
+<p><br></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -477,10 +479,10 @@ Software programs like “MARK” (and “RMark” and “Rcapture” in R) find
 <h2>Jolly-Seber (JS) model</h2>
 <div style="font-size: 90%;">
 <p><strong>Purpose</strong></p>
-<p>Estimate survival, recruitment, abundance, and capture probability from capture-recapture data</p>
+<p>Estimate survival, recruitment, abundance, and capture probability from capture-recapture data.</p>
 <div class="fragment">
 <p><strong>Design</strong></p>
-<p>Randomly sample the population during every period and mark all newly captured unmarked animals</p>
+<p>Randomly sample the population during every period and mark all newly captured unmarked animals.</p>
 </div>
 <div class="fragment">
 <p><strong>Examples</strong></p>
@@ -579,8 +581,8 @@ Software programs like “MARK” (and “RMark” and “Rcapture” in R) find
 <p><strong>Key concept</strong></p>
 <p>We now have two types of sampling periods:</p>
 <ul>
-<li><em>Primary sampling periods</em> between which the population is assumed to be demographically open</li>
-<li><em>Secondary sampling periods</em> over which the population is assumed closed</li>
+<li><em>Primary sampling periods</em>: the population is assumed to be open</li>
+<li><em>Secondary sampling periods</em>:the population is assumed to be closed</li>
 </ul>
 </div>
 <p><br></p>
@@ -684,6 +686,7 @@ The replicate surveys with each primary period give us direct information about 
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p><br></p>
 <div style="font-size: 80%;">
 <table class="caption-top">
 <thead>
@@ -719,10 +722,11 @@ The replicate surveys with each primary period give us direct information about 
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>Each of these three methods is widely used in practice. The best option depends on the objectives.</p>
 </div>
-<p><br><br><br></p>
-<div style="font-size: 50%; color: gray;">
+<p><br></p>
+<div style="font-size: 70%; color: gray;">
 <p><span class="math inline">\(^1\)</span> Apparent survival</p>
 </div>
 
