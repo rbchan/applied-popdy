@@ -107,74 +107,51 @@ Censoring occurs when the time of mortality is not directly observed
 
 ## Censoring
 
-{ %\bf
-    Right censoring} 
+Right censoring
   
+- Occurs when animals leave the sample before they die.
+- Examples
+    * Battery failure
+    * Emigration
     
-    * Occurs when animals leave the sample before they die.
-    * Examples
-    
-      * Battery failure
-      * Emigration
-    
-%    * If right-censored animals are incorrectly thought to be dead,
-%      survival estimates will be biased low
+Left censoring and interval censoring are rarely a concern.
   
+If censoring occurs, the Kaplan-Meier estimator is more appropriate than the binomial model.
+
+
+
+
+
+## Censoring
+
+![](figs/censoring.png)
+
+Diamonds indicate mortality. Circles indicate censoring. <br>
+Black lines show the observation period. 
+
+
+
+
+
+## Kaplan-Meier
   
-  
-  { %\bf
-    Left censoring and interval censoring are rarely a concern.}
-  % 
-  %   
-  %   * Occurs when mortality is known to have occurred before some
-  %     point in time
-  %   * Rarely an issue in telemetry studies
-%    * Also known as ``staggered entry''
-%    * If left-censored animals are incorrectly thought to enter
-%      the study at $t=1$, survival estimates will be biased high
-  % 
-  
-  
-  { If censoring occurs, 
-    the Kaplan-Meier estimator is more appropriate than the binomial model. <br>}
-
-
-
-
-
-  ## Censoring
-%  [width=0.9\textwidth]{figs/censor}
-  
-  [width=0.9\textwidth]{figs/censoring} <br>
-  Diamonds indicate mortality. Circles indicate censoring. <br>
-  Black lines show the observation period. <br> %Gray lines are unobserved
-  %time periods. 
-
-
-
-
-  ## Kaplan-Meier
-  
-  \[
+$$
     \hat{S}_t = \prod_{j: t_i \le t}\left(\frac{r_j - d_j}{r_j}\right)
-%    \hat{S}(t) = \prod_{j: t_i \le t}\left(\frac{r(j) - d(j)}{r(j)}\right)
-  \]
+$$
   
-  $S_t$ -- probability of surviving to time $t$ <br>
-  $r_j$ -- number of individuals ``at risk'' prior to time $t$ <br>
-  $d_j$ -- number of mortalities prior to time $t$
+$S_t$ -- probability of surviving to time $t$ <br>
+$r_j$ -- number of individuals ``at risk'' prior to time $t$ <br>
+$d_j$ -- number of mortalities prior to time $t$
 
 
 
 
-  ## Kaplan-Meier in R
+## Kaplan-Meier in R
+
 ```{r}
 #| label: kapmeier
-#| size: 'footnotesize'
-#| eval: false
-#| fig.show: 'hide'
 library(survival)                    ## Load survival package
-deer <- read.csv("deer_data.csv")    ## Import data
+deer <- read.csv("deerSurv/deer_data.csv")    ## Import data
 S <- Surv(deer$SurvTime, deer$Fate)  ## Format survival data
 plot(survfit(S~deer$Sex), lty=1:2,   ## Kaplan-Meier
      main="Survivorship curve",
@@ -187,42 +164,27 @@ legend(400, 1, c("Female", "Male"), lty=c(1,2))
 
 
 
-
-  ## Kaplan-Meier
-  <center>
-%    
-%    Survivorship curve <br>
-%    [width=0.6\textwidth]{figs/survivorship}
-    [width=0.70\textwidth]{deerSurv/deerSurvSex} <br>
-    \color{blue} 
-    \url{
-      https://youtu.be/Mgp46izlfeo
-    }
-  </center>
+![Deer capture video](https://youtu.be/Mgp46izlfeo)
 
 
 
 
 
 
-  ## Kaplan-Meier
+## Kaplan-Meier
   
-  {\bf Critical Assumption}: <br>
-  Censoring must be independent of survival <br>
+**Critical Assumption**:
+
+Censoring must be independent of survival
  
-   * It's fine if transmitters fail randomly
-   * It's a problem if they fail because of mortality
+* It's fine if transmitters fail randomly
+* It's a problem if they fail because of mortality
  
   
   
-%  {\bf }
-%  
-%    * %  
-%  
-%  
-  {\bf Consequence of violating this assumption}: <br>
-  If an animal dies, but you mistakenly right censor it because you
-  think its battery died, survival will be over-estimated.  
+**Consequence of violating this assumption**:
+
+If an animal dies, but you mistakenly right censor it because you think its battery died, survival will be over-estimated.
 
 
 
@@ -231,19 +193,18 @@ legend(400, 1, c("Female", "Male"), lty=c(1,2))
 
 
 
-  ## Age distribution data
-  {%\bf
-    Standard practice}
+## Age distribution data
+
+Standard practice
   
-    * We have a pile of wings that can be aged <br>
-    * We assume the age ratios tell us something about survival
+* We have a pile of wings that can be aged
+* We assume the age ratios tell us something about survival
   
-  <center>
-    [width=0.6\textwidth]{figs/dove_wing}
-  </center>
+<center>
+![](figs/dove_wing.jpg)
+</center>
   
-%  Before considering this, let's image a better situation\dots
-  { \alert{\bf There are many problems with this} \par}
+\alert{**There are many problems with this**}
 
 
 
@@ -251,80 +212,70 @@ legend(400, 1, c("Female", "Male"), lty=c(1,2))
 
 
 
-  ## Alternative scenario
-%  
-  Suppose a cohort of individuals is monitored over time, so that we
-  can obtain information about survival.
+## Alternative scenario
+
+Suppose a cohort of individuals is monitored over time, so that we can obtain information about survival.
   
-\[
+$$
   n_{i+1,t+1} = n_{i,t}S_{i,t}
-\]
+$$
 
-\[
+$$
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
-\]
-% 
-
-
-
- %\bf
-  All is well. This is a valid approach based on the
-  binomial model. <br>
+$$
 
 
 
 
+All is well. This is a valid approach based on the binomial model.
 
-  ## Age distributions
+
+
+
+
+## Age distributions
   
-  The problem is that this\dots
+The problem is that this...
   
-\[
+$$
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
-\]
+$$
   
   
-  \dots is not the same as data from ``standing age distribution''
+... is not the same as data from *standing age distribution*
   
-\[
+$$
   S_{i,t} = \frac{n_{i+1,t}}{n_{i,t}}
-\]
+$$
   
   
   
-  Several pitfalls are associated with this problem.
+Several pitfalls are associated with this problem.
 
 
 
 
 
 
-  ## Pitfall I
+## Pitfall I
   
-  Standing age distribution data can't be used to estimate
-    survival, unless\dots <br>
+Standing age distribution data can't be used to estimate survival, unless...
   
-    * Population is at the stable age distribution
-    * $\lambda = 1$
+* Population is at the stable age distribution
+* $\lambda = 1$
   
 
 
 
 
 
-  ## Pitfall II
+## Pitfall II
   
-  {\bf Population reconstruction} refers to the calculation of the abundance
-  and age distribution of a cohort at some initial time, usually based
-  on ``ages at death''. <br>
+**Population reconstruction** refers to the calculation of the abundance and age distribution of a cohort at some initial time, usually based on *ages at death*.
   
+This is only possible if we know the ages of death for \alert{\bf all} individuals in the cohort.
   
-  This is only possible if we know the ages of death for \alert{\bf all}
-  individuals in the cohort. <br>
-  
-  
-  Shouldn't use this type of ``reconstruction data'' as real data in a
-  subsequent analysis.
+Shouldn't use this type of *reconstruction data* as real data in a subsequent analysis.
 
 
 

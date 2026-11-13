@@ -2378,5 +2378,124 @@
     "title": "Applied Population Dynamics",
     "section": "Course materials",
     "text": "Course materials\n\nWeek 1 - Introduction and the BIDE model\n\nLecture 1 - Introduction\nLecture 2 - BIDE model\nLab 1 - Excel and R Basics\n\n\n\nWeek 2 - Geometric and logistic growth\n\nLecture 3 - Geometric growth\nLecture 4 - Logistic growth\nLab 2 - Geometric and logistic growth\n\n\n\nWeek 3 - Harvest models and stochasticity\n\nLecture 5 - Harvest models\nLab 3 - Harvest models\n\n\n\nWeek 4 - Stochastic population models and extinction risk\n\nLecture 6 - Stochastic population models\nLecture 7 - Extinction risk\nLab 4 - Stochasticity and extinction\n\n\n\nWeek 5 - Exam\n\nExam and field lab\n\n\n\nWeek 6 - Model of interspecific interactions\n\nLecture 8 - Competition and predation\nLab 6 - Competition and predation\n\n\n\nWeek 7 - Age and stage-structured models\n\nLecture 9 - Age and stage structure\nLab 7 - Age-structured populations\n\n\n\nWeek 8 - Metapopulations\n\nLecture 10 - Metapopulations\nLab 8 - Metapopulations\n\n\n\nWeek 9 - PVA and sensitivity analysis\n\nLecture 11 - PVA and sensitivity analysis\n\n\n\nWeek 10 - Sampling\n\nLecture 12 – Sampling\n\n\n\nWeek 11 - Occupancy models\n\nLecture 13 – Occupancy\nLab 10 - Occupancy models\n\n\n\nWeek 12 - Distance sampling\n\nLecture 14 – Distance sampling\nLab 11 - Distance sampling\n\n\n\nWeek 13 - Capture-mark recapture\n\nLecture 15 – Capture-mark-recapture for closed populations\nLecture 16 – Capture-mark-recapture for open populations\nLab 12 - Mark-recapture for closed populations"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#section",
+    "href": "lectures/survival/lecture-survival.html#section",
+    "title": "Applied Population Dynamics",
+    "section": "",
+    "text": "Estimating survival using telemetry"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#introduction-1",
+    "href": "lectures/survival/lecture-survival.html#introduction-1",
+    "title": "Applied Population Dynamics",
+    "section": "Introduction",
+    "text": "Introduction\nOptions\n\nTelemetry\n\nBinomial model\nKaplan-Meier model\n\nAge distribution data\n\nOften used but rarely valid\n\nCapture-mark-recapture\n\nCovered in the previous lecture"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#telemetry-1",
+    "href": "lectures/survival/lecture-survival.html#telemetry-1",
+    "title": "Applied Population Dynamics",
+    "section": "Telemetry",
+    "text": "Telemetry\n\n\nPros\n\nFate is often known\nAnalysis can be straight-forward\nMuch additional information can be obtained\n\nCons\n\nBatteries don’t last as long as bands\nWhen fate is unknown, analysis can be hard\nTransmitters may influence vital rates and behavior"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#binomial-model",
+    "href": "lectures/survival/lecture-survival.html#binomial-model",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial model",
+    "text": "Binomial model\nDesign\n\n\\(n\\) animals are randomly sampled and monitored over a fixed time interval\nThe fates of all animals are known at end of the study period\n\\(x\\) of the \\(n\\) animals survive\nThe estimate of survival over the time interval is given by:\n\n\\[\n    \\hat{S} = \\frac{x}{n}\n\\]"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#binomial-model-1",
+    "href": "lectures/survival/lecture-survival.html#binomial-model-1",
+    "title": "Applied Population Dynamics",
+    "section": "Binomial model",
+    "text": "Binomial model\nAssumptions\n\nFates are independent\nFates are known\nAll individuals are exposed to mortality during the same time interval\n\nWhen occurs, assumptions (2) and (3) are violated.\nCensoring occurs when the time of mortality is not directly observed"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#censoring",
+    "href": "lectures/survival/lecture-survival.html#censoring",
+    "title": "Applied Population Dynamics",
+    "section": "Censoring",
+    "text": "Censoring\nRight censoring\n\nOccurs when animals leave the sample before they die.\nExamples\n\nBattery failure\nEmigration\n\n\nLeft censoring and interval censoring are rarely a concern.\nIf censoring occurs, the Kaplan-Meier estimator is more appropriate than the binomial model."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#censoring-1",
+    "href": "lectures/survival/lecture-survival.html#censoring-1",
+    "title": "Applied Population Dynamics",
+    "section": "Censoring",
+    "text": "Censoring\n\nDiamonds indicate mortality. Circles indicate censoring.  Black lines show the observation period."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#kaplan-meier",
+    "href": "lectures/survival/lecture-survival.html#kaplan-meier",
+    "title": "Applied Population Dynamics",
+    "section": "Kaplan-Meier",
+    "text": "Kaplan-Meier\n\\[\n    \\hat{S}_t = \\prod_{j: t_i \\le t}\\left(\\frac{r_j - d_j}{r_j}\\right)\n\\]\n\\(S_t\\) – probability of surviving to time \\(t\\)  \\(r_j\\) – number of individuals ``at risk’’ prior to time \\(t\\)  \\(d_j\\) – number of mortalities prior to time \\(t\\)"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#kaplan-meier-in-r",
+    "href": "lectures/survival/lecture-survival.html#kaplan-meier-in-r",
+    "title": "Applied Population Dynamics",
+    "section": "Kaplan-Meier in R",
+    "text": "Kaplan-Meier in R\n\n\n\n\n\n\n\n\n\n\n\n\nDeer capture video"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#kaplan-meier-1",
+    "href": "lectures/survival/lecture-survival.html#kaplan-meier-1",
+    "title": "Applied Population Dynamics",
+    "section": "Kaplan-Meier",
+    "text": "Kaplan-Meier\nCritical Assumption:\nCensoring must be independent of survival\n\nIt’s fine if transmitters fail randomly\nIt’s a problem if they fail because of mortality\n\nConsequence of violating this assumption:\nIf an animal dies, but you mistakenly right censor it because you think its battery died, survival will be over-estimated."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#age-distribution-data",
+    "href": "lectures/survival/lecture-survival.html#age-distribution-data",
+    "title": "Applied Population Dynamics",
+    "section": "Age distribution data",
+    "text": "Age distribution data\nStandard practice\n\nWe have a pile of wings that can be aged\nWe assume the age ratios tell us something about survival"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#alternative-scenario",
+    "href": "lectures/survival/lecture-survival.html#alternative-scenario",
+    "title": "Applied Population Dynamics",
+    "section": "Alternative scenario",
+    "text": "Alternative scenario\nSuppose a cohort of individuals is monitored over time, so that we can obtain information about survival.\n\\[\n  n_{i+1,t+1} = n_{i,t}S_{i,t}\n\\]\n\\[\n  S_{i,t} = \\frac{n_{i+1,t+1}}{n_{i,t}}\n\\]\nAll is well. This is a valid approach based on the binomial model."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#age-distributions-1",
+    "href": "lectures/survival/lecture-survival.html#age-distributions-1",
+    "title": "Applied Population Dynamics",
+    "section": "Age distributions",
+    "text": "Age distributions\nThe problem is that this…\n\\[\n  S_{i,t} = \\frac{n_{i+1,t+1}}{n_{i,t}}\n\\]\n… is not the same as data from standing age distribution\n\\[\n  S_{i,t} = \\frac{n_{i+1,t}}{n_{i,t}}\n\\]\nSeveral pitfalls are associated with this problem."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#pitfall-i",
+    "href": "lectures/survival/lecture-survival.html#pitfall-i",
+    "title": "Applied Population Dynamics",
+    "section": "Pitfall I",
+    "text": "Pitfall I\nStanding age distribution data can’t be used to estimate survival, unless…\n\nPopulation is at the stable age distribution\n\\(\\lambda = 1\\)"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#pitfall-ii",
+    "href": "lectures/survival/lecture-survival.html#pitfall-ii",
+    "title": "Applied Population Dynamics",
+    "section": "Pitfall II",
+    "text": "Pitfall II\nPopulation reconstruction refers to the calculation of the abundance and age distribution of a cohort at some initial time, usually based on ages at death.\nThis is only possible if we know the ages of death for individuals in the cohort.\nShouldn’t use this type of reconstruction data as real data in a subsequent analysis."
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#pitfall-iii",
+    "href": "lectures/survival/lecture-survival.html#pitfall-iii",
+    "title": "Applied Population Dynamics",
+    "section": "Pitfall III",
+    "text": "Pitfall III\nThe age data are biased\n\nAge data not representative of actual age distribution\nHunting, trapping, and capture-recapture methods do not evenly sample the population"
+  },
+  {
+    "objectID": "lectures/survival/lecture-survival.html#avoiding-the-pitfalls",
+    "href": "lectures/survival/lecture-survival.html#avoiding-the-pitfalls",
+    "title": "Applied Population Dynamics",
+    "section": "Avoiding the pitfalls",
+    "text": "Avoiding the pitfalls\nWhen estimating survival, it is always good to…\n\nCollect more than 1 year of data\nFollow multiple cohorts of individuals over long periods of time\nEstimate survival using telemetry or mark-recapture methods"
   }
 ]
