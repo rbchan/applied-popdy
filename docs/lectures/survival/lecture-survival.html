@@ -29,7 +29,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
-  <link rel="stylesheet" href="../../custom.css">
+  <link rel="stylesheet" href="../../custom2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -135,27 +135,39 @@
 <h2></h2>
 <center>
 <p><strong>Estimating survival using telemetry</strong></p>
-<p><img data-src="figs/radiotelemetry.jpg"> <img data-src="figs/bbee.png"></p>
+<p><img data-src="figs/radiotelemetry.jpg" style="height:10cm"> <img data-src="figs/bbee.png" style="height:10cm"></p>
+<div style="font-size: 60%;">
+<p>Applied Population Dynamics</p>
+<p>WILD 5700/7700</p>
+</div>
 </center>
 </section>
 <section id="introduction-1" class="slide level2">
 <h2>Introduction</h2>
-<p>Options</p>
+<p>Options for estimating survival:</p>
 <ul>
 <li>Telemetry
 <ul>
 <li>Binomial model</li>
 <li>Kaplan-Meier model</li>
 </ul></li>
+</ul>
+<div class="fragment">
+<ul>
 <li>Age distribution data
 <ul>
 <li>Often used but rarely valid</li>
 </ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>Capture-mark-recapture
 <ul>
 <li>Covered in the previous lecture</li>
 </ul></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="telemetry" class="title-slide slide level1 center">
@@ -165,101 +177,132 @@
 <section id="telemetry-1" class="slide level2">
 <h2>Telemetry</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
+<div style="font-size: 80%;">
 <p>Pros</p>
 <ul>
 <li>Fate is often known</li>
 <li>Analysis can be straight-forward</li>
 <li>Much additional information can be obtained</li>
 </ul>
+<div class="fragment">
 <p>Cons</p>
 <ul>
 <li>Batteries don’t last as long as bands</li>
 <li>When fate is unknown, analysis can be hard</li>
 <li>Transmitters may influence vital rates and behavior</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="figs/saltie.png"> <img data-src="figs/Banded_Penguin.jpg"></p>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/saltie.png" style="width:100.0%"></p>
+<p><img data-src="figs/Banded_penguin.jpg" style="width:100.0%"></p>
 </div></div>
 </section>
 <section id="binomial-model" class="slide level2">
 <h2>Binomial model</h2>
+<div style="font-size: 80%;">
+<p><br></p>
 <p>Design</p>
 <ul>
-<li><span class="math inline">\(n\)</span> animals are randomly sampled and monitored over a fixed time interval</li>
-<li>The fates of all animals are known at end of the study period</li>
-<li><span class="math inline">\(x\)</span> of the <span class="math inline">\(n\)</span> animals survive</li>
+<li><span class="math inline">\(n\)</span> animals are randomly sampled and monitored over a fixed time interval.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The fates of all animals are known at end of the study period.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(x\)</span> of the <span class="math inline">\(n\)</span> animals survive.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>The estimate of survival over the time interval is given by:</li>
 </ul>
 <p><span class="math display">\[
     \hat{S} = \frac{x}{n}
 \]</span></p>
+</div>
+</div>
 </section>
 <section id="binomial-model-1" class="slide level2">
 <h2>Binomial model</h2>
+<div style="font-size: 100%;">
 <p>Assumptions</p>
-<ul>
+<ol type="1">
 <li>Fates are independent</li>
 <li>Fates are known</li>
 <li>All individuals are exposed to mortality during the same time interval</li>
-</ul>
-<p>When occurs, assumptions (2) and (3) are violated.</p>
-<p>Censoring occurs when the time of mortality is not directly observed</p>
+</ol>
+<div class="fragment">
+<p>When <span class="key-term">censoring</span> occurs, assumptions (2) and (3) are violated.</p>
+</div>
+<div class="fragment">
+<p>Censoring occurs when the time of mortality is not directly observed.</p>
+</div>
+</div>
 </section>
 <section id="censoring" class="slide level2">
 <h2>Censoring</h2>
 <p>Right censoring</p>
 <ul>
 <li>Occurs when animals leave the sample before they die.</li>
-<li>Examples
+<li>Examples:
 <ul>
 <li>Battery failure</li>
 <li>Emigration</li>
 </ul></li>
 </ul>
+<div class="fragment">
 <p>Left censoring and interval censoring are rarely a concern.</p>
+</div>
+<div class="fragment">
 <p>If censoring occurs, the Kaplan-Meier estimator is more appropriate than the binomial model.</p>
+</div>
 </section>
 <section id="censoring-1" class="slide level2">
 <h2>Censoring</h2>
-
-<img data-src="figs/censoring.png" class="r-stretch"><p>Diamonds indicate mortality. Circles indicate censoring. <br> Black lines show the observation period.</p>
+<center>
+<div class="framed-img">
+<p><img data-src="figs/censoring.png" style="height:11cm"></p>
+</div>
+<div style="font-size: 80%;">
+<p>Diamonds indicate mortality. Circles indicate censoring. <br> Black lines show the observation period.</p>
+</div>
+</center>
 </section>
 <section id="kaplan-meier" class="slide level2">
 <h2>Kaplan-Meier</h2>
+<p><br></p>
 <p><span class="math display">\[
     \hat{S}_t = \prod_{j: t_i \le t}\left(\frac{r_j - d_j}{r_j}\right)
 \]</span></p>
-<p><span class="math inline">\(S_t\)</span> – probability of surviving to time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(r_j\)</span> – number of individuals ``at risk’’ prior to time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(d_j\)</span> – number of mortalities prior to time <span class="math inline">\(t\)</span></p>
+<p><span class="math inline">\(S_t\)</span> – probability of surviving to time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(r_j\)</span> – number of individuals <em>at risk</em> prior to time <span class="math inline">\(t\)</span> <br> <span class="math inline">\(d_j\)</span> – number of mortalities prior to time <span class="math inline">\(t\)</span></p>
 </section>
 <section id="kaplan-meier-in-r" class="slide level2">
 <h2>Kaplan-Meier in R</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture-survival_files/figure-revealjs/kapmeier-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://youtu.be/Mgp46izlfeo.png"></p>
-<figcaption>Deer capture video</figcaption>
-</figure>
-</div>
+
+<img data-src="lecture-survival_files/figure-revealjs/kapmeier-1.png" width="960" class="r-stretch"><center>
+<p><a href="https://youtu.be/Mgp46izlfeo">Deer capture video</a></p>
+</center>
 </section>
 <section id="kaplan-meier-1" class="slide level2">
 <h2>Kaplan-Meier</h2>
-<p><strong>Critical Assumption</strong>:</p>
-<p>Censoring must be independent of survival</p>
+<div style="font-size: 80%;">
+<p><br></p>
+<p><strong>Critical Assumption</strong>: Censoring must be independent of survival</p>
 <ul>
 <li>It’s fine if transmitters fail randomly</li>
 <li>It’s a problem if they fail because of mortality</li>
 </ul>
-<p><strong>Consequence of violating this assumption</strong>:</p>
+<p><br></p>
+<div class="fragment">
+<p><em>Consequence of violating this assumption</em>:</p>
 <p>If an animal dies, but you mistakenly right censor it because you think its battery died, survival will be over-estimated.</p>
+</div>
+</div>
 </section></section>
 <section>
 <section id="age-distributions" class="title-slide slide level1 center">
@@ -274,9 +317,11 @@
 <li>We assume the age ratios tell us something about survival</li>
 </ul>
 <center>
-<img data-src="figs/dove_wing.jpg">
+<p><img data-src="figs/dove_wing.jpg" style="height:7cm"></p>
+<div class="fragment">
+<p><span class="callout--caution"><strong>There are many problems with this approach.</strong></span></p>
+</div>
 </center>
-<p></p>
 </section>
 <section id="alternative-scenario" class="slide level2">
 <h2>Alternative scenario</h2>
@@ -284,10 +329,17 @@
 <p><span class="math display">\[
   n_{i+1,t+1} = n_{i,t}S_{i,t}
 \]</span></p>
+<div class="fragment">
 <p><span class="math display">\[
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
 \]</span></p>
+</div>
+<p><br></p>
+<center>
+<div class="fragment">
 <p>All is well. This is a valid approach based on the binomial model.</p>
+</div>
+</center>
 </section>
 <section id="age-distributions-1" class="slide level2">
 <h2>Age distributions</h2>
@@ -295,14 +347,19 @@
 <p><span class="math display">\[
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
 \]</span></p>
-<p>… is not the same as data from <em>standing age distribution</em></p>
+<p>… is not the same as data from <em>standing age distribution</em>:</p>
 <p><span class="math display">\[
   S_{i,t} = \frac{n_{i+1,t}}{n_{i,t}}
 \]</span></p>
-<p>Several pitfalls are associated with this problem.</p>
+<center>
+<div class="fragment">
+<p><span class="callout--caution"><strong>Several pitfalls are associated with this problem</strong>.</span></p>
+</div>
+</center>
 </section>
 <section id="pitfall-i" class="slide level2">
 <h2>Pitfall I</h2>
+<p><br></p>
 <p>Standing age distribution data can’t be used to estimate survival, unless…</p>
 <ul>
 <li>Population is at the stable age distribution</li>
@@ -311,25 +368,34 @@
 </section>
 <section id="pitfall-ii" class="slide level2">
 <h2>Pitfall II</h2>
+<p><br></p>
 <p><strong>Population reconstruction</strong> refers to the calculation of the abundance and age distribution of a cohort at some initial time, usually based on <em>ages at death</em>.</p>
-<p>This is only possible if we know the ages of death for individuals in the cohort.</p>
+<p><br></p>
+<div class="fragment">
+<p>This is only possible if we know the ages of death for <strong>all</strong> individuals in the cohort.</p>
+</div>
+<p><br></p>
+<div class="fragment">
 <p>Shouldn’t use this type of <em>reconstruction data</em> as real data in a subsequent analysis.</p>
+</div>
 </section>
 <section id="pitfall-iii" class="slide level2">
 <h2>Pitfall III</h2>
+<p><br></p>
 <p>The age data are biased</p>
 <ul>
-<li>Age data not representative of actual age distribution</li>
-<li>Hunting, trapping, and capture-recapture methods do not evenly sample the population</li>
+<li>Age data not representative of actual age distribution.</li>
+<li>Hunting, trapping, and capture-recapture methods do not evenly sample the population.</li>
 </ul>
 </section>
 <section id="avoiding-the-pitfalls" class="slide level2">
 <h2>Avoiding the pitfalls</h2>
+<p><br></p>
 <p>When estimating survival, it is always good to…</p>
 <ul>
-<li>Collect more than 1 year of data</li>
-<li>Follow multiple cohorts of individuals over long periods of time</li>
-<li>Estimate survival using telemetry or mark-recapture methods</li>
+<li>Collect more than 1 year of data.</li>
+<li>Follow multiple cohorts of individuals over long periods of time.</li>
+<li>Estimate survival using telemetry or mark-recapture methods.</li>
 </ul>
 
 

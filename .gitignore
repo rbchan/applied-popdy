@@ -3,7 +3,7 @@
 _site/
 lectures/**/*_files/
 lectures/**/*_cache/
-project/
+project/2026/
 
 ## Latex
 *.aux

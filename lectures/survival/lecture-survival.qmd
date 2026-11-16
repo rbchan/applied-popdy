@@ -3,7 +3,7 @@
 format:
   revealjs:
     theme: default
-    css: ../../custom.css
+    css: ../../custom2.css
     pagetitle: 'Survival estimation'
     slide-number: true
     echo: false
@@ -23,8 +23,14 @@ lang: en
 
 **Estimating survival using telemetry**
 
-![](figs/radiotelemetry.jpg)
-![](figs/bbee.png)
+![](figs/radiotelemetry.jpg){height="10cm"}
+![](figs/bbee.png){height="10cm"}
+
+::: {style='font-size: 60%;'}
+Applied Population Dynamics
+
+WILD 5700/7700
+:::
 
 </center>
 
@@ -32,15 +38,21 @@ lang: en
 
 ## Introduction
 
-Options
+Options for estimating survival:
 
 - Telemetry
     * Binomial model
     * Kaplan-Meier model
+
+::: {.fragment}
 - Age distribution data
     * Often used but rarely valid
+:::
+
+::: {.fragment}
 - Capture-mark-recapture
     * Covered in the previous lecture
+:::
   
 
 
@@ -51,25 +63,31 @@ Options
 ## Telemetry
 
 ::: {.columns}
-::: {.column width='50%'}
+::: {.column width='60%'}
 
+::: {style='font-size: 80%;'}
 Pros
 
 * Fate is often known
 * Analysis can be straight-forward
 * Much additional information can be obtained
       
+::: {.fragment}
 Cons
 
 * Batteries don't last as long as bands
 * When fate is unknown, analysis can be hard
 * Transmitters may influence vital rates and behavior
-      
 :::
-::: {.column width='50%'}
+ 
+:::
+     
+:::
+::: {.column width='40%'}
 
-![](figs/saltie.png)
-![](figs/Banded_Penguin.jpg)
+![](figs/saltie.png){width="100%"}
+
+![](figs/Banded_penguin.jpg){width="100%"}
 
 :::
 :::
@@ -77,32 +95,52 @@ Cons
 
 
 ## Binomial model
-  
+
+::: {style='font-size: 80%;'}
+
+<br>
+
 Design
-    
-* $n$ animals are randomly sampled and monitored over a fixed time interval
-* The fates of all animals are known at end of the study period
-* $x$ of the $n$ animals survive
+
+* $n$ animals are randomly sampled and monitored over a fixed time interval.
+
+::: {.fragment}
+* The fates of all animals are known at end of the study period.
+:::
+
+::: {.fragment}
+* $x$ of the $n$ animals survive.
+:::
+
+::: {.fragment}
 * The estimate of survival over the time interval is given by:
-  
+
 $$
     \hat{S} = \frac{x}{n}
 $$
+:::
 
+:::
 
 
 ## Binomial model
   
+::: {style='font-size: 100%;'}
 Assumptions
     
-* Fates are independent
-* Fates are known
-* All individuals are exposed to mortality during the same time interval
+1. Fates are independent
+2. Fates are known
+3. All individuals are exposed to mortality during the same time interval
   
-When \alert{censoring} occurs, assumptions (2) and (3) are violated.
+::: {.fragment}
+When [censoring]{.key-term} occurs, assumptions (2) and (3) are violated.
+:::
   
-Censoring occurs when the time of mortality is not directly observed
+::: {.fragment}
+Censoring occurs when the time of mortality is not directly observed.
+:::
 
+:::
 
 
 ## Censoring
@@ -110,13 +148,17 @@ Censoring occurs when the time of mortality is not directly observed
 Right censoring
   
 - Occurs when animals leave the sample before they die.
-- Examples
+- Examples:
     * Battery failure
     * Emigration
     
+::: {.fragment}
 Left censoring and interval censoring are rarely a concern.
+:::
   
+::: {.fragment}
 If censoring occurs, the Kaplan-Meier estimator is more appropriate than the binomial model.
+:::
 
 
 
@@ -124,23 +166,31 @@ If censoring occurs, the Kaplan-Meier estimator is more appropriate than the bin
 
 ## Censoring
 
-![](figs/censoring.png)
+<center>
+::: {.framed-img}
+![](figs/censoring.png){height="11cm"}
+:::
 
+::: {style='font-size: 80%;'}
 Diamonds indicate mortality. Circles indicate censoring. <br>
 Black lines show the observation period. 
+:::
 
+</center>
 
 
 
 
 ## Kaplan-Meier
-  
+
+<br>
+
 $$
     \hat{S}_t = \prod_{j: t_i \le t}\left(\frac{r_j - d_j}{r_j}\right)
 $$
-  
+
 $S_t$ -- probability of surviving to time $t$ <br>
-$r_j$ -- number of individuals ``at risk'' prior to time $t$ <br>
+$r_j$ -- number of individuals *at risk* prior to time $t$ <br>
 $d_j$ -- number of mortalities prior to time $t$
 
 
@@ -150,6 +200,7 @@ $d_j$ -- number of mortalities prior to time $t$
 
 ```{r}
 #| label: kapmeier
+#| cache: true
 library(survival)                    ## Load survival package
 deer <- read.csv("deerSurv/deer_data.csv")    ## Import data
 S <- Surv(deer$SurvTime, deer$Fate)  ## Format survival data
@@ -163,9 +214,11 @@ legend(400, 1, c("Female", "Male"), lty=c(1,2))
 
 
 
+<center>
 
-![Deer capture video](https://youtu.be/Mgp46izlfeo)
+[Deer capture video](https://youtu.be/Mgp46izlfeo)
 
+</center>
 
 
 
@@ -173,19 +226,25 @@ legend(400, 1, c("Female", "Male"), lty=c(1,2))
 
 ## Kaplan-Meier
   
-**Critical Assumption**:
+::: {style='font-size: 80%;'}
 
-Censoring must be independent of survival
+<br>
+
+**Critical Assumption**: Censoring must be independent of survival
  
 * It's fine if transmitters fail randomly
 * It's a problem if they fail because of mortality
  
+<br>
   
-  
-**Consequence of violating this assumption**:
+::: {.fragment}
+*Consequence of violating this assumption*:
 
 If an animal dies, but you mistakenly right censor it because you think its battery died, survival will be over-estimated.
+:::
 
+
+:::
 
 
 # Age distributions
@@ -201,11 +260,13 @@ Standard practice
 * We assume the age ratios tell us something about survival
   
 <center>
-![](figs/dove_wing.jpg)
-</center>
+![](figs/dove_wing.jpg){height="7cm"}
   
-\alert{**There are many problems with this**}
+::: {.fragment}
+[**There are many problems with this approach.**]{.callout--caution}
+:::
 
+</center>
 
 
 
@@ -220,14 +281,20 @@ $$
   n_{i+1,t+1} = n_{i,t}S_{i,t}
 $$
 
+::: {.fragment}
 $$
   S_{i,t} = \frac{n_{i+1,t+1}}{n_{i,t}}
 $$
+:::
+
+<br>
 
 
-
-
+<center>
+::: {.fragment}
 All is well. This is a valid approach based on the binomial model.
+:::
+</center>
 
 
 
@@ -242,7 +309,7 @@ $$
 $$
   
   
-... is not the same as data from *standing age distribution*
+... is not the same as data from *standing age distribution*:
   
 $$
   S_{i,t} = \frac{n_{i+1,t}}{n_{i,t}}
@@ -250,15 +317,21 @@ $$
   
   
   
-Several pitfalls are associated with this problem.
+<center>
+::: {.fragment}
 
+[**Several pitfalls are associated with this problem**.]{.callout--caution}
 
-
+:::
+</center>
 
 
 
 ## Pitfall I
-  
+
+
+<br>
+
 Standing age distribution data can't be used to estimate survival, unless...
   
 * Population is at the stable age distribution
@@ -271,11 +344,21 @@ Standing age distribution data can't be used to estimate survival, unless...
 
 ## Pitfall II
   
+<br>
+
 **Population reconstruction** refers to the calculation of the abundance and age distribution of a cohort at some initial time, usually based on *ages at death*.
-  
-This is only possible if we know the ages of death for \alert{\bf all} individuals in the cohort.
-  
+
+<br>
+
+::: {.fragment}
+This is only possible if we know the ages of death for **all** individuals in the cohort.
+:::
+
+<br>
+
+::: {.fragment}
 Shouldn't use this type of *reconstruction data* as real data in a subsequent analysis.
+:::
 
 
 
@@ -284,10 +367,12 @@ Shouldn't use this type of *reconstruction data* as real data in a subsequent an
 
 ## Pitfall III
 
+<br>
+
 The age data are biased
   
-* Age data not representative of actual age distribution
-* Hunting, trapping, and capture-recapture methods do not evenly sample the population
+* Age data not representative of actual age distribution.
+* Hunting, trapping, and capture-recapture methods do not evenly sample the population.
   
 
 
@@ -297,12 +382,14 @@ The age data are biased
 
 
 ## Avoiding the pitfalls
-  
+
+<br>
+
 When estimating survival, it is always good to...
   
-* Collect more than 1 year of data
-* Follow multiple cohorts of individuals over long periods of time
-* Estimate survival using telemetry or mark-recapture methods
+* Collect more than 1 year of data.
+* Follow multiple cohorts of individuals over long periods of time.
+* Estimate survival using telemetry or mark-recapture methods.
   
 
 
