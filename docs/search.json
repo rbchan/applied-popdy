@@ -2118,14 +2118,14 @@
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#jolly-seber-model",
     "title": "Applied Population Dynamics",
     "section": "Jolly-Seber model",
-    "text": "Jolly-Seber model\nAssumptions\n\nAll the assumptions of CJS model, plus…\nEvery animal — marked or unmarked — has the same probability of capture\n\nThe standard JS model doesn’t work very well, but it is extremely powerful when combined with the robust design."
+    "text": "Jolly-Seber model\n\nAssumptions\n\nAll the assumptions of CJS model, plus…\nEvery animal — marked or unmarked — has the same probability of capture\n\nThe standard JS model doesn’t work very well, but it is extremely powerful when combined with the robust design."
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-1",
     "href": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-1",
     "title": "Applied Population Dynamics",
     "section": "Robust design",
-    "text": "Robust design\n\nPurpose\nRelax assumptions and increase precision by collecting more data.\n\n\nKey concept\nWe now have two types of sampling periods:\n\nPrimary sampling periods: the population is assumed to be open\nSecondary sampling periods:the population is assumed to be closed\n\n\n\n\n\nThe replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters."
+    "text": "Robust design\n\nPurpose\nRelax assumptions and increase precision by collecting more data.\n\n\nKey concept\nWe now have two types of sampling periods:\n\nPrimary sampling periods: the population is assumed to be open\nSecondary sampling periods:the population is assumed to be closed\n\n\n\n\n\n\nThe replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters."
   },
   {
     "objectID": "lectures/cap-recapII/lecture-mark-recap-openpop.html#robust-design-capture-histories",

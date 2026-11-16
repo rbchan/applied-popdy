@@ -3,7 +3,7 @@
 format:
   revealjs:
     theme: default
-    css: ../../custom.css
+    css: ../../custom2.css
     pagetitle: 'Mark-recapture for open populations'
     slide-number: true
     echo: false
@@ -204,10 +204,11 @@ Software programs like "MARK" (and "RMark" and "Rcapture" in R) find the most li
 <br>
 
 ::: {.fragment}
-<center>
-[Canada goose banding video](https://youtu.be/baQAjq0NyrM)
 
-[Duck banding video](https://youtu.be/J8lfqZ46OQ0)
+<center>
+[**Canada goose banding video**](https://youtu.be/baQAjq0NyrM)
+
+[**Duck banding video**](https://youtu.be/J8lfqZ46OQ0)
 </center>
 :::
 
@@ -237,7 +238,7 @@ A random sample of animals is marked and followed over many periods (eg, years).
 **Notes**
 
 * When permanent emigration is possible, we can't be sure if an animal died or left study area
-* So we often have to estimate *apparent survival* ($\Phi$) instead of actual survival ($S$)
+* So we often have to estimate [apparent survival]{.key-term} ($\Phi$) instead of actual survival ($S$)
 * Apparent survival is the probability that an individual survives and does not permanently emigrate out of the study area
 :::
 
@@ -382,12 +383,14 @@ The leading zeros provide information about when individuals are recruited into 
 
 ## Jolly-Seber model
 
+<br>
+
 **Assumptions**
   
 - All the assumptions of CJS model, plus...
 - Every animal --- marked or unmarked --- has the same probability of capture
   
-The standard JS model doesn't work very well, but it is extremely powerful when combined with *the robust design*.
+The standard JS model doesn't work very well, but it is extremely powerful when combined with [the robust design]{.key-term}.
 
 
 
@@ -419,7 +422,9 @@ We now have two types of sampling periods:
 
 ::: {.fragment}
 <center>
+::: {.content-card}
 The replicate surveys with each primary period give us direct information about capture probability, which makes it easier to estimate the other parameters.
+:::
 </center>
 :::
 
